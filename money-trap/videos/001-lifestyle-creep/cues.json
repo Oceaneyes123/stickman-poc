@@ -1,0 +1,90 @@
+{
+  "mode": "timing-demo",
+  "scriptHash": "2d604126cc5f42e1ac90d7a185697368101aa9373c324a42ffbc43f5c9b8d8e5",
+  "cues": [
+    {
+      "id": "raise",
+      "startMs": 0,
+      "endMs": 8000,
+      "text": "Sam got a six-hundred-dollar take-home raise. The kind that makes a Monday feel pretty good."
+    },
+    {
+      "id": "rent",
+      "startMs": 8000,
+      "endMs": 16000,
+      "text": "So he moved into a nicer place. That added three hundred dollars a month."
+    },
+    {
+      "id": "car",
+      "startMs": 16000,
+      "endMs": 21000,
+      "text": "The car upgrade? Another two hundred and twenty."
+    },
+    {
+      "id": "subscriptions",
+      "startMs": 21000,
+      "endMs": 25000,
+      "text": "And a few subscriptions came to a hundred."
+    },
+    {
+      "id": "reasonable",
+      "startMs": 25000,
+      "endMs": 28000,
+      "text": "None of it felt outrageous on its own."
+    },
+    {
+      "id": "total",
+      "startMs": 28000,
+      "endMs": 34000,
+      "text": "But together, those new expenses came to six hundred and twenty dollars."
+    },
+    {
+      "id": "only",
+      "startMs": 34000,
+      "endMs": 39000,
+      "text": "His raise was only six hundred."
+    },
+    {
+      "id": "before",
+      "startMs": 39000,
+      "endMs": 43000,
+      "text": "Before the raise, Sam had four hundred dollars left after expenses."
+    },
+    {
+      "id": "after",
+      "startMs": 43000,
+      "endMs": 47000,
+      "text": "Now he had three hundred and eighty."
+    },
+    {
+      "id": "keeping",
+      "startMs": 47000,
+      "endMs": 49000,
+      "text": "He was earning more, and keeping less."
+    },
+    {
+      "id": "alex",
+      "startMs": 49000,
+      "endMs": 55000,
+      "text": "Alex got the same raise. He spent two hundred dollars more each month and kept the rest."
+    },
+    {
+      "id": "rest",
+      "startMs": 55000,
+      "endMs": 62000,
+      "text": "At the end of the month, he had eight hundred dollars left."
+    },
+    {
+      "id": "payoff",
+      "startMs": 62000,
+      "endMs": 66000,
+      "text": "Same raise. Different choices."
+    },
+    {
+      "id": "creep",
+      "startMs": 66000,
+      "endMs": 78000,
+      "text": "That's the sneaky part of lifestyle creep. It usually doesn't show up as one giant mistake. It's a handful of reasonable upgrades that keep charging you every month."
+    }
+  ]
+}

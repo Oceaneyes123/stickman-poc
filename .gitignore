@@ -1,0 +1,47 @@
+# Dependencies and build output
+node_modules/
+dist/
+build/
+out/
+coverage/
+*.tsbuildinfo
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Python environments and caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Tool caches and logs
+.cache/
+.sfxcache/
+*.log
+
+# Generated Stickman renders; keep film source and imported media elsewhere
+/videos/*/shots/
+/videos/*/*.mp4
+/videos/*/audio.wav
+/videos/*/film.json
+/videos/*/list.txt
+/videos/*/action-sheet.jpg
+/videos/*/contact_sheet.jpg
+/videos/*/storyboard.jpg
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Independent third-party reference repositories
+/.agents/remotion-official/
+/references/explainer-video-skills/
+/references/stickman-skill/
+/references/stickman-video/

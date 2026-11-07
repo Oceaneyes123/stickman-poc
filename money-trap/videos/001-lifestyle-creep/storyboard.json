@@ -1,0 +1,26 @@
+{
+  "fps": 30, "demoDurationMs": 78000, "tailMs": 0,
+  "scenes": [
+    {"id":"raise","template":"story","start":{"cueId":"raise"},"end":{"cueId":"rent"},"title":"A little more breathing room.","character":"Sam","environment":"office"},
+    {"id":"rent","template":"story","start":{"cueId":"rent"},"end":{"cueId":"car"},"title":"A nicer place.","character":"Sam","environment":"apartment"},
+    {"id":"upgrades","template":"story","start":{"cueId":"car"},"end":{"cueId":"total"},"title":"Then a few more upgrades.","character":"Sam","environment":"street"},
+    {"id":"total","template":"diagram","start":{"cueId":"total"},"end":{"cueId":"before"},"title":"The upgrades outgrew the raise.","transition":"wipe"},
+    {"id":"remaining","template":"comparison","start":{"cueId":"before"},"end":{"cueId":"alex"},"title":"Earning more. Keeping less."},
+    {"id":"alex","template":"story","start":{"cueId":"alex"},"end":{"cueId":"payoff"},"title":"Alex leaves some room.","character":"Alex","environment":"office"},
+    {"id":"payoff","template":"comparison","start":{"cueId":"payoff"},"end":{"cueId":"creep","edge":"end"},"title":"Same raise. Different choices.","transition":"fade"}
+  ],
+  "events": [
+    {"id":"paycheck","sceneId":"raise","cueId":"raise","offsetMs":0,"durationMs":1800,"kind":"raise","track":"money","payload":{"dataKey":"raise"}},
+    {"id":"rent-card","sceneId":"rent","cueId":"rent","offsetMs":0,"durationMs":1400,"kind":"show-expense","track":"rent","payload":{"upgradeIndex":0}},
+    {"id":"car-card","sceneId":"upgrades","cueId":"car","offsetMs":0,"durationMs":1400,"kind":"show-expense","track":"car","payload":{"upgradeIndex":1}},
+    {"id":"subscriptions-card","sceneId":"upgrades","cueId":"subscriptions","offsetMs":0,"durationMs":1400,"kind":"show-expense","track":"subscriptions","payload":{"upgradeIndex":2}},
+    {"id":"expense-total","sceneId":"total","cueId":"total","offsetMs":0,"durationMs":1800,"kind":"total","track":"total","payload":{}},
+    {"id":"raise-comparison","sceneId":"total","cueId":"only","offsetMs":0,"durationMs":1400,"kind":"raise","track":"raise","payload":{}},
+    {"id":"previous-remaining","sceneId":"remaining","cueId":"before","offsetMs":0,"durationMs":1400,"kind":"before-after","track":"before","payload":{"side":"before"}},
+    {"id":"new-remaining","sceneId":"remaining","cueId":"after","offsetMs":0,"durationMs":1400,"kind":"before-after","track":"after","payload":{"side":"after"}},
+    {"id":"alex-upgrade","sceneId":"alex","cueId":"alex","offsetMs":0,"durationMs":1400,"kind":"alternative","track":"upgrade","payload":{}},
+    {"id":"alex-remaining","sceneId":"alex","cueId":"rest","offsetMs":0,"durationMs":1400,"kind":"alternative","track":"remaining","payload":{}},
+    {"id":"final-comparison","sceneId":"payoff","cueId":"payoff","offsetMs":0,"durationMs":1800,"kind":"payoff","track":"comparison","payload":{}},
+    {"id":"recurring","sceneId":"payoff","cueId":"creep","offsetMs":0,"durationMs":1400,"kind":"payoff","track":"recurring","payload":{}}
+  ]
+}
