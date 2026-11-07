@@ -1,6 +1,6 @@
 # Money Trap POC
 
-The executable project is `money-trap/`, scaffolded with the official blank Remotion 4.0.541 template. Existing reference documents remain intact. No other video project is modified.
+The executable project lives at the repository root, scaffolded with the official blank Remotion 4.0.541 template. Existing reference documents remain intact. The original `money-trap/` contents are merged into the corresponding root directories. No other video project is modified.
 
 ## Architecture and execution plan
 

@@ -1,0 +1,53 @@
+{
+  "name": "money-trap",
+  "version": "1.0.0",
+  "description": "The Money Trap: reusable articulated SVG finance storytelling",
+  "type": "module",
+  "repository": {},
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
+  },
+  "private": true,
+  "dependencies": {
+    "@remotion/bundler": "4.0.541",
+    "@remotion/cli": "4.0.541",
+    "@remotion/fonts": "4.0.541",
+    "@remotion/media": "4.0.541",
+    "@remotion/renderer": "4.0.541",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.541"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.541",
+    "@types/react": "19.3.0",
+    "@types/web": "0.0.166",
+    "eslint": "10.12.0",
+    "prettier": "3.8.1",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "walking:stills": "node --experimental-strip-types scripts/render-bank.ts --walking --stills",
+    "render:walking": "npm run check && node --experimental-strip-types scripts/render-bank.ts --walking",
+    "dev": "npm run timing && remotion studio",
+    "build": "remotion bundle",
+    "upgrade": "remotion upgrade",
+    "lint": "eslint src scripts && tsc",
+    "timing": "node --experimental-strip-types scripts/prepare.ts",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "check": "npm run timing && npm run lint && npm test",
+    "render": "npm run check && node --experimental-strip-types scripts/render.ts",
+    "render:dev": "npm run timing && node --experimental-strip-types scripts/render.ts --dev",
+    "stills": "npm run timing && node --experimental-strip-types scripts/render.ts --stills",
+    "render:gallery": "node --experimental-strip-types scripts/render.ts --gallery",
+    "characters:stills": "node --experimental-strip-types scripts/preview-characters.ts",
+    "bank:stills": "node --experimental-strip-types scripts/render-bank.ts --stills",
+    "render:bank": "npm run check && node --experimental-strip-types scripts/render-bank.ts",
+    "movement:stills": "node --experimental-strip-types scripts/render-bank.ts --movement --stills",
+    "render:movement": "npm run check && node --experimental-strip-types scripts/render-bank.ts --movement"
+  },
+  "allowScripts": {
+    "esbuild": false
+  }
+}
