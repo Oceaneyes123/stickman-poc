@@ -1,5 +1,9 @@
 # Movement system audit (before implementation)
 
+Historical review: POC-specific migration steps and superseded output paths below
+are retained as design context. See [current validation](animation-validation.md)
+and the root README for active commands and files.
+
 Inspected `kinematics.ts`, `referenceModel.ts`, `ReferenceCharacterRig.tsx`,
 `StickmanRig.tsx`, `bankModel.ts`, `MovementReview.tsx`, their callers, tests,
 and `AGENTS.md` on 2026-11-07. No CodeGraph index exists in this checkout.

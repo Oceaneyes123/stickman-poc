@@ -12,10 +12,10 @@ import { compileTimeline, msToFrames } from "../src/timeline/compiler.ts";
 import type { CueFile, Storyboard } from "../src/timeline/types.ts";
 import { limb, walkFoot } from "../src/characters/kinematics.ts";
 const cues = JSON.parse(
-  readFileSync("videos/001-lifestyle-creep/cues.json", "utf8"),
+  readFileSync("tests/fixtures/timeline/cues.json", "utf8"),
 ) as CueFile;
 const board = JSON.parse(
-  readFileSync("videos/001-lifestyle-creep/storyboard.json", "utf8"),
+  readFileSync("tests/fixtures/timeline/storyboard.json", "utf8"),
 ) as Storyboard;
 const clone = <T>(data: T): T => structuredClone(data);
 test("required hypothetical monthly arithmetic", () => {
@@ -110,8 +110,8 @@ for (const name of [
       b.scenes[1].start = { cueId: "rent", offsetMs: 100, reason: "fixture" };
     if (name === "subframe event") b.events[0].durationMs = 1;
     if (name === "subframe scene gap")
-      b.scenes[1].start = {cueId: "rent", offsetMs: 0.1, reason: "fixture"};
-    if (name === "duplicate event") b.events.push({...b.events[0]});
+      b.scenes[1].start = { cueId: "rent", offsetMs: 0.1, reason: "fixture" };
+    if (name === "duplicate event") b.events.push({ ...b.events[0] });
     assert.throws(() => compileTimeline(c, b), /Timeline:/);
   });
 }

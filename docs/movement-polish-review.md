@@ -1,5 +1,9 @@
 # Positioning and movement review - 2026-11-07
 
+Historical review: POC-specific migration steps and superseded output paths below
+are retained as design context. See [current validation](animation-validation.md)
+and the root README for active commands and files.
+
 Reviewed frames 36, 120, 210, 340, 395 and 510 extracted directly from
 `out/movement-review-biomechanics.mp4`, rather than relying on earlier preview
 PNGs. Full-resolution originals are retained in `out/movement-polish/before/`.

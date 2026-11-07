@@ -2,13 +2,13 @@
 
 `ReferenceCharacterRig.tsx` follows the clothing and face direction supplied in `../../references/character-reference.png`: Sam's blue hoodie, Alex's white collared shirt and round glasses, larger white faces, dark outlines, small hands and simple expressive silhouettes. Both characters are now hairless at the user's request. The SVG artwork is authored in TSX; the reference PNG is not embedded or traced as a raster asset.
 
-This is a **separate character candidate**. `StickmanRig.tsx`, `POC.tsx`, existing scene templates, the original ComponentGallery and the exported film still use the original rig. Do not switch those imports until requested. Film typography, narration and timing are unchanged.
+This is the current character rig. `StickmanRig.tsx` remains for shared scene templates and `ComponentGallery`; those imports have not been migrated. The old POC film has been removed.
 
-The refinement pass adds lighter outline hierarchy, softer garment shapes, hoodie cuffs/drawstrings/pocket seams, a backpack strap and pocket, quieter shirt details, thinner glasses, subtle gaze and nose marks, and distinct resting/open/pointing/fist/wave hands. Closed hands follow forearm orientation; open palms and pointing hands use deliberate presentation angles. Body proportions and the tested skeleton are unchanged. Earlier hero and expression PNGs are retained in `out/characters/` for comparison.
+The refinement pass adds lighter outline hierarchy, softer garment shapes, hoodie cuffs/drawstrings/pocket seams, a backpack strap and pocket, quieter shirt details, thinner glasses, subtle gaze and nose marks, and distinct resting/open/pointing/fist/wave hands. Closed hands follow forearm orientation; open palms and pointing hands use deliberate presentation angles. Body proportions and the tested skeleton are unchanged.
 
 ## Preview
 
-Open the `CharacterStudy` composition in Remotion Studio (http://localhost:3100/CharacterStudy when using port 3100). It has four pages: identities, twelve expressions, nine pose examples, and gesture/walk checks. Scrub/play the composition to inspect blending. `npm run characters:stills` saves current character-only PNGs in `out/characters/hand-refinement/`; it never exports or overwrites an MP4. Identity, expression, pose and action sheets render at 2× resolution for close inspection. Other PNGs under `out/characters/` are previous revisions.
+Open the `CharacterStudy` composition in Remotion Studio (http://localhost:3100/CharacterStudy when using port 3100). It has four pages: identities, twelve expressions, nine pose examples, and gesture/walk checks. Scrub/play the composition to inspect blending. `npm run characters:stills` saves current character-only PNGs in `out/characters/hand-refinement/`; it never exports or overwrites an MP4. Identity, expression, pose and action sheets render at 2× resolution for close inspection.
 
 ## Face and hand design checks
 
@@ -28,7 +28,7 @@ blends signed elbow flexion through extension when changing into or out of that
 plane, rather than flipping the elbow abruptly. Profiles with a positive minimum
 elbow flexion retain their configured bend plane to honor that joint constraint.
 
-Current detailed inspection sheet: `out/characters/hand-refinement/hand-review.jpg` (eight wrist/hand contexts). Generate the crops from current renders with `python out/characters/hand-refinement/make-detail-sheets.py`. The current characters remain hairless. Geometry tests do not prove visual appeal or clearance; open and inspect the renders.
+Current detailed inspection sheet: `out/characters/hand-refinement/hand-review.jpg` (eight wrist/hand contexts). Generate the crops from current renders with `python scripts/character-detail-sheets.py`. The current characters remain hairless. Geometry tests do not prove visual appeal or clearance; open and inspect the renders.
 
 ```tsx
 import { Sam, Alex } from "./characters/ReferenceCharacterRig";
@@ -55,7 +55,7 @@ Reference palette: outline #0F172A, face/shirt #F8FAFC, Sam blue #3B82F6, positi
 Scope: front-facing 2D acting, pose blending, seven gestures, optional backpack and held wallet. Full 3D turnaround, lip sync and tablet interaction are not implemented. The image's lettering is outside this character-only change. Human design and normal-speed acting approval remain pending.
 
 
-`BankExample` supplies an optional solved `skeleton` and per-side `hands` silhouettes to the same rig. This allows world-space door and money contacts without changing the default pose presets or the original POC. Override skeletons must preserve the existing limb proportions; bank choreography tests check every frame.
+`BankExample` supplies an optional solved `skeleton` and per-side `hands` silhouettes to the same rig. This allows world-space door and money contacts without changing the default pose presets. Override skeletons must preserve the existing limb proportions; bank choreography tests check every frame.
 
 ## Deterministic motion system
 
@@ -100,14 +100,14 @@ angles, limits, foot phases, support, COM, direction, foot paths and target erro
 - `npm run render:movement`: `out/movement-review-arm-correction.mp4`.
 - `npm run render:movement -- --debug`: separate diagnostic MP4.
 
-Earlier exported reviews are retained. See
+See
 [`docs/movement-system.md`](../../docs/movement-system.md) for the pre-change
 audit, limitations, validation evidence, and production migration steps.
 
 
 The positioning polish pass is documented in
 [`docs/movement-polish-review.md`](../../docs/movement-polish-review.md).
-The previous `out/movement-review-biomechanics.mp4` is retained for comparison.
+Superseded exports were removed; regenerate previews with the retained compositions.
 
 ## Supporting-leg extension and foot rockers
 
@@ -122,6 +122,6 @@ move during a rocker while the loaded point remains fixed on the floor.
 knee angles and gait-phase labels. Run `npm run walking:stills` or
 `npm run render:walking` for `out/walking-arm-correction.mp4`; append `-- --debug`
 for solver overlays. The full review remains available through
-`npm run render:movement`. Older exports are retained.
+`npm run render:movement`.
 
 Research, sources and verification: [walking mechanics research](../../docs/walking-mechanics-research.md).

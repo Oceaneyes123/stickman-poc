@@ -1,25 +1,25 @@
 #!/usr/bin/env python3
 """
-Download clean transcripts for the latest N Shorts (or videos) of YouTube channels.
+Download transcripts for each channel's top 5 most-viewed longform videos or Shorts.
 
-Setup (once):
+Setup:
     pip install yt-dlp youtube-transcript-api
 
-Run:
-    python get_transcripts.py
-    python get_transcripts.py --browser chrome     # if YouTube shows the "confirm you're not a bot" error
+Run from this directory (quote handles in PowerShell):
+    python get_transcripts.py --longform "@jamesjani" "@howmoneyworks" "@CasuallyFinance"
+    python get_transcripts.py --short "@jamesjani"
 
 Options:
-    --browser NAME   firefox | chrome | edge | brave  (yt-dlp fallback reads your logged-in cookies)
-    --count N        videos per channel (default 10)
-    name=url ...     override channels, e.g. "zac=https://www.youtube.com/@zackdfilms/shorts"
+    --longform      Videos tab, excluding Shorts (default)
+    --short         Shorts tab only; cannot combine with --longform
+    --count N       videos per channel (default 5)
+    --browser NAME  optional logged-in browser cookies for yt-dlp
+    name=url ...    legacy channel aliases are also accepted
 
-Re-running is safe: videos already saved are skipped, so you can resume after an error.
-
-Output:
-    transcripts/<channel>/01_<title>.txt   one file per video
-    transcripts/<channel>/ALL.txt          everything in one file (upload this)
-    transcripts/missing.txt                videos that could not be fetched
+All entries in the selected tab are ranked by reported view count before limiting.
+Re-running skips saved transcripts by video ID. Existing downloads are preserved.
+Output: transcripts/<channel>/<longform|short>/<video-id>.txt,
+        ALL.txt in the same folder, and transcripts/missing.txt for failures.
 """
 
 import argparse
@@ -27,6 +27,7 @@ import re
 import sys
 import time
 from pathlib import Path
+from urllib.parse import urlsplit, urlunsplit
 
 import yt_dlp
 
@@ -42,17 +43,50 @@ def safe(s, n=60):
     return re.sub(r"[^A-Za-z0-9]+", "_", s).strip("_")[:n] or "video"
 
 
+def channel_url(value, mode):
+    """Accept a handle or legacy name=channel-url and select exactly one tab."""
+    if value.startswith("@"):
+        if not re.fullmatch(r"@[\w.-]+", value) or not value[1:].strip("."):
+            raise ValueError(f"invalid YouTube handle: {value}")
+        name, url = value[1:], f"https://www.youtube.com/{value}"
+    else:
+        name, separator, url = value.partition("=")
+        if not separator or not name or not url:
+            raise ValueError(f"expected @handle or name=YouTube-channel-URL: {value}")
+        name = safe(name)
+    parts = urlsplit(url)
+    if parts.scheme not in ("http", "https") or parts.netloc not in (
+        "youtube.com", "www.youtube.com", "m.youtube.com",
+    ):
+        raise ValueError(f"expected a YouTube channel URL: {url}")
+    path = re.sub(r"/(videos|shorts|streams|featured)/?$", "", parts.path.rstrip("/"))
+    if not re.fullmatch(r"/(?:@[\w.-]+|(?:channel|c|user)/[^/]+)", path):
+        raise ValueError(f"expected a YouTube channel URL: {url}")
+    tab = "shorts" if mode == "short" else "videos"
+    return name, urlunsplit((parts.scheme, parts.netloc, f"{path}/{tab}", "", ""))
+
+
 def list_videos(url, count, browser=None):
-    opts = {"quiet": True, "extract_flat": True, "playlistend": count, "skip_download": True}
+    # Rank the entire tab; limiting extraction first would rank only recent uploads.
+    opts = {"quiet": True, "extract_flat": True, "skip_download": True}
     if browser:
         opts["cookiesfrombrowser"] = (browser,)
     with yt_dlp.YoutubeDL(opts) as ydl:
         info = ydl.extract_info(url, download=False)
-    out = []
-    for e in (info.get("entries") or []):
-        if e and e.get("id"):
-            out.append((e["id"], e.get("title") or e["id"]))
-    return out[:count]
+    entries = {}
+    for entry in (info.get("entries") or []):
+        if not entry or not entry.get("id"):
+            continue
+        if entry.get("live_status") in ("is_live", "is_upcoming"):
+            continue
+        views = entry.get("view_count")
+        if not isinstance(views, (int, float)) or views < 0:
+            raise RuntimeError(f"missing view count for {entry['id']}; cannot rank most-viewed videos")
+        entries[entry["id"]] = entry
+    ranked = sorted(entries.values(), key=lambda entry: entry["view_count"], reverse=True)
+    if not ranked:
+        raise RuntimeError("no videos found in the selected channel tab")
+    return [(entry["id"], entry.get("title") or entry["id"]) for entry in ranked[:count]]
 
 
 # ---------- method 1: youtube-transcript-api ----------
@@ -127,25 +161,30 @@ def main():
     for stream in (sys.stdout, sys.stderr):
         if hasattr(stream, "reconfigure"):
             stream.reconfigure(errors="backslashreplace")
-    ap = argparse.ArgumentParser()
-    ap.add_argument("channels", nargs="*", help="name=url")
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("channels", nargs="*", help="@handle or name=YouTube-channel-URL")
+    modes = ap.add_mutually_exclusive_group()
+    modes.add_argument("--longform", dest="mode", action="store_const", const="longform")
+    modes.add_argument("--short", dest="mode", action="store_const", const="short")
+    ap.set_defaults(mode="longform")
     ap.add_argument("--browser", default=None)
-    ap.add_argument("--count", type=int, default=10)
+    ap.add_argument("--count", type=int, default=5)
     args = ap.parse_args()
-
-    channels = CHANNELS
-    if args.channels:
-        channels = {}
-        for a in args.channels:
-            n, _, u = a.partition("=")
-            channels[n] = u
+    if args.count < 1:
+        ap.error("--count must be positive")
+    try:
+        channels = dict(channel_url(value, args.mode) for value in (
+            args.channels or [f"{name}={url}" for name, url in CHANNELS.items()]
+        ))
+    except ValueError as error:
+        ap.error(str(error))
 
     OUT.mkdir(exist_ok=True)
     missing = []
 
     for name, url in channels.items():
-        print(f"\n== {name}: {url}")
-        folder = OUT / name
+        print(f"\n== {name}: top {args.count} {args.mode} videos by views ({url})")
+        folder = OUT / name / args.mode
         tmp = folder / "_raw"
         tmp.mkdir(parents=True, exist_ok=True)
 
@@ -158,8 +197,9 @@ def main():
 
         combined = []
         for i, (vid, title) in enumerate(vids, 1):
-            f = folder / f"{i:02d}_{safe(title)}.txt"
-            header = f"TITLE: {title}\nURL: https://www.youtube.com/shorts/{vid}\n"
+            f = folder / f"{vid}.txt"
+            video_url = f"https://www.youtube.com/shorts/{vid}" if args.mode == "short" else f"https://www.youtube.com/watch?v={vid}"
+            header = f"TITLE: {title}\nURL: {video_url}\n"
 
             if f.exists() and f.stat().st_size > 0:
                 text = f.read_text(encoding="utf-8").split("\n\n", 1)[-1].strip()
