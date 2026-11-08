@@ -89,5 +89,31 @@ are preserved. Install
 `yt-dlp` and `youtube-transcript-api` with pip if needed. YouTube rate limits or
 unavailable captions are recorded in `transcripts/missing.txt` and return exit code 1.
 
+The downloader prefers one native English caption track, then another native
+language, without automatically translated tracks. It paces subtitle requests and
+retries HTTP 429/API blocking twice with 30s/60s backoff. A longer `Retry-After`
+stops the run instead of retrying early. Persistent blocking stops further network
+requests and preserves saved transcripts and any existing combined file. Wait and
+rerun the same command to resume; the script cannot clear YouTube's IP block.
+
+If captions remain blocked but audio downloads work, use local speech recognition:
+
+```powershell
+python get_transcripts.py --longform "@jamesjani" --transcribe
+```
+
+This skips caption requests entirely. It requires `faster-whisper` and a cached
+`small` model, uses CPU/int8, and saves labeled recognition results separately in
+`transcripts/<handle>/<mode>/transcribed/`. Audio is cached under its `_raw/`
+folder for resuming. No model is downloaded automatically. To install/cache once:
+
+```powershell
+pip install faster-whisper
+python -c "from faster_whisper import WhisperModel; WhisperModel('small', device='cpu', compute_type='int8')"
+```
+
+Speech recognition can mishear words, names and numbers; review the output. This
+mode still requires access to channel listings and downloadable audio.
+
 Run focused tests with `python -m unittest discover -s scripts/get_transcript`
 from the repository root.

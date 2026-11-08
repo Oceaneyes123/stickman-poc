@@ -6,6 +6,9 @@ out/
 coverage/
 *.tsbuildinfo
 
+# Downloaded audio for local transcript generation
+/scripts/get_transcript/transcripts/*/*/transcribed/_raw/
+
 # Local configuration and secrets
 .env
 .env.*
