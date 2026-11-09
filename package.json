@@ -28,6 +28,11 @@
     "typescript": "5.9.3"
   },
   "scripts": {
+    "storyboard:stills": "node --experimental-strip-types scripts/render-storyboard.ts",
+    "narrate": "node --experimental-strip-types scripts/narrate.ts",
+    "narrate:timing": "python scripts/time_narration.py",
+    "narrate:review": "node --experimental-strip-types scripts/render-timing-review.ts",
+    "opening:stills": "node --experimental-strip-types scripts/render-opening-stills.ts",
     "walking:stills": "node --experimental-strip-types scripts/render-bank.ts --walking --stills",
     "render:walking": "npm run check && node --experimental-strip-types scripts/render-bank.ts --walking",
     "dev": "remotion studio",
@@ -35,7 +40,8 @@
     "upgrade": "remotion upgrade",
     "lint": "eslint src scripts && tsc",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
-    "check": "npm run lint && npm test",
+    "test:timing": "python -m unittest discover -s tests -p test_narration_timing.py",
+    "check": "npm run lint && npm test && npm run test:timing",
     "render": "npm run render:movement",
     "stills": "npm run movement:stills",
     "render:gallery": "node --experimental-strip-types scripts/render-bank.ts --gallery",
@@ -43,7 +49,8 @@
     "bank:stills": "node --experimental-strip-types scripts/render-bank.ts --stills",
     "render:bank": "npm run check && node --experimental-strip-types scripts/render-bank.ts",
     "movement:stills": "node --experimental-strip-types scripts/render-bank.ts --movement --stills",
-    "render:movement": "npm run check && node --experimental-strip-types scripts/render-bank.ts --movement"
+    "render:movement": "npm run check && node --experimental-strip-types scripts/render-bank.ts --movement",
+    "opening:render": "node --experimental-strip-types scripts/render-opening-film.ts"
   },
   "allowScripts": {
     "esbuild": false

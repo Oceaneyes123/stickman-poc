@@ -1,0 +1,155 @@
+{
+  "fps": 30,
+  "tailMs": 0,
+  "endCue": "p002-s004",
+  "shots": [
+    {
+      "id": "S01-raise",
+      "shot": "s01-a-raise",
+      "cue": "p001-s001",
+      "cameraFrom": "s01-a-raise",
+      "cameraTo": "s01-a-raise"
+    },
+    {
+      "id": "S01-reaction",
+      "shot": "s01-b-reaction-close",
+      "cue": "p001-s002",
+      "cameraFrom": "s01-b-three-months-later",
+      "cameraTo": "s01-b-reaction-close"
+    },
+    {
+      "id": "S02-apartment",
+      "shot": "s02-a-apartment",
+      "cue": "p001-s003",
+      "cameraFrom": "s02-a-apartment",
+      "cameraTo": "s02-a-apartment-wide"
+    },
+    {
+      "id": "S02-rental",
+      "shot": "s02-b-rental",
+      "cue": "p001-s004"
+    },
+    {
+      "id": "S02-services",
+      "shot": "s02-c-services",
+      "cue": "p001-s005",
+      "cameraFrom": "s02-c-services",
+      "cameraTo": "s02-c-services"
+    },
+    {
+      "id": "S03-progress",
+      "shot": "s02-a-apartment",
+      "cue": "p001-s006",
+      "cameraFrom": "s02-a-apartment-wide",
+      "cameraTo": "s02-a-apartment"
+    },
+    {
+      "id": "S03-account",
+      "shot": "s03-transfer-comparison",
+      "cue": "p001-s007"
+    },
+    {
+      "id": "S03-smaller",
+      "shot": "s03-transfer-comparison-insert",
+      "cue": "p001-s008",
+      "cameraFrom": "s03-transfer-comparison",
+      "cameraTo": "s03-transfer-comparison-insert"
+    },
+    {
+      "id": "S04-work",
+      "shot": "s04-a-still-working",
+      "cue": "p001-s009"
+    },
+    {
+      "id": "S04-commitments",
+      "shot": "s04-b-commitments",
+      "cue": "p001-s012",
+      "cameraFrom": "s04-b-commitments",
+      "cameraTo": "s04-b-commitments"
+    },
+    {
+      "id": "S05-friends",
+      "shot": "s05-equal-start",
+      "cue": "p001-s013",
+      "cameraFrom": "s05-equal-start",
+      "cameraTo": "s05-equal-start"
+    },
+    {
+      "id": "S06-income",
+      "shot": "s06-a-income",
+      "cue": "p002-s001",
+      "cameraFrom": "s06-a-income",
+      "cameraTo": "s06-a-income"
+    },
+    {
+      "id": "S06-remainder",
+      "shot": "s06-b-remainder",
+      "cue": "p002-s002",
+      "cameraFrom": "s06-b-remainder",
+      "cameraTo": "s06-b-remainder"
+    },
+    {
+      "id": "S06-transfer",
+      "shot": "s06-c-transfer",
+      "cue": "p002-s003",
+      "cameraFrom": "s06-a-income",
+      "cameraTo": "s06-c-transfer"
+    }
+  ],
+  "markers": [
+    {
+      "id": "raise",
+      "sceneId": "S01-raise",
+      "cueId": "p001-s001",
+      "wordId": "p001-w004"
+    },
+    {
+      "id": "worry",
+      "sceneId": "S01-reaction",
+      "cueId": "p001-s002",
+      "wordId": "p001-w012"
+    },
+    {
+      "id": "open",
+      "sceneId": "S03-account",
+      "cueId": "p001-s007",
+      "wordId": "p001-w049"
+    },
+    {
+      "id": "smaller",
+      "sceneId": "S03-smaller",
+      "cueId": "p001-s008",
+      "wordId": "p001-w060"
+    },
+    {
+      "id": "income",
+      "sceneId": "S06-income",
+      "cueId": "p002-s001",
+      "wordId": "p002-w007"
+    },
+    {
+      "id": "expenses",
+      "sceneId": "S06-remainder",
+      "cueId": "p002-s002",
+      "wordId": "p002-w013"
+    },
+    {
+      "id": "remaining",
+      "sceneId": "S06-remainder",
+      "cueId": "p002-s002",
+      "wordId": "p002-w019"
+    },
+    {
+      "id": "transfer",
+      "sceneId": "S06-transfer",
+      "cueId": "p002-s003",
+      "wordId": "p002-w022"
+    },
+    {
+      "id": "saved",
+      "sceneId": "S06-transfer",
+      "cueId": "p002-s003",
+      "wordId": "p002-w026"
+    }
+  ]
+}

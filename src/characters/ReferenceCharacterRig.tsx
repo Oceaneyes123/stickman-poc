@@ -65,16 +65,12 @@ export const CharacterFace = ({
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <circle cx={-40 + 5 * turn} cy={3} r={5} fill={K.paper} />
-      <circle
-        cx={40 - 5 * turn}
-        cy={3}
-        r={5}
-        fill={K.paper}
-        opacity={1 - turn}
-      />
       <path
-        d="M 0 -42 C 25 -42 42 -24 42 0 C 42 26 24 43 0 43 C -24 43 -42 26 -42 0 C -42 -24 -25 -42 0 -42 Z"
+        d={
+          identity === "Sam"
+            ? "M -1 -42 C 24 -43 40 -25 40 -1 C 41 24 25 42 2 43 C -23 44 -43 27 -43 2 C -44 -22 -26 -41 -1 -42 Z"
+            : "M 1 -42 C 26 -41 43 -23 43 2 C 43 26 23 44 -2 43 C -24 42 -40 24 -40 -1 C -40 -25 -24 -43 1 -42 Z"
+        }
         fill={K.paper}
         strokeWidth={3.5}
         transform={`scale(${1 - 0.12 * turn},1)`}

@@ -1,5 +1,11 @@
 # Reference-led character rig
 
+Both heads are hairless and earless. Their silhouettes have subtle asymmetry:
+Sam has a fuller left cheek and flatter right temple; Alex has the reverse
+contour with a slightly narrower lower face. Facial features and round glasses
+retain their existing positions. This applies to every expression and to the
+existing turn projection; the legacy rig remains unchanged.
+
 `ReferenceCharacterRig.tsx` follows the clothing and face direction supplied in `../../references/character-reference.png`: Sam's blue hoodie, Alex's white collared shirt and round glasses, larger white faces, dark outlines, small hands and simple expressive silhouettes. Both characters are now hairless at the user's request. The SVG artwork is authored in TSX; the reference PNG is not embedded or traced as a raster asset.
 
 This is the current character rig. `StickmanRig.tsx` remains for shared scene templates and `ComponentGallery`; those imports have not been migrated. The old POC film has been removed.
