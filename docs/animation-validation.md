@@ -337,3 +337,114 @@ character and gallery frames were regenerated, and the existing review decoded.
   No audio, timing, existing MP4, or S01–S06 still packet was regenerated. These
   are storyboard states only; S07–S67 motion, temporal reveals, physical acting,
   and audiovisual sync remain unimplemented and unapproved.
+
+## Cinematic reference sequences and textured backdrop — 2026-11-09
+
+- Completed the scoped architecture audit in `docs/cinematic-audit.md`, then
+  implemented S12, S21–S22 and S50–S52 only. Current review packet is
+  `out/001-lifestyle-creep/cinematic-references-v3/index.html`; each sequence has a
+  narrated MP4, compiled direction, frame index and contact sheets. The detailed
+  file/reuse/design/limitations report is `docs/cinematic-implementation.md`.
+- Added flexible layered narrative/close-up/comparison/reveal/symbolic composition
+  helpers, shared stage coordinates and constrained hand targeting, and 48 typed
+  cue/word-driven action/camera/prop/reveal beats around the existing compiler.
+  Preserved the accepted rig, gait/IK constraints, financial calculations, source
+  narration, cue IDs and sequence order. No hardcoded narration seconds in graphics.
+- User revised the backdrop during implementation: remove all walls, windows and
+  floor, keep foreground, use a rough texture. Final references use fixed seeded
+  SVG paper grain behind all artwork. Architecture, doors and rugs are absent;
+  characters, furniture, props and financial graphics remain. Existing approved
+  packets and the rest of the episode were not regenerated.
+- S12 implements phone reach/lift/read/return, grounded laptop-carry walking,
+  two-handed desk placement, release/open and a satisfied hold. S21–S22 keeps one
+  desk/raise arrangement continuous through the rent pullback and $80 reveal.
+  S50–S52 files dated contributions, separates $1,560/$2,400/$840 period figures
+  from $380/$800/$420 Month 3 figures, and ends with the different benefits.
+- `npm run check` passes ESLint, strict TypeScript, 72 TypeScript tests and
+  5 Python tests. Focused checks cover cue/word resolution, overlaps/holds, target
+  validity, camera bounds, deterministic seeking, fixed segment lengths, planted
+  walking contacts, stationary laptop placement and lid grip, and reveal ordering.
+  Legacy bank tests pass after moving coordinate helpers into shared staging.
+- All exports are 1920×1080, 30 fps, H.264/yuv420p with AAC, at 430, 393 and
+  1,083 frames. All three pass complete decode. Inspected all 162 half-scale
+  action/boundary samples, final encoded checks, and a legacy-gallery sample.
+  Every sample retains foreground and an identical fixed-texture corner patch.
+- Source excerpts contain 688,320; 628,964; and 1,732,969 samples respectively,
+  and match the original master exactly. Encoded zero-offset correlations are
+  0.99996319, 0.99996127 and 0.99996692. Single-endpoint frame rounding leaves
+  192 unencoded apartment tail samples (4 ms; peak 6/32768); other exports include
+  the entire excerpt plus codec padding. Script, master and phrase/word cue hashes
+  remain unchanged. See the packet's `verification-summary.json`.
+- V1 retains the earlier architectural still study. An intermediate v2 export
+  exposed a CSS stacking error that covered the foreground with texture; it was
+  stopped and preserved. V3 explicitly layers artwork above the texture and adds
+  a foreground preflight before encoding. No approved render was overwritten.
+- Source ASR/listening flags remain unchanged. Technical/sample checks do not
+  establish full-speed human creative or listening approval. The reference rig
+  remains front/three-quarter 2D; later signing, rear-view and vehicle acting are
+  outside this reference scope. Stop for visual approval before episode-wide work.
+
+## Money figures only — 2026-11-09
+
+- Applied the user's text restriction to the three cinematic references. Removed
+  document labels, names, month/period headings, allocation words and contribution
+  captions. All 11 remaining visible text elements render currency amounts only.
+  Narration still supplies the context; financial values and reveal frames are
+  unchanged. The textured backdrop, foreground and choreography are preserved.
+- Current packet: `out/001-lifestyle-creep/cinematic-references-v4/index.html`.
+  V3 remains intact. Rerendered all three MP4s at their original 430/393/1,083
+  frame counts. `npm run check` passes 72 TypeScript and 5 Python tests, lint and
+  strict types. All exports pass metadata and full decode; all 162 sampled frames
+  retain foreground and identical fixed-texture patches. Inspected financial
+  frames extracted from the encoded movies to confirm the label removal.
+- Source narration and cue hashes match; audio correlations remain 0.99996319,
+  0.99996127 and 0.99996692 at zero offset. No new speech, retiming or episode-wide
+  regeneration. Creative and listening approval remain pending.
+
+## Unified S01–S67 storyboard review — 2026-11-09
+
+- Added `npm run storyboard:all` and assembled
+  `out/001-lifestyle-creep/full-storyboard-v1/index.html`: all 67 scenes and
+  92 existing images, paired with exact canonical narration. Includes S01–S06
+  opening studies, the remaining storyboard packet/inserts, and scene-bounded
+  frames from the latest v4 references for S12/S21/S22/S50/S51/S52.
+- Marks all 61 earlier-study scenes clearly, including their older text and
+  architectural backgrounds. No claim that these scenes follow the current
+  cinematic direction. No new animation, source-image edits, timing change or
+  full-episode style extension was performed.
+- Assembler asserts ordered complete scene coverage, narration matches, valid
+  source beats and image files. HTML verification confirms 67 narration pairs,
+  92 images, unique scene anchors, and all local image/video/review links.
+  ESLint and strict TypeScript pass. No runtime scene behavior changed; existing
+  animation tests were not rerun. Creative approval remains separate.
+
+## Complete cinematic storyboard design — 2026-11-09
+
+- Current still-only review:
+  `out/001-lifestyle-creep/storyboard-design-v3/review/index.html`.
+  All 67 scenes, including S01–S06, now use the current visual direction.
+  Contains 85 new proposed panels for 61 scenes plus 14 unchanged frames from
+  the six v4 reference scenes. No new film, narration or timing was generated.
+- Reused the accepted rig, constrained hand placement, paper backdrop,
+  comparison layout, furniture and reference props. Added foreground-only
+  vehicle and decision props. Only currency figures appear inside images;
+  narration and review notes remain outside them. No room walls, windows,
+  architectural doors, floors or rugs are drawn. Vehicle glazing remains part
+  of the foreground vehicle prop.
+- Inspected every first-pass panel through the scene and supplemental contact
+  sheets. Fixed the invisible edge-on carried laptop, loose keys, small opening
+  paycheck, unequal starting conditions, repeated comparison and car/body overlap.
+  Removed annual-example boundary lines crossing Sam. Inspected the changed
+  final panels; the other 88 PNGs match their inspected first-pass hashes.
+- `npm run check` passes lint, strict TypeScript, 74 TypeScript tests and 5 Python
+  tests. New focused tests cover scene/shot coverage, camera bounds, preserved
+  reference reuse, still-only rendering and currency-only typography routing.
+  Export verification confirms 99 PNGs at 960×540 from 1920×1080 compositions,
+  67 narration pairs, unique ordered scene IDs, valid local links, and zero
+  new MP4/WAV/MP3 files. Source script/audio/cue/word hashes match v4.
+  Evidence: `storyboard-design-v3/verification.json` and
+  `out/storyboard-design-check.log`.
+- V1 and v2 intermediate packets and earlier approved outputs remain intact.
+  The new designs are static proposals awaiting human visual approval.
+  Episode-wide animation, transitions and audiovisual synchronization were not
+  implemented or evaluated. Existing draft timing/listening flags are unchanged.

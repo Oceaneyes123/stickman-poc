@@ -1,3 +1,4 @@
+import { toWorld, toLocal, type StageActor } from "../characters/staging.ts";
 import { mix, type Point } from "../characters/kinematics.ts";
 import {
   type Skeleton,
@@ -25,21 +26,8 @@ export const smooth = (frame: number, from: number, to: number) => {
 };
 const p = (x: number, y: number): Point => ({ x, y });
 export type BankRig = Skeleton;
-export type BankActor = {
-  x: number;
-  y: number;
-  scale: number;
-  facing: 1 | -1;
-  rig: BankRig;
-};
-export const toWorld = (actor: BankActor, point: Point): Point => ({
-  x: actor.x + point.x * actor.scale * actor.facing,
-  y: actor.y + point.y * actor.scale,
-});
-const toLocal = (actor: BankActor, point: Point): Point => ({
-  x: (point.x - actor.x) / (actor.scale * actor.facing),
-  y: (point.y - actor.y) / actor.scale,
-});
+export type BankActor = StageActor;
+export { toWorld } from "../characters/staging.ts";
 export const samePoint = (a: Point, b: Point) =>
   Math.hypot(a.x - b.x, a.y - b.y);
 

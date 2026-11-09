@@ -28,6 +28,9 @@
     "typescript": "5.9.3"
   },
   "scripts": {
+    "storyboard:design": "node --experimental-strip-types scripts/render-cinematic-storyboard.ts",
+    "storyboard:all": "node --experimental-strip-types scripts/assemble-full-storyboard.ts",
+    "cinematic:render": "node --experimental-strip-types scripts/render-cinematic-references.ts",
     "storyboard:stills": "node --experimental-strip-types scripts/render-storyboard.ts",
     "narrate": "node --experimental-strip-types scripts/narrate.ts",
     "narrate:timing": "python scripts/time_narration.py",

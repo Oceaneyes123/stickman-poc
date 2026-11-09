@@ -1,0 +1,1018 @@
+{
+  "fps": 30,
+  "references": [
+    {
+      "id": "apartment",
+      "title": "S12 \u2014 The apartment becomes possible",
+      "startCue": "p004-s001",
+      "endCue": "p004-s004",
+      "scenes": [
+        {
+          "id": "S12",
+          "cueId": "p004-s001"
+        }
+      ],
+      "objects": [
+        "Sam",
+        "phone",
+        "laptop",
+        "desk",
+        "guest-chair",
+        "camera"
+      ],
+      "beats": [
+        {
+          "id": "look-phone",
+          "sceneId": "S12",
+          "cueId": "p004-s001",
+          "durationFrames": 12,
+          "holdFrames": 0,
+          "track": "actor:Sam",
+          "targets": [
+            "Sam",
+            "phone"
+          ],
+          "action": "look",
+          "next": "hold",
+          "expression": "curious",
+          "character": "Sam",
+          "prop": {
+            "id": "phone",
+            "interaction": "look"
+          }
+        },
+        {
+          "id": "reach-phone",
+          "sceneId": "S12",
+          "cueId": "p004-s001",
+          "durationFrames": 18,
+          "holdFrames": 0,
+          "track": "actor:Sam",
+          "targets": [
+            "Sam",
+            "phone"
+          ],
+          "action": "reach",
+          "next": "hold",
+          "offsetFrames": 12,
+          "character": "Sam",
+          "prop": {
+            "id": "phone",
+            "interaction": "reach"
+          }
+        },
+        {
+          "id": "lift-phone",
+          "sceneId": "S12",
+          "cueId": "p004-s001",
+          "durationFrames": 24,
+          "holdFrames": 0,
+          "track": "actor:Sam",
+          "targets": [
+            "Sam",
+            "phone"
+          ],
+          "action": "lift",
+          "next": "hold",
+          "offsetFrames": 30,
+          "character": "Sam",
+          "prop": {
+            "id": "phone",
+            "interaction": "attach"
+          }
+        },
+        {
+          "id": "read-listing",
+          "sceneId": "S12",
+          "cueId": "p004-s002",
+          "durationFrames": 48,
+          "holdFrames": 0,
+          "track": "actor:Sam",
+          "targets": [
+            "Sam",
+            "phone"
+          ],
+          "action": "read",
+          "next": "hold",
+          "expression": "curious",
+          "character": "Sam",
+          "prop": {
+            "id": "phone",
+            "interaction": "lift"
+          }
+        },
+        {
+          "id": "listing-camera",
+          "sceneId": "S12",
+          "cueId": "p004-s002",
+          "durationFrames": 24,
+          "holdFrames": 0,
+          "track": "camera",
+          "targets": [
+            "camera",
+            "phone"
+          ],
+          "action": "camera",
+          "next": "hold",
+          "wordId": "p004-w009",
+          "camera": {
+            "kind": "push",
+            "from": [
+              0,
+              0,
+              1920,
+              1080
+            ],
+            "to": [
+              300,
+              200,
+              1300,
+              731.25
+            ]
+          }
+        },
+        {
+          "id": "return-phone",
+          "sceneId": "S12",
+          "cueId": "p004-s002",
+          "durationFrames": 18,
+          "holdFrames": 0,
+          "track": "actor:Sam",
+          "targets": [
+            "Sam",
+            "phone"
+          ],
+          "action": "return",
+          "next": "hold",
+          "wordId": "p004-w012",
+          "character": "Sam",
+          "prop": {
+            "id": "phone",
+            "interaction": "place"
+          }
+        },
+        {
+          "id": "enter-room",
+          "sceneId": "S12",
+          "cueId": "p004-s002",
+          "durationFrames": 78,
+          "holdFrames": 0,
+          "track": "actor:Sam",
+          "targets": [
+            "Sam",
+            "laptop"
+          ],
+          "action": "walk",
+          "next": "hold",
+          "wordId": "p004-w018",
+          "expression": "relieved",
+          "character": "Sam",
+          "prop": {
+            "id": "laptop",
+            "interaction": "attach"
+          }
+        },
+        {
+          "id": "arrival-camera",
+          "sceneId": "S12",
+          "cueId": "p004-s002",
+          "durationFrames": 1,
+          "holdFrames": 0,
+          "track": "camera",
+          "targets": [
+            "camera"
+          ],
+          "action": "camera",
+          "next": "hold",
+          "wordId": "p004-w018",
+          "camera": {
+            "kind": "match-cut",
+            "from": [
+              0,
+              0,
+              1920,
+              1080
+            ],
+            "to": [
+              0,
+              0,
+              1920,
+              1080
+            ]
+          }
+        },
+        {
+          "id": "notice-desk",
+          "sceneId": "S12",
+          "cueId": "p004-s003",
+          "durationFrames": 18,
+          "holdFrames": 0,
+          "track": "gaze:Sam",
+          "targets": [
+            "Sam",
+            "desk"
+          ],
+          "action": "look",
+          "next": "hold",
+          "wordId": "p004-w025",
+          "expression": "curious",
+          "prop": {
+            "id": "desk",
+            "interaction": "look"
+          }
+        },
+        {
+          "id": "place-laptop",
+          "sceneId": "S12",
+          "cueId": "p004-s003",
+          "durationFrames": 21,
+          "holdFrames": 0,
+          "track": "actor:Sam",
+          "targets": [
+            "Sam",
+            "laptop",
+            "desk"
+          ],
+          "action": "place",
+          "next": "hold",
+          "wordId": "p004-w028",
+          "character": "Sam",
+          "prop": {
+            "id": "laptop",
+            "interaction": "place"
+          }
+        },
+        {
+          "id": "desk-camera",
+          "sceneId": "S12",
+          "cueId": "p004-s003",
+          "durationFrames": 18,
+          "holdFrames": 0,
+          "track": "camera",
+          "targets": [
+            "camera",
+            "laptop"
+          ],
+          "action": "camera",
+          "next": "hold",
+          "wordId": "p004-w028",
+          "camera": {
+            "kind": "push",
+            "from": [
+              0,
+              0,
+              1920,
+              1080
+            ],
+            "to": [
+              560,
+              210,
+              1100,
+              618.75
+            ]
+          }
+        },
+        {
+          "id": "release-laptop",
+          "sceneId": "S12",
+          "cueId": "p004-s003",
+          "durationFrames": 12,
+          "holdFrames": 0,
+          "track": "actor:Sam",
+          "targets": [
+            "Sam",
+            "laptop"
+          ],
+          "action": "release",
+          "next": "hold",
+          "wordId": "p004-w029",
+          "character": "Sam",
+          "prop": {
+            "id": "laptop",
+            "interaction": "release"
+          }
+        },
+        {
+          "id": "open-laptop",
+          "sceneId": "S12",
+          "cueId": "p004-s003",
+          "durationFrames": 24,
+          "holdFrames": 0,
+          "track": "actor:Sam",
+          "targets": [
+            "Sam",
+            "laptop"
+          ],
+          "action": "open",
+          "next": "hold",
+          "wordId": "p004-w030",
+          "offsetFrames": 6,
+          "character": "Sam",
+          "prop": {
+            "id": "laptop",
+            "interaction": "open"
+          }
+        },
+        {
+          "id": "settle-room",
+          "sceneId": "S12",
+          "cueId": "p004-s003",
+          "durationFrames": 24,
+          "holdFrames": 0,
+          "track": "actor:Sam",
+          "targets": [
+            "Sam",
+            "desk"
+          ],
+          "action": "settle",
+          "next": "hold",
+          "wordId": "p004-w033",
+          "expression": "relieved",
+          "character": "Sam"
+        },
+        {
+          "id": "space-camera",
+          "sceneId": "S12",
+          "cueId": "p004-s003",
+          "durationFrames": 24,
+          "holdFrames": 0,
+          "track": "camera",
+          "targets": [
+            "camera",
+            "guest-chair"
+          ],
+          "action": "camera",
+          "next": "hold",
+          "wordId": "p004-w033",
+          "camera": {
+            "kind": "pullback",
+            "from": [
+              560,
+              210,
+              1100,
+              618.75
+            ],
+            "to": [
+              0,
+              0,
+              1920,
+              1080
+            ]
+          }
+        },
+        {
+          "id": "notice-space",
+          "sceneId": "S12",
+          "cueId": "p004-s003",
+          "durationFrames": 18,
+          "holdFrames": 45,
+          "track": "actor:Sam",
+          "targets": [
+            "Sam",
+            "guest-chair"
+          ],
+          "action": "look",
+          "next": "hold",
+          "wordId": "p004-w037",
+          "expression": "relieved",
+          "character": "Sam"
+        },
+        {
+          "id": "release-phone",
+          "sceneId": "S12",
+          "cueId": "p004-s002",
+          "wordId": "p004-w012",
+          "offsetFrames": 18,
+          "durationFrames": 12,
+          "holdFrames": 0,
+          "track": "actor:Sam",
+          "targets": [
+            "Sam",
+            "phone"
+          ],
+          "action": "release",
+          "character": "Sam",
+          "expression": "confident",
+          "prop": {
+            "id": "phone",
+            "interaction": "release"
+          },
+          "next": "match-cut"
+        }
+      ]
+    },
+    {
+      "id": "raise-illusion",
+      "title": "S21\u2013S22 \u2014 Spending the same raise once",
+      "startCue": "p006-s012",
+      "endCue": "p007-s003",
+      "scenes": [
+        {
+          "id": "S21",
+          "cueId": "p006-s012"
+        },
+        {
+          "id": "S22",
+          "cueId": "p007-s001"
+        }
+      ],
+      "objects": [
+        "Sam",
+        "car-quote",
+        "raise",
+        "rent",
+        "allocation",
+        "remainder",
+        "camera"
+      ],
+      "beats": [
+        {
+          "id": "quote-camera",
+          "sceneId": "S21",
+          "cueId": "p006-s012",
+          "durationFrames": 1,
+          "holdFrames": 0,
+          "track": "camera",
+          "targets": [
+            "camera",
+            "car-quote",
+            "raise"
+          ],
+          "action": "camera",
+          "next": "hold",
+          "camera": {
+            "kind": "close",
+            "from": [
+              850,
+              540,
+              880,
+              495
+            ],
+            "to": [
+              850,
+              540,
+              880,
+              495
+            ]
+          }
+        },
+        {
+          "id": "quote-amount",
+          "sceneId": "S21",
+          "cueId": "p006-s012",
+          "durationFrames": 12,
+          "holdFrames": 0,
+          "track": "reveal:quote",
+          "targets": [
+            "car-quote"
+          ],
+          "action": "reveal",
+          "next": "hold",
+          "financial": "transport"
+        },
+        {
+          "id": "tap-quote",
+          "sceneId": "S21",
+          "cueId": "p006-s012",
+          "durationFrames": 24,
+          "holdFrames": 0,
+          "track": "actor:Sam",
+          "targets": [
+            "Sam",
+            "car-quote"
+          ],
+          "action": "reach",
+          "next": "hold",
+          "expression": "confident",
+          "character": "Sam",
+          "prop": {
+            "id": "car-quote",
+            "interaction": "reach"
+          }
+        },
+        {
+          "id": "manageable",
+          "sceneId": "S21",
+          "cueId": "p006-s012",
+          "durationFrames": 18,
+          "holdFrames": 0,
+          "track": "actor:Sam",
+          "targets": [
+            "Sam"
+          ],
+          "action": "react",
+          "next": "hold",
+          "wordId": "p006-w104",
+          "expression": "confident",
+          "character": "Sam"
+        },
+        {
+          "id": "raise-amount",
+          "sceneId": "S21",
+          "cueId": "p006-s012",
+          "durationFrames": 12,
+          "holdFrames": 0,
+          "track": "reveal:raise",
+          "targets": [
+            "raise"
+          ],
+          "action": "reveal",
+          "next": "hold",
+          "wordId": "p006-w108",
+          "financial": "raise"
+        },
+        {
+          "id": "reveal-rent-camera",
+          "sceneId": "S22",
+          "cueId": "p007-s001",
+          "durationFrames": 42,
+          "holdFrames": 0,
+          "track": "camera",
+          "targets": [
+            "camera",
+            "rent"
+          ],
+          "action": "camera",
+          "next": "hold",
+          "camera": {
+            "kind": "pullback",
+            "from": [
+              850,
+              540,
+              880,
+              495
+            ],
+            "to": [
+              0,
+              0,
+              1920,
+              1080
+            ]
+          }
+        },
+        {
+          "id": "rent-amount",
+          "sceneId": "S22",
+          "cueId": "p007-s001",
+          "durationFrames": 12,
+          "holdFrames": 0,
+          "track": "reveal:rent",
+          "targets": [
+            "rent"
+          ],
+          "action": "reveal",
+          "next": "hold",
+          "wordId": "p007-w004",
+          "financial": "rent"
+        },
+        {
+          "id": "realize-commitment",
+          "sceneId": "S22",
+          "cueId": "p007-s001",
+          "durationFrames": 36,
+          "holdFrames": 0,
+          "track": "actor:Sam",
+          "targets": [
+            "Sam",
+            "rent"
+          ],
+          "action": "react",
+          "next": "hold",
+          "wordId": "p007-w004",
+          "expression": "worried",
+          "character": "Sam",
+          "prop": {
+            "id": "rent",
+            "interaction": "look"
+          }
+        },
+        {
+          "id": "allocate-once",
+          "sceneId": "S22",
+          "cueId": "p007-s002",
+          "durationFrames": 30,
+          "holdFrames": 0,
+          "track": "allocation",
+          "targets": [
+            "allocation",
+            "raise",
+            "rent",
+            "car-quote"
+          ],
+          "action": "allocate",
+          "next": "hold",
+          "financial": "raiseRemainder"
+        },
+        {
+          "id": "eighty-remains",
+          "sceneId": "S22",
+          "cueId": "p007-s002",
+          "durationFrames": 12,
+          "holdFrames": 0,
+          "track": "reveal:remainder",
+          "targets": [
+            "remainder"
+          ],
+          "action": "reveal",
+          "next": "hold",
+          "wordId": "p007-w016",
+          "financial": "raiseRemainder"
+        },
+        {
+          "id": "check-whole-plan",
+          "sceneId": "S22",
+          "cueId": "p007-s002",
+          "durationFrames": 18,
+          "holdFrames": 20,
+          "track": "actor:Sam",
+          "targets": [
+            "Sam",
+            "allocation"
+          ],
+          "action": "settle",
+          "next": "hold",
+          "wordId": "p007-w020",
+          "expression": "thinking",
+          "character": "Sam"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "title": "S50\u2013S52 \u2014 Same raise, different benefits",
+      "startCue": "p017-s001",
+      "endCue": "p018-s001",
+      "scenes": [
+        {
+          "id": "S50",
+          "cueId": "p017-s001"
+        },
+        {
+          "id": "S51",
+          "cueId": "p017-s004"
+        },
+        {
+          "id": "S52",
+          "cueId": "p017-s009"
+        }
+      ],
+      "objects": [
+        "Sam",
+        "Alex",
+        "sam-receipts",
+        "alex-receipts",
+        "period-gap",
+        "monthly-gap",
+        "raise",
+        "sam-costs",
+        "alex-costs",
+        "desk",
+        "keys",
+        "camera"
+      ],
+      "beats": [
+        {
+          "id": "matched-rooms",
+          "sceneId": "S50",
+          "cueId": "p017-s001",
+          "durationFrames": 24,
+          "holdFrames": 0,
+          "track": "camera",
+          "targets": [
+            "Sam",
+            "Alex",
+            "camera"
+          ],
+          "action": "establish",
+          "next": "hold",
+          "camera": {
+            "kind": "wide",
+            "from": [
+              0,
+              0,
+              1920,
+              1080
+            ],
+            "to": [
+              0,
+              0,
+              1920,
+              1080
+            ]
+          }
+        },
+        {
+          "id": "alex-files",
+          "sceneId": "S50",
+          "cueId": "p017-s001",
+          "durationFrames": 72,
+          "holdFrames": 0,
+          "track": "actor:Alex",
+          "targets": [
+            "Alex",
+            "alex-receipts"
+          ],
+          "action": "file",
+          "next": "hold",
+          "wordId": "p017-w005",
+          "expression": "thinking",
+          "character": "Alex",
+          "prop": {
+            "id": "alex-receipts",
+            "interaction": "file"
+          }
+        },
+        {
+          "id": "alex-period-total",
+          "sceneId": "S50",
+          "cueId": "p017-s001",
+          "durationFrames": 12,
+          "holdFrames": 0,
+          "track": "reveal:alex",
+          "targets": [
+            "alex-receipts"
+          ],
+          "action": "reveal",
+          "next": "hold",
+          "wordId": "p017-w011",
+          "financial": "alexThreeMonths"
+        },
+        {
+          "id": "sam-files",
+          "sceneId": "S50",
+          "cueId": "p017-s001",
+          "durationFrames": 54,
+          "holdFrames": 0,
+          "track": "actor:Sam",
+          "targets": [
+            "Sam",
+            "sam-receipts"
+          ],
+          "action": "file",
+          "next": "hold",
+          "wordId": "p017-w012",
+          "offsetFrames": 6,
+          "expression": "thinking",
+          "character": "Sam",
+          "prop": {
+            "id": "sam-receipts",
+            "interaction": "file"
+          }
+        },
+        {
+          "id": "sam-period-total",
+          "sceneId": "S50",
+          "cueId": "p017-s002",
+          "durationFrames": 12,
+          "holdFrames": 0,
+          "track": "reveal:sam",
+          "targets": [
+            "sam-receipts"
+          ],
+          "action": "reveal",
+          "next": "hold",
+          "wordId": "p017-w015",
+          "financial": "samThreeMonths"
+        },
+        {
+          "id": "period-difference",
+          "sceneId": "S50",
+          "cueId": "p017-s003",
+          "durationFrames": 12,
+          "holdFrames": 0,
+          "track": "reveal:gap",
+          "targets": [
+            "period-gap"
+          ],
+          "action": "reveal",
+          "next": "hold",
+          "wordId": "p017-w020",
+          "financial": "periodGap"
+        },
+        {
+          "id": "close-period",
+          "sceneId": "S51",
+          "cueId": "p017-s004",
+          "durationFrames": 18,
+          "holdFrames": 0,
+          "track": "period",
+          "targets": [
+            "sam-receipts",
+            "alex-receipts",
+            "period-gap"
+          ],
+          "action": "close",
+          "next": "hold"
+        },
+        {
+          "id": "same-raise",
+          "sceneId": "S51",
+          "cueId": "p017-s005",
+          "durationFrames": 18,
+          "holdFrames": 0,
+          "track": "reveal:raise",
+          "targets": [
+            "raise"
+          ],
+          "action": "reveal",
+          "next": "hold",
+          "financial": "raise"
+        },
+        {
+          "id": "show-costs",
+          "sceneId": "S51",
+          "cueId": "p017-s006",
+          "durationFrames": 24,
+          "holdFrames": 0,
+          "track": "reveal:costs",
+          "targets": [
+            "sam-costs",
+            "alex-costs"
+          ],
+          "action": "reveal",
+          "next": "hold"
+        },
+        {
+          "id": "sam-checks-costs",
+          "sceneId": "S51",
+          "cueId": "p017-s006",
+          "durationFrames": 30,
+          "holdFrames": 0,
+          "track": "actor:Sam",
+          "targets": [
+            "Sam",
+            "sam-costs"
+          ],
+          "action": "point",
+          "next": "hold",
+          "expression": "thinking",
+          "character": "Sam"
+        },
+        {
+          "id": "alex-checks-plan",
+          "sceneId": "S51",
+          "cueId": "p017-s006",
+          "durationFrames": 30,
+          "holdFrames": 0,
+          "track": "actor:Alex",
+          "targets": [
+            "Alex",
+            "alex-costs"
+          ],
+          "action": "point",
+          "next": "hold",
+          "wordId": "p017-w041",
+          "expression": "thinking",
+          "character": "Alex"
+        },
+        {
+          "id": "monthly-mode",
+          "sceneId": "S51",
+          "cueId": "p017-s007",
+          "durationFrames": 18,
+          "holdFrames": 0,
+          "track": "period",
+          "targets": [
+            "sam-receipts",
+            "alex-receipts"
+          ],
+          "action": "change-period",
+          "next": "hold"
+        },
+        {
+          "id": "monthly-difference",
+          "sceneId": "S51",
+          "cueId": "p017-s007",
+          "durationFrames": 12,
+          "holdFrames": 0,
+          "track": "reveal:gap",
+          "targets": [
+            "monthly-gap"
+          ],
+          "action": "reveal",
+          "next": "hold",
+          "wordId": "p017-w052",
+          "financial": "monthlyGap"
+        },
+        {
+          "id": "alex-monthly",
+          "sceneId": "S51",
+          "cueId": "p017-s008",
+          "durationFrames": 12,
+          "holdFrames": 0,
+          "track": "reveal:alex",
+          "targets": [
+            "alex-receipts"
+          ],
+          "action": "reveal",
+          "next": "hold",
+          "wordId": "p017-w054",
+          "financial": "alexMonthly"
+        },
+        {
+          "id": "sam-monthly",
+          "sceneId": "S51",
+          "cueId": "p017-s008",
+          "durationFrames": 12,
+          "holdFrames": 0,
+          "track": "reveal:sam",
+          "targets": [
+            "sam-receipts"
+          ],
+          "action": "reveal",
+          "next": "hold",
+          "wordId": "p017-w057",
+          "financial": "samMonthly"
+        },
+        {
+          "id": "benefits-mode",
+          "sceneId": "S52",
+          "cueId": "p017-s009",
+          "durationFrames": 18,
+          "holdFrames": 0,
+          "track": "period",
+          "targets": [
+            "sam-receipts",
+            "alex-receipts",
+            "monthly-gap"
+          ],
+          "action": "change-period",
+          "next": "hold"
+        },
+        {
+          "id": "sam-benefit",
+          "sceneId": "S52",
+          "cueId": "p017-s009",
+          "durationFrames": 42,
+          "holdFrames": 0,
+          "track": "actor:Sam",
+          "targets": [
+            "Sam",
+            "desk",
+            "keys"
+          ],
+          "action": "point",
+          "next": "hold",
+          "wordId": "p017-w062",
+          "expression": "relieved",
+          "character": "Sam",
+          "prop": {
+            "id": "keys",
+            "interaction": "lift"
+          }
+        },
+        {
+          "id": "alex-benefit",
+          "sceneId": "S52",
+          "cueId": "p017-s009",
+          "durationFrames": 36,
+          "holdFrames": 0,
+          "track": "actor:Alex",
+          "targets": [
+            "Alex",
+            "alex-receipts"
+          ],
+          "action": "point",
+          "next": "hold",
+          "wordId": "p017-w070",
+          "expression": "relieved",
+          "character": "Alex"
+        },
+        {
+          "id": "sam-resolve",
+          "sceneId": "S52",
+          "cueId": "p017-s010",
+          "durationFrames": 24,
+          "holdFrames": 35,
+          "track": "actor:Sam",
+          "targets": [
+            "Sam",
+            "desk"
+          ],
+          "action": "settle",
+          "next": "hold",
+          "expression": "relieved",
+          "character": "Sam"
+        },
+        {
+          "id": "alex-resolve",
+          "sceneId": "S52",
+          "cueId": "p017-s010",
+          "durationFrames": 24,
+          "holdFrames": 35,
+          "track": "actor:Alex",
+          "targets": [
+            "Alex",
+            "alex-receipts"
+          ],
+          "action": "settle",
+          "next": "hold",
+          "expression": "relieved",
+          "character": "Alex"
+        }
+      ]
+    }
+  ],
+  "artDirection": "Rough paper backdrop; no walls, windows, doors, or floor surfaces. Keep characters, furniture, props, and financial graphics.",
+  "onScreenText": "Money amounts only; no labels, captions, names, or period headings."
+}

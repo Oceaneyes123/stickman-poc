@@ -1,0 +1,343 @@
+[
+  {
+    "id": "p004-s001",
+    "text": "Sam begins with the apartment.",
+    "startMs": 109400.625,
+    "endMs": 110660.625,
+    "wordIds": [
+      "p004-w001",
+      "p004-w002",
+      "p004-w003",
+      "p004-w004",
+      "p004-w005"
+    ]
+  },
+  {
+    "id": "p004-s002",
+    "text": "He's been browsing listings for months, and now one of them looks possible.",
+    "startMs": 111320.625,
+    "endMs": 115040.625,
+    "wordIds": [
+      "p004-w006",
+      "p004-w007",
+      "p004-w008",
+      "p004-w009",
+      "p004-w010",
+      "p004-w011",
+      "p004-w012",
+      "p004-w013",
+      "p004-w014",
+      "p004-w015",
+      "p004-w016",
+      "p004-w017",
+      "p004-w018"
+    ]
+  },
+  {
+    "id": "p004-s003",
+    "text": "The new place has a separate corner for his desk, decent light, and enough room to invite someone over without folding the furniture first.",
+    "startMs": 115700.625,
+    "endMs": 122960.625,
+    "wordIds": [
+      "p004-w019",
+      "p004-w020",
+      "p004-w021",
+      "p004-w022",
+      "p004-w023",
+      "p004-w024",
+      "p004-w025",
+      "p004-w026",
+      "p004-w027",
+      "p004-w028",
+      "p004-w029",
+      "p004-w030",
+      "p004-w031",
+      "p004-w032",
+      "p004-w033",
+      "p004-w034",
+      "p004-w035",
+      "p004-w036",
+      "p004-w037",
+      "p004-w038",
+      "p004-w039",
+      "p004-w040",
+      "p004-w041",
+      "p004-w042"
+    ]
+  },
+  {
+    "id": "p004-s004",
+    "text": "It costs $300 more each month.",
+    "startMs": 123740.625,
+    "endMs": 125900.625,
+    "wordIds": [
+      "p004-w043",
+      "p004-w044",
+      "p004-w045",
+      "p004-w046",
+      "p004-w047",
+      "p004-w048"
+    ]
+  },
+  {
+    "id": "p006-s012",
+    "text": "220 feels manageable beside the extra 600 in his paycheck.",
+    "startMs": 200027.97916666666,
+    "endMs": 203907.97916666666,
+    "wordIds": [
+      "p006-w102",
+      "p006-w103",
+      "p006-w104",
+      "p006-w105",
+      "p006-w106",
+      "p006-w107",
+      "p006-w108",
+      "p006-w109",
+      "p006-w110",
+      "p006-w111"
+    ]
+  },
+  {
+    "id": "p007-s001",
+    "text": "he's already using 300 of that 600 for the apartment.",
+    "startMs": 204271.39583333334,
+    "endMs": 207871.39583333334,
+    "wordIds": [
+      "p007-w001",
+      "p007-w002",
+      "p007-w003",
+      "p007-w004",
+      "p007-w005",
+      "p007-w006",
+      "p007-w007",
+      "p007-w008",
+      "p007-w009",
+      "p007-w010"
+    ]
+  },
+  {
+    "id": "p007-s002",
+    "text": "After the car change, only $80 of the raise remains available.",
+    "startMs": 208391.39583333334,
+    "endMs": 212471.39583333334,
+    "wordIds": [
+      "p007-w011",
+      "p007-w012",
+      "p007-w013",
+      "p007-w014",
+      "p007-w015",
+      "p007-w016",
+      "p007-w017",
+      "p007-w018",
+      "p007-w019",
+      "p007-w020",
+      "p007-w021"
+    ]
+  },
+  {
+    "id": "p007-s003",
+    "text": "In month 2, his illustrated spending reaches $3 ,120.",
+    "startMs": 213131.39583333334,
+    "endMs": 217191.39583333334,
+    "wordIds": [
+      "p007-w022",
+      "p007-w023",
+      "p007-w024",
+      "p007-w025",
+      "p007-w026",
+      "p007-w027",
+      "p007-w028",
+      "p007-w029",
+      "p007-w030"
+    ]
+  },
+  {
+    "id": "p017-s001",
+    "text": "Over the three months, Alex saves $800 each month, totaling $2 ,400.",
+    "startMs": 538909.4583333334,
+    "endMs": 544289.4583333334,
+    "wordIds": [
+      "p017-w001",
+      "p017-w002",
+      "p017-w003",
+      "p017-w004",
+      "p017-w005",
+      "p017-w006",
+      "p017-w007",
+      "p017-w008",
+      "p017-w009",
+      "p017-w010",
+      "p017-w011",
+      "p017-w012"
+    ]
+  },
+  {
+    "id": "p017-s002",
+    "text": "Sam saves $1 ,560.",
+    "startMs": 545029.4583333334,
+    "endMs": 547429.4583333334,
+    "wordIds": [
+      "p017-w013",
+      "p017-w014",
+      "p017-w015",
+      "p017-w016"
+    ]
+  },
+  {
+    "id": "p017-s003",
+    "text": "The difference is $840.",
+    "startMs": 547989.4583333334,
+    "endMs": 549589.4583333334,
+    "wordIds": [
+      "p017-w017",
+      "p017-w018",
+      "p017-w019",
+      "p017-w020"
+    ]
+  },
+  {
+    "id": "p017-s004",
+    "text": "No investment return created that gap.",
+    "startMs": 550369.4583333334,
+    "endMs": 552489.4583333334,
+    "wordIds": [
+      "p017-w021",
+      "p017-w022",
+      "p017-w023",
+      "p017-w024",
+      "p017-w025",
+      "p017-w026"
+    ]
+  },
+  {
+    "id": "p017-s005",
+    "text": "Alex didn't get a bigger raise.",
+    "startMs": 553109.4583333334,
+    "endMs": 554549.4583333334,
+    "wordIds": [
+      "p017-w027",
+      "p017-w028",
+      "p017-w029",
+      "p017-w030",
+      "p017-w031",
+      "p017-w032"
+    ]
+  },
+  {
+    "id": "p017-s006",
+    "text": "He spent less of the additional income and transferred more to savings.",
+    "startMs": 555209.4583333334,
+    "endMs": 558529.4583333334,
+    "wordIds": [
+      "p017-w033",
+      "p017-w034",
+      "p017-w035",
+      "p017-w036",
+      "p017-w037",
+      "p017-w038",
+      "p017-w039",
+      "p017-w040",
+      "p017-w041",
+      "p017-w042",
+      "p017-w043",
+      "p017-w044"
+    ]
+  },
+  {
+    "id": "p017-s007",
+    "text": "By month three, their monthly transfers are $420 apart.",
+    "startMs": 559189.4583333334,
+    "endMs": 563009.4583333334,
+    "wordIds": [
+      "p017-w045",
+      "p017-w046",
+      "p017-w047",
+      "p017-w048",
+      "p017-w049",
+      "p017-w050",
+      "p017-w051",
+      "p017-w052",
+      "p017-w053"
+    ]
+  },
+  {
+    "id": "p017-s008",
+    "text": "$800 for Alex, $380 for Sam.",
+    "startMs": 563609.4583333334,
+    "endMs": 566569.4583333334,
+    "wordIds": [
+      "p017-w054",
+      "p017-w055",
+      "p017-w056",
+      "p017-w057",
+      "p017-w058",
+      "p017-w059"
+    ]
+  },
+  {
+    "id": "p017-s009",
+    "text": "Sam can point to his apartment and car, Alex can point to the extra money in his savings account.",
+    "startMs": 566569.4583333334,
+    "endMs": 572149.4583333334,
+    "wordIds": [
+      "p017-w060",
+      "p017-w061",
+      "p017-w062",
+      "p017-w063",
+      "p017-w064",
+      "p017-w065",
+      "p017-w066",
+      "p017-w067",
+      "p017-w068",
+      "p017-w069",
+      "p017-w070",
+      "p017-w071",
+      "p017-w072",
+      "p017-w073",
+      "p017-w074",
+      "p017-w075",
+      "p017-w076",
+      "p017-w077",
+      "p017-w078"
+    ]
+  },
+  {
+    "id": "p017-s010",
+    "text": "They've bought different things with the same increase.",
+    "startMs": 572749.4583333334,
+    "endMs": 574669.4583333334,
+    "wordIds": [
+      "p017-w079",
+      "p017-w080",
+      "p017-w081",
+      "p017-w082",
+      "p017-w083",
+      "p017-w084",
+      "p017-w085",
+      "p017-w086"
+    ]
+  },
+  {
+    "id": "p018-s001",
+    "text": "When Sam finally writes down the full list, his first instinct is to cancel everything.",
+    "startMs": 575012.9791666666,
+    "endMs": 580092.9791666666,
+    "wordIds": [
+      "p018-w001",
+      "p018-w002",
+      "p018-w003",
+      "p018-w004",
+      "p018-w005",
+      "p018-w006",
+      "p018-w007",
+      "p018-w008",
+      "p018-w009",
+      "p018-w010",
+      "p018-w011",
+      "p018-w012",
+      "p018-w013",
+      "p018-w014",
+      "p018-w015"
+    ]
+  }
+]

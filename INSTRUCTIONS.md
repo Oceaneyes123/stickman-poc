@@ -67,11 +67,30 @@ Invoke-Item out/001-lifestyle-creep/opening-animation-v3/s01-s06.mp4
 
 Uses the existing Jeremy audio and cue timing. Choose a new output folder for each review.
 
-## 9. Generate the remaining visual storyboard
+## 9. Review or regenerate the complete storyboard
 
 ```powershell
-npm run storyboard:stills -- --out out/001-lifestyle-creep/s07-s67-storyboard-v3
-Invoke-Item out/001-lifestyle-creep/s07-s67-storyboard-v3/index.html
+Invoke-Item out/001-lifestyle-creep/storyboard-design-v3/review/index.html
 ```
 
-Creates S07–S67 stills paired with narration. Contact sheets use the installed Python Pillow package.
+To generate a new still-only packet, choose an unused output folder:
+
+```powershell
+npm run storyboard:design -- --out out/001-lifestyle-creep/storyboard-design-v4
+Invoke-Item out/001-lifestyle-creep/storyboard-design-v4/review/index.html
+```
+
+Includes S01–S67, exact narration, and contact sheets. Uses existing reference
+stills and Python Pillow. No video or audio is generated.
+
+## 10. Render the three cinematic references (after storyboard approval)
+
+```powershell
+npm run cinematic:render -- --out out/001-lifestyle-creep/cinematic-references-v5
+python scripts/verify-cinematic.py out/001-lifestyle-creep/cinematic-references-v5
+Invoke-Item out/001-lifestyle-creep/cinematic-references-v5/index.html
+```
+
+Renders S12, S21–S22, and S50–S52 with the textured backdrop and existing narration.
+Only money figures appear as on-screen text.
+Use `--stills` for frame review only. Approve these references before extending the style.
