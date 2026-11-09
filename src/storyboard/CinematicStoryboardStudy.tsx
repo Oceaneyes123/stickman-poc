@@ -34,12 +34,14 @@ import {
   monthOneExpenses,
   monthTwoExpenses,
   samThreeMonths,
+  alexThreeMonths,
   baselineThreeMonths,
   samAnnual,
   alexAnnual,
 } from "./remainingShots";
 import {
   cinematicStillShots,
+  allocationParts,
   storyboardViews,
   type CinematicStillShot,
 } from "./cinematicStillPlan";
@@ -61,10 +63,12 @@ const Money = ({
   anchor?: "start" | "middle";
   fill?: string;
 }) => (
-  <SceneText x={x} y={y} size={size} fill={fill} anchor={anchor}>
-    {positive ? "+" : ""}
-    {usd(value)}
-  </SceneText>
+  <g stroke="none">
+    <SceneText x={x} y={y} size={size} fill={fill} anchor={anchor}>
+      {positive ? "+" : ""}
+      {usd(value)}
+    </SceneText>
+  </g>
 );
 const makeActor = ({
   identity = "Sam",
@@ -74,6 +78,7 @@ const makeActor = ({
   pose = "standing",
   expression = "thinking",
   carry = false,
+  facing = 1,
 }: {
   identity?: "Sam" | "Alex";
   x?: number;
@@ -82,12 +87,13 @@ const makeActor = ({
   pose?: ReferencePose;
   expression?: ReferenceExpression;
   carry?: boolean;
+  facing?: 1 | -1;
 } = {}): PerformanceActor => ({
   identity,
   x,
   y,
   scale,
-  facing: 1,
+  facing,
   expression,
   rig: referenceSkeleton({
     frame: 60,
@@ -110,6 +116,7 @@ const Actor = ({
       x={actor.x}
       y={actor.y}
       scale={actor.scale}
+      facing={actor.facing}
       skeleton={actor.rig}
       expression={actor.expression}
       hands={actor.rig.handKinds}
@@ -193,11 +200,13 @@ const Phone = ({
   amount,
   comparison,
   selected = false,
+  statement = false,
 }: {
   grip: Point;
   amount?: number;
   comparison?: number[];
   selected?: boolean;
+  statement?: boolean;
 }) => (
   <g
     transform={`translate(${grip.x - 25},${grip.y - 125})`}
@@ -230,6 +239,7 @@ const Phone = ({
       ))}
     {amount === undefined &&
       !comparison &&
+      !statement &&
       [0, 1, 2].map((i) => (
         <g key={i}>
           <rect
@@ -243,18 +253,18 @@ const Phone = ({
           <path d={`M25 ${38 + i * 29}l12 6l-12 6Z`} fill={C.navy} />
         </g>
       ))}
-  </g>
-);
-const Sheet = ({ children }: { children: ReactNode }) => (
-  <g>
-    <path
-      d="M450 600L1610 540L1810 940H330Z"
-      fill={cinema.material.wood}
-      stroke={C.navy}
-      strokeWidth={6}
-    />
-    <path d="M400 940V1000 M1730 940V1000" stroke={C.navy} strokeWidth={7} />
-    {children}
+    {statement && (
+      <g stroke="none">
+        <rect x={17} y={40} width={66} height={14} fill={C.yellow} />
+        <rect
+          x={17}
+          y={85}
+          width={(66 * budget.sam) / budget.before}
+          height={14}
+          fill={C.teal}
+        />
+      </g>
+    )}
   </g>
 );
 const Book = ({
@@ -521,143 +531,752 @@ const DeskAction = ({
     </>
   );
 };
-const Banking = ({
-  identity = "Sam",
-  amount,
-  expenses,
-  compare,
+const Arrow = ({
+  x = 0,
+  y = 0,
+  width = 180,
+  color = C.navy,
 }: {
-  identity?: "Sam" | "Alex";
-  amount: number;
-  expenses?: number;
-  compare?: number;
+  x?: number;
+  y?: number;
+  width?: number;
+  color?: string;
+}) => (
+  <path
+    d={`M${x} ${y}h${width}m-30 -24l30 24l-30 24`}
+    stroke={color}
+    strokeWidth={8}
+    fill="none"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  />
+);
+const Check = ({
+  x,
+  y,
+  scale = 1,
+}: {
+  x: number;
+  y: number;
+  scale?: number;
+}) => (
+  <path
+    d="M-30 0L-5 25L45 -35"
+    transform={`translate(${x},${y}) scale(${scale})`}
+    stroke={C.teal}
+    strokeWidth={12}
+    fill="none"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  />
+);
+const CoinStack = ({
+  x,
+  y,
+  value,
+  max = budget.alex,
+  color = C.yellow,
+  width = 210,
+}: {
+  x: number;
+  y: number;
+  value: number;
+  max?: number;
+  color?: string;
+  width?: number;
 }) => {
-  const person = makeActor({
-    identity,
-    x: 690,
-    carry: true,
-    expression: "thinking",
-  });
-  const grip = toWorld(person, person.rig.rightArm.end);
+  const height = (value / max) * 380;
+  return (
+    <g>
+      <path
+        d={`M${x} ${y}h${width}v-${height}h-${width}Z`}
+        fill={color}
+        stroke={C.navy}
+        strokeWidth={5}
+      />
+      <path
+        d={`M${x + 15} ${y - 18}h${width - 30} M${x + 15} ${y - 40}h${width - 30}`}
+        stroke={C.navy}
+        strokeWidth={3}
+        opacity={0.3}
+      />
+      <Money
+        x={x + width / 2}
+        y={y - height - 35}
+        value={value}
+        size={66}
+        anchor="middle"
+      />
+    </g>
+  );
+};
+const Pair = ({
+  values,
+  gap = false,
+  annual = false,
+}: {
+  values: [number, number];
+  gap?: boolean;
+  annual?: boolean;
+}) => {
+  const max = annual ? alexAnnual : Math.max(...values);
   return (
     <>
-      <WritingDesk x={760} y={690} width={780} old={identity === "Alex"} />
-      {expenses !== undefined && (
-        <Slip x={1130} y={405} amounts={[expenses]} color={C.red} tilt={4} />
-      )}
-      <Actor actor={person} />
-      <Phone
-        grip={grip}
-        amount={compare === undefined ? amount : undefined}
-        comparison={compare === undefined ? undefined : [compare, amount]}
+      <CoinStack x={390} y={825} value={values[0]} max={max} width={330} />
+      <CoinStack
+        x={1190}
+        y={825}
+        value={values[1]}
+        max={max}
+        width={330}
+        color={C.teal}
       />
-      <Slip x={970} y={590} amounts={[amount]} color={C.teal} />
+      <path
+        d="M555 870V910H1355V870"
+        fill="none"
+        stroke={C.navy}
+        strokeWidth={5}
+      />
+      {gap && (
+        <Money
+          x={960}
+          y={1000}
+          anchor="middle"
+          value={values[1] - values[0]}
+          size={78}
+        />
+      )}
     </>
   );
 };
-const Commitments = ({
+const Allocation = ({
   stage = 3,
-  showRaise = true,
+  x = 270,
+  y = 590,
+  width = 1320,
+  total = example.raise,
+  amounts = true,
 }: {
   stage?: 1 | 2 | 3;
-  showRaise?: boolean;
+  x?: number;
+  y?: number;
+  width?: number;
+  total?: number;
+  amounts?: boolean;
 }) => {
-  const sam = makeActor({
-    x: 590,
-    expression: stage === 3 ? "worried" : "thinking",
-  });
-  placeHands(sam, { right: { x: 760, y: 650 } }, 7);
+  const parts = allocationParts(stage),
+    added = parts.reduce((a, b) => a + b, 0),
+    left = Math.max(0, total - added);
+  let used = 0;
   return (
-    <>
-      <WritingDesk x={720} y={720} width={1030} />
-      <Actor actor={sam} />
-      <Slip x={800} y={520} amounts={[rent]} color={C.red} tilt={-6} />
-      {stage >= 2 && (
+    <g>
+      <Money
+        x={x + width / 2}
+        y={y - 140}
+        value={total}
+        size={92}
+        anchor="middle"
+      />
+      <path
+        d={`M${x} ${y - 80}v-25h${width}v25`}
+        fill="none"
+        stroke={C.navy}
+        strokeWidth={5}
+      />
+      {[...parts, ...(left ? [left] : [])].map((v, i) => {
+        const start = x + (used / total) * width;
+        used += v;
+        const w = (v / total) * width,
+          cost = i < parts.length;
+        return (
+          <g key={i}>
+            <rect
+              x={start}
+              y={y}
+              width={w}
+              height={135}
+              fill={cost ? C.red : C.yellow}
+              stroke={C.navy}
+              strokeWidth={4}
+            />
+            {amounts && (
+              <Money
+                x={start + w / 2}
+                y={y + 215}
+                value={v}
+                size={w < 150 ? 46 : 64}
+                anchor="middle"
+              />
+            )}
+          </g>
+        );
+      })}
+      <path
+        d={`M${x + width} ${y - 70}v260`}
+        stroke={C.navy}
+        strokeWidth={5}
+        strokeDasharray="9 10"
+      />
+      {added > total && (
         <>
-          <Slip x={1110} y={560} amounts={[transport]} color={C.red} tilt={3} />
-          <Keys point={{ x: 1400, y: 745 }} />
+          <path
+            d={`M${x + width} ${y + 300}h${((added - total) / total) * width}`}
+            stroke={C.red}
+            strokeWidth={12}
+          />
+          {amounts && (
+            <Money
+              x={x + width + 15}
+              y={y + 380}
+              value={added - total}
+              size={52}
+              anchor="middle"
+            />
+          )}
         </>
       )}
-      {stage === 3 && <Phone grip={{ x: 1550, y: 730 }} amount={services} />}{" "}
-      {showRaise && <Envelope x={790} y={820} scale={0.75} />}
+    </g>
+  );
+};
+const Remote = ({ grip }: { grip: Point }) => (
+  <g
+    transform={`translate(${grip.x - 20},${grip.y - 100}) rotate(12)`}
+    stroke={C.navy}
+    strokeWidth={4}
+  >
+    <rect width={45} height={115} rx={12} fill={cinema.material.fabric} />
+    <circle cx={22} cy={38} r={12} fill={C.white} />
+    <path d="M12 74H32M12 90H32" />
+  </g>
+);
+const Sofa = () => (
+  <g fill={cinema.material.fabric} stroke={C.navy} strokeWidth={6}>
+    <path d="M340 720V580Q340 540 390 540H1000Q1050 540 1050 590V780H340Z" />
+    <path d="M320 725H1070V870H320Z" />
+    <path d="M365 870V940M1030 870V940" fill="none" />
+  </g>
+);
+const TV = ({ selected = false }: { selected?: boolean }) => (
+  <g stroke={C.navy} strokeWidth={7}>
+    <rect x={1240} y={380} width={470} height={300} rx={15} fill={C.navy} />
+    <rect
+      x={1260}
+      y={400}
+      width={430}
+      height={255}
+      rx={6}
+      fill={cinema.environment.glass}
+    />
+    {[0, 1, 2].map((i) => (
+      <g key={i}>
+        <rect
+          x={1295 + i * 120}
+          y={470}
+          width={95}
+          height={115}
+          rx={8}
+          fill={i === 0 && selected ? C.yellow : C.white}
+        />
+        <path
+          d={`M${1325 + i * 120} 505l35 24l-35 24Z`}
+          fill={C.navy}
+          stroke="none"
+        />
+      </g>
+    ))}
+    <path d="M1475 680V740M1390 740H1560" fill="none" />
+  </g>
+);
+const Entertainment = ({ locked = false }: { locked?: boolean }) => {
+  const sam = makeActor({
+    x: 700,
+    y: 1040,
+    scale: 2.35,
+    pose: "sitting",
+    carry: true,
+    expression: locked ? "frustrated" : "relieved",
+  });
+  return (
+    <>
+      <Sofa />
+      <Actor actor={sam} />
+      <Remote grip={toWorld(sam, sam.rig.rightArm.end)} />
+      {locked ? (
+        <g transform="translate(1310,430)" stroke={C.navy} strokeWidth={9}>
+          <path d="M70 110V60a65 65 0 01130 0v50" fill="none" />
+          <rect
+            x={35}
+            y={110}
+            width={200}
+            height={170}
+            rx={20}
+            fill={C.white}
+          />
+          <circle cx={135} cy={185} r={16} fill={C.navy} />
+          <path d="M135 195V230" />
+        </g>
+      ) : (
+        <TV selected />
+      )}
     </>
   );
 };
-const Equal = ({
-  values,
-  showHobby = false,
-  starting = false,
+const Benefit = ({
+  kind,
+  x,
+  y,
+  scale = 1,
 }: {
-  values?: [number, number];
-  showHobby?: boolean;
-  starting?: boolean;
+  kind: "desk" | "car" | "services" | "meal";
+  x: number;
+  y: number;
+  scale?: number;
+}) => (
+  <g transform={`translate(${x},${y}) scale(${scale})`}>
+    {kind === "desk" ? (
+      <>
+        <path
+          d="M-240 0H240V22H-240Z M-210 22V300 M210 22V300"
+          fill={cinema.material.wood}
+          stroke={C.navy}
+          strokeWidth={6}
+        />
+        <Laptop grip={{ x: 60, y: 0 }} open={1} />
+      </>
+    ) : kind === "car" ? (
+      <Car x={0} y={0} scale={0.65} />
+    ) : kind === "services" ? (
+      <g stroke={C.navy} strokeWidth={5}>
+        <rect
+          x={-130}
+          y={-140}
+          width={260}
+          height={170}
+          rx={12}
+          fill={C.white}
+        />
+        <path d="M-30 -100L60 -55L-30 -10Z" fill={C.yellow} />
+        <path d="M-70 55H70M0 30V55" />
+      </g>
+    ) : (
+      <DiningTable x={0} y={0} />
+    )}
+  </g>
+);
+const Portrait = ({
+  expression = "thinking",
+  amount,
+  compare,
+  x = 650,
+  identity = "Sam",
+}: {
+  expression?: ReferenceExpression;
+  amount?: number;
+  compare?: number;
+  x?: number;
+  identity?: "Sam" | "Alex";
+}) => {
+  const actor = makeActor({
+    identity,
+    x,
+    y: 1600,
+    scale: 4.7,
+    pose: expression === "stressed" ? "stressed" : "standing",
+    carry: amount !== undefined,
+    expression,
+  });
+  return (
+    <>
+      <Actor actor={actor} />
+      {amount !== undefined && (
+        <Phone grip={toWorld(actor, actor.rig.rightArm.end)} amount={amount} />
+      )}
+      {compare !== undefined && (
+        <g transform="translate(1100,390)">
+          <Money x={0} y={0} value={compare} size={88} />
+          <path d="M0 30H280" stroke={C.navy} strokeWidth={5} />
+          <Money x={0} y={150} value={amount!} size={100} fill={C.teal} />
+          <Money
+            x={0}
+            y={300}
+            value={compare - amount!}
+            size={62}
+            fill={C.red}
+          />
+        </g>
+      )}
+    </>
+  );
+};
+const Transfer = ({
+  amount,
+  identity = "Sam",
+  shoulder = false,
+  expenses,
+}: {
+  amount: number;
+  identity?: "Sam" | "Alex";
+  shoulder?: boolean;
+  expenses?: number;
+}) => (
+  <>
+    {shoulder && (
+      <g
+        transform={
+          identity === "Alex" ? "translate(1920,0) scale(-1,1)" : undefined
+        }
+        stroke={C.navy}
+        strokeWidth={9}
+      >
+        <path d="M-120 1080V850Q100 650 410 850L480 1080Z" fill="#3B82F6" />
+        <path d="M145 640H265V790H145Z" fill={C.white} />
+        <path
+          d="M195 240C325 235 410 335 410 465C415 595 330 680 210 685C75 690 -20 600 -20 480C-25 350 65 245 195 240Z"
+          fill={C.white}
+        />
+        <path
+          d="M100 725Q200 780 315 725L340 835Q210 900 70 835Z"
+          fill="#2563AB"
+        />
+      </g>
+    )}
+    <g transform={`translate(${shoulder ? 660 : 330},260) scale(3.3)`}>
+      <Phone grip={{ x: 25, y: 125 }} amount={amount} />
+    </g>
+    <Arrow x={shoulder ? 1120 : 850} y={580} width={180} color={C.teal} />
+    <CoinStack
+      x={shoulder ? 1410 : 1220}
+      y={790}
+      value={amount}
+      color={C.teal}
+      width={230}
+    />
+    <Check x={shoulder ? 1530 : 1340} y={915} />
+    {expenses !== undefined && (
+      <Money
+        x={1370}
+        y={280}
+        value={expenses}
+        fill={C.red}
+        size={76}
+        anchor="middle"
+      />
+    )}
+  </>
+);
+const Contributions = ({
+  values,
+  color = C.yellow,
+}: {
+  values: number[];
+  color?: string;
+}) => (
+  <>
+    {values.map((v, i) => (
+      <CoinStack
+        key={i}
+        x={260 + i * 340}
+        y={810}
+        value={v}
+        width={200}
+        color={color}
+      />
+    ))}
+    <path
+      d="M270 870H1130M270 850V890M1130 850V890"
+      stroke={C.navy}
+      strokeWidth={5}
+    />
+    <Money
+      x={1460}
+      y={590}
+      value={values.reduce((a, b) => a + b, 0)}
+      size={94}
+      anchor="middle"
+    />
+    <Arrow x={1190} y={710} width={140} />
+  </>
+);
+const Choice = ({
+  identity = "Sam",
+  cautious = false,
+}: {
+  identity?: "Sam" | "Alex";
+  cautious?: boolean;
+}) => {
+  const actor = makeActor({
+    identity,
+    x: 960,
+    y: 970,
+    scale: 2.5,
+    pose: "explaining",
+    expression: cautious ? "thinking" : "confident",
+  });
+  return (
+    <>
+      <Benefit
+        kind={identity === "Alex" ? "car" : "desk"}
+        x={380}
+        y={700}
+        scale={0.55}
+      />
+      <Actor actor={actor} />
+      <path
+        d="M710 620L540 520M1220 620L1390 520"
+        stroke={C.navy}
+        strokeWidth={5}
+        fill="none"
+      />
+      <g stroke={C.navy} strokeWidth={6}>
+        <path d="M1400 520H1690V820H1400Z" fill={C.teal} />
+        <path d="M1440 500H1650" strokeWidth={14} />
+      </g>
+    </>
+  );
+};
+const Rental = ({
+  identity = "Sam",
+  old = false,
+  amount = false,
+}: {
+  identity?: "Sam" | "Alex";
+  old?: boolean;
+  amount?: boolean;
+}) => {
+  const actor = makeActor({
+    identity,
+    x: 1430,
+    facing: -1,
+    carry: true,
+    expression: old ? "thinking" : "relieved",
+  });
+  return (
+    <>
+      <Car old={old} x={730} y={790} scale={1.05} />
+      <Actor actor={actor} keys />
+      {amount && (
+        <Money x={520} y={330} value={transport} fill={C.red} size={100} />
+      )}
+    </>
+  );
+};
+const KeyInsert = ({ amount = rent }: { amount?: number }) => (
+  <>
+    <g transform="translate(660,610) scale(5)">
+      <Keys point={{ x: 0, y: 0 }} />
+    </g>
+    <Money x={1060} y={600} value={amount} size={140} fill={C.red} />
+  </>
+);
+const Recurring = ({ count = 3 }: { count?: number }) => (
+  <>
+    {Array.from({ length: count }, (_, i) => (
+      <g
+        key={i}
+        transform={`translate(${230 + i * 520},${360 + (i % 2) * 80})`}
+      >
+        <Calendar x={0} y={0} repeat />
+        <g transform="translate(170,180) scale(2.2)">
+          <Keys point={{ x: 0, y: 0 }} />
+        </g>
+        {i < count - 1 && <Arrow x={365} y={140} width={110} />}
+      </g>
+    ))}
+  </>
+);
+const WorkBenefit = ({
+  old = false,
+  identity = "Sam",
+  satisfied = false,
+}: {
+  old?: boolean;
+  identity?: "Sam" | "Alex";
+  satisfied?: boolean;
+}) => (
+  <>
+    <DeskAction
+      identity={identity}
+      old={old}
+      action="work"
+      expression={satisfied ? "relieved" : "thinking"}
+    />
+    {!old && <StoryEnvironment location="sam-new" />}
+  </>
+);
+const LifestyleCompare = ({
+  rental = false,
+  resolve = false,
+}: {
+  rental?: boolean;
+  resolve?: boolean;
 }) => (
   <ComparisonScene
     left={
-      <>
-        <WritingDesk x={490} y={730} width={380} old={starting} />
-        <Actor
-          actor={makeActor({
-            x: 350,
-            scale: 1.95,
-            expression: "curious",
-            carry: true,
-          })}
-        />
-        {starting ? (
-          <Cup x={835} y={726} />
+      <g transform="translate(-70,80) scale(.65)">
+        {rental ? <Rental /> : <WorkBenefit satisfied={resolve} />}
+      </g>
+    }
+    right={
+      <g transform="translate(-70,80) scale(.65)">
+        {rental ? (
+          <Rental identity="Alex" old />
         ) : (
-          <Laptop grip={{ x: 720, y: 730 }} open={1} />
+          <WorkBenefit old identity="Alex" />
         )}
-        {values && <Slip x={535} y={515} amounts={[values[0]]} />}
+      </g>
+    }
+  />
+);
+const EqualStart = ({ full = false }: { full?: boolean }) => (
+  <ComparisonScene
+    left={
+      <>
+        <Actor
+          actor={makeActor({ x: 320, scale: 2.25, expression: "curious" })}
+        />
+        <Money
+          x={570}
+          y={460}
+          value={full ? example.income : example.raise}
+          size={75}
+        />
+        {full && (
+          <>
+            <Money
+              x={570}
+              y={590}
+              value={example.expenses}
+              size={58}
+              fill={C.red}
+            />
+            <Money
+              x={570}
+              y={720}
+              value={budget.before}
+              size={64}
+              fill={C.teal}
+            />
+          </>
+        )}
       </>
     }
     right={
       <>
-        <WritingDesk x={490} y={730} width={380} old />
         <Actor
           actor={makeActor({
             identity: "Alex",
-            x: 350,
-            scale: 1.95,
-            expression: "thinking",
-            carry: true,
+            x: 320,
+            scale: 2.25,
+            expression: "curious",
           })}
         />
-        <Cup x={835} y={726} />
-        {showHobby && <Guitar x={160} y={880} />}{" "}
-        {values && (
-          <Slip x={535} y={515} amounts={[values[1]]} color={C.teal} />
+        <Money
+          x={570}
+          y={460}
+          value={full ? example.income : example.raise}
+          size={75}
+        />
+        {full && (
+          <>
+            <Money
+              x={570}
+              y={590}
+              value={example.expenses}
+              size={58}
+              fill={C.red}
+            />
+            <Money
+              x={570}
+              y={720}
+              value={budget.before}
+              size={64}
+              fill={C.teal}
+            />
+          </>
         )}
       </>
     }
   />
 );
-
+const AnnualGrid = ({ totals = false }: { totals?: boolean }) => (
+  <>
+    {[budget.sam, budget.alex].map((v, row) => (
+      <g key={row}>
+        <Money
+          x={170}
+          y={370 + row * 360}
+          value={totals ? v * 12 : v}
+          size={78}
+        />
+        {Array.from({ length: 12 }, (_, i) => (
+          <g key={i}>
+            <rect
+              x={650 + i * 85}
+              y={240 + row * 360}
+              width={70}
+              height={230}
+              fill="none"
+              stroke={C.navy}
+              strokeWidth={3}
+            />
+            <rect
+              x={650 + i * 85}
+              y={470 + row * 360 - (v / budget.alex) * 230}
+              width={70}
+              height={(v / budget.alex) * 230}
+              fill={row ? C.teal : C.yellow}
+              stroke={C.navy}
+              strokeWidth={3}
+            />
+          </g>
+        ))}
+      </g>
+    ))}
+  </>
+);
+const Scope = ({ household = false }: { household?: boolean }) => (
+  <>
+    <path
+      d="M550 250H1410V990H550Z"
+      stroke={C.navy}
+      strokeDasharray="16 12"
+      strokeWidth={5}
+      fill="none"
+    />
+    <Actor actor={makeActor({ x: 770, expression: "thinking" })} />
+    <Actor
+      actor={makeActor({ identity: "Alex", x: 1210, expression: "thinking" })}
+    />
+    {household && (
+      <g transform="translate(210,480)" stroke={C.navy} strokeWidth={7}>
+        <path
+          d="M-90 -80L0 -110L90 -80V25Q80 90 0 130Q-80 90 -90 25Z"
+          fill={C.white}
+        />
+        <Check x={0} y={5} />
+      </g>
+    )}
+  </>
+);
 const SceneArt = ({ shot }: { shot: CinematicStillShot }) => {
   const { scene, index } = shot;
   switch (scene) {
     case "S01": {
-      const sam = makeActor({
-        x: 700,
-        pose: index ? "thinking" : "celebrating",
-        expression: index ? "worried" : "excited",
-        carry: !!index,
+      if (index) return <Portrait expression="worried" />;
+      const actor = makeActor({
+        x: 1040,
+        y: 1020,
+        scale: 2.9,
+        pose: "celebrating",
+        expression: "excited",
       });
-      const hand = toWorld(sam, sam.rig.rightArm.end);
+      const hand = toWorld(actor, actor.rig.rightArm.end);
       return (
         <>
-          <Actor actor={sam} />
-          {index ? (
-            <Phone grip={hand} />
-          ) : (
-            <g
-              transform={`translate(${hand.x - 15},${hand.y - 100}) scale(.55)`}
-            >
-              <Slip x={0} y={0} amounts={[example.raise]} />
-            </g>
-          )}
-          {!index && <Envelope x={1090} y={610} />}
+          <Actor actor={actor} />
+          <g transform={`translate(${hand.x - 20},${hand.y - 135}) scale(.7)`}>
+            <Slip x={0} y={0} amounts={[example.raise]} />
+          </g>
         </>
       );
     }
@@ -665,468 +1284,728 @@ const SceneArt = ({ shot }: { shot: CinematicStillShot }) => {
       return index === 0 ? (
         <>
           <DeskAction action="carry" expression="relieved" />
-          <GuestChair />
           <StoryEnvironment location="sam-new" />
+          <GuestChair />
         </>
       ) : index === 1 ? (
         <Cabin />
       ) : (
-        <DeskAction action="phone" expression="relieved" />
+        <Entertainment />
       );
-    case "S03": {
-      const sam = makeActor({ x: 720, carry: true, expression: "worried" });
-      const hand = toWorld(sam, sam.rig.rightArm.end);
-      return (
+    case "S03":
+      return index === 0 ? (
+        <Portrait expression="worried" />
+      ) : (
         <>
-          <WritingDesk />
-          <Actor actor={sam} />
-          <PhoneListing grip={hand} />
-          <g transform="translate(1130,420)">
-            <rect width={370} height={380} rx={24} fill={C.navy} />
-            <rect
-              x={14}
-              y={18}
-              width={342}
-              height={340}
-              rx={14}
-              fill={C.white}
-            />
-            <rect x={45} y={95} width={270} height={25} fill={C.yellow} />
-            <rect
-              x={45}
-              y={220}
-              width={(270 * budget.sam) / budget.before}
-              height={25}
-              fill={C.yellow}
-            />
+          <g transform="translate(340,200) scale(4.5)">
+            <Phone grip={{ x: 25, y: 125 }} statement />
           </g>
+          <path
+            d={`M1090 470h${budget.before * 1.5}v70h-${budget.before * 1.5}Z`}
+            fill={C.yellow}
+          />
+          <path
+            d={`M1090 650h${budget.sam * 1.5}v70h-${budget.sam * 1.5}Z`}
+            fill={C.teal}
+          />
         </>
       );
-    }
     case "S04":
-      return index === 0 ? <DeskAction action="work" /> : <Commitments />;
-    case "S05":
-      return <Equal values={[example.raise, example.raise]} />;
-    case "S06":
       return index === 0 ? (
-        <DeskAction
-          action="phone"
-          amount={example.income}
-          items={<Envelope x={1150} y={520} value={example.income} />}
-        />
-      ) : index === 1 ? (
-        <Banking amount={budget.before} expenses={example.expenses} />
-      ) : (
-        <Banking amount={budget.before} />
-      );
-    case "S07":
-      return (
-        <DeskAction
-          action="list"
-          old
-          items={
-            <>
-              <Slip x={1150} y={470} color={C.teal} />
-              <Book x={1340} y={690} open={false} />
-            </>
-          }
-        />
-      );
-    case "S08":
-      return index === 0 ? (
-        <DeskAction action="work" old expression="worried" />
+        <WorkBenefit old />
       ) : (
         <>
-          <Car old />
-          <Actor
-            keys
-            actor={makeActor({ x: 1660, carry: true, expression: "thinking" })}
+          <Benefit kind="desk" x={420} y={340} scale={0.6} />
+          <Benefit kind="car" x={1050} y={300} scale={0.6} />
+          <Benefit kind="services" x={1630} y={310} scale={0.8} />
+          <Allocation y={660} amounts={false} />
+        </>
+      );
+    case "S05":
+      return <EqualStart />;
+    case "S06":
+      return index === 0 ? (
+        <>
+          <g transform="translate(430,430) scale(2)">
+            <Envelope x={0} y={0} value={example.income} />
+          </g>
+          <Arrow x={1200} y={590} width={200} />
+          <Check x={1510} y={590} />
+        </>
+      ) : index === 1 ? (
+        <>
+          <Money x={330} y={300} value={example.income} size={110} />
+          <rect
+            x={330}
+            y={470}
+            width={(example.expenses / example.income) * 1260}
+            height={170}
+            fill={C.red}
+            stroke={C.navy}
+            strokeWidth={5}
           />
+          <rect
+            x={330 + (example.expenses / example.income) * 1260}
+            y={470}
+            width={(budget.before / example.income) * 1260}
+            height={170}
+            fill={C.yellow}
+            stroke={C.navy}
+            strokeWidth={5}
+          />
+          <Money
+            x={800}
+            y={760}
+            value={example.expenses}
+            fill={C.red}
+            size={80}
+            anchor="middle"
+          />
+          <Money
+            x={1530}
+            y={760}
+            value={budget.before}
+            size={72}
+            anchor="middle"
+          />
+        </>
+      ) : (
+        <Transfer amount={budget.before} />
+      );
+    case "S07":
+      return <Scope />;
+    case "S08":
+      return index ? (
+        <Rental old />
+      ) : (
+        <>
+          <WorkBenefit old />
+          <g transform="translate(1050,670)">
+            <Cup x={0} y={0} />
+            <Cup x={95} y={0} />
+            <ellipse
+              cx={175}
+              cy={-8}
+              rx={70}
+              ry={18}
+              fill={C.white}
+              stroke={C.navy}
+              strokeWidth={4}
+            />
+          </g>
         </>
       );
     case "S09":
       return (
         <>
-          <DeskAction
-            action="list"
-            expression="curious"
-            items={
-              <>
-                <Envelope x={1110} y={430} value={budget.income} />
-                <Slip
-                  x={1270}
-                  y={650}
-                  amounts={[example.expenses]}
-                  color={C.red}
-                />
-              </>
-            }
+          <CoinStack
+            x={320}
+            y={820}
+            value={example.income}
+            max={budget.income}
+            width={300}
           />
-          <Slip
-            x={850}
-            y={770}
-            amounts={[budget.income - example.expenses]}
+          <CoinStack
+            x={1150}
+            y={820}
+            value={budget.income}
+            max={budget.income}
+            width={300}
             color={C.teal}
+          />
+          <Money
+            x={960}
+            y={330}
+            value={example.raise}
+            size={85}
+            anchor="middle"
+          />
+          <Arrow x={760} y={500} width={210} />
+          <Money
+            x={1310}
+            y={960}
+            value={budget.income - example.expenses}
+            size={88}
+            anchor="middle"
           />
         </>
       );
     case "S10":
-      return (
-        <>
-          <DeskAction action="list" expression="curious" />
-          <Envelope x={1190} y={420} />
-          <Keys point={{ x: 1350, y: 770 }} />
-          <Slip x={1040} y={720} color={C.teal} />
-        </>
-      );
+      return <Choice />;
     case "S11":
-      return <Equal starting values={[example.raise, example.raise]} />;
+      return <EqualStart full />;
+    case "S12": {
+      if (index === 0)
+        return (
+          <g transform="translate(600,170) scale(10)">
+            <PhoneListing grip={{ x: 19, y: 60 }} />
+          </g>
+        );
+      if (index === 1)
+        return (
+          <>
+            <DeskAction action="carry" expression="curious" />
+            <GuestChair />
+            <StoryEnvironment location="sam-new" />
+          </>
+        );
+      if (index === 2) {
+        const actor = makeActor({ x: 780, y: 900, expression: "curious" });
+        placeHands(
+          actor,
+          { right: { x: 930, y: 690 }, left: { x: 770, y: 690 } },
+          7,
+        );
+        return (
+          <>
+            <WritingDesk x={650} y={690} width={1000} />
+            <Actor actor={actor} />
+            <Laptop grip={toWorld(actor, actor.rig.rightArm.end)} open={0.8} />
+          </>
+        );
+      }
+      return <WorkBenefit satisfied />;
+    }
     case "S13":
       return (
         <>
-          <Commitments stage={1} />
-          <Slip
-            x={1330}
-            y={510}
-            amounts={[example.raise - rent]}
-            color={C.teal}
-          />
+          <g transform="translate(1450,310) scale(3)">
+            <Keys point={{ x: 0, y: 0 }} />
+          </g>
+          <Allocation stage={1} y={580} />
         </>
       );
     case "S14":
-      return index === 0 ? (
-        <DeskAction
-          action="sign"
-          expression="confident"
-          items={<Envelope x={1150} y={470} value={example.raise - rent} />}
-        />
+      return index ? (
+        <WorkBenefit old identity="Alex" />
       ) : (
-        <DeskAction
-          identity="Alex"
-          action="work"
-          old
-          items={<Slip x={1220} y={560} />}
-        />
+        <g transform="translate(-630,-390) scale(1.9)">
+          <DeskAction
+            action="sign"
+            expression="confident"
+            items={
+              <Money x={1180} y={640} value={example.raise - rent} size={62} />
+            }
+          />
+        </g>
       );
     case "S15":
-      return <Banking amount={monthOne} expenses={monthOneExpenses} />;
-    case "S16":
       return (
-        <DeskAction
-          action="work"
-          expression="relieved"
-          items={
-            <>
-              <Slip x={1130} y={380} amounts={[budget.before]} width={220} />
-              <Slip
-                x={1400}
-                y={420}
-                amounts={[monthOne]}
-                width={220}
-                color={C.teal}
-              />
-            </>
-          }
-        />
+        <Transfer amount={monthOne} expenses={monthOneExpenses} shoulder />
       );
+    case "S16":
+      return <Pair values={[budget.before, monthOne]} />;
     case "S17":
       return (
         <>
-          <DeskAction
-            action="list"
-            items={<Slip x={1190} y={420} amounts={[rent]} color={C.red} />}
-          />
-          <g transform="translate(1550,760)" stroke={C.navy} strokeWidth={5}>
+          <g transform="translate(390,420)" stroke={C.navy} strokeWidth={7}>
             <path
-              d="M0 0l130 -20l65 45l-130 30Z M0 0V150l65 45l130 -30V25 M65 55V195"
+              d="M0 0L180 -60L310 0L130 70Z M0 0V250L130 320L310 250V0 M130 70V320"
               fill={cinema.material.wood}
             />
           </g>
           <path
-            d="M1480 580V970"
+            d="M910 230V900"
             stroke={C.navy}
-            strokeDasharray="12 10"
-            strokeWidth={3}
+            strokeDasharray="18 16"
+            strokeWidth={5}
           />
+          <g transform="translate(1120,340)">
+            <Calendar x={0} y={0} repeat />
+            <Money x={165} y={480} value={rent} size={110} anchor="middle" />
+          </g>
         </>
       );
     case "S18":
       return (
         <>
-          <DeskAction action="keep" expression="relieved" />
-          <DiningTable x={1540} y={770} />
+          <Benefit kind="desk" x={1350} y={500} />
+          <Actor
+            actor={makeActor({
+              x: 520,
+              y: 1000,
+              scale: 2.45,
+              pose: "sitting",
+              expression: "relieved",
+            })}
+          />
+          <DiningTable x={730} y={800} />
+          <GuestChair x={1190} />
         </>
       );
     case "S19":
-      return (
-        <>
-          <Car />
-          <Actor
-            keys
-            actor={makeActor({ x: 1680, carry: true, expression: "relieved" })}
-          />
-          <Slip x={390} y={300} amounts={[transport]} color={C.red} />
-        </>
-      );
+      return <Rental amount />;
     case "S20":
-      return index === 0 ? (
-        <Cabin />
+      return index ? <Rental identity="Alex" old /> : <Cabin />;
+    case "S21":
+      return index ? (
+        <>
+          <g transform="translate(0,-140)">
+            <KeyInsert amount={transport} />
+          </g>
+          <Money x={1040} y={840} value={example.raise} size={125} />
+        </>
+      ) : (
+        <KeyInsert amount={transport} />
+      );
+    case "S22":
+      return index ? (
+        <>
+          <Portrait expression="shocked" x={450} />
+          <Money
+            x={1240}
+            y={550}
+            value={example.raise - rent - transport}
+            size={180}
+            anchor="middle"
+          />
+          <g transform="translate(1060,750) scale(.35)">
+            <Allocation stage={2} x={0} y={0} amounts={false} />
+          </g>
+        </>
       ) : (
         <>
-          <Car old />
-          <Actor
-            keys
-            actor={makeActor({
-              identity: "Alex",
-              x: 1660,
-              carry: true,
-              expression: "thinking",
-            })}
-          />
+          <Benefit kind="desk" x={430} y={310} scale={0.6} />
+          <Benefit kind="car" x={1240} y={310} scale={0.6} />
+          <Allocation stage={2} />
         </>
       );
     case "S23":
       return (
-        <Banking
-          amount={monthTwo}
-          expenses={monthTwoExpenses}
-          compare={budget.before}
-        />
+        <>
+          <CoinStack
+            x={400}
+            y={830}
+            value={monthTwo}
+            color={C.teal}
+            width={300}
+          />
+          <Actor
+            actor={makeActor({
+              x: 1290,
+              y: 1000,
+              scale: 2.65,
+              expression: "relieved",
+            })}
+          />
+          <Money
+            x={500}
+            y={330}
+            value={monthTwoExpenses}
+            size={85}
+            fill={C.red}
+          />
+        </>
       );
     case "S24":
       return (
         <>
-          <DeskAction
-            action="list"
-            items={
-              <>
-                <Slip
-                  x={1180}
-                  y={430}
-                  amounts={[rent, transport]}
-                  color={C.red}
-                />
-                <Book x={1410} y={800} open={false} />
-              </>
-            }
+          <Benefit kind="desk" x={420} y={380} scale={0.6} />
+          <Benefit kind="car" x={1450} y={380} scale={0.6} />
+          <path
+            d="M420 550Q420 750 800 750M1450 550Q1450 750 1120 750"
+            stroke={C.navy}
+            strokeWidth={7}
+            fill="none"
           />
-          <Slip x={880} y={770} color={C.teal} />
+          <Money
+            x={960}
+            y={870}
+            value={rent + transport}
+            size={130}
+            anchor="middle"
+          />
         </>
       );
     case "S25":
       return (
         <>
-          <DeskAction action="phone" expression="relieved" />
-          <Slip x={1190} y={420} amounts={[services]} color={C.red} />
-          <Keys point={{ x: 1430, y: 790 }} />
+          <g transform="translate(250,340) scale(1.8)">
+            <Remote grip={{ x: 0, y: 140 }} />
+          </g>
+          <Benefit kind="services" x={800} y={540} scale={1.2} />
+          <g transform="translate(1390,380)" stroke={C.navy} strokeWidth={7}>
+            <rect width={260} height={180} rx={20} fill={C.white} />
+            <path d="M45 70H215M45 110H180" />
+            <circle cx={65} cy={70} r={14} fill={C.yellow} />
+            <circle cx={165} cy={110} r={14} fill={C.teal} />
+          </g>
+          <path d="M350 720H1580" stroke={C.navy} strokeWidth={5} />
+          <Money x={960} y={900} value={services} size={135} anchor="middle" />
         </>
       );
     case "S26":
-      return index === 0 ? (
-        <DeskAction action="phone" expression="curious" />
-      ) : (
-        <DeskAction identity="Alex" action="phone" old expression="thinking" />
-      );
+      return <Entertainment locked={index === 1} />;
     case "S27":
       return (
         <>
-          <Commitments />
-          <Money
-            x={1500}
-            y={410}
-            value={budget.added}
-            anchor="middle"
-            size={76}
-          />
+          <Money x={320} y={230} value={budget.added} size={110} fill={C.red} />
+          <Allocation y={560} />
         </>
       );
     case "S28":
-      return <Banking amount={budget.sam} expenses={budget.samExpenses} />;
+      return <Transfer amount={budget.sam} expenses={budget.samExpenses} />;
     case "S29":
-      return <Banking amount={budget.sam} compare={budget.before} />;
+      return (
+        <Portrait
+          expression="worried"
+          amount={budget.sam}
+          compare={budget.before}
+        />
+      );
     case "S30":
       return (
-        <>
-          <DeskAction action="keep" expression="thinking" />
-          <Slip x={1210} y={430} amounts={[budget.sam]} color={C.teal} />
-          <StoryEnvironment location="sam-new" />
-        </>
+        <ComparisonScene
+          left={
+            <g transform="translate(-40,60) scale(.65)">
+              <WorkBenefit satisfied />
+            </g>
+          }
+          right={
+            <>
+              <CoinStack
+                x={370}
+                y={810}
+                value={budget.sam}
+                color={C.teal}
+                width={220}
+              />
+              <Money
+                x={480}
+                y={960}
+                value={budget.before - budget.sam}
+                size={68}
+                fill={C.red}
+                anchor="middle"
+              />
+            </>
+          }
+        />
       );
     case "S31":
       return (
         <>
-          <DeskAction action="list" items={<Book x={1330} y={660} open />} />
-          <Slip x={1090} y={390} amounts={[budget.sam]} color={C.teal} />
+          <CoinStack
+            x={740}
+            y={840}
+            value={budget.sam}
+            color={C.teal}
+            width={440}
+          />
+          <Arrow x={270} y={600} width={230} color={C.teal} />
+          <path
+            d="M1280 750Q1510 700 1630 470"
+            stroke={C.teal}
+            strokeWidth={9}
+            fill="none"
+          />
+          <Check x={1640} y={390} />
         </>
       );
     case "S32":
       return (
+        <Contributions
+          values={
+            index
+              ? [budget.before, budget.before, budget.before]
+              : [monthOne, monthTwo, budget.sam]
+          }
+          color={index ? cinema.material.fabric : C.yellow}
+        />
+      );
+    case "S33":
+      return index ? (
         <>
-          <DeskAction action="list" />
-          {(index
-            ? [budget.before, budget.before, budget.before]
-            : [monthOne, monthTwo, budget.sam]
-          ).map((amount, i) => (
-            <Slip
-              key={i}
-              x={820 + i * 270}
-              y={470 + i * 35}
-              amounts={[amount]}
-              width={225}
-              color={index ? cinema.material.fabric : C.teal}
-            />
+          {[monthOne, monthTwo, budget.sam].map((amount, i) => (
+            <g key={i}>
+              <Calendar x={230 + i * 520} y={300} />
+              <rect
+                x={250 + i * 520}
+                y={465}
+                width={300}
+                height={90}
+                fill={C.white}
+              />
+              <Money
+                x={400 + i * 520}
+                y={535}
+                value={amount}
+                size={65}
+                anchor="middle"
+              />
+            </g>
           ))}
+          <path
+            d="M230 710V750H1610V710"
+            stroke={C.navy}
+            strokeWidth={5}
+            fill="none"
+          />
           <Money
-            x={1250}
-            y={950}
-            value={index ? baselineThreeMonths : samThreeMonths}
-            size={82}
+            x={640}
+            y={890}
+            value={samThreeMonths}
+            size={95}
             anchor="middle"
+          />
+          <Money
+            x={1330}
+            y={890}
+            value={baselineThreeMonths}
+            size={85}
+            anchor="middle"
+            fill={C.navy}
+          />
+        </>
+      ) : (
+        <>
+          <Calendar x={790} y={230} repeat />
+          <Money
+            x={370}
+            y={730}
+            value={budget.before}
+            size={120}
+            anchor="middle"
+          />
+          <Arrow x={840} y={700} width={220} />
+          <Money
+            x={1450}
+            y={730}
+            value={budget.sam}
+            size={120}
+            anchor="middle"
+            fill={C.teal}
           />
         </>
       );
-    case "S33":
-      return (
-        <>
-          <DeskAction action="list" />
-          {(index
-            ? [samThreeMonths, baselineThreeMonths]
-            : [budget.sam, budget.before]
-          ).map((amount, i) => (
-            <Slip
-              key={i}
-              x={930 + i * 345}
-              y={460}
-              amounts={[amount]}
-              color={i ? cinema.material.fabric : C.teal}
-            />
-          ))}
-        </>
-      );
     case "S34":
-      return index === 0 ? (
+      return index ? (
         <>
-          <DeskAction action="list" />
-          <Envelope x={1180} y={420} />
-          <Slip x={970} y={710} amounts={[budget.sam]} color={C.teal} />
+          <Portrait expression="thinking" amount={budget.sam} x={1100} />
+          <Money x={300} y={510} value={example.raise} size={125} />
         </>
       ) : (
-        <DeskAction
-          identity="Alex"
-          action="list"
-          old
-          items={<Book x={1280} y={690} open />}
-        />
+        <>
+          <Money x={350} y={300} value={budget.income} size={125} />
+          <Arrow x={840} y={420} width={200} />
+          <Money
+            x={1330}
+            y={460}
+            value={budget.samExpenses}
+            size={100}
+            fill={C.red}
+            anchor="middle"
+          />
+          <Money
+            x={1330}
+            y={800}
+            value={budget.sam}
+            size={125}
+            fill={C.teal}
+            anchor="middle"
+          />
+          <path d="M1110 570H1580" stroke={C.navy} strokeWidth={5} />
+        </>
       );
     case "S35":
-      return <Banking amount={budget.sam} />;
+      return <Transfer amount={budget.sam} shoulder />;
     case "S36":
       return (
         <>
-          <DeskAction action="list" />
-          <Book x={1240} y={650} />
-          <g transform="translate(1240,600)" stroke={C.navy} strokeWidth={5}>
+          <g stroke={C.navy} strokeWidth={7}>
             <path
-              d="M0 -80V60 M-140 -50H140 M-110 -50l-50 85h100Z M110 -50l-50 85h100Z"
+              d="M960 310V900M680 900H1240 M470 470H1450M560 470L390 720H730Z M1360 470L1190 720H1530Z"
               fill="none"
             />
+          </g>
+          <g transform="translate(530,480) scale(.5)">
+            <Car x={0} y={0} />
+          </g>
+          <g transform="translate(1300,430) scale(.75)">
+            <Book x={0} y={0} open={false} />
           </g>
         </>
       );
     case "S37":
       return (
-        <DeskAction
-          action="list"
-          items={
-            <>
-              <Book x={1390} y={690} open={false} />
-              <Slip x={1010} y={430} amounts={[budget.sam]} color={C.teal} />
-            </>
-          }
-        />
+        <>
+          <path
+            d="M650 270H1280V920H650Z"
+            fill="none"
+            stroke={C.navy}
+            strokeWidth={5}
+            strokeDasharray="14 12"
+          />
+          <CoinStack
+            x={800}
+            y={800}
+            value={budget.sam}
+            color={C.teal}
+            width={300}
+          />
+          <g opacity={0.35}>
+            <Benefit kind="car" x={300} y={700} scale={0.35} />
+            <Book x={1560} y={610} open={false} />
+          </g>
+        </>
       );
     case "S38":
       return (
         <>
-          <Commitments />
-          <Money x={1310} y={410} value={budget.added} size={76} />
+          <Benefit kind="desk" x={390} y={420} scale={0.55} />
+          <Benefit kind="car" x={1490} y={440} scale={0.55} />
+          <Benefit kind="services" x={960} y={300} scale={0.7} />
+          <Actor
+            actor={makeActor({
+              x: 960,
+              y: 1000,
+              scale: 2.1,
+              pose: "confused",
+              expression: "worried",
+            })}
+          />
+          <Money x={360} y={900} value={budget.added} size={100} fill={C.red} />
+          <Money
+            x={1500}
+            y={900}
+            value={example.raise}
+            size={100}
+            anchor="middle"
+          />
         </>
       );
     case "S39":
-      return index === 0 ? (
+      return index ? (
+        <>
+          <g transform="translate(750,490) scale(2)">
+            <DiningTable x={0} y={0} />
+          </g>
+          <Calendar x={250} y={250} />
+          <Check x={410} y={420} scale={1.2} />
+        </>
+      ) : (
         <>
           <Actor
             actor={makeActor({
               x: 760,
+              y: 1010,
+              scale: 2.8,
               pose: "sitting",
               expression: "relieved",
             })}
           />
-          <DiningTable x={930} y={760} />
-        </>
-      ) : (
-        <>
-          <DeskAction action="list" />
-          <Calendar x={1130} y={400} />
-          <Slip x={850} y={665} color={C.teal} />
+          <DiningTable x={1040} y={780} />
         </>
       );
     case "S40":
-      return (
-        <>
-          <DeskAction action="list" />
-          <Calendar x={1050} y={450} repeat={index === 1} />
-          {index === 1 && <Calendar x={1300} y={520} repeat />}
-          <Slip x={850} y={720} color={C.red} />
-        </>
-      );
+      return <Recurring count={index ? 3 : 1} />;
     case "S41":
       return (
         <>
-          <Commitments stage={2} />
-          <Slip
-            x={1400}
-            y={450}
-            amounts={[example.raise - rent - transport]}
-            color={C.teal}
-          />
+          <Allocation stage={2} y={590} />
+          <g transform="translate(480,290) scale(2.4)">
+            <Keys point={{ x: 0, y: 0 }} />
+          </g>
+          <Benefit kind="car" x={1260} y={340} scale={0.5} />
         </>
       );
     case "S42":
-      return index === 0 ? (
-        <Banking amount={budget.sam} compare={monthTwo} />
-      ) : (
-        <DeskAction
-          identity="Alex"
-          action="list"
-          old
-          items={<Book x={1310} y={690} open />}
-        />
-      );
-    case "S43":
-      return index === 0 ? (
+      return index ? (
         <>
-          <DeskAction identity="Alex" action="keep" old expression="relieved" />
-          <Guitar />
-          <Slip x={1220} y={410} amounts={[example.alexAdded]} color={C.teal} />
+          <Pair values={[budget.sam, monthTwo]} />
+          <Money
+            x={960}
+            y={340}
+            value={services}
+            size={100}
+            anchor="middle"
+            fill={C.red}
+          />
         </>
       ) : (
         <>
           <Actor
             actor={makeActor({
-              identity: "Alex",
-              x: 760,
-              pose: "sitting",
-              expression: "relieved",
+              x: 650,
+              y: 1000,
+              scale: 3,
+              pose: "thinking",
+              expression: "curious",
             })}
           />
-          <DiningTable x={930} y={760} />
-          <Envelope x={1220} y={420} value={example.alexAdded} />
+          <Benefit kind="services" x={1370} y={500} scale={1.4} />
+          <Money x={1380} y={800} value={services} size={100} anchor="middle" />
         </>
       );
+    case "S43": {
+      if (index)
+        return (
+          <>
+            <Actor
+              actor={makeActor({
+                identity: "Alex",
+                x: 750,
+                y: 1010,
+                scale: 2.8,
+                pose: "sitting",
+                expression: "relieved",
+              })}
+            />
+            <DiningTable x={1030} y={780} />
+            <Money
+              x={1440}
+              y={350}
+              value={example.alexAdded}
+              size={95}
+              anchor="middle"
+            />
+          </>
+        );
+      const actor = makeActor({
+        identity: "Alex",
+        x: 990,
+        y: 1030,
+        scale: 2.8,
+        pose: "sitting",
+        carry: true,
+        expression: "happy",
+      });
+      placeHands(actor, {
+        right: { x: 1130, y: 690 },
+        left: { x: 1210, y: 530 },
+      });
+      const hand = toWorld(actor, actor.rig.rightArm.end);
+      const neck = toWorld(actor, actor.rig.leftArm.end);
+      return (
+        <>
+          <Actor actor={actor} />
+          <g stroke={C.navy} strokeWidth={5}>
+            <ellipse
+              cx={hand.x}
+              cy={hand.y + 55}
+              rx={80}
+              ry={95}
+              fill={cinema.material.wood}
+            />
+            <path
+              d={`M${hand.x} ${hand.y}L${neck.x} ${neck.y}`}
+              stroke={cinema.material.wood}
+              strokeWidth={25}
+            />
+            <path
+              d={`M${hand.x} ${hand.y + 45}L${neck.x} ${neck.y}`}
+              stroke={C.navy}
+              strokeWidth={3}
+            />
+            <circle cx={hand.x} cy={hand.y + 40} r={20} fill={C.navy} />
+          </g>
+          <Money x={390} y={530} value={example.alexAdded} size={105} />
+        </>
+      );
+    }
     case "S44":
       return (
-        <Banking
+        <Transfer
           identity="Alex"
           amount={budget.alex}
           expenses={budget.alexExpenses}
@@ -1135,316 +2014,449 @@ const SceneArt = ({ shot }: { shot: CinematicStillShot }) => {
     case "S45":
       return (
         <>
-          <DeskAction identity="Alex" action="list" old />
-          {[budget.before, budget.alex - budget.before, example.alexAdded].map(
-            (value, i) => (
-              <Slip
-                key={i}
-                x={830 + i * 275}
-                y={480 + i * 40}
-                amounts={[value]}
-                color={i < 2 ? C.teal : C.yellow}
-                width={225}
-              />
-            ),
-          )}
-          <Money x={1100} y={410} value={budget.alex} size={78} />
+          <g transform="translate(380,0)">
+            <CoinStack x={0} y={810} value={budget.before} width={250} />
+            <CoinStack
+              x={380}
+              y={810}
+              value={budget.alex - budget.before}
+              width={250}
+              color={C.teal}
+            />
+            <path
+              d="M290 600H340M315 575V625"
+              stroke={C.navy}
+              strokeWidth={8}
+            />
+            <Money
+              x={315}
+              y={980}
+              value={budget.alex}
+              size={105}
+              anchor="middle"
+            />
+          </g>
+          <CoinStack
+            x={1450}
+            y={810}
+            value={example.alexAdded}
+            width={220}
+            color={C.yellow}
+          />
         </>
       );
     case "S46":
       return (
         <>
-          <Banking
-            identity="Alex"
-            amount={budget.alex}
-            expenses={budget.alexExpenses}
-          />
-          <Calendar x={1320} y={560} />
-        </>
-      );
-    case "S47":
-      return (
-        <DeskAction
-          identity="Alex"
-          action="list"
-          old
-          items={
-            <>
-              <Slip x={1210} y={500} />
-              <Keys point={{ x: 1450, y: 800 }} />
-            </>
-          }
-        />
-      );
-    case "S48":
-      return index === 0 ? (
-        <Equal showHobby />
-      ) : (
-        <>
-          <Car old x={750} scale={0.65} />
-          <Car x={1590} scale={0.65} />
-          <Actor
-            keys
-            actor={makeActor({
-              identity: "Alex",
-              x: 280,
-              scale: 1.8,
-              carry: true,
-            })}
-          />
-          <Actor
-            keys
-            actor={makeActor({
-              x: 1120,
-              scale: 1.8,
-              carry: true,
-              expression: "relieved",
-            })}
-          />
-        </>
-      );
-    case "S49":
-      return (
-        <>
-          <Actor actor={makeActor({ x: 720, expression: "thinking" })} />
-          <Actor
-            actor={makeActor({
-              identity: "Alex",
-              x: 1180,
-              expression: "thinking",
-            })}
-          />
-          <path
-            d="M490 310H1430V990H490Z"
-            stroke={C.navy}
-            strokeWidth={3}
-            strokeDasharray="12 10"
-            fill="none"
-          />
-        </>
-      );
-    case "S53":
-      return index === 0 ? (
-        <DeskAction action="list" expression="stressed" />
-      ) : (
-        <>
-          <DeskAction action="keep" expression="thinking" />
-          <StoryEnvironment location="sam-new" />
-        </>
-      );
-    case "S54":
-      return (
-        <DeskAction
-          action="list"
-          items={
-            <>
-              <Slip
-                x={1130}
-                y={400}
-                amounts={[rent, transport, services]}
-                color={C.red}
-              />
-              <Slip x={1440} y={610} color={C.teal} />
-            </>
-          }
-        />
-      );
-    case "S55":
-      return (
-        <DeskAction
-          action="phone"
-          expression="confident"
-          items={
-            <>
-              <Book x={1300} y={690} open />
-              <Slip x={1120} y={460} color={C.teal} />
-            </>
-          }
-        />
-      );
-    case "S56":
-      return index === 0 ? (
-        <>
-          <DeskAction action="phone" />
-          <Slip x={1200} y={420} amounts={[-services]} color={C.teal} />
-          <path
-            d="M1215 550L1380 670 M1380 550L1215 670"
-            stroke={C.red}
-            strokeWidth={6}
-          />
-        </>
-      ) : (
-        <>
-          <DeskAction action="list" />
-          <Calendar x={1140} y={410} />
-          <Slip x={840} y={670} amounts={[-services]} color={C.teal} />
-        </>
-      );
-    case "S57":
-      return <Commitments stage={2} showRaise={false} />;
-    case "S58":
-      return <Banking amount={monthTwo} expenses={monthTwoExpenses} />;
-    case "S59":
-      return (
-        <DeskAction
-          action="keep"
-          items={
-            <>
-              <Book x={1310} y={690} open={false} />
-              <Calendar x={1100} y={410} />
-            </>
-          }
-        />
-      );
-    case "S60":
-      return (
-        <>
-          <DeskAction action="list" />
-          <Envelope x={1120} y={400} value={budget.income} />
-          <Slip x={1250} y={680} amounts={[monthTwo]} color={C.teal} />
-          <g opacity={0.55}>
-            <Slip x={1510} y={440} />
-          </g>
-          <path
-            d="M1450 400V900"
-            stroke={C.navy}
-            strokeWidth={3}
-            strokeDasharray="12 10"
-          />
-        </>
-      );
-    case "S61":
-      return (
-        <>
-          <Sheet>
-            {[0, 1].map((row) => (
-              <g key={row}>
-                {Array.from({ length: 12 }, (_, i) => (
-                  <rect
-                    key={i}
-                    x={750 + i * 76}
-                    y={650 + row * 140}
-                    width={58}
-                    height={70}
-                    rx={4}
-                    fill={row ? C.teal : C.yellow}
-                    stroke={C.navy}
-                    strokeWidth={2}
-                  />
-                ))}
-                <Money
-                  x={620}
-                  y={705 + row * 140}
-                  value={
-                    index
-                      ? row
-                        ? alexAnnual
-                        : samAnnual
-                      : row
-                        ? budget.alex
-                        : budget.sam
-                  }
-                  size={52}
-                  anchor="middle"
-                />
-              </g>
-            ))}
-          </Sheet>
-          <Actor
-            actor={makeActor({
-              x: 430,
-              scale: 1.8,
-              pose: "explaining",
-              expression: "curious",
-            })}
-          />
-        </>
-      );
-    case "S62":
-      return (
-        <>
-          <Sheet>
-            <Slip x={690} y={560} amounts={[samAnnual]} width={285} />
-            <Slip
-              x={1100}
-              y={560}
-              amounts={[alexAnnual]}
-              color={C.teal}
-              width={285}
-            />
-            <Money
-              x={1130}
-              y={500}
-              value={alexAnnual - samAnnual}
-              size={84}
-              anchor="middle"
-            />
-          </Sheet>
-          <Actor
-            actor={makeActor({ x: 400, scale: 1.8, pose: "explaining" })}
-          />
-        </>
-      );
-    case "S63":
-      return index === 0 ? (
-        <DeskAction
-          action="list"
-          items={<Book x={1280} y={690} open={false} />}
-        />
-      ) : (
-        <Banking amount={monthTwo} />
-      );
-    case "S64":
-      return <Equal values={[monthTwo, budget.alex]} showHobby />;
-    case "S65":
-      return (
-        <>
-          <DeskAction action="list" expression="confident" />
-          <Envelope x={1100} y={390} value={budget.income} />
-          <Slip
-            x={1250}
-            y={650}
-            amounts={[monthTwoExpenses, monthTwo]}
+          <Calendar x={390} y={340} />
+          <Check x={555} y={520} />
+          <Arrow x={820} y={560} width={200} />
+          <CoinStack
+            x={1190}
+            y={820}
+            value={budget.alex}
+            width={300}
             color={C.teal}
           />
         </>
       );
-    case "S66":
-      return index === 0 ? (
-        <Banking amount={budget.sam} />
+    case "S47":
+      return (
+        <>
+          <Actor
+            actor={makeActor({
+              identity: "Alex",
+              x: 1280,
+              y: 1050,
+              scale: 2.85,
+              facing: -1,
+              pose: "explaining",
+              expression: "thinking",
+            })}
+          />
+          <g transform="translate(600,680) scale(1.8)">
+            <Guitar x={0} y={0} />
+          </g>
+          <path
+            d="M830 360V850"
+            stroke={C.navy}
+            strokeWidth={5}
+            strokeDasharray="14 14"
+          />
+        </>
+      );
+    case "S48":
+      return <LifestyleCompare rental={index === 1} />;
+    case "S49":
+      return <Scope household />;
+    case "S50":
+      return index ? (
+        <Pair values={[samThreeMonths, alexThreeMonths]} gap />
       ) : (
-        <Banking amount={monthTwo} />
+        <Contributions
+          values={[budget.alex, budget.alex, budget.alex]}
+          color={C.teal}
+        />
+      );
+    case "S51":
+      return index ? (
+        <Pair values={[budget.sam, budget.alex]} gap />
+      ) : (
+        <>
+          <Actor actor={makeActor({ x: 490, expression: "thinking" })} />
+          <Actor
+            actor={makeActor({
+              identity: "Alex",
+              x: 1430,
+              expression: "thinking",
+            })}
+          />
+          <Money
+            x={490}
+            y={270}
+            value={example.raise}
+            size={100}
+            anchor="middle"
+          />
+          <Money
+            x={1430}
+            y={270}
+            value={example.raise}
+            size={100}
+            anchor="middle"
+          />
+          <path
+            d="M900 550H1020M900 590H1020"
+            stroke={C.navy}
+            strokeWidth={10}
+          />
+        </>
+      );
+    case "S52":
+      return (
+        <ComparisonScene
+          left={
+            <>
+              <Actor
+                actor={makeActor({
+                  x: 280,
+                  scale: 2.3,
+                  carry: true,
+                  expression: "relieved",
+                })}
+                keys
+              />
+              <WritingDesk x={430} y={690} width={430} />
+              <Laptop grip={{ x: 650, y: 690 }} open={1} />
+              <Car x={670} y={920} scale={0.25} />
+            </>
+          }
+          right={
+            <>
+              <Actor
+                actor={makeActor({
+                  identity: "Alex",
+                  x: 280,
+                  scale: 2.3,
+                  expression: index ? "relieved" : "confident",
+                })}
+              />
+              <CoinStack
+                x={560}
+                y={820}
+                value={budget.alex}
+                width={240}
+                color={C.teal}
+              />
+            </>
+          }
+        />
+      );
+    case "S53":
+      return index ? (
+        <>
+          <Actor
+            actor={makeActor({
+              x: 510,
+              y: 1050,
+              scale: 2.7,
+              carry: true,
+              expression: "thinking",
+            })}
+            keys
+          />
+          <Benefit kind="desk" x={1270} y={640} scale={1} />
+          <StoryEnvironment location="sam-new" />
+        </>
+      ) : (
+        <Portrait expression="stressed" x={1100} />
+      );
+    case "S54":
+      return (
+        <>
+          <g transform="translate(580,170) rotate(4)">
+            <Slip
+              x={0}
+              y={0}
+              width={650}
+              amounts={[rent, transport, services]}
+              color={C.red}
+            />
+          </g>
+          <Money
+            x={1460}
+            y={780}
+            value={budget.sam}
+            size={100}
+            anchor="middle"
+          />
+          <Arrow x={1320} y={560} width={150} />
+        </>
+      );
+    case "S55":
+      return <Choice cautious />;
+    case "S56":
+      return index ? (
+        <>
+          <Calendar x={350} y={350} />
+          <Arrow x={810} y={550} width={180} />
+          <Money
+            x={1320}
+            y={570}
+            value={-services}
+            size={150}
+            anchor="middle"
+          />
+          <Check x={1320} y={770} />
+        </>
+      ) : (
+        <>
+          <Benefit kind="services" x={670} y={590} scale={2} />
+          <path
+            d="M470 330L870 650M870 330L470 650"
+            stroke={C.red}
+            strokeWidth={14}
+          />
+          <Money
+            x={1360}
+            y={610}
+            value={-services}
+            size={140}
+            anchor="middle"
+          />
+        </>
+      );
+    case "S57":
+      return (
+        <>
+          <Actor
+            actor={makeActor({
+              x: 920,
+              y: 1030,
+              scale: 2.6,
+              carry: true,
+              expression: "thinking",
+            })}
+            keys
+          />
+          <Benefit kind="desk" x={400} y={700} scale={0.6} />
+          <Benefit kind="car" x={1490} y={760} scale={0.55} />
+          <Money x={400} y={380} value={rent} size={95} anchor="middle" />
+          <Money x={1470} y={380} value={transport} size={95} anchor="middle" />
+        </>
+      );
+    case "S58":
+      return (
+        <>
+          <CoinStack
+            x={330}
+            y={840}
+            value={budget.sam}
+            color={C.yellow}
+            width={260}
+          />
+          <Money
+            x={850}
+            y={640}
+            value={services}
+            size={85}
+            anchor="middle"
+            fill={C.teal}
+          />
+          <Arrow x={750} y={740} width={230} color={C.teal} />
+          <CoinStack
+            x={1230}
+            y={840}
+            value={monthTwo}
+            width={310}
+            color={C.teal}
+          />
+          <Money
+            x={960}
+            y={270}
+            value={monthTwoExpenses}
+            size={90}
+            anchor="middle"
+            fill={C.red}
+          />
+        </>
+      );
+    case "S59":
+      return (
+        <>
+          <Actor
+            actor={makeActor({
+              x: 1360,
+              y: 1030,
+              scale: 2.6,
+              facing: -1,
+              carry: true,
+              expression: "confident",
+            })}
+            keys
+          />
+          <Calendar x={360} y={320} />
+          <Check x={530} y={500} />
+          <Benefit kind="car" x={650} y={850} scale={0.4} />
+        </>
+      );
+    case "S60":
+      return (
+        <>
+          <path
+            d="M340 430H740V650H340Z"
+            fill={C.yellow}
+            stroke={C.navy}
+            strokeWidth={6}
+          />
+          <Arrow x={810} y={540} width={210} />
+          <g transform="translate(1190,390)">
+            <Calendar x={0} y={0} repeat />
+          </g>
+          <path
+            d="M1400 790Q1400 940 660 900"
+            stroke={C.red}
+            strokeWidth={8}
+            fill="none"
+          />
+          <Money x={400} y={920} value={monthTwo} size={95} />
+        </>
+      );
+    case "S61":
+      return <AnnualGrid totals={index === 1} />;
+    case "S62":
+      return <Pair values={[samAnnual, alexAnnual]} gap annual />;
+    case "S63":
+      return index ? (
+        <>
+          <Actor
+            actor={makeActor({
+              x: 1250,
+              y: 1030,
+              scale: 2.7,
+              expression: "confident",
+            })}
+          />
+          <CoinStack
+            x={400}
+            y={820}
+            value={monthTwo}
+            width={300}
+            color={C.teal}
+          />
+        </>
+      ) : (
+        <>
+          <g transform="translate(960,600) scale(2.2)">
+            <Book x={0} y={0} open={false} />
+            {Array.from({ length: 12 }, (_, i) => (
+              <rect
+                key={i}
+                x={-165 + i * 28}
+                y={-60}
+                width={20}
+                height={55}
+                fill={i < 6 ? C.yellow : C.teal}
+                stroke={C.navy}
+                strokeWidth={1}
+              />
+            ))}
+          </g>
+        </>
+      );
+    case "S64":
+      return <Choice />;
+    case "S65":
+      return (
+        <>
+          <g transform="translate(350,90) scale(.8)">
+            <WorkBenefit satisfied />
+          </g>
+          <Money x={290} y={250} value={budget.income} size={95} />
+          <Money
+            x={290}
+            y={400}
+            value={monthTwoExpenses}
+            size={80}
+            fill={C.red}
+          />
+          <Money x={290} y={550} value={monthTwo} size={95} fill={C.teal} />
+          <Check x={400} y={720} />
+        </>
+      );
+    case "S66":
+      return index ? (
+        <>
+          <Actor
+            actor={makeActor({
+              x: 1110,
+              y: 1040,
+              scale: 2.8,
+              expression: "confident",
+              carry: true,
+            })}
+            keys
+          />
+          <CoinStack
+            x={330}
+            y={840}
+            value={monthTwo}
+            width={300}
+            color={C.teal}
+          />
+        </>
+      ) : (
+        <>
+          <Allocation y={560} />
+          <Money x={400} y={250} value={budget.added} size={105} fill={C.red} />
+        </>
       );
     case "S67":
       return (
         <>
-          <Banking amount={monthTwo} />
-          <Envelope x={1220} y={420} value={budget.income} />
+          <Portrait expression="confident" amount={monthTwo} />
+          <Money x={1380} y={480} value={monthTwo} size={150} anchor="middle" />
+          <Check x={1380} y={670} scale={1.6} />
         </>
       );
     default:
-      throw new Error(`No redesigned scene ${scene}`);
+      throw new Error(`No art direction for ${shot.id}`);
   }
 };
 
 export const CinematicStoryboardStudy = ({ shotId }: { shotId: string }) => {
   const shot = cinematicStillShots.find((shot) => shot.id === shotId);
   if (!shot) throw new Error(`Unknown still ${shotId}`);
-  if (
-    ["S05", "S11", "S64"].includes(shot.scene) ||
-    (shot.scene === "S48" && shot.index === 0)
-  )
+  if (["S05", "S11", "S30", "S48", "S52"].includes(shot.scene))
     return <SceneArt shot={shot} />;
-  const view =
-    shot.scene === "S03" && shot.index === 1
-      ? storyboardViews.hands
-      : ["S35", "S44", "S58", "S67"].includes(shot.scene)
-        ? storyboardViews.phone
-        : ["S06", "S15", "S23", "S28", "S29", "S46"].includes(shot.scene)
-          ? storyboardViews.medium
-          : storyboardViews.wide;
   return (
-    <NarrativeScene view={view}>
+    <NarrativeScene
+      view={
+        shot.scene === "S12" && shot.index === 2
+          ? storyboardViews.hands
+          : storyboardViews.wide
+      }
+    >
       <SceneArt shot={shot} />
     </NarrativeScene>
   );

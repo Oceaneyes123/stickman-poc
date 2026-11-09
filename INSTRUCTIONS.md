@@ -70,18 +70,18 @@ Uses the existing Jeremy audio and cue timing. Choose a new output folder for ea
 ## 9. Review or regenerate the complete storyboard
 
 ```powershell
-Invoke-Item out/001-lifestyle-creep/storyboard-design-v3/review/index.html
+Invoke-Item out/001-lifestyle-creep/storyboard-design-v6/review/index.html
 ```
 
 To generate a new still-only packet, choose an unused output folder:
 
 ```powershell
-npm run storyboard:design -- --out out/001-lifestyle-creep/storyboard-design-v4
-Invoke-Item out/001-lifestyle-creep/storyboard-design-v4/review/index.html
+npm run storyboard:design -- --out out/001-lifestyle-creep/storyboard-design-v7
+Invoke-Item out/001-lifestyle-creep/storyboard-design-v7/review/index.html
 ```
 
-Includes S01–S67, exact narration, and contact sheets. Uses existing reference
-stills and Python Pillow. No video or audio is generated.
+Includes 99 S01–S67 stills, exact narration, and chronological/grouped sheets in
+`contact-sheets/`. Requires Python Pillow. No video or audio is generated.
 
 ## 10. Render the three cinematic references (after storyboard approval)
 

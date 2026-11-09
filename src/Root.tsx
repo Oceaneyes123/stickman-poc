@@ -5,10 +5,19 @@ import { CharacterStudy } from "./CharacterStudy";
 import { BankExample } from "./scenes/BankExample";
 import { MovementReview, MOVEMENT_DURATION } from "./MovementReview";
 import { WalkingMechanics } from "./WalkingMechanics";
+import { GeneralOutro } from "./scenes/GeneralOutro";
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Composition
+        id="GeneralOutro"
+        component={GeneralOutro}
+        durationInFrames={240}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
       <Composition
         id="WalkingMechanics"
         component={WalkingMechanics}

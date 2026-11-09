@@ -1,13 +1,11 @@
 import type { Rect } from "../animation/direction.ts";
+import { example } from "../finance/math.ts";
 
-export const referenceScenes = [
-  "S12",
-  "S21",
-  "S22",
-  "S50",
-  "S51",
-  "S52",
-] as const;
+export const allocationParts = (stage: 1 | 2 | 3) =>
+  example.upgrades.slice(0, stage).map((item) => item.amount);
+export const allocationRemainder = (stage: 1 | 2 | 3) =>
+  example.raise - allocationParts(stage).reduce((a, b) => a + b, 0);
+
 const panels: Record<string, string[]> = {
   S01: ["raise", "reaction"],
   S02: ["workspace", "rental", "entertainment"],
@@ -15,8 +13,11 @@ const panels: Record<string, string[]> = {
   S04: ["working", "commitments"],
   S06: ["pay", "remaining", "transfer"],
   S08: ["cramped", "older-rental"],
+  S12: ["lift-phone", "enter-room", "open-laptop", "notice-space"],
   S14: ["sign", "alex-keeps-home"],
   S20: ["newer-seat", "alex-keeps-rental"],
+  S21: ["quote-amount", "raise-amount"],
+  S22: ["rent-amount", "eighty-remains"],
   S26: ["used-service", "alex-pauses"],
   S32: ["sam-contributions", "old-pace"],
   S33: ["monthly", "three-months"],
@@ -26,6 +27,9 @@ const panels: Record<string, string[]> = {
   S42: ["sam-tradeoff", "alex-checks"],
   S43: ["hobby", "meal"],
   S48: ["workspace-tradeoff", "rental-tradeoff"],
+  S50: ["alex-files", "period-difference"],
+  S51: ["same-raise", "sam-monthly"],
+  S52: ["sam-benefit", "alex-resolve"],
   S53: ["cancel-impulse", "keep-useful-comforts"],
   S56: ["cancel", "billing-boundary"],
   S61: ["earlier-inputs", "annual-contributions"],
@@ -35,23 +39,643 @@ const panels: Record<string, string[]> = {
 export const cinematicStillShots = Array.from(
   { length: 67 },
   (_, i) => `S${String(i + 1).padStart(2, "0")}`,
-)
-  .filter(
-    (id) => !referenceScenes.includes(id as (typeof referenceScenes)[number]),
-  )
-  .flatMap((scene) =>
-    (panels[scene] ?? ["main"]).map((phase, index) => ({
-      scene,
-      phase,
-      index,
-      id: `${scene}-${phase}`,
-    })),
-  );
+).flatMap((scene) =>
+  (panels[scene] ?? ["main"]).map((phase, index) => ({
+    scene,
+    phase,
+    index,
+    id: `${scene}-${phase}`,
+  })),
+);
 export type CinematicStillShot = (typeof cinematicStillShots)[number];
+
+export const compositionCategories = [
+  "Character close-up",
+  "Medium character shot",
+  "Wide environmental shot",
+  "Object close-up",
+  "Over-the-shoulder",
+  "POV shot",
+  "Split-screen",
+  "Symbolic illustration",
+  "Financial diagram",
+  "Sequential action",
+] as const;
+type Category = (typeof compositionCategories)[number];
+export type StillDirection = {
+  category: Category;
+  camera: string;
+  subject: string;
+  action: string;
+  propFocus: string;
+};
+const direction = (
+  category: Category,
+  camera: string,
+  subject: string,
+  action: string,
+  propFocus = "character",
+): StillDirection => ({ category, camera, subject, action, propFocus });
+const sceneDirections: Record<string, StillDirection> = {
+  S01: direction(
+    "Medium character shot",
+    "eye level, medium left",
+    "Sam's raised pay notice",
+    "Celebrate the increase; cut to a worried reaction",
+    "document",
+  ),
+  S02: direction(
+    "Wide environmental shot",
+    "three-quarter wide",
+    "The actual improved comforts",
+    "Carry the laptop, enjoy the rental, choose a film",
+    "lifestyle",
+  ),
+  S03: direction(
+    "Character close-up",
+    "eye level, face and stopped thumb",
+    "Sam notices the smaller transfer",
+    "Stop smiling; compare two transfer lengths",
+    "character",
+  ),
+  S04: direction(
+    "Symbolic illustration",
+    "frontal, raise path across frame",
+    "Small commitments consume one raise",
+    "Work continues while the finite increase is allocated",
+    "allocation",
+  ),
+  S05: direction(
+    "Split-screen",
+    "matched medium, equal character scale",
+    "Sam and Alex receive equal increases",
+    "Match their starting opportunity; keep identity clear",
+    "money",
+  ),
+  S06: direction(
+    "Financial diagram",
+    "frontal, large horizontal allocation",
+    "Pay, costs and the remainder",
+    "Separate the $400 remainder before the transfer action",
+    "allocation",
+  ),
+  S07: direction(
+    "Symbolic illustration",
+    "frontal, isolated example boundary",
+    "An illustrative model, not a household portrait",
+    "Keep the two characters inside a dashed example boundary",
+    "model",
+  ),
+  S08: direction(
+    "Wide environmental shot",
+    "oblique medium, crowded tabletop",
+    "Sam's cramped workspace",
+    "Show the dishes crowding the laptop; cut to older rental",
+    "lifestyle",
+  ),
+  S09: direction(
+    "Financial diagram",
+    "frontal, rising income columns",
+    "The raise expands available money",
+    "Keep expenses fixed while the remainder increases",
+    "money",
+  ),
+  S10: direction(
+    "Medium character shot",
+    "eye level, Sam between two outcomes",
+    "A deliberate mixture of comfort and saving",
+    "Offer some room to enjoy life and some to keep",
+    "choice",
+  ),
+  S11: direction(
+    "Split-screen",
+    "matched symmetrical medium",
+    "Equal starting conditions",
+    "Match income, costs and transfer; no head start",
+    "money",
+  ),
+  S12: direction(
+    "Sequential action",
+    "listing insert, wide arrival, hands, medium satisfaction",
+    "A useful workspace upgrade",
+    "Browse, arrive carrying the laptop, place it, enjoy the space",
+    "lifestyle",
+  ),
+  S13: direction(
+    "Object close-up",
+    "frontal key and finite allocation",
+    "The apartment uses half the raise",
+    "Connect the key to $300 of the same $600",
+    "keys",
+  ),
+  S14: direction(
+    "Sequential action",
+    "high oblique hand insert",
+    "The lease decision",
+    "Show the constrained signing hand and then Alex keeping his workspace",
+    "document",
+  ),
+  S15: direction(
+    "Over-the-shoulder",
+    "Sam foreground, transfer screen in focus",
+    "The first $700 transfer",
+    "Make the actual savings action visible",
+    "phone",
+  ),
+  S16: direction(
+    "Financial diagram",
+    "frontal, two contribution columns",
+    "The apartment alone still improves the transfer",
+    "Compare $400 and $700 on one numerical scale",
+    "money",
+  ),
+  S17: direction(
+    "Object close-up",
+    "top-down isolated moving box and recurring loop",
+    "Monthly rent versus excluded moving costs",
+    "Separate the unpriced box from the recurring $300",
+    "box",
+  ),
+  S18: direction(
+    "Wide environmental shot",
+    "three-quarter wide, furniture separated",
+    "Sam can leave work in place and enjoy dinner",
+    "Seat Sam at dinner while the laptop stays on its desk",
+    "lifestyle",
+  ),
+  S19: direction(
+    "Medium character shot",
+    "low three-quarter vehicle handover",
+    "Sam accepts a newer rental",
+    "Keep the keys attached and display the monthly difference",
+    "vehicle",
+  ),
+  S20: direction(
+    "Character close-up",
+    "passenger-side close, seat and steering wheel",
+    "Comfort motivates the car choice",
+    "Let Sam enjoy the car; match against Alex's retained rental",
+    "vehicle",
+  ),
+  S21: direction(
+    "Object close-up",
+    "tight rental key insert",
+    "The $220 commitment in isolation",
+    "First see the keys and $220, then the finite $600 context",
+    "keys",
+  ),
+  S22: direction(
+    "Financial diagram",
+    "frontal, full finite raise strip",
+    "The overlooked apartment commitment",
+    "Reveal rent, then isolate the remaining $80",
+    "allocation",
+  ),
+  S23: direction(
+    "Medium character shot",
+    "eye level, Sam right of contribution",
+    "Sam still feels financially okay",
+    "Show relief beside the positive $480 transfer",
+    "money",
+  ),
+  S24: direction(
+    "Symbolic illustration",
+    "frontal, two branches converge",
+    "Separate decisions share one savings consequence",
+    "Bring apartment and vehicle into one $520 commitment",
+    "allocation",
+  ),
+  S25: direction(
+    "Object close-up",
+    "slight high angle, remote and service controls",
+    "Small services total $100",
+    "Combine three unpriced service icons into one exact total",
+    "services",
+  ),
+  S26: direction(
+    "Medium character shot",
+    "relaxed couch composition",
+    "Enjoyment and cancellation friction",
+    "Watch a film, then put off a locked account",
+    "lifestyle",
+  ),
+  S27: direction(
+    "Financial diagram",
+    "frontal, finite raise with overrun",
+    "Recurring costs exceed the raise by $20",
+    "Show the $620 total extending past a $600 boundary",
+    "allocation",
+  ),
+  S28: direction(
+    "POV shot",
+    "top-down transfer insert",
+    "Sam actually saves $380",
+    "Confirm the destination after the $3,220 illustrated costs",
+    "phone",
+  ),
+  S29: direction(
+    "Character close-up",
+    "opening-angle emotional callback",
+    "The smaller monthly transfer",
+    "Sam looks at $380 versus $400, with the $20 difference",
+    "character",
+  ),
+  S30: direction(
+    "Split-screen",
+    "matched wide comfort and contribution",
+    "Two true outcomes coexist",
+    "Keep the useful comforts and the smaller saving equally visible",
+    "lifestyle",
+  ),
+  S31: direction(
+    "Object close-up",
+    "low money-stack insert",
+    "Saving is still positive",
+    "Add a positive contribution; never imply a known total balance",
+    "money",
+  ),
+  S32: direction(
+    "Sequential action",
+    "frontal, three contribution columns",
+    "Three-month accumulated contributions",
+    "Compare the actual sequence to the old pace on the same scale",
+    "money",
+  ),
+  S33: direction(
+    "Financial diagram",
+    "frontal, monthly then period grouping",
+    "Monthly pace differs from accumulated contributions",
+    "Clear the monthly pair before the three-month pair",
+    "money",
+  ),
+  S34: direction(
+    "Financial diagram",
+    "income flow, costs separated from savings",
+    "Receiving more differs from keeping more",
+    "Separate $3,600 income into $3,220 expenses and $380 saving",
+    "allocation",
+  ),
+  S35: direction(
+    "Over-the-shoulder",
+    "hand and screen close, Sam at frame edge",
+    "A calculated remainder becomes a real transfer",
+    "Show the savings destination and confirmation",
+    "phone",
+  ),
+  S36: direction(
+    "Symbolic illustration",
+    "balanced objects, no invented amounts",
+    "Net worth needs assets and liabilities",
+    "Show owned objects and obligations as separate inputs",
+    "scale",
+  ),
+  S37: direction(
+    "Object close-up",
+    "isolated contribution stack within model boundary",
+    "Cash contributions are the scope",
+    "Keep unpriced asset and debt symbols outside the boundary",
+    "money",
+  ),
+  S38: direction(
+    "Wide environmental shot",
+    "Sam at center of converging commitments",
+    "Many small decisions add to one monthly cost",
+    "Let actual comfort objects converge onto the $620 total",
+    "lifestyle",
+  ),
+  S39: direction(
+    "Sequential action",
+    "dining medium then top-down plate insert",
+    "A dinner is paid once",
+    "Enjoy the meal; show one check mark and one calendar event",
+    "meal",
+  ),
+  S40: direction(
+    "Symbolic illustration",
+    "oblique calendar progression",
+    "Recurring commitments repeat",
+    "Carry the same key symbol into successive unnumbered months",
+    "calendar",
+  ),
+  S41: direction(
+    "Object close-up",
+    "wallet-like finite raise insert",
+    "Most of the raise is already committed",
+    "Keep rent and rental markers fixed around the $80 unallocated part",
+    "allocation",
+  ),
+  S42: direction(
+    "Medium character shot",
+    "Sam considering competing allocations",
+    "A service competes with saving",
+    "Pause before the selection, then show the $480 to $380 tradeoff",
+    "choice",
+  ),
+  S43: direction(
+    "Medium character shot",
+    "three-quarter hobby performance",
+    "Alex also enjoys the raise",
+    "Play the guitar, then enjoy a meal; $200 is one shared budget",
+    "lifestyle",
+  ),
+  S44: direction(
+    "POV shot",
+    "Alex transfer insert, mirrored from Sam",
+    "Alex transfers $800",
+    "Show the checked plan and actual savings destination",
+    "phone",
+  ),
+  S45: direction(
+    "Financial diagram",
+    "frontal stacked money segments",
+    "Alex's $800 consists of old saving plus kept raise",
+    "Combine $400 and $400; leave $200 for enjoyment",
+    "money",
+  ),
+  S46: direction(
+    "Object close-up",
+    "high-angle calendar and scheduled transfer",
+    "Automation executes an affordable plan",
+    "Connect the checked $800 transfer to its scheduled event",
+    "calendar",
+  ),
+  S47: direction(
+    "Medium character shot",
+    "Alex right, optional item left",
+    "Alex sees the tradeoff before buying",
+    "Hold back an open hand; postpone an unpriced guitar upgrade",
+    "choice",
+  ),
+  S48: direction(
+    "Split-screen",
+    "equal wide lifestyle views",
+    "Alex postpones comforts Sam receives",
+    "Match cramped and useful workspaces; then compare rental vehicles",
+    "lifestyle",
+  ),
+  S49: direction(
+    "Symbolic illustration",
+    "equal characters inside a bounded example",
+    "Equal starting assumptions have limits",
+    "Keep an unpriced safety shield outside the example boundary",
+    "model",
+  ),
+  S50: direction(
+    "Sequential action",
+    "frontal contribution columns then comparison",
+    "First-three-month contribution difference",
+    "Build Alex's three $800 contributions; compare $1,560 and $2,400",
+    "money",
+  ),
+  S51: direction(
+    "Financial diagram",
+    "matched raise strips, then monthly columns",
+    "Same raise, different monthly transfers",
+    "Separate equal $600 increases from $380/$800 and $420 gap",
+    "money",
+  ),
+  S52: direction(
+    "Split-screen",
+    "equal wide, then matched medium",
+    "Different benefits from the same opportunity",
+    "Show Sam using his workspace and Alex keeping contributions",
+    "lifestyle",
+  ),
+  S53: direction(
+    "Character close-up",
+    "tight reaction followed by wider reconsideration",
+    "Sam catches the cancel-everything impulse",
+    "Start stressed, then consider the useful comforts",
+    "character",
+  ),
+  S54: direction(
+    "Financial diagram",
+    "top-down physical ledger",
+    "The whole list reveals the tradeoff",
+    "Retain one justified document; connect every cost to the remainder",
+    "document",
+  ),
+  S55: direction(
+    "Medium character shot",
+    "Sam weighing a savings target",
+    "Choose what to keep before committing",
+    "Reach toward a savings destination, without inventing a target",
+    "choice",
+  ),
+  S56: direction(
+    "Sequential action",
+    "service-control insert then billing calendar",
+    "Cancellation changes the next illustrated billing month",
+    "Disable services and remove the $100 at the stated boundary",
+    "services",
+  ),
+  S57: direction(
+    "Wide environmental shot",
+    "keys and furniture remain with Sam",
+    "The larger commitments remain",
+    "Retain apartment and rental symbols after services disappear",
+    "lifestyle",
+  ),
+  S58: direction(
+    "Financial diagram",
+    "frontal contribution grows by exact $100",
+    "The revised transfer improves to $480",
+    "Use one scale for $380 and the reclaimed $100",
+    "money",
+  ),
+  S59: direction(
+    "Medium character shot",
+    "Sam right, commitments and calendar left",
+    "Review larger choices when change is possible",
+    "Hold the keys and consult a future calendar opportunity",
+    "calendar",
+  ),
+  S60: direction(
+    "Symbolic illustration",
+    "finite new income path",
+    "Another raise alone cannot settle the allocation",
+    "Show a blank new increase entering a recurring loop; invent no amount",
+    "allocation",
+  ),
+  S61: direction(
+    "Sequential action",
+    "twelve-cell grids with common money scale",
+    "A separate unchanged-pattern annual illustration",
+    "Use month-three $380/$800 inputs, then annual $4,560/$9,600",
+    "money",
+  ),
+  S62: direction(
+    "Financial diagram",
+    "paired bars, shared scale and difference bracket",
+    "The conditional $5,040 annual gap",
+    "Keep the same annual totals and exact difference; no growth forecast",
+    "money",
+  ),
+  S63: direction(
+    "Sequential action",
+    "close the example, return to Sam medium",
+    "The illustration is conditional",
+    "Close the twelve-cell model and return to the actual revised $480 plan",
+    "model",
+  ),
+  S64: direction(
+    "Medium character shot",
+    "Sam choosing between tangible outcomes",
+    "Comfort and saving can be mixed",
+    "Keep the useful desk and chosen saving in one balanced decision",
+    "choice",
+  ),
+  S65: direction(
+    "Wide environmental shot",
+    "calm Sam using the improved workspace",
+    "Same pay with a controlled plan",
+    "Keep $3,600 pay, $3,120 costs and $480 transfer clear",
+    "lifestyle",
+  ),
+  S66: direction(
+    "Sequential action",
+    "opening memory then revised allocation",
+    "Summarize the cause, not just the numbers",
+    "Recall $620 costs against $600 raise, then the corrected choice",
+    "allocation",
+  ),
+  S67: direction(
+    "Character close-up",
+    "opening-angle callback, settled posture",
+    "The transfer matches Sam's plan",
+    "Check the confirmed $480 and relax with control",
+    "character",
+  ),
+};
+const overrides: Record<string, Partial<StillDirection>> = {
+  "S01-reaction": {
+    category: "Character close-up",
+    camera: "tight face, phone below sightline",
+    propFocus: "character",
+  },
+  "S03-closer": {
+    category: "POV shot",
+    camera: "isolated transfer comparison insert",
+    propFocus: "phone",
+  },
+  "S04-working": {
+    category: "Medium character shot",
+    camera: "oblique workstation",
+    propFocus: "desk",
+  },
+  "S06-pay": {
+    category: "Object close-up",
+    camera: "pay deposit insert",
+    propFocus: "money",
+  },
+  "S06-transfer": {
+    category: "POV shot",
+    camera: "large banking action insert",
+    propFocus: "phone",
+  },
+  "S02-rental": {
+    category: "Character close-up",
+    camera: "passenger-side close",
+    propFocus: "vehicle",
+  },
+  "S02-entertainment": {
+    category: "Medium character shot",
+    camera: "couch and remote medium",
+    propFocus: "lifestyle",
+  },
+  "S12-lift-phone": {
+    category: "POV shot",
+    camera: "listing insert",
+    propFocus: "phone",
+  },
+  "S12-enter-room": {
+    category: "Wide environmental shot",
+    camera: "wide arrival with carried laptop",
+  },
+  "S12-open-laptop": {
+    category: "Object close-up",
+    camera: "hands and laptop insert",
+    propFocus: "laptop",
+  },
+  "S12-notice-space": {
+    category: "Medium character shot",
+    camera: "satisfied Sam at working desk",
+    propFocus: "desk",
+  },
+  "S14-alex-keeps-home": {
+    category: "Wide environmental shot",
+    camera: "Alex's retained cramped work corner",
+    propFocus: "desk",
+  },
+  "S20-alex-keeps-rental": {
+    category: "Wide environmental shot",
+    camera: "matched retained older rental",
+    propFocus: "vehicle",
+  },
+  "S22-eighty-remains": {
+    category: "Character close-up",
+    camera: "Sam's realization beside the $80 insert",
+  },
+  "S26-alex-pauses": {
+    camera: "Sam postpones the locked service account; no Alex substitution",
+    propFocus: "services",
+  },
+  "S32-old-pace": {
+    category: "Financial diagram",
+    camera: "matched old-pace columns",
+  },
+  "S34-alex-checks": {
+    category: "Character close-up",
+    camera: "Sam considers the pay increase while holding the actual transfer",
+    propFocus: "character",
+  },
+  "S39-paid-once": {
+    category: "Object close-up",
+    camera: "one plate, one checked event",
+    propFocus: "meal",
+  },
+  "S42-alex-checks": {
+    category: "Financial diagram",
+    camera: "Sam's $100 transfer tradeoff; Alex not introduced early",
+    propFocus: "money",
+  },
+  "S43-meal": {
+    camera: "Alex at dining table, same shared $200 budget",
+    propFocus: "meal",
+  },
+  "S50-period-difference": {
+    category: "Financial diagram",
+    camera: "equal-scale accumulated bars and difference",
+  },
+  "S52-alex-resolve": {
+    camera: "same equal-weight outcomes, more settled characters",
+  },
+  "S53-keep-useful-comforts": {
+    category: "Wide environmental shot",
+    camera: "Sam reconsidering the useful furniture and rental keys",
+    propFocus: "lifestyle",
+  },
+  "S56-billing-boundary": {
+    category: "Object close-up",
+    camera: "next calendar boundary, removed services",
+    propFocus: "calendar",
+  },
+  "S63-current-plan": {
+    category: "Medium character shot",
+    camera: "confident Sam returns to actual $480 transfer",
+    propFocus: "character",
+  },
+  "S66-current-plan": {
+    category: "Medium character shot",
+    camera: "Sam settles on the revised commitments",
+    propFocus: "choice",
+  },
+};
+export const stillDirection = (shot: CinematicStillShot): StillDirection => ({
+  ...sceneDirections[shot.scene],
+  ...overrides[shot.id],
+});
 export const storyboardViews = {
   wide: [0, 0, 1920, 1080],
-  medium: [250, 140, 1420, 798.75],
-  hands: [550, 300, 1200, 675],
-  phone: [550, 260, 1100, 618.75],
-  table: [350, 235, 1500, 843.75],
+  hands: [650, 500, 640, 360],
 } satisfies Record<string, Rect>;

@@ -448,3 +448,47 @@ character and gallery frames were regenerated, and the existing review decoded.
   The new designs are static proposals awaiting human visual approval.
   Episode-wide animation, transitions and audiovisual synchronization were not
   implemented or evaluated. Existing draft timing/listening flags are unchanged.
+
+
+## Visual variety overhaul, stills only — 2026-11-09
+
+- Reviewed all 99 v3 panels in chronological and complete-episode sheets before
+  implementation. Created composition-group and recurring-prop sheets, plus
+  `docs/visual-variety-audit.md` and `docs/visual-variety-panels.csv`, covering
+  every panel and the repeated three-or-more-panel clusters.
+- Final packet: `out/001-lifestyle-creep/storyboard-design-v6/review/index.html`.
+  All 99 stills were locally rendered; 97 images differ from v3. All 67 scenes
+  have current direction metadata. Existing animated references were not changed.
+- Inspected all 99 final panels in nine chronological sheets and the complete
+  episode sheet. Fixed inherited text stroke, miniature desk leg overlap,
+  duplicate Sam at dinner, guitar hand contact, comparison scale, calendar-label
+  contrast, premature opening amounts and the laptop insert crop. Rough paper,
+  accepted hairless/earless identities, foreground props and currency-only text
+  remain. Architecture and floor/rug surfaces are absent.
+- `npm run check`: lint and strict types pass, 76 TypeScript tests pass, 5 Python
+  timing tests pass. Focused coverage adds all 99 authored directions, the ten
+  composition categories, a five-panel information-prop cluster guard, bounded
+  current cameras, still-only/currency-only routing, and finite $600 arithmetic.
+- `python scripts/verify-storyboard-design.py <packet>` passes: 67 ordered IDs,
+  99 PNGs at 960x540 from 1920x1080/30 fps compositions, exact original narration,
+  cue IDs and audio windows, matching script/audio/cue/word hashes, identical
+  background corner pixels across all panels, valid local links and no audio/video
+  files. See the packet verification.json and out/visual-variety-check.log.
+- New review documents and scripts affect the isolated storyboard path. Shared
+  gallery, original animation entry points, rig geometry, audio and timing were
+  not modified. No film decode, motion or listening check applies to this still-only
+  task. Creative approval remains pending; no commit or push was performed.
+
+## General like-and-subscribe outro — 2026-11-09
+
+- Added reusable `GeneralOutro` in `src/scenes/GeneralOutro.tsx` and registered it in the main Studio root. Eight seconds, 1920x1080, 30 fps. No characters or audio; no episode timeline changes.
+- User revision: YouTube red (#FF0000), white and near-black. The only visible text is exactly `Thanks for watching`. Thumb-up and red play/check graphics provide the two click prompts; the subscribe prompt has no text label under the user's restriction.
+- Motion: eased title and control entrances, cursor-led presses with bounded overshoot and one feedback ring each. Background arcs settle once; the final state holds still.
+- `npm run check` passes lint, strict TypeScript, 76 TypeScript tests and 5 Python timing tests. Exported `out/general-outro.mp4`; ffprobe assertions verify H.264/yuv420p, 1920x1080, 30 fps, 240 frames and exactly 8 seconds. Full FFmpeg decode passes. A source assertion confirms exactly one visible SVG text node with the requested wording.
+- Inspected 24 exported beat/boundary frames in `out/general-outro/review.jpg`, including entrance, both presses, cursor departure and final hold. Metadata evidence: `out/general-outro/verification.json`. Main Studio preview loads. Existing gallery/rig code is unchanged; the gallery was not re-rendered. Human creative approval remains pending. No listening check applies to this silent outro. No commit or push.
+
+### Outro control revision — 2026-11-09
+
+- User explicitly restored the Subscribe label. Widened the red pill to show play icon plus Subscribe, changing to a gray Subscribed confirmation after the click. Like now uses a dark rounded control and a white outline thumb that fills white when selected; it never turns red. No Like label, counts, dislike control or extra copy added.
+- Repositioned the like control, cursor and feedback ring to preserve spacing beside the widened Subscribe pill. Existing eight-second timing and title remain.
+- `npm run check` passes lint, strict types, 76 TypeScript tests and 5 Python tests. Re-rendered the MP4; metadata assertions and full decode pass. Inspected all 24 refreshed exported beat/boundary frames. Updated verification.json supersedes the earlier single-text restriction evidence. Creative approval remains pending; silent output, no commit or push.

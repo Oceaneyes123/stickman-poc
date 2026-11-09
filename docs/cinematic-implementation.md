@@ -1,7 +1,9 @@
 # Cinematic reference implementation
 
-Scope: S12, S21–S22, and S50–S52. The remaining episode has not been regenerated.
-See [the audit](cinematic-audit.md) for the initial findings and implementation boundary.
+Current storyboard: [S01–S67 visual variety review](../out/001-lifestyle-creep/storyboard-design-v6/review/index.html).
+The original three animated reference clips remain unchanged. Earlier sections
+below document their implementation; the latest still-only overhaul follows at
+the end. See [the repetition audit](visual-variety-audit.md) for all 99 panels.
 
 ## Review packet
 
@@ -136,3 +138,47 @@ These are static proposed compositions. Movement, transitions, performance and
 audio synchronization across the redesigned episode have not been implemented
 or checked. Stop for visual approval before extending animation.
 No commit, push, publication or deployment was performed.
+
+
+## Visual variety overhaul — 2026-11-09
+
+Implemented the attached brief across all 67 scenes / 99 panels. Current packet:
+`out/001-lifestyle-creep/storyboard-design-v6/review/index.html`. All 99 panels
+were rendered locally; 97 differ from v3, while the two effective rental comfort
+inserts keep their framing. Earlier approved packets and reference movies remain
+intact. No shared rig geometry, finance assumptions, narration or cue data changed.
+
+Changed the isolated `CinematicStoryboardStudy.tsx` artwork, its
+`cinematicStillPlan.ts` direction data, the still renderer and review assembler,
+focused tests, instructions and validation/review documents. Added
+`storyboard-contact-sheets.py`, `audit-storyboard-variety.py` and
+`verify-storyboard-design.py`. The audit Markdown and CSV record all 99 baseline
+panels with purpose, camera, scale/position, props, shape, figure count,
+similarities, severity and implemented redesign.
+
+Reused the accepted rig, constrained hand placement, reference props, fixed paper
+backdrop, existing furniture and finance calculations. Added reusable reaction,
+transfer, benefit, contribution, calendar and finite-allocation compositions.
+There are ten authored shot categories, selected by story purpose. The review
+shows the new subject/action beneath every panel; original narrative notes remain
+available. No new engine, dependency, remote asset or paid service was introduced.
+
+The main changes replace desk slips with actual comforts, close reactions, service
+controls, calendar obligations, contribution stacks and scaled money allocations.
+The finite $600 allocation exposes the $620 overrun without a second raise. Monthly,
+three-month and annual illustrations stay distinct. The opening retains the delayed
+$380 reveal. Sam remains the subject through S26/S34/S42. Comparison actors retain
+equal scale; two-handed guitar contact derives from computed wrists.
+
+Validation: lint, strict TypeScript, 76 TypeScript tests and 5 Python timing tests
+pass. The packet verifier confirms ordered IDs, exact narration/cues/audio windows,
+99 valid 960x540 PNGs, fixed grain across every image, valid local review links,
+unchanged narration/timing hashes and zero new audio/video files. Inspected all
+99 final panels through nine chronological sheets and the complete episode sheet.
+
+Remaining creative limits: the accepted frontal/three-quarter rig still limits
+rear and extreme-angle acting; shoulder inserts use an original rear silhouette.
+Some mathematical passages intentionally use stable diagrams, and repeated
+allocation/reaction views serve callbacks. These are proposed static designs,
+not completed episode-wide motion. Human visual approval remains pending;
+animation, listening and audiovisual synchronization were not evaluated.
