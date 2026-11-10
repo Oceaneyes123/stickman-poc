@@ -48,6 +48,10 @@ Sam's three-month contributions are $1,560, versus $1,200 at his old pace. Alex 
 
 Each scene includes shot composition, emotional beat, character movement, camera movement, visual transition, cue-linked animation beats, and state continuity. Screen text remains sparse, sequential emphasis rather than a subtitle track. These directions are the approved planning baseline; finished animation and audiovisual quality still require review.
 
+## Selective typography revision
+
+Use [the complete beat and panel plan](typography-plan.md) and its [machine-readable anchors](typography-plan.json). V6 artwork remains the baseline. This revision supersedes earlier screen-text suggestions only; narration and financial continuity are unchanged. Typography and financial motion are review candidates, with draft cue alignment and human creative/listening review still pending.
+
 ## Proposed scenes
 
 ### S01 — A raise, then a smaller transfer
@@ -75,7 +79,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Same hoodie, phone, and $600 raise; the second shot is Month 3. No $380 reveal or account-balance drop yet.
 
-**On-screen text:** +$600/month; Three months later.
+**On-screen text:** Three months later Derived currency reveals on their cue/word anchors. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S02 — What the raise bought
 
@@ -103,7 +107,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Use the later apartment layout, rental keys, and generic service tiles. These are opening flash-forward benefits, not extra purchases.
 
-**On-screen text:** No text needed.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S03 — The statement tells another story
 
@@ -131,7 +135,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Preserve the opening phone angle for S67. Entries show monthly transfer size, with the exact $380 still withheld.
 
-**On-screen text:** Monthly savings transfer; Before; Month 3.
+**On-screen text:** Before; Month 3 See the beat plan for sequencing; do not show all suggestions together.
 
 ### S04 — Follow the money out
 
@@ -159,7 +163,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** No lost job or reduced raise. One pay packet persists; money moves toward obligations rather than vanishing. Hold through ASR-only p001-s011.
 
-**On-screen text:** Income; Recurring costs.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S05 — Introduce the comparison
 
@@ -185,7 +189,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Alex becomes an active comparison here. Keep future choices silent and future $800 transfers undisclosed.
 
-**On-screen text:** Sam; Alex; Same raise.
+**On-screen text:** Sam; Alex See the beat plan for sequencing; do not show all suggestions together.
 
 ### S06 — Establish the starting budget
 
@@ -213,7 +217,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** $3,000 income and $2,600 expenses leave $400; only the explicit transfer makes it saved. No opening account balance.
 
-**On-screen text:** $3,000 income; $2,600 expenses; $400 transferred.
+**On-screen text:** Transfer Derived currency reveals on their cue/word anchors. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S07 — Define the example
 
@@ -241,7 +245,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Amounts remain fictional monthly take-home USD. Do not invent individual baseline bills or assume a starting savings balance.
 
-**On-screen text:** Fictional example; Monthly take-home USD; Other costs unchanged.
+**On-screen text:** Fictional example; Monthly take-home USD See the beat plan for sequencing; do not show all suggestions together.
 
 ### S08 — Why Sam wants an upgrade
 
@@ -269,7 +273,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** The old home and car are adequate. Keep contact with laptop and dishes believable; no spill damage, breakdown, or new expense.
 
-**On-screen text:** No text needed.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S09 — The opportunity created by the raise
 
@@ -297,7 +301,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** $3,600 minus unchanged $2,600 leaves $1,000. This is capacity before upgrades, not a promised transfer.
 
-**On-screen text:** $3,600 − $2,600 = $1,000 remaining.
+**On-screen text:** If spending stays unchanged Derived currency reveals on their cue/word anchors. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S10 — There is room for both choices
 
@@ -324,7 +328,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** No invented split amount here. Reuse one finite $600 raise tray throughout the later commitments.
 
-**On-screen text:** Enjoy some; Keep some.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S11 — Give Alex the same start
 
@@ -352,7 +356,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Same initial income, expenses, and $400 transfer. Withhold Alex’s future $200/$800 choices until narrated.
 
-**On-screen text:** Same income; Same expenses; Same $600 raise.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S12 — Find the apartment
 
@@ -380,7 +384,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Keep the new room’s geography for later scenes. No luxury leap, purchase of a home, or invented moving cost.
 
-**On-screen text:** No text needed.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S13 — Compare rent with the raise
 
@@ -408,7 +412,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** The tray still represents the same $600 addition. Rent occupies $300 once, leaving $300 of the raise.
 
-**On-screen text:** +$300/month rent; $600 − $300.
+**On-screen text:** Extra rent / month Derived currency reveals on their cue/word anchors. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S14 — Sign with room still left
 
@@ -434,7 +438,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Alex’s insert is silent foreshadowing of his later stated choice, not a new narrated subplot. His future saving amount remains hidden.
 
-**On-screen text:** $300 of the raise remains.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S15 — Month one: the transfer increases
 
@@ -462,7 +466,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Month 1 expenses are $2,900; income stays $3,600; the explicit transfer is $700.
 
-**On-screen text:** Month 1; $3,600 − $2,900 = $700.
+**On-screen text:** Month 1 Derived currency reveals on their cue/word anchors. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S16 — The apartment alone works
 
@@ -490,7 +494,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Both receipts are monthly contributions, not absolute balances. The apartment alone has not undone the raise.
 
-**On-screen text:** Before: $400; Month 1: $700.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S17 — Keep the rent illustration scoped
 
@@ -518,7 +522,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Moving costs and deposits are excluded, not assumed free. The folder now persists beside his future choices.
 
-**On-screen text:** Recurring monthly comparison; Moving costs and deposits excluded.
+**On-screen text:** Moving costs excluded See the beat plan for sequencing; do not show all suggestions together.
 
 ### S18 — Let the improvement feel useful
 
@@ -546,7 +550,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Same desk, laptop, lease folder, and improved room as S12–S17. Do not undo the benefit to make a moral point.
 
-**On-screen text:** No text needed.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S19 — A newer rental car
 
@@ -574,7 +578,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** This is rented transport. Keep the rent folder in Sam’s established world and use no car purchase, financing, or ownership imagery.
 
-**On-screen text:** Long-term rental; +$220/month transport; Fictional difference.
+**On-screen text:** Long-term rental; Extra transport / month Derived currency reveals on their cue/word anchors. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S20 — What he likes about it
 
@@ -602,7 +606,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Alex’s insert foreshadows the later narrated decision without a number or separate voice. Both cars remain usable rentals.
 
-**On-screen text:** No text needed.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S21 — A manageable number in isolation
 
@@ -628,7 +632,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** The $300 rent paper stays on the same table beyond the frame. This is Sam’s attention, not a reset of available money.
 
-**On-screen text:** $220 compared with a $600 raise.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S22 — Spend the same raise only once
 
@@ -655,7 +659,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Preserve the same table, $600 raise, $300 rent, and $220 car cost. Only $80 of the raise remains; no second raise appears.
 
-**On-screen text:** $600 − $300 − $220 = $80.
+**On-screen text:** Raise still available Derived currency reveals on their cue/word anchors. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S23 — Month two still feels positive
 
@@ -683,7 +687,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Income remains $3,600; expenses are $3,120; transfer is $480. Keep the smaller $80 raise remainder distinct from total saving.
 
-**On-screen text:** Month 2; $3,120 expenses; $480 transferred; Before: $400.
+**On-screen text:** No added descriptive text. Derived currency reveals on their cue/word anchors. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S24 — Separate checks hide the combined result
 
@@ -710,7 +714,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Rent and transport remain committed. Do not invent a savings target amount.
 
-**On-screen text:** Apartment + transport; Savings goal.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S25 — Small services become one monthly cost
 
@@ -738,7 +742,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Keep rent $300 and transport $220 in the same $600 tray. No invented prices for individual services.
 
-**On-screen text:** +$100/month services and memberships.
+**On-screen text:** Combined / month Derived currency reveals on their cue/word anchors. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S26 — Some are used, some are forgotten
 
@@ -765,7 +769,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Sam has canceled nothing. Alex’s silent insert reveals no future allowance or savings amount.
 
-**On-screen text:** No text needed.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S27 — Month three: additions pass the raise
 
@@ -793,7 +797,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** The tray compares added costs with a $600 raise, not a borrowing limit. Show no overdraft, fee, or negative bank balance.
 
-**On-screen text:** $300 + $220 + $100 = $620; Raise: $600.
+**On-screen text:** Rent; Transport; Services Derived currency reveals on their cue/word anchors. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S28 — Calculate and transfer the new remainder
 
@@ -821,7 +825,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** $3,600 income covers $3,220 expenses and leaves positive $380. No debt or account-balance claim.
 
-**On-screen text:** $3,600 − $3,220 = $380 transferred.
+**On-screen text:** Transfer Derived currency reveals on their cue/word anchors. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S29 — Resolve the smaller-transfer hook
 
@@ -849,7 +853,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** $400 and $380 are monthly transfer amounts. Leave the savings balance unspecified.
 
-**On-screen text:** Before: $400/month; Month 3: $380/month; $20 less.
+**On-screen text:** Before / month; Month 3 Derived currency reveals on their cue/word anchors. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S30 — Two real outcomes on one statement
 
@@ -877,7 +881,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** The $20 monthly reduction does not imply a $20 loss of accumulated wealth.
 
-**On-screen text:** Better daily comfort; $380 monthly savings transfer.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S31 — Savings are still increasing
 
@@ -905,7 +909,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Show new contributions only, with no invented initial balance or collapsing savings jar.
 
-**On-screen text:** +$380 added this month.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S32 — Compare the three-month totals fairly
 
@@ -933,7 +937,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** $700 + $480 + $380 = $1,560; the old $400 pace totals $1,200 across the same three dates.
 
-**On-screen text:** $700 + $480 + $380 = $1,560; Old pace: $400 × 3 = $1,200.
+**On-screen text:** Months 1–3 · contributions; Old pace · three months Derived currency reveals on their cue/word anchors. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S33 — Separate monthly pace from accumulated saving
 
@@ -961,7 +965,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Keep the same totals. Hold through ASR-only p010-s008 without inventing an event for “price.”
 
-**On-screen text:** Monthly: $380 vs $400; Three months: $1,560 vs $1,200.
+**On-screen text:** Monthly pace; Three-month total See the beat plan for sequencing; do not show all suggestions together.
 
 ### S34 — Income and keeping money are different measures
 
@@ -989,7 +993,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Preserve Sam’s Month 3 state and the same $600 addition. Do not reveal Alex’s $800 yet.
 
-**On-screen text:** Additional income: $600; Month 3 transfer: $380.
+**On-screen text:** Income ≠ saving See the beat plan for sequencing; do not show all suggestions together.
 
 ### S35 — Remaining becomes saving through the transfer
 
@@ -1017,7 +1021,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** The same $380 changes destination once. Do not count it as both spendable and already saved.
 
-**On-screen text:** Remaining; Transferred to savings.
+**On-screen text:** Remaining; Saved See the beat plan for sequencing; do not show all suggestions together.
 
 ### S36 — Explain the wider net-worth concept
 
@@ -1045,7 +1049,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** The page is generic. Assign neither character debt, car ownership, house equity, or a net-worth figure.
 
-**On-screen text:** Net worth = assets − liabilities.
+**On-screen text:** Own − owe = net worth See the beat plan for sequencing; do not show all suggestions together.
 
 ### S37 — Return to what this story measures
 
@@ -1072,7 +1076,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Keep only cash contributions in the active comparison; no invented balance sheet remains.
 
-**On-screen text:** This comparison: cash saved.
+**On-screen text:** Cash saved See the beat plan for sequencing; do not show all suggestions together.
 
 ### S38 — Several commitments share one paycheck
 
@@ -1100,7 +1104,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Reuse $300/$220/$100 and the same $600 raise. No new enormous purchase causes the change.
 
-**On-screen text:** Combined additions: $620/month.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S39 — A one-time celebration
 
@@ -1127,7 +1131,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** No dinner price is invented. A receipt leaving future dates means no repeat payment, not a refund.
 
-**On-screen text:** One-time spending.
+**On-screen text:** Paid once See the beat plan for sequencing; do not show all suggestions together.
 
 ### S40 — A recurring commitment repeats
 
@@ -1154,7 +1158,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Use the existing recurring-cost concept without new prices. Stop after a finite comparison.
 
-**On-screen text:** Recurring monthly spending.
+**On-screen text:** Every month See the beat plan for sequencing; do not show all suggestions together.
 
 ### S41 — The next decision starts after existing commitments
 
@@ -1181,7 +1185,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** $300 rent and $220 transport leave $80 of the raise, not $80 of the entire budget.
 
-**On-screen text:** $600 − $300 − $220 = $80 available from the raise.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S42 — Show the tradeoff before the click
 
@@ -1209,7 +1213,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Sam’s potential $480 transfer becomes $380 with the services. Reveal no new Alex amounts yet.
 
-**On-screen text:** Services: +$100/month; Savings transfer: $480 to $380.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S43 — Alex enjoys some of the raise
 
@@ -1237,7 +1241,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** First reveal the extra $200 here when narrated. Keep the existing home and rental; individual activity prices remain unspecified.
 
-**On-screen text:** +$200/month for chosen spending.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S44 — Calculate Alex’s transfer
 
@@ -1265,7 +1269,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Same $3,600 income; $2,800 spending. Reveal the future $800 only on its narrated cue.
 
-**On-screen text:** $3,600 − $2,800 = $800 transferred.
+**On-screen text:** Monthly transfer Derived currency reveals on their cue/word anchors. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S45 — Where Alex’s $800 comes from
 
@@ -1293,7 +1297,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** The $800 includes the old $400. The raise supplies $400 saved and $200 spent, not a new $800.
 
-**On-screen text:** $800 = $400 baseline + $400 from raise; $200 extra spending.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S46 — Automation carries out a checked plan
 
@@ -1321,7 +1325,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** The $800 transfer follows pay and checked expenses. Automation supplies no extra money or protection against unaffordable commitments.
 
-**On-screen text:** Pay arrives; Planned transfer: $800.
+**On-screen text:** Plan checked first See the beat plan for sequencing; do not show all suggestions together.
 
 ### S47 — See the effect of the next choice
 
@@ -1349,7 +1353,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Alternative outcomes stay unpriced. Do not claim a new transfer amount, free purchase, or automatic ideal choice.
 
-**On-screen text:** Postpone; Adjust the plan.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S48 — Alex gives up comforts too
 
@@ -1377,7 +1381,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Both men remain dignified; Alex keeps the existing home and rented car. Show postponed benefits, not universal advice to tolerate unsafe conditions.
 
-**On-screen text:** Different choices; Different benefits.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S49 — State the comparison’s limits
 
@@ -1405,7 +1409,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** No emergency, injury, repair bill, or debt is assigned to either character. Preserve the example’s adequate starting conditions.
 
-**On-screen text:** Same starting conditions in this example; Real options differ.
+**On-screen text:** Same starting conditions See the beat plan for sequencing; do not show all suggestions together.
 
 ### S50 — Compare new savings over three months
 
@@ -1433,7 +1437,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Compare new contributions across the same three months: Alex $2,400, Sam $1,560, difference $840. Initial balances stay unknown.
 
-**On-screen text:** Alex: $2,400; Sam: $1,560; Difference: $840.
+**On-screen text:** New contributions · 3 months; Sam; Alex Derived currency reveals on their cue/word anchors. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S51 — Explain the gap, then return to monthly pace
 
@@ -1461,7 +1465,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** No investment return or bigger raise. Switch clearly from cumulative $840 to monthly $420; never compare incompatible time windows.
 
-**On-screen text:** Month 3 monthly transfers: $800 vs $380; Difference: $420.
+**On-screen text:** Month 3 · monthly transfers Derived currency reveals on their cue/word anchors. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S52 — They bought different benefits
 
@@ -1488,7 +1492,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Preserve rented transport and unspecified wealth. Alex’s folder represents cash contributions, not superior personal worth or investment success.
 
-**On-screen text:** Same raise; Different uses.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S53 — Sam’s first reaction is to cancel everything
 
@@ -1516,7 +1520,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Nothing is canceled yet. Rent, transport, and services remain in the Month 3 state until the later explicit service cancellation.
 
-**On-screen text:** No text needed.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S54 — The list makes the consequence visible
 
@@ -1543,7 +1547,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Do not label all comforts wrong or invent a target amount. Keep the list as a way to see available choices.
 
-**On-screen text:** Recurring choices; Available for savings.
+**On-screen text:** Rent; Transport; Services See the beat plan for sequencing; do not show all suggestions together.
 
 ### S55 — Choose an amount to keep
 
@@ -1570,7 +1574,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** The chosen goal remains unpriced. The actual next outcome must come from removing the existing $100 service additions.
 
-**On-screen text:** Choose an amount; Check the commitments.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S56 — End the added services at the billing boundary
 
@@ -1598,7 +1602,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Remove only the extra $100 services at the declared billing boundary. Show no immediate refund or universal cancellation rule.
 
-**On-screen text:** Added services: −$100/month next billing month; Example assumption.
+**On-screen text:** Next billing month See the beat plan for sequencing; do not show all suggestions together.
 
 ### S57 — The bigger commitments remain
 
@@ -1625,7 +1629,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Rent addition $300 and transport addition $220 persist. No free reversal, refund, loan payoff, or car ownership is introduced.
 
-**On-screen text:** Rent addition: $300; Transport addition: $220.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S58 — The next transfer improves
 
@@ -1653,7 +1657,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** $3,600 pay minus $3,120 spending leaves $480. The $100 improvement comes from reduced recurring spending, not new income.
 
-**On-screen text:** $3,600 − $3,120 = $480; Improvement: $100/month.
+**On-screen text:** Revised monthly transfer Derived currency reveals on their cue/word anchors. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S59 — Review larger choices when change is possible
 
@@ -1680,7 +1684,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** No invented lease expiry date, refund, or cost-free contract reversal. Current saving remains $480.
 
-**On-screen text:** Review larger commitments when possible.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S60 — Another raise can follow the same path
 
@@ -1707,7 +1711,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** No future raise amount or prediction is invented. Actual income remains $3,600 and the revised transfer remains $480.
 
-**On-screen text:** Hypothetical next raise; No amount specified.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S61 — Reset to a separate twelve-month illustration
 
@@ -1735,7 +1739,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** This freezes the earlier Month 3 pattern, not Sam’s later $480 plan. Results are $4,560 and $9,600 in new contributions only.
 
-**On-screen text:** Separate illustration: unchanged Month 3 pattern; 12 × $380 = $4,560; 12 × $800 = $9,600.
+**On-screen text:** Separate 12-month illustration Derived currency reveals on their cue/word anchors. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S62 — Show the conditional annual gap
 
@@ -1762,7 +1766,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** $9,600 minus $4,560 gives $5,040 only with continuing transfers, no withdrawals, and otherwise unchanged assumptions.
 
-**On-screen text:** $9,600 − $4,560 = $5,040; Unchanged assumptions.
+**On-screen text:** 12-month difference; Transfers continue; No withdrawals; Other conditions unchanged Derived currency reveals on their cue/word anchors. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S63 — Close the illustration and return to the story
 
@@ -1789,7 +1793,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Clear the $5,040 hypothetical gap from the active story. Current Sam is $480, not the frozen illustration’s $380.
 
-**On-screen text:** Illustration, not prediction; Current Sam transfer: $480.
+**On-screen text:** Illustration; Current plan See the beat plan for sequencing; do not show all suggestions together.
 
 ### S64 — Make the chosen tradeoff visible
 
@@ -1817,7 +1821,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Both choices have benefits and costs. Preserve Sam’s revised $480 state and Alex’s existing plan without a new model.
 
-**On-screen text:** Comfort; Saving; Chosen commitments.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S65 — The same paycheck, a clearer plan
 
@@ -1845,7 +1849,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Actual pay is still $3,600, expenses $3,120, and the planned transfer $480. Keep the useful apartment and rental.
 
-**On-screen text:** $3,600 pay; $3,120 expenses; $480 planned transfer.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S66 — Summarize the cause with familiar objects
 
@@ -1873,7 +1877,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Any $380 callback must be labeled earlier Month 3. End in the current $480 plan with unchanged $3,600 pay.
 
-**On-screen text:** Earlier Month 3: $380/month; Current plan: $480/month.
+**On-screen text:** No added descriptive text. See the beat plan for sequencing; do not show all suggestions together.
 
 ### S67 — Resolve the opening at the same desk
 
@@ -1900,7 +1904,7 @@ Each scene includes shot composition, emotional beat, character movement, camera
 
 **State continuity:** Pay remains $3,600. The change is his use of it: ended services, $480 planned and $480 transferred. No wealth prediction or extra income.
 
-**On-screen text:** Planned: $480; Transferred: $480.
+**On-screen text:** Check the total See the beat plan for sequencing; do not show all suggestions together.
 
 ## Implementation after storyboard approval
 

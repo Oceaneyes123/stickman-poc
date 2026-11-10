@@ -1,5 +1,18 @@
-import type { ReactNode } from "react";
-import { Composition, registerRoot } from "remotion";
+import { useContext, type ReactNode } from "react";
+import { Composition, registerRoot, staticFile } from "remotion";
+import { AnimatedNumber } from "../typography";
+import { useActorFactory, useObjectMotion, EpisodeMotionContext } from "./EpisodeMotionContext";
+import { interactionPulse } from "./episodeMotion";
+import { TypographyGallery } from "../typography/Gallery";
+import {
+  FinancialMotionContext,
+  useFinancialMotion,
+} from "../typography/context";
+import {
+  EpisodeReview,
+  type TypographyReviewProps,
+} from "../typography/EpisodeReview";
+import type { CompiledTypography } from "../typography/plan";
 import { ReferenceCharacterRig } from "../characters/ReferenceCharacterRig";
 import {
   referenceSkeleton,
@@ -62,47 +75,34 @@ const Money = ({
   positive?: boolean;
   anchor?: "start" | "middle";
   fill?: string;
-}) => (
-  <g stroke="none">
-    <SceneText x={x} y={y} size={size} fill={fill} anchor={anchor}>
-      {positive ? "+" : ""}
-      {usd(value)}
-    </SceneText>
-  </g>
-);
-const makeActor = ({
-  identity = "Sam",
-  x = 650,
-  y = 940,
-  scale = 2.15,
-  pose = "standing",
-  expression = "thinking",
-  carry = false,
-  facing = 1,
-}: {
-  identity?: "Sam" | "Alex";
-  x?: number;
-  y?: number;
-  scale?: number;
-  pose?: ReferencePose;
-  expression?: ReferenceExpression;
-  carry?: boolean;
-  facing?: 1 | -1;
-} = {}): PerformanceActor => ({
-  identity,
-  x,
-  y,
-  scale,
-  facing,
-  expression,
-  rig: referenceSkeleton({
-    frame: 60,
-    pose,
-    fromPose: pose,
-    gesture: carry ? "holdWallet" : undefined,
-    blendFrames: 1,
-  }),
-});
+}) => {
+  const motion = useFinancialMotion(value);
+  if (motion)
+    return (
+      <AnimatedNumber
+        x={x}
+        y={y}
+        value={value}
+        size={size}
+        color={fill}
+        anchor={anchor}
+        positive={positive}
+        frame={motion.frame}
+        from={motion.from}
+        until={motion.sceneUntil + 10}
+        duration={18}
+        mode={size >= 90 ? "odometer" : "counter"}
+      />
+    );
+  return (
+    <g stroke="none">
+      <SceneText x={x} y={y} size={size} fill={fill} anchor={anchor}>
+        {positive ? "+" : ""}
+        {usd(value)}
+      </SceneText>
+    </g>
+  );
+};
 const Actor = ({
   actor,
   keys = false,
@@ -357,6 +357,7 @@ const Car = ({
   </g>
 );
 const Cabin = ({ old = false }: { old?: boolean }) => {
+  const makeActor = useActorFactory();
   const sam = makeActor({
     x: 790,
     y: 1370,
@@ -438,6 +439,9 @@ const DeskAction = ({
   expression?: ReferenceExpression;
   items?: ReactNode;
 }) => {
+  const makeActor = useActorFactory();
+  const performance = useContext(EpisodeMotionContext);
+  const pulse = performance ? interactionPulse(performance.frame, performance.motion) : 0;
   const person = makeActor({
     identity,
     x: 700,
@@ -447,11 +451,13 @@ const DeskAction = ({
   });
   const grip = toWorld(person, person.rig.rightArm.end);
   if (action === "sign" || action === "list")
-    placeHands(person, { right: { x: 855, y: 665 } }, 7);
+    placeHands(person, { right: { x: 855 + 18 * pulse, y: 665 - 5 * pulse } }, 7);
   if (action === "work")
-    placeHands(person, { right: { x: 780, y: 685 }, left: { x: 655, y: 685 } });
-  if (action === "carry")
-    placeHands(person, { right: { x: 820, y: 650 }, left: { x: 680, y: 650 } });
+    placeHands(person, { right: { x: 780, y: 685 - 5 * pulse }, left: { x: 655, y: 685 - 2 * pulse } });
+  if (action === "carry") {
+    const travel = toWorld(person, person.rig.hip).x - 700;
+    placeHands(person, { right: { x: 820 + travel, y: 650 }, left: { x: 680 + travel, y: 650 } });
+  }
   const hand = toWorld(person, person.rig.rightArm.end);
   return (
     <>
@@ -559,17 +565,25 @@ const Check = ({
   x: number;
   y: number;
   scale?: number;
-}) => (
-  <path
-    d="M-30 0L-5 25L45 -35"
-    transform={`translate(${x},${y}) scale(${scale})`}
-    stroke={C.teal}
-    strokeWidth={12}
-    fill="none"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  />
-);
+}) => {
+  const motion = useContext(FinancialMotionContext);
+  if (
+    motion?.confirmationAt !== undefined &&
+    motion.frame < motion.confirmationAt
+  )
+    return null;
+  return (
+    <path
+      d="M-30 0L-5 25L45 -35"
+      transform={`translate(${x},${y}) scale(${scale})`}
+      stroke={C.teal}
+      strokeWidth={12}
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  );
+};
 const CoinStack = ({
   x,
   y,
@@ -585,9 +599,10 @@ const CoinStack = ({
   color?: string;
   width?: number;
 }) => {
-  const height = (value / max) * 380;
+  const motion = useFinancialMotion(value);
+  const height = (value / max) * 380 * (motion?.progress ?? 1);
   return (
-    <g>
+    <g opacity={motion && motion.frame < motion.from ? 0 : 1}>
       <path
         d={`M${x} ${y}h${width}v-${height}h-${width}Z`}
         fill={color}
@@ -788,6 +803,7 @@ const TV = ({ selected = false }: { selected?: boolean }) => (
   </g>
 );
 const Entertainment = ({ locked = false }: { locked?: boolean }) => {
+  const makeActor = useActorFactory();
   const sam = makeActor({
     x: 700,
     y: 1040,
@@ -876,6 +892,7 @@ const Portrait = ({
   x?: number;
   identity?: "Sam" | "Alex";
 }) => {
+  const makeActor = useActorFactory();
   const actor = makeActor({
     identity,
     x,
@@ -918,52 +935,54 @@ const Transfer = ({
   identity?: "Sam" | "Alex";
   shoulder?: boolean;
   expenses?: number;
-}) => (
-  <>
-    {shoulder && (
-      <g
-        transform={
-          identity === "Alex" ? "translate(1920,0) scale(-1,1)" : undefined
-        }
-        stroke={C.navy}
-        strokeWidth={9}
-      >
-        <path d="M-120 1080V850Q100 650 410 850L480 1080Z" fill="#3B82F6" />
-        <path d="M145 640H265V790H145Z" fill={C.white} />
-        <path
-          d="M195 240C325 235 410 335 410 465C415 595 330 680 210 685C75 690 -20 600 -20 480C-25 350 65 245 195 240Z"
-          fill={C.white}
-        />
-        <path
-          d="M100 725Q200 780 315 725L340 835Q210 900 70 835Z"
-          fill="#2563AB"
-        />
+}) => {
+  return (
+    <>
+      {shoulder && (
+        <g
+          transform={
+            identity === "Alex" ? "translate(1920,0) scale(-1,1)" : undefined
+          }
+          stroke={C.navy}
+          strokeWidth={9}
+        >
+          <path d="M-120 1080V850Q100 650 410 850L480 1080Z" fill="#3B82F6" />
+          <path d="M145 640H265V790H145Z" fill={C.white} />
+          <path
+            d="M195 240C325 235 410 335 410 465C415 595 330 680 210 685C75 690 -20 600 -20 480C-25 350 65 245 195 240Z"
+            fill={C.white}
+          />
+          <path
+            d="M100 725Q200 780 315 725L340 835Q210 900 70 835Z"
+            fill="#2563AB"
+          />
+        </g>
+      )}
+      <g transform={`translate(${shoulder ? 660 : 330},260) scale(3.3)`}>
+        <Phone grip={{ x: 25, y: 125 }} amount={amount} />
       </g>
-    )}
-    <g transform={`translate(${shoulder ? 660 : 330},260) scale(3.3)`}>
-      <Phone grip={{ x: 25, y: 125 }} amount={amount} />
-    </g>
-    <Arrow x={shoulder ? 1120 : 850} y={580} width={180} color={C.teal} />
-    <CoinStack
-      x={shoulder ? 1410 : 1220}
-      y={790}
-      value={amount}
-      color={C.teal}
-      width={230}
-    />
-    <Check x={shoulder ? 1530 : 1340} y={915} />
-    {expenses !== undefined && (
-      <Money
-        x={1370}
-        y={280}
-        value={expenses}
-        fill={C.red}
-        size={76}
-        anchor="middle"
+      <Arrow x={shoulder ? 1120 : 850} y={580} width={180} color={C.teal} />
+      <CoinStack
+        x={shoulder ? 1410 : 1220}
+        y={790}
+        value={amount}
+        color={C.teal}
+        width={230}
       />
-    )}
-  </>
-);
+      <Check x={shoulder ? 1530 : 1340} y={915} />
+      {expenses !== undefined && (
+        <Money
+          x={1370}
+          y={280}
+          value={expenses}
+          fill={C.red}
+          size={76}
+          anchor="middle"
+        />
+      )}
+    </>
+  );
+};
 const Contributions = ({
   values,
   color = C.yellow,
@@ -1004,6 +1023,7 @@ const Choice = ({
   identity?: "Sam" | "Alex";
   cautious?: boolean;
 }) => {
+  const makeActor = useActorFactory();
   const actor = makeActor({
     identity,
     x: 960,
@@ -1043,6 +1063,7 @@ const Rental = ({
   old?: boolean;
   amount?: boolean;
 }) => {
+  const makeActor = useActorFactory();
   const actor = makeActor({
     identity,
     x: 1430,
@@ -1127,7 +1148,9 @@ const LifestyleCompare = ({
     }
   />
 );
-const EqualStart = ({ full = false }: { full?: boolean }) => (
+const EqualStart = ({ full = false }: { full?: boolean }) => {
+  const makeActor = useActorFactory();
+  return (
   <ComparisonScene
     left={
       <>
@@ -1198,6 +1221,7 @@ const EqualStart = ({ full = false }: { full?: boolean }) => (
     }
   />
 );
+};
 const AnnualGrid = ({ totals = false }: { totals?: boolean }) => (
   <>
     {[budget.sam, budget.alex].map((v, row) => (
@@ -1234,7 +1258,9 @@ const AnnualGrid = ({ totals = false }: { totals?: boolean }) => (
     ))}
   </>
 );
-const Scope = ({ household = false }: { household?: boolean }) => (
+const Scope = ({ household = false }: { household?: boolean }) => {
+  const makeActor = useActorFactory();
+  return (
   <>
     <path
       d="M550 250H1410V990H550Z"
@@ -1258,7 +1284,11 @@ const Scope = ({ household = false }: { household?: boolean }) => (
     )}
   </>
 );
+};
 const SceneArt = ({ shot }: { shot: CinematicStillShot }) => {
+  const makeActor = useActorFactory();
+  const performance = useContext(EpisodeMotionContext);
+  const pulse = performance ? interactionPulse(performance.frame, performance.motion) : 0;
   const { scene, index } = shot;
   switch (scene) {
     case "S01": {
@@ -1971,7 +2001,7 @@ const SceneArt = ({ shot }: { shot: CinematicStillShot }) => {
         expression: "happy",
       });
       placeHands(actor, {
-        right: { x: 1130, y: 690 },
+        right: { x: 1130 + 8 * pulse, y: 690 + 12 * pulse },
         left: { x: 1210, y: 530 },
       });
       const hand = toWorld(actor, actor.rig.rightArm.end);
@@ -2444,13 +2474,31 @@ const SceneArt = ({ shot }: { shot: CinematicStillShot }) => {
   }
 };
 
-export const CinematicStoryboardStudy = ({ shotId }: { shotId: string }) => {
+export const CinematicStoryboardStudy = ({
+  shotId,
+  foreground,
+}: {
+  shotId: string;
+  foreground?: ReactNode;
+}) => {
   const shot = cinematicStillShots.find((shot) => shot.id === shotId);
   if (!shot) throw new Error(`Unknown still ${shotId}`);
   if (["S05", "S11", "S30", "S48", "S52"].includes(shot.scene))
-    return <SceneArt shot={shot} />;
+    return (
+      <>
+        <SceneArt shot={shot} />
+        <svg
+          width={1920}
+          height={1080}
+          style={{ position: "absolute", inset: 0, zIndex: 2 }}
+        >
+          {foreground}
+        </svg>
+      </>
+    );
   return (
     <NarrativeScene
+      foreground={foreground}
       view={
         shot.scene === "S12" && shot.index === 2
           ? storyboardViews.hands
@@ -2461,14 +2509,52 @@ export const CinematicStoryboardStudy = ({ shotId }: { shotId: string }) => {
     </NarrativeScene>
   );
 };
-registerRoot(() => (
-  <Composition
-    id="CinematicStoryboardStudy"
-    component={CinematicStoryboardStudy}
-    fps={30}
-    width={1920}
-    height={1080}
-    durationInFrames={90}
-    defaultProps={{ shotId: cinematicStillShots[0].id }}
+const TypographyEpisode = (props: TypographyReviewProps) => (
+  <EpisodeReview
+    {...props}
+    renderArt={(shotId, foreground) => (
+      <CinematicStoryboardStudy shotId={shotId} foreground={foreground} />
+    )}
   />
+);
+registerRoot(() => (
+  <>
+    <Composition
+      id="TypographyGallery"
+      component={TypographyGallery}
+      width={1920}
+      height={1080}
+      fps={30}
+      durationInFrames={360}
+    />
+    <Composition
+      id="CinematicStoryboardStudy"
+      component={CinematicStoryboardStudy}
+      fps={30}
+      width={1920}
+      height={1080}
+      durationInFrames={90}
+      defaultProps={{ shotId: cinematicStillShots[0].id }}
+    />
+    <Composition
+      id="TypographyEpisode"
+      component={TypographyEpisode}
+      width={1920}
+      height={1080}
+      fps={30}
+      durationInFrames={1}
+      defaultProps={{ data: null } as TypographyReviewProps}
+      calculateMetadata={async ({ props }) => {
+        const data =
+          props.data ??
+          ((await (
+            await fetch(staticFile("typography-review.json"))
+          ).json()) as CompiledTypography);
+        return {
+          durationInFrames: data.timeline.durationInFrames,
+          props: { data },
+        };
+      }}
+    />
+  </>
 ));

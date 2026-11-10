@@ -1,0 +1,560 @@
+{
+ "kurzgesagt": {
+  "handle": "@kurzgesagt",
+  "channel": "Kurzgesagt – In a Nutshell",
+  "videos": [
+   {
+    "id": "BtN-goy9VOY",
+    "title": "The Coronavirus Explained & What You Should Do",
+    "views": 89000000
+   },
+   {
+    "id": "h6fcK_fRYaI",
+    "title": "The Egg - A Short Story",
+    "views": 36000000
+   },
+   {
+    "id": "9tbxDgcv74c",
+    "title": "What If You Detonated a Nuclear Bomb In The Marianas Trench? (Science not Fantasy)",
+    "views": 36000000
+   },
+   {
+    "id": "5_Fayfx2NUM",
+    "title": "How I Survived Late-Stage Cancer",
+    "views": 8200000
+   },
+   {
+    "id": "PXbVn-f_wuM",
+    "title": "You Will Only Like Half of This Video",
+    "views": 5700000
+   }
+  ]
+ },
+ "JamesJani": {
+  "handle": "@JamesJani",
+  "channel": "James Jani",
+  "videos": [
+   {
+    "id": "6mRbDEtDoyA",
+    "title": "The Untold Truth About Money: How to Build Wealth From Nothing.",
+    "views": 19000000
+   },
+   {
+    "id": "hTfKpAWkgJY",
+    "title": "The Dark World of Megachurches",
+    "views": 15000000
+   },
+   {
+    "id": "w3EYKuFGJ5c",
+    "title": "The Fake Genius: a $30 BILLION Fraud.",
+    "views": 11000000
+   },
+   {
+    "id": "C5Bd6YxifCo",
+    "title": "The Cult of the Dead Stock.",
+    "views": 2800000
+   },
+   {
+    "id": "7LPuXowifJ4",
+    "title": "The GameStop Cult: An Untold Story",
+    "views": 1400000
+   }
+  ]
+ },
+ "HowMoneyWorks": {
+  "handle": "@HowMoneyWorks",
+  "channel": "How Money Works",
+  "videos": [
+   {
+    "id": "1zjcZ661ups",
+    "title": "If Nobody Can Afford A Home... Who's Going To Buy Them?",
+    "views": 4000000
+   },
+   {
+    "id": "vT6qh72wCZk",
+    "title": "The (Overdue) Collapse Of Short Term Rentals",
+    "views": 3900000
+   },
+   {
+    "id": "2LiOOzEOrx8",
+    "title": "The (Overdue) Collapse of the 9-5 Job",
+    "views": 3300000
+   },
+   {
+    "id": "OAVin6xxd8E",
+    "title": "If You Were TRYING To Destroy The Economy...",
+    "views": 1100000
+   },
+   {
+    "id": "EhbkCW3iTvA",
+    "title": "How American Real Estate Is Delaying The Inevitable... For Now",
+    "views": 1600000
+   }
+  ]
+ },
+ "TheSwedishInvestor": {
+  "handle": "@TheSwedishInvestor",
+  "channel": "The Swedish Investor",
+  "videos": [
+   {
+    "id": "TJDcGv9OH4Q",
+    "title": "THE PSYCHOLOGY OF MONEY (BY MORGAN HOUSEL)",
+    "views": 5800000
+   },
+   {
+    "id": "5Vxjyz9DZ6k",
+    "title": "The Intelligent Investor’s Road to $1,000,000",
+    "views": 5300000
+   },
+   {
+    "id": "npoyc_X5zO8",
+    "title": "THE INTELLIGENT INVESTOR SUMMARY (BY BENJAMIN GRAHAM)",
+    "views": 3500000
+   },
+   {
+    "id": "37HErhv0PDw",
+    "title": "How to Tell When a Stock is Cheap/Expensive (Masterclass in Stock Valuation)",
+    "views": 893000
+   },
+   {
+    "id": "XR57WlqX4iM",
+    "title": "THE BIG SECRET FOR THE SMALL INVESTOR – SUMMARY (JOEL GREENBLATT)",
+    "views": 171000
+   }
+  ]
+ },
+ "EconomicsExplained": {
+  "handle": "@EconomicsExplained",
+  "channel": "Economics Explained",
+  "videos": [
+   {
+    "id": "Fe88ckTWyTU",
+    "title": "How the World's Richest Country Lost 90% of its GDP",
+    "views": 5200000
+   },
+   {
+    "id": "F_VUBpALcVE",
+    "title": "Why Everyone is Leaving New Zealand",
+    "views": 3600000
+   },
+   {
+    "id": "mcsAO9AYc0c",
+    "title": "Something Terrible Is Happening in Italy",
+    "views": 3200000
+   },
+   {
+    "id": "deQXeIhyhc4",
+    "title": "Why Argentina Wants the World’s Corrupt Billionaires",
+    "views": 382000
+   },
+   {
+    "id": "vQodCxq7b9g",
+    "title": "How China Is Restarting Its Economy",
+    "views": 804000
+   }
+  ]
+ },
+ "MagnatesMedia": {
+  "handle": "@MagnatesMedia",
+  "channel": "MagnatesMedia",
+  "videos": [
+   {
+    "id": "51fWzJ-A5w4",
+    "title": "The Secret Chinese Company That Owns Everything",
+    "views": 12000000
+   },
+   {
+    "id": "fNh_GyRbJDA",
+    "title": "Rockefeller: The World’s First Billionaire",
+    "views": 7700000
+   },
+   {
+    "id": "ELu8y6eK-0g",
+    "title": "The Disturbing History of Coca-Cola",
+    "views": 7600000
+   },
+   {
+    "id": "Qbe0I3X6R-o",
+    "title": "The INSANE Truth About YouTube",
+    "views": 593000
+   },
+   {
+    "id": "dsDcQmJHwQc",
+    "title": "The INSANE Truth About OpenAI",
+    "views": 1200000
+   }
+  ]
+ },
+ "TheInfographicsShow": {
+  "handle": "@TheInfographicsShow",
+  "channel": "The Infographics Show",
+  "videos": [
+   {
+    "id": "T9d6lrvzM9o",
+    "title": "What an AI Crash Would Look Like, Day by Day",
+    "views": 4900000
+   },
+   {
+    "id": "MgngwkPAuqQ",
+    "title": "The AI bubble is about to pop...",
+    "views": 4600000
+   },
+   {
+    "id": "O4yWBv2Nj68",
+    "title": "What Lethal Radiation Does to Your Body (Hour by Hour)",
+    "views": 2900000
+   },
+   {
+    "id": "tehBa2ZjG-I",
+    "title": "Why You Don't Want to Earn $150,000 to $250,000",
+    "views": 37000
+   },
+   {
+    "id": "0oV87yfN59g",
+    "title": "Events That Will Cause the End of the World and More Apocalypse Scenarios",
+    "views": 68000
+   }
+  ]
+ },
+ "theodd1sout": {
+  "handle": "@theodd1sout",
+  "channel": "TheOdd1sOut",
+  "videos": [
+   {
+    "id": "CAb_bCtKuXg",
+    "title": "Life is Fun - Ft. Boyinaband (Official Music Video)",
+    "views": 185000000
+   },
+   {
+    "id": "2yFCyPX3kT0",
+    "title": "Annoying Customers",
+    "views": 118000000
+   },
+   {
+    "id": "rvUzuK0ygI4",
+    "title": "Tabletop Games",
+    "views": 109000000
+   },
+   {
+    "id": "ppH2tdpwUGY",
+    "title": "YouTube has Changed (me)",
+    "views": 4100000
+   },
+   {
+    "id": "Lo-PFoUhBZk",
+    "title": "Why I STILL Love Comics",
+    "views": 1500000
+   }
+  ]
+ },
+ "jaidenanimations": {
+  "handle": "@jaidenanimations",
+  "channel": "JaidenAnimations",
+  "videos": [
+   {
+    "id": "plSyrHqUh78",
+    "title": "I Attempted my First Pokemon Nuzlocke",
+    "views": 100000000
+   },
+   {
+    "id": "ejys3sT2LHw",
+    "title": "I Attempted a Pokemon Platinum Nuzlocke",
+    "views": 67000000
+   },
+   {
+    "id": "jJNgocrAbKA",
+    "title": "The best pokemon game you never played",
+    "views": 46000000
+   },
+   {
+    "id": "sI1f_fqQc8U",
+    "title": "Talking about my cat again",
+    "views": 8800000
+   },
+   {
+    "id": "8gKJ9mMPuIQ",
+    "title": "How I ended up Vegetarian.",
+    "views": 6000000
+   }
+  ]
+ },
+ "alanbecker": {
+  "handle": "@alanbecker",
+  "channel": "Alan Becker",
+  "videos": [
+   {
+    "id": "pCBP4M08ndE",
+    "title": "Cave Spider Roller Coaster - Animation vs. Minecraft Shorts Ep. 14",
+    "views": 542000000
+   },
+   {
+    "id": "GW_fdXHOWp4",
+    "title": "Animation vs. Minecraft (original)",
+    "views": 352000000
+   },
+   {
+    "id": "sHFeuBlBUos",
+    "title": "Animation vs. Minecraft Shorts Season 1 - All Episodes (1-14)",
+    "views": 284000000
+   },
+   {
+    "id": "QCZjNqtnGmM",
+    "title": "The Dark Age - Animator vs. Animation 14",
+    "views": 10000000
+   },
+   {
+    "id": "FcQlQAs5EDM",
+    "title": "Creeper Clan - Animation vs. Minecraft Shorts Ep 40",
+    "views": 25000000
+   }
+  ]
+ },
+ "thepaintexplainer": {
+  "handle": "@thepaintexplainer",
+  "channel": "The Paint Explainer",
+  "videos": [
+   {
+    "id": "n9HAAFBT3AA",
+    "title": "What Dying on Every Planet Would Be Like",
+    "views": 13000000
+   },
+   {
+    "id": "HuCZ6-A5gcY",
+    "title": "Worst Punishments in History",
+    "views": 9100000
+   },
+   {
+    "id": "hDYQlhSQKsw",
+    "title": "Scariest Urban Legends That Turned Out to Be True",
+    "views": 8900000
+   },
+   {
+    "id": "TVic4sqThDA",
+    "title": "Would the Great White Shark Dominate Every Prehistoric Ocean?",
+    "views": 148000
+   },
+   {
+    "id": "6bWfSCVbxNQ",
+    "title": "Worst Ways People Got Trapped",
+    "views": 71000
+   }
+  ]
+ },
+ "thedailyblurb": {
+  "handle": "@thedailyblurb",
+  "channel": "theblurb",
+  "videos": [
+   {
+    "id": "SJ2d1GVPHCc",
+    "title": "If you're ambitious but lazy, please watch this video…",
+    "views": 4800000
+   },
+   {
+    "id": "MbRC_bHmKxU",
+    "title": "How to Never Run Out of Things to Say",
+    "views": 978000
+   },
+   {
+    "id": "Sho46qumEVQ",
+    "title": "How To Actually Achieve Your Goals in 2026",
+    "views": 358000
+   },
+   {
+    "id": "kRn4HSXsbeI",
+    "title": "It's Boring, But It Makes You Rich",
+    "views": 3800
+   },
+   {
+    "id": "bn3ijUdCAns",
+    "title": "It’s boring, but it makes you unstoppable",
+    "views": 22000
+   }
+  ]
+ },
+ "Oversimplified": {
+  "handle": "@Oversimplified",
+  "channel": "OverSimplified",
+  "videos": [
+   {
+    "id": "_uk_6vfqwTA",
+    "title": "WW2 - OverSimplified (Part 1)",
+    "views": 105000000
+   },
+   {
+    "id": "I79TpDe3t2g",
+    "title": "The Cold War - OverSimplified (Part 1)",
+    "views": 75000000
+   },
+   {
+    "id": "tsxmyL7TUJg",
+    "title": "The American Civil War - OverSimplified (Part 1)",
+    "views": 72000000
+   },
+   {
+    "id": "1BVJzaXv3rk",
+    "title": "The Second Punic War  - OverSimplified (Part 3)",
+    "views": 20000000
+   },
+   {
+    "id": "Q-nWA0WeF98",
+    "title": "The Second Punic War - OverSimplified (Part 2)",
+    "views": 21000000
+   }
+  ]
+ },
+ "samonellaacademy": {
+  "handle": "@samonellaacademy",
+  "channel": "Sam O'Nella Academy",
+  "videos": [
+   {
+    "id": "0zMSMJZc9EA",
+    "title": "Historical Misconceptions For You to Bring Up during Family Dinner",
+    "views": 23000000
+   },
+   {
+    "id": "nYHDj2sB-rc",
+    "title": "Tarrare, the Hungriest Man in History",
+    "views": 20000000
+   },
+   {
+    "id": "MGVraepNj04",
+    "title": "The Presidential Assassination Nobody Talks About",
+    "views": 19000000
+   },
+   {
+    "id": "_kgTL-Z9sBU",
+    "title": "Pliny Explains it All 2: MAN (The Historia Naturalis Abridged)",
+    "views": 3600000
+   },
+   {
+    "id": "enXnTKnTeJ8",
+    "title": "I'm going on tour",
+    "views": 146000
+   }
+  ]
+ },
+ "PolyMatter": {
+  "handle": "@PolyMatter",
+  "channel": "PolyMatter",
+  "videos": [
+   {
+    "id": "5Wq0yv73NpY",
+    "title": "Zimbabwe’s Currency Crisis: the worthless $100 trillion bill",
+    "views": 7600000
+   },
+   {
+    "id": "yloJi635Ya8",
+    "title": "Apple's Money Problem (& Why It Won't Buy Netflix)",
+    "views": 5800000
+   },
+   {
+    "id": "Fg7jIjmLyWs",
+    "title": "Why China Ended its One-Child Policy",
+    "views": 5200000
+   },
+   {
+    "id": "QEVTeJtzJFo",
+    "title": "Why the Average New Car Costs $50,000",
+    "views": 187000
+   },
+   {
+    "id": "Jz5L3X453Jw",
+    "title": "How America’s 4,488 Banks Work",
+    "views": 210000
+   }
+  ]
+ },
+ "Wendoverproductions": {
+  "handle": "@Wendoverproductions",
+  "channel": "Wendover Productions",
+  "videos": [
+   {
+    "id": "b4wRdoWpw0w",
+    "title": "The Failed Logistics of Russia's Invasion of Ukraine",
+    "views": 10000000
+   },
+   {
+    "id": "5-QejUTDCWw",
+    "title": "The World's Most Useful Airport [Documentary]",
+    "views": 9900000
+   },
+   {
+    "id": "b1JlYZQG3lI",
+    "title": "Why There are Now So Many Shortages (It's Not COVID)",
+    "views": 7800000
+   },
+   {
+    "id": "Fz9vY4DVCQ8",
+    "title": "Why There Are So Many Different Hotel Brands",
+    "views": 761000
+   },
+   {
+    "id": "2hx9r7JE6mg",
+    "title": "Waymo vs Tesla",
+    "views": 866000
+   }
+  ]
+ },
+ "BeanieSurvives": {
+  "handle": "@BeanieSurvives",
+  "channel": "Beanie Survives",
+  "videos": [
+   {
+    "id": "1AF04-V4Yao",
+    "title": "Zombie Outbreak: 30 Days Trapped On The 30th Floor",
+    "views": 2900000
+   },
+   {
+    "id": "p9iPPGrn86o",
+    "title": "Zombie Outbreak: Eating Birds On A Rooftop",
+    "views": 1100000
+   },
+   {
+    "id": "LmM7TLWBWok",
+    "title": "Zombie Outbreak Ep. 3: Leaving The Tower On Day 90",
+    "views": 887000
+   },
+   {
+    "id": "QXLZFhJamEQ",
+    "title": "The Mountain | Zombie Outbreak Season 2 Trailer",
+    "views": 13000
+   },
+   {
+    "id": "fnBQn3oieq8",
+    "title": "Nobody Answered His Radio for 222 Days | Zombie Outbreak Season Finale",
+    "views": 106000
+   }
+  ]
+ },
+ "Zenn0009": {
+  "handle": "@Zenn0009",
+  "channel": "Zenn",
+  "videos": [
+   {
+    "id": "st_Ah6Ykbh4",
+    "title": "What Did Ancient Humans Do at Night?",
+    "views": 8100000
+   },
+   {
+    "id": "LuCans9euxY",
+    "title": "The Calhoun Effect",
+    "views": 5300000
+   },
+   {
+    "id": "royoy7-PyTw",
+    "title": "Why You Can't Remember Being a Baby",
+    "views": 1800000
+   },
+   {
+    "id": "2qMHI3xgEHA",
+    "title": "The What-The-Hell Effect",
+    "views": 21000
+   },
+   {
+    "id": "4MkAjGeYyHY",
+    "title": "What Did Ancient Humans Actually Do All Year?",
+    "views": 30000
+   }
+  ]
+ }
+}

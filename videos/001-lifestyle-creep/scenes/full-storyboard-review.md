@@ -1,5 +1,16 @@
 # Complete storyboard design review
 
+## Selective typography revision
+
+The v6 images below remain the artwork baseline. Their currency-only restriction
+is superseded for the new typography review by the [complete cue and panel plan](../typography-plan.md).
+Labels, lists and headlines are selective additions tied to existing objects;
+the older descriptive suggestions are not restored wholesale. Narration, source
+timing and financial assumptions are unchanged. The new composition is a review
+candidate; creative approval and draft-cue listening review remain pending.
+
+## V6 artwork baseline
+
 [Open S01–S67 with narration](../../../out/001-lifestyle-creep/storyboard-design-v6/review/index.html).
 
 All 67 scenes now follow the cinematic direction: rough paper backdrop, foreground

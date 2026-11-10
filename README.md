@@ -72,6 +72,13 @@ See [production rules](AGENTS.md), [sources and licenses](SOURCES.md),
 [walking research](docs/walking-mechanics-research.md), and
 [current validation](docs/animation-validation.md).
 
+## Channel research
+
+Production-level reverse engineering of 18 channels, with raw evidence in
+`research-evidence/` and playbooks in `deepseek-docs/`. Start at
+[deepseek-research/README.md](deepseek-research/README.md). Regenerate the evidence with
+`scripts/research/`; nothing in `deepseek-*` is hand-typed that a script can produce.
+
 ## Channel transcripts
 
 From PowerShell, quote YouTube handles:

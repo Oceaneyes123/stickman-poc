@@ -1,5 +1,10 @@
 # Visual variety and art direction audit
 
+The [selective typography audit](typography-audit.md) and [beat plan](../videos/001-lifestyle-creep/typography-plan.md)
+now qualify the v6 currency-only rule for the typography review candidate.
+All composition categories and v6 artwork remain the visual baseline; the
+historical currency-only descriptions below document that baseline.
+
 Scope: all 67 scenes / 99 panels from storyboard-design-v3, visually reviewed in
 chronological order before implementation. Character scale/position descriptions
 are visual estimates, not computer-vision measurements. Currency counts include

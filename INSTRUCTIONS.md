@@ -58,16 +58,7 @@ for animation. Changing the audio requires new timing and review.
 If a run reports a pending request or lock, check VoiceStudio before retrying.
 See [detailed guidance](docs/narration.md) for troubleshooting and implementation details.
 
-## 8. Render the S01–S06 animation
-
-```powershell
-npm run opening:render -- --out out/001-lifestyle-creep/opening-animation-v3
-Invoke-Item out/001-lifestyle-creep/opening-animation-v3/s01-s06.mp4
-```
-
-Uses the existing Jeremy audio and cue timing. Choose a new output folder for each review.
-
-## 9. Review or regenerate the complete storyboard
+## 8. Review or regenerate the complete storyboard
 
 ```powershell
 Invoke-Item out/001-lifestyle-creep/storyboard-design-v6/review/index.html
@@ -82,15 +73,3 @@ Invoke-Item out/001-lifestyle-creep/storyboard-design-v7/review/index.html
 
 Includes 99 S01–S67 stills, exact narration, and chronological/grouped sheets in
 `contact-sheets/`. Requires Python Pillow. No video or audio is generated.
-
-## 10. Render the three cinematic references (after storyboard approval)
-
-```powershell
-npm run cinematic:render -- --out out/001-lifestyle-creep/cinematic-references-v5
-python scripts/verify-cinematic.py out/001-lifestyle-creep/cinematic-references-v5
-Invoke-Item out/001-lifestyle-creep/cinematic-references-v5/index.html
-```
-
-Renders S12, S21–S22, and S50–S52 with the textured backdrop and existing narration.
-Only money figures appear as on-screen text.
-Use `--stills` for frame review only. Approve these references before extending the style.

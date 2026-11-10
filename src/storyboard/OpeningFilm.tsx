@@ -17,6 +17,7 @@ import { openingCameras } from "./openingShots";
 import type { OpeningPlan } from "./openingTiming";
 import type { Timeline } from "../timeline/types";
 import { C } from "../design/tokens";
+import { ObjectAttachedLabel } from "../typography";
 export type OpeningFilmProps = { timeline: Timeline; plan: OpeningPlan };
 const Shot = ({
   index,
@@ -65,7 +66,23 @@ const Shot = ({
             color: C.navy,
           }}
         >
-          Three months later
+          <svg
+            width={490}
+            height={80}
+            style={{ display: "block", overflow: "visible" }}
+          >
+            <ObjectAttachedLabel
+              x={0}
+              y={50}
+              text="Three months later"
+              object={{ x: 390, y: 108 }}
+              frame={frame}
+              from={(markers.worry ?? scene.from) - scene.from}
+              until={scene.durationInFrames}
+              size={46}
+              line={false}
+            />
+          </svg>
           <svg
             width={150}
             height={175}

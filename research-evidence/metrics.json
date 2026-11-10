@@ -1,0 +1,1313 @@
+{
+ "note": "Counts come from YouTube auto-captions. Punctuation, speaker labels and numbers are recognition output, not the creator's script. wpm uses caption span, so it includes pauses and music-only gaps.",
+ "videos": [
+  {
+   "video_id": "1AF04-V4Yao",
+   "channel": "Beanie Survives",
+   "title": "Zombie Outbreak: 30 Days Trapped On The 30th Floor",
+   "views": 2900000,
+   "words": 1292,
+   "caption_span_s": 491.4,
+   "wpm": 157.8,
+   "sentences": 176,
+   "mean_sentence_words": 7.3,
+   "median_sentence_words": 7.0,
+   "short_sentence_share": 0.676,
+   "long_sentence_share": 0.0,
+   "questions_per_100w": 0.0,
+   "contractions_per_100w": 0.08,
+   "you_per_100w": 5.19,
+   "i_per_100w": 0.0,
+   "hook": {
+    "5s": "You live on the 30th floor. Until tonight, that was the worst thing about your flat.",
+    "15s": "You live on the 30th floor. Until tonight, that was the worst thing about your flat. At 9.40, every phone in the building screams at once. Stay inside, lock your doors, do not help the injured. 30 floors down, the street is full of people running.",
+    "30s": "You live on the 30th floor. Until tonight, that was the worst thing about your flat. At 9.40, every phone in the building screams at once. Stay inside, lock your doors, do not help the injured. 30 floors down, the street is full of people running. Some of them are not running away. Your neighbor is in the hallway, knocking on every door. His arm is bandaged. You watch through the peephole and you do not open. First problem, water. A tower pumps it up with electricity.",
+    "60s": "You live on the 30th floor. Until tonight, that was the worst thing about your flat. At 9.40, every phone in the building screams at once. Stay inside, lock your doors, do not help the injured. 30 floors down, the street is full of people running. Some of them are not running away. Your neighbor is in the hallway, knocking on every door. His arm is bandaged. You watch through the peephole and you do not open. First problem, water. A tower pumps it up with electricity. When the power dies, the top floors go dry first. So you fill the bathtub, about 40 gallons. Then every pot, every bottle, the sink, one person needs a gallon a day. You have just bought yourself six weeks. By morning, the sirens have stopped. That is worse. You count the food. 11 days if you eat normally, 25 if you don't. So you ration. From now on, everything is a number."
+   }
+  },
+  {
+   "video_id": "LmM7TLWBWok",
+   "channel": "Beanie Survives",
+   "title": "Zombie Outbreak Ep. 3: Leaving The Tower On Day 90",
+   "views": 887000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "QXLZFhJamEQ",
+   "channel": "Beanie Survives",
+   "title": "The Mountain | Zombie Outbreak Season 2 Trailer",
+   "views": 13000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "fnBQn3oieq8",
+   "channel": "Beanie Survives",
+   "title": "Nobody Answered His Radio for 222 Days | Zombie Outbreak Season Finale",
+   "views": 106000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "p9iPPGrn86o",
+   "channel": "Beanie Survives",
+   "title": "Zombie Outbreak: Eating Birds On A Rooftop",
+   "views": 1100000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "F_VUBpALcVE",
+   "channel": "Economics Explained",
+   "title": "Why Everyone is Leaving New Zealand",
+   "views": 3600000,
+   "words": 2808,
+   "caption_span_s": 810.8,
+   "wpm": 207.8,
+   "sentences": 119,
+   "mean_sentence_words": 23.6,
+   "median_sentence_words": 23,
+   "short_sentence_share": 0.143,
+   "long_sentence_share": 0.336,
+   "questions_per_100w": 0.28,
+   "contractions_per_100w": 2.21,
+   "you_per_100w": 0.46,
+   "i_per_100w": 0.18,
+   "hook": {
+    "5s": "This is New Zealand, genuinely one of the most beautiful countries in the world. In addition to its picturesque landscapes, a lot of that beauty also comes down to the fact that it is extremely remote.",
+    "15s": "This is New Zealand, genuinely one of the most beautiful countries in the world. In addition to its picturesque landscapes, a lot of that beauty also comes down to the fact that it is extremely remote. So much so that it's left off a lot of global maps, and it's home to a relatively small population of just 5.3 million people.",
+    "30s": "This is New Zealand, genuinely one of the most beautiful countries in the world. In addition to its picturesque landscapes, a lot of that beauty also comes down to the fact that it is extremely remote. So much so that it's left off a lot of global maps, and it's home to a relatively small population of just 5.3 million people. These people enjoy a very high standard of living, good education, very stable government, good access to healthcare and a relatively egalitarian culture. Now, while all of this may sound great on a tourism brochure, it has had some unintuitive consequences on the national economy,",
+    "60s": "This is New Zealand, genuinely one of the most beautiful countries in the world. In addition to its picturesque landscapes, a lot of that beauty also comes down to the fact that it is extremely remote. So much so that it's left off a lot of global maps, and it's home to a relatively small population of just 5.3 million people. These people enjoy a very high standard of living, good education, very stable government, good access to healthcare and a relatively egalitarian culture. Now, while all of this may sound great on a tourism brochure, it has had some unintuitive consequences on the national economy, an economy which was very unique to begin with. What is happening is that Kiwis are seeing a country that probably looks like a dreamland to most of the rest of the world, and they're leaving it. From an already small population, New Zealand has one of the highest rates of emigration anywhere in the world, with a bulk of them just making the short jump across here to Australia. More than 10% of New Zealand's people currently live in Australia. This isn't a small issue either. There are in some cases just as many people leaving per capita from New Zealand, as there are from third world countries embroiled in active conflicts."
+   }
+  },
+  {
+   "video_id": "Fe88ckTWyTU",
+   "channel": "Economics Explained",
+   "title": "How the World's Richest Country Lost 90% of its GDP",
+   "views": 5200000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "deQXeIhyhc4",
+   "channel": "Economics Explained",
+   "title": "Why Argentina Wants the World’s Corrupt Billionaires",
+   "views": 382000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "mcsAO9AYc0c",
+   "channel": "Economics Explained",
+   "title": "Something Terrible Is Happening in Italy",
+   "views": 3200000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "vQodCxq7b9g",
+   "channel": "Economics Explained",
+   "title": "How China Is Restarting Its Economy",
+   "views": 804000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "1zjcZ661ups",
+   "channel": "How Money Works",
+   "title": "If Nobody Can Afford A Home... Who's Going To Buy Them?",
+   "views": 4000000,
+   "words": 2351,
+   "caption_span_s": 694.9,
+   "wpm": 203.0,
+   "sentences": 1,
+   "mean_sentence_words": 2351,
+   "median_sentence_words": 2351,
+   "short_sentence_share": 0.0,
+   "long_sentence_share": 1.0,
+   "questions_per_100w": 0.0,
+   "contractions_per_100w": 1.74,
+   "you_per_100w": 2.17,
+   "i_per_100w": 0.38,
+   "hook": {
+    "5s": "fewer young people than ever are going to be able to buy a house in their lifetime and at the same time homes are getting more expensive every year what",
+    "15s": "fewer young people than ever are going to be able to buy a house in their lifetime and at the same time homes are getting more expensive every year what but if nobody can afford to buy a house then how the [ __ ] do they keep getting more expensive so the idea of being able to save a 20",
+    "30s": "fewer young people than ever are going to be able to buy a house in their lifetime and at the same time homes are getting more expensive every year what but if nobody can afford to buy a house then how the [ __ ] do they keep getting more expensive so the idea of being able to save a 20 down payment uh is almost unimaginable yeah rent gets raised you know a thousand percent with no notice and a family home should be the Bedrock of your financial life it gives you somewhere to live while building up equity in a place that you can one day call your own owning a home with a",
+    "60s": "fewer young people than ever are going to be able to buy a house in their lifetime and at the same time homes are getting more expensive every year what but if nobody can afford to buy a house then how the [ __ ] do they keep getting more expensive so the idea of being able to save a 20 down payment uh is almost unimaginable yeah rent gets raised you know a thousand percent with no notice and a family home should be the Bedrock of your financial life it gives you somewhere to live while building up equity in a place that you can one day call your own owning a home with a 30-year mortgage is cheaper out of pocket every month in most cities than renting so if you can buy your own home you will be richer now and richer in the future you already know this but if you're in the 75 of my audience that doesn't own a home it's probably because you can't afford one according to a report by Redfin only 21 of homes that went on sale in 2022 were considered affordable that's down from 60 percent of homes that went on sale in 2021 that means in just one year two-thirds of all affordable housing became too expensive"
+   }
+  },
+  {
+   "video_id": "2LiOOzEOrx8",
+   "channel": "How Money Works",
+   "title": "The (Overdue) Collapse of the 9-5 Job",
+   "views": 3300000,
+   "words": 2286,
+   "caption_span_s": 682.2,
+   "wpm": 201.0,
+   "sentences": 1,
+   "mean_sentence_words": 2286,
+   "median_sentence_words": 2286,
+   "short_sentence_share": 0.0,
+   "long_sentence_share": 1.0,
+   "questions_per_100w": 0.0,
+   "contractions_per_100w": 1.14,
+   "you_per_100w": 1.27,
+   "i_per_100w": 0.26,
+   "hook": {
+    "5s": "companies are doing Mass layoffs while complaining  about not being able to find enough employees some workers are min-maxing the system by working  multiple fulltime jobs at the same time While",
+    "15s": "companies are doing Mass layoffs while complaining  about not being able to find enough employees some workers are min-maxing the system by working  multiple fulltime jobs at the same time While others need to work hours of unpaid overtime  at just one job this is not to mention that the",
+    "30s": "companies are doing Mass layoffs while complaining  about not being able to find enough employees some workers are min-maxing the system by working  multiple fulltime jobs at the same time While others need to work hours of unpaid overtime  at just one job this is not to mention that the gig economy is consuming entire sections of the  workforce the N toi was created by American labor unions in the 1800s and became mainstream over 100  years ago when jobs looked like this and this it was revolutionary for its time but how many of the  modern problems in Corporate America are caused by",
+    "60s": "companies are doing Mass layoffs while complaining  about not being able to find enough employees some workers are min-maxing the system by working  multiple fulltime jobs at the same time While others need to work hours of unpaid overtime  at just one job this is not to mention that the gig economy is consuming entire sections of the  workforce the N toi was created by American labor unions in the 1800s and became mainstream over 100  years ago when jobs looked like this and this it was revolutionary for its time but how many of the  modern problems in Corporate America are caused by trying to make an outdated system fit with every  single modern job to the US 8.4 million people in the nation are working multiple jobs 850,000  jobs wages went up for American workers instead they're working multiple jobs it's called being  over employed and one parttime but I need both of them to uh pay my bills every month my rent and  groceries so just working all the time a report by the management consulting for McKenzie company  found that 2/3 of the average human's wealth is in"
+   }
+  },
+  {
+   "video_id": "EhbkCW3iTvA",
+   "channel": "How Money Works",
+   "title": "How American Real Estate Is Delaying The Inevitable... For Now",
+   "views": 1600000,
+   "words": 4036,
+   "caption_span_s": 1231.3,
+   "wpm": 196.7,
+   "sentences": 195,
+   "mean_sentence_words": 20.7,
+   "median_sentence_words": 20,
+   "short_sentence_share": 0.144,
+   "long_sentence_share": 0.2,
+   "questions_per_100w": 0.27,
+   "contractions_per_100w": 1.34,
+   "you_per_100w": 0.82,
+   "i_per_100w": 0.47,
+   "hook": {
+    "5s": "Okay, so why haven't home prices crashed  yet? Because they kind of should be,",
+    "15s": "Okay, so why haven't home prices crashed  yet? Because they kind of should be, right? Interest rates have more than tripled  over the last four years. Enormous new sources of housing stock have become available. Corporate  investors are rushing for the exits. Hundreds of thousands of people are already underwater on  their low deposit home loans, and households",
+    "30s": "Okay, so why haven't home prices crashed  yet? Because they kind of should be, right? Interest rates have more than tripled  over the last four years. Enormous new sources of housing stock have become available. Corporate  investors are rushing for the exits. Hundreds of thousands of people are already underwater on  their low deposit home loans, and households are just generally struggling to keep up with the  cost of everything else, let alone owning a home. In basically every other country that has been hit  by this malange of macroeconomic herbs and spices, prices have indeed fallen. But here in America,  they haven't. At least not yet. But why not?",
+    "60s": "Okay, so why haven't home prices crashed  yet? Because they kind of should be, right? Interest rates have more than tripled  over the last four years. Enormous new sources of housing stock have become available. Corporate  investors are rushing for the exits. Hundreds of thousands of people are already underwater on  their low deposit home loans, and households are just generally struggling to keep up with the  cost of everything else, let alone owning a home. In basically every other country that has been hit  by this malange of macroeconomic herbs and spices, prices have indeed fallen. But here in America,  they haven't. At least not yet. But why not? The obvious answer would be that unlike these  other countries, we have 30-year fixed rate mortgages. So all of the interest rate hikes in  the world effectively mean nothing to the people who purchased or refinanced onto a 2.7% rate and  now don't want to sell that home for any reason. And that does make sense in theory, except for  the fact that in reality, sellers now outnumber buyers by the widest recorded margin in history.  This is also ignoring the fact that in many ways,"
+   }
+  },
+  {
+   "video_id": "OAVin6xxd8E",
+   "channel": "How Money Works",
+   "title": "If You Were TRYING To Destroy The Economy...",
+   "views": 1100000,
+   "words": 3555,
+   "caption_span_s": 1060.4,
+   "wpm": 201.1,
+   "sentences": 157,
+   "mean_sentence_words": 22.6,
+   "median_sentence_words": 21,
+   "short_sentence_share": 0.178,
+   "long_sentence_share": 0.299,
+   "questions_per_100w": 0.14,
+   "contractions_per_100w": 1.32,
+   "you_per_100w": 2.03,
+   "i_per_100w": 0.25,
+   "hook": {
+    "5s": "Okay. So, as a fun little hypothetical question, if you wanted to destroy the American economy, what would you do",
+    "15s": "Okay. So, as a fun little hypothetical question, if you wanted to destroy the American economy, what would you do differently? The delicate inner workings of the American market and its financial system might be prone to having their own little meltdowns from time to time. But, around that soft gooey center, the",
+    "30s": "Okay. So, as a fun little hypothetical question, if you wanted to destroy the American economy, what would you do differently? The delicate inner workings of the American market and its financial system might be prone to having their own little meltdowns from time to time. But, around that soft gooey center, the economy as a whole has a lot of unique privileges and advantages, which all make it a remarkably tough nut to crack. It has globally respected institutions overseeing the world's largest financial markets, all denoted in the de facto reserve currency. It has a diverse",
+    "60s": "Okay. So, as a fun little hypothetical question, if you wanted to destroy the American economy, what would you do differently? The delicate inner workings of the American market and its financial system might be prone to having their own little meltdowns from time to time. But, around that soft gooey center, the economy as a whole has a lot of unique privileges and advantages, which all make it a remarkably tough nut to crack. It has globally respected institutions overseeing the world's largest financial markets, all denoted in the de facto reserve currency. It has a diverse industries, unparalleled reach through international companies, all staffed by the best and brightest people in the world, who can normally make more money here with their ideas than they can anywhere else on Earth. This is not to mention the fact that we are the most geopolitically entangled nation in history, mostly in a good way. The art of good business is being a good middle man. And between our alliances, agreements, trade deals, financial plumbing, and good old-fashioned soft power, there are collectively tens of thousands of bureaucratic connections between us and other nations that just"
+   }
+  },
+  {
+   "video_id": "vT6qh72wCZk",
+   "channel": "How Money Works",
+   "title": "The (Overdue) Collapse Of Short Term Rentals",
+   "views": 3900000,
+   "words": 2681,
+   "caption_span_s": 799.5,
+   "wpm": 201.2,
+   "sentences": 1,
+   "mean_sentence_words": 2681,
+   "median_sentence_words": 2681,
+   "short_sentence_share": 0.0,
+   "long_sentence_share": 1.0,
+   "questions_per_100w": 0.0,
+   "contractions_per_100w": 1.27,
+   "you_per_100w": 0.48,
+   "i_per_100w": 0.26,
+   "hook": {
+    "5s": "short-term rentals are a $100 billion Market  that have reshaped Global tourism accelerated a",
+    "15s": "short-term rentals are a $100 billion Market  that have reshaped Global tourism accelerated a nationwide housing crisis and created fortunes for  early adopters but now customers the government the public and the host themselves are turning  their back on a concept that started out as a",
+    "30s": "short-term rentals are a $100 billion Market  that have reshaped Global tourism accelerated a nationwide housing crisis and created fortunes for  early adopters but now customers the government the public and the host themselves are turning  their back on a concept that started out as a fun alternative to stuffy hotel chains but became  everything wrong with modern real estate all right the parties over for Airbnb renters the company  said yesterday that it's temporary ban on parties and other LGE noisy events is now permanent I've  put all my savings into into my unit I'm following",
+    "60s": "short-term rentals are a $100 billion Market  that have reshaped Global tourism accelerated a nationwide housing crisis and created fortunes for  early adopters but now customers the government the public and the host themselves are turning  their back on a concept that started out as a fun alternative to stuffy hotel chains but became  everything wrong with modern real estate all right the parties over for Airbnb renters the company  said yesterday that it's temporary ban on parties and other LGE noisy events is now permanent I've  put all my savings into into my unit I'm following all the rules paying all the taxes buying the  business license ultimately our goal is to get more housing back into the housing market for  people to be able to rent I just uncovered a massive amount of debt that Airbnb hasn't paid  on the books that they're hiding tens of millions hundreds of millions possibly even a billion  dollars plus of debt that they have not paid so we are looking around and are saying what can  we do right away that makes more homes available short-term rental market took off when Brian  chesky and Joe gbia tried to rent out a spare room"
+   }
+  },
+  {
+   "video_id": "6mRbDEtDoyA",
+   "channel": "James Jani",
+   "title": "The Untold Truth About Money: How to Build Wealth From Nothing.",
+   "views": 19000000,
+   "words": 3045,
+   "caption_span_s": 1043.3,
+   "wpm": 175.1,
+   "sentences": 46,
+   "mean_sentence_words": 66.2,
+   "median_sentence_words": 30.5,
+   "short_sentence_share": 0.283,
+   "long_sentence_share": 0.565,
+   "questions_per_100w": 0.89,
+   "contractions_per_100w": 3.22,
+   "you_per_100w": 6.57,
+   "i_per_100w": 1.35,
+   "hook": {
+    "5s": "",
+    "15s": "Let this circle represent $1,000,000 This is what ten million dollars would look like This is what one hundred million dollars would look like and this is what 1 billion dollars would look like",
+    "30s": "Let this circle represent $1,000,000 This is what ten million dollars would look like This is what one hundred million dollars would look like and this is what 1 billion dollars would look like Jeff Bezos the founder of Amazon has a net worth of",
+    "60s": "Let this circle represent $1,000,000 This is what ten million dollars would look like This is what one hundred million dollars would look like and this is what 1 billion dollars would look like Jeff Bezos the founder of Amazon has a net worth of 117 times this number and then There's you You're probably working a job right now one that you got from the degree that you studied for in university you probably don't have much in savings your living expenses seem Ridiculously high you feel as though you're not paid enough You have credit card debt that needs taking care of maybe your student Studying for a degree that you ho can and your job that you hope can bring some good money You probably don't have any savings only a pesky student debt hanging above your head"
+   }
+  },
+  {
+   "video_id": "7LPuXowifJ4",
+   "channel": "James Jani",
+   "title": "The GameStop Cult: An Untold Story",
+   "views": 1400000,
+   "words": 9858,
+   "caption_span_s": 3452.3,
+   "wpm": 171.3,
+   "sentences": 3,
+   "mean_sentence_words": 3286,
+   "median_sentence_words": 454,
+   "short_sentence_share": 0.0,
+   "long_sentence_share": 1.0,
+   "questions_per_100w": 0.0,
+   "contractions_per_100w": 2.8,
+   "you_per_100w": 1.12,
+   "i_per_100w": 2.78,
+   "hook": {
+    "5s": "on the internet there's practically a community for",
+    "15s": "on the internet there's practically a community for everything but I have never seen something quite like [Music] this where do I begin in early 2021",
+    "30s": "on the internet there's practically a community for everything but I have never seen something quite like [Music] this where do I begin in early 2021 there was this giant Mania that took the media by storm there's no way you could have avoided this story over the past few days ordinary citizens from across the world had gathered to buy the shares of one particular re store what the hell",
+    "60s": "on the internet there's practically a community for everything but I have never seen something quite like [Music] this where do I begin in early 2021 there was this giant Mania that took the media by storm there's no way you could have avoided this story over the past few days ordinary citizens from across the world had gathered to buy the shares of one particular re store what the hell is happening with GameStop thousands are banding together pushing the stock price way up cheers everybody seem to shake Wall Street to its core it was supposed to be this David versus Goliath Story the little guy has power hedge funds have lost billions the world believed the story ended after that Mania all those years ago I believe the story ended all those years ago there's just one problem it didn't it was only the beginning I believe in GameStop as a company I buy a share pretty much every"
+   }
+  },
+  {
+   "video_id": "C5Bd6YxifCo",
+   "channel": "James Jani",
+   "title": "The Cult of the Dead Stock.",
+   "views": 2800000,
+   "words": 11648,
+   "caption_span_s": 3895.3,
+   "wpm": 179.4,
+   "sentences": 2,
+   "mean_sentence_words": 5824,
+   "median_sentence_words": 5824.0,
+   "short_sentence_share": 0.0,
+   "long_sentence_share": 1.0,
+   "questions_per_100w": 0.0,
+   "contractions_per_100w": 3.54,
+   "you_per_100w": 1.52,
+   "i_per_100w": 4.52,
+   "hook": {
+    "5s": "[Music] I've seen so many tweets talking about how like we're the flat earthers of the",
+    "15s": "[Music] I've seen so many tweets talking about how like we're the flat earthers of the investing world and like all that but you're crazy until you're not and that's true of like pretty much everything in life this is egg loser boy someone I've befriended over the last few months he's",
+    "30s": "[Music] I've seen so many tweets talking about how like we're the flat earthers of the investing world and like all that but you're crazy until you're not and that's true of like pretty much everything in life this is egg loser boy someone I've befriended over the last few months he's been telling me about a company he's invested his money into a company that goes by the name of Bed Bath and Beyond I'm going to make a good amount of money off of this whether it's like 3 million or less or 20 million or more I don't",
+    "60s": "[Music] I've seen so many tweets talking about how like we're the flat earthers of the investing world and like all that but you're crazy until you're not and that's true of like pretty much everything in life this is egg loser boy someone I've befriended over the last few months he's been telling me about a company he's invested his money into a company that goes by the name of Bed Bath and Beyond I'm going to make a good amount of money off of this whether it's like 3 million or less or 20 million or more I don't know there's just one problem the company doesn't exist anymore in the first part of this series I discovered a community that had been dedicated to buying shares in a company most people thought was dying GameStop they had a particular infatuation with one individual Ryan Cohen is taking over as Gamestop CEO mean King Ryan Cohen Ryan Cohen if you hear me you're [ __ ] amazing"
+   }
+  },
+  {
+   "video_id": "hTfKpAWkgJY",
+   "channel": "James Jani",
+   "title": "The Dark World of Megachurches",
+   "views": 15000000,
+   "words": 5495,
+   "caption_span_s": 1938.1,
+   "wpm": 170.1,
+   "sentences": 1,
+   "mean_sentence_words": 5495,
+   "median_sentence_words": 5495,
+   "short_sentence_share": 0.0,
+   "long_sentence_share": 1.0,
+   "questions_per_100w": 0.0,
+   "contractions_per_100w": 3.91,
+   "you_per_100w": 3.37,
+   "i_per_100w": 2.07,
+   "hook": {
+    "5s": "i was raised as a catholic but i wouldn't really describe myself as religious today i had never heard of",
+    "15s": "i was raised as a catholic but i wouldn't really describe myself as religious today i had never heard of things like mega churches or televangelism or the prosperity gospel that was until i stumbled across an",
+    "30s": "i was raised as a catholic but i wouldn't really describe myself as religious today i had never heard of things like mega churches or televangelism or the prosperity gospel that was until i stumbled across an infamous interview how are you sir we'd just like to ask you about why you don't want to fly commercial you've got this journalist that is confronting this guy called kenneth copeland you said that you don't like to fly commercial because you don't want to get into a tube with a bunch of demons do you really believe",
+    "60s": "i was raised as a catholic but i wouldn't really describe myself as religious today i had never heard of things like mega churches or televangelism or the prosperity gospel that was until i stumbled across an infamous interview how are you sir we'd just like to ask you about why you don't want to fly commercial you've got this journalist that is confronting this guy called kenneth copeland you said that you don't like to fly commercial because you don't want to get into a tube with a bunch of demons do you really believe that human beings are demons no i do not and don't you ever say i did get in a long tube with a bunch of demons we wrestle not with flesh and blood but principalities and powers copeland is being confronted about his purchase of a gulfstream jet and it turns out that that jet is just one of a fleet of jets that he owns along with a boathouse a mansion and his very own airport this is a preacher that is supposedly worth"
+   }
+  },
+  {
+   "video_id": "w3EYKuFGJ5c",
+   "channel": "James Jani",
+   "title": "The Fake Genius: a $30 BILLION Fraud.",
+   "views": 11000000,
+   "words": 11066,
+   "caption_span_s": 3887.6,
+   "wpm": 170.8,
+   "sentences": 1,
+   "mean_sentence_words": 11066,
+   "median_sentence_words": 11066,
+   "short_sentence_share": 0.0,
+   "long_sentence_share": 1.0,
+   "questions_per_100w": 0.0,
+   "contractions_per_100w": 2.28,
+   "you_per_100w": 1.55,
+   "i_per_100w": 1.36,
+   "hook": {
+    "5s": "[Music] I'm very excited to introduce you to Sam bankman freed everybody likes a story",
+    "15s": "[Music] I'm very excited to introduce you to Sam bankman freed everybody likes a story about an underdog he's the CEO of the cryptocurrency exchange FTX the wealthiest person under 30 in the world someone out of the ordinary what makes",
+    "30s": "[Music] I'm very excited to introduce you to Sam bankman freed everybody likes a story about an underdog he's the CEO of the cryptocurrency exchange FTX the wealthiest person under 30 in the world someone out of the ordinary what makes him so different and so rich you said you always wanted to get rich but not for the reasons you might expect an unlikely genius who comes once in a lifetime living with roommates sleeping on a bean bag in his office the guy the guy's a nut he doesn't sleep Sam is a",
+    "60s": "[Music] I'm very excited to introduce you to Sam bankman freed everybody likes a story about an underdog he's the CEO of the cryptocurrency exchange FTX the wealthiest person under 30 in the world someone out of the ordinary what makes him so different and so rich you said you always wanted to get rich but not for the reasons you might expect an unlikely genius who comes once in a lifetime living with roommates sleeping on a bean bag in his office the guy the guy's a nut he doesn't sleep Sam is a genius the Michael Jordan of crypto if you will somebody who wants to change the world for good he decided that he wanted to dedicate his life to doing good for the world this is not one of those stories in the span of about one week sand bankman freed went from a crypto billionaire to bankruptcy the southern district of New York has confirmed the arrest of FTX founder Sam bankman freed the once Crown King of crypto now"
+   }
+  },
+  {
+   "video_id": "51fWzJ-A5w4",
+   "channel": "MagnatesMedia",
+   "title": "The Secret Chinese Company That Owns Everything",
+   "views": 12000000,
+   "words": 14995,
+   "caption_span_s": 4717.1,
+   "wpm": 190.7,
+   "sentences": 736,
+   "mean_sentence_words": 20.4,
+   "median_sentence_words": 19.0,
+   "short_sentence_share": 0.109,
+   "long_sentence_share": 0.174,
+   "questions_per_100w": 0.11,
+   "contractions_per_100w": 2.53,
+   "you_per_100w": 1.19,
+   "i_per_100w": 0.26,
+   "hook": {
+    "5s": "Can I have a quick shot of hands? Who's heard of Tencent? Great start.",
+    "15s": "Can I have a quick shot of hands? Who's heard of Tencent? Great start. If you look at the world's most valuable companies, you won't be surprised to find the likes of Apple, Microsoft and Google.",
+    "30s": "Can I have a quick shot of hands? Who's heard of Tencent? Great start. If you look at the world's most valuable companies, you won't be surprised to find the likes of Apple, Microsoft and Google. But one name does stand out. Tencent. The company is worth more than the likes of Facebook, Mastercard and Samsung. And yet if you ask the majority of people what Tencent does, you'd be met with a confused look.",
+    "60s": "Can I have a quick shot of hands? Who's heard of Tencent? Great start. If you look at the world's most valuable companies, you won't be surprised to find the likes of Apple, Microsoft and Google. But one name does stand out. Tencent. The company is worth more than the likes of Facebook, Mastercard and Samsung. And yet if you ask the majority of people what Tencent does, you'd be met with a confused look. The truth is that Tencent does everything. Because whilst Tencent's mascot is a friendly looking penguin, a more accurate animal to embody this conglomerate would be a giant octopus, with tentacles reaching into almost every industry you can think of all over the world. In most places, Tencent operates from the shadows, hence why it's not a household name. But whether you realize it or not, you almost certainly use products or services Tencent is involved with. However, in Tencent's home country of China, it's a very different story."
+   }
+  },
+  {
+   "video_id": "ELu8y6eK-0g",
+   "channel": "MagnatesMedia",
+   "title": "The Disturbing History of Coca-Cola",
+   "views": 7600000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "Qbe0I3X6R-o",
+   "channel": "MagnatesMedia",
+   "title": "The INSANE Truth About YouTube",
+   "views": 593000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "dsDcQmJHwQc",
+   "channel": "MagnatesMedia",
+   "title": "The INSANE Truth About OpenAI",
+   "views": 1200000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "fNh_GyRbJDA",
+   "channel": "MagnatesMedia",
+   "title": "Rockefeller: The World’s First Billionaire",
+   "views": 7700000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "1BVJzaXv3rk",
+   "channel": "OverSimplified",
+   "title": "The Second Punic War  - OverSimplified (Part 3)",
+   "views": 20000000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "I79TpDe3t2g",
+   "channel": "OverSimplified",
+   "title": "The Cold War - OverSimplified (Part 1)",
+   "views": 75000000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "Q-nWA0WeF98",
+   "channel": "OverSimplified",
+   "title": "The Second Punic War - OverSimplified (Part 2)",
+   "views": 21000000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "_uk_6vfqwTA",
+   "channel": "OverSimplified",
+   "title": "WW2 - OverSimplified (Part 1)",
+   "views": 105000000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "tsxmyL7TUJg",
+   "channel": "OverSimplified",
+   "title": "The American Civil War - OverSimplified (Part 1)",
+   "views": 72000000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "5Wq0yv73NpY",
+   "channel": "PolyMatter",
+   "title": "Zimbabwe’s Currency Crisis: the worthless $100 trillion bill",
+   "views": 7600000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "Fg7jIjmLyWs",
+   "channel": "PolyMatter",
+   "title": "Why China Ended its One-Child Policy",
+   "views": 5200000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "Jz5L3X453Jw",
+   "channel": "PolyMatter",
+   "title": "How America’s 4,488 Banks Work",
+   "views": 210000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "QEVTeJtzJFo",
+   "channel": "PolyMatter",
+   "title": "Why the Average New Car Costs $50,000",
+   "views": 187000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "yloJi635Ya8",
+   "channel": "PolyMatter",
+   "title": "Apple's Money Problem (& Why It Won't Buy Netflix)",
+   "views": 5800000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "0oV87yfN59g",
+   "channel": "The Infographics Show",
+   "title": "Events That Will Cause the End of the World and More Apocalypse Scenarios",
+   "views": 68000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "MgngwkPAuqQ",
+   "channel": "The Infographics Show",
+   "title": "The AI bubble is about to pop...",
+   "views": 4600000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "O4yWBv2Nj68",
+   "channel": "The Infographics Show",
+   "title": "What Lethal Radiation Does to Your Body (Hour by Hour)",
+   "views": 2900000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "T9d6lrvzM9o",
+   "channel": "The Infographics Show",
+   "title": "What an AI Crash Would Look Like, Day by Day",
+   "views": 4900000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "tehBa2ZjG-I",
+   "channel": "The Infographics Show",
+   "title": "Why You Don't Want to Earn $150,000 to $250,000",
+   "views": 37000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "37HErhv0PDw",
+   "channel": "The Swedish Investor",
+   "title": "How to Tell When a Stock is Cheap/Expensive (Masterclass in Stock Valuation)",
+   "views": 893000,
+   "words": 5605,
+   "caption_span_s": 2165.0,
+   "wpm": 155.3,
+   "sentences": 365,
+   "mean_sentence_words": 15.4,
+   "median_sentence_words": 14,
+   "short_sentence_share": 0.238,
+   "long_sentence_share": 0.066,
+   "questions_per_100w": 0.7,
+   "contractions_per_100w": 3.16,
+   "you_per_100w": 2.11,
+   "i_per_100w": 1.2,
+   "hook": {
+    "5s": "You've probably heard the age-old stock market advice to buy low and sell high,",
+    "15s": "You've probably heard the age-old stock market advice to buy low and sell high, but how do you know what's high and what's low in advance? Is a stock like Ford Motor cheap because it trades for the same price as two Big Macs, while",
+    "30s": "You've probably heard the age-old stock market advice to buy low and sell high, but how do you know what's high and what's low in advance? Is a stock like Ford Motor cheap because it trades for the same price as two Big Macs, while Bshire Haway is expensive because it costs more than most people's houses? Well, no. It simply isn't that simple. But in this video, you'll learn how to value a stock properly with three different methods. By using PE ratios,",
+    "60s": "You've probably heard the age-old stock market advice to buy low and sell high, but how do you know what's high and what's low in advance? Is a stock like Ford Motor cheap because it trades for the same price as two Big Macs, while Bshire Haway is expensive because it costs more than most people's houses? Well, no. It simply isn't that simple. But in this video, you'll learn how to value a stock properly with three different methods. By using PE ratios, by using DCF, and finally, by using a third option, a much lesser known method, which falls somewhere in between the two most common approaches. And yes, there will be tons of references to Warren Buffett, but you'll have to wait a little until his first appearance. This is the Swedish investor bringing you the best tips and tools for reaching financial freedom through stock market investing. Ticker.com is the sponsor of this video"
+   }
+  },
+  {
+   "video_id": "5Vxjyz9DZ6k",
+   "channel": "The Swedish Investor",
+   "title": "The Intelligent Investor’s Road to $1,000,000",
+   "views": 5300000,
+   "words": 3763,
+   "caption_span_s": 1387.0,
+   "wpm": 162.8,
+   "sentences": 251,
+   "mean_sentence_words": 15.0,
+   "median_sentence_words": 14,
+   "short_sentence_share": 0.323,
+   "long_sentence_share": 0.092,
+   "questions_per_100w": 0.72,
+   "contractions_per_100w": 1.99,
+   "you_per_100w": 1.81,
+   "i_per_100w": 0.8,
+   "hook": {
+    "5s": "At the age of 43, Tom retired from his 9-5 at Ford Motor through a combined effort of savings and stock market investments,",
+    "15s": "At the age of 43, Tom retired from his 9-5 at Ford Motor through a combined effort of savings and stock market investments, although, on the day when he graduated college, he didn't have a penny to his name. Tom graduated from the University of Michigan - Dearborn at the age of 23.",
+    "30s": "At the age of 43, Tom retired from his 9-5 at Ford Motor through a combined effort of savings and stock market investments, although, on the day when he graduated college, he didn't have a penny to his name. Tom graduated from the University of Michigan - Dearborn at the age of 23. Like his father, he majored in mechanical engineering. He had landed a job at General Motors before even graduating, which everyone in his family applauded him for. Still, secretly Tom asked himself, \"What's the big deal?\".",
+    "60s": "At the age of 43, Tom retired from his 9-5 at Ford Motor through a combined effort of savings and stock market investments, although, on the day when he graduated college, he didn't have a penny to his name. Tom graduated from the University of Michigan - Dearborn at the age of 23. Like his father, he majored in mechanical engineering. He had landed a job at General Motors before even graduating, which everyone in his family applauded him for. Still, secretly Tom asked himself, \"What's the big deal?\". Tom had always felt like he wanted something different than his peers expected from life. During the first weeks at General Motors, if anything, this feeling was strengthened. Tom met up with his supervisor, James, who had been with the company long enough to earn himself a golden watch. James seemed proud of his watch, but Tom couldn't help but think, \"wow, he's still in the same place, doing the same thing as he did when he was my age\". It seemed James spent his days doing what he had to do, not what he wanted to do."
+   }
+  },
+  {
+   "video_id": "TJDcGv9OH4Q",
+   "channel": "The Swedish Investor",
+   "title": "THE PSYCHOLOGY OF MONEY (BY MORGAN HOUSEL)",
+   "views": 5800000,
+   "words": 2351,
+   "caption_span_s": 928.9,
+   "wpm": 151.9,
+   "sentences": 131,
+   "mean_sentence_words": 17.9,
+   "median_sentence_words": 15,
+   "short_sentence_share": 0.191,
+   "long_sentence_share": 0.13,
+   "questions_per_100w": 0.68,
+   "contractions_per_100w": 0.13,
+   "you_per_100w": 3.62,
+   "i_per_100w": 0.34,
+   "hook": {
+    "5s": "Have you heard the story about Ronald Read, the janitor that had 8 million dollars in savings when he died in 2014?",
+    "15s": "Have you heard the story about Ronald Read, the janitor that had 8 million dollars in savings when he died in 2014? Yes, you heard that right. Janitor. $8 millions. And he didn´t win the lottery or inherit the money either.",
+    "30s": "Have you heard the story about Ronald Read, the janitor that had 8 million dollars in savings when he died in 2014? Yes, you heard that right. Janitor. $8 millions. And he didn´t win the lottery or inherit the money either. He just saved consistently throughout his life, while letting the wonders of compounding do its thing. The moral is that your behavior with money is oftentimes more important than how intelligent you are.",
+    "60s": "Have you heard the story about Ronald Read, the janitor that had 8 million dollars in savings when he died in 2014? Yes, you heard that right. Janitor. $8 millions. And he didn´t win the lottery or inherit the money either. He just saved consistently throughout his life, while letting the wonders of compounding do its thing. The moral is that your behavior with money is oftentimes more important than how intelligent you are. Even if you don´t have a diploma from Harvard, or work on Wall Street, you can become rich by just behaving in a sound way. As Morgan Housel puts it: “Financial success is not a hard science. It’s a soft skill, where how you behave is more important than what you know.” Spend your next ten to fifteen minutes on this video, and you might excel on the soft skill of investing! This is a top 5 takeaways summary of The Psychology of Money, by Morgan Housel."
+   }
+  },
+  {
+   "video_id": "XR57WlqX4iM",
+   "channel": "The Swedish Investor",
+   "title": "THE BIG SECRET FOR THE SMALL INVESTOR – SUMMARY (JOEL GREENBLATT)",
+   "views": 171000,
+   "words": 2552,
+   "caption_span_s": 1137.0,
+   "wpm": 134.7,
+   "sentences": 191,
+   "mean_sentence_words": 13.4,
+   "median_sentence_words": 12,
+   "short_sentence_share": 0.346,
+   "long_sentence_share": 0.037,
+   "questions_per_100w": 1.02,
+   "contractions_per_100w": 3.21,
+   "you_per_100w": 2.35,
+   "i_per_100w": 0.82,
+   "hook": {
+    "5s": "Indeed, most individuals, MBAs and professionals who try to beat the stock market won't.",
+    "15s": "Indeed, most individuals, MBAs and professionals who try to beat the stock market won't. But if you follow the plan laid out in this video, you can. Yes, yes, I know it sounds too good to be true, but there's a lot of statistical evidence",
+    "30s": "Indeed, most individuals, MBAs and professionals who try to beat the stock market won't. But if you follow the plan laid out in this video, you can. Yes, yes, I know it sounds too good to be true, but there's a lot of statistical evidence that points to this fact, which we'll get to, so hear me out. This is a top 5 takeaway summary of The Big Secret for the Small Investor, written by Joel Greenblatt.",
+    "60s": "Indeed, most individuals, MBAs and professionals who try to beat the stock market won't. But if you follow the plan laid out in this video, you can. Yes, yes, I know it sounds too good to be true, but there's a lot of statistical evidence that points to this fact, which we'll get to, so hear me out. This is a top 5 takeaway summary of The Big Secret for the Small Investor, written by Joel Greenblatt. And this is The Swedish Investor, bringing you the best tips and tools for reaching financial freedom, through stock market investing. Takeaway number 1: How to beat Warren Buffett? What strategy would you use to beat Michael Jordan? Well, you could just avoid playing him in basketball. This is the kind of advice that Joel Greenblatt gives to his students at Columbia Business School, an Ivy League school where he teaches investing."
+   }
+  },
+  {
+   "video_id": "npoyc_X5zO8",
+   "channel": "The Swedish Investor",
+   "title": "THE INTELLIGENT INVESTOR SUMMARY (BY BENJAMIN GRAHAM)",
+   "views": 3500000,
+   "words": 2560,
+   "caption_span_s": 796.4,
+   "wpm": 192.9,
+   "sentences": 138,
+   "mean_sentence_words": 18.6,
+   "median_sentence_words": 16.5,
+   "short_sentence_share": 0.116,
+   "long_sentence_share": 0.109,
+   "questions_per_100w": 0.43,
+   "contractions_per_100w": 1.8,
+   "you_per_100w": 3.2,
+   "i_per_100w": 0.39,
+   "hook": {
+    "5s": "Successful investing does not require stratospheric IQ, insider information, or luck for that matte.r",
+    "15s": "Successful investing does not require stratospheric IQ, insider information, or luck for that matte.r Instead what's needed is a sound intellectual framework for making decisions, combined with an ability to keep emotions from ruining it. In \"The Intelligent Investor\", Benjamin Graham presents such a framework together with logic that will help to keep your emotions under control.",
+    "30s": "Successful investing does not require stratospheric IQ, insider information, or luck for that matte.r Instead what's needed is a sound intellectual framework for making decisions, combined with an ability to keep emotions from ruining it. In \"The Intelligent Investor\", Benjamin Graham presents such a framework together with logic that will help to keep your emotions under control. Arguably, he's investing strategy has been one of the most successful ones during the last hundred years. The impressive records, not just of Graham himself, but also of numerous of his disciples are impossible to ignore.",
+    "60s": "Successful investing does not require stratospheric IQ, insider information, or luck for that matte.r Instead what's needed is a sound intellectual framework for making decisions, combined with an ability to keep emotions from ruining it. In \"The Intelligent Investor\", Benjamin Graham presents such a framework together with logic that will help to keep your emotions under control. Arguably, he's investing strategy has been one of the most successful ones during the last hundred years. The impressive records, not just of Graham himself, but also of numerous of his disciples are impossible to ignore. Among these, the brightest shining star is Warren Buffett, who, at the time of this video making, is the third wealthiest man in the world. Warren Buffett refers to this book as \"by far, the best book on investing ever written\". In this video, I will present the, in my opinion, greatest takeaways from the book. Takeaway number 1: Meet Mr. Market Imagine that you own a part of a business that you paid $1000 for. Every day, a certain bipolar person called Mr. Market comes to your home with an opinion about how much you're part of that business is worth. Furthermore,"
+   }
+  },
+  {
+   "video_id": "2hx9r7JE6mg",
+   "channel": "Wendover Productions",
+   "title": "Waymo vs Tesla",
+   "views": 866000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "5-QejUTDCWw",
+   "channel": "Wendover Productions",
+   "title": "The World's Most Useful Airport [Documentary]",
+   "views": 9900000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "Fz9vY4DVCQ8",
+   "channel": "Wendover Productions",
+   "title": "Why There Are So Many Different Hotel Brands",
+   "views": 761000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "b1JlYZQG3lI",
+   "channel": "Wendover Productions",
+   "title": "Why There are Now So Many Shortages (It's Not COVID)",
+   "views": 7800000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "b4wRdoWpw0w",
+   "channel": "Wendover Productions",
+   "title": "The Failed Logistics of Russia's Invasion of Ukraine",
+   "views": 10000000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "2qMHI3xgEHA",
+   "channel": "Zenn",
+   "title": "The What-The-Hell Effect",
+   "views": 21000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "4MkAjGeYyHY",
+   "channel": "Zenn",
+   "title": "What Did Ancient Humans Actually Do All Year?",
+   "views": 30000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "LuCans9euxY",
+   "channel": "Zenn",
+   "title": "The Calhoun Effect",
+   "views": 5300000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "royoy7-PyTw",
+   "channel": "Zenn",
+   "title": "Why You Can't Remember Being a Baby",
+   "views": 1800000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "st_Ah6Ykbh4",
+   "channel": "Zenn",
+   "title": "What Did Ancient Humans Do at Night?",
+   "views": 8100000,
+   "words": 1599,
+   "caption_span_s": 511.7,
+   "wpm": 187.5,
+   "sentences": 147,
+   "mean_sentence_words": 10.9,
+   "median_sentence_words": 10,
+   "short_sentence_share": 0.415,
+   "long_sentence_share": 0.02,
+   "questions_per_100w": 0.44,
+   "contractions_per_100w": 2.31,
+   "you_per_100w": 1.44,
+   "i_per_100w": 0.0,
+   "hook": {
+    "5s": "Tonight, when the sun goes down, you're going to flip a switch. Light will flood the room, and you won't think twice about it.",
+    "15s": "Tonight, when the sun goes down, you're going to flip a switch. Light will flood the room, and you won't think twice about it. But for 99.9% of human history, that switch didn't exist. When the sun set, the world went dark. You couldn't even see your own hand in front of your face.",
+    "30s": "Tonight, when the sun goes down, you're going to flip a switch. Light will flood the room, and you won't think twice about it. But for 99.9% of human history, that switch didn't exist. When the sun set, the world went dark. You couldn't even see your own hand in front of your face. But modern humans almost never experienced this. For over 300,000 years, every single one of your ancestors spent roughly half their life in near total darkness. They didn't even have candles for most of that time. Just the black sky, the stars, and whatever fire they could keep alive.",
+    "60s": "Tonight, when the sun goes down, you're going to flip a switch. Light will flood the room, and you won't think twice about it. But for 99.9% of human history, that switch didn't exist. When the sun set, the world went dark. You couldn't even see your own hand in front of your face. But modern humans almost never experienced this. For over 300,000 years, every single one of your ancestors spent roughly half their life in near total darkness. They didn't even have candles for most of that time. Just the black sky, the stars, and whatever fire they could keep alive. So what did they actually do for all those hours? The answer changes everything we think we know about sleep, storytelling, and what it means to be human. Let's start with fire. Because fire is the reason any of this was possible. The earliest solid evidence of humans controlling fire comes from Wonderwork Cave in South Africa roughly one million years ago. But fire didn't just keep people warm. Fire completely restructured the human day. Before fire, our ancestors were like every other primate. When the sun went down, you climbed a tree or found a sheltered spot and you stayed still."
+   }
+  },
+  {
+   "video_id": "FcQlQAs5EDM",
+   "channel": "Alan Becker",
+   "title": "Creeper Clan - Animation vs. Minecraft Shorts Ep 40",
+   "views": 25000000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "GW_fdXHOWp4",
+   "channel": "Alan Becker",
+   "title": "Animation vs. Minecraft (original)",
+   "views": 352000000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "QCZjNqtnGmM",
+   "channel": "Alan Becker",
+   "title": "The Dark Age - Animator vs. Animation 14",
+   "views": 10000000,
+   "unavailable": "TranscriptsDisabled: "
+  },
+  {
+   "video_id": "pCBP4M08ndE",
+   "channel": "Alan Becker",
+   "title": "Cave Spider Roller Coaster - Animation vs. Minecraft Shorts Ep. 14",
+   "views": 542000000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "sHFeuBlBUos",
+   "channel": "Alan Becker",
+   "title": "Animation vs. Minecraft Shorts Season 1 - All Episodes (1-14)",
+   "views": 284000000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "8gKJ9mMPuIQ",
+   "channel": "JaidenAnimations",
+   "title": "How I ended up Vegetarian.",
+   "views": 6000000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "ejys3sT2LHw",
+   "channel": "JaidenAnimations",
+   "title": "I Attempted a Pokemon Platinum Nuzlocke",
+   "views": 67000000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "jJNgocrAbKA",
+   "channel": "JaidenAnimations",
+   "title": "The best pokemon game you never played",
+   "views": 46000000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "plSyrHqUh78",
+   "channel": "JaidenAnimations",
+   "title": "I Attempted my First Pokemon Nuzlocke",
+   "views": 100000000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "sI1f_fqQc8U",
+   "channel": "JaidenAnimations",
+   "title": "Talking about my cat again",
+   "views": 8800000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "5_Fayfx2NUM",
+   "channel": "Kurzgesagt – In a Nutshell",
+   "title": "How I Survived Late-Stage Cancer",
+   "views": 8200000,
+   "words": 2223,
+   "caption_span_s": 876.5,
+   "wpm": 152.2,
+   "sentences": 157,
+   "mean_sentence_words": 14.2,
+   "median_sentence_words": 14,
+   "short_sentence_share": 0.28,
+   "long_sentence_share": 0.038,
+   "questions_per_100w": 0.09,
+   "contractions_per_100w": 0.22,
+   "you_per_100w": 2.65,
+   "i_per_100w": 2.02,
+   "hook": {
+    "5s": "This is not a sad story! Going through chemotherapy was one  of the most interesting experiences",
+    "15s": "This is not a sad story! Going through chemotherapy was one  of the most interesting experiences of my life and my most vivid memory is very funny. In 2018 I was being treated for  stage 3 B testicular cancer that had metastasized into a few  lymph nodes and my lung.",
+    "30s": "This is not a sad story! Going through chemotherapy was one  of the most interesting experiences of my life and my most vivid memory is very funny. In 2018 I was being treated for  stage 3 B testicular cancer that had metastasized into a few  lymph nodes and my lung. Very serious business unfortunately. Boys and men, check your testicles tonight. One day my doctor was about to punish  my body with a fresh dose of Cisplatin. A cytotoxic hazardous chemotherapy agent.",
+    "60s": "This is not a sad story! Going through chemotherapy was one  of the most interesting experiences of my life and my most vivid memory is very funny. In 2018 I was being treated for  stage 3 B testicular cancer that had metastasized into a few  lymph nodes and my lung. Very serious business unfortunately. Boys and men, check your testicles tonight. One day my doctor was about to punish  my body with a fresh dose of Cisplatin. A cytotoxic hazardous chemotherapy agent. One of the absolutely worst ones. Controlled medical violence. The villain and hero of this story. My buddy Cisplatin came in a green, opaque  two liter bag directly from the fridge. The doctor connected the infusion to  the central venous access in my chest, a tube that led directly to my heart. But then… A short moment of inattention and disaster struck: A single drop of the icy liquid escaped."
+   }
+  },
+  {
+   "video_id": "9tbxDgcv74c",
+   "channel": "Kurzgesagt – In a Nutshell",
+   "title": "What If You Detonated a Nuclear Bomb In The Marianas Trench? (Science not Fantasy)",
+   "views": 36000000,
+   "words": 915,
+   "caption_span_s": 362.0,
+   "wpm": 151.7,
+   "sentences": 57,
+   "mean_sentence_words": 16.1,
+   "median_sentence_words": 16,
+   "short_sentence_share": 0.175,
+   "long_sentence_share": 0.053,
+   "questions_per_100w": 0.77,
+   "contractions_per_100w": 1.31,
+   "you_per_100w": 0.66,
+   "i_per_100w": 0.0,
+   "hook": {
+    "5s": "What would happen if we detonated humanity's most powerful nuclear weapon at the deepest point of the ocean?",
+    "15s": "What would happen if we detonated humanity's most powerful nuclear weapon at the deepest point of the ocean? For sure, tsunamis hundreds of meters high would destroy coastal cities, earthquakes would level countries,",
+    "30s": "What would happen if we detonated humanity's most powerful nuclear weapon at the deepest point of the ocean? For sure, tsunamis hundreds of meters high would destroy coastal cities, earthquakes would level countries, new volcanoes would bring us nuclear winter. Maybe even Earth could be ripped apart? Or thrown out of orbit? Well, almost. Currently, Earth's deepest known point is inside the Mariana Trench. The Mariana Trench is a very deep valley",
+    "60s": "What would happen if we detonated humanity's most powerful nuclear weapon at the deepest point of the ocean? For sure, tsunamis hundreds of meters high would destroy coastal cities, earthquakes would level countries, new volcanoes would bring us nuclear winter. Maybe even Earth could be ripped apart? Or thrown out of orbit? Well, almost. Currently, Earth's deepest known point is inside the Mariana Trench. The Mariana Trench is a very deep valley right at the edge of two tectonic plates that looks like an upside-down mountain. It reaches a depth of about 11 kilometers, almost three times deeper than the dark grave of the Titanic. It's one of the last places on Earth for humans to explore. Pitch black and under a thousand atmospheres of pressure, it's a relatively pristine environment thanks to the absence of humans. A great place for our nuclear test. We'll use the most powerful nuclear bomb humans have ever exploded,"
+   }
+  },
+  {
+   "video_id": "BtN-goy9VOY",
+   "channel": "Kurzgesagt – In a Nutshell",
+   "title": "The Coronavirus Explained & What You Should Do",
+   "views": 89000000,
+   "words": 1389,
+   "caption_span_s": 513.3,
+   "wpm": 162.3,
+   "sentences": 87,
+   "mean_sentence_words": 16.0,
+   "median_sentence_words": 15,
+   "short_sentence_share": 0.172,
+   "long_sentence_share": 0.046,
+   "questions_per_100w": 0.14,
+   "contractions_per_100w": 1.08,
+   "you_per_100w": 1.44,
+   "i_per_100w": 0.0,
+   "hook": {
+    "5s": "In December 2019 the Chinese authorities notified the world that a virus was spreading through their communities.",
+    "15s": "In December 2019 the Chinese authorities notified the world that a virus was spreading through their communities. In the following months, it spread to other countries, with cases doubling within days. This virus is the Severe Acute Respiratory Syndrome-Related Coronavirus 2",
+    "30s": "In December 2019 the Chinese authorities notified the world that a virus was spreading through their communities. In the following months, it spread to other countries, with cases doubling within days. This virus is the Severe Acute Respiratory Syndrome-Related Coronavirus 2 that causes the disease called Covid-19 and that everyone simply calls coronavirus. What actually happens when it infects a human and what should we all do? [Intro Music]",
+    "60s": "In December 2019 the Chinese authorities notified the world that a virus was spreading through their communities. In the following months, it spread to other countries, with cases doubling within days. This virus is the Severe Acute Respiratory Syndrome-Related Coronavirus 2 that causes the disease called Covid-19 and that everyone simply calls coronavirus. What actually happens when it infects a human and what should we all do? [Intro Music] A virus is really just a hull around genetic material and a few proteins, arguably not even a living thing. It can only make more of itself by entering a living cell. Corona may spread via surfaces, but it's still uncertain how long it can survive on them. Its main way of spreading seems to be droplet infection when people cough, or if you touch someone who's ill and then your face, say rubbing your eyes or nose. The virus starts its journey here, and then hitches a ride as a stowaway deeper into the body"
+   }
+  },
+  {
+   "video_id": "PXbVn-f_wuM",
+   "channel": "Kurzgesagt – In a Nutshell",
+   "title": "You Will Only Like Half of This Video",
+   "views": 5700000,
+   "words": 491,
+   "caption_span_s": 197.6,
+   "wpm": 149.1,
+   "sentences": 28,
+   "mean_sentence_words": 17.5,
+   "median_sentence_words": 17.5,
+   "short_sentence_share": 0.179,
+   "long_sentence_share": 0.036,
+   "questions_per_100w": 0.0,
+   "contractions_per_100w": 1.02,
+   "you_per_100w": 1.63,
+   "i_per_100w": 0.0,
+   "hook": {
+    "5s": "Hey wake up, AI is rotting your brain!",
+    "15s": "Hey wake up, AI is rotting your brain! That's not an empty hook, but a real  thing called cognitive atrophy – the loss of core skills like problem solving,  critical thinking and even creativity.",
+    "30s": "Hey wake up, AI is rotting your brain! That's not an empty hook, but a real  thing called cognitive atrophy – the loss of core skills like problem solving,  critical thinking and even creativity. This is not only bad for you, but catastrophic  for progress and innovation for our whole society. When we offload all mental work to these  tools and stop questioning what they spit out, we stop being curious about the world around us. Human ingenuity gets lost,",
+    "60s": "Hey wake up, AI is rotting your brain! That's not an empty hook, but a real  thing called cognitive atrophy – the loss of core skills like problem solving,  critical thinking and even creativity. This is not only bad for you, but catastrophic  for progress and innovation for our whole society. When we offload all mental work to these  tools and stop questioning what they spit out, we stop being curious about the world around us. Human ingenuity gets lost, creativity will decrease and we may  lose what makes us human in our core. Today, the number of AI \"written\" articles online  is approaching the number written by humans. Last year, hundreds of AI slop  channels had over 40 billion views. That is 10 times 13 years of kurzgesagt! And it is likely even worse today:  We can’t even measure this anymore, since detecting AI content with  certainty has become impossible."
+   }
+  },
+  {
+   "video_id": "h6fcK_fRYaI",
+   "channel": "Kurzgesagt – In a Nutshell",
+   "title": "The Egg - A Short Story",
+   "views": 36000000,
+   "words": 910,
+   "caption_span_s": 476.1,
+   "wpm": 114.7,
+   "sentences": 1,
+   "mean_sentence_words": 910,
+   "median_sentence_words": 910,
+   "short_sentence_share": 0.0,
+   "long_sentence_share": 1.0,
+   "questions_per_100w": 0.0,
+   "contractions_per_100w": 5.82,
+   "you_per_100w": 9.34,
+   "i_per_100w": 5.38,
+   "hook": {
+    "5s": "you were on your way home when you died",
+    "15s": "you were on your way home when you died it was a car accident nothing particularly remarkable but fatal nonetheless it was a painless death the Medics tried their best to",
+    "30s": "you were on your way home when you died it was a car accident nothing particularly remarkable but fatal nonetheless it was a painless death the Medics tried their best to save you but to no avail your body was so utterly shattered you were better off trust me and that's when you met me what happened",
+    "60s": "you were on your way home when you died it was a car accident nothing particularly remarkable but fatal nonetheless it was a painless death the Medics tried their best to save you but to no avail your body was so utterly shattered you were better off trust me and that's when you met me what happened where am I you died I said matter of factly no point in mincing words there was there was a truck and it was skidding yes I I died yes but don't feel bad about it everyone dies you looked around there was nothingness just you and me"
+   }
+  },
+  {
+   "video_id": "0zMSMJZc9EA",
+   "channel": "Sam O'Nella Academy",
+   "title": "Historical Misconceptions For You to Bring Up during Family Dinner",
+   "views": 23000000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "MGVraepNj04",
+   "channel": "Sam O'Nella Academy",
+   "title": "The Presidential Assassination Nobody Talks About",
+   "views": 19000000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "_kgTL-Z9sBU",
+   "channel": "Sam O'Nella Academy",
+   "title": "Pliny Explains it All 2: MAN (The Historia Naturalis Abridged)",
+   "views": 3600000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "enXnTKnTeJ8",
+   "channel": "Sam O'Nella Academy",
+   "title": "I'm going on tour",
+   "views": 146000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "nYHDj2sB-rc",
+   "channel": "Sam O'Nella Academy",
+   "title": "Tarrare, the Hungriest Man in History",
+   "views": 20000000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "MbRC_bHmKxU",
+   "channel": "theblurb",
+   "title": "How to Never Run Out of Things to Say",
+   "views": 978000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "SJ2d1GVPHCc",
+   "channel": "theblurb",
+   "title": "If you're ambitious but lazy, please watch this video…",
+   "views": 4800000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "Sho46qumEVQ",
+   "channel": "theblurb",
+   "title": "How To Actually Achieve Your Goals in 2026",
+   "views": 358000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "bn3ijUdCAns",
+   "channel": "theblurb",
+   "title": "It’s boring, but it makes you unstoppable",
+   "views": 22000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "kRn4HSXsbeI",
+   "channel": "theblurb",
+   "title": "It's Boring, But It Makes You Rich",
+   "views": 3800,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "2yFCyPX3kT0",
+   "channel": "TheOdd1sOut",
+   "title": "Annoying Customers",
+   "views": 118000000,
+   "words": 1631,
+   "caption_span_s": 407.0,
+   "wpm": 240.4,
+   "sentences": 136,
+   "mean_sentence_words": 12.0,
+   "median_sentence_words": 10.5,
+   "short_sentence_share": 0.36,
+   "long_sentence_share": 0.029,
+   "questions_per_100w": 1.1,
+   "contractions_per_100w": 3.92,
+   "you_per_100w": 1.66,
+   "i_per_100w": 7.36,
+   "hook": {
+    "5s": "Hey, this is kinda like a part 2 video. I mean, you don't have to have seen the part 1 video to understand what I talk about in this video,",
+    "15s": "Hey, this is kinda like a part 2 video. I mean, you don't have to have seen the part 1 video to understand what I talk about in this video, but I mean, if you haven't watched part 1, uh, you should. So I used to work at Subway, and to be honest, about 80% of the customers were fine. Sometimes they would do something that would just personally annoy me,",
+    "30s": "Hey, this is kinda like a part 2 video. I mean, you don't have to have seen the part 1 video to understand what I talk about in this video, but I mean, if you haven't watched part 1, uh, you should. So I used to work at Subway, and to be honest, about 80% of the customers were fine. Sometimes they would do something that would just personally annoy me, like ask for a meatball on flatbread. So don't feel too bad for me. Like, sometimes people would ask me, can I have a turkey with lettuce, tomatoes? Whoa, whoa, whoa, slow down! What kind of bread? Footlonger, six-ins. What kind of cheese? Is it toasted? Then we'll talk about vegetables!",
+    "60s": "Hey, this is kinda like a part 2 video. I mean, you don't have to have seen the part 1 video to understand what I talk about in this video, but I mean, if you haven't watched part 1, uh, you should. So I used to work at Subway, and to be honest, about 80% of the customers were fine. Sometimes they would do something that would just personally annoy me, like ask for a meatball on flatbread. So don't feel too bad for me. Like, sometimes people would ask me, can I have a turkey with lettuce, tomatoes? Whoa, whoa, whoa, slow down! What kind of bread? Footlonger, six-ins. What kind of cheese? Is it toasted? Then we'll talk about vegetables! And every time someone brought in a list, there would always be something missing on it. Always. I never had someone come in with a complete list. I would ask someone, what kind of cheese? And they would say, ah, they didn't specify. Well then, if they didn't care enough to remember cheese, I guess they'll get Swiss. If anyone watching is currently working out a Subway, then feel free to use these tricks. If someone asked me, Hmm, what kind of cheese do you recommend? I would always say provolone, because it's the easiest cheese to pull apart with gloves on. Really, if anyone asked me what I recommended, I would just tell them the easiest thing for me to do."
+   }
+  },
+  {
+   "video_id": "CAb_bCtKuXg",
+   "channel": "TheOdd1sOut",
+   "title": "Life is Fun - Ft. Boyinaband (Official Music Video)",
+   "views": 185000000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "Lo-PFoUhBZk",
+   "channel": "TheOdd1sOut",
+   "title": "Why I STILL Love Comics",
+   "views": 1500000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "ppH2tdpwUGY",
+   "channel": "TheOdd1sOut",
+   "title": "YouTube has Changed (me)",
+   "views": 4100000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "rvUzuK0ygI4",
+   "channel": "TheOdd1sOut",
+   "title": "Tabletop Games",
+   "views": 109000000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "6bWfSCVbxNQ",
+   "channel": "The Paint Explainer",
+   "title": "Worst Ways People Got Trapped",
+   "views": 71000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "HuCZ6-A5gcY",
+   "channel": "The Paint Explainer",
+   "title": "Worst Punishments in History",
+   "views": 9100000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "TVic4sqThDA",
+   "channel": "The Paint Explainer",
+   "title": "Would the Great White Shark Dominate Every Prehistoric Ocean?",
+   "views": 148000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "hDYQlhSQKsw",
+   "channel": "The Paint Explainer",
+   "title": "Scariest Urban Legends That Turned Out to Be True",
+   "views": 8900000,
+   "unavailable": "IpBlocked: "
+  },
+  {
+   "video_id": "n9HAAFBT3AA",
+   "channel": "The Paint Explainer",
+   "title": "What Dying on Every Planet Would Be Like",
+   "views": 13000000,
+   "words": 1601,
+   "caption_span_s": 495.1,
+   "wpm": 194.0,
+   "sentences": 97,
+   "mean_sentence_words": 16.5,
+   "median_sentence_words": 16,
+   "short_sentence_share": 0.082,
+   "long_sentence_share": 0.0,
+   "questions_per_100w": 0.0,
+   "contractions_per_100w": 5.12,
+   "you_per_100w": 3.81,
+   "i_per_100w": 0.06,
+   "hook": {
+    "5s": "Mercury Mercury is the closest planet to the sun, but if you think that means it's hot all the",
+    "15s": "Mercury Mercury is the closest planet to the sun, but if you think that means it's hot all the time, you're wrong. At night, temperatures can plummet to an icy minus 180 degrees Celsius. During the day, however, they can skyrocket to 430 degrees Celsius.",
+    "30s": "Mercury Mercury is the closest planet to the sun, but if you think that means it's hot all the time, you're wrong. At night, temperatures can plummet to an icy minus 180 degrees Celsius. During the day, however, they can skyrocket to 430 degrees Celsius. This extreme imbalance happens because Mercury doesn't have a proper atmosphere to regulate temperature. Instead, it has a very thin exosphere, which doesn't maintain heat. While apart from temperature you wouldn't have to worry about weather on Mercury, the real dangers come from solar radiation and the lack of breathable air.",
+    "60s": "Mercury Mercury is the closest planet to the sun, but if you think that means it's hot all the time, you're wrong. At night, temperatures can plummet to an icy minus 180 degrees Celsius. During the day, however, they can skyrocket to 430 degrees Celsius. This extreme imbalance happens because Mercury doesn't have a proper atmosphere to regulate temperature. Instead, it has a very thin exosphere, which doesn't maintain heat. While apart from temperature you wouldn't have to worry about weather on Mercury, the real dangers come from solar radiation and the lack of breathable air. In fact, Mercury gets almost 7 times the solar irradiance that Earth receives. As the smallest planet in the solar system, Mercury is full of craters, cliffs, and bumpy terrain making it a pretty tough place to land as well. The low air resistance doesn't help either. It would make slowing down a spaceship much harder, increasing the chances of a high speed crash. Landing during the daytime is out of the question because of the extreme heat. The latest NASA space suits can only handle up to 121 degrees Celsius, nowhere near Mercury's daytime temperatures of 430 degrees Celsius."
+   }
+  }
+ ],
+ "hooks": [
+  {
+   "channel": "Beanie Survives",
+   "title": "Zombie Outbreak: 30 Days Trapped On The 30th Floor",
+   "video_id": "1AF04-V4Yao",
+   "5s": "You live on the 30th floor. Until tonight, that was the worst thing about your flat.",
+   "15s": "You live on the 30th floor. Until tonight, that was the worst thing about your flat. At 9.40, every phone in the building screams at once. Stay inside, lock your doors, do not help the injured. 30 floors down, the street is full of people running.",
+   "30s": "You live on the 30th floor. Until tonight, that was the worst thing about your flat. At 9.40, every phone in the building screams at once. Stay inside, lock your doors, do not help the injured. 30 floors down, the street is full of people running. Some of them are not running away. Your neighbor is in the hallway, knocking on every door. His arm is bandaged. You watch through the peephole and you do not open. First problem, water. A tower pumps it up with electricity.",
+   "60s": "You live on the 30th floor. Until tonight, that was the worst thing about your flat. At 9.40, every phone in the building screams at once. Stay inside, lock your doors, do not help the injured. 30 floors down, the street is full of people running. Some of them are not running away. Your neighbor is in the hallway, knocking on every door. His arm is bandaged. You watch through the peephole and you do not open. First problem, water. A tower pumps it up with electricity. When the power dies, the top floors go dry first. So you fill the bathtub, about 40 gallons. Then every pot, every bottle, the sink, one person needs a gallon a day. You have just bought yourself six weeks. By morning, the sirens have stopped. That is worse. You count the food. 11 days if you eat normally, 25 if you don't. So you ration. From now on, everything is a number."
+  },
+  {
+   "channel": "Economics Explained",
+   "title": "Why Everyone is Leaving New Zealand",
+   "video_id": "F_VUBpALcVE",
+   "5s": "This is New Zealand, genuinely one of the most beautiful countries in the world. In addition to its picturesque landscapes, a lot of that beauty also comes down to the fact that it is extremely remote.",
+   "15s": "This is New Zealand, genuinely one of the most beautiful countries in the world. In addition to its picturesque landscapes, a lot of that beauty also comes down to the fact that it is extremely remote. So much so that it's left off a lot of global maps, and it's home to a relatively small population of just 5.3 million people.",
+   "30s": "This is New Zealand, genuinely one of the most beautiful countries in the world. In addition to its picturesque landscapes, a lot of that beauty also comes down to the fact that it is extremely remote. So much so that it's left off a lot of global maps, and it's home to a relatively small population of just 5.3 million people. These people enjoy a very high standard of living, good education, very stable government, good access to healthcare and a relatively egalitarian culture. Now, while all of this may sound great on a tourism brochure, it has had some unintuitive consequences on the national economy,",
+   "60s": "This is New Zealand, genuinely one of the most beautiful countries in the world. In addition to its picturesque landscapes, a lot of that beauty also comes down to the fact that it is extremely remote. So much so that it's left off a lot of global maps, and it's home to a relatively small population of just 5.3 million people. These people enjoy a very high standard of living, good education, very stable government, good access to healthcare and a relatively egalitarian culture. Now, while all of this may sound great on a tourism brochure, it has had some unintuitive consequences on the national economy, an economy which was very unique to begin with. What is happening is that Kiwis are seeing a country that probably looks like a dreamland to most of the rest of the world, and they're leaving it. From an already small population, New Zealand has one of the highest rates of emigration anywhere in the world, with a bulk of them just making the short jump across here to Australia. More than 10% of New Zealand's people currently live in Australia. This isn't a small issue either. There are in some cases just as many people leaving per capita from New Zealand, as there are from third world countries embroiled in active conflicts."
+  },
+  {
+   "channel": "How Money Works",
+   "title": "If Nobody Can Afford A Home... Who's Going To Buy Them?",
+   "video_id": "1zjcZ661ups",
+   "5s": "fewer young people than ever are going to be able to buy a house in their lifetime and at the same time homes are getting more expensive every year what",
+   "15s": "fewer young people than ever are going to be able to buy a house in their lifetime and at the same time homes are getting more expensive every year what but if nobody can afford to buy a house then how the [ __ ] do they keep getting more expensive so the idea of being able to save a 20",
+   "30s": "fewer young people than ever are going to be able to buy a house in their lifetime and at the same time homes are getting more expensive every year what but if nobody can afford to buy a house then how the [ __ ] do they keep getting more expensive so the idea of being able to save a 20 down payment uh is almost unimaginable yeah rent gets raised you know a thousand percent with no notice and a family home should be the Bedrock of your financial life it gives you somewhere to live while building up equity in a place that you can one day call your own owning a home with a",
+   "60s": "fewer young people than ever are going to be able to buy a house in their lifetime and at the same time homes are getting more expensive every year what but if nobody can afford to buy a house then how the [ __ ] do they keep getting more expensive so the idea of being able to save a 20 down payment uh is almost unimaginable yeah rent gets raised you know a thousand percent with no notice and a family home should be the Bedrock of your financial life it gives you somewhere to live while building up equity in a place that you can one day call your own owning a home with a 30-year mortgage is cheaper out of pocket every month in most cities than renting so if you can buy your own home you will be richer now and richer in the future you already know this but if you're in the 75 of my audience that doesn't own a home it's probably because you can't afford one according to a report by Redfin only 21 of homes that went on sale in 2022 were considered affordable that's down from 60 percent of homes that went on sale in 2021 that means in just one year two-thirds of all affordable housing became too expensive"
+  },
+  {
+   "channel": "How Money Works",
+   "title": "The (Overdue) Collapse of the 9-5 Job",
+   "video_id": "2LiOOzEOrx8",
+   "5s": "companies are doing Mass layoffs while complaining  about not being able to find enough employees some workers are min-maxing the system by working  multiple fulltime jobs at the same time While",
+   "15s": "companies are doing Mass layoffs while complaining  about not being able to find enough employees some workers are min-maxing the system by working  multiple fulltime jobs at the same time While others need to work hours of unpaid overtime  at just one job this is not to mention that the",
+   "30s": "companies are doing Mass layoffs while complaining  about not being able to find enough employees some workers are min-maxing the system by working  multiple fulltime jobs at the same time While others need to work hours of unpaid overtime  at just one job this is not to mention that the gig economy is consuming entire sections of the  workforce the N toi was created by American labor unions in the 1800s and became mainstream over 100  years ago when jobs looked like this and this it was revolutionary for its time but how many of the  modern problems in Corporate America are caused by",
+   "60s": "companies are doing Mass layoffs while complaining  about not being able to find enough employees some workers are min-maxing the system by working  multiple fulltime jobs at the same time While others need to work hours of unpaid overtime  at just one job this is not to mention that the gig economy is consuming entire sections of the  workforce the N toi was created by American labor unions in the 1800s and became mainstream over 100  years ago when jobs looked like this and this it was revolutionary for its time but how many of the  modern problems in Corporate America are caused by trying to make an outdated system fit with every  single modern job to the US 8.4 million people in the nation are working multiple jobs 850,000  jobs wages went up for American workers instead they're working multiple jobs it's called being  over employed and one parttime but I need both of them to uh pay my bills every month my rent and  groceries so just working all the time a report by the management consulting for McKenzie company  found that 2/3 of the average human's wealth is in"
+  },
+  {
+   "channel": "How Money Works",
+   "title": "How American Real Estate Is Delaying The Inevitable... For Now",
+   "video_id": "EhbkCW3iTvA",
+   "5s": "Okay, so why haven't home prices crashed  yet? Because they kind of should be,",
+   "15s": "Okay, so why haven't home prices crashed  yet? Because they kind of should be, right? Interest rates have more than tripled  over the last four years. Enormous new sources of housing stock have become available. Corporate  investors are rushing for the exits. Hundreds of thousands of people are already underwater on  their low deposit home loans, and households",
+   "30s": "Okay, so why haven't home prices crashed  yet? Because they kind of should be, right? Interest rates have more than tripled  over the last four years. Enormous new sources of housing stock have become available. Corporate  investors are rushing for the exits. Hundreds of thousands of people are already underwater on  their low deposit home loans, and households are just generally struggling to keep up with the  cost of everything else, let alone owning a home. In basically every other country that has been hit  by this malange of macroeconomic herbs and spices, prices have indeed fallen. But here in America,  they haven't. At least not yet. But why not?",
+   "60s": "Okay, so why haven't home prices crashed  yet? Because they kind of should be, right? Interest rates have more than tripled  over the last four years. Enormous new sources of housing stock have become available. Corporate  investors are rushing for the exits. Hundreds of thousands of people are already underwater on  their low deposit home loans, and households are just generally struggling to keep up with the  cost of everything else, let alone owning a home. In basically every other country that has been hit  by this malange of macroeconomic herbs and spices, prices have indeed fallen. But here in America,  they haven't. At least not yet. But why not? The obvious answer would be that unlike these  other countries, we have 30-year fixed rate mortgages. So all of the interest rate hikes in  the world effectively mean nothing to the people who purchased or refinanced onto a 2.7% rate and  now don't want to sell that home for any reason. And that does make sense in theory, except for  the fact that in reality, sellers now outnumber buyers by the widest recorded margin in history.  This is also ignoring the fact that in many ways,"
+  },
+  {
+   "channel": "How Money Works",
+   "title": "If You Were TRYING To Destroy The Economy...",
+   "video_id": "OAVin6xxd8E",
+   "5s": "Okay. So, as a fun little hypothetical question, if you wanted to destroy the American economy, what would you do",
+   "15s": "Okay. So, as a fun little hypothetical question, if you wanted to destroy the American economy, what would you do differently? The delicate inner workings of the American market and its financial system might be prone to having their own little meltdowns from time to time. But, around that soft gooey center, the",
+   "30s": "Okay. So, as a fun little hypothetical question, if you wanted to destroy the American economy, what would you do differently? The delicate inner workings of the American market and its financial system might be prone to having their own little meltdowns from time to time. But, around that soft gooey center, the economy as a whole has a lot of unique privileges and advantages, which all make it a remarkably tough nut to crack. It has globally respected institutions overseeing the world's largest financial markets, all denoted in the de facto reserve currency. It has a diverse",
+   "60s": "Okay. So, as a fun little hypothetical question, if you wanted to destroy the American economy, what would you do differently? The delicate inner workings of the American market and its financial system might be prone to having their own little meltdowns from time to time. But, around that soft gooey center, the economy as a whole has a lot of unique privileges and advantages, which all make it a remarkably tough nut to crack. It has globally respected institutions overseeing the world's largest financial markets, all denoted in the de facto reserve currency. It has a diverse industries, unparalleled reach through international companies, all staffed by the best and brightest people in the world, who can normally make more money here with their ideas than they can anywhere else on Earth. This is not to mention the fact that we are the most geopolitically entangled nation in history, mostly in a good way. The art of good business is being a good middle man. And between our alliances, agreements, trade deals, financial plumbing, and good old-fashioned soft power, there are collectively tens of thousands of bureaucratic connections between us and other nations that just"
+  },
+  {
+   "channel": "How Money Works",
+   "title": "The (Overdue) Collapse Of Short Term Rentals",
+   "video_id": "vT6qh72wCZk",
+   "5s": "short-term rentals are a $100 billion Market  that have reshaped Global tourism accelerated a",
+   "15s": "short-term rentals are a $100 billion Market  that have reshaped Global tourism accelerated a nationwide housing crisis and created fortunes for  early adopters but now customers the government the public and the host themselves are turning  their back on a concept that started out as a",
+   "30s": "short-term rentals are a $100 billion Market  that have reshaped Global tourism accelerated a nationwide housing crisis and created fortunes for  early adopters but now customers the government the public and the host themselves are turning  their back on a concept that started out as a fun alternative to stuffy hotel chains but became  everything wrong with modern real estate all right the parties over for Airbnb renters the company  said yesterday that it's temporary ban on parties and other LGE noisy events is now permanent I've  put all my savings into into my unit I'm following",
+   "60s": "short-term rentals are a $100 billion Market  that have reshaped Global tourism accelerated a nationwide housing crisis and created fortunes for  early adopters but now customers the government the public and the host themselves are turning  their back on a concept that started out as a fun alternative to stuffy hotel chains but became  everything wrong with modern real estate all right the parties over for Airbnb renters the company  said yesterday that it's temporary ban on parties and other LGE noisy events is now permanent I've  put all my savings into into my unit I'm following all the rules paying all the taxes buying the  business license ultimately our goal is to get more housing back into the housing market for  people to be able to rent I just uncovered a massive amount of debt that Airbnb hasn't paid  on the books that they're hiding tens of millions hundreds of millions possibly even a billion  dollars plus of debt that they have not paid so we are looking around and are saying what can  we do right away that makes more homes available short-term rental market took off when Brian  chesky and Joe gbia tried to rent out a spare room"
+  },
+  {
+   "channel": "James Jani",
+   "title": "The Untold Truth About Money: How to Build Wealth From Nothing.",
+   "video_id": "6mRbDEtDoyA",
+   "5s": "",
+   "15s": "Let this circle represent $1,000,000 This is what ten million dollars would look like This is what one hundred million dollars would look like and this is what 1 billion dollars would look like",
+   "30s": "Let this circle represent $1,000,000 This is what ten million dollars would look like This is what one hundred million dollars would look like and this is what 1 billion dollars would look like Jeff Bezos the founder of Amazon has a net worth of",
+   "60s": "Let this circle represent $1,000,000 This is what ten million dollars would look like This is what one hundred million dollars would look like and this is what 1 billion dollars would look like Jeff Bezos the founder of Amazon has a net worth of 117 times this number and then There's you You're probably working a job right now one that you got from the degree that you studied for in university you probably don't have much in savings your living expenses seem Ridiculously high you feel as though you're not paid enough You have credit card debt that needs taking care of maybe your student Studying for a degree that you ho can and your job that you hope can bring some good money You probably don't have any savings only a pesky student debt hanging above your head"
+  },
+  {
+   "channel": "James Jani",
+   "title": "The GameStop Cult: An Untold Story",
+   "video_id": "7LPuXowifJ4",
+   "5s": "on the internet there's practically a community for",
+   "15s": "on the internet there's practically a community for everything but I have never seen something quite like [Music] this where do I begin in early 2021",
+   "30s": "on the internet there's practically a community for everything but I have never seen something quite like [Music] this where do I begin in early 2021 there was this giant Mania that took the media by storm there's no way you could have avoided this story over the past few days ordinary citizens from across the world had gathered to buy the shares of one particular re store what the hell",
+   "60s": "on the internet there's practically a community for everything but I have never seen something quite like [Music] this where do I begin in early 2021 there was this giant Mania that took the media by storm there's no way you could have avoided this story over the past few days ordinary citizens from across the world had gathered to buy the shares of one particular re store what the hell is happening with GameStop thousands are banding together pushing the stock price way up cheers everybody seem to shake Wall Street to its core it was supposed to be this David versus Goliath Story the little guy has power hedge funds have lost billions the world believed the story ended after that Mania all those years ago I believe the story ended all those years ago there's just one problem it didn't it was only the beginning I believe in GameStop as a company I buy a share pretty much every"
+  },
+  {
+   "channel": "James Jani",
+   "title": "The Cult of the Dead Stock.",
+   "video_id": "C5Bd6YxifCo",
+   "5s": "[Music] I've seen so many tweets talking about how like we're the flat earthers of the",
+   "15s": "[Music] I've seen so many tweets talking about how like we're the flat earthers of the investing world and like all that but you're crazy until you're not and that's true of like pretty much everything in life this is egg loser boy someone I've befriended over the last few months he's",
+   "30s": "[Music] I've seen so many tweets talking about how like we're the flat earthers of the investing world and like all that but you're crazy until you're not and that's true of like pretty much everything in life this is egg loser boy someone I've befriended over the last few months he's been telling me about a company he's invested his money into a company that goes by the name of Bed Bath and Beyond I'm going to make a good amount of money off of this whether it's like 3 million or less or 20 million or more I don't",
+   "60s": "[Music] I've seen so many tweets talking about how like we're the flat earthers of the investing world and like all that but you're crazy until you're not and that's true of like pretty much everything in life this is egg loser boy someone I've befriended over the last few months he's been telling me about a company he's invested his money into a company that goes by the name of Bed Bath and Beyond I'm going to make a good amount of money off of this whether it's like 3 million or less or 20 million or more I don't know there's just one problem the company doesn't exist anymore in the first part of this series I discovered a community that had been dedicated to buying shares in a company most people thought was dying GameStop they had a particular infatuation with one individual Ryan Cohen is taking over as Gamestop CEO mean King Ryan Cohen Ryan Cohen if you hear me you're [ __ ] amazing"
+  },
+  {
+   "channel": "James Jani",
+   "title": "The Dark World of Megachurches",
+   "video_id": "hTfKpAWkgJY",
+   "5s": "i was raised as a catholic but i wouldn't really describe myself as religious today i had never heard of",
+   "15s": "i was raised as a catholic but i wouldn't really describe myself as religious today i had never heard of things like mega churches or televangelism or the prosperity gospel that was until i stumbled across an",
+   "30s": "i was raised as a catholic but i wouldn't really describe myself as religious today i had never heard of things like mega churches or televangelism or the prosperity gospel that was until i stumbled across an infamous interview how are you sir we'd just like to ask you about why you don't want to fly commercial you've got this journalist that is confronting this guy called kenneth copeland you said that you don't like to fly commercial because you don't want to get into a tube with a bunch of demons do you really believe",
+   "60s": "i was raised as a catholic but i wouldn't really describe myself as religious today i had never heard of things like mega churches or televangelism or the prosperity gospel that was until i stumbled across an infamous interview how are you sir we'd just like to ask you about why you don't want to fly commercial you've got this journalist that is confronting this guy called kenneth copeland you said that you don't like to fly commercial because you don't want to get into a tube with a bunch of demons do you really believe that human beings are demons no i do not and don't you ever say i did get in a long tube with a bunch of demons we wrestle not with flesh and blood but principalities and powers copeland is being confronted about his purchase of a gulfstream jet and it turns out that that jet is just one of a fleet of jets that he owns along with a boathouse a mansion and his very own airport this is a preacher that is supposedly worth"
+  },
+  {
+   "channel": "James Jani",
+   "title": "The Fake Genius: a $30 BILLION Fraud.",
+   "video_id": "w3EYKuFGJ5c",
+   "5s": "[Music] I'm very excited to introduce you to Sam bankman freed everybody likes a story",
+   "15s": "[Music] I'm very excited to introduce you to Sam bankman freed everybody likes a story about an underdog he's the CEO of the cryptocurrency exchange FTX the wealthiest person under 30 in the world someone out of the ordinary what makes",
+   "30s": "[Music] I'm very excited to introduce you to Sam bankman freed everybody likes a story about an underdog he's the CEO of the cryptocurrency exchange FTX the wealthiest person under 30 in the world someone out of the ordinary what makes him so different and so rich you said you always wanted to get rich but not for the reasons you might expect an unlikely genius who comes once in a lifetime living with roommates sleeping on a bean bag in his office the guy the guy's a nut he doesn't sleep Sam is a",
+   "60s": "[Music] I'm very excited to introduce you to Sam bankman freed everybody likes a story about an underdog he's the CEO of the cryptocurrency exchange FTX the wealthiest person under 30 in the world someone out of the ordinary what makes him so different and so rich you said you always wanted to get rich but not for the reasons you might expect an unlikely genius who comes once in a lifetime living with roommates sleeping on a bean bag in his office the guy the guy's a nut he doesn't sleep Sam is a genius the Michael Jordan of crypto if you will somebody who wants to change the world for good he decided that he wanted to dedicate his life to doing good for the world this is not one of those stories in the span of about one week sand bankman freed went from a crypto billionaire to bankruptcy the southern district of New York has confirmed the arrest of FTX founder Sam bankman freed the once Crown King of crypto now"
+  },
+  {
+   "channel": "MagnatesMedia",
+   "title": "The Secret Chinese Company That Owns Everything",
+   "video_id": "51fWzJ-A5w4",
+   "5s": "Can I have a quick shot of hands? Who's heard of Tencent? Great start.",
+   "15s": "Can I have a quick shot of hands? Who's heard of Tencent? Great start. If you look at the world's most valuable companies, you won't be surprised to find the likes of Apple, Microsoft and Google.",
+   "30s": "Can I have a quick shot of hands? Who's heard of Tencent? Great start. If you look at the world's most valuable companies, you won't be surprised to find the likes of Apple, Microsoft and Google. But one name does stand out. Tencent. The company is worth more than the likes of Facebook, Mastercard and Samsung. And yet if you ask the majority of people what Tencent does, you'd be met with a confused look.",
+   "60s": "Can I have a quick shot of hands? Who's heard of Tencent? Great start. If you look at the world's most valuable companies, you won't be surprised to find the likes of Apple, Microsoft and Google. But one name does stand out. Tencent. The company is worth more than the likes of Facebook, Mastercard and Samsung. And yet if you ask the majority of people what Tencent does, you'd be met with a confused look. The truth is that Tencent does everything. Because whilst Tencent's mascot is a friendly looking penguin, a more accurate animal to embody this conglomerate would be a giant octopus, with tentacles reaching into almost every industry you can think of all over the world. In most places, Tencent operates from the shadows, hence why it's not a household name. But whether you realize it or not, you almost certainly use products or services Tencent is involved with. However, in Tencent's home country of China, it's a very different story."
+  },
+  {
+   "channel": "The Swedish Investor",
+   "title": "How to Tell When a Stock is Cheap/Expensive (Masterclass in Stock Valuation)",
+   "video_id": "37HErhv0PDw",
+   "5s": "You've probably heard the age-old stock market advice to buy low and sell high,",
+   "15s": "You've probably heard the age-old stock market advice to buy low and sell high, but how do you know what's high and what's low in advance? Is a stock like Ford Motor cheap because it trades for the same price as two Big Macs, while",
+   "30s": "You've probably heard the age-old stock market advice to buy low and sell high, but how do you know what's high and what's low in advance? Is a stock like Ford Motor cheap because it trades for the same price as two Big Macs, while Bshire Haway is expensive because it costs more than most people's houses? Well, no. It simply isn't that simple. But in this video, you'll learn how to value a stock properly with three different methods. By using PE ratios,",
+   "60s": "You've probably heard the age-old stock market advice to buy low and sell high, but how do you know what's high and what's low in advance? Is a stock like Ford Motor cheap because it trades for the same price as two Big Macs, while Bshire Haway is expensive because it costs more than most people's houses? Well, no. It simply isn't that simple. But in this video, you'll learn how to value a stock properly with three different methods. By using PE ratios, by using DCF, and finally, by using a third option, a much lesser known method, which falls somewhere in between the two most common approaches. And yes, there will be tons of references to Warren Buffett, but you'll have to wait a little until his first appearance. This is the Swedish investor bringing you the best tips and tools for reaching financial freedom through stock market investing. Ticker.com is the sponsor of this video"
+  },
+  {
+   "channel": "The Swedish Investor",
+   "title": "The Intelligent Investor’s Road to $1,000,000",
+   "video_id": "5Vxjyz9DZ6k",
+   "5s": "At the age of 43, Tom retired from his 9-5 at Ford Motor through a combined effort of savings and stock market investments,",
+   "15s": "At the age of 43, Tom retired from his 9-5 at Ford Motor through a combined effort of savings and stock market investments, although, on the day when he graduated college, he didn't have a penny to his name. Tom graduated from the University of Michigan - Dearborn at the age of 23.",
+   "30s": "At the age of 43, Tom retired from his 9-5 at Ford Motor through a combined effort of savings and stock market investments, although, on the day when he graduated college, he didn't have a penny to his name. Tom graduated from the University of Michigan - Dearborn at the age of 23. Like his father, he majored in mechanical engineering. He had landed a job at General Motors before even graduating, which everyone in his family applauded him for. Still, secretly Tom asked himself, \"What's the big deal?\".",
+   "60s": "At the age of 43, Tom retired from his 9-5 at Ford Motor through a combined effort of savings and stock market investments, although, on the day when he graduated college, he didn't have a penny to his name. Tom graduated from the University of Michigan - Dearborn at the age of 23. Like his father, he majored in mechanical engineering. He had landed a job at General Motors before even graduating, which everyone in his family applauded him for. Still, secretly Tom asked himself, \"What's the big deal?\". Tom had always felt like he wanted something different than his peers expected from life. During the first weeks at General Motors, if anything, this feeling was strengthened. Tom met up with his supervisor, James, who had been with the company long enough to earn himself a golden watch. James seemed proud of his watch, but Tom couldn't help but think, \"wow, he's still in the same place, doing the same thing as he did when he was my age\". It seemed James spent his days doing what he had to do, not what he wanted to do."
+  },
+  {
+   "channel": "The Swedish Investor",
+   "title": "THE PSYCHOLOGY OF MONEY (BY MORGAN HOUSEL)",
+   "video_id": "TJDcGv9OH4Q",
+   "5s": "Have you heard the story about Ronald Read, the janitor that had 8 million dollars in savings when he died in 2014?",
+   "15s": "Have you heard the story about Ronald Read, the janitor that had 8 million dollars in savings when he died in 2014? Yes, you heard that right. Janitor. $8 millions. And he didn´t win the lottery or inherit the money either.",
+   "30s": "Have you heard the story about Ronald Read, the janitor that had 8 million dollars in savings when he died in 2014? Yes, you heard that right. Janitor. $8 millions. And he didn´t win the lottery or inherit the money either. He just saved consistently throughout his life, while letting the wonders of compounding do its thing. The moral is that your behavior with money is oftentimes more important than how intelligent you are.",
+   "60s": "Have you heard the story about Ronald Read, the janitor that had 8 million dollars in savings when he died in 2014? Yes, you heard that right. Janitor. $8 millions. And he didn´t win the lottery or inherit the money either. He just saved consistently throughout his life, while letting the wonders of compounding do its thing. The moral is that your behavior with money is oftentimes more important than how intelligent you are. Even if you don´t have a diploma from Harvard, or work on Wall Street, you can become rich by just behaving in a sound way. As Morgan Housel puts it: “Financial success is not a hard science. It’s a soft skill, where how you behave is more important than what you know.” Spend your next ten to fifteen minutes on this video, and you might excel on the soft skill of investing! This is a top 5 takeaways summary of The Psychology of Money, by Morgan Housel."
+  },
+  {
+   "channel": "The Swedish Investor",
+   "title": "THE BIG SECRET FOR THE SMALL INVESTOR – SUMMARY (JOEL GREENBLATT)",
+   "video_id": "XR57WlqX4iM",
+   "5s": "Indeed, most individuals, MBAs and professionals who try to beat the stock market won't.",
+   "15s": "Indeed, most individuals, MBAs and professionals who try to beat the stock market won't. But if you follow the plan laid out in this video, you can. Yes, yes, I know it sounds too good to be true, but there's a lot of statistical evidence",
+   "30s": "Indeed, most individuals, MBAs and professionals who try to beat the stock market won't. But if you follow the plan laid out in this video, you can. Yes, yes, I know it sounds too good to be true, but there's a lot of statistical evidence that points to this fact, which we'll get to, so hear me out. This is a top 5 takeaway summary of The Big Secret for the Small Investor, written by Joel Greenblatt.",
+   "60s": "Indeed, most individuals, MBAs and professionals who try to beat the stock market won't. But if you follow the plan laid out in this video, you can. Yes, yes, I know it sounds too good to be true, but there's a lot of statistical evidence that points to this fact, which we'll get to, so hear me out. This is a top 5 takeaway summary of The Big Secret for the Small Investor, written by Joel Greenblatt. And this is The Swedish Investor, bringing you the best tips and tools for reaching financial freedom, through stock market investing. Takeaway number 1: How to beat Warren Buffett? What strategy would you use to beat Michael Jordan? Well, you could just avoid playing him in basketball. This is the kind of advice that Joel Greenblatt gives to his students at Columbia Business School, an Ivy League school where he teaches investing."
+  },
+  {
+   "channel": "The Swedish Investor",
+   "title": "THE INTELLIGENT INVESTOR SUMMARY (BY BENJAMIN GRAHAM)",
+   "video_id": "npoyc_X5zO8",
+   "5s": "Successful investing does not require stratospheric IQ, insider information, or luck for that matte.r",
+   "15s": "Successful investing does not require stratospheric IQ, insider information, or luck for that matte.r Instead what's needed is a sound intellectual framework for making decisions, combined with an ability to keep emotions from ruining it. In \"The Intelligent Investor\", Benjamin Graham presents such a framework together with logic that will help to keep your emotions under control.",
+   "30s": "Successful investing does not require stratospheric IQ, insider information, or luck for that matte.r Instead what's needed is a sound intellectual framework for making decisions, combined with an ability to keep emotions from ruining it. In \"The Intelligent Investor\", Benjamin Graham presents such a framework together with logic that will help to keep your emotions under control. Arguably, he's investing strategy has been one of the most successful ones during the last hundred years. The impressive records, not just of Graham himself, but also of numerous of his disciples are impossible to ignore.",
+   "60s": "Successful investing does not require stratospheric IQ, insider information, or luck for that matte.r Instead what's needed is a sound intellectual framework for making decisions, combined with an ability to keep emotions from ruining it. In \"The Intelligent Investor\", Benjamin Graham presents such a framework together with logic that will help to keep your emotions under control. Arguably, he's investing strategy has been one of the most successful ones during the last hundred years. The impressive records, not just of Graham himself, but also of numerous of his disciples are impossible to ignore. Among these, the brightest shining star is Warren Buffett, who, at the time of this video making, is the third wealthiest man in the world. Warren Buffett refers to this book as \"by far, the best book on investing ever written\". In this video, I will present the, in my opinion, greatest takeaways from the book. Takeaway number 1: Meet Mr. Market Imagine that you own a part of a business that you paid $1000 for. Every day, a certain bipolar person called Mr. Market comes to your home with an opinion about how much you're part of that business is worth. Furthermore,"
+  },
+  {
+   "channel": "Zenn",
+   "title": "What Did Ancient Humans Do at Night?",
+   "video_id": "st_Ah6Ykbh4",
+   "5s": "Tonight, when the sun goes down, you're going to flip a switch. Light will flood the room, and you won't think twice about it.",
+   "15s": "Tonight, when the sun goes down, you're going to flip a switch. Light will flood the room, and you won't think twice about it. But for 99.9% of human history, that switch didn't exist. When the sun set, the world went dark. You couldn't even see your own hand in front of your face.",
+   "30s": "Tonight, when the sun goes down, you're going to flip a switch. Light will flood the room, and you won't think twice about it. But for 99.9% of human history, that switch didn't exist. When the sun set, the world went dark. You couldn't even see your own hand in front of your face. But modern humans almost never experienced this. For over 300,000 years, every single one of your ancestors spent roughly half their life in near total darkness. They didn't even have candles for most of that time. Just the black sky, the stars, and whatever fire they could keep alive.",
+   "60s": "Tonight, when the sun goes down, you're going to flip a switch. Light will flood the room, and you won't think twice about it. But for 99.9% of human history, that switch didn't exist. When the sun set, the world went dark. You couldn't even see your own hand in front of your face. But modern humans almost never experienced this. For over 300,000 years, every single one of your ancestors spent roughly half their life in near total darkness. They didn't even have candles for most of that time. Just the black sky, the stars, and whatever fire they could keep alive. So what did they actually do for all those hours? The answer changes everything we think we know about sleep, storytelling, and what it means to be human. Let's start with fire. Because fire is the reason any of this was possible. The earliest solid evidence of humans controlling fire comes from Wonderwork Cave in South Africa roughly one million years ago. But fire didn't just keep people warm. Fire completely restructured the human day. Before fire, our ancestors were like every other primate. When the sun went down, you climbed a tree or found a sheltered spot and you stayed still."
+  },
+  {
+   "channel": "Kurzgesagt – In a Nutshell",
+   "title": "How I Survived Late-Stage Cancer",
+   "video_id": "5_Fayfx2NUM",
+   "5s": "This is not a sad story! Going through chemotherapy was one  of the most interesting experiences",
+   "15s": "This is not a sad story! Going through chemotherapy was one  of the most interesting experiences of my life and my most vivid memory is very funny. In 2018 I was being treated for  stage 3 B testicular cancer that had metastasized into a few  lymph nodes and my lung.",
+   "30s": "This is not a sad story! Going through chemotherapy was one  of the most interesting experiences of my life and my most vivid memory is very funny. In 2018 I was being treated for  stage 3 B testicular cancer that had metastasized into a few  lymph nodes and my lung. Very serious business unfortunately. Boys and men, check your testicles tonight. One day my doctor was about to punish  my body with a fresh dose of Cisplatin. A cytotoxic hazardous chemotherapy agent.",
+   "60s": "This is not a sad story! Going through chemotherapy was one  of the most interesting experiences of my life and my most vivid memory is very funny. In 2018 I was being treated for  stage 3 B testicular cancer that had metastasized into a few  lymph nodes and my lung. Very serious business unfortunately. Boys and men, check your testicles tonight. One day my doctor was about to punish  my body with a fresh dose of Cisplatin. A cytotoxic hazardous chemotherapy agent. One of the absolutely worst ones. Controlled medical violence. The villain and hero of this story. My buddy Cisplatin came in a green, opaque  two liter bag directly from the fridge. The doctor connected the infusion to  the central venous access in my chest, a tube that led directly to my heart. But then… A short moment of inattention and disaster struck: A single drop of the icy liquid escaped."
+  },
+  {
+   "channel": "Kurzgesagt – In a Nutshell",
+   "title": "What If You Detonated a Nuclear Bomb In The Marianas Trench? (Science not Fantasy)",
+   "video_id": "9tbxDgcv74c",
+   "5s": "What would happen if we detonated humanity's most powerful nuclear weapon at the deepest point of the ocean?",
+   "15s": "What would happen if we detonated humanity's most powerful nuclear weapon at the deepest point of the ocean? For sure, tsunamis hundreds of meters high would destroy coastal cities, earthquakes would level countries,",
+   "30s": "What would happen if we detonated humanity's most powerful nuclear weapon at the deepest point of the ocean? For sure, tsunamis hundreds of meters high would destroy coastal cities, earthquakes would level countries, new volcanoes would bring us nuclear winter. Maybe even Earth could be ripped apart? Or thrown out of orbit? Well, almost. Currently, Earth's deepest known point is inside the Mariana Trench. The Mariana Trench is a very deep valley",
+   "60s": "What would happen if we detonated humanity's most powerful nuclear weapon at the deepest point of the ocean? For sure, tsunamis hundreds of meters high would destroy coastal cities, earthquakes would level countries, new volcanoes would bring us nuclear winter. Maybe even Earth could be ripped apart? Or thrown out of orbit? Well, almost. Currently, Earth's deepest known point is inside the Mariana Trench. The Mariana Trench is a very deep valley right at the edge of two tectonic plates that looks like an upside-down mountain. It reaches a depth of about 11 kilometers, almost three times deeper than the dark grave of the Titanic. It's one of the last places on Earth for humans to explore. Pitch black and under a thousand atmospheres of pressure, it's a relatively pristine environment thanks to the absence of humans. A great place for our nuclear test. We'll use the most powerful nuclear bomb humans have ever exploded,"
+  },
+  {
+   "channel": "Kurzgesagt – In a Nutshell",
+   "title": "The Coronavirus Explained & What You Should Do",
+   "video_id": "BtN-goy9VOY",
+   "5s": "In December 2019 the Chinese authorities notified the world that a virus was spreading through their communities.",
+   "15s": "In December 2019 the Chinese authorities notified the world that a virus was spreading through their communities. In the following months, it spread to other countries, with cases doubling within days. This virus is the Severe Acute Respiratory Syndrome-Related Coronavirus 2",
+   "30s": "In December 2019 the Chinese authorities notified the world that a virus was spreading through their communities. In the following months, it spread to other countries, with cases doubling within days. This virus is the Severe Acute Respiratory Syndrome-Related Coronavirus 2 that causes the disease called Covid-19 and that everyone simply calls coronavirus. What actually happens when it infects a human and what should we all do? [Intro Music]",
+   "60s": "In December 2019 the Chinese authorities notified the world that a virus was spreading through their communities. In the following months, it spread to other countries, with cases doubling within days. This virus is the Severe Acute Respiratory Syndrome-Related Coronavirus 2 that causes the disease called Covid-19 and that everyone simply calls coronavirus. What actually happens when it infects a human and what should we all do? [Intro Music] A virus is really just a hull around genetic material and a few proteins, arguably not even a living thing. It can only make more of itself by entering a living cell. Corona may spread via surfaces, but it's still uncertain how long it can survive on them. Its main way of spreading seems to be droplet infection when people cough, or if you touch someone who's ill and then your face, say rubbing your eyes or nose. The virus starts its journey here, and then hitches a ride as a stowaway deeper into the body"
+  },
+  {
+   "channel": "Kurzgesagt – In a Nutshell",
+   "title": "You Will Only Like Half of This Video",
+   "video_id": "PXbVn-f_wuM",
+   "5s": "Hey wake up, AI is rotting your brain!",
+   "15s": "Hey wake up, AI is rotting your brain! That's not an empty hook, but a real  thing called cognitive atrophy – the loss of core skills like problem solving,  critical thinking and even creativity.",
+   "30s": "Hey wake up, AI is rotting your brain! That's not an empty hook, but a real  thing called cognitive atrophy – the loss of core skills like problem solving,  critical thinking and even creativity. This is not only bad for you, but catastrophic  for progress and innovation for our whole society. When we offload all mental work to these  tools and stop questioning what they spit out, we stop being curious about the world around us. Human ingenuity gets lost,",
+   "60s": "Hey wake up, AI is rotting your brain! That's not an empty hook, but a real  thing called cognitive atrophy – the loss of core skills like problem solving,  critical thinking and even creativity. This is not only bad for you, but catastrophic  for progress and innovation for our whole society. When we offload all mental work to these  tools and stop questioning what they spit out, we stop being curious about the world around us. Human ingenuity gets lost, creativity will decrease and we may  lose what makes us human in our core. Today, the number of AI \"written\" articles online  is approaching the number written by humans. Last year, hundreds of AI slop  channels had over 40 billion views. That is 10 times 13 years of kurzgesagt! And it is likely even worse today:  We can’t even measure this anymore, since detecting AI content with  certainty has become impossible."
+  },
+  {
+   "channel": "Kurzgesagt – In a Nutshell",
+   "title": "The Egg - A Short Story",
+   "video_id": "h6fcK_fRYaI",
+   "5s": "you were on your way home when you died",
+   "15s": "you were on your way home when you died it was a car accident nothing particularly remarkable but fatal nonetheless it was a painless death the Medics tried their best to",
+   "30s": "you were on your way home when you died it was a car accident nothing particularly remarkable but fatal nonetheless it was a painless death the Medics tried their best to save you but to no avail your body was so utterly shattered you were better off trust me and that's when you met me what happened",
+   "60s": "you were on your way home when you died it was a car accident nothing particularly remarkable but fatal nonetheless it was a painless death the Medics tried their best to save you but to no avail your body was so utterly shattered you were better off trust me and that's when you met me what happened where am I you died I said matter of factly no point in mincing words there was there was a truck and it was skidding yes I I died yes but don't feel bad about it everyone dies you looked around there was nothingness just you and me"
+  },
+  {
+   "channel": "TheOdd1sOut",
+   "title": "Annoying Customers",
+   "video_id": "2yFCyPX3kT0",
+   "5s": "Hey, this is kinda like a part 2 video. I mean, you don't have to have seen the part 1 video to understand what I talk about in this video,",
+   "15s": "Hey, this is kinda like a part 2 video. I mean, you don't have to have seen the part 1 video to understand what I talk about in this video, but I mean, if you haven't watched part 1, uh, you should. So I used to work at Subway, and to be honest, about 80% of the customers were fine. Sometimes they would do something that would just personally annoy me,",
+   "30s": "Hey, this is kinda like a part 2 video. I mean, you don't have to have seen the part 1 video to understand what I talk about in this video, but I mean, if you haven't watched part 1, uh, you should. So I used to work at Subway, and to be honest, about 80% of the customers were fine. Sometimes they would do something that would just personally annoy me, like ask for a meatball on flatbread. So don't feel too bad for me. Like, sometimes people would ask me, can I have a turkey with lettuce, tomatoes? Whoa, whoa, whoa, slow down! What kind of bread? Footlonger, six-ins. What kind of cheese? Is it toasted? Then we'll talk about vegetables!",
+   "60s": "Hey, this is kinda like a part 2 video. I mean, you don't have to have seen the part 1 video to understand what I talk about in this video, but I mean, if you haven't watched part 1, uh, you should. So I used to work at Subway, and to be honest, about 80% of the customers were fine. Sometimes they would do something that would just personally annoy me, like ask for a meatball on flatbread. So don't feel too bad for me. Like, sometimes people would ask me, can I have a turkey with lettuce, tomatoes? Whoa, whoa, whoa, slow down! What kind of bread? Footlonger, six-ins. What kind of cheese? Is it toasted? Then we'll talk about vegetables! And every time someone brought in a list, there would always be something missing on it. Always. I never had someone come in with a complete list. I would ask someone, what kind of cheese? And they would say, ah, they didn't specify. Well then, if they didn't care enough to remember cheese, I guess they'll get Swiss. If anyone watching is currently working out a Subway, then feel free to use these tricks. If someone asked me, Hmm, what kind of cheese do you recommend? I would always say provolone, because it's the easiest cheese to pull apart with gloves on. Really, if anyone asked me what I recommended, I would just tell them the easiest thing for me to do."
+  },
+  {
+   "channel": "The Paint Explainer",
+   "title": "What Dying on Every Planet Would Be Like",
+   "video_id": "n9HAAFBT3AA",
+   "5s": "Mercury Mercury is the closest planet to the sun, but if you think that means it's hot all the",
+   "15s": "Mercury Mercury is the closest planet to the sun, but if you think that means it's hot all the time, you're wrong. At night, temperatures can plummet to an icy minus 180 degrees Celsius. During the day, however, they can skyrocket to 430 degrees Celsius.",
+   "30s": "Mercury Mercury is the closest planet to the sun, but if you think that means it's hot all the time, you're wrong. At night, temperatures can plummet to an icy minus 180 degrees Celsius. During the day, however, they can skyrocket to 430 degrees Celsius. This extreme imbalance happens because Mercury doesn't have a proper atmosphere to regulate temperature. Instead, it has a very thin exosphere, which doesn't maintain heat. While apart from temperature you wouldn't have to worry about weather on Mercury, the real dangers come from solar radiation and the lack of breathable air.",
+   "60s": "Mercury Mercury is the closest planet to the sun, but if you think that means it's hot all the time, you're wrong. At night, temperatures can plummet to an icy minus 180 degrees Celsius. During the day, however, they can skyrocket to 430 degrees Celsius. This extreme imbalance happens because Mercury doesn't have a proper atmosphere to regulate temperature. Instead, it has a very thin exosphere, which doesn't maintain heat. While apart from temperature you wouldn't have to worry about weather on Mercury, the real dangers come from solar radiation and the lack of breathable air. In fact, Mercury gets almost 7 times the solar irradiance that Earth receives. As the smallest planet in the solar system, Mercury is full of craters, cliffs, and bumpy terrain making it a pretty tough place to land as well. The low air resistance doesn't help either. It would make slowing down a spaceship much harder, increasing the chances of a high speed crash. Landing during the daytime is out of the question because of the extreme heat. The latest NASA space suits can only handle up to 121 degrees Celsius, nowhere near Mercury's daytime temperatures of 430 degrees Celsius."
+  }
+ ]
+}

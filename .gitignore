@@ -48,3 +48,6 @@ Desktop.ini
 /references/explainer-video-skills/
 /references/stickman-skill/
 /references/stickman-video/
+
+# downloaded research sources (regenerate with scripts/research/sample_frames.py)
+/research-evidence/frames/*.mp4
