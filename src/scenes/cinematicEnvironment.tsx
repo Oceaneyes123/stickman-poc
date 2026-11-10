@@ -1,6 +1,26 @@
 import { C, cinema } from "../design/tokens";
 import { Room } from "../storyboard/OpeningSceneStudy";
 
+/** Soft ground contact for furniture; the character rig owns its own shadow. */
+export const GroundShadow = ({
+  x,
+  y,
+  width,
+}: {
+  x: number;
+  y: number;
+  width: number;
+}) => (
+  <ellipse
+    cx={x}
+    cy={y + 4}
+    rx={width / 2}
+    ry={11}
+    fill={C.navy}
+    stroke="none"
+    opacity={0.14}
+  />
+);
 export type StoryLocation =
   | "sam-old"
   | "sam-new"
@@ -20,21 +40,24 @@ export const WritingDesk = ({
   width?: number;
   old?: boolean;
 }) => (
-  <g stroke={C.navy} strokeWidth={cinema.outline.furniture}>
-    <path
-      d={`M${x + 35} ${y + 24}V940 M${x + width - 35} ${y + 24}V940`}
-      fill="none"
-    />
-    <path
-      d={`M${x} ${y}H${x + width}V${y + 30}H${x}Z`}
-      fill={old ? cinema.material.desk : cinema.material.wood}
-    />
-    <path
-      d={`M${x + 12} ${y + 44}H${x + width - 12}`}
-      strokeWidth={2}
-      strokeOpacity={0.25}
-    />
-  </g>
+  <>
+    <GroundShadow x={x + width / 2} y={940} width={width * 0.9} />
+    <g stroke={C.navy} strokeWidth={cinema.outline.furniture}>
+      <path
+        d={`M${x + 35} ${y + 24}V940 M${x + width - 35} ${y + 24}V940`}
+        fill="none"
+      />
+      <path
+        d={`M${x} ${y}H${x + width}V${y + 30}H${x}Z`}
+        fill={old ? cinema.material.desk : cinema.material.wood}
+      />
+      <path
+        d={`M${x + 12} ${y + 44}H${x + width - 12}`}
+        strokeWidth={2}
+        strokeOpacity={0.25}
+      />
+    </g>
+  </>
 );
 export const Cup = ({ x, y }: { x: number; y: number }) => (
   <g
@@ -55,6 +78,7 @@ export const DiningTable = ({
   y?: number;
 }) => (
   <g transform={`translate(${x},${y})`} stroke={C.navy} strokeWidth={5}>
+    <GroundShadow x={95} y={170} width={400} />
     <path
       d="M-120 0H310V24H-120Z M-80 24V170 M270 24V170"
       fill={cinema.material.wood}
@@ -65,6 +89,7 @@ export const DiningTable = ({
 );
 export const GuestChair = ({ x = 1530 }: { x?: number }) => (
   <g stroke={C.navy} strokeWidth={6}>
+    <GroundShadow x={x + 70} y={940} width={210} />
     <path
       d={`M${x} 880V740Q${x + 70} 700 ${x + 140} 740V880Z`}
       fill={cinema.material.fabric}

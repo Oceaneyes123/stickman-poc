@@ -22,11 +22,11 @@ Scaffold: `npx create-video@4.0.541 --yes --blank --no-tailwind money-trap`. Tem
 - [Agent skills](https://www.remotion.dev/docs/ai/skills)
 - [License terms and eligibility](https://www.remotion.dev/docs/license)
 
-All Remotion packages are pinned to 4.0.541. Rendering and media measurement use the local renderer, Chromium and FFmpeg. No cloud rendering, TTS, stock footage, paid APIs, music or audio assets are used. Confirm Remotion's current license terms for your team before commercial deployment.
+All Remotion packages are pinned to 4.0.541. Rendering and media measurement use the local renderer, Chromium and FFmpeg. No cloud rendering, paid TTS service, stock footage, paid API or music is used. Film narration is synthesized locally with VoiceStudio/VoxCPM2 on this machine (`npm run narrate`, see `docs/narration.md`); no remote voice provider is involved. Confirm Remotion's current license terms for your team before commercial deployment.
 
 ## Art and fonts
 
-All stickman rigs, environments and financial SVGs are original code authored for this POC. Palette and names come from the supplied brief and `references/CHANNEL-BRANDING.md`. The reference PNG was not incorporated in the film.
+All stickman rigs, environments and financial SVGs are original code authored for this project. Palette and names come from the supplied brief and `references/CHANNEL-BRANDING.md`. The user-supplied `references/character-reference.png` is a channel-owned reference for identity and palette; it is not a third-party asset, and the rigs are redrawn as code from it rather than embedding the image.
 
 Unmodified Inter is bundled at `public/fonts/Inter.ttf` with the full license at `public/fonts/OFL.txt`. Source: [Google Fonts Inter](https://github.com/google/fonts/tree/main/ofl/inter), copyright 2020 The Inter Project Authors. [SIL OFL 1.1](https://github.com/google/fonts/blob/main/ofl/inter/OFL.txt) permits embedding and use subject to its terms. No other fonts or visual assets are bundled.
 

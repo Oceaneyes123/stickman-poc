@@ -7,7 +7,12 @@ import {
   EpisodeMotionContext,
 } from "./EpisodeMotionContext";
 import { interactionPulse } from "./episodeMotion";
-import { TypographyGallery } from "../typography/Gallery";
+import { TypographyGallery, TYPOGRAPHY_GALLERY_DURATION } from "../typography/Gallery";
+import { ObjectMotionGallery, OBJECT_GALLERY_DURATION } from "../objects/Gallery";
+import {
+  TransitionGallery,
+  TRANSITION_GALLERY_DURATION,
+} from "../transitions/Gallery";
 import {
   FinancialMotionContext,
   useFinancialMotion,
@@ -33,6 +38,7 @@ import {
 import {
   WritingDesk,
   Cup,
+  GroundShadow,
   GuestChair,
   DiningTable,
   StoryEnvironment,
@@ -57,6 +63,7 @@ import {
 import {
   cinematicStillShots,
   allocationParts,
+  benefitBase,
   storyboardViews,
   type CinematicStillShot,
 } from "./cinematicStillPlan";
@@ -92,7 +99,7 @@ const Money = ({
         frame={motion.frame}
         from={motion.from}
         until={motion.sceneUntil + 10}
-        duration={18}
+        duration={20}
         mode={size >= 90 ? "odometer" : "counter"}
       />
     );
@@ -1727,10 +1734,22 @@ const SceneArt = ({ shot }: { shot: CinematicStillShot }) => {
     case "S24":
       return (
         <>
-          <Benefit kind="desk" x={420} y={380} scale={0.6} />
-          <Benefit kind="car" x={1450} y={380} scale={0.6} />
+          <GroundShadow x={420} y={640} width={300} />
+          <GroundShadow x={1450} y={640} width={360} />
+          <Benefit
+            kind="desk"
+            x={420}
+            y={640 - benefitBase("desk") * 0.6}
+            scale={0.6}
+          />
+          <Benefit
+            kind="car"
+            x={1450}
+            y={640 - benefitBase("car") * 0.6}
+            scale={0.6}
+          />
           <path
-            d="M420 550Q420 750 800 750M1450 550Q1450 750 1120 750"
+            d="M420 640Q420 780 780 780M1450 640Q1450 780 1140 780"
             stroke={C.navy}
             strokeWidth={7}
             fill="none"
@@ -2622,7 +2641,23 @@ registerRoot(() => (
       width={1920}
       height={1080}
       fps={30}
-      durationInFrames={360}
+      durationInFrames={TYPOGRAPHY_GALLERY_DURATION}
+    />
+    <Composition
+      id="ObjectMotionGallery"
+      component={ObjectMotionGallery}
+      width={1920}
+      height={1080}
+      fps={30}
+      durationInFrames={OBJECT_GALLERY_DURATION}
+    />
+    <Composition
+      id="TransitionGallery"
+      component={TransitionGallery}
+      width={1920}
+      height={1080}
+      fps={30}
+      durationInFrames={TRANSITION_GALLERY_DURATION}
     />
     <Composition
       id="CinematicStoryboardStudy"

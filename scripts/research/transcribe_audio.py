@@ -15,14 +15,16 @@ Run with the interpreter that has faster_whisper (this repo uses `py`):
 import argparse
 import glob
 import json
+import os
 import subprocess
 import sys
 import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-EVID = ROOT / "research-evidence"
-YT_PY = r"C:\Users\Dave\AppData\Local\Programs\Python\Python310\python.exe"
+EVID = ROOT / "research" / "evidence"
+YT_PY = os.environ.get("YT_PY", sys.executable)
+NODE = os.environ.get("NODE_BIN", "node")
 
 
 def download_audio(video_id, max_seconds, out_dir):
@@ -30,7 +32,7 @@ def download_audio(video_id, max_seconds, out_dir):
     if dst.exists():
         return dst
     cmd = [YT_PY, "-m", "yt_dlp", "-f", "bestaudio[abr<=96]/bestaudio/best", "-x", "--audio-format", "m4a",
-           "--js-runtimes", "node:C:/Program Files/nodejs/node.exe", "--remote-components", "ejs:github",
+           "--js-runtimes", f"node:{NODE}", "--remote-components", "ejs:github",
            "-o", str(dst.with_suffix(".%(ext)s"))]
     if max_seconds:
         cmd += ["--download-sections", f"*0-{max_seconds}"]

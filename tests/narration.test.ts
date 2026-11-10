@@ -11,7 +11,7 @@ import {
   narrationProgress,
   showProgress,
   voiceRequest,
-} from "../scripts/narrate.ts";
+} from "../scripts/narration/narrate.ts";
 import { compileTimeline } from "../src/timeline/compiler.ts";
 import type { CueFile, Storyboard } from "../src/timeline/types.ts";
 
@@ -22,6 +22,24 @@ test("paragraph splitting preserves sentences and enforces the API limit", () =>
   ]);
   assert.throws(() => paragraphs("  "), /empty/);
   assert.throws(() => paragraphs("a".repeat(4097)), /4096/);
+});
+
+test("long paragraphs split into takes short enough to keep voice quality", () => {
+  const maxWords = 45; // 18 s at 2.5 words per second
+  const long = Array.from(
+    { length: 12 },
+    (_, i) => `This is sentence number ${i + 1} of a long paragraph that runs on.`,
+  ).join(" ");
+  const takes = paragraphs(long);
+  assert(takes.length > 1);
+  assert.equal(takes.join(" "), long);
+  for (const take of takes) assert(take.split(" ").length <= maxWords);
+  // Run-on text with no sentence or clause breaks still splits.
+  const runOn = Array.from({ length: 120 }, (_, i) => `word${i}`).join(" ");
+  const runs = paragraphs(runOn);
+  assert(runs.length > 1);
+  assert.equal(runs.join(" "), runOn);
+  for (const run of runs) assert(run.split(" ").length <= maxWords);
 });
 
 test("speech transport waits for delayed headers without fetch and honors abort", async (context) => {

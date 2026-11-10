@@ -6,6 +6,10 @@ export const allocationParts = (stage: 1 | 2 | 3) =>
 export const allocationRemainder = (stage: 1 | 2 | 3) =>
   example.raise - allocationParts(stage).reduce((a, b) => a + b, 0);
 
+/** Local ground offset of each `Benefit` kind, so props can share one floor line. */
+export const benefitBase = (kind: "desk" | "car" | "services" | "meal") =>
+  kind === "desk" ? 300 : kind === "car" ? 111.8 : kind === "services" ? 30 : 170;
+
 const panels: Record<string, string[]> = {
   S01: ["raise", "reaction"],
   S02: ["workspace", "rental", "entertainment"],

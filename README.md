@@ -45,7 +45,13 @@ The latest walking and movement MP4s remain there; obsolete previews were remove
 - `src/timeline/`: pure cue/storyboard validation and compilation. Future films
   own their narration, measured audio, cue files and single global audio track.
 - `tests/fixtures/timeline/`: compiler test input, not an active film.
-- `scripts/`: local rendering, asset setup, inspection and transcript tools.
+- `scripts/`: local tools grouped by job — `render/` (Remotion renders and stills),
+  `review/` (QA, contact sheets, packet verifiers), `narration/` (local TTS and
+  timing), `research/` (corpus fetch and measurement), plus `get_transcript/`.
+  See the [scripts index](scripts/README.md).
+- `docs/`: audits and decisions; validation history lives in `docs/validation/`,
+  the per-panel variety table in `docs/variety/`, transcript analysis steps in
+  `docs/transcripts/`. See the [docs index](docs/README.md).
 - `references/`: character art, channel guidance and upstream research.
 - `videos/sam-atm/`: separate existing film, preserved independently.
 
@@ -59,9 +65,9 @@ Inspect rendered frames after visual changes. With FFmpeg/ffprobe on PATH and
 Pillow installed:
 
 ```powershell
-python scripts/qa.py out/movement-review-arm-correction.mp4 --frames 600
+python scripts/review/qa.py out/movement-review-arm-correction.mp4 --frames 600
 npm run characters:stills
-python scripts/character-detail-sheets.py
+python scripts/review/character-detail-sheets.py
 ```
 
 Video QA checks metadata, decodes the entire video and generates a contact sheet.
@@ -75,9 +81,9 @@ See [production rules](AGENTS.md), [sources and licenses](SOURCES.md),
 ## Channel research
 
 Production-level reverse engineering of 18 channels, with raw evidence in
-`research-evidence/` and playbooks in `deepseek-docs/`. Start at
-[deepseek-research/README.md](deepseek-research/README.md). Regenerate the evidence with
-`scripts/research/`; nothing in `deepseek-*` is hand-typed that a script can produce.
+`research/evidence/` and playbooks in `research/playbooks/`. Start at
+[research/README.md](research/README.md). Regenerate the evidence with
+`scripts/research/`; nothing under `research/` is hand-typed that a script can produce.
 
 ## Channel transcripts
 

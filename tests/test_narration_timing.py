@@ -5,7 +5,7 @@ import tempfile
 import unittest
 import wave
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts" / "narration"))
 from time_narration import compare_text, load_inputs, phrase_cues, sha256
 
 

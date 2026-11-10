@@ -50,4 +50,4 @@ Desktop.ini
 /references/stickman-video/
 
 # downloaded research sources (regenerate with scripts/research/sample_frames.py)
-/research-evidence/frames/*.mp4
+/research/evidence/frames/*.mp4

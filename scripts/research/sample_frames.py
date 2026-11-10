@@ -5,7 +5,7 @@ Downloads the smallest 480p stream, then writes one contact sheet (tiled stills,
 timestamp burned into each tile) per video. Evidence for composition, staging and
 typography only: a contact sheet shows single frames, not motion timing.
 
-    python sample_frames.py --out research-evidence/frames <video-id> --times 3,8,15,30,60
+    python sample_frames.py --out research/evidence/frames <video-id> --times 3,8,15,30,60
 """
 
 import argparse
@@ -28,7 +28,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("video_id")
     ap.add_argument("--times", default="3,10,20,35,50,70")
-    ap.add_argument("--out", default=str(ROOT / "research-evidence" / "frames"))
+    ap.add_argument("--out", default=str(ROOT / "research" / "evidence" / "frames"))
     args = ap.parse_args()
 
     out = Path(args.out)

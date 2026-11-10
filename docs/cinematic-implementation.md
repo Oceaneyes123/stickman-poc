@@ -66,8 +66,8 @@ speech stretching, new synthesis, musical bed, or invented financial data.
   one global narration node. Matched comparisons keep equal scale and framing.
 - `src/design/tokens.ts`: additive environment/material/shadow/outline/type/scale
   tokens; existing palette and legacy callers retain their defaults.
-- `scripts/render-cinematic-references.ts`, `scripts/cinematic-contact-sheets.py`,
-  `scripts/verify-cinematic.py`, `package.json`, `INSTRUCTIONS.md`: local versioned
+- `scripts/render/render-cinematic-references.ts`, `scripts/review/cinematic-contact-sheets.py`,
+  `scripts/review/verify-cinematic.py`, `package.json`, `INSTRUCTIONS.md`: local versioned
   rendering and review workflow, with audio/source, foreground and fixed-texture checks.
   The renderer checks for covered/missing foreground before starting each movie.
 - `tests/cinematic.test.ts`, `tests/fixtures/cinematic/`: focused real-cue fixtures

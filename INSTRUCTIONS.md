@@ -3,7 +3,7 @@
 ## 1. Open the project
 
 ```powershell
-Set-Location E:\Projects\Youtube\video-poc-codex
+Set-Location <path-to-this-repo>
 ```
 
 Requires Node.js 24+, FFmpeg, and VoiceStudio with VoxCPM2 installed.

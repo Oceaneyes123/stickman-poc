@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fetch research evidence: ranked videos + timed captions, per channel.
 
-Writes research-evidence/<channel>/<video-id>.json and a flat index.json.
+Writes research/evidence/<channel>/<video-id>.json and a flat index.json.
 Captions come from youtube-transcript-api (real snippet start times) or are
 recorded as unavailable. No transcription fallback: a missing caption is
 recorded, not invented.
@@ -19,7 +19,7 @@ from pathlib import Path
 import yt_dlp
 from youtube_transcript_api import YouTubeTranscriptApi
 
-OUT = Path(__file__).resolve().parents[2] / "research-evidence"
+OUT = Path(__file__).resolve().parents[2] / "research" / "evidence"
 LANGS = ["en", "en-US", "en-GB"]
 
 

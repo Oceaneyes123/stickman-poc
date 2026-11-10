@@ -9,7 +9,7 @@ Turn a topic into a finished stickman film rendered entirely from code: flat 2D 
 
 It works where the coding agent can run the required local tools. No paid tools are needed and no AI image or video tools are used. ElevenLabs is optional and only for voiceover.
 
-Everything below is relative to this skill's folder (the folder holding this file). Find its absolute path once and use it for every script. In Codex, invoke this skill with `$stickman`. Call its absolute folder path `SKILL` in the commands below and replace that placeholder before running commands. Use `python3`, or `python` on Windows. In PowerShell, quote script paths, for example: `python "E:/Projects/Youtube/video-poc-codex/.agents/skills/stickman/scripts/doctor.py"`.
+Everything below is relative to this skill's folder (the folder holding this file). Find its absolute path once and use it for every script. In Codex, invoke this skill with `$stickman`. Call its absolute folder path `SKILL` in the commands below and replace that placeholder before running commands. Use `python3`, or `python` on Windows. In PowerShell, quote script paths, for example: `python "$SKILL/scripts/doctor.py"`.
 
 ## Step 1: Work out what was asked
 

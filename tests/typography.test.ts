@@ -181,3 +181,48 @@ test("word anchors belong to their cue and draft timing never becomes aligned", 
     /Unknown finance/,
   );
 });
+test("panel actions finish before the cut and hold the settled pose", () => {
+  const input: TypographyPlan = {
+    scenes: [
+      { id: "S01", title: "First", firstCue: "a" },
+      { id: "S02", title: "Second", firstCue: "b" },
+    ],
+    beats: [],
+    panels: [
+      {
+        id: "long",
+        sceneId: "S01",
+        anchor: { cueId: "a", edge: "start" },
+        phaseOffsetFrames: 0,
+        motion: { kind: "celebrate", duration: 44, objects: [] },
+      },
+      {
+        id: "short",
+        sceneId: "S01",
+        anchor: { cueId: "a", edge: "start" },
+        phaseOffsetFrames: 24,
+        motion: { kind: "notice", duration: 44, objects: [] },
+      },
+      {
+        id: "next",
+        sceneId: "S02",
+        anchor: { cueId: "b", edge: "start" },
+        phaseOffsetFrames: 0,
+      },
+    ],
+    gates: [],
+  };
+  const [long, short] = compileTypography(input, draft, words).panels;
+  assert.deepEqual(
+    [long.from, long.until, long.motion!.from, long.motion!.duration],
+    [0, 24, 4, 11],
+  );
+  assert.deepEqual(
+    [short.from, short.until, short.motion!.from, short.motion!.duration],
+    [24, 30, 28, 1],
+  );
+  for (const p of [long, short]) {
+    const m = p.motion!;
+    assert(m.from >= p.from && m.from + m.duration <= p.until);
+  }
+});

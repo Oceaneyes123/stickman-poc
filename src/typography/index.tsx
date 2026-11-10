@@ -29,7 +29,7 @@ const useType = (props: TypographyProps) => {
       config: { damping: 24, stiffness: 150, mass: 0.8 },
     }),
   );
-  return { ...p, frame, movement, opacity: p.in * (1 - p.out) };
+  return { ...p, frame, movement, fps, opacity: p.in * (1 - p.out) };
 };
 const Ink = ({
   children,
@@ -62,10 +62,14 @@ export function KineticHeadline(
     emphasis?: string;
     emphasisColor?: string;
     origin?: { x: number; y: number };
+    motion?: "slide" | "pop" | "punch" | "karaoke" | "typewriter";
+    cursor?: boolean;
   },
 ) {
   const p = useType(props);
   const size = props.size ?? 64;
+  const motion = props.motion ?? "slide";
+  const stagger = Math.max(1, props.stagger ?? 3);
   const units =
     props.unit === "character"
       ? Array.from(props.text)
@@ -74,6 +78,18 @@ export function KineticHeadline(
         : props.text.split(" ");
   const id = useId().replaceAll(":", "");
   if (!p.visible) return null;
+  const spoken = Math.min(
+    units.length - 1,
+    Math.max(0, Math.floor((p.frame - props.from) / stagger)),
+  );
+  const settle = (i: number) =>
+    spring({
+      frame: Math.max(0, p.frame - props.from - i * stagger),
+      fps: p.fps,
+      config: { damping: 12, stiffness: 220, mass: 0.6 },
+    });
+  const typed = motion === "typewriter";
+  const masked = motion === "slide";
   return (
     <Ink
       x={props.x + ((props.origin?.x ?? props.x) - props.x) * (1 - p.movement)}
@@ -92,27 +108,52 @@ export function KineticHeadline(
         >
           {units.map((unit, i) => {
             const reveal = clamp01(
-              (p.frame - props.from - i * (props.stagger ?? 3)) /
-                (props.enter ?? 15),
+              (p.frame - props.from - i * stagger) / (props.enter ?? 15),
             );
+            const isEmphasis = unit === props.emphasis;
+            const live =
+              motion === "karaoke" ? i === spoken : isEmphasis && motion === "punch";
+            const s = live ? settle(i) : 0;
+            const scale =
+              motion === "pop"
+                ? 0.55 + 0.45 * clamp01(settle(i))
+                : motion === "karaoke"
+                  ? 1 + (live ? 0.08 * clamp01(s) : 0)
+                  : motion === "punch" && isEmphasis
+                    ? Math.max(0.92, 1 + 1.2 * (1 - s))
+                    : 1;
             return (
               <span
                 key={`${id}-${i}`}
                 style={{
                   display: props.unit === "line" ? "block" : "inline-block",
-                  overflow: "hidden",
+                  overflow: masked ? "hidden" : "visible",
                   verticalAlign: "top",
                   marginRight:
                     props.unit === "word" || !props.unit ? "0.24em" : 0,
                   whiteSpace: "pre",
+                  padding: live && motion === "karaoke" ? "0 0.1em" : 0,
+                  borderRadius: motion === "karaoke" ? 10 : 0,
+                  background:
+                    live && motion === "karaoke" ? (props.emphasisColor ?? C.yellow) : "none",
+                  color: live && motion === "karaoke" ? C.navy : undefined,
                 }}
               >
                 <span
                   style={{
                     display: "inline-block",
-                    translate: `0 ${(1 - reveal) * 110}%`,
+                    transformOrigin: "50% 100%",
+                    translate: masked ? `0 ${(1 - reveal) * 110}%` : undefined,
+                    scale: `${scale}`,
+                    opacity: typed
+                      ? p.frame >= props.from + i * stagger
+                        ? 1
+                        : 0
+                      : motion === "pop"
+                        ? reveal
+                        : 1,
                     color:
-                      unit === props.emphasis
+                      isEmphasis && motion !== "karaoke" && !live
                         ? (props.emphasisColor ?? C.teal)
                         : undefined,
                   }}
@@ -122,6 +163,17 @@ export function KineticHeadline(
               </span>
             );
           })}
+          {props.cursor === true && (
+            <span
+              style={{
+                display: "inline-block",
+                width: "0.08em",
+                height: "0.95em",
+                verticalAlign: "text-bottom",
+                background: p.frame % 16 < 8 ? C.navy : "transparent",
+              }}
+            />
+          )}
         </div>
       </foreignObject>
     </Ink>

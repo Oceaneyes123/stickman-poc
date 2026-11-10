@@ -34,7 +34,7 @@ blends signed elbow flexion through extension when changing into or out of that
 plane, rather than flipping the elbow abruptly. Profiles with a positive minimum
 elbow flexion retain their configured bend plane to honor that joint constraint.
 
-Current detailed inspection sheet: `out/characters/hand-refinement/hand-review.jpg` (eight wrist/hand contexts). Generate the crops from current renders with `python scripts/character-detail-sheets.py`. The current characters remain hairless. Geometry tests do not prove visual appeal or clearance; open and inspect the renders.
+Current detailed inspection sheet: `out/characters/hand-refinement/hand-review.jpg` (eight wrist/hand contexts). Generate the crops from current renders with `python scripts/review/character-detail-sheets.py`. The current characters remain hairless. Geometry tests do not prove visual appeal or clearance; open and inspect the renders.
 
 ```tsx
 import { Sam, Alex } from "./characters/ReferenceCharacterRig";

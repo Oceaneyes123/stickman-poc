@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Emit markdown evidence tables from research-evidence/ for the research docs."""
+"""Emit markdown evidence tables from research/evidence/ for the research docs."""
 
 import glob
 import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-EVID = ROOT / "research-evidence"
+EVID = ROOT / "research" / "evidence"
 stats = json.loads((EVID / "channel-stats.json").read_text(encoding="utf-8"))
 
 
@@ -45,7 +45,7 @@ def main():
 
     (EVID / "tables.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print("\n".join(lines[:8]))
-    print(f"... wrote {len(lines)} lines to research-evidence/tables.md")
+    print(f"... wrote {len(lines)} lines to research/evidence/tables.md")
 
 
 if __name__ == "__main__":

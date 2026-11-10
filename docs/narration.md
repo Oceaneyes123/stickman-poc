@@ -34,9 +34,13 @@ npm run narrate -- --script videos/001-lifestyle-creep/narration.txt --out out/0
 ```
 
 Paragraphs are separated by blank lines. Each must fit the API's 4096-character
-limit. Generation runs sequentially at natural speed. There is no inserted gap,
+limit. Every paragraph is then split into takes of at most 18 seconds of speech
+(about 45 words at 2.5 words per second): whole sentences are packed greedily, and
+a sentence longer than the cap is cut at clause punctuation or, failing that, at a
+word boundary. Short takes keep the voice from drifting on long generations.
+Generation runs sequentially at natural speed. There is no inserted gap,
 silence trimming, speech stretching, or runtime target. Listen for discontinuities
-between paragraphs; adjust the text and regenerate when needed.
+between takes; adjust the text and regenerate when needed.
 
 During synthesis, a live bar shows completed text, elapsed run time, and estimated
 synthesis time remaining. The terminal refreshes every second; redirected logs
@@ -102,7 +106,7 @@ request; successful inference remains the proof of model readiness.
 npm run narrate:timing -- --script videos/001-lifestyle-creep/narration.txt --audio-dir out/001-lifestyle-creep/narration
 ```
 
-`scripts/time_narration.py` requires Python 3.11+, `faster-whisper`, and the cached
+`scripts/narration/time_narration.py` requires Python 3.11+, `faster-whisper`, and the cached
 Whisper `small` model. No model is installed or downloaded. It checks complete
 synthesis metadata, script/master/paragraph hashes, paragraph count, and total
 sample count before transcription and again before writing the final results.
@@ -135,7 +139,7 @@ and do not load Whisper. `npm run check` includes these tests.
 npm run narrate:review -- --audio-dir out/001-lifestyle-creep/narration
 ```
 
-`scripts/render-timing-review.ts` renders a separate Remotion composition using
+`scripts/render/render-timing-review.ts` renders a separate Remotion composition using
 only `audio-1.wav` and `audio-2.wav`. FFmpeg concatenates those two recordings;
 no speech is regenerated. Matching phrase cues appear as white text on black,
 with blank gaps. Source and timing hashes are verified before rendering. The

@@ -237,9 +237,11 @@ export function compileTypography(
       if (!Number.isFinite(p.motion.duration) || p.motion.duration <= 0)
         throw new Error(`Invalid panel motion ${p.id}`);
       p.motion.from = Math.max(p.from, Math.min(p.until - 2, p.motion.from));
+      // Finish the action inside ~60% of the shot, then hold the settled pose.
+      const budget = Math.max(1, p.until - p.motion.from - 1);
       p.motion.duration = Math.max(
         1,
-        Math.min(p.motion.duration, p.until - p.motion.from - 1),
+        Math.min(p.motion.duration, Math.floor(budget * 0.6)),
       );
     }
   const beats = plan.beats.map((b) => {

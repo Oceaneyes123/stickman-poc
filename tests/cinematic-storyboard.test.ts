@@ -47,7 +47,7 @@ test("shot direction uses the whole vocabulary without five consecutive phone, d
 });
 test("storyboard renderer is still-only and visible typography uses the currency formatter", () => {
   const renderer = readFileSync(
-    "scripts/render-cinematic-storyboard.ts",
+    "scripts/render/render-cinematic-storyboard.ts",
     "utf8",
   );
   assert(!renderer.includes("renderMedia"));
