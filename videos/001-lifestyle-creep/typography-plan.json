@@ -413,7 +413,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "0, 0 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S01-p001-s002",
@@ -444,9 +445,10 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "1190, 210 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 1190, 'y': 210} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S02-p001-s003",
@@ -476,7 +478,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S02-p001-s004",
@@ -506,7 +509,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S02-p001-s005",
@@ -536,7 +540,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S03-p001-s006",
@@ -566,7 +571,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S03-p001-s007",
@@ -596,7 +602,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S03-p001-s008",
@@ -628,9 +635,9 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "1090, 430 in 1920x1080 object coordinates",
+      "relativePosition": "[{'x': 1090, 'y': 430}, {'x': 1090, 'y': 610}] in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36,
+      "fontSize": 48,
       "itemPositions": [
         {
           "x": 1090,
@@ -640,7 +647,8 @@
           "x": 1090,
           "y": 610
         }
-      ]
+      ],
+      "leaderLine": false
     },
     {
       "id": "S04-p001-s009",
@@ -670,7 +678,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S04-p001-s010",
@@ -700,7 +709,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S04-p001-s011",
@@ -730,7 +740,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S04-p001-s012",
@@ -760,7 +771,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S05-p001-s013",
@@ -792,9 +804,9 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "250, 260 in 1920x1080 object coordinates",
+      "relativePosition": "[{'x': 250, 'y': 260}, {'x': 1210, 'y': 260}] in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36,
+      "fontSize": 48,
       "itemPositions": [
         {
           "x": 250,
@@ -804,7 +816,8 @@
           "x": 1210,
           "y": 260
         }
-      ]
+      ],
+      "leaderLine": false
     },
     {
       "id": "S06-p002-s001",
@@ -834,7 +847,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "0, 0 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S06-p002-s002",
@@ -865,7 +879,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "1370, 850 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S06-p002-s003",
@@ -896,9 +911,10 @@
       "animation": "Reveal the relevant derived number with the object; attach any qualifying label.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "1200, 970 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 1200, 'y': 970} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S07-p002-s004",
@@ -916,7 +932,7 @@
       "preset": "section",
       "position": {
         "x": 550,
-        "y": 205
+        "y": 150
       },
       "object": {
         "x": 550,
@@ -929,10 +945,11 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "550, 205 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 550, 'y': 150} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 40,
-      "underlineWidth": 360
+      "fontSize": 48,
+      "underlineWidth": 360,
+      "leaderLine": false
     },
     {
       "id": "S07-p002-s005",
@@ -950,7 +967,7 @@
       "preset": "section",
       "position": {
         "x": 550,
-        "y": 205
+        "y": 150
       },
       "object": {
         "x": 550,
@@ -963,10 +980,11 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "550, 205 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 550, 'y': 150} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 40,
-      "underlineWidth": 360
+      "fontSize": 48,
+      "underlineWidth": 360,
+      "leaderLine": false
     },
     {
       "id": "S07-p002-s006",
@@ -997,7 +1015,8 @@
       "relativePosition": "none",
       "compositionChange": false,
       "fontSize": 40,
-      "underlineWidth": 360
+      "underlineWidth": 360,
+      "leaderLine": false
     },
     {
       "id": "S08-p003-s001",
@@ -1027,7 +1046,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S08-p003-s002",
@@ -1057,7 +1077,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S08-p003-s003",
@@ -1087,7 +1108,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S09-p003-s004",
@@ -1118,7 +1140,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "0, 0 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S09-p003-s005",
@@ -1148,7 +1171,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "0, 0 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S09-p003-s006",
@@ -1165,8 +1189,8 @@
       "reason": "The pay packet grows once; the hypothetical remainder must be qualified.",
       "preset": "label",
       "position": {
-        "x": 1010,
-        "y": 970
+        "x": 930,
+        "y": 180
       },
       "object": {
         "x": 1310,
@@ -1179,9 +1203,11 @@
       "animation": "Reveal the relevant derived number with the object; attach any qualifying label.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "1010, 970 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 930, 'y': 180} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false,
+      "holdToSceneEnd": true
     },
     {
       "id": "S10-p003-s007",
@@ -1211,7 +1237,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S10-p003-s008",
@@ -1241,7 +1268,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S11-p003-s009",
@@ -1271,7 +1299,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S11-p003-s010",
@@ -1301,7 +1330,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S11-p003-s011",
@@ -1331,7 +1361,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S11-p003-s012",
@@ -1361,7 +1392,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S12-p004-s001",
@@ -1391,7 +1423,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S12-p004-s002",
@@ -1421,7 +1454,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S12-p004-s003",
@@ -1451,7 +1485,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S13-p004-s004",
@@ -1482,9 +1517,10 @@
       "animation": "Reveal the relevant derived number with the object; attach any qualifying label.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "270, 920 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 270, 'y': 920} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S13-p004-s005",
@@ -1514,7 +1550,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S13-p004-s006",
@@ -1544,7 +1581,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S14-p004-s007",
@@ -1574,7 +1612,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S15-p005-s001",
@@ -1591,8 +1630,8 @@
       "reason": "Introduce the month on the transfer receipt after the remainder is calculated.",
       "preset": "label",
       "position": {
-        "x": 1170,
-        "y": 970
+        "x": 690,
+        "y": 200
       },
       "object": {
         "x": 1525,
@@ -1605,9 +1644,10 @@
       "animation": "Reveal the relevant derived number with the object; attach any qualifying label.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "1170, 970 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 690, 'y': 200} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S15-p005-s002",
@@ -1638,7 +1678,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "0, 0 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S15-p005-s003",
@@ -1669,7 +1710,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "1170, 970 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S16-p005-s004",
@@ -1699,7 +1741,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S16-p005-s005",
@@ -1729,7 +1772,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S16-p005-s006",
@@ -1759,7 +1803,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S17-p005-s007",
@@ -1790,9 +1835,10 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "220, 850 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 220, 'y': 850} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S17-p005-s008",
@@ -1822,7 +1868,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S17-p005-s009",
@@ -1852,7 +1899,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S18-p006-s001",
@@ -1882,7 +1930,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S18-p006-s002",
@@ -1912,7 +1961,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S18-p006-s003",
@@ -1942,7 +1992,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S18-p006-s004",
@@ -1972,7 +2023,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S19-p006-s005",
@@ -2002,7 +2054,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S19-p006-s006",
@@ -2033,9 +2086,10 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "390, 970 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 390, 'y': 970} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S19-p006-s007",
@@ -2052,8 +2106,8 @@
       "reason": "Identify the rental arrangement so a transport amount cannot be mistaken for a loan.",
       "preset": "label",
       "position": {
-        "x": 350,
-        "y": 230
+        "x": 490,
+        "y": 180
       },
       "object": {
         "x": 680,
@@ -2066,9 +2120,10 @@
       "animation": "Reveal the relevant derived number with the object; attach any qualifying label.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "350, 230 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 490, 'y': 180} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S19-p006-s008",
@@ -2098,7 +2153,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S20-p006-s009",
@@ -2128,7 +2184,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S20-p006-s010",
@@ -2158,7 +2215,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S20-p006-s011",
@@ -2188,7 +2246,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S21-p006-s012",
@@ -2218,7 +2277,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S22-p007-s001",
@@ -2248,7 +2308,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S22-p007-s002",
@@ -2265,8 +2326,8 @@
       "reason": "The same finite raise now supports both costs; identify what the small remainder means.",
       "preset": "label",
       "position": {
-        "x": 1090,
-        "y": 320
+        "x": 1020,
+        "y": 280
       },
       "object": {
         "x": 1240,
@@ -2279,9 +2340,10 @@
       "animation": "Reveal the relevant derived number with the object; attach any qualifying label.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "1090, 320 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 1020, 'y': 280} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S23-p007-s003",
@@ -2311,7 +2373,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "0, 0 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S23-p007-s004",
@@ -2342,7 +2405,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "0, 0 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S23-p007-s005",
@@ -2372,7 +2436,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S23-p007-s006",
@@ -2402,7 +2467,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S23-p007-s007",
@@ -2432,7 +2498,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S24-p007-s008",
@@ -2462,7 +2529,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S24-p007-s009",
@@ -2492,7 +2560,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S25-p008-s001",
@@ -2523,7 +2592,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "0, 0 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S25-p008-s002",
@@ -2553,7 +2623,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S25-p008-s003",
@@ -2584,9 +2655,10 @@
       "animation": "Reveal the relevant derived number with the object; attach any qualifying label.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "630, 970 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 630, 'y': 970} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S26-p008-s004",
@@ -2616,7 +2688,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S26-p008-s005",
@@ -2646,7 +2719,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S27-p009-s001",
@@ -2677,7 +2751,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "0, 0 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S27-p009-s002",
@@ -2710,7 +2785,7 @@
       "animation": "Reveal one document row per relevant cue; underline its corresponding allocation.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "300, 910 in 1920x1080 object coordinates",
+      "relativePosition": "[{'x': 400, 'y': 870}, {'x': 1080, 'y': 870}, {'x': 1450, 'y': 870}] in the scene SVG",
       "compositionChange": true,
       "listAnchors": [
         {
@@ -2727,7 +2802,7 @@
         }
       ],
       "holdToSceneEnd": true,
-      "fontSize": 32,
+      "fontSize": 42,
       "layout": "attached",
       "itemPositions": [
         {
@@ -2739,7 +2814,7 @@
           "y": 870
         },
         {
-          "x": 1450,
+          "x": 1390,
           "y": 870
         }
       ],
@@ -2756,7 +2831,8 @@
           "x": 1510,
           "y": 775
         }
-      ]
+      ],
+      "leaderLine": false
     },
     {
       "id": "S27-p009-s003",
@@ -2787,7 +2863,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "0, 0 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S27-p009-s004",
@@ -2818,7 +2895,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "0, 0 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S27-p009-s005",
@@ -2849,7 +2927,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "0, 0 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S28-p009-s006",
@@ -2879,7 +2958,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "0, 0 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S28-p009-s007",
@@ -2910,7 +2990,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "1170, 970 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S28-p009-s008",
@@ -2941,9 +3022,10 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "1170, 970 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 1170, 'y': 970} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S29-p009-s009",
@@ -2960,8 +3042,8 @@
       "reason": "Resolve the opening through Sam's face and matched transfer entries.",
       "preset": "label",
       "position": {
-        "x": 1100,
-        "y": 310
+        "x": 1460,
+        "y": 390
       },
       "object": {
         "x": 1200,
@@ -2974,9 +3056,10 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "1100, 310 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 1460, 'y': 390} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S29-p009-s010",
@@ -2993,8 +3076,8 @@
       "reason": "Resolve the opening through Sam's face and matched transfer entries.",
       "preset": "label",
       "position": {
-        "x": 1100,
-        "y": 480
+        "x": 1460,
+        "y": 540
       },
       "object": {
         "x": 1200,
@@ -3007,9 +3090,10 @@
       "animation": "Reveal the relevant derived number with the object; attach any qualifying label.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "1100, 480 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 1460, 'y': 540} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S29-p009-s011",
@@ -3039,7 +3123,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S30-p009-s012",
@@ -3069,7 +3154,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S30-p009-s013",
@@ -3099,7 +3185,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S30-p009-s014",
@@ -3129,7 +3216,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S31-p010-s001",
@@ -3159,7 +3247,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S31-p010-s002",
@@ -3189,7 +3278,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S31-p010-s003",
@@ -3219,7 +3309,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S32-p010-s004",
@@ -3250,9 +3341,10 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "270, 300 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 270, 'y': 300} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S32-p010-s005",
@@ -3283,7 +3375,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "0, 0 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S32-p010-s006",
@@ -3314,9 +3407,10 @@
       "animation": "Reveal the relevant derived number with the object; attach any qualifying label.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "270, 300 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 270, 'y': 300} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S33-p010-s007",
@@ -3346,7 +3440,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "790, 180 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S33-p010-s008",
@@ -3376,7 +3471,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S33-p010-s009",
@@ -3407,9 +3503,10 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "790, 180 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 790, 'y': 180} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S33-p010-s010",
@@ -3440,9 +3537,10 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "600, 180 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 600, 'y': 180} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S33-p010-s011",
@@ -3472,7 +3570,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S34-p010-s012",
@@ -3502,7 +3601,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S34-p010-s013",
@@ -3533,9 +3633,12 @@
       "animation": "Masked phrase reveal from the related visual; settle and hold.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "250, 110 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 250, 'y': 110} in the scene SVG",
       "compositionChange": true,
-      "fontSize": 58
+      "fontSize": 76,
+      "leaderLine": false,
+      "emphasis": "saving",
+      "emphasisColor": "teal"
     },
     {
       "id": "S34-p010-s014",
@@ -3565,7 +3668,10 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "190, 230 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 58
+      "fontSize": 58,
+      "leaderLine": false,
+      "emphasis": "saving",
+      "emphasisColor": "teal"
     },
     {
       "id": "S34-p010-s015",
@@ -3595,7 +3701,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S35-p011-s001",
@@ -3625,7 +3732,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S35-p011-s002",
@@ -3656,9 +3764,10 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "1230, 970 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 1230, 'y': 970} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S35-p011-s003",
@@ -3688,11 +3797,12 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "1230, 970 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 1230, 'y': 970} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 38,
+      "fontSize": 48,
       "morphBefore": "Transferred",
-      "color": "teal"
+      "color": "teal",
+      "leaderLine": false
     },
     {
       "id": "S35-p011-s004",
@@ -3722,7 +3832,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S35-p011-s005",
@@ -3752,7 +3863,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S36-p011-s006",
@@ -3782,7 +3894,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 60
+      "fontSize": 60,
+      "leaderLine": false
     },
     {
       "id": "S36-p011-s007",
@@ -3813,9 +3926,12 @@
       "animation": "Masked phrase reveal from the related visual; settle and hold.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "350, 160 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 350, 'y': 160} in the scene SVG",
       "compositionChange": true,
-      "fontSize": 60
+      "fontSize": 68,
+      "leaderLine": false,
+      "emphasis": "owe",
+      "emphasisColor": "red"
     },
     {
       "id": "S36-p011-s008",
@@ -3845,7 +3961,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 60
+      "fontSize": 60,
+      "leaderLine": false
     },
     {
       "id": "S37-p011-s009",
@@ -3876,9 +3993,10 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "650, 230 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 650, 'y': 230} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S37-p011-s010",
@@ -3908,7 +4026,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S38-p012-s001",
@@ -3938,7 +4057,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S38-p012-s002",
@@ -3968,7 +4088,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S38-p012-s003",
@@ -3998,7 +4119,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S38-p012-s004",
@@ -4028,7 +4150,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S39-p012-s005",
@@ -4058,7 +4181,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S39-p012-s006",
@@ -4089,9 +4213,10 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "250, 185 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 250, 'y': 185} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S40-p012-s007",
@@ -4122,9 +4247,10 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "230, 240 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 230, 'y': 240} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S40-p012-s008",
@@ -4154,7 +4280,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S41-p013-s001",
@@ -4184,7 +4311,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S41-p013-s002",
@@ -4214,7 +4342,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S42-p013-s003",
@@ -4244,7 +4373,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S42-p013-s004",
@@ -4274,7 +4404,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S42-p013-s005",
@@ -4304,7 +4435,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S43-p014-s001",
@@ -4334,7 +4466,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S43-p014-s002",
@@ -4364,7 +4497,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S43-p014-s003",
@@ -4394,7 +4528,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S43-p014-s004",
@@ -4424,7 +4559,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S44-p014-s005",
@@ -4454,7 +4590,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S44-p014-s006",
@@ -4484,7 +4621,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "0, 0 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S44-p014-s007",
@@ -4515,7 +4653,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "1170, 970 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S44-p014-s008",
@@ -4546,9 +4685,10 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "1170, 970 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 1170, 'y': 970} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S45-p014-s009",
@@ -4578,7 +4718,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S45-p014-s010",
@@ -4608,7 +4749,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S45-p014-s011",
@@ -4638,7 +4780,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S46-p015-s001",
@@ -4668,7 +4811,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S46-p015-s002",
@@ -4699,9 +4843,10 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "280, 240 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 280, 'y': 240} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S46-p015-s003",
@@ -4731,7 +4876,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S47-p015-s004",
@@ -4761,7 +4907,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S47-p015-s005",
@@ -4791,7 +4938,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S47-p015-s006",
@@ -4821,7 +4969,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S47-p015-s007",
@@ -4851,7 +5000,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S48-p016-s001",
@@ -4881,7 +5031,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S48-p016-s002",
@@ -4911,7 +5062,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S48-p016-s003",
@@ -4941,7 +5093,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S48-p016-s004",
@@ -4971,7 +5124,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S49-p016-s005",
@@ -5001,7 +5155,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S49-p016-s006",
@@ -5032,9 +5187,10 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "550, 205 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 550, 'y': 205} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S49-p016-s007",
@@ -5064,7 +5220,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S50-p017-s001",
@@ -5095,11 +5252,11 @@
       "animation": "Reveal the relevant derived number with the object; attach any qualifying label.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Retain the period or identity beside the established comparison; fade in the last 10 scene frames.",
-      "relativePosition": "270, 230 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 270, 'y': 230} in the scene SVG",
       "compositionChange": false,
       "holdToSceneEnd": true,
       "persistThroughPanels": true,
-      "fontSize": 36,
+      "fontSize": 48,
       "leaderLine": false
     },
     {
@@ -5131,11 +5288,11 @@
       "animation": "Reveal the relevant derived number with the object; attach any qualifying label.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Retain the period or identity beside the established comparison; fade in the last 10 scene frames.",
-      "relativePosition": "390, 300 in 1920x1080 object coordinates",
+      "relativePosition": "[{'x': 390, 'y': 300}, {'x': 1190, 'y': 300}] in the scene SVG",
       "compositionChange": false,
       "holdToSceneEnd": true,
       "persistThroughPanels": true,
-      "fontSize": 36,
+      "fontSize": 48,
       "leaderLine": false,
       "itemPositions": [
         {
@@ -5302,11 +5459,11 @@
       "animation": "Reveal the relevant derived number with the object; attach any qualifying label.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Retain the period or identity beside the established comparison; fade in the last 10 scene frames.",
-      "relativePosition": "390, 240 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 390, 'y': 240} in the scene SVG",
       "compositionChange": false,
       "holdToSceneEnd": true,
       "persistThroughPanels": true,
-      "fontSize": 36,
+      "fontSize": 48,
       "leaderLine": false
     },
     {
@@ -5368,7 +5525,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S52-p017-s010",
@@ -5398,7 +5556,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S53-p018-s001",
@@ -5428,7 +5587,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S53-p018-s002",
@@ -5458,7 +5618,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S53-p018-s003",
@@ -5488,7 +5649,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S53-p018-s004",
@@ -5518,7 +5680,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S53-p018-s005",
@@ -5548,7 +5711,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S54-p018-s006",
@@ -5581,7 +5745,7 @@
       "animation": "Reveal one document row per relevant cue; underline its corresponding allocation.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "810, 300 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 810, 'y': 300} in the scene SVG",
       "compositionChange": true,
       "listAnchors": [
         {
@@ -5605,13 +5769,14 @@
         8,
         16
       ],
-      "fontSize": 34,
+      "fontSize": 42,
       "rowGap": 85,
       "rotation": {
         "degrees": 4,
         "x": 580,
         "y": 170
-      }
+      },
+      "leaderLine": false
     },
     {
       "id": "S54-p018-s007",
@@ -5641,7 +5806,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S55-p018-s008",
@@ -5671,7 +5837,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S55-p018-s009",
@@ -5701,7 +5868,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S56-p019-s001",
@@ -5731,7 +5899,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S56-p019-s002",
@@ -5762,9 +5931,10 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "320, 230 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 320, 'y': 230} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S56-p019-s003",
@@ -5794,7 +5964,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S57-p019-s004",
@@ -5824,7 +5995,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S57-p019-s005",
@@ -5854,7 +6026,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S58-p019-s006",
@@ -5884,7 +6057,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "0, 0 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S58-p019-s007",
@@ -5915,9 +6089,10 @@
       "animation": "Reveal the relevant derived number with the object; attach any qualifying label.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "1110, 980 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 1110, 'y': 980} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S58-p019-s008",
@@ -5948,7 +6123,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "0, 0 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S58-p019-s009",
@@ -5978,7 +6154,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S59-p020-s001",
@@ -6008,7 +6185,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S59-p020-s002",
@@ -6038,7 +6216,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S60-p020-s003",
@@ -6068,7 +6247,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S60-p020-s004",
@@ -6098,7 +6278,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S61-p021-s001",
@@ -6115,7 +6296,7 @@
       "reason": "Mark the separate frozen-pattern illustration before showing annual figures.",
       "preset": "label",
       "position": {
-        "x": 320,
+        "x": 250,
         "y": 145
       },
       "object": {
@@ -6129,11 +6310,12 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Retain the period or identity beside the established comparison; fade in the last 10 scene frames.",
-      "relativePosition": "320, 145 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 250, 'y': 145} in the scene SVG",
       "compositionChange": false,
       "holdToSceneEnd": true,
       "persistThroughPanels": true,
-      "fontSize": 40
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S61-p021-s002",
@@ -6163,7 +6345,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "0, 0 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 40
+      "fontSize": 40,
+      "leaderLine": false
     },
     {
       "id": "S61-p021-s003",
@@ -6193,7 +6376,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "0, 0 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 40
+      "fontSize": 40,
+      "leaderLine": false
     },
     {
       "id": "S62-p021-s004",
@@ -6224,9 +6408,10 @@
       "animation": "Reveal the relevant derived number with the object; attach any qualifying label.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "620, 260 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 620, 'y': 260} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S62-p021-s005",
@@ -6259,15 +6444,16 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "420, 175 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 420, 'y': 175} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 32,
+      "fontSize": 42,
       "rowGap": 45,
       "listOffsetsFrames": [
         0,
         8,
         16
-      ]
+      ],
+      "leaderLine": false
     },
     {
       "id": "S63-p021-s006",
@@ -6298,9 +6484,10 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "620, 240 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 620, 'y': 240} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S63-p021-s007",
@@ -6331,9 +6518,10 @@
       "animation": "Draw a short leader from the related object; lift label 10 px and settle.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "210, 260 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 210, 'y': 260} in the scene SVG",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 48,
+      "leaderLine": false
     },
     {
       "id": "S64-p022-s001",
@@ -6363,7 +6551,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S64-p022-s002",
@@ -6393,7 +6582,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S64-p022-s003",
@@ -6423,7 +6613,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S65-p022-s004",
@@ -6453,7 +6644,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S65-p022-s005",
@@ -6483,7 +6675,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S65-p022-s006",
@@ -6513,7 +6706,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S65-p022-s007",
@@ -6543,7 +6737,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S66-p023-s001",
@@ -6573,7 +6768,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S66-p023-s002",
@@ -6603,7 +6799,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S66-p023-s003",
@@ -6633,7 +6830,8 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "none",
       "compositionChange": false,
-      "fontSize": 36
+      "fontSize": 36,
+      "leaderLine": false
     },
     {
       "id": "S67-p023-s004",
@@ -6650,8 +6848,8 @@
       "reason": "Form the closing phrase from the checked plan and confirmed transfer.",
       "preset": "headline",
       "position": {
-        "x": 1050,
-        "y": 170
+        "x": 1030,
+        "y": 145
       },
       "object": {
         "x": 1380,
@@ -6664,9 +6862,12 @@
       "animation": "Masked phrase reveal from the related visual; settle and hold.",
       "entrance": "After the word anchor; never a scene-start trigger.",
       "exit": "Fade over 10 frames before the next label or shot boundary.",
-      "relativePosition": "1050, 170 in 1920x1080 object coordinates",
+      "relativePosition": "{'x': 1030, 'y': 145} in the scene SVG",
       "compositionChange": true,
-      "fontSize": 58
+      "fontSize": 72,
+      "leaderLine": false,
+      "emphasis": "total",
+      "emphasisColor": "teal"
     },
     {
       "id": "S67-p023-s005",
@@ -6697,7 +6898,10 @@
       "exit": "Fade over 10 frames before the next label or shot boundary.",
       "relativePosition": "1050, 180 in 1920x1080 object coordinates",
       "compositionChange": false,
-      "fontSize": 58
+      "fontSize": 58,
+      "leaderLine": false,
+      "emphasis": "total",
+      "emphasisColor": "teal"
     }
   ],
   "panels": [
@@ -6713,7 +6917,12 @@
       "subject": "Sam's raised pay notice",
       "action": "Celebrate the increase; cut to a worried reaction",
       "decision": "Pay notice and changed expression establish the hook; withhold the later transfer amount.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "celebrate",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S01-reaction",
@@ -6727,7 +6936,12 @@
       "subject": "Sam's raised pay notice",
       "action": "Celebrate the increase; cut to a worried reaction",
       "decision": "Pay notice and changed expression establish the hook; withhold the later transfer amount.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "notice",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S02-workspace",
@@ -6741,7 +6955,16 @@
       "subject": "The actual improved comforts",
       "action": "Carry the laptop, enjoy the rental, choose a film",
       "decision": "The useful desk, comfortable seat and chosen film explain the benefits through action.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "use",
+        "duration": 44,
+        "objects": [
+          "services",
+          "phone",
+          "car"
+        ]
+      }
     },
     {
       "id": "S02-rental",
@@ -6755,7 +6978,16 @@
       "subject": "The actual improved comforts",
       "action": "Carry the laptop, enjoy the rental, choose a film",
       "decision": "The useful desk, comfortable seat and chosen film explain the benefits through action.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "use",
+        "duration": 44,
+        "objects": [
+          "services",
+          "phone",
+          "car"
+        ]
+      }
     },
     {
       "id": "S02-entertainment",
@@ -6769,7 +7001,16 @@
       "subject": "The actual improved comforts",
       "action": "Carry the laptop, enjoy the rental, choose a film",
       "decision": "The useful desk, comfortable seat and chosen film explain the benefits through action.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "use",
+        "duration": 44,
+        "objects": [
+          "services",
+          "phone",
+          "car"
+        ]
+      }
     },
     {
       "id": "S03-check",
@@ -6783,7 +7024,12 @@
       "subject": "Sam notices the smaller transfer",
       "action": "Stop smiling; compare two transfer lengths",
       "decision": "The stopped thumb carries emotion; only the comparison's time basis needs clarification.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "notice",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S03-closer",
@@ -6797,7 +7043,12 @@
       "subject": "Sam notices the smaller transfer",
       "action": "Stop smiling; compare two transfer lengths",
       "decision": "The stopped thumb carries emotion; only the comparison's time basis needs clarification.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "notice",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S04-working",
@@ -6811,7 +7062,12 @@
       "subject": "Small commitments consume one raise",
       "action": "Work continues while the finite increase is allocated",
       "decision": "Working and the unchanged pay packet reject alternative explanations without headings.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "work",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S04-commitments",
@@ -6825,7 +7081,12 @@
       "subject": "Small commitments consume one raise",
       "action": "Work continues while the finite increase is allocated",
       "decision": "Working and the unchanged pay packet reject alternative explanations without headings.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "work",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S05-main",
@@ -6839,7 +7100,15 @@
       "subject": "Sam and Alex receive equal increases",
       "action": "Match their starting opportunity; keep identity clear",
       "decision": "Equal figures and equal framing establish the comparison.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "compare",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow"
+        ]
+      }
     },
     {
       "id": "S06-pay",
@@ -6853,7 +7122,16 @@
       "subject": "Pay, costs and the remainder",
       "action": "Separate the $400 remainder before the transfer action",
       "decision": "Allocation followed by a visible bank transfer distinguishes calculation from saving.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "transfer",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow",
+          "phone"
+        ]
+      }
     },
     {
       "id": "S06-remaining",
@@ -6867,7 +7145,16 @@
       "subject": "Pay, costs and the remainder",
       "action": "Separate the $400 remainder before the transfer action",
       "decision": "Allocation followed by a visible bank transfer distinguishes calculation from saving.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "transfer",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow",
+          "phone"
+        ]
+      }
     },
     {
       "id": "S06-transfer",
@@ -6881,7 +7168,16 @@
       "subject": "Pay, costs and the remainder",
       "action": "Separate the $400 remainder before the transfer action",
       "decision": "Allocation followed by a visible bank transfer distinguishes calculation from saving.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "transfer",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow",
+          "phone"
+        ]
+      }
     },
     {
       "id": "S07-main",
@@ -6895,7 +7191,15 @@
       "subject": "An illustrative model, not a household portrait",
       "action": "Keep the two characters inside a dashed example boundary",
       "decision": "The example boundary needs a short scope label to prevent a population claim.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "scope",
+        "duration": 44,
+        "objects": [
+          "document",
+          "calendar"
+        ]
+      }
     },
     {
       "id": "S08-cramped",
@@ -6909,7 +7213,14 @@
       "subject": "Sam's cramped workspace",
       "action": "Show the dishes crowding the laptop; cut to older rental",
       "decision": "Cramped acting and the usable older rental explain Sam's motivation.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "think",
+        "duration": 44,
+        "objects": [
+          "car"
+        ]
+      }
     },
     {
       "id": "S08-older-rental",
@@ -6923,7 +7234,14 @@
       "subject": "Sam's cramped workspace",
       "action": "Show the dishes crowding the laptop; cut to older rental",
       "decision": "Cramped acting and the usable older rental explain Sam's motivation.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "think",
+        "duration": 44,
+        "objects": [
+          "car"
+        ]
+      }
     },
     {
       "id": "S09-main",
@@ -6937,7 +7255,16 @@
       "subject": "The raise expands available money",
       "action": "Keep expenses fixed while the remainder increases",
       "decision": "The pay packet grows once; the hypothetical remainder must be qualified.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "allocate",
+        "duration": 44,
+        "objects": [
+          "money",
+          "allocation",
+          "arrow"
+        ]
+      }
     },
     {
       "id": "S10-main",
@@ -6951,7 +7278,12 @@
       "subject": "A deliberate mixture of comfort and saving",
       "action": "Offer some room to enjoy life and some to keep",
       "decision": "The two tangible destinations show that spending and saving can coexist.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "decide",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S11-main",
@@ -6965,7 +7297,15 @@
       "subject": "Equal starting conditions",
       "action": "Match income, costs and transfer; no head start",
       "decision": "Matched starting figures establish equal conditions.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "compare",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow"
+        ]
+      }
     },
     {
       "id": "S12-lift-phone",
@@ -6979,7 +7319,16 @@
       "subject": "A useful workspace upgrade",
       "action": "Browse, arrive carrying the laptop, place it, enjoy the space",
       "decision": "Browsing, carrying, opening and relaxing need no explanatory captions.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "use",
+        "duration": 44,
+        "objects": [
+          "services",
+          "phone",
+          "car"
+        ]
+      }
     },
     {
       "id": "S12-enter-room",
@@ -6993,7 +7342,14 @@
       "subject": "A useful workspace upgrade",
       "action": "Browse, arrive carrying the laptop, place it, enjoy the space",
       "decision": "Browsing, carrying, opening and relaxing need no explanatory captions.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "walk",
+        "duration": 48,
+        "objects": [
+          "laptop"
+        ]
+      }
     },
     {
       "id": "S12-open-laptop",
@@ -7007,7 +7363,12 @@
       "subject": "A useful workspace upgrade",
       "action": "Browse, arrive carrying the laptop, place it, enjoy the space",
       "decision": "Browsing, carrying, opening and relaxing need no explanatory captions.",
-      "phaseOffsetFrames": 24
+      "phaseOffsetFrames": 48,
+      "motion": {
+        "kind": "work",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S12-notice-space",
@@ -7021,7 +7382,14 @@
       "subject": "A useful workspace upgrade",
       "action": "Browse, arrive carrying the laptop, place it, enjoy the space",
       "decision": "Browsing, carrying, opening and relaxing need no explanatory captions.",
-      "phaseOffsetFrames": 48
+      "phaseOffsetFrames": 96,
+      "motion": {
+        "kind": "relax",
+        "duration": 44,
+        "objects": [
+          "car"
+        ]
+      }
     },
     {
       "id": "S13-main",
@@ -7035,7 +7403,16 @@
       "subject": "The apartment uses half the raise",
       "action": "Connect the key to $300 of the same $600",
       "decision": "Attach rent terminology to the finite allocation rather than a separate card.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "allocate",
+        "duration": 44,
+        "objects": [
+          "money",
+          "allocation",
+          "arrow"
+        ]
+      }
     },
     {
       "id": "S14-sign",
@@ -7049,7 +7426,14 @@
       "subject": "The lease decision",
       "action": "Show the constrained signing hand and then Alex keeping his workspace",
       "decision": "The signing hand communicates commitment; preserve Alex's silent alternative.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "sign",
+        "duration": 44,
+        "objects": [
+          "document"
+        ]
+      }
     },
     {
       "id": "S14-alex-keeps-home",
@@ -7063,7 +7447,14 @@
       "subject": "The lease decision",
       "action": "Show the constrained signing hand and then Alex keeping his workspace",
       "decision": "The signing hand communicates commitment; preserve Alex's silent alternative.",
-      "phaseOffsetFrames": 24
+      "phaseOffsetFrames": 24,
+      "motion": {
+        "kind": "think",
+        "duration": 44,
+        "objects": [
+          "car"
+        ]
+      }
     },
     {
       "id": "S15-main",
@@ -7077,7 +7468,16 @@
       "subject": "The first $700 transfer",
       "action": "Make the actual savings action visible",
       "decision": "Introduce the month on the transfer receipt after the remainder is calculated.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "transfer",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow",
+          "phone"
+        ]
+      }
     },
     {
       "id": "S16-main",
@@ -7091,7 +7491,14 @@
       "subject": "The apartment alone still improves the transfer",
       "action": "Compare $400 and $700 on one numerical scale",
       "decision": "The higher contribution bar and relaxed work posture communicate both benefits.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "relax",
+        "duration": 44,
+        "objects": [
+          "car"
+        ]
+      }
     },
     {
       "id": "S17-main",
@@ -7105,7 +7512,15 @@
       "subject": "Monthly rent versus excluded moving costs",
       "action": "Separate the unpriced box from the recurring $300",
       "decision": "Label the excluded moving costs to keep recurring costs scoped.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "scope",
+        "duration": 44,
+        "objects": [
+          "document",
+          "calendar"
+        ]
+      }
     },
     {
       "id": "S18-main",
@@ -7119,7 +7534,14 @@
       "subject": "Sam can leave work in place and enjoy dinner",
       "action": "Seat Sam at dinner while the laptop stays on its desk",
       "decision": "Let the useful room and dinner action breathe.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "meal",
+        "duration": 44,
+        "objects": [
+          "calendar"
+        ]
+      }
     },
     {
       "id": "S19-main",
@@ -7133,7 +7555,16 @@
       "subject": "Sam accepts a newer rental",
       "action": "Keep the keys attached and display the monthly difference",
       "decision": "Identify the rental arrangement so a transport amount cannot be mistaken for a loan.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "use",
+        "duration": 44,
+        "objects": [
+          "services",
+          "phone",
+          "car"
+        ]
+      }
     },
     {
       "id": "S20-newer-seat",
@@ -7147,7 +7578,14 @@
       "subject": "Comfort motivates the car choice",
       "action": "Let Sam enjoy the car; match against Alex's retained rental",
       "decision": "Enjoyment and Alex's older rental communicate the tradeoff.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "relax",
+        "duration": 44,
+        "objects": [
+          "car"
+        ]
+      }
     },
     {
       "id": "S20-alex-keeps-rental",
@@ -7161,7 +7599,14 @@
       "subject": "Comfort motivates the car choice",
       "action": "Let Sam enjoy the car; match against Alex's retained rental",
       "decision": "Enjoyment and Alex's older rental communicate the tradeoff.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "relax",
+        "duration": 44,
+        "objects": [
+          "car"
+        ]
+      }
     },
     {
       "id": "S21-quote-amount",
@@ -7175,7 +7620,15 @@
       "subject": "The $220 commitment in isolation",
       "action": "First see the keys and $220, then the finite $600 context",
       "decision": "The deliberately isolated quote is the point; avoid an explanatory headline.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "compare",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow"
+        ]
+      }
     },
     {
       "id": "S21-raise-amount",
@@ -7189,7 +7642,15 @@
       "subject": "The $220 commitment in isolation",
       "action": "First see the keys and $220, then the finite $600 context",
       "decision": "The deliberately isolated quote is the point; avoid an explanatory headline.",
-      "phaseOffsetFrames": 35
+      "phaseOffsetFrames": 35,
+      "motion": {
+        "kind": "compare",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow"
+        ]
+      }
     },
     {
       "id": "S22-rent-amount",
@@ -7203,7 +7664,12 @@
       "subject": "The overlooked apartment commitment",
       "action": "Reveal rent, then isolate the remaining $80",
       "decision": "The same finite raise now supports both costs; identify what the small remainder means.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "notice",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S22-eighty-remains",
@@ -7217,7 +7683,12 @@
       "subject": "The overlooked apartment commitment",
       "action": "Reveal rent, then isolate the remaining $80",
       "decision": "The same finite raise now supports both costs; identify what the small remainder means.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "notice",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S23-main",
@@ -7231,7 +7702,14 @@
       "subject": "Sam still feels financially okay",
       "action": "Show relief beside the positive $480 transfer",
       "decision": "The positive transfer is already clear; retain Sam's relieved reaction.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "relax",
+        "duration": 44,
+        "objects": [
+          "car"
+        ]
+      }
     },
     {
       "id": "S24-main",
@@ -7245,7 +7723,14 @@
       "subject": "Separate decisions share one savings consequence",
       "action": "Bring apartment and vehicle into one $520 commitment",
       "decision": "Converging object paths expose the combined cost.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "think",
+        "duration": 44,
+        "objects": [
+          "car"
+        ]
+      }
     },
     {
       "id": "S25-main",
@@ -7259,7 +7744,16 @@
       "subject": "Small services total $100",
       "action": "Combine three unpriced service icons into one exact total",
       "decision": "Existing service icons identify categories; reveal only their combined monthly amount.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "use",
+        "duration": 44,
+        "objects": [
+          "services",
+          "phone",
+          "car"
+        ]
+      }
     },
     {
       "id": "S26-used-service",
@@ -7273,7 +7767,16 @@
       "subject": "Enjoyment and cancellation friction",
       "action": "Watch a film, then put off a locked account",
       "decision": "The lock and distracted evening explain why services persist.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "use",
+        "duration": 44,
+        "objects": [
+          "services",
+          "phone",
+          "car"
+        ]
+      }
     },
     {
       "id": "S26-alex-pauses",
@@ -7287,7 +7790,12 @@
       "subject": "Enjoyment and cancellation friction",
       "action": "Watch a film, then put off a locked account",
       "decision": "The lock and distracted evening explain why services persist.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "notice",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S27-main",
@@ -7301,7 +7809,16 @@
       "subject": "Recurring costs exceed the raise by $20",
       "action": "Show the $620 total extending past a $600 boundary",
       "decision": "One short list links each commitment to the same allocation bar.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "allocate",
+        "duration": 44,
+        "objects": [
+          "money",
+          "allocation",
+          "arrow"
+        ]
+      }
     },
     {
       "id": "S28-main",
@@ -7315,7 +7832,16 @@
       "subject": "Sam actually saves $380",
       "action": "Confirm the destination after the $3,220 illustrated costs",
       "decision": "The calculation precedes the completed transfer; do not label the remainder saved early.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "transfer",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow",
+          "phone"
+        ]
+      }
     },
     {
       "id": "S29-main",
@@ -7329,7 +7855,12 @@
       "subject": "The smaller monthly transfer",
       "action": "Sam looks at $380 versus $400, with the $20 difference",
       "decision": "Resolve the opening through Sam's face and matched transfer entries.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "notice",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S30-main",
@@ -7343,7 +7874,14 @@
       "subject": "Two true outcomes coexist",
       "action": "Keep the useful comforts and the smaller saving equally visible",
       "decision": "Hold the simultaneous comfort benefit and smaller contribution without a verdict.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "relax",
+        "duration": 44,
+        "objects": [
+          "car"
+        ]
+      }
     },
     {
       "id": "S31-main",
@@ -7357,7 +7895,16 @@
       "subject": "Saving is still positive",
       "action": "Add a positive contribution; never imply a known total balance",
       "decision": "Keep the positive contribution and upward path; no collapsing account balance.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "transfer",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow",
+          "phone"
+        ]
+      }
     },
     {
       "id": "S32-sam-contributions",
@@ -7371,7 +7918,15 @@
       "subject": "Three-month accumulated contributions",
       "action": "Compare the actual sequence to the old pace on the same scale",
       "decision": "Period labels distinguish accumulated contributions from monthly pace.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "compare",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow"
+        ]
+      }
     },
     {
       "id": "S32-old-pace",
@@ -7385,7 +7940,15 @@
       "subject": "Three-month accumulated contributions",
       "action": "Compare the actual sequence to the old pace on the same scale",
       "decision": "Period labels distinguish accumulated contributions from monthly pace.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "compare",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow"
+        ]
+      }
     },
     {
       "id": "S33-monthly",
@@ -7399,7 +7962,15 @@
       "subject": "Monthly pace differs from accumulated contributions",
       "action": "Clear the monthly pair before the three-month pair",
       "decision": "The two time scales are the distinction; label them beside their calendar objects.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "compare",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow"
+        ]
+      }
     },
     {
       "id": "S33-three-months",
@@ -7413,7 +7984,15 @@
       "subject": "Monthly pace differs from accumulated contributions",
       "action": "Clear the monthly pair before the three-month pair",
       "decision": "The two time scales are the distinction; label them beside their calendar objects.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "compare",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow"
+        ]
+      }
     },
     {
       "id": "S34-sam-measures",
@@ -7427,7 +8006,12 @@
       "subject": "Receiving more differs from keeping more",
       "action": "Separate $3,600 income into $3,220 expenses and $380 saving",
       "decision": "Receiving and keeping are different measures; a short conceptual emphasis earns text.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "notice",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S34-alex-checks",
@@ -7441,7 +8025,12 @@
       "subject": "Receiving more differs from keeping more",
       "action": "Separate $3,600 income into $3,220 expenses and $380 saving",
       "decision": "Receiving and keeping are different measures; a short conceptual emphasis earns text.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "notice",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S35-main",
@@ -7455,7 +8044,16 @@
       "subject": "A calculated remainder becomes a real transfer",
       "action": "Show the savings destination and confirmation",
       "decision": "Transform the label only after the explicit transfer, not after arithmetic.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "transfer",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow",
+          "phone"
+        ]
+      }
     },
     {
       "id": "S36-main",
@@ -7469,7 +8067,15 @@
       "subject": "Net worth needs assets and liabilities",
       "action": "Show owned objects and obligations as separate inputs",
       "decision": "The balance diagram needs a concise own-minus-owe relationship.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "scope",
+        "duration": 44,
+        "objects": [
+          "document",
+          "calendar"
+        ]
+      }
     },
     {
       "id": "S37-main",
@@ -7483,7 +8089,15 @@
       "subject": "Cash contributions are the scope",
       "action": "Keep unpriced asset and debt symbols outside the boundary",
       "decision": "Bound the actual cash-saving measure rather than inventing net worth.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "scope",
+        "duration": 44,
+        "objects": [
+          "document",
+          "calendar"
+        ]
+      }
     },
     {
       "id": "S38-main",
@@ -7497,7 +8111,12 @@
       "subject": "Many small decisions add to one monthly cost",
       "action": "Let actual comfort objects converge onto the $620 total",
       "decision": "The three objects share one paycheck; recall the already-established overrun.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "notice",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S39-meal",
@@ -7511,7 +8130,14 @@
       "subject": "A dinner is paid once",
       "action": "Enjoy the meal; show one check mark and one calendar event",
       "decision": "The dated meal receipt establishes a payment made once.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "meal",
+        "duration": 44,
+        "objects": [
+          "calendar"
+        ]
+      }
     },
     {
       "id": "S39-paid-once",
@@ -7525,7 +8151,16 @@
       "subject": "A dinner is paid once",
       "action": "Enjoy the meal; show one check mark and one calendar event",
       "decision": "The dated meal receipt establishes a payment made once.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "calendar",
+        "duration": 44,
+        "objects": [
+          "calendar",
+          "arrow",
+          "money"
+        ]
+      }
     },
     {
       "id": "S40-first-month",
@@ -7539,7 +8174,16 @@
       "subject": "Recurring commitments repeat",
       "action": "Carry the same key symbol into successive unnumbered months",
       "decision": "Calendar repetition supports one compact recurring-payment label.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "calendar",
+        "duration": 44,
+        "objects": [
+          "calendar",
+          "arrow",
+          "money"
+        ]
+      }
     },
     {
       "id": "S40-next-month",
@@ -7553,7 +8197,16 @@
       "subject": "Recurring commitments repeat",
       "action": "Carry the same key symbol into successive unnumbered months",
       "decision": "Calendar repetition supports one compact recurring-payment label.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "calendar",
+        "duration": 44,
+        "objects": [
+          "calendar",
+          "arrow",
+          "money"
+        ]
+      }
     },
     {
       "id": "S41-main",
@@ -7567,7 +8220,16 @@
       "subject": "Most of the raise is already committed",
       "action": "Keep rent and rental markers fixed around the $80 unallocated part",
       "decision": "Previously reserved parts of the raise stay physically occupied.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "allocate",
+        "duration": 44,
+        "objects": [
+          "money",
+          "allocation",
+          "arrow"
+        ]
+      }
     },
     {
       "id": "S42-sam-tradeoff",
@@ -7581,7 +8243,12 @@
       "subject": "A service competes with saving",
       "action": "Pause before the selection, then show the $480 to $380 tradeoff",
       "decision": "Connect the optional service to its effect on the transfer.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "decide",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S42-alex-checks",
@@ -7595,7 +8262,12 @@
       "subject": "A service competes with saving",
       "action": "Pause before the selection, then show the $480 to $380 tradeoff",
       "decision": "Connect the optional service to its effect on the transfer.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "decide",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S43-hobby",
@@ -7609,7 +8281,14 @@
       "subject": "Alex also enjoys the raise",
       "action": "Play the guitar, then enjoy a meal; $200 is one shared budget",
       "decision": "Alex's hobby and meal make enjoyment tangible without moralizing.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "hobby",
+        "duration": 44,
+        "objects": [
+          "guitar"
+        ]
+      }
     },
     {
       "id": "S43-meal",
@@ -7623,7 +8302,14 @@
       "subject": "Alex also enjoys the raise",
       "action": "Play the guitar, then enjoy a meal; $200 is one shared budget",
       "decision": "Alex's hobby and meal make enjoyment tangible without moralizing.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "meal",
+        "duration": 44,
+        "objects": [
+          "calendar"
+        ]
+      }
     },
     {
       "id": "S44-main",
@@ -7637,7 +8323,16 @@
       "subject": "Alex transfers $800",
       "action": "Show the checked plan and actual savings destination",
       "decision": "Establish expenses, then remainder, then the actual monthly transfer.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "transfer",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow",
+          "phone"
+        ]
+      }
     },
     {
       "id": "S45-main",
@@ -7651,7 +8346,16 @@
       "subject": "Alex's $800 consists of old saving plus kept raise",
       "action": "Combine $400 and $400; leave $200 for enjoyment",
       "decision": "Two contribution segments explain the source of Alex's transfer.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "allocate",
+        "duration": 44,
+        "objects": [
+          "money",
+          "allocation",
+          "arrow"
+        ]
+      }
     },
     {
       "id": "S46-main",
@@ -7665,7 +8369,16 @@
       "subject": "Automation executes an affordable plan",
       "action": "Connect the checked $800 transfer to its scheduled event",
       "decision": "The schedule follows the checked budget; automation is not a rescue.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "calendar",
+        "duration": 44,
+        "objects": [
+          "calendar",
+          "arrow",
+          "money"
+        ]
+      }
     },
     {
       "id": "S47-main",
@@ -7679,7 +8392,12 @@
       "subject": "Alex sees the tradeoff before buying",
       "action": "Hold back an open hand; postpone an unpriced guitar upgrade",
       "decision": "The held-back hand and optional object show a conscious decision.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "decide",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S48-workspace-tradeoff",
@@ -7693,7 +8411,15 @@
       "subject": "Alex postpones comforts Sam receives",
       "action": "Match cramped and useful workspaces; then compare rental vehicles",
       "decision": "Equal paired comforts show the cost of Alex's alternative.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "compare",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow"
+        ]
+      }
     },
     {
       "id": "S48-rental-tradeoff",
@@ -7707,7 +8433,15 @@
       "subject": "Alex postpones comforts Sam receives",
       "action": "Match cramped and useful workspaces; then compare rental vehicles",
       "decision": "Equal paired comforts show the cost of Alex's alternative.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "compare",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow"
+        ]
+      }
     },
     {
       "id": "S49-main",
@@ -7721,7 +8455,15 @@
       "subject": "Equal starting assumptions have limits",
       "action": "Keep an unpriced safety shield outside the example boundary",
       "decision": "The bounded example and shield need a brief scope distinction.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "scope",
+        "duration": 44,
+        "objects": [
+          "document",
+          "calendar"
+        ]
+      }
     },
     {
       "id": "S50-alex-files",
@@ -7735,7 +8477,15 @@
       "subject": "First-three-month contribution difference",
       "action": "Build Alex's three $800 contributions; compare $1,560 and $2,400",
       "decision": "Establish both contribution totals before revealing their three-month difference.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "compare",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow"
+        ]
+      }
     },
     {
       "id": "S50-period-difference",
@@ -7749,7 +8499,15 @@
       "subject": "First-three-month contribution difference",
       "action": "Build Alex's three $800 contributions; compare $1,560 and $2,400",
       "decision": "Establish both contribution totals before revealing their three-month difference.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "compare",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow"
+        ]
+      }
     },
     {
       "id": "S51-same-raise",
@@ -7763,7 +8521,15 @@
       "subject": "Same raise, different monthly transfers",
       "action": "Separate equal $600 increases from $380/$800 and $420 gap",
       "decision": "Separate the monthly difference from the earlier period total.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "compare",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow"
+        ]
+      }
     },
     {
       "id": "S51-sam-monthly",
@@ -7777,7 +8543,15 @@
       "subject": "Same raise, different monthly transfers",
       "action": "Separate equal $600 increases from $380/$800 and $420 gap",
       "decision": "Separate the monthly difference from the earlier period total.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "compare",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow"
+        ]
+      }
     },
     {
       "id": "S52-sam-benefit",
@@ -7791,7 +8565,14 @@
       "subject": "Different benefits from the same opportunity",
       "action": "Show Sam using his workspace and Alex keeping contributions",
       "decision": "Let the comfort and contribution outcomes share equal visual weight.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "relax",
+        "duration": 44,
+        "objects": [
+          "car"
+        ]
+      }
     },
     {
       "id": "S52-alex-resolve",
@@ -7805,7 +8586,14 @@
       "subject": "Different benefits from the same opportunity",
       "action": "Show Sam using his workspace and Alex keeping contributions",
       "decision": "Let the comfort and contribution outcomes share equal visual weight.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "relax",
+        "duration": 44,
+        "objects": [
+          "car"
+        ]
+      }
     },
     {
       "id": "S53-cancel-impulse",
@@ -7819,7 +8607,12 @@
       "subject": "Sam catches the cancel-everything impulse",
       "action": "Start stressed, then consider the useful comforts",
       "decision": "The canceled impulse and retained useful comforts carry the change in thinking.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "notice",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S53-keep-useful-comforts",
@@ -7833,7 +8626,12 @@
       "subject": "Sam catches the cancel-everything impulse",
       "action": "Start stressed, then consider the useful comforts",
       "decision": "The canceled impulse and retained useful comforts carry the change in thinking.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "decide",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S54-main",
@@ -7847,7 +8645,14 @@
       "subject": "The whole list reveals the tradeoff",
       "action": "Retain one justified document; connect every cost to the remainder",
       "decision": "A short document list makes the commitments legible together.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "think",
+        "duration": 44,
+        "objects": [
+          "car"
+        ]
+      }
     },
     {
       "id": "S55-main",
@@ -7861,7 +8666,12 @@
       "subject": "Choose what to keep before committing",
       "action": "Reach toward a savings destination, without inventing a target",
       "decision": "The pause and chosen saving destination communicate intention.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "decide",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S56-cancel",
@@ -7875,7 +8685,16 @@
       "subject": "Cancellation changes the next illustrated billing month",
       "action": "Disable services and remove the $100 at the stated boundary",
       "decision": "Attach the cancellation boundary to the calendar; do not imply an immediate refund.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "cancel",
+        "duration": 44,
+        "objects": [
+          "services",
+          "phone",
+          "calendar"
+        ]
+      }
     },
     {
       "id": "S56-billing-boundary",
@@ -7889,7 +8708,16 @@
       "subject": "Cancellation changes the next illustrated billing month",
       "action": "Disable services and remove the $100 at the stated boundary",
       "decision": "Attach the cancellation boundary to the calendar; do not imply an immediate refund.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "cancel",
+        "duration": 44,
+        "objects": [
+          "services",
+          "phone",
+          "calendar"
+        ]
+      }
     },
     {
       "id": "S57-main",
@@ -7903,7 +8731,12 @@
       "subject": "The larger commitments remain",
       "action": "Retain apartment and rental symbols after services disappear",
       "decision": "The retained lease and keys communicate continuing commitments.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "notice",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S58-main",
@@ -7917,7 +8750,16 @@
       "subject": "The revised transfer improves to $480",
       "action": "Use one scale for $380 and the reclaimed $100",
       "decision": "Only reveal the improved transfer after the service removal and calculation.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "transfer",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow",
+          "phone"
+        ]
+      }
     },
     {
       "id": "S59-main",
@@ -7931,7 +8773,14 @@
       "subject": "Review larger choices when change is possible",
       "action": "Hold the keys and consult a future calendar opportunity",
       "decision": "The review folder and retained comforts show a considered future review.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "relax",
+        "duration": 44,
+        "objects": [
+          "car"
+        ]
+      }
     },
     {
       "id": "S60-main",
@@ -7945,7 +8794,16 @@
       "subject": "Another raise alone cannot settle the allocation",
       "action": "Show a blank new increase entering a recurring loop; invent no amount",
       "decision": "The next packet feeding another recurring cost conveys the conditional loop.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "allocate",
+        "duration": 44,
+        "objects": [
+          "money",
+          "allocation",
+          "arrow"
+        ]
+      }
     },
     {
       "id": "S61-earlier-inputs",
@@ -7959,7 +8817,16 @@
       "subject": "A separate unchanged-pattern annual illustration",
       "action": "Use month-three $380/$800 inputs, then annual $4,560/$9,600",
       "decision": "Mark the separate frozen-pattern illustration before showing annual figures.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "calendar",
+        "duration": 44,
+        "objects": [
+          "calendar",
+          "arrow",
+          "money"
+        ]
+      }
     },
     {
       "id": "S61-annual-contributions",
@@ -7973,7 +8840,16 @@
       "subject": "A separate unchanged-pattern annual illustration",
       "action": "Use month-three $380/$800 inputs, then annual $4,560/$9,600",
       "decision": "Mark the separate frozen-pattern illustration before showing annual figures.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "calendar",
+        "duration": 44,
+        "objects": [
+          "calendar",
+          "arrow",
+          "money"
+        ]
+      }
     },
     {
       "id": "S62-main",
@@ -7987,7 +8863,15 @@
       "subject": "The conditional $5,040 annual gap",
       "action": "Keep the same annual totals and exact difference; no growth forecast",
       "decision": "Show the annual gap only after both totals; retain the conditional scope.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "compare",
+        "duration": 44,
+        "objects": [
+          "money",
+          "arrow"
+        ]
+      }
     },
     {
       "id": "S63-close-illustration",
@@ -8001,7 +8885,14 @@
       "subject": "The illustration is conditional",
       "action": "Close the twelve-cell model and return to the actual revised $480 plan",
       "decision": "Close the illustration and return to the actual revised plan.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "close",
+        "duration": 44,
+        "objects": [
+          "document"
+        ]
+      }
     },
     {
       "id": "S63-current-plan",
@@ -8015,7 +8906,14 @@
       "subject": "The illustration is conditional",
       "action": "Close the twelve-cell model and return to the actual revised $480 plan",
       "decision": "Close the illustration and return to the actual revised plan.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "relax",
+        "duration": 44,
+        "objects": [
+          "car"
+        ]
+      }
     },
     {
       "id": "S64-main",
@@ -8029,7 +8927,12 @@
       "subject": "Comfort and saving can be mixed",
       "action": "Keep the useful desk and chosen saving in one balanced decision",
       "decision": "The two tangible destinations communicate the chosen mix.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "decide",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S65-main",
@@ -8043,7 +8946,12 @@
       "subject": "Same pay with a controlled plan",
       "action": "Keep $3,600 pay, $3,120 costs and $480 transfer clear",
       "decision": "Unchanged pay and revised allocations explain the improved plan.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "work",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S66-earlier-month-three",
@@ -8057,7 +8965,12 @@
       "subject": "Summarize the cause, not just the numbers",
       "action": "Recall $620 costs against $600 raise, then the corrected choice",
       "decision": "Familiar allocation and contribution objects carry the causal recap.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "notice",
+        "duration": 44,
+        "objects": []
+      }
     },
     {
       "id": "S66-current-plan",
@@ -8071,7 +8984,14 @@
       "subject": "Summarize the cause, not just the numbers",
       "action": "Recall $620 costs against $600 raise, then the corrected choice",
       "decision": "Familiar allocation and contribution objects carry the causal recap.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "relax",
+        "duration": 44,
+        "objects": [
+          "car"
+        ]
+      }
     },
     {
       "id": "S67-main",
@@ -8085,7 +9005,12 @@
       "subject": "The transfer matches Sam's plan",
       "action": "Check the confirmed $480 and relax with control",
       "decision": "Form the closing phrase from the checked plan and confirmed transfer.",
-      "phaseOffsetFrames": 0
+      "phaseOffsetFrames": 0,
+      "motion": {
+        "kind": "decide",
+        "duration": 44,
+        "objects": []
+      }
     }
   ],
   "gates": [

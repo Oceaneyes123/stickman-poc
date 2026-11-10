@@ -11,6 +11,7 @@ import {
 import { FinancialMotionContext } from "./context";
 import type { CompiledTypography } from "./plan";
 import { C } from "../design/tokens";
+import { EpisodeMotionContext } from "../storyboard/EpisodeMotionContext";
 
 export type TypographyReviewProps = { data: CompiledTypography | null };
 function Beat({
@@ -42,8 +43,10 @@ function Beat({
           text={beat.text.join("\n")}
           origin={beat.object}
           width={1000}
-          unit="line"
-          stagger={5}
+          unit="word"
+          stagger={4}
+          emphasis={beat.emphasis}
+          emphasisColor={beat.emphasisColor ? C[beat.emphasisColor] : undefined}
         />
         <AnimatedUnderline
           {...props}
@@ -96,10 +99,7 @@ function Beat({
                 ? (beat.itemFrames?.[i] ?? beat.from)
                 : beat.from
             }
-            line={
-              beat.leaderLine ??
-              (beat.text.length === 1 || beat.layout === "attached")
-            }
+            line={false}
           />
         ))}
       </>
@@ -141,14 +141,18 @@ export function EpisodeReview({
             ?.from,
         }}
       >
-        {renderArt(
-          panel.id,
-          <>
-            {beats.map((b) => (
-              <Beat key={b.id} beat={b} frame={frame} />
-            ))}
-          </>,
-        )}
+        <EpisodeMotionContext.Provider
+          value={panel.motion ? { frame, motion: panel.motion } : null}
+        >
+          {renderArt(
+            panel.id,
+            <>
+              {beats.map((b) => (
+                <Beat key={b.id} beat={b} frame={frame} />
+              ))}
+            </>,
+          )}
+        </EpisodeMotionContext.Provider>
       </FinancialMotionContext.Provider>
     </AbsoluteFill>
   );

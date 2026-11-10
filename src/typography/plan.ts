@@ -1,4 +1,5 @@
 import { compileTimeline, msToFrames } from "../timeline/compiler.ts";
+import type { EpisodeMotion } from "../storyboard/episodeMotion.ts";
 import type { Cue, CueFile, Timeline } from "../timeline/types.ts";
 import { example, calculateBudget } from "../finance/math.ts";
 import {
@@ -75,6 +76,8 @@ export type TypographyBeat = {
   rowGap?: number;
   rotation?: { degrees: number; x: number; y: number };
   morphBefore?: string;
+  emphasis?: string;
+  emphasisColor?: "teal" | "red" | "yellow";
 };
 export type TypographyPlan = {
   scenes: {
@@ -89,6 +92,7 @@ export type TypographyPlan = {
     sceneId: string;
     anchor: TypeAnchor;
     phaseOffsetFrames: number;
+    motion?: Omit<EpisodeMotion, "from"> & { anchor?: TypeAnchor };
   }[];
   gates: { sceneId: string; key: string; anchor: TypeAnchor }[];
 };
@@ -114,7 +118,13 @@ export type CompiledTypography = {
     until: number;
     itemFrames?: number[];
   })[];
-  panels: { id: string; sceneId: string; from: number; until: number }[];
+  panels: {
+    id: string;
+    sceneId: string;
+    from: number;
+    until: number;
+    motion?: EpisodeMotion;
+  }[];
   gates: { sceneId: string; value: number; from: number }[];
   confirmations: { sceneId: string; from: number }[];
   shortHolds: string[];
@@ -203,6 +213,12 @@ export function compileTypography(
       sceneId: p.sceneId,
       from,
       until: s.from + s.durationInFrames,
+      motion: p.motion
+        ? {
+            ...p.motion,
+            from: p.motion.anchor ? frame(p.motion.anchor) : from + 4,
+          }
+        : undefined,
     };
   });
   for (let i = 0; i < panels.length - 1; i++) {
@@ -216,6 +232,16 @@ export function compileTypography(
     panels[i].until = panels[i + 1].from;
   }
   const shortHolds: string[] = [];
+  for (const p of panels)
+    if (p.motion) {
+      if (!Number.isFinite(p.motion.duration) || p.motion.duration <= 0)
+        throw new Error(`Invalid panel motion ${p.id}`);
+      p.motion.from = Math.max(p.from, Math.min(p.until - 2, p.motion.from));
+      p.motion.duration = Math.max(
+        1,
+        Math.min(p.motion.duration, p.until - p.motion.from - 1),
+      );
+    }
   const beats = plan.beats.map((b) => {
     const s = scene(b.sceneId),
       from = frame(b.anchor);
@@ -233,17 +259,26 @@ export function compileTypography(
         ? b.text.map((_, i) => from + (b.listOffsetsFrames?.[i] ?? 0))
         : undefined);
     const lastItem = itemFrames?.length ? Math.max(...itemFrames) : from;
+    const wordStagger =
+      b.preset === "headline"
+        ? Math.max(0, b.text.join(" ").split(" ").length - 1) * 4
+        : 0;
     const until = Math.min(
       s.from + s.durationInFrames,
       b.holdToSceneEnd
         ? Infinity
-        : lastItem + b.enterFrames + b.readingHoldFrames + b.exitFrames,
+        : lastItem +
+            wordStagger +
+            b.enterFrames +
+            b.readingHoldFrames +
+            b.exitFrames,
       !b.holdToSceneEnd && next ? frame(next.anchor) : Infinity,
       !b.persistThroughPanels ? (cut?.from ?? Infinity) : Infinity,
     );
     if (
       b.text.length &&
-      until - lastItem < b.enterFrames + b.readingHoldFrames + b.exitFrames
+      until - lastItem - wordStagger <
+        b.enterFrames + b.readingHoldFrames + b.exitFrames
     )
       shortHolds.push(b.id);
     return { ...b, from, until, itemFrames };

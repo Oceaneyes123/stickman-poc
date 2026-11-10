@@ -33,6 +33,7 @@ const { values } = parseArgs({
     out: { type: "string" },
     full: { type: "boolean" },
     "skip-boundaries": { type: "boolean" },
+    "prepare-only": { type: "boolean" },
   },
 });
 const output = resolve(
@@ -105,6 +106,10 @@ copyFileSync(`${audio}/narration.wav`, join(output, "public/narration.wav"));
 copyFileSync("public/fonts/Inter.ttf", join(output, "public/fonts/Inter.ttf"));
 save(join(output, "public/typography-review.json"), data);
 save(join(output, "compiled.json"), data);
+if (values["prepare-only"]) {
+  console.log(`Prepared preview without rendering video: ${output}`);
+  process.exit(0);
+}
 const checkpoints = new Set<number>();
 for (const p of data.panels) {
   checkpoints.add(p.from);

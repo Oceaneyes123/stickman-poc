@@ -60,6 +60,7 @@ export function KineticHeadline(
     unit?: "word" | "line" | "character";
     stagger?: number;
     emphasis?: string;
+    emphasisColor?: string;
     origin?: { x: number; y: number };
   },
 ) {
@@ -110,7 +111,10 @@ export function KineticHeadline(
                   style={{
                     display: "inline-block",
                     translate: `0 ${(1 - reveal) * 110}%`,
-                    color: unit === props.emphasis ? C.teal : undefined,
+                    color:
+                      unit === props.emphasis
+                        ? (props.emphasisColor ?? C.teal)
+                        : undefined,
                   }}
                 >
                   {unit}
@@ -242,7 +246,7 @@ export function ObjectAttachedLabel(
   if (!p.visible) return null;
   return (
     <g opacity={p.opacity} stroke="none" fontFamily={font}>
-      {props.line !== false && (
+      {props.line === true && (
         <path
           d={`M${props.object.x} ${props.object.y}L${props.x} ${props.y + 16}`}
           fill="none"
@@ -255,15 +259,19 @@ export function ObjectAttachedLabel(
       )}
       <text
         x={props.x}
-        y={props.y - 10 * (1 - p.movement)}
+        y={props.y - 26 * (1 - p.movement)}
         textAnchor={props.anchor ?? "start"}
         fontSize={props.size ?? 36}
-        fontWeight={650}
+        fontWeight={750}
         fill={props.color ?? C.navy}
         paintOrder="stroke"
         stroke="#F4F2EB"
         strokeWidth={7}
         strokeLinejoin="round"
+        style={{
+          transformOrigin: `${props.x}px ${props.y}px`,
+          scale: 0.86 + 0.14 * p.movement,
+        }}
       >
         {props.text}
       </text>

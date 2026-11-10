@@ -396,3 +396,111 @@ A receipt check requires the bank-transfer action, or the explicitly stated canc
 | S56 | p019-s002 / phrase | end |
 | S58 | p019-s007 / p019-w084 | end |
 | S67 | p023-s005 / p023-w063 | end |
+
+## Character, object and word motion revision — 2026-11-10
+
+Every panel now declares one bounded action preset. The preview samples articulated poses from that frame window, recomputes grips before drawing held props, and then holds still. Laptop carrying uses the existing gait planner. Work and signing use constrained hand targets; remote, phone, keys and guitar remain attached to the current computed hand. Scene windows and narration are unchanged.
+
+Text leader lines are removed. Context labels use a spring-driven lift and scale, heavier weight and larger size. Key phrases use masked word entrances with four-frame staggers and semantic color emphasis. Underlines remain only on deliberate headings. No subtitle track or continuous idle loop was added.
+
+| Panel | Action | Duration cap | Moving objects |
+|---|---|---|---|
+| S01-raise | celebrate | 44 frames, bounded by panel | character action only |
+| S01-reaction | notice | 44 frames, bounded by panel | character action only |
+| S02-workspace | use | 44 frames, bounded by panel | services, phone, car |
+| S02-rental | use | 44 frames, bounded by panel | services, phone, car |
+| S02-entertainment | use | 44 frames, bounded by panel | services, phone, car |
+| S03-check | notice | 44 frames, bounded by panel | character action only |
+| S03-closer | notice | 44 frames, bounded by panel | character action only |
+| S04-working | work | 44 frames, bounded by panel | character action only |
+| S04-commitments | work | 44 frames, bounded by panel | character action only |
+| S05-main | compare | 44 frames, bounded by panel | money, arrow |
+| S06-pay | transfer | 44 frames, bounded by panel | money, arrow, phone |
+| S06-remaining | transfer | 44 frames, bounded by panel | money, arrow, phone |
+| S06-transfer | transfer | 44 frames, bounded by panel | money, arrow, phone |
+| S07-main | scope | 44 frames, bounded by panel | document, calendar |
+| S08-cramped | think | 44 frames, bounded by panel | car |
+| S08-older-rental | think | 44 frames, bounded by panel | car |
+| S09-main | allocate | 44 frames, bounded by panel | money, allocation, arrow |
+| S10-main | decide | 44 frames, bounded by panel | character action only |
+| S11-main | compare | 44 frames, bounded by panel | money, arrow |
+| S12-lift-phone | use | 44 frames, bounded by panel | services, phone, car |
+| S12-enter-room | walk | 48 frames, bounded by panel | laptop |
+| S12-open-laptop | work | 44 frames, bounded by panel | character action only |
+| S12-notice-space | relax | 44 frames, bounded by panel | car |
+| S13-main | allocate | 44 frames, bounded by panel | money, allocation, arrow |
+| S14-sign | sign | 44 frames, bounded by panel | document |
+| S14-alex-keeps-home | think | 44 frames, bounded by panel | car |
+| S15-main | transfer | 44 frames, bounded by panel | money, arrow, phone |
+| S16-main | relax | 44 frames, bounded by panel | car |
+| S17-main | scope | 44 frames, bounded by panel | document, calendar |
+| S18-main | meal | 44 frames, bounded by panel | calendar |
+| S19-main | use | 44 frames, bounded by panel | services, phone, car |
+| S20-newer-seat | relax | 44 frames, bounded by panel | car |
+| S20-alex-keeps-rental | relax | 44 frames, bounded by panel | car |
+| S21-quote-amount | compare | 44 frames, bounded by panel | money, arrow |
+| S21-raise-amount | compare | 44 frames, bounded by panel | money, arrow |
+| S22-rent-amount | notice | 44 frames, bounded by panel | character action only |
+| S22-eighty-remains | notice | 44 frames, bounded by panel | character action only |
+| S23-main | relax | 44 frames, bounded by panel | car |
+| S24-main | think | 44 frames, bounded by panel | car |
+| S25-main | use | 44 frames, bounded by panel | services, phone, car |
+| S26-used-service | use | 44 frames, bounded by panel | services, phone, car |
+| S26-alex-pauses | notice | 44 frames, bounded by panel | character action only |
+| S27-main | allocate | 44 frames, bounded by panel | money, allocation, arrow |
+| S28-main | transfer | 44 frames, bounded by panel | money, arrow, phone |
+| S29-main | notice | 44 frames, bounded by panel | character action only |
+| S30-main | relax | 44 frames, bounded by panel | car |
+| S31-main | transfer | 44 frames, bounded by panel | money, arrow, phone |
+| S32-sam-contributions | compare | 44 frames, bounded by panel | money, arrow |
+| S32-old-pace | compare | 44 frames, bounded by panel | money, arrow |
+| S33-monthly | compare | 44 frames, bounded by panel | money, arrow |
+| S33-three-months | compare | 44 frames, bounded by panel | money, arrow |
+| S34-sam-measures | notice | 44 frames, bounded by panel | character action only |
+| S34-alex-checks | notice | 44 frames, bounded by panel | character action only |
+| S35-main | transfer | 44 frames, bounded by panel | money, arrow, phone |
+| S36-main | scope | 44 frames, bounded by panel | document, calendar |
+| S37-main | scope | 44 frames, bounded by panel | document, calendar |
+| S38-main | notice | 44 frames, bounded by panel | character action only |
+| S39-meal | meal | 44 frames, bounded by panel | calendar |
+| S39-paid-once | calendar | 44 frames, bounded by panel | calendar, arrow, money |
+| S40-first-month | calendar | 44 frames, bounded by panel | calendar, arrow, money |
+| S40-next-month | calendar | 44 frames, bounded by panel | calendar, arrow, money |
+| S41-main | allocate | 44 frames, bounded by panel | money, allocation, arrow |
+| S42-sam-tradeoff | decide | 44 frames, bounded by panel | character action only |
+| S42-alex-checks | decide | 44 frames, bounded by panel | character action only |
+| S43-hobby | hobby | 44 frames, bounded by panel | guitar |
+| S43-meal | meal | 44 frames, bounded by panel | calendar |
+| S44-main | transfer | 44 frames, bounded by panel | money, arrow, phone |
+| S45-main | allocate | 44 frames, bounded by panel | money, allocation, arrow |
+| S46-main | calendar | 44 frames, bounded by panel | calendar, arrow, money |
+| S47-main | decide | 44 frames, bounded by panel | character action only |
+| S48-workspace-tradeoff | compare | 44 frames, bounded by panel | money, arrow |
+| S48-rental-tradeoff | compare | 44 frames, bounded by panel | money, arrow |
+| S49-main | scope | 44 frames, bounded by panel | document, calendar |
+| S50-alex-files | compare | 44 frames, bounded by panel | money, arrow |
+| S50-period-difference | compare | 44 frames, bounded by panel | money, arrow |
+| S51-same-raise | compare | 44 frames, bounded by panel | money, arrow |
+| S51-sam-monthly | compare | 44 frames, bounded by panel | money, arrow |
+| S52-sam-benefit | relax | 44 frames, bounded by panel | car |
+| S52-alex-resolve | relax | 44 frames, bounded by panel | car |
+| S53-cancel-impulse | notice | 44 frames, bounded by panel | character action only |
+| S53-keep-useful-comforts | decide | 44 frames, bounded by panel | character action only |
+| S54-main | think | 44 frames, bounded by panel | car |
+| S55-main | decide | 44 frames, bounded by panel | character action only |
+| S56-cancel | cancel | 44 frames, bounded by panel | services, phone, calendar |
+| S56-billing-boundary | cancel | 44 frames, bounded by panel | services, phone, calendar |
+| S57-main | notice | 44 frames, bounded by panel | character action only |
+| S58-main | transfer | 44 frames, bounded by panel | money, arrow, phone |
+| S59-main | relax | 44 frames, bounded by panel | car |
+| S60-main | allocate | 44 frames, bounded by panel | money, allocation, arrow |
+| S61-earlier-inputs | calendar | 44 frames, bounded by panel | calendar, arrow, money |
+| S61-annual-contributions | calendar | 44 frames, bounded by panel | calendar, arrow, money |
+| S62-main | compare | 44 frames, bounded by panel | money, arrow |
+| S63-close-illustration | close | 44 frames, bounded by panel | document |
+| S63-current-plan | relax | 44 frames, bounded by panel | car |
+| S64-main | decide | 44 frames, bounded by panel | character action only |
+| S65-main | work | 44 frames, bounded by panel | character action only |
+| S66-earlier-month-three | notice | 44 frames, bounded by panel | character action only |
+| S66-current-plan | relax | 44 frames, bounded by panel | car |
+| S67-main | decide | 44 frames, bounded by panel | character action only |

@@ -1,7 +1,11 @@
 import { useContext, type ReactNode } from "react";
 import { Composition, registerRoot, staticFile } from "remotion";
 import { AnimatedNumber } from "../typography";
-import { useActorFactory, useObjectMotion, EpisodeMotionContext } from "./EpisodeMotionContext";
+import {
+  useActorFactory,
+  useObjectMotion,
+  EpisodeMotionContext,
+} from "./EpisodeMotionContext";
 import { interactionPulse } from "./episodeMotion";
 import { TypographyGallery } from "../typography/Gallery";
 import {
@@ -15,9 +19,7 @@ import {
 import type { CompiledTypography } from "../typography/plan";
 import { ReferenceCharacterRig } from "../characters/ReferenceCharacterRig";
 import {
-  referenceSkeleton,
   type ReferenceExpression,
-  type ReferencePose,
 } from "../characters/referenceModel";
 import { placeHands, toWorld } from "../characters/staging";
 import type { Point } from "../characters/kinematics";
@@ -207,66 +209,88 @@ const Phone = ({
   comparison?: number[];
   selected?: boolean;
   statement?: boolean;
-}) => (
-  <g
-    transform={`translate(${grip.x - 25},${grip.y - 125})`}
-    stroke={C.navy}
-    strokeWidth={3}
-  >
-    <rect width={100} height={145} rx={11} fill={C.navy} />
-    <rect x={7} y={9} width={86} height={119} rx={6} fill={C.white} />
-    <path d="M35 15H65" strokeWidth={4} />
-    {amount !== undefined && (
-      <Money
-        x={50}
-        y={83}
-        size={usd(amount).length > 5 ? 22 : 29}
-        value={amount}
-        anchor="middle"
-        fill={C.teal}
-      />
-    )}{" "}
-    {comparison &&
-      comparison.map((v, i) => (
-        <Money
-          key={i}
-          x={50}
-          y={62 + i * 42}
-          size={25}
-          value={v}
-          anchor="middle"
+}) => {
+  const animation = useObjectMotion("phone");
+  const finance = useContext(FinancialMotionContext);
+  const tap =
+    animation && finance?.confirmationAt !== undefined
+      ? Math.max(
+          0,
+          Math.min(1, (animation.frame - finance.confirmationAt) / 18),
+        )
+      : 0;
+  return (
+    <g
+      transform={`translate(${grip.x - 25},${grip.y - 125})`}
+      stroke={C.navy}
+      strokeWidth={3}
+    >
+      <rect width={100} height={145} rx={11} fill={C.navy} />
+      <rect x={7} y={9} width={86} height={119} rx={6} fill={C.white} />
+      {tap > 0 && tap < 1 && (
+        <circle
+          cx={72}
+          cy={108}
+          r={5 + 20 * tap}
+          fill="none"
+          stroke={C.teal}
+          strokeWidth={3}
+          opacity={1 - tap}
         />
-      ))}
-    {amount === undefined &&
-      !comparison &&
-      !statement &&
-      [0, 1, 2].map((i) => (
-        <g key={i}>
-          <rect
-            x={17}
-            y={32 + i * 29}
-            width={66}
-            height={23}
-            rx={3}
-            fill={selected && i === 0 ? C.yellow : cinema.material.fabric}
-          />
-          <path d={`M25 ${38 + i * 29}l12 6l-12 6Z`} fill={C.navy} />
-        </g>
-      ))}
-    {statement && (
-      <g stroke="none">
-        <rect x={17} y={40} width={66} height={14} fill={C.yellow} />
-        <rect
-          x={17}
-          y={85}
-          width={(66 * budget.sam) / budget.before}
-          height={14}
+      )}
+      <path d="M35 15H65" strokeWidth={4} />
+      {amount !== undefined && (
+        <Money
+          x={50}
+          y={83}
+          size={usd(amount).length > 5 ? 22 : 29}
+          value={amount}
+          anchor="middle"
           fill={C.teal}
         />
-      </g>
-    )}
-  </g>
-);
+      )}{" "}
+      {comparison &&
+        comparison.map((v, i) => (
+          <Money
+            key={i}
+            x={50}
+            y={62 + i * 42}
+            size={25}
+            value={v}
+            anchor="middle"
+          />
+        ))}
+      {amount === undefined &&
+        !comparison &&
+        !statement &&
+        [0, 1, 2].map((i) => (
+          <g key={i}>
+            <rect
+              x={17}
+              y={32 + i * 29}
+              width={66}
+              height={23}
+              rx={3}
+              fill={selected && i === 0 ? C.yellow : cinema.material.fabric}
+            />
+            <path d={`M25 ${38 + i * 29}l12 6l-12 6Z`} fill={C.navy} />
+          </g>
+        ))}
+      {statement && (
+        <g stroke="none">
+          <rect x={17} y={40} width={66} height={14} fill={C.yellow} />
+          <rect
+            x={17}
+            y={85}
+            width={(66 * budget.sam) / budget.before}
+            height={14}
+            fill={C.teal}
+          />
+        </g>
+      )}
+    </g>
+  );
+};
 const Book = ({
   x = 1000,
   y = 650,
@@ -301,31 +325,38 @@ const Calendar = ({
   x?: number;
   y?: number;
   repeat?: boolean;
-}) => (
-  <g transform={`translate(${x},${y})`} stroke={C.navy} strokeWidth={4}>
-    <path d="M0 0H340V300H0Z" fill={C.white} />
-    <path d="M0 0H340V55H0Z" fill={repeat ? C.red : C.yellow} />
-    {Array.from({ length: 20 }, (_, i) => (
-      <rect
-        key={i}
-        x={25 + (i % 5) * 60}
-        y={85 + Math.floor(i / 5) * 48}
-        width={38}
-        height={26}
-        rx={3}
-        fill={i === 12 ? C.teal : cinema.material.fabric}
-        stroke="none"
-      />
-    ))}
-    {repeat && (
-      <path
-        d="M100 170Q170 100 240 170 M215 133L240 170H195"
-        fill="none"
-        strokeWidth={7}
-      />
-    )}
-  </g>
-);
+}) => {
+  const animation = useObjectMotion("calendar");
+  return (
+    <g
+      transform={`translate(${x},${y}) rotate(${animation ? -7 * (1 - animation.p) : 0} 165 115)`}
+      stroke={C.navy}
+      strokeWidth={4}
+    >
+      <path d="M0 0H340V300H0Z" fill={C.white} />
+      <path d="M0 0H340V55H0Z" fill={repeat ? C.red : C.yellow} />
+      {Array.from({ length: 20 }, (_, i) => (
+        <rect
+          key={i}
+          x={25 + (i % 5) * 60}
+          y={85 + Math.floor(i / 5) * 48}
+          width={38}
+          height={26}
+          rx={3}
+          fill={i === 12 ? C.teal : cinema.material.fabric}
+          stroke="none"
+        />
+      ))}
+      {repeat && (
+        <path
+          d="M100 170Q170 100 240 170 M215 133L240 170H195"
+          fill="none"
+          strokeWidth={7}
+        />
+      )}
+    </g>
+  );
+};
 const Car = ({
   old = false,
   x = 960,
@@ -336,26 +367,29 @@ const Car = ({
   x?: number;
   y?: number;
   scale?: number;
-}) => (
-  <g
-    transform={`translate(${x},${y}) scale(${scale})`}
-    stroke={C.navy}
-    strokeWidth={7}
-  >
-    <path
-      d="M-450 0L-360 -190L-50 -230L130 -80L360 -40L390 100H-510V25Z"
-      fill={old ? cinema.material.fabric : C.teal}
-    />
-    <path d="M-320 -160L-70 -195L50 -85H-360Z" fill="none" />
-    <path d="M-140 -182V-85 M100 -60V80" fill="none" />
-    {[-320, 210].map((cx) => (
-      <g key={cx}>
-        <circle cx={cx} cy={100} r={72} fill={C.navy} />
-        <circle cx={cx} cy={100} r={33} fill={C.white} />
-      </g>
-    ))}
-  </g>
-);
+}) => {
+  const animation = useObjectMotion("car");
+  return (
+    <g
+      transform={`translate(${x - (animation ? 110 * (1 - animation.p) : 0)},${y}) scale(${scale})`}
+      stroke={C.navy}
+      strokeWidth={7}
+    >
+      <path
+        d="M-450 0L-360 -190L-50 -230L130 -80L360 -40L390 100H-510V25Z"
+        fill={old ? cinema.material.fabric : C.teal}
+      />
+      <path d="M-320 -160L-70 -195L50 -85H-360Z" fill="none" />
+      <path d="M-140 -182V-85 M100 -60V80" fill="none" />
+      {[-320, 210].map((cx) => (
+        <g key={cx}>
+          <circle cx={cx} cy={100} r={72} fill={C.navy} />
+          <circle cx={cx} cy={100} r={33} fill={C.white} />
+        </g>
+      ))}
+    </g>
+  );
+};
 const Cabin = ({ old = false }: { old?: boolean }) => {
   const makeActor = useActorFactory();
   const sam = makeActor({
@@ -441,7 +475,9 @@ const DeskAction = ({
 }) => {
   const makeActor = useActorFactory();
   const performance = useContext(EpisodeMotionContext);
-  const pulse = performance ? interactionPulse(performance.frame, performance.motion) : 0;
+  const pulse = performance
+    ? interactionPulse(performance.frame, performance.motion)
+    : 0;
   const person = makeActor({
     identity,
     x: 700,
@@ -451,12 +487,22 @@ const DeskAction = ({
   });
   const grip = toWorld(person, person.rig.rightArm.end);
   if (action === "sign" || action === "list")
-    placeHands(person, { right: { x: 855 + 18 * pulse, y: 665 - 5 * pulse } }, 7);
+    placeHands(
+      person,
+      { right: { x: 855 + 18 * pulse, y: 665 - 5 * pulse } },
+      7,
+    );
   if (action === "work")
-    placeHands(person, { right: { x: 780, y: 685 - 5 * pulse }, left: { x: 655, y: 685 - 2 * pulse } });
+    placeHands(person, {
+      right: { x: 780, y: 685 - 5 * pulse },
+      left: { x: 655, y: 685 - 2 * pulse },
+    });
   if (action === "carry") {
     const travel = toWorld(person, person.rig.hip).x - 700;
-    placeHands(person, { right: { x: 820 + travel, y: 650 }, left: { x: 680 + travel, y: 650 } });
+    placeHands(person, {
+      right: { x: 820 + travel, y: 650 },
+      left: { x: 680 + travel, y: 650 },
+    });
   }
   const hand = toWorld(person, person.rig.rightArm.end);
   return (
@@ -503,6 +549,21 @@ const DeskAction = ({
           />
           <path
             d="M835 658q10 12 20 0q10 -8 18 3"
+            pathLength={1}
+            strokeDasharray={performance ? 1 : undefined}
+            strokeDashoffset={
+              performance
+                ? 1 -
+                  Math.min(
+                    1,
+                    Math.max(
+                      0,
+                      (performance.frame - performance.motion.from) /
+                        performance.motion.duration,
+                    ),
+                  )
+                : undefined
+            }
             stroke={C.navy}
             strokeWidth={3}
             fill="none"
@@ -547,16 +608,22 @@ const Arrow = ({
   y?: number;
   width?: number;
   color?: string;
-}) => (
-  <path
-    d={`M${x} ${y}h${width}m-30 -24l30 24l-30 24`}
-    stroke={color}
-    strokeWidth={8}
-    fill="none"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  />
-);
+}) => {
+  const animation = useObjectMotion("arrow");
+  return (
+    <path
+      d={`M${x} ${y}h${width}m-30 -24l30 24l-30 24`}
+      stroke={color}
+      strokeWidth={8}
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      pathLength={1}
+      strokeDasharray={animation ? 1 : undefined}
+      strokeDashoffset={animation ? 1 - animation.p : undefined}
+    />
+  );
+};
 const Check = ({
   x,
   y,
@@ -600,7 +667,10 @@ const CoinStack = ({
   width?: number;
 }) => {
   const motion = useFinancialMotion(value);
-  const height = (value / max) * 380 * (motion?.progress ?? 1);
+  const object = useObjectMotion("money");
+  const build =
+    object && (!motion || motion.from < motion.sceneFrom) ? object.p : 1;
+  const height = (value / max) * 380 * (motion?.progress ?? 1) * build;
   return (
     <g opacity={motion && motion.frame < motion.from ? 0 : 1}>
       <path
@@ -679,6 +749,8 @@ const Allocation = ({
   total?: number;
   amounts?: boolean;
 }) => {
+  const object = useObjectMotion("allocation");
+  const finance = useContext(FinancialMotionContext);
   const parts = allocationParts(stage),
     added = parts.reduce((a, b) => a + b, 0),
     left = Math.max(0, total - added);
@@ -708,7 +780,20 @@ const Allocation = ({
             <rect
               x={start}
               y={y}
-              width={w}
+              width={
+                w *
+                (finance?.gates.some((g) => g.value === v)
+                  ? Math.max(
+                      0,
+                      Math.min(
+                        1,
+                        (finance.frame -
+                          finance.gates.find((g) => g.value === v)!.from) /
+                          18,
+                      ),
+                    )
+                  : (object?.p ?? 1))
+              }
               height={135}
               fill={cost ? C.red : C.yellow}
               stroke={C.navy}
@@ -771,37 +856,47 @@ const Sofa = () => (
     <path d="M365 870V940M1030 870V940" fill="none" />
   </g>
 );
-const TV = ({ selected = false }: { selected?: boolean }) => (
-  <g stroke={C.navy} strokeWidth={7}>
-    <rect x={1240} y={380} width={470} height={300} rx={15} fill={C.navy} />
-    <rect
-      x={1260}
-      y={400}
-      width={430}
-      height={255}
-      rx={6}
-      fill={cinema.environment.glass}
-    />
-    {[0, 1, 2].map((i) => (
-      <g key={i}>
-        <rect
-          x={1295 + i * 120}
-          y={470}
-          width={95}
-          height={115}
-          rx={8}
-          fill={i === 0 && selected ? C.yellow : C.white}
-        />
-        <path
-          d={`M${1325 + i * 120} 505l35 24l-35 24Z`}
-          fill={C.navy}
-          stroke="none"
-        />
-      </g>
-    ))}
-    <path d="M1475 680V740M1390 740H1560" fill="none" />
-  </g>
-);
+const TV = ({ selected = false }: { selected?: boolean }) => {
+  const animation = useObjectMotion("services");
+  return (
+    <g stroke={C.navy} strokeWidth={7}>
+      <rect x={1240} y={380} width={470} height={300} rx={15} fill={C.navy} />
+      <rect
+        x={1260}
+        y={400}
+        width={430}
+        height={255}
+        rx={6}
+        fill={cinema.environment.glass}
+      />
+      {[0, 1, 2].map((i) => (
+        <g
+          key={i}
+          opacity={
+            animation
+              ? Math.min(1, Math.max(0, (animation.p * 44 - i * 6) / 18))
+              : 1
+          }
+        >
+          <rect
+            x={1295 + i * 120}
+            y={470}
+            width={95}
+            height={115}
+            rx={8}
+            fill={i === 0 && selected ? C.yellow : C.white}
+          />
+          <path
+            d={`M${1325 + i * 120} 505l35 24l-35 24Z`}
+            fill={C.navy}
+            stroke="none"
+          />
+        </g>
+      ))}
+      <path d="M1475 680V740M1390 740H1560" fill="none" />
+    </g>
+  );
+};
 const Entertainment = ({ locked = false }: { locked?: boolean }) => {
   const makeActor = useActorFactory();
   const sam = makeActor({
@@ -1151,76 +1246,76 @@ const LifestyleCompare = ({
 const EqualStart = ({ full = false }: { full?: boolean }) => {
   const makeActor = useActorFactory();
   return (
-  <ComparisonScene
-    left={
-      <>
-        <Actor
-          actor={makeActor({ x: 320, scale: 2.25, expression: "curious" })}
-        />
-        <Money
-          x={570}
-          y={460}
-          value={full ? example.income : example.raise}
-          size={75}
-        />
-        {full && (
-          <>
-            <Money
-              x={570}
-              y={590}
-              value={example.expenses}
-              size={58}
-              fill={C.red}
-            />
-            <Money
-              x={570}
-              y={720}
-              value={budget.before}
-              size={64}
-              fill={C.teal}
-            />
-          </>
-        )}
-      </>
-    }
-    right={
-      <>
-        <Actor
-          actor={makeActor({
-            identity: "Alex",
-            x: 320,
-            scale: 2.25,
-            expression: "curious",
-          })}
-        />
-        <Money
-          x={570}
-          y={460}
-          value={full ? example.income : example.raise}
-          size={75}
-        />
-        {full && (
-          <>
-            <Money
-              x={570}
-              y={590}
-              value={example.expenses}
-              size={58}
-              fill={C.red}
-            />
-            <Money
-              x={570}
-              y={720}
-              value={budget.before}
-              size={64}
-              fill={C.teal}
-            />
-          </>
-        )}
-      </>
-    }
-  />
-);
+    <ComparisonScene
+      left={
+        <>
+          <Actor
+            actor={makeActor({ x: 320, scale: 2.25, expression: "curious" })}
+          />
+          <Money
+            x={570}
+            y={460}
+            value={full ? example.income : example.raise}
+            size={75}
+          />
+          {full && (
+            <>
+              <Money
+                x={570}
+                y={590}
+                value={example.expenses}
+                size={58}
+                fill={C.red}
+              />
+              <Money
+                x={570}
+                y={720}
+                value={budget.before}
+                size={64}
+                fill={C.teal}
+              />
+            </>
+          )}
+        </>
+      }
+      right={
+        <>
+          <Actor
+            actor={makeActor({
+              identity: "Alex",
+              x: 320,
+              scale: 2.25,
+              expression: "curious",
+            })}
+          />
+          <Money
+            x={570}
+            y={460}
+            value={full ? example.income : example.raise}
+            size={75}
+          />
+          {full && (
+            <>
+              <Money
+                x={570}
+                y={590}
+                value={example.expenses}
+                size={58}
+                fill={C.red}
+              />
+              <Money
+                x={570}
+                y={720}
+                value={budget.before}
+                size={64}
+                fill={C.teal}
+              />
+            </>
+          )}
+        </>
+      }
+    />
+  );
 };
 const AnnualGrid = ({ totals = false }: { totals?: boolean }) => (
   <>
@@ -1261,34 +1356,36 @@ const AnnualGrid = ({ totals = false }: { totals?: boolean }) => (
 const Scope = ({ household = false }: { household?: boolean }) => {
   const makeActor = useActorFactory();
   return (
-  <>
-    <path
-      d="M550 250H1410V990H550Z"
-      stroke={C.navy}
-      strokeDasharray="16 12"
-      strokeWidth={5}
-      fill="none"
-    />
-    <Actor actor={makeActor({ x: 770, expression: "thinking" })} />
-    <Actor
-      actor={makeActor({ identity: "Alex", x: 1210, expression: "thinking" })}
-    />
-    {household && (
-      <g transform="translate(210,480)" stroke={C.navy} strokeWidth={7}>
-        <path
-          d="M-90 -80L0 -110L90 -80V25Q80 90 0 130Q-80 90 -90 25Z"
-          fill={C.white}
-        />
-        <Check x={0} y={5} />
-      </g>
-    )}
-  </>
-);
+    <>
+      <path
+        d="M550 250H1410V990H550Z"
+        stroke={C.navy}
+        strokeDasharray="16 12"
+        strokeWidth={5}
+        fill="none"
+      />
+      <Actor actor={makeActor({ x: 770, expression: "thinking" })} />
+      <Actor
+        actor={makeActor({ identity: "Alex", x: 1210, expression: "thinking" })}
+      />
+      {household && (
+        <g transform="translate(210,480)" stroke={C.navy} strokeWidth={7}>
+          <path
+            d="M-90 -80L0 -110L90 -80V25Q80 90 0 130Q-80 90 -90 25Z"
+            fill={C.white}
+          />
+          <Check x={0} y={5} />
+        </g>
+      )}
+    </>
+  );
 };
 const SceneArt = ({ shot }: { shot: CinematicStillShot }) => {
   const makeActor = useActorFactory();
   const performance = useContext(EpisodeMotionContext);
-  const pulse = performance ? interactionPulse(performance.frame, performance.motion) : 0;
+  const pulse = performance
+    ? interactionPulse(performance.frame, performance.motion)
+    : 0;
   const { scene, index } = shot;
   switch (scene) {
     case "S01": {

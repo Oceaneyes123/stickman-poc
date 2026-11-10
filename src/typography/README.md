@@ -2,6 +2,10 @@
 
 Frame-driven SVG components for Remotion 4.0.541. No added dependency, CSS animation, clock or remote asset. Inter comes from the existing local font bundle.
 
+The current episode preview includes scene-driven character and object motion from `src/storyboard/episodeMotion.ts`. Text leader lines are disabled by default and removed from the episode. Labels use a spring lift and scale; headlines stagger individual words and emphasize selected terms with semantic color.
+
+Use `--prepare-only` to create the compiled preview assets without exporting video or rendering a storyboard packet. Current preview assets are in `out/001-lifestyle-creep/movement-typography-preview-v3/public`.
+
 All components accept `x`, `y`, `from`, `until`, optional `frame`, `size`, `color`, `enter` and `exit`. Frames use the caller's coordinate system. Pass absolute compiled frames together with an absolute `frame`, or use local frames inside a Sequence. `until` is exclusive. The default entrance is 15 frames and exit is 10 frames.
 
 - `KineticHeadline`: `text`, `unit` (`word`, `line`, `character`), `stagger`, `width`, `emphasis`, and optional illustrated `origin`. Browser text layout wraps masked spans; no approximate glyph measurements.
@@ -31,4 +35,4 @@ Open the prepared composition in Studio:
 npx remotion studio src/storyboard/CinematicStoryboardStudy.tsx --public-dir out/001-lifestyle-creep/typography-review-new/public
 ```
 
-Choose `TypographyEpisode`. The full episode is a typography and financial-motion candidate over staged v6 artwork. It does not replace the separately authored opening performance or finish S07–S67 character acting. Source draft timing and human listening/creative approval remain separate from technical checks.
+Choose `TypographyEpisode`. The episode preview combines v6 art with bounded panel actions, prop motion and typography. It does not replace the separately authored opening performance. Full motion, source draft timing and human listening/creative approval remain separate from technical checks.
