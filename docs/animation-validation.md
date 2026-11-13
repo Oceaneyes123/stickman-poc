@@ -1,5 +1,54 @@
 # Current animation validation
 
+## Interrupted narration resume — 2026-11-13
+
+Pending takes now recover without restarting VoiceStudio. When backend uptime
+does not prove a restart, recovery waits for the installed VoxCPM2 subprocess
+backend's health ping, which shares its synthesis lock. Failed probes preserve
+pending files; successful probes allow archival and regeneration of that take.
+Completed cache receipts and graceful interruption behavior remain unchanged.
+
+`npm run check` passed ESLint, TypeScript, 91 Node tests and 5 Python timing tests.
+The focused narration suite passed all 9 tests, including delayed health probes,
+failed-probe blocking, recovery with invalid uptime, and completed-cache reuse.
+The installed VoiceStudio 0.5.7 source and live health endpoint were inspected;
+no real synthesis, physical terminal interruption, or listening review was run.
+Existing episode audio and pending markers were left intact.
+
+## Interrupted narration resume — 2026-11-12
+
+Ctrl+C and SIGTERM now request a stop after saving the active take and manifest;
+the runner releases its lock and submits no further take. Completed, verified
+cache receipts remain reusable even when a crash leaves a pending marker.
+Legacy pending requests recover after `/startup/progress` uptime proves that
+VoiceStudio restarted after the request. Unreceipted files and markers are
+archived before retrying; an unchanged backend or invalid uptime keeps recovery
+blocked to avoid duplicate synthesis.
+
+`npm run check` passed: ESLint, strict TypeScript, 91 Node tests and 5 Python
+timing tests. The narration regression simulates SIGINT during a speech request,
+then checks saved progress, signal-handler and lock cleanup, cached resume,
+legacy-marker recovery, preserved partial files, and blocking uncertain retries.
+No real VoiceStudio synthesis or physical terminal interrupt was tested;
+the local service was offline during read-only health discovery. No episode audio
+or existing pending marker was changed by this work.
+
+## Narration grouping — 2026-11-12
+
+The narration runner prepares `narration-grouped.txt` before contacting VoiceStudio,
+combining adjacent sentences into estimated 15–30-second takes at 150 WPM by
+default. `--wpm` adjusts grouping without changing speech speed. The source script
+and existing cached takes remain intact. Whole-sentence boundaries can leave a
+short take when rebalancing cannot keep both takes within range.
+
+`npm run check` passed: ESLint, strict TypeScript, 91 Node tests and 5 Python
+timing tests. Tests cover grouping, rate overrides, text preservation, prepared
+script output, cache reuse, sample timing and uncertain-request safeguards.
+The current lifestyle-creep narration groups into 34 takes estimated at 17.6–30
+seconds with its normalized text preserved exactly. No actual VoiceStudio
+synthesis, listening review, cue realignment or video render was performed.
+Regenerated audio requires renewed listening and phrase-alignment review.
+
 The accepted character direction is the hairless reference rig: blue-hoodie Sam
 and white-shirt Alex with glasses. Walking arms use character-local depth,
 mirrored once, and both elbows bend backward. Contact retargeting preserves the

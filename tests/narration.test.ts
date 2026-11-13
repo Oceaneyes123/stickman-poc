@@ -1,6 +1,13 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { createServer } from "node:http";
-import { mkdtempSync, readFileSync, writeFileSync, rmSync } from "node:fs";
+import {
+  mkdtempSync,
+  readFileSync,
+  writeFileSync,
+  rmSync,
+  readdirSync,
+} from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { test } from "node:test";
@@ -17,18 +24,18 @@ import type { CueFile, Storyboard } from "../src/timeline/types.ts";
 
 test("paragraph splitting preserves sentences and enforces the API limit", () => {
   assert.deepEqual(paragraphs("\uFEFF One sentence.\r\nAnother.\r\n\r\nTwo."), [
-    "One sentence. Another.",
-    "Two.",
+    "One sentence. Another. Two.",
   ]);
   assert.throws(() => paragraphs("  "), /empty/);
   assert.throws(() => paragraphs("a".repeat(4097)), /4096/);
 });
 
 test("long paragraphs split into takes short enough to keep voice quality", () => {
-  const maxWords = 45; // 18 s at 2.5 words per second
+  const maxWords = 75; // 30 s at 150 WPM
   const long = Array.from(
     { length: 12 },
-    (_, i) => `This is sentence number ${i + 1} of a long paragraph that runs on.`,
+    (_, i) =>
+      `This is sentence number ${i + 1} of a long paragraph that runs on.`,
   ).join(" ");
   const takes = paragraphs(long);
   assert(takes.length > 1);
@@ -40,6 +47,42 @@ test("long paragraphs split into takes short enough to keep voice quality", () =
   assert(runs.length > 1);
   assert.equal(runs.join(" "), runOn);
   for (const run of runs) assert(run.split(" ").length <= maxWords);
+});
+
+test("grouping combines short paragraphs, balances the tail and respects speaking rate", () => {
+  const sentence = (count: number, label: string) =>
+    `${Array.from({ length: count }, (_, i) => `${label}${i}`).join(" ")}.`;
+  const source = Array.from({ length: 10 }, (_, i) =>
+    sentence(10, `S${i}w`),
+  ).join("\n\n");
+  const takes = paragraphs(source);
+  assert.deepEqual(
+    takes.map((take) => take.split(" ").length),
+    [60, 40],
+  );
+  assert.equal(takes.join(" "), source.replace(/\s+/g, " "));
+  for (const wpm of [120, 150, 180]) {
+    const grouped = paragraphs(source, wpm);
+    assert.equal(grouped.join(" "), takes.join(" "));
+    for (const take of grouped) {
+      const seconds = (take.split(" ").length * 60) / wpm;
+      assert(seconds >= 15 && seconds <= 30);
+    }
+  }
+  // A short script or indivisible sentence can legitimately leave a short take.
+  assert.deepEqual(paragraphs("Only one short sentence."), [
+    "Only one short sentence.",
+  ]);
+  assert.deepEqual(
+    paragraphs(`${sentence(70, "Long")} ${sentence(10, "Short")}`).map(
+      (take) => take.split(" ").length,
+    ),
+    [70, 10],
+  );
+  const quoted = 'He said, "Keep this together." Then he left.';
+  assert.deepEqual(paragraphs(quoted), [quoted]);
+  for (const wpm of [0, -1, NaN, Infinity])
+    assert.throws(() => paragraphs(source, wpm), /--wpm/);
 });
 
 test("speech transport waits for delayed headers without fetch and honors abort", async (context) => {
@@ -204,9 +247,23 @@ test("runner resumes, reuses unchanged paragraphs, preserves sample timing and b
   const dir = mkdtempSync(join(tmpdir(), "narration-test-"));
   let calls = 0;
   let drop = false;
+  let interrupt = true;
+  let engineReady = false;
+  let healthChecks = 0;
+  let startup: object = { elapsed_s: 60 };
   const server = createServer(async (request, response) => {
     response.setHeader("Content-Type", "application/json");
     if (request.url === "/health") response.end("{}");
+    else if (request.url === "/startup/progress")
+      response.end(JSON.stringify(startup));
+    else if (request.url === "/engines/voxcpm2/health") {
+      healthChecks++;
+      const beforeProbe = calls;
+      // Model a health ping blocked behind the abandoned synthesis lock.
+      await new Promise((done) => setTimeout(done, 40));
+      assert.equal(calls, beforeProbe);
+      response.end(JSON.stringify({ id: "voxcpm2", ok: engineReady }));
+    }
     else if (request.url === "/openapi.json")
       response.end(
         JSON.stringify({ paths: { "/v1/audio/speech": { post: {} } } }),
@@ -225,6 +282,10 @@ test("runner resumes, reuses unchanged paragraphs, preserves sample timing and b
       assert.equal(input.voice, "f6ec71e3");
       assert.equal(input.speed, 1);
       calls++;
+      if (interrupt) {
+        interrupt = false;
+        process.emit("SIGINT");
+      }
       response.setHeader("Content-Type", "audio/wav");
       if (drop) response.setHeader("X-OmniVoice-Dropped-Text", "missing words");
       response.end(wav());
@@ -244,11 +305,75 @@ test("runner resumes, reuses unchanged paragraphs, preserves sample timing and b
     `http://127.0.0.1:${address.port}`,
   ];
   try {
-    writeFileSync(script, "First paragraph.\n\nSecond paragraph.");
-    await narrate([...args, "--preview"]);
+    const first = `${"First paragraph context ".repeat(19)}First paragraph.`;
+    const second = `${"Second paragraph context ".repeat(19)}Second paragraph.`;
+    const changed = `${"Changed paragraph context ".repeat(19)}Changed paragraph.`;
+    writeFileSync(script, `${first}\n\n${second}`);
+    const listeners = process.listenerCount("SIGINT");
+    await narrate(args);
     assert.equal(calls, 1);
+    assert.equal(process.listenerCount("SIGINT"), listeners);
+    assert.throws(() => readFileSync(join(out, "run.lock")), /ENOENT/);
+    const interrupted = JSON.parse(
+      readFileSync(join(out, "manifest.json"), "utf8"),
+    );
+    assert.equal(interrupted.complete, false);
+    assert.equal(interrupted.segments.length, 1);
+    assert(
+      !readdirSync(join(out, ".cache")).some((name) =>
+        name.endsWith(".pending.json"),
+      ),
+    );
+    // A crash after writing a verified receipt must not block cache reuse.
+    writeFileSync(
+      join(out, ".cache", `${interrupted.segments[0].key}.pending.json`),
+      "{}",
+    );
+    await narrate([...args, "--preview"]);
+    assert.equal(readFileSync(script, "utf8"), `${first}\n\n${second}`);
+    assert.equal(
+      readFileSync(join(out, "narration-grouped.txt"), "utf8"),
+      `${first}\n\n${second}\n`,
+    );
+    assert.equal(calls, 1);
+    assert(
+      !readdirSync(join(out, ".cache")).some((name) =>
+        name.endsWith(".pending.json"),
+      ),
+    );
+    // Legacy interrupted requests can be retried after a proven backend restart.
+    const secondKey = createHash("sha256")
+      .update(
+        JSON.stringify({
+          settings: interrupted.settings,
+          text: second,
+        }),
+      )
+      .digest("hex");
+    const abandoned = join(out, ".cache", secondKey);
+    const marker = JSON.stringify({ startedAt: "2000-01-01T00:00:00Z" });
+    writeFileSync(`${abandoned}.pending.json`, marker);
+    writeFileSync(`${abandoned}.wav.tmp`, "partial audio");
     await narrate(args);
     assert.equal(calls, 2);
+    const archived = readdirSync(join(out, ".cache"));
+    assert(
+      archived.some((name) =>
+        name.startsWith(`${secondKey}.pending.json.interrupted-`),
+      ),
+    );
+    assert(
+      archived.some((name) =>
+        name.startsWith(`${secondKey}.wav.tmp.interrupted-`),
+      ),
+    );
+    const archivedMarker = archived.find((name) =>
+      name.startsWith(`${secondKey}.pending.json.interrupted-`),
+    )!;
+    assert.equal(
+      readFileSync(join(out, ".cache", archivedMarker), "utf8"),
+      marker,
+    );
     await narrate(args);
     assert.equal(calls, 2);
     const draft = JSON.parse(
@@ -262,7 +387,7 @@ test("runner resumes, reuses unchanged paragraphs, preserves sample timing and b
       () => compileTimeline(draft as CueFile, {} as Storyboard),
       /invalid timing mode/,
     );
-    writeFileSync(script, "First paragraph.\n\nChanged paragraph.");
+    writeFileSync(script, `${first}\n\n${changed}`);
     await narrate(args);
     assert.equal(calls, 3);
     const manifest = JSON.parse(
@@ -275,7 +400,7 @@ test("runner resumes, reuses unchanged paragraphs, preserves sample timing and b
       ),
     );
     assert(receipt.generationMs > 0);
-    assert.equal(receipt.characters, "First paragraph.".length);
+    assert.equal(receipt.characters, first.length);
     assert.deepEqual(
       manifest.segments.map((segment: { file: string }) => segment.file),
       ["audio-1.wav", "audio-2.wav"],
@@ -286,7 +411,7 @@ test("runner resumes, reuses unchanged paragraphs, preserves sample timing and b
         readFileSync(join(out, segment.cacheFile)),
       );
     }
-    writeFileSync(script, "Changed paragraph.\n\nFirst paragraph.");
+    writeFileSync(script, `${changed}\n\n${first}`);
     await narrate(args);
     assert.equal(calls, 3);
     const reordered = JSON.parse(
@@ -306,7 +431,19 @@ test("runner resumes, reuses unchanged paragraphs, preserves sample timing and b
     await assert.rejects(narrate(args), /omitted speech/);
     const afterFailure = calls;
     await assert.rejects(narrate(args), /Unresolved generation/);
+    for (startup of [{}, { elapsed_s: -1 }])
+      await assert.rejects(narrate(args), /Unresolved generation/);
     assert.equal(calls, afterFailure);
+    assert.equal(healthChecks, 3);
+    // Resume on the same backend, even when uptime is unavailable.
+    engineReady = true;
+    drop = false;
+    await narrate(args);
+    assert.equal(calls, afterFailure + 1);
+    assert.equal(healthChecks, 4);
+    await narrate(args);
+    assert.equal(calls, afterFailure + 1);
+    assert.equal(process.listenerCount("SIGINT"), listeners);
     writeFileSync(join(out, "run.lock"), "other process");
     await assert.rejects(narrate(args), /EEXIST/);
     assert.equal(readFileSync(join(out, "run.lock"), "utf8"), "other process");

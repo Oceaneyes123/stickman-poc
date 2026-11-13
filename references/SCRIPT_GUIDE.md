@@ -1,4 +1,4 @@
-# The Money Trap — Scriptwriting Guide (v2.0)
+# The Money Trap — Scriptwriting Guide (v2.1)
 
 **Purpose:** Produce clear, original, engaging, credible 10–15 minute English-language finance explainers that sound like a thoughtful person speaking, including when rendered through a local text-to-speech system.
 
@@ -70,6 +70,31 @@ Before outlining, complete this sentence in plain language:
 
 **Premise check:** Can the writer explain the cause without a slogan? Is there a visible action or transaction? Does the ending actually answer the opening? If any answer is no, resolve the premise before expanding the draft. A topic such as “credit cards” is not yet a story.
 
+### Concept before calculation
+
+The video explains **why** something happens, not how to compute it. The viewer should finish able to say the cause in one plain sentence — "every upgrade kept coming back next month" — not able to reproduce an arithmetic walkthrough.
+
+- Name the force at work in plain words before any number appears: recurring commitments, an obligation that renews, an incentive that rewards one behaviour, a cost that hides in a monthly figure. The concept is the reveal.
+- One concept per video, stated once and demonstrated by the story. If two concepts compete, one of them is the next video.
+- Numbers are evidence, not curriculum. Use at most the two or three amounts that make the cause unambiguous, one time, at the reveal. Keep units and period intact.
+- No worked arithmetic, no formula, no per-line table of income and expenses, no "here's the math" beat. If a value must change on screen, show the before and after states and let the difference speak.
+- Arithmetic still has to be right — `src/finance/math.ts` remains the source of truth and every spoken amount agrees with it. The change is what gets narrated, not what gets verified.
+- A viewer asking "how do I calculate this for myself?" is a comment, not a missing beat. Answer it in a pinned comment or a follow-up, not in the middle of the story.
+
+**The channel rule:** every financial concept must be understandable through the animation and the story alone, even if the viewer doesn't remember a single number. Applies to scripts, storyboards and animation recommendations alike.
+
+| Avoid | Prioritise |
+|---|---|
+| Detailed financial calculations | Financial psychology and behaviour |
+| Repeated dollar amounts | Relatable situations |
+| Formula-based explanations | Analogies and metaphors |
+| Long charts and spreadsheets | Character-driven scenes |
+| Step-by-step mathematical solutions | Cause-and-effect explanations |
+| Excessive financial terminology | Natural conversational narration |
+| Generic budgeting lessons | Discoveries and revelations |
+
+Numbers are not banned: a brief comparison can establish a consequence, provided the viewer never has to follow a calculation to understand the story.
+
 ## 4. Story structure: character-led financial explanation
 
 Use seven connected beats as the default scaffold. The **1,800-word allocation below is an editorial starting point**, not a measured competitor template or a minimum length. At the earlier analysis assumption of 150 wpm it would read for 12 minutes before accounting for delivery and visual pauses. Combine or shorten beats when the subject needs less explanation.
@@ -79,7 +104,7 @@ Use seven connected beats as the default scaffold. The **1,800-word allocation b
 | 1. Consequence-first hook | 70 | Establish a concrete contradiction or question worth answering. | A paycheck rises while the amount remaining falls. |
 | 2. Situation and stakes | 180 | Establish the goal, baseline, constraints and example assumptions. | Sam's current income, illustrated bills and reason for a choice. |
 | 3. Reasonable choices | 300 | Show how individually understandable choices create the outcome. | A sequence of purchases, recurring commitments or payment dates. |
-| 4. Mechanism reveal | 400 | Explain exactly how those choices change the money or obligation. | A before/after calculation, payment flow or balance over time. |
+| 4. Mechanism reveal | 400 | Name the cause in plain words and show it happening; the calculation stays off-screen. | One before/after state, or the same cost returning every month. |
 | 5. Complication or exception | 250 | Test an obvious explanation or fix and expose its actual limit. | Change one input; show why the initial answer is incomplete. |
 | 6. Alternative and payoff | 550 | Compare fairly, account for tradeoffs and answer the opening question. | Same starting conditions, changed choice, derived outcomes. |
 | 7. Natural close | 50 | Leave a specific consequence or useful distinction; optionally bridge to a related video. | Return to the opening object, balance or decision in its new context. |
@@ -108,7 +133,7 @@ Keep a small question tracker in `outline.md`: **question / beat opened / beat a
 1. Establish what the person has, wants and must pay or do.
 2. Follow the relevant money, obligation or incentive through its steps.
 3. Name the financial term when it helps organize what the viewer has just seen.
-4. Show a numerical or concrete example, with units and time period intact.
+4. Show one before/after state instead of the arithmetic, with units and time period intact. Name the amount only if the cause is unclear without it.
 5. Translate the result into a consequence for the person.
 
 For every important number, know **what it measures / over what period / compared with what**. Use round hypothetical values when they clarify; retain necessary precision in sourced facts. Distinguish a balance from a payment, total price from monthly cost, and an absolute change from a percentage change. Do not stack unrelated statistics to create scale without explanation.
@@ -191,7 +216,7 @@ Every beat should identify: whose viewpoint, what changes, what viewers can see,
 
 Use the reference characters' expressive faces, readable silhouettes and familiar props. Current project instructions supersede the source image: keep Sam and Alex hairless and preserve the approved blue-hoodie/white-shirt identities. Use the project palette: yellow for money, coral for costs/loss and teal for an alternative. An alternative still needs its costs explained; color alone must not imply a guarantee.
 
-Write what changes on screen: a bill returns next month, a balance declines, or a payment reaches a labeled intermediary. A character gesturing beside unchanged text is not a mechanism demonstration. Reveal one financial relationship at a time and allow the viewer to inspect the calculation. Text labels support the explanation; no default subtitles or paragraph-length cards. Do not prescribe a cut every N words: the transcript study did not measure visual timing.
+Write what changes on screen: a bill returns next month, a balance declines, or a payment reaches a labeled intermediary. A character gesturing beside unchanged text is not a mechanism demonstration. Reveal one financial relationship at a time and let the viewer see the cause; a before/after state can carry the proof without a visible calculation. Text labels support the explanation; no default subtitles or paragraph-length cards. Do not prescribe a cut every N words: the transcript study did not measure visual timing.
 
 Don't narrate on-screen text word-for-word unless repetition helps comprehension. Avoid images that imply incorrect mechanics (money vanishing, instant financial guarantees). Add explicit labels for example assumptions and disputed interpretations.
 
@@ -240,17 +265,13 @@ Required human checks:
 
 A few months later, he checked what was left after his monthly bills. Somehow, it was less than before.
 
-Here's the math. Before the raise, Sam took home thirty-eight hundred dollars a month and spent about thirty-five hundred. That left three hundred.
+Nothing on his statement looked like a mistake. Before the raise he kept about three hundred dollars a month. After it, a hundred and eighty.
 
-After the raise, his take-home pay was forty-four hundred. But he moved to a nicer apartment, upgraded the car and added a few subscriptions. His spending climbed to four thousand two hundred and twenty dollars.
+The raise didn't disappear. It was spent before it arrived — not on one big thing, but on upgrades he had promised himself for years. A better apartment. A newer car. A handful of small monthly payments.
 
-Now he's left with a hundred and eighty dollars.
+None of those choices seemed wild on its own. The problem was that every upgrade kept coming back the following month. And Sam was already thinking about the next one."
 
-None of those choices seemed wild on its own. A bit more rent. A nicer car. A handful of little payments.
-
-The problem was that every upgrade kept coming back the following month. And Sam was already thinking about the next one."
-
-**Editorial mechanism:** Specific cause → realistic sequential choices → explicit simple arithmetic → understated ending. No generic motivational lecture. Don't copy a competitor's scripting phrases or unsupported numerical promises.
+**Editorial mechanism:** Concept first — recurring commitments absorb a raise — then two amounts as supporting evidence. No worked arithmetic, no income-and-expense recital. Understated ending, no generic motivational lecture. Don't copy a competitor's scripting phrases or unsupported numerical promises.
 
 ## 11. Files and workflow for each video
 

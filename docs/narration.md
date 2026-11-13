@@ -33,11 +33,21 @@ generate all paragraphs using the same output directory:
 npm run narrate -- --script videos/001-lifestyle-creep/narration.txt --out out/001-lifestyle-creep/narration
 ```
 
-Paragraphs are separated by blank lines. Each must fit the API's 4096-character
-limit. Every paragraph is then split into takes of at most 18 seconds of speech
-(about 45 words at 2.5 words per second): whole sentences are packed greedily, and
-a sentence longer than the cap is cut at clause punctuation or, failing that, at a
-word boundary. Short takes keep the voice from drifting on long generations.
+Before contacting VoiceStudio, the runner groups adjacent sentences across blank
+lines into takes targeting 15�30 seconds. It saves the complete prepared script as
+`narration-grouped.txt` in the output directory, including for previews; the input
+script stays unchanged. Synthesis uses these exact groups.
+
+The default estimate is 150 words per minute (38�75 words per take). Use
+`--wpm 130`, for example, after measuring a representative take: words spoken
+multiplied by 60, divided by its measured duration in seconds. WPM changes grouping,
+not speech speed. These durations are estimates, not measured or aligned cues.
+Whole sentences are packed up to the 30-second estimate, with final sentences
+moved to the last take when both takes can stay within range. Only sentences
+exceeding the cap are split at clauses or word boundaries. A short script or an
+indivisible sentence can leave a take below 15 seconds. Each group must fit the
+API's 4096-character limit. Regrouping changes cache keys and draft cue boundaries;
+old cached takes remain intact, but existing phrase alignment needs review.
 Generation runs sequentially at natural speed. There is no inserted gap,
 silence trimming, speech stretching, or runtime target. Listen for discontinuities
 between takes; adjust the text and regenerate when needed.
@@ -80,15 +90,33 @@ use one global Audio node. Replacing speech invalidates the previous alignment.
 
 ## Interrupted runs
 
-The runner never retries synthesis automatically. A `.pending.json` marker means
-the request may still be running or its audio failed validation. Inspect VoiceStudio
-jobs/history and the saved `.response.json` headers before retrying. Only after
-confirming the original job stopped, remove the corresponding pending marker and
-any untracked `.wav.tmp` file. Preserve recoverable audio before rerunning. A
-`run.lock` prevents concurrent runs; after a crash, remove it only after confirming
-the recorded process and backend job are no longer running. Never remove a lock
-belonging to a live runner. Corrupt completed cache files stop the run; use a new
-output directory to preserve evidence.
+Press Ctrl+C to stop after the current take finishes. The runner saves and checks
+that take, records progress, releases `run.lock`, and exits without submitting the
+next take. Rerun the same command and output directory to reuse completed takes.
+SIGTERM requests the same graceful stop. Stopping can take as long as the active
+VoiceStudio request; closing the terminal or forcibly killing Node can prevent
+this cleanup.
+
+A `.pending.json` marker from a force kill, crash or failed request is recovered
+on the next run. If `/startup/progress` proves the backend restarted after the
+request, recovery proceeds immediately. Otherwise, the runner waits up to 30 minutes
+for `/engines/voxcpm2/health`: the installed VoxCPM2 sidecar's health ping uses the
+same lock as synthesis, so it waits for an active generation to finish. A failed
+probe preserves the marker and stops recovery. No app restart is normally needed.
+The runner archives the pending marker and any unreceipted
+audio/response files with an `.interrupted-<timestamp>` suffix before regenerating
+that take. It never retries within a failed run. The speech endpoint has no durable
+job ID or saved output to retrieve after losing the response; a missing job in
+history does not establish that generation stopped. Missing or invalid uptime
+uses the engine health probe instead. Recovery regenerates the interrupted take;
+it cannot retrieve the lost speech response. This probe behavior is specific to
+the installed VoxCPM2 subprocess backend; recheck it after VoiceStudio upgrades.
+
+A verified, decodable cached take with a completed receipt is reused even if a
+crash left its pending marker behind. A stale `run.lock` owned by a dead process is
+reclaimed automatically; a live or unknown owner still blocks concurrent runs.
+Corrupt completed cache files stop the run; use a new output directory to preserve
+evidence.
 
 Speech requests use Node's HTTP client with an explicit 30-minute abort signal,
 so CPU generation can exceed the five-minute headers limit imposed by Node fetch.

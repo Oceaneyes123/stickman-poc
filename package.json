@@ -33,6 +33,7 @@
     "cinematic:render": "node --experimental-strip-types scripts/render/render-cinematic-references.ts",
     "storyboard:stills": "node --experimental-strip-types scripts/render/render-storyboard.ts",
     "narrate": "node --experimental-strip-types scripts/narration/narrate.ts",
+    "sfx": "node --experimental-strip-types scripts/sfx/generate-sfx.ts",
     "narrate:timing": "python scripts/narration/time_narration.py",
     "narrate:review": "node --experimental-strip-types scripts/render/render-timing-review.ts",
     "opening:stills": "node --experimental-strip-types scripts/render/render-opening-stills.ts",

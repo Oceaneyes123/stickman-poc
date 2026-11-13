@@ -6,10 +6,19 @@ import { BankExample } from "./scenes/BankExample";
 import { MovementReview, MOVEMENT_DURATION } from "./MovementReview";
 import { WalkingMechanics } from "./WalkingMechanics";
 import { GeneralOutro } from "./scenes/GeneralOutro";
+import { SfxGallery, SFX_GALLERY_DURATION } from "./audio/Gallery";
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Composition
+        id="SfxGallery"
+        component={SfxGallery}
+        durationInFrames={SFX_GALLERY_DURATION}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
       <Composition
         id="GeneralOutro"
         component={GeneralOutro}

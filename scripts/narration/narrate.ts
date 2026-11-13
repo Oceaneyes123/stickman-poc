@@ -22,51 +22,81 @@ const json = (path: string, value: unknown) => {
   writeFileSync(`${path}.tmp`, `${JSON.stringify(value, null, 2)}\n`);
   renameSync(`${path}.tmp`, path);
 };
+// Liveness probe for a lock owner; a recycled pid reads as alive, which is the
+// safe side (it only costs a manual lock inspection).
+const alive = (pid: number) => {
+  try {
+    process.kill(pid, 0);
+    return true;
+  } catch {
+    return false;
+  }
+};
 
-// ponytail: natural narration is about 150 words a minute; tune if takes run long.
-const wordsPerSecond = 2.5;
-// Keep every generation short: quality degrades on long takes. 18 s sits inside
-// the requested 15-20 s window with room for pace variance.
-const maxChunkSeconds = 18;
-const maxChunkWords = Math.floor(maxChunkSeconds * wordsPerSecond);
 const words = (text: string) => text.match(/\S+/g) ?? [];
 
 // Split one paragraph into pieces small enough to stay under the time cap:
 // sentences, then clauses of long sentences, then word runs of run-on clauses.
-function pieces(text: string): string[] {
-  return text.split(/(?<=[.!?])\s+/).flatMap((sentence) => {
+function pieces(text: string, maxChunkWords: number): string[] {
+  const sentences = new Intl.Segmenter("en", { granularity: "sentence" });
+  return [...sentences.segment(text)].flatMap(({ segment }) => {
+    const sentence = segment.trim();
     if (words(sentence).length <= maxChunkWords) return [sentence];
     return sentence.split(/(?<=[,;:])\s+/).flatMap((clause) => {
       const list = words(clause);
       if (list.length <= maxChunkWords) return [clause];
       const runs: string[] = [];
-      for (let i = 0; i < list.length; i += maxChunkWords)
-        runs.push(list.slice(i, i + maxChunkWords).join(" "));
+      const size = Math.ceil(
+        list.length / Math.ceil(list.length / maxChunkWords),
+      );
+      for (let i = 0; i < list.length; i += size)
+        runs.push(list.slice(i, i + size).join(" "));
       return runs;
     });
   });
 }
 
 // Greedily repack pieces so each chunk is as full as possible without overrunning.
-function chunks(text: string): string[] {
-  const result: string[] = [];
-  for (const piece of pieces(text)) {
+function chunks(
+  text: string,
+  minChunkWords: number,
+  maxChunkWords: number,
+): string[] {
+  const result: string[][] = [];
+  for (const piece of pieces(text, maxChunkWords)) {
     const current = result[result.length - 1];
-    if (current && words(current).length + words(piece).length <= maxChunkWords)
-      result[result.length - 1] = `${current} ${piece}`;
-    else result.push(piece);
+    if (
+      current &&
+      words(current.join(" ")).length + words(piece).length <= maxChunkWords
+    )
+      current.push(piece);
+    else result.push([piece]);
   }
-  return result;
+  // Borrow whole sentences from the previous take when the ending is too short.
+  const tail = result[result.length - 1];
+  const previous = result[result.length - 2];
+  while (previous && words(tail.join(" ")).length < minChunkWords) {
+    const last = previous[previous.length - 1];
+    if (
+      words(previous.join(" ")).length - words(last).length < minChunkWords ||
+      words(tail.join(" ")).length + words(last).length > maxChunkWords
+    )
+      break;
+    tail.unshift(previous.pop()!);
+  }
+  return result.map((part) => part.join(" "));
 }
 
-export function paragraphs(text: string): string[] {
-  const parts = text
+export function paragraphs(text: string, wpm = 150): string[] {
+  if (!Number.isFinite(wpm) || wpm < 4)
+    throw new Error("--wpm must be a finite number of at least 4");
+  const normalized = text
     .replace(/^\uFEFF/, "")
     .trim()
-    .split(/\r?\n\s*\r?\n/)
-    .map((part) => part.replace(/\s+/g, " ").trim());
-  if (!parts[0]) throw new Error("Narration is empty");
-  const result = parts.flatMap(chunks);
+    .replace(/\s+/g, " ");
+  if (!normalized) throw new Error("Narration is empty");
+  // shortcut: WPM estimates exclude delivery pauses; calibrate from a reviewed take.
+  const result = chunks(normalized, Math.ceil(wpm / 4), Math.floor(wpm / 2));
   if (result.some((part) => [...part].length > 4096)) {
     throw new Error(
       "A paragraph exceeds VoiceStudio's 4096-character limit; split it at a natural boundary",
@@ -308,6 +338,62 @@ export async function ensureVoiceStudio(
   );
 }
 
+async function recoverInterruptedTake(pending: string, wav: string, url: URL) {
+  const saved = JSON.parse(readFileSync(pending, "utf8")) as {
+    startedAt: string;
+  };
+  const startedAt = Date.parse(saved.startedAt);
+  const checkedAt = Date.now();
+  // A newer backend cannot still be running the abandoned request.
+  const response = await voiceRequest(new URL("/startup/progress", url), {
+    signal: AbortSignal.timeout(20000),
+    redirect: "error",
+  });
+  const status = response.ok ? await response.json() : null;
+  if (
+    !Number.isFinite(startedAt) ||
+    typeof status?.elapsed_s !== "number" ||
+    !Number.isFinite(status.elapsed_s) ||
+    status.elapsed_s < 0 ||
+    checkedAt - status.elapsed_s * 1000 <= startedAt + 2000
+  ) {
+    console.log("Waiting for VoxCPM2 to finish any interrupted generation...");
+    const stopProgress = showProgress(() =>
+      `Recovering interrupted take | Elapsed ${Math.floor((Date.now() - checkedAt) / 1000)}s | Waiting for VoxCPM2`,
+    );
+    try {
+      // VoxCPM2's sidecar health ping takes the same lock as synthesis.
+      // Unlike /jobs or /model/status, it waits for active synthesis to finish.
+      const health = await voiceRequest(new URL("/engines/voxcpm2/health", url), {
+        signal: AbortSignal.timeout(30 * 60 * 1000),
+        redirect: "error",
+      });
+      const engine = health.ok ? await health.json() : null;
+      if (engine?.id !== "voxcpm2" || engine.ok !== true)
+        throw new Error("VoxCPM2 health probe did not confirm readiness");
+    } catch (error) {
+      throw new Error(
+        `Unresolved generation: ${pending}. Could not confirm VoxCPM2 is ready. Inspect VoiceStudio, then rerun the same command; completed takes will be reused.`,
+        { cause: error },
+      );
+    } finally {
+      stopProgress();
+    }
+  }
+  const suffix = `.interrupted-${Date.now()}`;
+  for (const path of [
+    wav,
+    `${wav}.tmp`,
+    pending.replace(/\.pending\.json$/, ".response.json"),
+    pending,
+  ]) {
+    if (existsSync(path)) renameSync(path, `${path}${suffix}`);
+  }
+  console.log(
+    "Recovered an interrupted take; regenerating only this take.",
+  );
+}
+
 export async function narrate(args: string[]) {
   const { values } = parseArgs({
     args,
@@ -317,12 +403,13 @@ export async function narrate(args: string[]) {
       voice: { type: "string", default: "f6ec71e3" },
       url: { type: "string", default: "http://127.0.0.1:3900" },
       preview: { type: "boolean", default: false },
+      wpm: { type: "string", default: "150" },
       help: { type: "boolean", default: false },
     },
   });
   if (values.help) {
     console.log(
-      "npm run narrate -- --script <narration.txt> --out <directory> [--voice <profile-id>] [--preview]",
+      "npm run narrate -- --script <narration.txt> --out <directory> [--voice <profile-id>] [--wpm <words-per-minute>] [--preview]",
     );
     return;
   }
@@ -341,7 +428,8 @@ export async function narrate(args: string[]) {
     throw new Error("--url must be a local loopback HTTP origin");
   }
   const source = readFileSync(resolve(values.script), "utf8");
-  const parts = paragraphs(source);
+  const wpm = Number(values.wpm);
+  const parts = paragraphs(source, wpm);
   const out = resolve(values.out);
   const settings = {
     model: "voxcpm2",
@@ -350,10 +438,34 @@ export async function narrate(args: string[]) {
     speed: 1.0,
   };
   mkdirSync(out, { recursive: true });
-  // An exclusive lock also survives a crash, preventing accidental duplicate synthesis.
+  // An exclusive lock survives a crash, so a leftover lock with a live owner
+  // still blocks a duplicate run; a dead owner's lock is just debris.
   const lock = join(out, "run.lock");
-  writeFileSync(lock, `${process.pid}\n`, { flag: "wx" });
   try {
+    writeFileSync(lock, `${process.pid}\n`, { flag: "wx" });
+  } catch (error) {
+    const owner = Number(readFileSync(lock, "utf8").trim());
+    if (!Number.isInteger(owner) || owner <= 0 || alive(owner)) throw error;
+    console.warn(`Reclaiming stale narration lock from dead pid ${owner}.`);
+    rmSync(lock);
+    writeFileSync(lock, `${process.pid}\n`, { flag: "wx" });
+  }
+  let stopRequested = false;
+  const stop = () => {
+    stopRequested = true;
+    console.log(
+      "\nStopping after the current take is saved. Rerun the same command to resume.",
+    );
+  };
+  process.on("SIGINT", stop);
+  process.on("SIGTERM", stop);
+  try {
+    const groupedScript = join(out, "narration-grouped.txt");
+    writeFileSync(`${groupedScript}.tmp`, `${parts.join("\n\n")}\n`);
+    renameSync(`${groupedScript}.tmp`, groupedScript);
+    console.log(
+      `Prepared ${parts.length} takes at an estimated ${wpm} WPM (15–30 seconds each; short takes may remain at sentence boundaries). Saved ${groupedScript}`,
+    );
     const segments: Segment[] = [];
     const chunks: Buffer[] = [];
     const selected = values.preview ? parts.slice(0, 1) : parts;
@@ -402,16 +514,13 @@ export async function narrate(args: string[]) {
       return response.json();
     };
     for (const [index, text] of selected.entries()) {
+      if (stopRequested) return;
       const key = hash(JSON.stringify({ settings, text }));
       const file = `audio-${index + 1}.wav`;
       const directory = cacheDirectory(key);
       const wav = join(directory, `${key}.wav`);
       const receipt = join(directory, `${key}.json`);
       const pending = join(directory, `${key}.pending.json`);
-      if (existsSync(pending))
-        throw new Error(
-          `Unresolved generation: ${pending}. Inspect VoiceStudio jobs/history before removing this marker and retrying.`,
-        );
       if (existsSync(receipt)) {
         const saved = JSON.parse(readFileSync(receipt, "utf8")) as Cache;
         if (
@@ -425,7 +534,7 @@ export async function narrate(args: string[]) {
         }
         console.log(`[${index + 1}/${selected.length}] Reusing ${file}`);
       } else {
-        if (existsSync(wav))
+        if (existsSync(wav) && !existsSync(pending))
           throw new Error(
             `Untracked audio exists: ${wav}; inspect it before retrying`,
           );
@@ -462,6 +571,10 @@ export async function narrate(args: string[]) {
           );
           discovered = true;
         }
+        if (stopRequested) return;
+        if (existsSync(pending))
+          await recoverInterruptedTake(pending, wav, url);
+        if (stopRequested) return;
         console.log(
           `[${index + 1}/${selected.length}] Generating ${text.length} characters; waiting for VoiceStudio`,
         );
@@ -540,6 +653,7 @@ export async function narrate(args: string[]) {
         }
       }
       const data = pcm(wav);
+      if (existsSync(pending)) rmSync(pending);
       const exported = join(out, file);
       writeFileSync(`${exported}.tmp`, readFileSync(wav));
       renameSync(`${exported}.tmp`, exported);
@@ -559,12 +673,14 @@ export async function narrate(args: string[]) {
         scriptPath: resolve(values.script),
         scriptHash: hash(source),
         settings,
+        estimatedWpm: wpm,
         sampleRate: rate,
         totalParagraphs: parts.length,
         complete: segments.length === parts.length,
         listeningReviewed: false,
         segments,
       });
+      if (stopRequested) return;
     }
     console.log(
       narrationProgress(
@@ -633,6 +749,8 @@ export async function narrate(args: string[]) {
       `Saved ${master}: ${(data.length / 2 / rate).toFixed(3)} seconds. Listening and phrase alignment remain unreviewed.`,
     );
   } finally {
+    process.off("SIGINT", stop);
+    process.off("SIGTERM", stop);
     rmSync(lock);
   }
 }

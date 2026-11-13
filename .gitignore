@@ -31,12 +31,15 @@ venv/
 # Generated Stickman renders; keep film source and imported media elsewhere
 /videos/*/shots/
 /videos/*/*.mp4
+/videos/*/*.webm
 /videos/*/audio.wav
 /videos/*/film.json
 /videos/*/list.txt
 /videos/*/action-sheet.jpg
 /videos/*/contact_sheet.jpg
 /videos/*/storyboard.jpg
+/videos/*/storyboard.json
+/videos/*/player.html
 
 # Operating system files
 .DS_Store
@@ -51,3 +54,5 @@ Desktop.ini
 
 # downloaded research sources (regenerate with scripts/research/sample_frames.py)
 /research/evidence/frames/*.mp4
+/research/evidence/frames/*.mp4.part
+/research/evidence/frames/*.mp4.ytdl

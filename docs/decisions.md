@@ -16,6 +16,7 @@ the full reasoning.
 | 8 | All financial values come from `src/finance/math.ts`; totals are derived, never typed into a graphic. | `AGENTS.md` |
 | 9 | Narration is measured local WAV; draft ASR timing is structurally checked only and never certified as aligned or listening-approved. | `docs/narration.md`, `docs/animation-validation.md` |
 | 10 | Final deliverable is one MP4: episode + 8 s `GeneralOutro`, H.264/yuv420p (TV range, bt709), 1920×1080, 30 fps, AAC 48 kHz stereo. Remotion's full-range `yuvj420p` is transcoded before delivery. | `docs/animation-validation.md` |
+| 11 | Concept-driven storytelling: each video explains *why* something happens, not how to calculate it. No formula beats, worked arithmetic or income-and-expense recitals; two or three amounts serve as evidence at the reveal. Arithmetic stays correct against `src/finance/math.ts` — it just stays off-screen and out of the narration. | `references/SCRIPT_GUIDE.md` §"Concept before calculation" |
 
 ## Cleanup — 2026-11-10
 
