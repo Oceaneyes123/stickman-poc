@@ -49,7 +49,7 @@ export const WritingDesk = ({
       />
       <path
         d={`M${x} ${y}H${x + width}V${y + 30}H${x}Z`}
-        fill={old ? cinema.material.desk : cinema.material.wood}
+        fill={old ? cinema.material.desk : "var(--bn-wood, #C8BAA2)"}
       />
       <path
         d={`M${x + 12} ${y + 44}H${x + width - 12}`}
@@ -81,7 +81,7 @@ export const DiningTable = ({
     <GroundShadow x={95} y={170} width={400} />
     <path
       d="M-120 0H310V24H-120Z M-80 24V170 M270 24V170"
-      fill={cinema.material.wood}
+      fill="var(--bn-wood, #C8BAA2)"
     />
     <ellipse cx={95} cy={-14} rx={82} ry={25} fill={C.white} />
     <path d="M-25 -44V-5 M-37 -44V-30H-13V-44 M218 -44V-5" fill="none" />
@@ -92,7 +92,7 @@ export const GuestChair = ({ x = 1530 }: { x?: number }) => (
     <GroundShadow x={x + 70} y={940} width={210} />
     <path
       d={`M${x} 880V740Q${x + 70} 700 ${x + 140} 740V880Z`}
-      fill={cinema.material.fabric}
+      fill="var(--bn-fabric, #A6B4C6)"
     />
     <path
       d={`M${x - 10} 880H${x + 150}V900H${x - 10}Z M${x + 10} 900V940 M${x + 130} 900V940`}
@@ -100,18 +100,33 @@ export const GuestChair = ({ x = 1530 }: { x?: number }) => (
     />
   </g>
 );
-const VehicleCabin = ({ older }: { older: boolean }) => (
+/** Optional cabin tints so a night car scene can leave the daylight palette. */
+export type CabinTone = {
+  outside: string;
+  outsideGlow: string;
+  body: string;
+  seat: string;
+};
+const VehicleCabin = ({ older, tone }: { older: boolean; tone?: CabinTone }) => (
   <g>
-    <rect width={1920} height={1080} fill={C.white} />
+    {tone && (
+      <defs>
+        <linearGradient id="bn-cabin-dusk" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor={tone.outside} />
+          <stop offset="1" stopColor={tone.outsideGlow} />
+        </linearGradient>
+      </defs>
+    )}
+    <rect width={1920} height={1080} fill={tone?.body ?? C.white} />
     <path
       d="M170 120L1690 100L1800 730H100Z"
-      fill={cinema.environment.glass}
+      fill={tone ? "url(#bn-cabin-dusk)" : cinema.environment.glass}
       stroke={C.navy}
       strokeWidth={8}
     />
     <path
       d="M1100 380L930 740H1500L1290 380Z"
-      fill={cinema.environment.floor}
+      fill={tone ? "#2C3E55" : cinema.environment.floor}
     />
     <path
       d="M1190 470L1170 570 M1150 625L1130 730"
@@ -124,7 +139,7 @@ const VehicleCabin = ({ older }: { older: boolean }) => (
       width={400}
       height={530}
       rx={70}
-      fill={older ? "#97A2AD" : "#71849B"}
+      fill={tone?.seat ?? (older ? "#97A2AD" : "#71849B")}
       stroke={C.navy}
       strokeWidth={7}
     />
@@ -161,13 +176,15 @@ export const StoryEnvironment = ({
   location,
   compact = false,
   architecture = false,
+  cabin,
 }: {
   location: StoryLocation;
   compact?: boolean;
   architecture?: boolean;
+  cabin?: CabinTone;
 }) => {
   if (location === "old-rental" || location === "new-rental")
-    return <VehicleCabin older={location === "old-rental"} />;
+    return <VehicleCabin older={location === "old-rental"} tone={cabin} />;
   const old = location === "sam-old" || location === "alex-home";
   if (!architecture)
     return (
@@ -180,7 +197,7 @@ export const StoryEnvironment = ({
             />
             <path
               d="M1550 820H1670L1650 900H1570Z"
-              fill={cinema.material.fabric}
+              fill="var(--bn-fabric, #A6B4C6)"
             />
           </g>
         )}

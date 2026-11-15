@@ -9,6 +9,13 @@ import {
 import { interactionPulse } from "./episodeMotion";
 import { TypographyGallery, TYPOGRAPHY_GALLERY_DURATION } from "../typography/Gallery";
 import { ObjectMotionGallery, OBJECT_GALLERY_DURATION } from "../objects/Gallery";
+import { BuyNowFilm, type BuyNowFilmProps } from "./BuyNowFilm";
+import {
+  BuyNowGallery,
+  buyNowGalleryDuration,
+  type BuyNowGalleryProps,
+} from "./BuyNowGallery";
+import type { CompiledFilm } from "./buyNowPlan";
 import {
   TransitionGallery,
   TRANSITION_GALLERY_DURATION,
@@ -2667,6 +2674,46 @@ registerRoot(() => (
       height={1080}
       durationInFrames={90}
       defaultProps={{ shotId: cinematicStillShots[0].id }}
+    />
+    <Composition
+      id="BuyNowFilm"
+      component={BuyNowFilm}
+      width={1920}
+      height={1080}
+      fps={30}
+      durationInFrames={1}
+      defaultProps={{ data: null } as BuyNowFilmProps}
+      calculateMetadata={async ({ props }) => {
+        const data =
+          props.data ??
+          ((await (
+            await fetch(staticFile("buy-now.json"))
+          ).json()) as CompiledFilm);
+        return {
+          durationInFrames: data.durationInFrames,
+          props: { data },
+        };
+      }}
+    />
+    <Composition
+      id="BuyNowMotionGallery"
+      component={BuyNowGallery}
+      width={1920}
+      height={1080}
+      fps={30}
+      durationInFrames={1}
+      defaultProps={{ data: null } as BuyNowGalleryProps}
+      calculateMetadata={async ({ props }) => {
+        const data =
+          props.data ??
+          ((await (
+            await fetch(staticFile("buy-now.json"))
+          ).json()) as CompiledFilm);
+        return {
+          durationInFrames: buyNowGalleryDuration(data),
+          props: { data },
+        };
+      }}
     />
     <Composition
       id="TypographyEpisode"

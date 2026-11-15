@@ -47,9 +47,17 @@ def load_inputs(script, directory):
     if len(segments) != manifest["totalParagraphs"]:
         raise ValueError("Paragraph count does not match the manifest")
     script_text = script.read_text(encoding="utf-8-sig")
+
+    def spoken(text):
+        # `**` and `---` are script-file markers, not words. The runner keeps
+        # them in take text, and a space can sit inside a closing marker; strip
+        # them before comparing the words that were actually synthesized.
+        tokens = text.replace("**", " ").split()
+        return " ".join(token for token in tokens if token != "---")
+
     if " ".join(
-        " ".join(segment["text"].split()) for segment in segments
-    ) != " ".join(script_text.split()):
+        spoken(segment["text"]) for segment in segments
+    ) != spoken(script_text):
         raise ValueError("Narration text does not match the script")
     with wave.open(str(directory / "narration.wav"), "rb") as audio:
         rate, samples = audio.getframerate(), audio.getnframes()
@@ -238,14 +246,28 @@ def main():
                     },
                 )
             timed, phrases = phrase_cues(
-                local_words, segment["id"], offset, rate, segment["samples"]
+                [
+                    word
+                    for word in local_words
+                    if word["end"] > word["start"] and word["text"].strip()
+                ],
+                segment["id"],
+                offset,
+                rate,
+                segment["samples"],
             )
+            dropped = [
+                {"text": word["text"], "start": word["start"], "end": word["end"]}
+                for word in local_words
+                if word["end"] <= word["start"] or not word["text"].strip()
+            ]
             recognized_text = " ".join(word["text"] for word in timed)
             checks.append(
                 {
                     "paragraphId": segment["id"],
                     "scriptText": segment["text"],
                     "recognizedText": recognized_text,
+                    "droppedWords": dropped,
                     **compare_text(segment["text"], recognized_text),
                 }
             )

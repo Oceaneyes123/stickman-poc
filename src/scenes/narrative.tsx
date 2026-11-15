@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { AbsoluteFill } from "remotion";
 import type { Rect } from "../animation/direction";
 import { C, cinema, font } from "../design/tokens";
@@ -57,9 +57,11 @@ export const NarrativeScene = ({
   background,
   children,
   foreground,
-}: Layers & { view?: Rect }) => (
-  <AbsoluteFill style={{ background: C.white, fontFamily: font }}>
-    <PaperBackdrop />
+  backdrop,
+  style,
+}: Layers & { view?: Rect; backdrop?: ReactNode; style?: CSSProperties }) => (
+  <AbsoluteFill style={{ background: C.white, fontFamily: font, ...style }}>
+    {backdrop ?? <PaperBackdrop />}
     <svg
       width={1920}
       height={1080}

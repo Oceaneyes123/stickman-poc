@@ -1,5 +1,158 @@
 # Current animation validation
 
+## Video 002 — colour-script redesign of every scene — 2026-11-15
+
+**Request.** Video 2 read as one pale paper room for all 68 scenes: the shared
+`NarrativeScene` drew the same cream backdrop behind every stage, and the set
+was navy-line art on near-whites. The brief was a colour-rich background and
+scene while keeping the story intact.
+
+**What changed.** New `src/storyboard/buyNowLook.ts` holds a six-act colour
+script — teal shop (S01–S08), amber first month (S09–S18), coral obligations
+(S19–S30), indigo strain (S31–S41), sienna café (S42–S52), mint resolution
+(S53–S68) — each with a wall gradient, motif, floor, board, card, hairline,
+wood and fabric tone. `lookForScene(scene.id)` reads the act from the
+sequential scene id, so the colour script is one table rather than 68 plan
+edits; `lookVars()` exposes the tints as CSS custom properties.
+`src/storyboard/BuyNowBackdrop.tsx` draws the room: wall gradient, wall bays,
+one large motif (sun, arch, window, pendants, dawn sun), light pool, skirting,
+floor and vignette. It sits behind the stage and never moves with the camera.
+
+`NarrativeScene` gained optional `backdrop` and `style` props; the paper
+backdrop stays the default, so video 1, the component galleries and the
+cinematic reference scenes are untouched. `BuyNowStages` now wraps every stage
+in its act look, adds a solid `Plate` board behind the band, columns, calendar,
+account and closing stage so cream cards separate from saturated walls, centres
+two- and three-column layouts on their own width, gives checkout a drop shadow,
+and moves the lunch counter into the café room so a location does not switch
+palette two scenes apart. `BuyNowArt` and `cinematicEnvironment` read
+`--bn-card`, `--bn-line`, `--bn-quiet`, `--bn-wood` and `--bn-fabric` with the
+shipped colours as fallbacks; the car cabin accepts an optional dusk tone. Card
+day labels now use ink at reduced opacity instead of grey.
+
+**Story untouched.** `compiled.json` (sha256 `70928242…`) and
+`audio-manifest.json` (`a6e077a2…`) are byte-identical to the previous packet:
+scene and event frames, text beats, SFX placement and the audio bed are
+unchanged, and the bed hashes to `edc77b46…`. No narration, cue, timing or
+finance edit was made.
+
+**Verification.** `npm run check` passes ESLint, strict TypeScript, 95 Node
+tests and 5 Python timing tests. Eighteen moment stills were inspected across
+all six acts and every stage family that carries a plate (desk, checkout, band,
+columns, calendar, notifications, account, car, café, mirror, rail, wide,
+counter, walk, closing); the first pass exposed translucent boards that washed
+the cards out, which is why they are now solid tinted plates. The film was
+re-rendered from the final source into `out/002-buy-now-pay-later/color-v2`:
+1920×1080, 30 fps, H.264 `yuv420p`, TV range, 17,784 frames, 592.811 s,
+40,836,727 bytes, sha256 `811387237b239ae1b48a09375e21d41a5b272e7b55f69330048a2ceb52965663`;
+a full `ffmpeg -f null -` decode returned no errors. Evidence stills and
+`sheet-looks.png` live in that packet's `images/`.
+
+**Not verified.** No encoded review of the 15-stage motion gallery after the
+reskin, no cut-by-cut inspection of all 68 scenes (18 stills only), no human
+creative approval of the new palette, and no audio listening pass — the audio
+bed is byte-identical, so audio is unchanged rather than re-approved. The
+superseded `delivery/` packet is kept; its video no longer matches the source.
+
+## Video 002 — seated-pose start correction and re-render — 2026-11-14
+
+Reviewing the 2026-11-13 candidate, the parent found a real motion defect: every
+shot's first 18 frames played a standing-to-seated blend even when the shot
+declares `pose="sitting"`. `Actor` in `src/storyboard/BuyNowStages.tsx` passed
+`fromPose: pose === "walking" ? "walking" : "standing"`, so seated desk
+(S01/S04/S10/S13/S15), car (S31) and cafe (S43–S47) shots stood up and sat down
+again at every cut.
+
+**Fix.** `Actor` now passes `fromPose: pose`: a shot starts in the pose it
+declares, and a pose change is animated only when a scene explicitly asks for
+one via `actionFrom`. The legacy shared rig is untouched, and walking shots keep
+their walk phase (`fromPose === "walking"` was already the behaviour). A focused
+kinematic regression test was added to `tests/buy-now.test.ts`: frame 0 of a
+seated shot must sit clearly lower than standing (hip.y −68 vs −111), and the
+previous wiring must reproduce standing exactly on frame 0. `npm run check`
+passed ESLint, strict TypeScript, 95 Node tests (94 + 1 new) and 5 Python timing
+tests.
+
+**Evidence.** `out/002-buy-now-pay-later/review-pose/sheet-pose-before-after.png`
+pairs old and new frames at S01 f0/f18, S31 f6680/f6698 and S43 f9974/f9992
+(old = superseded render in `delivery-r1`, new = fixed source at 0.5 scale).
+The parent inspected `delivery/images/b01-next.png`, `b43-next.png` and
+`b31-next.png` directly and passed first-frame seated posture in desk, cafe and
+car; that review is settled.
+
+**Re-render.** The film was re-rendered from the fixed source into a fresh
+`out/002-buy-now-pay-later/delivery` packet (the 2026-11-13 packet is preserved
+as `delivery-r1`). `compiled.json` and `audio-manifest.json` are byte-identical
+to the previous packet, so scene/event frames, SFX placement and the audio bed
+are unchanged; only actor pixels differ. 68 scenes, 18 text beats, 66 library
+SFX premixed into `public/film-audio.wav` and played by exactly one `Audio`
+node, 17,784 frames / 592.811 s. `buy-now-pay-later.mp4` is 1920×1080, 30 fps,
+H.264 `yuv420p`, TV range, AAC, 45.6 MB; a full `ffmpeg -f null -` decode
+returned no errors. Audio measures −19.2 LUFS integrated, mean −22.6 dB, true
+peak −5.0 dBFS — identical to the narration master and the previous bed. The
+15-panel `motion-gallery.mp4` was re-rendered (1350 frames) and transcoded to
+TV-range `yuv420p` to match the film. Contact sheets were regenerated from the
+new packet: `sheet-scenes-a/b.png`, `sheet-cuts-a/b.png` (all 68 post-cut first
+frames), `sheet-text.png`, `sheet-gallery.png`.
+
+Human creative approval and audio listening approval remain outstanding; the
+phrase timing is still draft ASR over the measured master, not a listening pass.
+No narration, WAV, cue hash or financial value changed in this pass.
+
+## Video 002 "Buy Now, Pay Later" — full film candidate — 2026-11-13
+
+Episode 002 is produced end to end from its recorded narration: 68 scenes, 205
+ASR phrase cues, 18 text beats and 66 library SFX over 17,784 frames (592.8 s).
+Runtime comes from the measured narration; nothing was stretched to hit a target.
+
+**Narration repair.** VoxCPM2 is not installed in the current VoiceStudio
+runtime, so the p002 take could not be re-synthesised. That take had spoken the
+script's `**` emphasis markers as "asterisk" (ASR at 6.60-7.02 s and
+10.26-10.74 s). The two marker intervals were excised from `audio-2.wav` at
+measured silence boundaries (6.46-7.10 s and 10.14-10.75 s, 1.250 s total,
+zero-crossing snapped, 1 ms fades): no time-stretch, no re-synthesis, no engine
+change. The pre-repair take survives as `audio-2.pre-marker-repair.wav` and in
+`.cache`; `manifest.json` marks p002 with `repairedFrom`. ASR of the repaired
+take reads the paragraph without "asterisk" (token match 0.929; the only
+differences are `sixty dollars` recognised as `$60`). The master was rebuilt
+(592.317 s, sha256 `7e675e1f…`) and the local timing pass re-recorded 205 draft
+phrase cues against it (faster-whisper small, CPU, `mode: draft`,
+`listeningReviewed: false`, `timingReviewed: false`).
+
+**Timeline and audio architecture.** `compileBuyNow` now builds the episode
+CueFile and Storyboard and returns every scene and event frame from
+`src/timeline/compiler.ts` (mode `aligned`, audioHash + measured duration, reason
+string on each anchored offset); the film no longer carries a private rounding
+path, and graphics consume the compiled event frames. Narration and all 66 SFX
+are premixed locally with ffmpeg at those compiled frames (per-cue `adelay`,
+`sidechaincompress` ducking keyed on narration, `alimiter 0.95`) into
+`public/film-audio.wav`, so `BuyNowFilm` renders exactly one `Audio` node.
+`audio-manifest.json` records each cue's frame, gain, library path, library
+sha256 and source duration. The bed measures -19.2 LUFS integrated — identical
+to the narration master — with -5.0 dBFS true peak.
+
+**Motion.** New `BuyNowMotionGallery` composition (15 panels, one per stage,
+`BUY_NOW_PANEL = 90`) replays the same `BuyNowFrame` on a deterministic local
+clock. Text beats vary by meaning (odometer price, plain balance count, elastic
+snap-in offer, SectionHeading) using existing typography components; no new
+typography component was added.
+
+**Review rounds.** Parent inspection of contact sheets found, and this pass
+fixed: S20 account bar cropped below the phone; S21/S23/S61 actor crossing the
+96 px left margin; S28/S35 teal transfer arrow clipped at the right edge; S52
+decision diagram over Sam's face; duplicated static band labels under the
+animated $240/$60 beats in S08, S26, S48, S49; S68's $60 label detached from the
+pulling closing camera and the $240 sitting inside an installment card; S38
+heading colliding with the phone clock; `PaymentCard` jacket icon overlapping the
+TUE band. Amount labels now ride the closing camera through the exported
+`closingCamera()` helper. An S50 "clipped right yellow box" report did not
+reproduce: an independent still at frame 11865 is pixel-identical to the scene
+still (mean absolute difference 0.000).
+
+**Checks.** `npm run check` passed ESLint, strict TypeScript, 94 Node tests and 5
+Python timing tests. Human creative approval and audio listening approval remain
+outstanding; ASR evidence is not listening.
+
 ## Interrupted narration resume — 2026-11-13
 
 Pending takes now recover without restarting VoiceStudio. When backend uptime

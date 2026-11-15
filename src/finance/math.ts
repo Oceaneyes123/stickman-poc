@@ -6,8 +6,19 @@ export const usd = (value: number) =>
   }).format(value);
 export const sum = (amounts: readonly number[]) =>
   amounts.reduce((total, amount) => total + amount, 0);
-export const remaining = (income: number, expenses: number) =>
-  income - expenses;
+export const remaining = (income: number, expenses: number) => income - expenses;
+/** Split one price into equal instalments. The only arithmetic this story uses. */
+export const payInFour = (total: number, count = 4) => {
+  if (
+    ![total, count].every(Number.isFinite) ||
+    total <= 0 ||
+    !Number.isInteger(count) ||
+    count <= 0 ||
+    total % count !== 0
+  )
+    throw new Error("Pay-in-four inputs must be positive and divide evenly");
+  return { total, count, installment: total / count };
+};
 export const debtTotal = (
   principal: number,
   annualRate: number,

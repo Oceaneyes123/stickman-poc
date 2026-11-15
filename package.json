@@ -39,6 +39,7 @@
     "opening:stills": "node --experimental-strip-types scripts/render/render-opening-stills.ts",
     "walking:stills": "node --experimental-strip-types scripts/render/render-bank.ts --walking --stills",
     "render:walking": "npm run check && node --experimental-strip-types scripts/render/render-bank.ts --walking",
+    "render:buy-now": "node --experimental-strip-types scripts/render/render-buy-now-film.ts",
     "dev": "remotion studio",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
