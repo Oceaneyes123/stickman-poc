@@ -14,7 +14,7 @@ script — teal shop (S01–S08), amber first month (S09–S18), coral obligatio
 wood and fabric tone. `lookForScene(scene.id)` reads the act from the
 sequential scene id, so the colour script is one table rather than 68 plan
 edits; `lookVars()` exposes the tints as CSS custom properties.
-`src/storyboard/BuyNowBackdrop.tsx` draws the room: wall gradient, wall bays,
+`src/storyboard/BuyNowBackdrop.tsx` draws video 002's rooms: wall gradient, wall bays,
 one large motif (sun, arch, window, pendants, dawn sun), light pool, skirting,
 floor and vignette. It sits behind the stage and never moves with the camera.
 
@@ -45,8 +45,8 @@ the cards out, which is why they are now solid tinted plates. The film was
 re-rendered from the final source into `out/002-buy-now-pay-later/color-v2`:
 1920×1080, 30 fps, H.264 `yuv420p`, TV range, 17,784 frames, 592.811 s,
 40,836,727 bytes, sha256 `811387237b239ae1b48a09375e21d41a5b272e7b55f69330048a2ceb52965663`;
-a full `ffmpeg -f null -` decode returned no errors. Evidence stills and
-`sheet-looks.png` live in that packet's `images/`.
+a full `ffmpeg -f null -` decode returned no errors. Evidence stills are in
+that packet's `images/` and `images/review/`, with `sheet-looks.png` beside them.
 
 **Not verified.** No encoded review of the 15-stage motion gallery after the
 reskin, no cut-by-cut inspection of all 68 scenes (18 stills only), no human

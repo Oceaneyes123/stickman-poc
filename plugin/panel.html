@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Frame Study</title>
+    <link rel="icon" href="icons/icon-32.png" type="image/png" />
+    <link rel="stylesheet" href="panel.css" />
+    <script src="core.js"></script>
+    <script type="module" src="panel.js"></script>
+  </head>
+  <body>
+    <header>
+      <img
+        class="film-mark"
+        src="icons/icon.svg"
+        width="44"
+        height="44"
+        alt=""
+        aria-hidden="true"
+      />
+      <div>
+        <h1>Frame Study</h1>
+        <p>YouTube visual &amp; motion reference</p>
+      </div>
+    </header>
+    <main>
+      <section aria-labelledby="sourceHeading">
+        <div class="section-title">
+          <h2 id="sourceHeading">Video source</h2>
+          <button id="connect">Connect video</button>
+        </div>
+        <button id="reloadExtension" hidden>Reload extension</button>
+        <p id="videoTitle">Open a YouTube video, then connect.</p>
+        <p id="videoDetails" class="muted"></p>
+        <label
+          >Available videos<select
+            id="videoTabs"
+            aria-label="Available YouTube videos"
+          ></select
+        ></label>
+      </section>
+      <section aria-labelledby="folderHeading">
+        <h2 id="folderHeading">Local output</h2>
+        <p id="folderName">Select plugin/result once to enable saving.</p>
+        <div class="actions">
+          <button id="chooseFolder">Open / change folder</button
+          ><button id="grant" hidden>Grant folder access</button>
+        </div>
+        <p class="hint">
+          Images stay on your computer. The folder picker opens your chosen
+          directory; Chrome cannot launch File Explorer.
+        </p>
+      </section>
+      <section aria-labelledby="captureHeading">
+        <h2 id="captureHeading">Capture frames</h2>
+        <fieldset id="captureSettings">
+          <div class="fields">
+            <label
+              >Capture mode<select id="mode">
+                <option value="interval">Every interval</option>
+                <option value="scene">Scene changes</option>
+                <option value="motion">Motion sequence</option>
+              </select></label
+            >
+            <label
+              >Processing<select id="method">
+                <option value="observe">Observe playback</option>
+                <option value="seek">Seek range &amp; restore</option>
+              </select></label
+            >
+            <label
+              >Interval / scene cooldown<select id="interval">
+                <option value="1">1 second</option>
+                <option value="3">3 seconds</option>
+                <option value="5" selected>5 seconds</option>
+                <option value="10">10 seconds</option>
+              </select></label
+            >
+            <label
+              >Motion sampling<select id="fps">
+                <option value="2">2 FPS</option>
+                <option value="5" selected>5 FPS</option>
+                <option value="10">10 FPS</option>
+              </select></label
+            >
+            <label
+              >Range start<input
+                id="start"
+                type="text"
+                value="0"
+                inputmode="decimal"
+                placeholder="00:00:00.000"
+            /></label>
+            <label
+              >Range end<input
+                id="end"
+                type="text"
+                inputmode="decimal"
+                placeholder="Video end"
+            /></label>
+          </div>
+          <label class="threshold"
+            >Scene difference <output id="thresholdValue">18%</output
+            ><input id="threshold" type="range" min="1" max="60" value="18"
+          /></label>
+        </fieldset>
+        <p class="hint">
+          Ranges exclude the end timestamp. Observe leaves playback unchanged;
+          press Play on YouTube. Seek temporarily pauses and restores playback.
+          Scene mode compares compositions 4 times per second.
+        </p>
+        <div class="actions">
+          <button id="manual">Capture current frame</button
+          ><button id="startCapture" class="primary">Start capture</button
+          ><button id="stop" disabled>Stop</button>
+        </div>
+        <p id="status" role="status" aria-live="polite">
+          Ready. Select an output folder and connect a video.
+        </p>
+        <p class="hint">
+          Keep this panel open. Hidden tabs may stop providing frames; sampling
+          is best effort. Actual and requested timestamps are saved separately.
+        </p>
+      </section>
+      <section aria-labelledby="transcriptHeading">
+        <h2 id="transcriptHeading">Transcript &amp; narration</h2>
+        <p class="hint">
+          Runs on your computer at 127.0.0.1:8765. Captions first, then local
+          Whisper. No paid transcription API.
+        </p>
+        <details>
+          <summary>Start the local backend</summary>
+          <p class="hint">
+            From the project root, install plugin/backend/requirements.txt in a
+            Python virtual environment, then run:
+          </p>
+          <code id="backendCommand"></code>
+          <p class="hint">
+            Select plugin/result as the frame output folder to keep all files
+            together. Model weights download on first use.
+          </p>
+        </details>
+        <label
+          >YouTube URL or video ID<input
+            id="transcriptUrl"
+            type="text"
+            placeholder="Current connected video"
+        /></label>
+        <fieldset id="transcriptSettings">
+          <div class="fields">
+            <label
+              >Whisper model<select id="whisperModel">
+                <option value="tiny">tiny</option>
+                <option value="base">base</option>
+                <option value="small" selected>small</option>
+                <option value="medium">medium</option>
+              </select></label
+            >
+            <label
+              >Inference<select id="whisperDevice">
+                <option value="cpu">CPU / int8</option>
+                <option value="cuda">NVIDIA GPU / float16</option>
+              </select></label
+            >
+            <label
+              >Spoken language<input
+                id="transcriptLanguage"
+                type="text"
+                placeholder="auto, en, es, tl…"
+                maxlength="4"
+            /></label>
+          </div>
+          <label class="check"
+            ><input id="wordTimestamps" type="checkbox" />Include word
+            timestamps (Whisper)</label
+          ><label class="check"
+            ><input id="retainAudio" type="checkbox" />Keep normalized audio
+            after successful Whisper transcription</label
+          >
+        </fieldset>
+        <div class="actions">
+          <button id="extractTranscript" class="primary">Get transcript</button
+          ><button id="forceWhisper">Run Whisper instead</button
+          ><button id="cancelTranscript" disabled>Cancel transcription</button
+          ><button id="refreshTranscript">Refresh / reconnect</button>
+        </div>
+        <progress
+          id="transcriptProgress"
+          max="100"
+          value="0"
+          aria-label="Transcript progress"
+        ></progress>
+        <p id="transcriptStatus" role="status" aria-live="polite">
+          Start the local backend to extract or import a transcript.
+        </p>
+        <p id="transcriptSummary" class="hint"></p>
+        <details>
+          <summary>Upload audio or a transcript manually</summary>
+          <label
+            >Audio (up to 256 MiB)<input
+              id="audioUpload"
+              type="file"
+              accept=".wav,.mp3,.m4a,.flac,.ogg,.webm,.mp4,.opus,.aac" /></label
+          ><button id="uploadAudio">Transcribe uploaded audio</button
+          ><label
+            >Transcript (UTF-8, up to 5 MiB)<input
+              id="transcriptUpload"
+              type="file"
+              accept=".json,.vtt,.srt,.txt" /></label
+          ><button id="uploadTranscript">Import transcript</button>
+          <p class="hint">
+            Uploads go only to your local backend. Plain TXT has no timing; use
+            VTT, SRT, or timestamped JSON for frame synchronization. Uploaded
+            audio must start at video time zero for its timestamps to match.
+          </p>
+        </details>
+        <label
+          >Search transcript<input
+            id="transcriptSearch"
+            type="search"
+            placeholder="Find narration…"
+        /></label>
+        <div id="transcriptResults" class="transcript-results"></div>
+        <button id="exportAnalysis">Export scene analysis JSON</button>
+        <p class="hint">
+          Exports selected frames in the current gallery collection with
+          matching narration and original timestamps.
+        </p>
+      </section>
+      <section aria-labelledby="galleryHeading">
+        <div class="section-title">
+          <h2 id="galleryHeading">Frame gallery</h2>
+          <span id="frameCount">0 frames</span>
+        </div>
+        <label
+          >Collection<select id="collection">
+            <option value="">Still frames</option>
+          </select></label
+        >
+        <div class="actions">
+          <button id="selectAll">Select all</button
+          ><button id="selectNone">Select none</button
+          ><button id="remove">Remove selected</button
+          ><button id="restore">Restore removed</button>
+        </div>
+        <p class="hint">
+          Use arrow buttons to reorder. Remove hides frames from sheets and
+          preserves original files.
+        </p>
+        <div id="gallery" class="gallery">
+          <p class="empty">Captured frames appear here.</p>
+        </div>
+        <div class="actions">
+          <button id="previousPage" disabled>Previous</button
+          ><span id="pageNumber">Page 1</span
+          ><button id="nextPage" disabled>Next</button>
+        </div>
+      </section>
+      <section aria-labelledby="sheetHeading">
+        <h2 id="sheetHeading">Contact sheets</h2>
+        <div class="fields">
+          <label
+            >Grid<select id="grid">
+              <option value="3">3 × 3</option>
+              <option value="4" selected>4 × 4</option>
+              <option value="5">5 × 5</option>
+            </select></label
+          >
+          <label
+            >Cell width<select id="cellWidth">
+              <option value="640">640 px</option>
+              <option value="960" selected>960 px</option>
+              <option value="1280">1280 px</option>
+            </select></label
+          >
+          <label
+            >Export<select id="format">
+              <option value="png">PNG</option>
+              <option value="both">PNG + JPEG</option>
+            </select></label
+          >
+        </div>
+        <button id="generate" class="primary">Generate selected frames</button>
+        <p class="hint">
+          Sheets split automatically. Motion sheets preserve your sequence
+          order. Click an image to preview at full resolution.
+        </p>
+        <div id="sheets" class="sheets"></div>
+      </section>
+    </main>
+    <footer>
+      Local capture and transcription. No account. No cloud processing.
+    </footer>
+    <dialog id="preview">
+      <button id="closePreview">Close preview</button
+      ><img id="previewImage" alt="Full resolution preview" />
+      <p id="previewCaption"></p>
+    </dialog>
+  </body>
+</html>

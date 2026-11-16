@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Frame Study browser checks</title>
+  </head>
+  <body>
+    <video id="fixture" src="/fixture.mp4" preload="auto" muted></video>
+    <pre id="result">Running</pre>
+    <script src="/core.js"></script>
+    <script>
+      // Only the identity/transport are mocked; decoding, seeking, canvas, IndexedDB,
+      // filesystem handles, and image encoding run in the real browser.
+      globalThis.FrameStudy = { ...FrameStudy, videoId: () => "abcdefghijk" };
+      const connections = [];
+      globalThis.chrome = {
+        runtime: {
+          onConnect: { addListener: (callback) => connections.push(callback) },
+          onMessage: { addListener: () => {} },
+        },
+      };
+      function signal() {
+        const listeners = new Set();
+        return {
+          addListener: (callback) => listeners.add(callback),
+          removeListener: (callback) => listeners.delete(callback),
+          emit: (value) => {
+            for (const callback of listeners) callback(value);
+          },
+        };
+      }
+      globalThis.testPort = {
+        name: "frame-study",
+        onMessage: signal(),
+        onDisconnect: signal(),
+      };
+      const requests = new Map();
+      const captured = [];
+      let finish;
+      let frameObserver;
+      testPort.postMessage = (message) => {
+        if (message.type === "reply") {
+          const request = requests.get(message.id);
+          if (request) {
+            requests.delete(message.id);
+            message.error
+              ? request.reject(new Error(message.error))
+              : request.resolve(message.result);
+          }
+        }
+        if (message.type === "frame") {
+          captured.push(message.frame);
+          Promise.resolve(frameObserver?.(message.frame)).then(
+            () => testPort.onMessage.emit({ type: "saved", id: message.id }),
+            (error) =>
+              testPort.onMessage.emit({
+                type: "saved",
+                id: message.id,
+                error: error.message,
+              }),
+          );
+        }
+        if (message.type === "done") finish?.(message);
+      };
+      function command(name, options) {
+        return new Promise((resolve, reject) => {
+          const id = crypto.randomUUID();
+          requests.set(id, { resolve, reject });
+          testPort.onMessage.emit({
+            type: "command",
+            id,
+            command: name,
+            options,
+          });
+        });
+      }
+    </script>
+    <script src="/content.js"></script>
+    <script type="module">
+      import { LocalStore, rememberedDirectory } from "/storage.js";
+      import { renderSheet, canvasBlob } from "/sheets.js";
+      const assert = (condition, message) => {
+        if (!condition) throw new Error(message);
+      };
+      const video = document.querySelector("video");
+      const trace = [];
+      for (const event of ["seeking", "seeked", "loadeddata", "pause", "play"])
+        video.addEventListener(event, () =>
+          trace.push({
+            event,
+            time: video.currentTime,
+            ready: video.readyState,
+          }),
+        );
+      const requestFrame = video.requestVideoFrameCallback.bind(video);
+      video.requestVideoFrameCallback = (callback) =>
+        requestFrame((now, metadata) => {
+          trace.push({
+            event: "frame",
+            time: metadata.mediaTime,
+            seeking: video.seeking,
+          });
+          callback(now, metadata);
+        });
+      const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+      const seekTo = (time) =>
+        new Promise((resolve) => {
+          video.addEventListener("seeked", resolve, { once: true });
+          video.currentTime = time;
+        });
+      globalThis.runBrowserTests = async () => {
+        if (video.readyState < 2)
+          await new Promise((resolve, reject) => {
+            video.addEventListener("loadeddata", resolve, { once: true });
+            video.addEventListener(
+              "error",
+              () => reject(new Error("Fixture video failed to load.")),
+              { once: true },
+            );
+          });
+        connections[0](testPort);
+        const source = await command("info");
+        const logs = [];
+        const output = await navigator.storage.getDirectory();
+        await rememberedDirectory(output);
+        const remembered = await rememberedDirectory();
+        assert(
+          await remembered.isSameEntry(output),
+          "Directory handle did not survive IndexedDB serialization.",
+        );
+        logs.push("IndexedDB directory handle round trip");
+        const store = new LocalStore(output);
+        const defaults = {
+          mode: "motion",
+          method: "seek",
+          start: 0.25,
+          end: 1.25,
+          fps: 5,
+          interval: 1,
+          threshold: 0.18,
+        };
+        const sequence = await store.startSequence(source, defaults);
+        frameObserver = (frame) =>
+          store.saveFrame(source, defaults, sequence.sequence, frame);
+        async function run(options) {
+          captured.length = 0;
+          const done = new Promise((resolve) => {
+            finish = resolve;
+          });
+          await command("capture", options);
+          const result = await Promise.race([
+            done,
+            wait(25000).then(() => {
+              throw new Error("Capture timed out");
+            }),
+          ]);
+          assert(!result.error, `${result.error} ${JSON.stringify(trace)}`);
+          return { ...result, frames: [...captured] };
+        }
+        await seekTo(0.1);
+        video.playbackRate = 1.25;
+        const motion = await run(defaults);
+        assert(
+          motion.frames.length === 5,
+          `Expected 5 motion frames, got ${motion.frames.length}`,
+        );
+        assert(
+          motion.frames.every(
+            (frame, i) => Math.abs(frame.requestedTime - (0.25 + i / 5)) < 1e-8,
+          ),
+          "Requested sampling times changed.",
+        );
+        assert(
+          motion.frames.every((frame) => frame.timestampSource === "mediaTime"),
+          "Seek frames must use decoder presentation timestamps.",
+        );
+        assert(
+          motion.frames.every(
+            (frame) =>
+              Math.abs(frame.timestamp - frame.requestedTime) <= 1 / 30 + 0.001,
+          ),
+          "Decoded timestamp differs by more than one source frame.",
+        );
+        assert(
+          video.paused &&
+            Math.abs(video.currentTime - 0.1) < 0.001 &&
+            video.playbackRate === 1.25,
+          "Paused playback state was not restored.",
+        );
+        const bitmap = await createImageBitmap(
+          await store.file(source, `motion/${sequence.sequence}/frame_001.jpg`),
+        );
+        assert(
+          bitmap.width === 320 && bitmap.height === 180,
+          "JPEG resolution is wrong.",
+        );
+        bitmap.close();
+        logs.push(
+          "Motion: 5 decoded JPEG frames, actual timestamps, range end exclusion, paused position/rate restoration",
+        );
+        frameObserver = null;
+        const scenes = await run({
+          ...defaults,
+          mode: "scene",
+          start: 0,
+          end: 4,
+        });
+        assert(
+          scenes.frames.length === 4,
+          `Expected four unique cuts, got ${scenes.frames.length}`,
+        );
+        logs.push(
+          "Scene capture: repeated frames suppressed; four hard cuts retained",
+        );
+        const manual = await run({ ...defaults, mode: "manual" });
+        assert(manual.frames.length === 1, "Manual capture failed.");
+        logs.push("Manual capture");
+        // Observe mode must not seek, pause, or change playback rate.
+        await seekTo(0.05);
+        video.playbackRate = 1;
+        await video.play();
+        const observation = await run({
+          ...defaults,
+          method: "observe",
+          start: 0.1,
+          end: 1,
+          fps: 5,
+        });
+        assert(
+          // Presentation callbacks can lead currentTime by one 30 FPS fixture frame.
+          !video.paused &&
+            video.playbackRate === 1 &&
+            video.currentTime >= 1 - 1 / 30,
+          `Observe mode disrupted playback: paused=${video.paused}, rate=${video.playbackRate}, time=${video.currentTime}.`,
+        );
+        assert(
+          observation.frames.length >= 3,
+          "Observe mode did not sample running playback.",
+        );
+        video.pause();
+        logs.push("Observe capture leaves playback running");
+        await seekTo(0.2);
+        await video.play();
+        const playing = await run({ ...defaults, start: 0.5, end: 0.9 });
+        assert(
+          !video.paused && video.playbackRate === 1 && video.currentTime < 0.5,
+          "Playing state was not restored.",
+        );
+        video.pause();
+        logs.push("Seek capture restores playing state");
+        const done = new Promise((resolve) => {
+          finish = resolve;
+        });
+        await command("capture", {
+          ...defaults,
+          method: "observe",
+          start: 0,
+          end: 4,
+        });
+        await command("stop");
+        assert(
+          (await done).cancelled && video.paused,
+          "Stopped observation changed paused playback.",
+        );
+        logs.push("Stop while paused completes without a frame callback");
+        const metadata = await store.read(source);
+        const frames = metadata.frames.filter(
+          (frame) => frame.sequence === sequence.sequence,
+        );
+        const sheet = await renderSheet(frames, {
+          grid: 3,
+          cellWidth: 640,
+          title: source.title,
+          load: (path) => store.file(source, path),
+        });
+        assert(
+          sheet.width === 1968 && sheet.height === 1344,
+          "Contact sheet dimensions are wrong.",
+        );
+        const png = await canvasBlob(sheet);
+        const jpeg = await canvasBlob(sheet, "image/jpeg");
+        assert(
+          png.type === "image/png" && jpeg.type === "image/jpeg",
+          "Contact sheet export encoding failed.",
+        );
+        const saved = await store.saveSheet(
+          source,
+          sequence.sequence,
+          png,
+          jpeg,
+          {
+            frames: frames.map((frame) => frame.path),
+            width: sheet.width,
+            height: sheet.height,
+          },
+        );
+        assert(saved.sheets.length === 1, "Sheet metadata was not written.");
+        logs.push(
+          "Real 1968×1344 contact sheet and immediate PNG/JPEG/JSON filesystem writes",
+        );
+        document.getElementById("result").textContent = logs.join("\n");
+        return {
+          passed: logs,
+          frameTimes: motion.frames.map((frame) => ({
+            actual: frame.timestamp,
+            requested: frame.requestedTime,
+          })),
+        };
+      };
+    </script>
+  </body>
+</html>

@@ -7,7 +7,7 @@ the full reasoning.
 | # | Decision | Source |
 |---|---|---|
 | 1 | Characters are hairless and earless; the blue-hoodie Sam / white-shirt Alex palette supersedes the older tie/stripe rules. The legacy rig still serves shared templates and the gallery. | `AGENTS.md`, `src/characters/README.md` |
-| 2 | No room walls, windows, floor or doors. A fixed, seeded SVG paper grain is the backdrop; characters, furniture, props and financial graphics stay in the foreground. | `docs/cinematic-audit.md` |
+| 2 | ~~No room walls, windows, floor or doors. A fixed, seeded SVG paper grain is the backdrop.~~ Superseded for every video from 002 on by #12; the paper backdrop now only serves the finished 001 film and the component galleries. | `docs/cinematic-audit.md`, #12 |
 | 3 | On-screen text started as currency-only; the typography plan qualified that rule — conceptual labels are allowed where the number alone is ambiguous. Narration never appears as a subtitle. | `docs/typography-audit.md`, `videos/001-lifestyle-creep/typography-plan.md` |
 | 4 | Typography is selective and cue/word anchored, about two-thirds of cues carry no new text. Labels belong to their object and leave with it. | `docs/typography-audit.md` |
 | 5 | Panel action finishes inside ~60% of the shot, then holds the settled pose, so no action completes on a cut. | `src/typography/plan.ts`, `docs/animation-validation.md` |
@@ -17,6 +17,7 @@ the full reasoning.
 | 9 | Narration is measured local WAV; draft ASR timing is structurally checked only and never certified as aligned or listening-approved. | `docs/narration.md`, `docs/animation-validation.md` |
 | 10 | Final deliverable is one MP4: episode + 8 s `GeneralOutro`, H.264/yuv420p (TV range, bt709), 1920×1080, 30 fps, AAC 48 kHz stereo. Remotion's full-range `yuvj420p` is transcoded before delivery. | `docs/animation-validation.md` |
 | 11 | Concept-driven storytelling: each video explains *why* something happens, not how to calculate it. No formula beats, worked arithmetic or income-and-expense recitals; two or three amounts serve as evidence at the reveal. Arithmetic stays correct against `src/finance/math.ts` — it just stays off-screen and out of the narration. | `references/SCRIPT_GUIDE.md` §"Concept before calculation" |
+| 12 | Every episode is staged against its own colour script, not one flat paper room. Each act gets a room: saturated wall gradient, one large motif, floor and light pool, hue following that story's pressure. An episode designs its palette, motifs and act structure from its own story — no earlier episode is the reference for a later one. Cards and numbers sit on solid light boards so they stay readable on saturated grounds, and the room never replaces the film's brand semantics (yellow money, coral cost, teal alternative). The look table lives next to the episode's film and is named for it. | `docs/animation-validation.md` 2026-11-15 |
 
 ## Cleanup — 2026-11-10
 

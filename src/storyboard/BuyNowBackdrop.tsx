@@ -1,7 +1,9 @@
 /**
- * Full-frame set for video 002. One wall, one motif, one floor: the colour
- * comes from the scene's act look, the art on top stays light and readable.
- * Draws behind the stage and never moves with the camera, like a real backdrop.
+ * Video 002's set, and only video 002's. One wall, one motif, one floor per act.
+ * This is one episode's colour script, not a house template: a new film designs
+ * its own rooms from its own story rather than borrowing these palettes or
+ * motifs. The colour comes from the act look; the art on top stays light and
+ * readable. Draws behind the stage and never moves with the camera.
  */
 import type { Look } from "./buyNowLook";
 

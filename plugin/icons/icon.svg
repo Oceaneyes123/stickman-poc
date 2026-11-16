@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none">
+  <title>Frame Study</title>
+  <rect x="4" y="18" width="120" height="88" rx="24" fill="#FF0033"/>
+  <path d="M44 40L80 62L44 84V40Z" fill="#FFFFFF"/>
+  <rect x="78" y="72" width="46" height="46" rx="10" fill="#14243A" stroke="#FFFFFF" stroke-width="4"/>
+  <g fill="#FFFFFF">
+    <rect x="86" y="80" width="10" height="10" rx="2"/>
+    <rect x="104" y="80" width="10" height="10" rx="2"/>
+    <rect x="86" y="98" width="10" height="10" rx="2"/>
+    <rect x="104" y="98" width="10" height="10" rx="2"/>
+  </g>
+</svg>
