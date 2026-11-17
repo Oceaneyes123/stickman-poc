@@ -26,7 +26,16 @@ venv/
 # Tool caches and logs
 .cache/
 .sfxcache/
+.codegraph/
 *.log
+*.tmp
+run.lock
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
 
 # Generated Stickman renders; keep film source and imported media elsewhere
 /videos/*/shots/
