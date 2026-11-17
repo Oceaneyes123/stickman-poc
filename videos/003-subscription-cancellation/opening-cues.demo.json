@@ -1,0 +1,102 @@
+{
+  "mode": "timing-demo",
+  "scriptHash": "f46d1e9b2d36198be0ac50a8953fa3966ae863dd2f7d48bb36bc0c1b54cba366",
+  "cues": [
+    {
+      "id": "p001-s001",
+      "text": "You signed up to watch one show.",
+      "startMs": 0.0,
+      "endMs": 1720.0
+    },
+    {
+      "id": "p001-s002",
+      "text": "There was a free trial, the show looked good, and getting started took less than a minute.",
+      "startMs": 2319.9999999999995,
+      "endMs": 6800.0
+    },
+    {
+      "id": "p001-s003",
+      "text": "A week later, you've finished watching.",
+      "startMs": 7540.0,
+      "endMs": 9180.0
+    },
+    {
+      "id": "p001-s004",
+      "text": "You open your account, find the subscription, and decide to cancel.",
+      "startMs": 9640.0,
+      "endMs": 13120.0
+    },
+    {
+      "id": "p001-s005",
+      "text": "The first page asks if you're sure.",
+      "startMs": 13820.0,
+      "endMs": 15600.0
+    },
+    {
+      "id": "p001-s006",
+      "text": "The next reminds you what you'll lose.",
+      "startMs": 16000.0,
+      "endMs": 17660.0
+    },
+    {
+      "id": "p001-s007",
+      "text": "Then there's another offer, another button, and another page.",
+      "startMs": 18360.0,
+      "endMs": 21360.0
+    },
+    {
+      "id": "p002-s001",
+      "text": "At some point, you may wonder if you've cancelled already, or if you've just told the website that you're thinking about cancelling.",
+      "startMs": 21661.854166666668,
+      "endMs": 28221.854166666668
+    },
+    {
+      "id": "p002-s002",
+      "text": "Some subscriptions are easy to end.",
+      "startMs": 28721.854166666668,
+      "endMs": 30741.854166666668
+    },
+    {
+      "id": "p002-s003",
+      "text": "But when leaving takes more effort than joining, that extra effort can have a financial value to the company collecting the payments.",
+      "startMs": 31261.854166666668,
+      "endMs": 37501.854166666664
+    },
+    {
+      "id": "p002-s004",
+      "text": "To understand why, start with what made the subscription convenient.",
+      "startMs": 38241.854166666664,
+      "endMs": 41721.854166666664
+    },
+    {
+      "id": "p002-s005",
+      "text": "When you rent a movie, you pay, watch it, and the transaction ends.",
+      "startMs": 42281.854166666664,
+      "endMs": 46241.854166666664
+    },
+    {
+      "id": "p003-s001",
+      "text": "Another movie means another purchase.",
+      "startMs": 46495.9375,
+      "endMs": 48335.9375
+    },
+    {
+      "id": "p003-s002",
+      "text": "An automatically renewing subscription keeps going until something changes.",
+      "startMs": 48735.9375,
+      "endMs": 52435.9375
+    },
+    {
+      "id": "p003-s003",
+      "text": "Your music doesn't stop every month while you hunt for your card.",
+      "startMs": 53095.9375,
+      "endMs": 55775.9375
+    },
+    {
+      "id": "p003-s004",
+      "text": "The company gets a more predictable income and you skip another checkout.",
+      "startMs": 56355.9375,
+      "endMs": 59755.9375
+    }
+  ]
+}

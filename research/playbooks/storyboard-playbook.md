@@ -1,5 +1,52 @@
 # Storyboard playbook
 
+**Current guidance · 2026-11-16 · Phase 6.** Follow the [visual style guide](../../references/VISUAL_STYLE_GUIDE.md), [teaching guide](../../references/TEACHING_STYLE_GUIDE.md) and [media-sourcing standards](../../references/MEDIA_SOURCING.md). Select shots from the narration and learning goal, not character poses, sentence count or the presence of a number.
+
+## Select a treatment by purpose
+
+| Viewer need | Possible treatment | Review condition |
+|---|---|---|
+| Recognize an everyday situation | Relevant licensed footage/photo or original object staging | Context is relevant and does not falsely identify a fictional person or event. |
+| Understand a hidden mechanism | Original process diagram or animated mock interface | Steps are supported, simplification is clear and interfaces are labeled when necessary. |
+| Examine actual evidence | Authentic permitted document, chart, screenshot or excerpt | Verify source, context, rights and readable attribution; preserve material qualifications. |
+| Connect several artifacts | Editorial collage with one dominant idea | Establish hierarchy and provenance; do not fabricate an apparently authentic composite. |
+| Understand a constraint or comparison | Object metaphor, calendar or comparable before/after states | Disclose assumptions and tradeoffs; quantities/scales are honest if shown. |
+| Feel an ordinary consequence | A relevant detail, quiet hold or contextual shot | No exaggerated disaster, forced reaction or motion quota. |
+
+Sam and Alex may remain fictional narrative names without recurring animation. Licensed people can appear without animated counterparts. Character acting is a legacy/explicitly selected treatment, not a mandatory way to show a decision. A real close-up or over-the-shoulder shot is not prohibited because an old rig lacked geometry; any new code capability remains a separately scoped implementation.
+
+## Required beat record
+
+Use the [nine-field framework](../../references/VISUAL_STYLE_GUIDE.md#6-shot-selection-framework) for every beat: narration/story moment, learning need, visual purpose, recommended medium, primary subject, animation/camera action, required assets, source/license requirements and expected takeaway. Carry beat/cue IDs and any provisional duration separately. One beat may use several purposeful shots, or continue an existing shot.
+
+Keep one dominant idea; supporting objects may coexist. Preserve object identity, dates and states across cuts. Keep labels attached to their meaning, with readable hierarchy and no text crossing faces. Negative space can support comprehension without an arriving icon. Select meaningful visual variety; no mandatory rotation of scene families, exact object count or first-minute comparison.
+
+## Example: BNPL schedule beat
+
+A calendar showing several fictional purchase schedules explains shared future commitments more clearly than a generic worried character. Establish one schedule, add another and hold the overlapping weeks. Keep the full obligation understandable without a mandatory total or formula. Record assumptions and factual support separately from asset rights. Optional repair footage can supply context later; it is not evidence about an actual BNPL customer.
+
+## Review gate for a future packet
+
+- [ ] Every beat has the nine fields and a specific learning purpose; the viewer takeaway follows from the image and narration.
+- [ ] Medium choice is justified. Footage, photos, collages and evidence are allowed when source/rights checks pass; unverified media remains a labeled planning placeholder.
+- [ ] Authentic material and illustrative/recreated material are distinguishable at the point of possible confusion.
+- [ ] Figures are sourced or explicitly hypothetical; modeled totals are derived correctly. No numerical reveal is required.
+- [ ] Text is selective, readable on mobile and clear of important subjects; dates, chronology and state transitions agree.
+- [ ] Pacing follows comprehension and measured narration. Estimates are not aligned cues; human creative/listening approval is separate.
+
+The existing `storyboard:design` 67-scene/99-panel workflow is episode-001 tooling, not a general mixed-media storyboard generator. This phase changes documentation only; do not change episode schemas or claim the new nine-field convention is renderer-enforced.
+
+Evidence: [storyboard patterns](../channels/storyboard-patterns.md), [cinematography analysis](../channels/cinematography-composition.md). Their sampled frames inform options, not universal rules.
+
+## Historical playbook — superseded recommendations
+
+The original below is retained verbatim. Its allowed-type bans, number-first decisions, character defaults and quotas are **not active documentary instructions**. Original observations and source references remain historical evidence.
+
+<details>
+<summary>Original storyboard playbook — historical, not production instructions</summary>
+
+# Storyboard playbook
+
 Converts the observed scene grammar into decisions for this repo's storyboard
 packets (`npm run storyboard:design` → 67 scenes / 99 panels). Evidence:
 `../channels/storyboard-patterns.md`.
@@ -82,3 +129,5 @@ A storyboard packet is ready to animate when:
       panels (the existing `visual-variety-audit.md` rule, unchanged).
 - [ ] Each beat has exactly one object doing the explanatory work.
 - [ ] At least one comparison or scale reveal exists in the first 60 s.
+
+</details>

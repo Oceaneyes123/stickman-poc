@@ -1,9 +1,14 @@
-# The Money Trap animation toolkit
+# The Money Trap — documentary production toolkit
 
-Reusable local Remotion + React + strict TypeScript tools. Current characters:
-hairless Sam in a blue hoodie, Alex in a white shirt and glasses.
+Reusable local Remotion + React + strict TypeScript tools for **Premium Editorial Finance Documentary** production: narrator-led explanations, original editorial motion graphics and appropriate verified mixed media. Character compositions and episodes 001/002 remain preserved legacy work.
+
+Before creating a video, read [branding](references/CHANNEL-BRANDING.md), [scriptwriting](references/SCRIPT_GUIDE.md), [visual style](references/VISUAL_STYLE_GUIDE.md), [teaching](references/TEACHING_STYLE_GUIDE.md) and [media sourcing](references/MEDIA_SOURCING.md), then [production rules](AGENTS.md). The [research index](research/README.md) links current playbooks and installed-skill roles. See the [migration audit](docs/documentary-migration-audit.md) for preservation evidence and remaining production limits.
+
+This documentation migration does not implement a mixed-media compositor, general mock-interface library or automatic license checker. Existing episode-specific schemas and render commands remain unchanged. Future production must select suitable existing capabilities or scope any implementation separately.
 
 ## Run
+
+Run production commands only when the task authorizes that work. These existing commands include legacy review compositions; they do not automatically render a new documentary.
 
 Use Node 24.6+ and npm from the repository root.
 
@@ -48,10 +53,10 @@ The latest walking and movement MP4s remain there; obsolete previews were remove
 - `scripts/`: local tools grouped by job — `render/` (Remotion renders and stills),
   `review/` (QA, contact sheets, packet verifiers), `narration/` (local TTS and
   timing), `research/` (corpus fetch and measurement), plus `get_transcript/`.
-  See the [scripts index](scripts/README.md).
+  See [narration workflow](docs/narration.md) and [script directories](scripts/).
 - `docs/`: audits and decisions; validation history lives in `docs/validation/`,
   the per-panel variety table in `docs/variety/`, transcript analysis steps in
-  `docs/transcripts/`. See the [docs index](docs/README.md).
+  `docs/transcripts/`. See [decisions](docs/decisions.md) and [current validation](docs/animation-validation.md).
 - `references/`: character art, channel guidance and upstream research.
 - `videos/sam-atm/`: separate existing film, preserved independently.
 
@@ -71,8 +76,9 @@ python scripts/review/character-detail-sheets.py
 ```
 
 Video QA checks metadata, decodes the entire video and generates a contact sheet.
-Technical checks do not replace human visual or listening approval. No aligned
-narration is currently supplied.
+Technical checks do not replace human creative or listening approval. Episode
+timing/approval status is recorded in current validation; older script-package
+status text does not certify current audio alignment or delivery.
 
 See [production rules](AGENTS.md), [sources and licenses](SOURCES.md),
 [walking research](docs/walking-mechanics-research.md), and
@@ -83,7 +89,9 @@ See [production rules](AGENTS.md), [sources and licenses](SOURCES.md),
 Production-level reverse engineering of 18 channels, with raw evidence in
 `research/evidence/` and playbooks in `research/playbooks/`. Start at
 [research/README.md](research/README.md). Regenerate the evidence with
-`scripts/research/`; nothing under `research/` is hand-typed that a script can produce.
+`scripts/research/`; generated evidence/tables remain script-owned. Editorial
+playbooks are maintained separately, with their original recommendations preserved
+as historical records. No public corpus data proves a universal success formula.
 
 ## Channel transcripts
 

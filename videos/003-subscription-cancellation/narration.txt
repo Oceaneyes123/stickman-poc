@@ -1,0 +1,91 @@
+You signed up to watch one show.
+
+There was a free trial, the show looked good, and getting started took less than a minute.
+
+A week later, you’ve finished watching. You open your account, find the subscription, and decide to cancel.
+
+The first page asks if you’re sure. The next reminds you what you’ll lose. Then there’s another offer, another button, and another page.
+
+At some point, you may wonder if you’ve canceled already—or if you’ve just told the website that you’re thinking about canceling.
+
+Some subscriptions are easy to end. But when leaving takes more effort than joining, that extra effort can have a financial value to the company collecting the payments.
+
+To understand why, start with what made the subscription convenient.
+
+When you rent a movie, you pay, watch it, and the transaction ends. Another movie means another purchase.
+
+An automatically renewing subscription keeps going until something changes. Your music doesn’t stop every month while you hunt for your card. The company gets a more predictable income, and you skip another checkout.
+
+That arrangement can work well while you’re using the service. Then the show ends, the project finishes, or your needs change.
+
+The renewal keeps doing exactly what it was designed to do.
+
+Now you have to notice the charge, find the cancellation process, and finish it before another payment. Otherwise, the subscription can continue even though the reason you joined has disappeared.
+
+This is the power of a default: what happens when you don’t make another choice.
+
+For a one-time rental, the default is that the transaction ends. For an automatically renewing subscription, the default is that it continues. The effort falls in a different place.
+
+Researchers found a useful way to examine that difference. They studied payment-card data for ten subscription services, looking at what happened when customers’ cards were replaced. Replacements could interrupt the usual payment and require customers to take an active step to continue.
+
+Cancellation rates rose around those replacement months.
+
+The data doesn’t reveal every customer’s reasons. Some may have forgotten a service; others may have reconsidered its value. The researchers modeled inattention and cancellation costs, and their estimates depend on the services and assumptions they studied.
+
+But the finding shows why an automatic payment matters. Interrupt the payment, and some customers make a different choice.
+
+Of course, remembering the subscription is only the first step. You still have to leave.
+
+Imagine a large button labeled “Keep membership,” with a smaller link underneath to continue canceling. You decline a discount, pass a reminder of the features you’ll lose, and reach an offer to pause instead.
+
+Each screen creates another moment where the process can stop.
+
+A meeting starts. You close the page. Or you think the last button completed the cancellation, when there’s another confirmation below it.
+
+If you haven’t finished, the default may carry on.
+
+Researchers examining news subscriptions across several countries documented barriers including requirements to call a representative or type a phrase. Those examples don’t describe every service. They show how a choice can be available while still taking effort to carry out.
+
+That effort isn’t equally easy for everyone. A phone call during office hours can be difficult for someone working shifts or caring for family. “Just cancel it” assumes that deciding to leave and successfully leaving are practically the same task.
+
+For the company, the two tasks can have very different outcomes.
+
+A completed cancellation ends future subscription payments. A postponed cancellation can leave the next charge in place. That gives a business a reason to pay attention to every step between the customer’s decision and the final confirmation.
+
+But a discount might actually help the customer. Why shouldn’t a company offer one?
+
+It can. A lower price may make a service worthwhile, and a pause may suit someone who plans to return. The issue is whether declining those offers and finishing the cancellation remains clear and straightforward.
+
+Regulators and researchers use the term dark pattern for certain designs that mislead people or steer their choices. Obscuring a cancellation option can be one example. A useful confirmation screen, by itself, isn’t evidence of deception.
+
+The distinction is what the design helps the customer do.
+
+In 2023, the United States Federal Trade Commission sued Amazon over Prime enrollment and cancellation practices. The FTC alleged that Amazon enrolled millions of consumers without informed consent and made cancellation difficult. Amazon contested the allegations, and the case was later settled.
+
+An older cancellation process described in the case allegedly required four screens and six clicks, with reminders and a pause option along the way.
+
+In 2025, Amazon agreed to a settlement including a one-billion-dollar civil penalty and one and a half billion dollars for consumer redress, alongside changes to its enrollment and cancellation practices.
+
+That settlement addressed both enrollment and cancellation allegations. The older process is not being described as Amazon’s current experience.
+
+The case illustrates why the exit matters: a series of small decisions on a website can affect a large number of customers.
+
+Sometimes, though, the obstacle is the commitment behind the button.
+
+A plan can charge monthly while committing you to a longer period. A monthly payment and a month-to-month contract are not necessarily the same thing. Depending on the terms, ending early could involve a fee or remaining payments.
+
+An annual commitment can come with a lower price, and a clearly explained tradeoff may suit the customer. The problem is when a condition that would affect the decision is hard to see until they try to leave.
+
+So when you decide to cancel, check where you purchased the subscription, its renewal date, and its terms. Some subscriptions are managed through an app store rather than the service’s website.
+
+Keep the final confirmation and check the access end date. A warning about losing benefits isn’t necessarily confirmation that cancellation is complete. A discount offer isn’t a cancellation either.
+
+That confirmation also gives you a record if a charge appears afterward and you need to contact the company or payment provider.
+
+The trial at the beginning offered a convenient way to watch a show. Automatic renewal kept access available. Once the show was finished, the same setting kept the payment moving unless you acted.
+
+The cancellation process determined how much effort that action required.
+
+That is why canceling can be so hard. The payment continues by default, and some businesses add obstacles when a customer tries to change it.
+
+A subscription can be worth keeping. But when it no longer is, the decision to leave should be clear enough to take effect.

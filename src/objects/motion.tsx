@@ -1,4 +1,4 @@
-import { useId } from "react";
+import { useId, type ReactNode } from "react";
 import { spring } from "remotion";
 import { C } from "../design/tokens";
 import { clamp01 } from "../typography/timing";
@@ -376,7 +376,7 @@ export function GrowBuild(props: ObjectProps) {
   );
 }
 
-export function FlipCard(props: ObjectProps) {
+export function FlipCard(props: ObjectProps & { frontContent?: ReactNode; backContent?: ReactNode }) {
   const p = useStyle(props);
   if (!p.visible) return null;
   const r = radius(props);
@@ -394,11 +394,13 @@ export function FlipCard(props: ObjectProps) {
       transform={`translate(${props.x},${props.y}) scale(${Math.max(0.04, Math.abs(flat))},1)`}
       opacity={p.opacity}
     >
-      <Body
-        kind={front ? props.shape : props.shape === "circle" ? "square" : "circle"}
-        r={r}
-        fill={front ? (props.color ?? C.yellow) : C.teal}
-      />
+      {(front ? props.frontContent : props.backContent) ?? (
+        <Body
+          kind={front ? props.shape : props.shape === "circle" ? "square" : "circle"}
+          r={r}
+          fill={front ? (props.color ?? C.yellow) : C.teal}
+        />
+      )}
     </g>
   );
 }

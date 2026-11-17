@@ -3,6 +3,16 @@
 Deep production-level reverse engineering of 18 YouTube channels, converted into
 playbooks for this repo. Prepared 2026-11-10.
 
+## Documentary migration — current guidance, 2026-11-16
+
+Phase 6 updates the [scriptwriting](playbooks/scriptwriting-playbook.md), [storyboard](playbooks/storyboard-playbook.md), [motion graphics](playbooks/motion-graphics-library.md), [cinematography](playbooks/cinematography-guide.md), [quality](playbooks/quality-checklist.md) and [animation patterns](playbooks/animation-pattern-library.md) playbooks. Current guidance appears first; each original playbook is retained verbatim in a clearly marked historical section. Its character defaults, quotas, media bans and inferred success formulas are superseded recommendations, not active documentary instructions.
+
+The [brand](../references/CHANNEL-BRANDING.md), [script](../references/SCRIPT_GUIDE.md), [visual](../references/VISUAL_STYLE_GUIDE.md), [teaching](../references/TEACHING_STYLE_GUIDE.md) and [sourcing](../references/MEDIA_SOURCING.md) guides define the new direction. [Skill routing](playbooks/skill-routing.md) classifies installed skills as primary, optional or legacy without changing them.
+
+Raw evidence, generated tables, transcripts and channel-analysis observations remain unchanged. Earlier recommendations in `channels/`—including the one permitted rig-based identity in `cross-channel-comparison.md`, mixed-media exclusions, speech-rate targets and dated capability gaps in `production-pipeline.md`—describe the earlier production direction. They do not override the current creative guides. Preserve their evidence and distinguish observations from inference; no new performance findings or media rights are established by this migration.
+
+The scope decisions below record the 2026-11-10 research brief, including work deliberately skipped then. They do not imply that the later creative guides are absent. Updated [global instructions](../AGENTS.md), the [dated superseding decision](../docs/decisions.md#13-documentary-first-creative-direction--2026-11-16) and [migration audit](../docs/documentary-migration-audit.md) complete the documentation migration through Phase 9. Production code and episodes remain unchanged.
+
 This file is the index for `research/`. Nothing here is referenced by the render
 pipeline; the film itself only reads `src/`, `videos/` and `out/`.
 

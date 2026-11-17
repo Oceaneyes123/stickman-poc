@@ -1,5 +1,7 @@
 # Plans — intentionally empty
 
+**Historical research-scope note:** This records the earlier research brief, not the current channel's missing deliverables. The documentary creative guides and current playbooks are now linked from [research/README.md](../README.md). Character/cinematic/variety references below remain legacy technical or historical episode material; they do not override the documentary [production rules](../../AGENTS.md).
+
 The brief's §11 (translate research into code-based production) and §12 (build a new
 style bible) were skipped at the user's instruction, so their deliverables
 (`production-engine-improvement-plan.md`, `production-style-bible.md`) are not here.

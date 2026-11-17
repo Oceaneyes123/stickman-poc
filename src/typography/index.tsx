@@ -57,6 +57,7 @@ export function KineticHeadline(
   props: TypographyProps & {
     text: string;
     width?: number;
+    textAlign?: "left" | "center" | "right";
     unit?: "word" | "line" | "character";
     stagger?: number;
     emphasis?: string;
@@ -104,6 +105,7 @@ export function KineticHeadline(
             fontWeight: 750,
             lineHeight: 1.18,
             color: props.color ?? C.navy,
+            textAlign: props.textAlign,
           }}
         >
           {units.map((unit, i) => {

@@ -1,5 +1,15 @@
 # Current animation validation
 
+## Documentary documentation migration — Phases 7–9 — 2026-11-16
+
+Updated global production instructions, README/workflow/provenance entry points and the dated superseding decision. The brand, script, visual, teaching and sourcing guides and current playbooks now agree on narrator-led editorial finance documentaries. Character identity/kinematic and episode-room requirements are explicitly legacy-scoped; earlier episodes, decisions and validation entries remain historical records.
+
+Documentation validation checks local links in maintained guides/root documents, preservation of the six original playbooks inside their historical sections, preservation of the earlier decision rows/cleanup and provenance snapshot, JSON example syntax, phase coverage, and documentation-only Git scope. `git diff --check` is the whitespace gate. The [migration audit](documentary-migration-audit.md) records the final results, remaining historical links and unverified work.
+
+**Result:** Passed the documentation coverage, local target/heading-anchor, JSON, fence/details, preservation and Git-scope checks; `git diff --check` passed. Scanned 105 project Markdown files; all 21 changed/new documents have valid local targets. Ten deleted historical episode-001 review-output links remain in unchanged episode records and are explicitly recorded in the audit.
+
+No production-code or existing episode/assets changed. No `npm run check`, new render, metadata/full-decode pass, synthesis, listening pass or human creative approval was performed for this documentation-only task. Earlier film verification remains as dated below; it is not renewed by these edits. Future documentary components and automatic asset-clearance tooling remain unimplemented.
+
 ## Video 002 — colour-script redesign of every scene — 2026-11-15
 
 **Request.** Video 2 read as one pale paper room for all 68 scenes: the shared
@@ -237,6 +247,15 @@ character and gallery frames were regenerated, and the existing review decoded.
 
 ## History
 
+### 2026-11-16: subscription opening study
+
+`SubscriptionPreview` is a 15-second Studio concept with an original,
+illustrative offer and a 9.859-second David/VoxCPM2 voice take. `npm run check`
+passed (95 JavaScript and 5 Python tests); the WAV decoded with FFmpeg. Studio
+displayed the layout and playback started. Narration listening, creative review,
+phrase alignment, full motion review and MP4 export remain unverified or pending.
+The silent hold after narration is provisional, not approved episode timing.
+
 Detailed entries were split out of this file on 2026-11-10. Each one is a
 verbatim record of what was checked on that date, and still names the paths and
 versions that existed then.
@@ -246,3 +265,45 @@ versions that existed then.
 | 2026-11-08 | head silhouette, narration runner, VoiceStudio startup, progress display, sequential narration files, Jeremy reference voice | [validation/2026-11-08.md](validation/2026-11-08.md) |
 | 2026-11-09 | narration context grouping, audio-derived timing, two-file timing review, storyboard passes and approval, cinematic references, S01–S67 review, visual-variety overhaul, general outro | [validation/2026-11-09.md](validation/2026-11-09.md) |
 | 2026-11-10 | episode movement and typography, settle pass, full render with outro, typography motion gallery | [validation/2026-11-10.md](validation/2026-11-10.md) |
+
+- 2026-11-17, Video 003 opening: 60-second SubscriptionOpening Studio draft created with existing narration and provisional timing-demo cues. npm run check passed before the final cue-boundary edit; npm run lint passed afterward. Studio displayed frames 0, 500 and 1650. Full visual/boundary inspection, listening, cue alignment, creative approval, asset manifest and MP4 delivery verification remain pending.
+
+- Video 003 opening illustration revision: Studio opening frame inspected. Full motion, beat/boundary and phone-size review, narration listening and cue alignment remain pending.
+
+- Video 003 opening: added compiled draft-cue animation events; npm run check passed and Studio loaded. Timing remains unreviewed by ear; full playback and beat/boundary review remain pending.
+
+- Video 003 opening: added three compiled draft-cue text cutaways. Studio frames 165 and 200 verified the first text and return; npm run check passed. Full playback, other cutaways and narration timing review remain pending.
+
+- Video 003 opening: added a subtle deterministic drifting texture, including a standalone SubscriptionTextureGallery composition. The opening frame was inspected in Studio; full-motion and listening review remain pending.
+
+- Video 003 opening: cancellation cards now cycle through the stack; SubscriptionCardGallery added. Lint passed and Studio frame 492 showed the handoff. Full playback and listening review remain pending.
+
+- Video 003 opening: selected trial, cancellation and continue controls receive a brief scale response. Lint passed; Studio frame 451 inspected. Full playback and audio timing review remain pending.
+
+- Video 003 opening: refined the offer, uncertain cancellation, rental and renewal motion; added SubscriptionRenewalGallery. npm run check passed and Studio frame 1660 was inspected. Full playback and listening-based cue review remain pending.
+
+- Video 003 opening: added a join/leave visual before renewal and made the rental player appear before its label. SubscriptionFlowGallery added; npm run check passed. No computer-use review per user request; playback and narration alignment remain pending.
+
+- 2026-11-17, Video 003 five-minute draft: SubscriptionFiveMinutes and continuation gallery registered; 43 continuation beats, 8 cutaways, one global audio track and 300-second composition. Audio prefix matched the original WAV through 299.2 seconds; remaining 0.8 seconds is silent. npm run check passed (96 Node, 5 Python), and Remotion composition discovery compiled the timeline. No computer-use inspection per user request. Beat/boundary, phone-size, motion, listening and alignment reviews, asset clearance, final render and full-decode verification remain pending.
+
+- 2026-11-17: Video 003 1:00–1:40 redesigned with varied graphics and composition; added cue-anchored effort beat. npm run check passed (96 Node and 5 Python tests), and Remotion composition discovery succeeded. No computer-use inspection per request; playback, visual legibility and narration listening remain pending.
+
+- 2026-11-17: Video 003 1:40–2:25 revised with varied research compositions and cue-anchored motion. npm run check passed (96 Node, 5 Python) and Remotion composition discovery succeeded. No computer-use inspection per request; playback, readability and narration listening remain pending.
+
+- 2026-11-17: Video 003 2:25–5:00 redesigned with varied source-aware illustrations, movement and cue-anchored steps. npm run check passed (96 Node, 5 Python) and Remotion composition discovery succeeded. No computer-use inspection per request; full playback, readability and narration listening remain pending.
+
+- 2026-11-17: Video 003 connector draw-on, varied entrances/exits and 2.2-second text cutaways added. Focused timing/return test, 97 Node tests, 5 Python tests and Remotion composition discovery passed. No computer-use review per request; full playback, phone-size and listening review remain pending.
+
+- 2026-11-17: Video 003 continuation entrances/exits revised with unfolding, scaling and rotation. npm run check passed (97 Node, 5 Python), and Remotion composition discovery succeeded. No computer-use review per request; full playback, phone-size and narration listening remain pending.
+
+- 2026-11-17: Video 003 cutaways use the existing KineticHeadline masked word reveal with centered alignment and yellow emphasis. Reading-hold checks account for word stagger; current phrases measured within 1728px. npm run check passed (97 Node, 5 Python) and Remotion composition discovery succeeded. No computer-use review per request; visual wrapping, playback and narration listening remain pending.
+
+- 2026-11-17: Applied object-library card flip, status pop-in and draw-on, plus the transition-library state swap, to Video 003. FlipCard custom front/back artwork added without changing default gallery behavior. npm run check passed (97 Node, 5 Python), and Remotion composition discovery succeeded. No computer-use review per request; full playback, visual legibility and narration sync remain pending.
+
+- 2026-11-17: Added Video 003 full-film and ending gallery compositions through the conclusion, with one original full WAV and a 2-second measured-audio tail. Full composition is 12,195 frames (6:46.5); handoff and endpoint focused checks passed, as did npm run check (98 Node, 5 Python) and Remotion composition discovery. Four ending text cutaway widths measured within 1728px. No computer-use review per request; full beat/boundary, motion, phone-size, narration listening and creative review, asset clearance, final render and full-decode verification remain pending.
+
+- 2026-11-17: Added an illustrated like-and-subscribe close and a 3.954-second VoiceStudio VoxCPM2 take using the existing Daniel profile. The combined 409.06427-second WAV preserves the original PCM exactly, followed by 0.6 seconds of silence and the closing take; the 30 fps composition is 12,332 frames including a 2-second tail. Closing cue boundaries are measured but phrase timing and delivery remain unreviewed. WAV samples decoded and were nonzero; npm run check passed (98 Node, 5 Python), and Remotion composition discovery succeeded. No computer-use inspection or MP4 export; playback, narration listening, voice rights, creative approval and delivery verification remain pending.
+
+- 2026-11-17: Added an original locally synthesized ambient bed and 34 reduced-level effects in SubscriptionFullFilm. Effects use compiled visual scene/event frames; cue and narration timing remains draft. The 411.064-second PCM bed has measured RMS -23.8 dBFS before its 0.12 playback gain; the full narration measures -18.4 dBFS RMS. These are source measurements, not a mastered loudness or mixed-peak assessment. npm run check passed (99 Node, 5 Python), and Remotion composition discovery succeeded. No computer-use inspection, mixed playback/listening review, final loudness/peak assessment, MP4 export or creative approval; rights/provenance records remain pending review.
+
+- 2026-11-17: Increased the 34 prior sound-effect gains fourfold and added 26 more visual-action cues, for 60 total. Reused the existing synthesized effects, including calculator taps; provenance record updated. Remotion composition discovery and npm run check passed (99 Node, 5 Python). An audio-only render of frames 420–630 contained the added sound and peaked at -5.2 dBFS; this is a spot check, not a full-film mixed-peak, loudness or listening review. No computer-use review or full MP4 export.

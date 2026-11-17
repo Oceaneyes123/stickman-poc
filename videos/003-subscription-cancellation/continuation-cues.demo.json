@@ -1,0 +1,282 @@
+{
+  "mode": "timing-demo",
+  "scriptHash": "f46d1e9b2d36198be0ac50a8953fa3966ae863dd2f7d48bb36bc0c1b54cba366",
+  "cues": [
+    {
+      "id": "continuation",
+      "text": "Opening continuation",
+      "startMs": 0,
+      "endMs": 100
+    },
+    {
+      "id": "p003-s005",
+      "text": "That arrangement can work well while you're using the service.",
+      "startMs": 455.9375,
+      "endMs": 3115.9375
+    },
+    {
+      "id": "p003-s006",
+      "text": "Then the show ends, the project finishes, or your needs change.",
+      "startMs": 3815.9375,
+      "endMs": 7255.9375
+    },
+    {
+      "id": "p003-s007",
+      "text": "The renewal keeps doing exactly what it was designed to do.",
+      "startMs": 7895.9375,
+      "endMs": 10715.9375
+    },
+    {
+      "id": "p004-s001",
+      "text": "Now you have to notice the charge, find the cancellation process and finish it before another payment.",
+      "startMs": 10917.895833333328,
+      "endMs": 16897.89583333333
+    },
+    {
+      "id": "p004-s002",
+      "text": "Otherwise, the subscription can continue even though the reason you joined has disappeared.",
+      "startMs": 17437.89583333333,
+      "endMs": 22317.89583333333
+    },
+    {
+      "id": "p004-s003",
+      "text": "This is the power of a default.",
+      "startMs": 22977.89583333333,
+      "endMs": 24557.89583333333
+    },
+    {
+      "id": "p004-s004",
+      "text": "What happens when you don't make another choice?",
+      "startMs": 25137.89583333333,
+      "endMs": 27397.89583333333
+    },
+    {
+      "id": "p004-s005",
+      "text": "For a one -time rental, the default is that the transaction ends.",
+      "startMs": 27997.89583333333,
+      "endMs": 31677.89583333333
+    },
+    {
+      "id": "p004-s006",
+      "text": "For an automatically renewing subscription, the default is that it continues.",
+      "startMs": 32177.89583333333,
+      "endMs": 36137.89583333333
+    },
+    {
+      "id": "p004-s007",
+      "text": "The effort falls in a different place.",
+      "startMs": 36817.89583333333,
+      "endMs": 38557.89583333333
+    },
+    {
+      "id": "p005-s001",
+      "text": "Researchers found a useful way to examine that difference.",
+      "startMs": 38854.125,
+      "endMs": 41854.125
+    },
+    {
+      "id": "p005-s002",
+      "text": "They studied payment card data for 10 subscription services, looking at what happened when customers' cards were replaced.",
+      "startMs": 42534.125,
+      "endMs": 49174.125
+    },
+    {
+      "id": "p005-s003",
+      "text": "Replacements could interrupt the usual payment and require customers to take an active step to continue.",
+      "startMs": 49874.125,
+      "endMs": 55514.125
+    },
+    {
+      "id": "p005-s004",
+      "text": "Cancellation rates rose around those replacement months.",
+      "startMs": 56274.125,
+      "endMs": 59154.125
+    },
+    {
+      "id": "p005-s005",
+      "text": "The data doesn't reveal every customer's reasons.",
+      "startMs": 59674.125,
+      "endMs": 62454.125
+    },
+    {
+      "id": "p005-s006",
+      "text": "Some may have forgotten a service.",
+      "startMs": 62914.125,
+      "endMs": 64314.125
+    },
+    {
+      "id": "p005-s007",
+      "text": "Others may have reconsidered its value.",
+      "startMs": 64794.125,
+      "endMs": 66614.125
+    },
+    {
+      "id": "p006-s001",
+      "text": "The researchers modeled inattention and cancellation costs, and their estimates depend on the services and assumptions they studied.",
+      "startMs": 66875.14583333333,
+      "endMs": 74195.14583333334
+    },
+    {
+      "id": "p006-s002",
+      "text": "But the finding shows why an automatic payment matters.",
+      "startMs": 74635.14583333334,
+      "endMs": 77735.14583333334
+    },
+    {
+      "id": "p006-s003",
+      "text": "Interrupt the payment, and some customers make a different choice.",
+      "startMs": 78335.14583333334,
+      "endMs": 81735.14583333334
+    },
+    {
+      "id": "p006-s004",
+      "text": "Of course, remembering the subscription is only the first step.",
+      "startMs": 82335.14583333334,
+      "endMs": 85515.14583333334
+    },
+    {
+      "id": "p006-s005",
+      "text": "You still have to leave.",
+      "startMs": 86095.14583333334,
+      "endMs": 87075.14583333334
+    },
+    {
+      "id": "p006-s006",
+      "text": "Imagine a large button labeled Keep Membership with a smaller link underneath to continue cancelling.",
+      "startMs": 87675.14583333334,
+      "endMs": 93575.14583333334
+    },
+    {
+      "id": "p007-s001",
+      "text": "You decline a discount, pass a reminder of the features you'll lose and reach an offer to pause instead.",
+      "startMs": 93766.75,
+      "endMs": 99686.75
+    },
+    {
+      "id": "p007-s002",
+      "text": "Each screen creates another moment where the process can stop, a meeting starts, you close the page, or you think the last button completed the cancellation when there's another confirmation below it.",
+      "startMs": 100346.75,
+      "endMs": 111586.75
+    },
+    {
+      "id": "p007-s003",
+      "text": "If you haven't finished, the default may carry on.",
+      "startMs": 112066.75,
+      "endMs": 114566.75
+    },
+    {
+      "id": "p008-s001",
+      "text": "Researchers examining news subscriptions across several countries documented barriers including requirements to call a representative or type of phrase.",
+      "startMs": 114811.22916666666,
+      "endMs": 122931.22916666666
+    },
+    {
+      "id": "p008-s002",
+      "text": "Those examples don't describe every service.",
+      "startMs": 123651.22916666666,
+      "endMs": 126071.22916666666
+    },
+    {
+      "id": "p008-s003",
+      "text": "They show how a choice can be available while still taking effort to carry out.",
+      "startMs": 126711.22916666666,
+      "endMs": 130711.22916666666
+    },
+    {
+      "id": "p008-s004",
+      "text": "That effort isn't equally easy for everyone.",
+      "startMs": 131031.22916666666,
+      "endMs": 133311.22916666666
+    },
+    {
+      "id": "p008-s005",
+      "text": "A phone call during office hours can be difficult for someone working shifts or caring for family.",
+      "startMs": 133911.22916666666,
+      "endMs": 138731.22916666666
+    },
+    {
+      "id": "p009-s001",
+      "text": "Just cancel it assumes that deciding to leave and successfully leaving are practically the same task for the company The two tasks can have very different outcomes a completed cancellation ends future subscription payments a postponed Cancellation can leave the next charge in place that gives a business a reason to pay attention to every step between the customer's decision And the final confirmation, but a discount might actually help the customer",
+      "startMs": 138981.5,
+      "endMs": 164541.5
+    },
+    {
+      "id": "p010-s001",
+      "text": "Why shouldn't a company offer one?",
+      "startMs": 164822.58333333334,
+      "endMs": 166462.58333333334
+    },
+    {
+      "id": "p010-s002",
+      "text": "It can.",
+      "startMs": 166882.58333333334,
+      "endMs": 167302.58333333334
+    },
+    {
+      "id": "p010-s003",
+      "text": "A lower price may make a service worthwhile, and a pause may suit someone who plans to return.",
+      "startMs": 167762.58333333334,
+      "endMs": 173242.58333333334
+    },
+    {
+      "id": "p010-s004",
+      "text": "The issue is whether declining those offers and finishing the cancellation remains clear and straightforward.",
+      "startMs": 173842.58333333334,
+      "endMs": 179262.58333333334
+    },
+    {
+      "id": "p010-s005",
+      "text": "Regulators and researchers use the term dark pattern for certain designs that mislead people or steer their choices.",
+      "startMs": 179922.58333333334,
+      "endMs": 186742.58333333334
+    },
+    {
+      "id": "p010-s006",
+      "text": "Obscuring a cancellation option can be one example.",
+      "startMs": 186742.58333333334,
+      "endMs": 190122.58333333334
+    },
+    {
+      "id": "p011-s001",
+      "text": "A useful confirmation screen by itself isn't evidence of deception.",
+      "startMs": 190435.1875,
+      "endMs": 194615.1875
+    },
+    {
+      "id": "p011-s002",
+      "text": "The distinction is what the design helps the customer do.",
+      "startMs": 195255.1875,
+      "endMs": 197835.1875
+    },
+    {
+      "id": "p011-s003",
+      "text": "In 2023, the United States Federal Trade Commission sued Amazon over prime enrollment and cancellation practices.",
+      "startMs": 198435.1875,
+      "endMs": 205095.1875
+    },
+    {
+      "id": "p011-s004",
+      "text": "The FTC alleged that Amazon enrolled millions of consumers without informed consent and made cancellation difficult.",
+      "startMs": 205855.1875,
+      "endMs": 212795.1875
+    },
+    {
+      "id": "p011-s005",
+      "text": "Amazon contested the allegations and the case was later settled.",
+      "startMs": 212795.1875,
+      "endMs": 216855.1875
+    },
+    {
+      "id": "p012-s001",
+      "text": "An older cancellation process described in the case allegedly required four screens and six clicks, with reminders and a pause option along the way.",
+      "startMs": 217105.5208333333,
+      "endMs": 225785.5208333333
+    },
+    {
+      "id": "p012-s002",
+      "text": "In 2025, Amazon agreed to a settlement including a $1 billion civil penalty and $1 .5 billion for consumer redress alongside changes to its enrollment and cancellation practices.",
+      "startMs": 226385.5208333333,
+      "endMs": 238765.5208333333
+    }
+  ]
+}

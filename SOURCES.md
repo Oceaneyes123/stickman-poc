@@ -1,5 +1,13 @@
 # Research, provenance and licensing
 
+## Current sourcing direction — 2026-11-16
+
+Future documentaries may combine original editorial graphics with verified licensed footage, photography and permitted evidence. Follow [media-sourcing standards](references/MEDIA_SOURCING.md) for asset-specific commercial-use permissions, attribution, retained evidence, authenticity/recreation labels and the manual manifest. Factual support and media rights are separate records; no existing ledger or reference-folder placement clears future assets. No documentary assets were acquired or certified in the migration.
+
+The dated material below is the **2026-11-07 provenance snapshot**, retained unchanged. Its statements about unchanged branding, no stock/music, bundled media and the earlier story describe that inspection, not current channel-wide restrictions or a present inventory/clearance claim. Read newer [validation](docs/animation-validation.md) and the [migration audit](docs/documentary-migration-audit.md) for later work. Source links below remain historical references; they were not all revalidated in this migration.
+
+## Historical inspection — 2026-11-07
+
 Inspected 2026-11-07. Reference repositories were downloaded read-only into the root `references/` folder; their installation scripts were not executed. Existing channel brand and script documents remain unchanged.
 
 | Reference                                                                           | Exact revision                           | License                                | Use in this project                                                                                                                                                                                                      |

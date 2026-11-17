@@ -1,5 +1,44 @@
 # Scriptwriting playbook
 
+**Current guidance · 2026-11-16 · Phase 6.** Use the [script guide v2.2](../../references/SCRIPT_GUIDE.md), [teaching guide](../../references/TEACHING_STYLE_GUIDE.md) and [visual guide](../../references/VISUAL_STYLE_GUIDE.md) for documentary production. This playbook translates research into optional techniques; it is not a universal YouTube success formula.
+
+## Documentary application
+
+Start with a recognizable situation and a specific question. Follow the relevant decisions, obligations or system steps; reveal the mechanism and show why it matters. A fictional scenario, documented case or system mystery may fit. No Sam/Alex appearance, comparison, worked calculation or predetermined twist is required.
+
+The historical hook library below retains the original quotations, reported timings and source context. Borrow a hook's explanatory function, never its wording or fact sequence. A familiar contradiction, concrete role or meaningful change of scale can help when the subject warrants it. Establish the title's promise early without a fixed payoff deadline, numerical reveal or mandatory hook shape.
+
+| Research material retained below | Current interpretation |
+|---|---|
+| Observed hook shapes and opening phrases | An option library, not the only permitted openings or proof of retention. Independently verify factual claims before reuse. |
+| The 175-wpm eight-beat plan | A superseded editorial proposal, not measured competitor timing. Use the current script guide's flexible causal scaffold. |
+| Reported sentence, question, second-person and speech-rate ranges | Description of a limited, partly ASR-derived sample; no quotas or causal evidence of success. |
+| Reported absence of stock phrases | Useful editing context, not evidence that a phrase ban has no effect on reach. Review wording in context. |
+| Spoken transitions and repeated key amounts | Use only when they express a real connection or restore necessary context. No filler or repeated lesson. |
+
+## Writing and handoff
+
+- Explain concepts in plain English. Numbers appear only when they materially improve understanding; verify sources/assumptions and derive modeled arithmetic through the existing finance module.
+- Add a meaningful event, consequence, exception or realization in each section. Prefer ordinary consequences and fair constraints over fabricated catastrophe or blame.
+- Mix short and medium sentences, natural paragraphs and clear pronouns. Review anti-slop phrases in context rather than requiring zero matches.
+- Keep `brief.md`, `outline.md`, `script.md`, `narration.txt`, `sources.md` and `qa.md` separate. Production directions and source IDs stay out of spoken text.
+- Write the complete narration before estimating runtime. Use local VoiceStudio under project rules, with no forced speaking rate or stretched speech. Listen to generated audio before approving it.
+- Review phrase cues against measured audio and compile timing with the shared compiler. No universal one-sentence/30-word cue limit or obligatory chapter silence follows from the research; follow the actual schema and listening review.
+- Use the visual guide's nine-field shot framework and [media-sourcing standards](../../references/MEDIA_SOURCING.md). A beat's learning need chooses footage, photo, graphic, evidence or a labeled recreation; it does not choose a stickman pose by default.
+
+Before handoff, confirm the question is answered, every section progresses, consequential claims have support, assumptions are explicit, and comprehension/listening/media issues remain honestly marked pending. Script approval does not certify motion, audio alignment or delivery.
+
+Evidence remains in [script reverse engineering](../channels/script-reverse-engineering.md), [audio/narration analysis](../channels/audio-narration.md) and the [research index](../README.md). No private retention/CTR evidence is supplied by this corpus. See [skill routing](skill-routing.md) for installed editorial tools and their limits.
+
+## Historical playbook — superseded recommendations
+
+The original text below is retained verbatim as a research-era record. Its quotas, mandates, performance claims and v2.0 reference are **not active instructions**. Consult the current guides above; observations are not being rewritten as new evidence.
+
+<details>
+<summary>Original scriptwriting playbook — historical, not production instructions</summary>
+
+# Scriptwriting playbook
+
 Delta document. `references/SCRIPT_GUIDE.md` (v2.0) already owns the full writing
 process, fact ledger, beat allocation and anti-slop audit. This file adds only what
 the 18-channel corpus (`../channels/`) supports, and states
@@ -103,3 +142,5 @@ Keep from the existing guide: no invented statistics, no fabricated expertise, n
 - [ ] Second person 2.0–3.5 per 100 words.
 - [ ] Zero hits on the banned phrase list.
 - [ ] Beat 7 returns to beat 1's question.
+
+</details>

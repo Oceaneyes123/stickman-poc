@@ -1,4 +1,6 @@
-# Brand Identity for Your Channel
+# The Money Trap — Channel Branding
+
+**Updated 2026-11-16 — documentary documentation migration, Phases 1–9.** The new default is **Premium Editorial Finance Documentary**. It supersedes the former Premium Flat Stickman direction for future creative briefs. Existing episodes and artwork remain intact. The [visual style guide](VISUAL_STYLE_GUIDE.md) is the primary creative authority for future visual production, supported by the script, teaching and sourcing guides. [Global production rules](../AGENTS.md) now follow this direction; the [migration audit](../docs/documentary-migration-audit.md) records checks and implementation limits.
 
 ## 1. Recommended Brand Direction
 
@@ -10,7 +12,7 @@ This is the strongest fit from the earlier strategy because it is:
 - **easy to remember**
 - **broad enough** to cover many finance topics
 - **emotionally strong**
-- perfect for **story-based stickman animation**
+- suited to **narration-led financial documentaries**
 - good for titles about mistakes, hidden costs, scams, debt, bad decisions, and money psychology
 
 It also gives you a clear brand promise:
@@ -20,30 +22,21 @@ It also gives you a clear brand promise:
 ---
 
 ## Tagline
-Choose one of these:
+Official tagline:
 
-### Best option:
 **Small decisions. Big financial consequences.**
 
-### Alternatives:
-- **How money really traps people**
-- **The hidden rules behind everyday money**
-- **Finance explained through stories**
-- **Why smart people still lose money**
-
-My recommendation:  
-Use **“Small decisions. Big financial consequences.”**
-
-It sounds clean, serious, and memorable.
+Use this tagline consistently across channel branding.
 
 ---
 
 # 2. Brand Positioning
 
 ## What the channel is
-A **story-first finance explainer channel** using stickman animation to explain:
+A **faceless financial documentary channel** combining original editorial motion graphics, selective real-world footage, photography, animated interfaces and natural conversational narration to explain:
 
 - money psychology
+- consumer behavior and everyday finance
 - debt traps
 - banking/payment issues
 - scams
@@ -62,7 +55,7 @@ Most finance channels do one of these:
 
 Your brand should stand for this instead:
 
-> **“We explain money through simple animated stories that show what actually happens to normal people.”**
+> **“We explain everyday money through relatable situations, real-world context and clear visual explanations.”**
 
 That positioning is much stronger than “finance education” alone.
 
@@ -79,7 +72,7 @@ That positioning is much stronger than “finance education” alone.
 ## Audience
 Primary audience:
 
-- 20s to 50s
+- English-speaking adults, approximately ages 25–50
 - working adults
 - beginners to intermediate in finance
 - people who feel confused, stressed, or curious about money
@@ -111,36 +104,45 @@ Do **not** make the brand feel like:
 
 The sweet spot is:
 
-> **smart + simple + human + slightly dramatic**
+> **Clear, credible, human and slightly witty. Cinematic when the story benefits.**
 
 ---
 
 # 5. Visual Branding System
 
 ## Visual Style
-### Recommended style:
-# **Premium Flat Stickman**
+### Default style:
+# **Premium Editorial Finance Documentary**
 
 This means:
 
-- clean stickman characters
-- expressive faces and body language
-- minimal but polished environments
-- clear props: wallet, bills, cards, phone, salary envelope, bank, house, debt ball, etc.
-- flat vector shapes
-- strong contrast
-- subtle motion emphasis
-- simple but not lazy
+- Narration is the primary storyteller; visuals support what the viewer needs to understand.
+- Original editorial motion graphics explain obligations, processes, choices and consequences through objects, documents, interfaces and meaningful comparisons.
+- Selective licensed footage and photography establish real-life context. Real people may appear without animated counterparts. “Faceless” means no required on-camera host, not a ban on faces in sourced media.
+- Typography is selective and purposeful. Do not turn every narration sentence into text.
+- Visuals should feel modern, clear, relatable, credible and deliberately designed, with cinematic treatment when appropriate.
+- Each episode develops its own visual treatment around its subject. Consistent palette, hierarchy and graphic language connect episodes without making them identical.
+- Choose a medium because it explains, demonstrates, establishes context or reinforces a meaningful story moment. No mandatory medium ratio, camera move or transition quota.
+- Distinguish original graphics, mock interfaces and authentic evidence. Label recreations when viewers could mistake them for real screenshots or documents. Verify third-party sources and permissions before use.
 
-Think:
-- minimal enough to produce efficiently
-- polished enough to look like a real brand
+Avoid the generic AI-documentary look: unrelated stock clips, constantly zooming photos, exaggerated dramatic captions, glowing interface clutter and decorative particles. Motion must reveal something or direct attention; a quiet hold can be the right choice.
+
+### Visual treatment examples — proposals, not new assets
+
+| Subject | Possible treatment | What it explains |
+|---|---|---|
+| Buy Now, Pay Later | An original checkout mockup presents the first payment beside the full obligation; separate purchase schedules later occupy one calendar. | A smaller payment can change the decision while future commitments accumulate. |
+| Lifestyle inflation | A recurring bill returns on successive payday views; selective home footage establishes the benefit of the upgrade. | The commitment keeps using future income. |
+| Failed payment | A labeled illustrative interface and a source-verified payment-flow diagram. | A failure message alone does not establish where the money is or what happens next. |
+| Scam | A clearly labeled recreated message with one meaningful warning sign isolated. | The deception becomes understandable without manufacturing documentary evidence. |
+
+Verify the specific mechanism and terms during episode research. These examples do not certify financial claims or prescribe new components.
 
 ---
 
 ## Color Palette
 
-Here is a clean palette for your channel:
+The existing palette remains authoritative. Old image boards contain different hex values; do not sample them to redefine these colors.
 
 ### Primary colors
 - **Deep Navy** — `#14243A`
@@ -156,18 +158,18 @@ Here is a clean palette for your channel:
 - **Slate Gray** — `#5B6777`
   - neutral labels, supporting text
 - **Teal Accent** — `#39B8B6`
-  - positive outcomes, clarity, solutions
+  - alternatives, clarity, considered options
 
 ## Color meaning system
 Use colors consistently:
 
 - **Yellow** = money / value / salary / opportunity
-- **Red** = danger / loss / debt / scams / mistakes
-- **Teal** = solution / better choice / safe path
+- **Coral** = costs / loss / debt / warnings
+- **Teal** = an alternative / considered option
 - **Navy** = brand base / trust / structure
 - **White** = clarity / clean space
 
-This matters because viewers unconsciously learn your visual language.
+Color supports explanation; it cannot establish that an option is safe or guarantees a better result. Footage and photography may retain natural colors. Episode-specific supporting tones should preserve readability and graphic accent meanings without forcing every shot into one room.
 
 ---
 
@@ -175,12 +177,8 @@ This matters because viewers unconsciously learn your visual language.
 
 Use free fonts only.
 
-## Recommended font pair
-### Titles / Thumbnails:
-**Bricolage Grotesque** or **Poppins ExtraBold**
-
-### Body / labels / captions:
-**Inter**
+## Current production font
+Use the locally bundled **Inter**, including appropriate bold weights, for titles, labels and other graphics. Earlier Bricolage Grotesque/Poppins suggestions were proposals, not bundled production assets. Verify licenses and bundle locally before introducing another font.
 
 Why this works:
 
@@ -191,41 +189,39 @@ Why this works:
 - easy to use in thumbnails and animation labels
 
 ## Typography rules
-- Thumbnail text: **3–5 words max**
+- Thumbnail text is optional; when useful, keep it brief, typically **2–5 words**.
 - Video labels: short and bold
 - Avoid thin fonts
-- Keep all finance numbers large and easy to read
+- Show finance numbers only when useful; retain readable size, units and periods.
+- Preserve one dominant idea, purposeful negative space, readable contrast and the existing 96 px side margins for video graphics.
 
 ---
 
 # 7. Logo Direction
 
 ## Best logo concept
-Because your channel is animation-based, your logo should be **simple and iconic**, not complicated.
+Future redesign brief: a simple editorial symbol that remains readable at profile-picture size. A character is not required.
 
 ### Logo idea:
-A **stickman beside or trapped by a coin / money circle / warning line**
+A **yellow coin or value mark interrupted by a restrained coral boundary**, on navy.
 
 ### Strong concept:
-- stickman
-- yellow coin with `$`
-- subtle trap line or red warning stroke
+- money symbol or coin
+- restrained coral boundary suggesting a financial constraint
 - navy background
 - clean flat style
 
 ## Suggested logo structure
 ### Profile picture:
 - circular composition
-- one stickman character
-- one money symbol
-- one red “trap” element
+- one dominant money/constraint symbol
 - very little text or no text
 
 This is better than cramming the whole channel name into the profile image.
 
 ### Wordmark:
 **THE MONEY TRAP**
-in bold uppercase, probably using Bricolage Grotesque or Poppins Bold
+in bold Inter. Check small-size readability before approval. The logo pictured in the old thumbnail board is legacy artwork; no replacement is created or approved here.
 
 ---
 
@@ -243,23 +239,17 @@ Your banner should instantly communicate:
 **The Hidden Rules Behind Everyday Money**
 
 ### Supporting line:
-**Animated stories about debt, spending, banking, scams, and smarter financial decisions**
+**Everyday money, explained through visual documentaries**
 
 ### CTA:
-**New videos every week**
+Omit a publishing-frequency promise unless an actual schedule is established.
 
 ## Banner visual idea
-- left: stickman holding wallet / confused at money problem
-- center: channel name
-- right: icons or mini-scenes
-  - credit card
-  - bank
-  - phone payment
-  - house
-  - warning sign
-  - money stack
+- Readable channel name and official tagline across device crops.
+- A small number of finance objects, document details or properly licensed contextual photo crops.
+- Editorial hierarchy and negative space, with no required character cast.
 
-Keep it clean, not crowded.
+Keep it clean, not crowded. This is a future banner brief; no banner asset is modified or delivered in this phase.
 
 ---
 
@@ -283,17 +273,17 @@ Instead of:
 > “Consumers often engage in irrational spending behavior due to hedonic adaptation.”
 
 Say:
-> “The problem wasn’t that he earned too little. The problem was that every raise quietly upgraded his lifestyle first.”
+> “Sam liked the new apartment. The extra rent kept arriving every month, alongside the payments he had already agreed to.”
 
 That is your brand voice.
 
 ---
 
-# 10. Recurring Brand Characters
+# 10. Fictional examples and legacy characters
 
-This is a major branding advantage.
+Sam and Alex may remain fictional narrative examples. Neither requires a recurring stickman appearance. Do not imply that a person in stock footage is an actual customer or the real subject of a fictional scenario.
 
-## Main character set
+## Optional narrative names
 
 ### 1. **Sam**
 The everyday working adult  
@@ -312,52 +302,19 @@ Use for:
 - contrasting outcomes
 - “what you could do instead”
 
-### 3. **Debt Monster**
-A visual metaphor  
-Use for:
-- credit cards
-- loans
-- interest
-- late fees
-- emotional pressure
-
-### 4. **BankBot**
-A simple explainer character  
-Use for:
-- payment flow
-- hidden system mechanics
-- bank rules
-- technical explanations
-
-### 5. **Scam Snake / Scam Shadow**
-Optional villain metaphor  
-Use for:
-- phishing
-- fake investments
-- deceptive offers
-- manipulation
-
-## Why recurring characters matter
-They make the brand feel like a real universe instead of random videos.
-
-This improves:
-- recognition
-- retention
-- thumbnail consistency
-- audience connection
+Debt Monster, BankBot and Scam Snake/Shadow were earlier mascot proposals, not required brand identities or proof of implemented assets. Preserve existing rigs and character artwork. When legacy character work is specifically requested, its hairless/earless identity and kinematic rules still apply.
 
 ---
 
 # 11. Thumbnail Branding System
 
-Your thumbnail style should be extremely consistent.
+Keep hierarchy, readability and color treatment consistent while varying subjects and composition to fit each episode. Design the title and thumbnail as a truthful pair.
 
 ## Thumbnail formula
 ### Structure:
-- 1 strong stickman emotion
-- 1 central money problem
-- 1 bold number or object
-- 2–5 words of text max
+- 1 recognizable money problem
+- 1 dominant object, interface detail, document or properly licensed photograph
+- Optional brief text or a number that materially supports the episode
 - simple background
 - high contrast
 
@@ -368,7 +325,6 @@ Use short emotional or curiosity-driven text like:
 - **PAYMENT FAILED**
 - **BAD DEBT**
 - **HIDDEN COST**
-- **WHY SO POOR?**
 - **THE TRAP**
 - **DENIED**
 - **TOO LATE**
@@ -380,25 +336,39 @@ Use short emotional or curiosity-driven text like:
 - no long sentence
 - one clear idea only
 - money object should be obvious
-- show conflict visually
+- show the question or consequence visually
+- no mandatory shocked face, character pose, number or dramatic arrow
+- no fabricated balance or screenshot presented as authentic evidence
+- do not imply theft, bankruptcy or a scam when the episode establishes an ordinary constraint
 
 ## Example thumbnail patterns
 
 ### Money psychology
-Stickman gets bigger salary → wallet still empty  
-Text: **MORE PAY. SAME PROBLEM.**
+A pay notice beside recurring commitments occupying the available space.
+
+Optional text: **ALREADY SPENT**
 
 ### Debt
-Stickman crushed by giant credit card bill  
-Text: **MINIMUM PAYMENT TRAP**
+A statement detail and a payment choice, clearly illustrative unless authentic and cleared for use.
+
+Optional text: **MINIMUM PAYMENT**
 
 ### Banking
-Phone says “Payment Failed” while money disappears  
-Text: **WHERE DID IT GO?**
+A clearly illustrative failed-payment notice beside a receipt; no implication that money vanished or was stolen.
+
+Optional text: **PAYMENT FAILED**
 
 ### Scams
-Stickman answering phone with fake bank symbol  
-Text: **ONE CALL. MONEY GONE.**
+A clearly labeled recreated suspicious message with one meaningful detail isolated.
+
+Optional text: **THE FAKE MESSAGE**
+
+### Buy Now, Pay Later
+One jacket and a checkout offer, with later payment dates competing for attention.
+
+Optional text: **IT'S ONLY $60**
+
+These are creative proposals, not generated thumbnails or performance claims. Verify details against the actual episode.
 
 ---
 
@@ -421,14 +391,14 @@ Your titles should match the branding: simple, story-driven, and consequence-foc
 ### Pattern 3: “The Trap…”
 - The Credit Card Trap Explained
 - The Buy Now, Pay Later Trap
-- The Hidden Mortgage Trap Nobody Calculates
+- Why a Smaller Mortgage Payment Can Cost More
 
 ### Pattern 4: Comparison
 - Two People Earn the Same Salary. One Stays Broke.
 - One Rents. One Buys. Who Wins?
 - Two Investors Start With $10,000. One Panics.
 
-This title system should become part of your brand identity.
+These are optional shapes, not a required formula. Use a specific, accurate promise the episode delivers. Avoid “hidden” or catastrophic framing unless the research and story support it.
 
 ---
 
@@ -471,29 +441,28 @@ These pillars all fit under **The Money Trap** brand.
 Here’s a polished version you can use:
 
 ## Short version
-**Animated stories that explain the hidden traps behind money, debt, spending, banking, and financial decisions.**
+**Visual documentaries about the hidden traps behind everyday money, debt, spending, banking and scams.**
 
 ## Full version
-**The Money Trap breaks down everyday finance through simple animated stories. From debt and spending habits to banking problems, scams, and hidden money rules, this channel helps you understand why people lose money — and what to do differently. New videos every week.**
+**The Money Trap explores everyday finance through relatable situations, clear visual explanations and conversational narration. From recurring bills and payment plans to banking problems and scams, each documentary follows what happens, explains the mechanism and shows why it matters.**
 
 ---
 
 # 15. Intro / Outro Branding
 
 ## Intro
-Keep the intro short: **3–5 seconds max**
+Start with the situation or question. If a brief brand sting helps, it must not delay understanding the opening.
 
 ### Intro concept
-- stickman walks confidently
-- steps into a red trap line
-- coin drops
-- title appears:
-  **THE MONEY TRAP**
+- A coin, document detail or editorial wordmark provides recognition.
+- No required character walk-in or trap gag.
 
 Simple, brandable, memorable.
 
 ## Outro
 Use a clean branded end card:
+
+Recommend a related video only when it exists and answers a useful next question. Existing outro code is unchanged; redesign is a separate task.
 
 - left: recommended video
 - right: subscribe circle
@@ -513,7 +482,7 @@ To protect the brand, always avoid:
 - copying famous finance YouTubers too closely
 - too much childish humor
 - cluttered thumbnails
-- random color changes from video to video
+- unmotivated color changes that obscure the established graphic meanings
 
 Your brand should always feel:
 
@@ -521,7 +490,7 @@ Your brand should always feel:
 
 ---
 
-# 17. Final Recommended Brand Package
+# 17. Current brand package and migration status
 
 ## Brand Name
 **The Money Trap**
@@ -533,7 +502,7 @@ Your brand should always feel:
 **Conversational, sharp, trustworthy, slightly witty**
 
 ## Style
-**Premium flat stickman animation**
+**Premium Editorial Finance Documentary**
 
 ## Main colors
 - Navy `#14243A`
@@ -543,17 +512,27 @@ Your brand should always feel:
 - Teal `#39B8B6`
 
 ## Fonts
-- **Bricolage Grotesque** or **Poppins** for headings
-- **Inter** for body text
+- Locally bundled **Inter**; optional future fonts require license review and local bundling.
 
-## Core characters
-- Sam
-- Alex
-- Debt Monster
-- BankBot
+## Narrative examples
+Sam and Alex are optional fictional examples, with no required animated counterpart.
 
 ## Content pillars
 - money psychology
 - debt traps
 - banking systems
 - scams and deceptive products
+
+## Legacy assets and future redesign
+
+| Existing reference | Status | Future action |
+|---|---|---|
+| [channel-design.png](channel-design.png) | Legacy character thumbnail/style board, pictured logo and alternate palette | Redesign the board, logo/profile concept and thumbnail examples for documentaries after approval. Preserve the original. |
+| [character-reference.png](character-reference.png) | Legacy character reference; pictured hair is already superseded by current production rules | Retain for legacy compositions. No redraw needed for the new default. |
+| Character thumbnails under `videos/001-lifestyle-creep/` | Existing episode artwork | Preserve. New packaging requires its own brief. |
+| Banner direction | Earlier text proposal; no standalone banner asset identified in `references/` | Design a documentary banner later; none delivered here. |
+| [base-voice.mp3](base-voice.mp3) | Existing voice reference | Preserve; this phase grants no new audio approval. |
+
+Track factual and asset sources. Never invent documentary evidence, assume online media is reusable, promise financial outcomes or imply a visual format guarantees monetization. Existing code, episodes, artwork, voice references and historical QA stay intact.
+
+The [migration audit](../docs/documentary-migration-audit.md) records the documentation review and residual production limits. The [visual style guide](VISUAL_STYLE_GUIDE.md), documentary [script guide](SCRIPT_GUIDE.md), [teaching guide](TEACHING_STYLE_GUIDE.md), [media-sourcing standards](MEDIA_SOURCING.md), [research playbooks and skill routing](../research/README.md) agree with the updated [global instructions](../AGENTS.md). Historical/legacy materials retain their original scope; no new production implementation is claimed.

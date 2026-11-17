@@ -1,10 +1,12 @@
-# The Money Trap — Scriptwriting Guide (v2.1)
+# The Money Trap — Scriptwriting Guide (v2.2)
+
+**Updated 2026-11-16 — Phase 3: documentary scripting; links/status synchronized through Phase 9.** This revision preserves the research, originality, financial verification and local TTS workflow. Read with [channel branding](CHANNEL-BRANDING.md), the [visual style guide](VISUAL_STYLE_GUIDE.md), [teaching guide](TEACHING_STYLE_GUIDE.md), [media-sourcing standards](MEDIA_SOURCING.md) and updated [global production rules](../AGENTS.md). Existing episode scripts and approvals are unchanged.
 
 **Purpose:** Produce clear, original, engaging, credible 10–15 minute English-language finance explainers that sound like a thoughtful person speaking, including when rendered through a local text-to-speech system.
 
-**Format:** Faceless 16:9 stickman storytelling with a single primary narrator and occasional character dialogue. **Audience:** English-speaking working adults, approximately ages 25–50. **Genre:** money psychology, debt and bills, everyday banking, scams, and hidden consumer costs. **Brand voice:** observant, calm, curious, a little dry/witty, never condescending or guru-like.
+**Format:** Faceless 16:9 financial documentaries told by one observant primary narrator, supported by original editorial motion graphics and appropriate mixed media. **Audience:** English-speaking working adults, approximately ages 25–50. **Genre:** money psychology, debt and bills, everyday banking, scams, consumer behavior and hidden consumer costs. **Brand voice:** observant, calm, curious, a little dry/witty, never condescending or guru-like.
 
-**Default format:** A person makes a reasonable financial decision, encounters an unexpected consequence, and discovers the mechanism behind it. A fair comparison shows what a different decision or assumption would change. Start with the human situation; make the financial cause visible.
+**Documentary direction:** Explain everyday money problems through relatable situations, ordinary decisions, consequences and simple explanations. Start with the human situation; make the financial cause understandable. A scenario, documented case or system mystery may carry the story. Use a fair comparison when it helps; no recurring character, acted scene or comparison is mandatory.
 
 **Runtime:** 10–15 minutes is an editorial starting range, not a quota. Finish the explanation without padding or compressing speech. Measured natural narration determines the final runtime.
 
@@ -29,6 +31,16 @@ A good script is built from a real question and a specific story. Anti-slop edit
 **Write for one listener.** The audience is a working adult watching on their phone or TV. Assume intelligence, not advanced finance vocabulary. Start with what they already know, show what they don't know, and avoid explanations they don't need.
 
 **Specificity is a design choice.** Use a person, place, amount, decision, deadline, or consequence whenever grounded. Prefer "Sam gets a $600 raise and signs a new lease" over "People tend to experience lifestyle inflation." Use hypothetical numbers clearly identified as examples, not as facts about average consumers.
+
+### Required documentary writing principles
+
+1. **Relatable first.** Open with a situation the viewer recognizes: a purchase someone almost declined, a paycheck that disappears quickly, a failed payment, a temporarily frozen account or a recurring expense that becomes difficult to manage. Establish a concrete problem rather than starting with a definition or a dramatic slogan.
+2. **Concepts over calculations.** Use numbers only when they materially improve understanding. Avoid detailed calculations, repeated salary comparisons, formula demonstrations, long financial-ratio explanations and spreadsheet-like narration. Every figure still needs a factual source or an explicitly hypothetical assumption and a correct calculation where applicable.
+3. **Show ordinary consequences.** A postponed purchase, delayed repair or tighter month may be enough. Do not invent bankruptcy, losing a home or financial ruin to make an ordinary decision feel important. Represent people's constraints fairly rather than blaming them for difficult circumstances.
+4. **Keep explanations simple.** Explain cause and effect in plain English, at the depth needed to answer the central question. Define necessary terms in context. Omit tangents and deeper philosophical interpretations added only to sound intelligent; retain qualifications that materially change the explanation.
+5. **Maintain progression.** Each section introduces a meaningful event, consequence, complication, explanation or realization. Remove sections that repeat the same lesson in different words. A callback must show changed understanding, not restart the lecture.
+6. **Avoid AI-shaped narration.** Apply the contextual anti-slop review in §5. Avoid excessive rhetorical questions, forced dramatic pauses, artificial contrasts, repeated three-part structures and overly poetic financial explanations. Natural uses of common phrases are allowed.
+7. **Write for local TTS.** Mix short and medium sentences naturally, with conversational punctuation, clear references/pronouns, natural paragraphs and speakable numbers. Keep production instructions out of narration. Use no forced speaking-rate target; test and listen to actual generated audio before approving delivery (§7).
 
 ## 2. Research and fact ledger
 
@@ -55,18 +67,20 @@ Make a one-page brief:
 - **Promise:** What will the listener understand by the end?
 - **Title/thumbnail:** Specific, accurate and connected to the opening image.
 - **Story engine:** Choose one: scenario, mystery, contrast, chain reaction, historical case, or financial experiment. Vary across uploads.
-- **Emotional stake:** What does the character want? What gets in the way? Why care?
+- **Human stake:** What does the person or viewer need? What gets in the way? Why care?
 - **Verified mechanism:** What exactly causes the outcome?
 - **End payoff:** Answer the question and identify one useful distinction or decision.
 - **Reasonable motive:** Why would someone make this choice with the information and constraints they have?
-- **Comparison:** What one decision or assumption changes, and what stays the same?
+- **Comparison, if useful:** What one decision or assumption changes, and what stays the same?
 - **Scope:** What this example cannot establish, including who may face a different outcome.
 
 Avoid titles that require exaggeration, fabricated certainty or promises of investment returns.
 
-Before outlining, complete this sentence in plain language:
+Before outlining a scenario or documented case, complete this sentence in plain language:
 
 > In this [fictional example / documented case], [person] wants [ordinary goal], chooses [plausible action], and encounters [specific consequence] because [verified mechanism]. Changing [decision or assumption] changes [outcome], with [cost or limitation].
+
+For a system mystery, state the familiar event, the question it raises, the supported process that explains it and its ordinary consequence. Do not invent a protagonist or a comparison to fit the scenario sentence.
 
 **Premise check:** Can the writer explain the cause without a slogan? Is there a visible action or transaction? Does the ending actually answer the opening? If any answer is no, resolve the premise before expanding the draft. A topic such as “credit cards” is not yet a story.
 
@@ -75,40 +89,39 @@ Before outlining, complete this sentence in plain language:
 The video explains **why** something happens, not how to compute it. The viewer should finish able to say the cause in one plain sentence — "every upgrade kept coming back next month" — not able to reproduce an arithmetic walkthrough.
 
 - Name the force at work in plain words before any number appears: recurring commitments, an obligation that renews, an incentive that rewards one behaviour, a cost that hides in a monthly figure. The concept is the reveal.
-- One concept per video, stated once and demonstrated by the story. If two concepts compete, one of them is the next video.
-- Numbers are evidence, not curriculum. Use at most the two or three amounts that make the cause unambiguous, one time, at the reveal. Keep units and period intact.
+- Keep one central question. Supporting concepts belong only when they are needed to answer it; omit competing tangents.
+- Numbers are evidence, not curriculum. Use the minimum needed for clarity, without a fixed quota or mandatory numerical reveal. Repeat an amount only when the listener needs it to follow a later consequence. Keep units and period intact.
 - No worked arithmetic, no formula, no per-line table of income and expenses, no "here's the math" beat. If a value must change on screen, show the before and after states and let the difference speak.
-- Arithmetic still has to be right — `src/finance/math.ts` remains the source of truth and every spoken amount agrees with it. The change is what gets narrated, not what gets verified.
-- A viewer asking "how do I calculate this for myself?" is a comment, not a missing beat. Answer it in a pinned comment or a follow-up, not in the middle of the story.
+- Arithmetic still has to be right — `src/finance/math.ts` remains the calculation source of truth for modeled examples. Sourced factual figures retain their own evidence and scope; do not force them into the fictional budget model.
+- A calculation tutorial is a separate scope. Keep the documentary focused on a concise explanation or before/after result; do not add an unsolicited arithmetic lesson.
 
-**The channel rule:** every financial concept must be understandable through the animation and the story alone, even if the viewer doesn't remember a single number. Applies to scripts, storyboards and animation recommendations alike.
+**The channel rule:** the viewer should understand the concept through clear narration and purposeful visuals even if they remember none of the numbers. Applies to scripts, storyboards and visual recommendations alike; understanding must not depend on character acting.
 
 | Avoid | Prioritise |
 |---|---|
 | Detailed financial calculations | Financial psychology and behaviour |
 | Repeated dollar amounts | Relatable situations |
 | Formula-based explanations | Analogies and metaphors |
-| Long charts and spreadsheets | Character-driven scenes |
+| Long charts and spreadsheets | Relatable situations and purposeful visual explanations |
 | Step-by-step mathematical solutions | Cause-and-effect explanations |
 | Excessive financial terminology | Natural conversational narration |
 | Generic budgeting lessons | Discoveries and revelations |
 
 Numbers are not banned: a brief comparison can establish a consequence, provided the viewer never has to follow a calculation to understand the story.
 
-## 4. Story structure: character-led financial explanation
+## 4. Story structure: narrator-led financial documentary
 
-Use seven connected beats as the default scaffold. The **1,800-word allocation below is an editorial starting point**, not a measured competitor template or a minimum length. At the earlier analysis assumption of 150 wpm it would read for 12 minutes before accounting for delivery and visual pauses. Combine or shorten beats when the subject needs less explanation.
+The following is an optional causal scaffold, not a mandatory seven-part formula. Combine, reorder or omit beats as the central question requires. Write the complete explanation before estimating runtime; no fixed word allocation, midpoint twist or numerical reveal is required.
 
-| Beat | Starting words | What must change | Possible visual evidence |
-|---|---:|---|---|
-| 1. Consequence-first hook | 70 | Establish a concrete contradiction or question worth answering. | A paycheck rises while the amount remaining falls. |
-| 2. Situation and stakes | 180 | Establish the goal, baseline, constraints and example assumptions. | Sam's current income, illustrated bills and reason for a choice. |
-| 3. Reasonable choices | 300 | Show how individually understandable choices create the outcome. | A sequence of purchases, recurring commitments or payment dates. |
-| 4. Mechanism reveal | 400 | Name the cause in plain words and show it happening; the calculation stays off-screen. | One before/after state, or the same cost returning every month. |
-| 5. Complication or exception | 250 | Test an obvious explanation or fix and expose its actual limit. | Change one input; show why the initial answer is incomplete. |
-| 6. Alternative and payoff | 550 | Compare fairly, account for tradeoffs and answer the opening question. | Same starting conditions, changed choice, derived outcomes. |
-| 7. Natural close | 50 | Leave a specific consequence or useful distinction; optionally bridge to a related video. | Return to the opening object, balance or decision in its new context. |
-| **Total** | **1,800** | **Complete explanation; no runtime padding.** | |
+| Beat | What must change | Possible visual treatment |
+|---|---|---|
+| Familiar situation and hook | Establish a recognizable event and a question worth answering. | A checkout choice or an illustrative failed-payment notice. |
+| Situation and stakes | Establish the goal, constraints and relevant assumptions. | Contextual footage, an original document or a clearly labeled recreation. |
+| Decisions or process | Follow the events that create the consequence. | A purchase sequence, recurring commitment or simplified payment flow. |
+| Mechanism reveal | Explain the cause in plain words. | A before/after state, returning obligation or annotated process. |
+| Complication or exception | Introduce a real constraint that changes understanding. | An additional obligation or a source-backed exception. |
+| Payoff and optional alternative | Answer the opening; compare fairly if useful and retain tradeoffs. | The process resolved or comparable states with a meaningful difference. |
+| Natural close | Leave a specific consequence or useful distinction. | Return to the opening object or situation in its new context. |
 
 ### Opening: choose one entry
 
@@ -138,7 +151,7 @@ Keep a small question tracker in `outline.md`: **question / beat opened / beat a
 
 For every important number, know **what it measures / over what period / compared with what**. Use round hypothetical values when they clarify; retain necessary precision in sourced facts. Distinguish a balance from a payment, total price from monthly cost, and an absolute change from a percentage change. Do not stack unrelated statistics to create scale without explanation.
 
-### Payoff: answer, compare, then stop
+### Payoff: answer, compare when useful, then stop
 
 Return to the opening question with the demonstrated cause. In a fictional comparison, hold starting income, time horizon and relevant conditions constant unless the change is explicitly part of the experiment. Show costs and remaining constraints of the alternative. Do not make Alex win through unexplained extra income, perfect foresight or omitted expenses.
 
@@ -154,10 +167,12 @@ Use a system mystery for payment or banking flows, a documented case for a scam,
 
 Flag these **in context**, not as an automatic ban list:
 
-- **Vague hype:** "This changes everything", "The truth is shocking", "Let that sink in."
-- **Throat clearing:** "In today's world", "Let's dive in", "Here's the thing", "As we all know."
+- **Vague hype:** "This changes everything", "The truth is shocking", "The shocking truth", "Let that sink in."
+- **Throat clearing:** "In today's world", "In today's fast-paced world", "Let's dive in", "Here's the thing", "But here's the thing", "As we all know."
+- **Unfounded special insight:** "What most people don't realize" without evidence or a specific explanatory purpose.
 - **Artificial reversals:** endless "It's not X; it's Y" construction.
 - **Metronomic cadence:** every paragraph starts with a rhetorical question, every sentence is short, every section ends with an aphorism.
+- **Manufactured drama:** forced pauses, catastrophe language or poetic metaphors that obscure an ordinary financial cause.
 - **Generic triads:** "smart, strategic and sustainable" with no added meaning.
 - **Fake first-person authority:** "I've helped thousands of people" without evidence.
 - **Motivational lecture:** "You need to develop a wealthy mindset" when a concrete mechanism is available.
@@ -198,29 +213,31 @@ Before TTS generation:
 - Expand money amounts and numbers when local engine mispronounces them. E.g. narration text "four thousand four hundred dollars" instead of "$4,400" if needed; keep the numeric form in the annotated script.
 - Spell out unfamiliar acronyms on first mention; prefer everyday terms over ticker symbols or account codes.
 - Use punctuation to mark natural breath units. Avoid multiple semicolons and long parentheticals.
-- Aim for most sentences around 8–20 spoken words, but vary naturally. There is no hard cap.
+- Mix short and medium sentences naturally. Keep references and pronouns unambiguous; split a long sentence when it becomes difficult to follow aloud. No sentence-length quota.
 - Break audio into meaningful paragraphs or segments (start with about 80–180 words each; tune to local engine); never split halfway through a sentence or a reveal.
 - Keep voice, speed and pronunciation settings consistent across segments; allow quiet pauses at semantic boundaries during audio assembly.
-- Do not assume a given voice engine supports SSML, emotion tags or `[pause]` directives; test your specific local VoiceStudio model first. Keep direction cues in metadata unless known to work.
+- Do not put SSML, emotion tags, `[pause]` directives or other production instructions in `narration.txt`. Keep direction cues in separate metadata; do not assume a local engine supports them.
 - Generate a 45–60-second sample and **listen with eyes closed**. Mark awkward timing, emphasis, unclear references, strange number readings, and monotone chunks. Edit the words or segmentation, not just the speaking speed.
 
-Approximate narration budget: **135–155 spoken words per minute** as a starting experiment. A 12-minute episode therefore needs roughly 1,620–1,860 spoken words *before adjusting for pauses and diagrams*. Time the actual chosen voice; it supersedes word-count formulas.
+There is **no forced speaking-rate target**. Write the full script, test the actual local voice and measure the generated WAV. A measured sample may inform a provisional runtime estimate, but only the complete narration establishes delivery length. Do not pad, compress or accelerate speech to reach a word-count or runtime target. Sample approval does not replace listening to the final assembled narration.
 
 Planning durations are estimates, never aligned cues. After narration and listening review, prepare phrase cues and storyboard JSON and compile with `src/timeline/compiler.ts`; graphics use compiled event frames, cue IDs and documented offsets. Regenerated narration or WAV invalidates alignment and hashes. Do not accelerate or stretch speech to fit the outline, or put guessed narration timestamps in graphics. The film uses one global Audio node.
 
-## 8. Visual writing for stickman animation
+## 8. Visual writing for documentary production
 
-Every beat should identify: whose viewpoint, what changes, what viewers can see, and the finance concept being clarified. Use visual metaphors only when they clarify the mechanism. E.g. recurring bills as physical weights, a transfer as money moving through intermediary stops, a debt balance as a meter.
+Every beat should identify what the viewer needs to understand, what changes and what the image adds to the narration. Select the medium using the [visual style guide's shot framework](VISUAL_STYLE_GUIDE.md#6-shot-selection-framework). Original graphics can explain a hidden mechanism; verified footage or photography can establish context; an authentic permitted excerpt can support an evidence-dependent claim. A metaphor must clarify the cause without implying false mechanics.
 
-**Character roles:** Sam has a goal, reasons and constraints; he is neither a permanent fool nor a stand-in for every viewer. Alex can ask a useful question, test an alternative or expose an assumption. He is not an all-knowing lecturer and need not appear in every episode. Keep one primary narrator; occasional dialogue must earn its place by revealing a choice or misunderstanding. Do not add voices just to repeat the narration.
+**Optional fictional examples:** Sam can have a goal, reasons and constraints without appearing as a recurring animated character. Alex can test an alternative without being an all-knowing lecturer. Neither is mandatory. Keep one primary narrator; do not invent testimony or quotations. Any occasional dialogue must earn its place and remain clearly fictional or accurately sourced.
 
-Use the reference characters' expressive faces, readable silhouettes and familiar props. Current project instructions supersede the source image: keep Sam and Alex hairless and preserve the approved blue-hoodie/white-shirt identities. Use the project palette: yellow for money, coral for costs/loss and teal for an alternative. An alternative still needs its costs explained; color alone must not imply a guarantee.
+Storyboards must not depend on stickman poses, facial reactions or character acting. Use objects, interfaces, documents, processes and relevant real-world context when they explain the beat. Do not identify an unrelated footage subject as Sam, Alex or a documented customer. Label illustrative interfaces and recreations when authenticity could be confused. Source claims and media permissions separately; a factual source does not automatically clear its images.
+
+Use the project palette: yellow for money, coral for costs/loss and teal for an alternative. An alternative still needs its costs explained; color alone must not imply a guarantee. Existing character identity and kinematic instructions apply only when explicitly working on legacy character compositions; no character code or artwork changes in this migration.
 
 Write what changes on screen: a bill returns next month, a balance declines, or a payment reaches a labeled intermediary. A character gesturing beside unchanged text is not a mechanism demonstration. Reveal one financial relationship at a time and let the viewer see the cause; a before/after state can carry the proof without a visible calculation. Text labels support the explanation; no default subtitles or paragraph-length cards. Do not prescribe a cut every N words: the transcript study did not measure visual timing.
 
 Don't narrate on-screen text word-for-word unless repetition helps comprehension. Avoid images that imply incorrect mechanics (money vanishing, instant financial guarantees). Add explicit labels for example assumptions and disputed interpretations.
 
-For production, produce a table with Beat ID / Narration segment / Action or visible change / Financial prop or diagram / Fact or assumption ID / Estimated duration. Mark all durations as provisional until measured narration and reviewed cues exist. Do **not** put stage instructions in `narration.txt`.
+For production, carry the Beat ID and narration segment into the visual guide's nine-field framework: story moment, learning need, visual purpose, recommended medium, primary subject, action/camera, required assets, source/license requirements and expected takeaway. Include claim/assumption IDs and permission status. Record provisional durations separately until measured narration and reviewed cues exist. A static hold is valid; there is no requirement to show every sentence as text or give every beat a character pose. Do **not** put stage instructions in `narration.txt`.
 
 ## 9. Script review and scoring
 
@@ -229,13 +246,13 @@ Score 0–5 each (40 points):
 | Category | Five-point test |
 |---|---|
 | Premise + opening | Immediate, specific, compelling question aligned to title |
-| Character + stakes | Believable decision, understandable obstacle and consequence |
+| Situation + stakes | Recognizable situation, understandable obstacle and consequence |
 | Mechanism clarity | Viewer can explain the financial cause in plain words |
 | Originality + specificity | Specific scenes, genuine insight; no generic filler |
 | Natural speech | Sounds good aloud; varied rhythms and real transitions |
 | TTS readiness | Numbers/pronunciations/segments checked in actual engine |
 | Financial integrity | Every factual claim sourced; assumptions and caveats preserved |
-| Visual storytelling | Actions and diagrams add meaning rather than decorative movement |
+| Visual storytelling | Chosen media and visible changes clarify the narration rather than decorate it |
 
 **Provisional pass: 32/40 or higher**, *and* at least 4/5 each for financial integrity, natural speech and TTS readiness. This is an internal editorial standard, not a researched YouTube predictor.
 
@@ -279,10 +296,10 @@ None of those choices seemed wild on its own. The problem was that every upgrade
 videos/001-topic/
   brief.md           # viewer, title, thumbnail promise, question, payoff
   sources.md         # verified facts + hypothetical assumptions
-  outline.md         # causal beats, word budgets, question tracker, fair comparison
+  outline.md         # causal beats, question tracker, comparison when useful
   script.md          # annotated production script
   narration.txt      # TTS-ready speech only
-  storyboard.md      # characters, actions, finance diagrams per beat
+  storyboard.md      # learning needs, media, visible changes, assets and sources per beat
   qa.md              # scorecard, read-aloud notes, TTS test notes
 ```
 
@@ -291,17 +308,19 @@ For efficiency, do one research pass, one initial draft, and **targeted** editor
 Use the files in this order:
 
 1. **Brief and sources:** Choose the viewer's question, identify the mechanism, verify the relevant claims and write the example assumptions. Settle the title promise and ending together; revise the promise if the evidence does not support it.
-2. **Outline:** Write the opening situation and payoff first. Connect them with causal beats, proposed word budgets and the question tracker. Identify the comparison's changed input and held conditions. Do not write a full draft around an unresolved mechanism.
-3. **Spoken draft:** Draft complete narration before detailed motion planning. Use short action notes to test whether the mechanism is drawable. Keep source and assumption IDs beside the relevant passages in `script.md`.
+2. **Outline:** Write the opening situation and payoff first. Connect them with causal beats and the question tracker. If comparing, identify the changed input and held conditions. Do not write a full draft around an unresolved mechanism.
+3. **Spoken draft:** Draft complete narration before detailed motion planning. Use short visual notes to test whether the mechanism can be explained with appropriate media. Keep source and assumption IDs beside the relevant passages in `script.md`.
 4. **Focused revision:** Check cause, evidence, arithmetic and payoff before rhythm and wording. Cut repeated explanations and unsupported tangents. If a beat adds no action, evidence, constraint or changed understanding, merge or remove it.
 5. **Voice preparation:** Export `narration.txt` from the approved script. Check that it contains the same spoken content, preserves qualifiers and amounts, and excludes directions and source IDs. Test the chosen local voice and record listening findings in `qa.md`; do not mark them passed in advance.
 6. **Production handoff:** Deliver the complete script, sources, assumptions, outline and storyboard notes. Distinguish provisional durations from reviewed cues. Script completion does not approve audio, motion, rendering or publishing. After measured narration, prepare and review alignment separately under the project timing rules.
 
-**Handoff test:** Someone reading the packet should be able to identify the central question, explain the mechanism, reproduce the example arithmetic, locate the supporting claims and state the comparison's limitation. Record unresolved claims or listening issues explicitly; an editorial score does not erase them.
+**Handoff test:** Someone reading the packet should be able to identify the central question, explain the mechanism, locate supporting claims, verify any example arithmetic and state relevant limitations. The audience does not need to reproduce calculations. Record unresolved claims, media permissions or listening issues explicitly; an editorial score does not erase them.
 
 ## 12. Evidence and background references
 
-The v2 structural adaptation is grounded in the [local transcript analysis](../docs/transcript-longform-analysis.md), [channel branding](CHANNEL-BRANDING.md), [thumbnail board](channel-design.png), and [character reference](character-reference.png), subject to current project overrides. The study contains 12 longform scripts across three groups; their proportions, sentence statistics and observed phrases are not performance benchmarks. New hook prompts and word budgets in this guide are editorial proposals, not quotations or measured optimal values.
+The v2 structural adaptation drew on the [local transcript analysis](../docs/transcript-longform-analysis.md), earlier channel branding, the [legacy thumbnail board](channel-design.png) and [legacy character reference](character-reference.png). These images remain historical references, not the default documentary treatment. The study contains 12 longform scripts across three groups; its proportions, sentence statistics and observed phrases are not performance benchmarks. Hook prompts and earlier word budgets were editorial proposals, not quotations or measured optimal values.
+
+V2.2 follows the current [channel branding](CHANNEL-BRANDING.md) and [visual style guide](VISUAL_STYLE_GUIDE.md). It retains the research evidence while replacing character-dependent handoff instructions and fixed numerical/rate quotas. The [teaching guide](TEACHING_STYLE_GUIDE.md) now defines explanatory depth and comprehension review; [media sourcing](MEDIA_SOURCING.md) defines provenance, permissions and the manual asset manifest. Neither guide changes existing episode approvals.
 
 The links below are retained background references from v1. They were not revalidated for this revision and are not additional evidence for the local transcript findings. Their inclusion does not authorize a different voice service, rendering engine or production workflow.
 

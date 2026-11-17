@@ -1,5 +1,13 @@
 # Narration and timing review
 
+## Start with the documentary brief
+
+Read [branding](references/CHANNEL-BRANDING.md), [scriptwriting](references/SCRIPT_GUIDE.md), [visual style](references/VISUAL_STYLE_GUIDE.md), [teaching](references/TEACHING_STYLE_GUIDE.md) and [media sourcing](references/MEDIA_SOURCING.md), together with [AGENTS](AGENTS.md), before new production. Narration and the learning goal choose visuals; no default character cast, calculation lesson or sentence-by-sentence on-screen text.
+
+Keep brief, outline, script, spoken narration, claim sources and QA separate. Select media using the visual guide's nine-field framework and record asset provenance/permissions before delivery use. Never treat a recreation as authentic evidence or assume media is cleared. Use local tools and measured narration; retain separate technical, creative and listening approval.
+
+The commands below are the **existing episode 001 workflow**, retained as operational guidance. They can regenerate its narration or still packets: use them only when that episode work is explicitly authorized. They are not a general documentary pipeline. For a future episode, select its own files and an unused output directory only after checking the relevant script's supported options; do not overwrite existing episodes as migration cleanup. Technical convention changes require a separate implementation task. No commands below were run by this documentation migration.
+
 ## 1. Open the project
 
 ```powershell

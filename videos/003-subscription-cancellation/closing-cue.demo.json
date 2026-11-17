@@ -1,0 +1,15 @@
+{
+  "mode": "timing-demo",
+  "audioDurationMs": 409064.2708333334,
+  "originalAudioSha256": "0d659c234c2e204cf501706cacbadb66d47382d0892b97276759357c3adaed6b",
+  "closingAudioSha256": "65bf968fcbd1d5ce76406290412e405a2837103d2297e291ff99ced27bb011ad",
+  "combinedAudioSha256": "6bf00fed4b1d69aea8721adcafe9ab5d13176a5ffecbbfc241343eeeb6d8ff1d",
+  "pauseMs": 600,
+  "cue": {
+    "id": "closing-cta",
+    "startMs": 105910.25,
+    "endMs": 109864.27083333337,
+    "text": "If this helped, like the video and subscribe to The Money Trap for more."
+  },
+  "note": "WAV boundaries measured; phrase timing and delivery need listening review."
+}

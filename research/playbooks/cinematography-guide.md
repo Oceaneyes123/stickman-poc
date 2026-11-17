@@ -1,5 +1,51 @@
 # Cinematography guide
 
+**Current guidance · 2026-11-16 · Phase 6.** Follow the [visual style guide](../../references/VISUAL_STYLE_GUIDE.md) for composition and story-led pacing. The [source analysis](../channels/cinematography-composition.md) sampled stills, not continuous camera motion; absence in that sample cannot establish a universal technique ban.
+
+## Frame the idea
+
+| Treatment | Useful purpose | Check |
+|---|---|---|
+| Wide/context shot | Establish place, ordinary activity or a meaningful spatial relationship | Context is relevant; a person need not appear. |
+| Medium/action shot | Show a decision, interaction or process | The action carries the meaning without mandatory character acting. |
+| Close/insert | Examine an object, interface detail or document passage | Crop preserves necessary context; relevant text remains readable. |
+| Diagram/comparison | Expose a relationship difficult to see in live action | Hierarchy, scale and assumptions are honest. |
+| Photo/document hold | Let the viewer inspect a meaningful detail | Stillness is valid; no automatic zoom, parallax or camera move. |
+| Collage/evidence sequence | Connect source-backed artifacts | One dominant idea at a time, traceable origins and no misleading composite. |
+
+These are options, not exhaustive presets or required subject-height bands. Properly licensed footage may contain framing an existing rig cannot reproduce. That does not imply new rig geometry or a camera system has been implemented.
+
+## Composition and continuity
+
+- Give each shot one dominant idea, with supporting objects only as needed. Separate foreground, subject and background through clear placement, scale, contrast, occlusion or restrained focus/lighting where useful.
+- Use negative space for isolation and reading. A shot need not reserve space for text that has no purpose.
+- Keep essential graphics at least 96 px from the side edges at 1920×1080; check other edges and player overlays. Footage/backgrounds may fill the frame.
+- Keep labels close to their subject, clear of faces and important actions. Text position serves comprehension; there is no blanket ban on the middle third. Use solid boards where changing imagery harms contrast.
+- Preserve identity, dates, chronology and paid/unpaid or pending/completed states across cuts. Do not imply unrelated footage records the same person or event.
+- Keep the five brand colors' graphic meanings; footage/photo colors may remain natural and episode supporting tones can vary. Gradient/depth choices support readability, not a compulsory room look.
+- Grounding/shadow and fixed-limb checks apply when legacy drawn characters or physical object staging need them. A documentary diagram or photo does not require an illustrated floor.
+
+## Camera and sequence
+
+Choose a camera move only to reveal context, follow an action or emphasize a discovery. State its endpoint and purpose; keep it brief and restrained, then hold. Static shots and clean cuts are valid. Avoid perpetual pushes, decorative shake, unnecessary parallax and dramatic movement disproportionate to an ordinary money problem.
+
+Cut when the idea, relevant action or context warrants it. A match cut may connect a shared object/shape; a dissolve may indicate time/context change. Do not force a new composition at every boundary or impose a two-push-in limit, cut-rate quota, fixed shot length or transition effect. Repeated framing can strengthen continuity; vary it when the learning purpose changes rather than rotating templates mechanically.
+
+Footage, photography and authentic excerpts follow [media sourcing](../../references/MEDIA_SOURCING.md). Cropping/grading must preserve what evidence actually establishes. Original interfaces, diagrams and staged recreations must not masquerade as authentic records.
+
+## Future review
+
+Inspect all beats/boundaries at 0.5 scale and phone size for readable hierarchy, wrapping, clipping, state continuity and meaningful framing. Review actual motion against measured narration; stills cannot establish camera quality or synchronization. Record technical, creative and listening results separately. No preset-test render or new episode render is produced by this documentation phase.
+
+## Historical guide — superseded recommendations
+
+The original below is retained verbatim. Its four-preset ceiling, position/depth bans, mandatory shot variation, push-in quota and per-preset render requirement are **not active documentary rules**. Source observations remain historical.
+
+<details>
+<summary>Original cinematography guide — historical, not production instructions</summary>
+
+# Cinematography guide
+
 Framing and composition rules for this pipeline, derived from the six sampled
 reference videos. Evidence: `../channels/cinematography-composition.md`.
 
@@ -94,3 +140,5 @@ Rules observed in the corpus that reinforce it:
 - `npm run storyboard:design` review pages remain the human check.
 - A rendered 10-second clip per preset, inspected at 0.5 scale, before the first full
   render.
+
+</details>

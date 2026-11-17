@@ -1,5 +1,29 @@
 # Animation pattern library
 
+**Current guidance · 2026-11-16 · Phase 6.** Treat this as an optional pattern reference under the [visual style guide](../../references/VISUAL_STYLE_GUIDE.md), not a requirement that each shot must move. No continuous motion/easing was measured from the historical sampled stills; the timings below were design proposals.
+
+## Documentary use
+
+- Use reveal, transformation or directional motion when it makes a process, comparison or changed state easier to follow. A still photo, document hold or settled diagram is valid; “reads as a slide” is not itself a defect.
+- Let the learning goal choose the medium and action. No required stand-in figure, pose change, scale reveal, number counter or per-shot set relighting.
+- A1/A2 and figure-specific parts of C3 below are legacy character/interaction guidance, relevant only when such work is selected. Preserve rig geometry, identity, kinematics and hand attachment under existing project rules.
+- A3/A4 offer useful readability and label-attachment ideas; their exact frame durations are starting values, not universal minimums. Verify the actual content against measured narration and phone-size reading.
+- B1/B4/B5 can explain relevant scale/state relationships; counts must be honest or explicitly symbolic. Modeled arithmetic uses the finance module; sourced data retains its own claim support. No amount must appear merely because the pattern supports it.
+- B2 applies to a meaningful connection; not every arrow represents magnitude or needs a number. Remove decorative arrows.
+- B3/C1/C2 are optional treatments, not claims of a generic lighting API or limits on chapter labels/camera-move counts. Reuse actual components where suitable; do not infer implemented props from a proposed contract.
+- Avoid particle clutter, perpetual motion and decorative camera work. Absence of a technique from sparse samples is not proof that all bespoke illustration, blur or depth is prohibited.
+
+Consult the [motion graphics catalog](motion-graphics-library.md) for existing versus proposed capability, [media sourcing](../../references/MEDIA_SOURCING.md) for third-party material and [quality checklist](quality-checklist.md) for future review. No implementation, render or new check is run by this phase.
+
+## Historical pattern proposals — superseded mandates
+
+The original below is retained verbatim. Its “without which” claims, universal hold/camera quotas, exclusions and implied component contracts are **not active documentary requirements or proof of shipped functionality**. Source observations remain historical.
+
+<details>
+<summary>Original animation patterns — historical, not production instructions</summary>
+
+# Animation pattern library
+
 Patterns the corpus supports, with implementation notes for this repo. **All timings
 below are design targets, not measurements** — no easing or duration was measurable
 from sampled stills (see `../channels/animation-reverse-engineering.md`).
@@ -108,3 +132,5 @@ Each pattern lands with one runnable check:
 - A3: hold-length assertion against the compiled cue durations.
 - B4: `src/finance/math.ts` totals vs rendered label text.
 - A2: `npm run movement:stills -- --debug` scrub, no single-frame teleport.
+
+</details>

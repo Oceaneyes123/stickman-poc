@@ -1,0 +1,158 @@
+{
+  "mode": "timing-demo",
+  "scriptHash": "f46d1e9b2d36198be0ac50a8953fa3966ae863dd2f7d48bb36bc0c1b54cba366",
+  "sourceAudioSha256": "0d659c234c2e204cf501706cacbadb66d47382d0892b97276759357c3adaed6b",
+  "audioDurationMs": 404510.25,
+  "cues": [
+    {
+      "id": "remainder-start",
+      "text": "Settlement continuation",
+      "startMs": 0,
+      "endMs": 100
+    },
+    {
+      "id": "p012-s003",
+      "text": "That settlement addressed both enrollment and cancellation allegations.",
+      "startMs": 285.52083333331393,
+      "endMs": 3945.520833333314
+    },
+    {
+      "id": "p012-s004",
+      "text": "The older process is not being described as Amazon's current experience.",
+      "startMs": 3945.520833333314,
+      "endMs": 8585.520833333314
+    },
+    {
+      "id": "p013-s001",
+      "text": "The case illustrates why the exit matters.",
+      "startMs": 8926.895833333314,
+      "endMs": 11386.895833333314
+    },
+    {
+      "id": "p013-s002",
+      "text": "A series of small decisions on a website can affect a large number of customers.",
+      "startMs": 11906.895833333314,
+      "endMs": 16066.895833333314
+    },
+    {
+      "id": "p013-s003",
+      "text": "Sometimes, though, the obstacle is the commitment behind the button.",
+      "startMs": 16486.895833333314,
+      "endMs": 19386.895833333314
+    },
+    {
+      "id": "p013-s004",
+      "text": "A plan can charge monthly while committing you to a longer period.",
+      "startMs": 19666.895833333314,
+      "endMs": 22966.895833333314
+    },
+    {
+      "id": "p013-s005",
+      "text": "A monthly payment and a month -to -month contract are not necessarily the same thing.",
+      "startMs": 23366.895833333314,
+      "endMs": 27746.895833333314
+    },
+    {
+      "id": "p013-s006",
+      "text": "Depending on the terms, ending early could involve a fee or remaining payments.",
+      "startMs": 28006.895833333314,
+      "endMs": 32146.895833333314
+    },
+    {
+      "id": "p014-s001",
+      "text": "An annual commitment can come with a lower price and a clearly explained trade -off may suit the customer.",
+      "startMs": 32523.375,
+      "endMs": 38023.375
+    },
+    {
+      "id": "p014-s002",
+      "text": "The problem is when a condition that would affect the decision is hard to see until they try to leave.",
+      "startMs": 38543.375,
+      "endMs": 43363.375
+    },
+    {
+      "id": "p014-s003",
+      "text": "So when you decide to cancel, check where you purchased the subscription, its renewal date and its terms.",
+      "startMs": 43743.375,
+      "endMs": 49423.375
+    },
+    {
+      "id": "p014-s004",
+      "text": "Some subscriptions are managed through an app store rather than the service's website.",
+      "startMs": 49983.375,
+      "endMs": 53523.375
+    },
+    {
+      "id": "p015-s001",
+      "text": "Keep the final confirmation and check the access end date.",
+      "startMs": 53890.895833333314,
+      "endMs": 57310.895833333314
+    },
+    {
+      "id": "p015-s002",
+      "text": "A warning about losing benefits isn't necessarily confirmation that cancellation is complete.",
+      "startMs": 57790.895833333314,
+      "endMs": 62850.895833333314
+    },
+    {
+      "id": "p015-s003",
+      "text": "A discount offer isn't a cancellation either.",
+      "startMs": 63430.895833333314,
+      "endMs": 65930.89583333331
+    },
+    {
+      "id": "p015-s004",
+      "text": "That confirmation also gives you a record if a charge appears afterward and you need to contact the company or payment provider.",
+      "startMs": 66510.89583333331,
+      "endMs": 73370.89583333331
+    },
+    {
+      "id": "p015-s005",
+      "text": "The trial at the beginning offered a convenient way to watch a show.",
+      "startMs": 73830.89583333331,
+      "endMs": 77130.89583333331
+    },
+    {
+      "id": "p015-s006",
+      "text": "automatic renewal kept access available.",
+      "startMs": 77130.89583333331,
+      "endMs": 79830.89583333331
+    },
+    {
+      "id": "p016-s001",
+      "text": "Once the show was finished, the same setting kept the payment moving unless you acted.",
+      "startMs": 80170.3125,
+      "endMs": 84590.3125
+    },
+    {
+      "id": "p016-s002",
+      "text": "The cancellation process determined how much effort that action required.",
+      "startMs": 85110.3125,
+      "endMs": 89190.3125
+    },
+    {
+      "id": "p016-s003",
+      "text": "That is why cancelling can be so hard.",
+      "startMs": 89690.3125,
+      "endMs": 91930.3125
+    },
+    {
+      "id": "p016-s004",
+      "text": "The payment continues by default, and some businesses add obstacles when a customer tries to change it.",
+      "startMs": 92390.3125,
+      "endMs": 97950.3125
+    },
+    {
+      "id": "p016-s005",
+      "text": "A subscription can be worth keeping.",
+      "startMs": 98330.3125,
+      "endMs": 100010.3125
+    },
+    {
+      "id": "p016-s006",
+      "text": "But when it no longer is, the decision to leave should be clear enough to take effect.",
+      "startMs": 100510.3125,
+      "endMs": 105010.3125
+    }
+  ]
+}
