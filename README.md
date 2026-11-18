@@ -59,6 +59,7 @@ The latest walking and movement MP4s remain there; obsolete previews were remove
   `docs/transcripts/`. See [decisions](docs/decisions.md) and [current validation](docs/animation-validation.md).
 - `references/`: character art, channel guidance and upstream research.
 - `videos/sam-atm/`: separate existing film, preserved independently.
+- `videos/004-free-shipping/`: researched script and [untimed documentary storyboard](videos/004-free-shipping/storyboard.md) for *Why Free Shipping Makes You Spend More*. Narration timing, artwork and production approval remain pending.
 
 The old MoneyTrapPOC film, its narration/story folder, generated timeline,
 POC-only scripts, build bundle and superseded previews were removed.

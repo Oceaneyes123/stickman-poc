@@ -247,7 +247,7 @@ test("runner resumes, reuses unchanged paragraphs, preserves sample timing and b
   const dir = mkdtempSync(join(tmpdir(), "narration-test-"));
   let calls = 0;
   let drop = false;
-  let interrupt = true;
+  let interruptRecovery = false;
   let engineReady = false;
   let healthChecks = 0;
   let startup: object = { elapsed_s: 60 };
@@ -258,6 +258,11 @@ test("runner resumes, reuses unchanged paragraphs, preserves sample timing and b
       response.end(JSON.stringify(startup));
     else if (request.url === "/engines/voxcpm2/health") {
       healthChecks++;
+      if (interruptRecovery) {
+        response.setTimeout(2000, () => response.destroy());
+        process.emit("SIGTERM");
+        return;
+      }
       const beforeProbe = calls;
       // Model a health ping blocked behind the abandoned synthesis lock.
       await new Promise((done) => setTimeout(done, 40));
@@ -282,9 +287,11 @@ test("runner resumes, reuses unchanged paragraphs, preserves sample timing and b
       assert.equal(input.voice, "f6ec71e3");
       assert.equal(input.speed, 1);
       calls++;
-      if (interrupt) {
-        interrupt = false;
+      if (calls === 2) {
+        // Hold the response open so waiting for the take would fail the test.
+        response.setTimeout(2000, () => response.destroy());
         process.emit("SIGINT");
+        return;
       }
       response.setHeader("Content-Type", "audio/wav");
       if (drop) response.setHeader("X-OmniVoice-Dropped-Text", "missing words");
@@ -310,8 +317,8 @@ test("runner resumes, reuses unchanged paragraphs, preserves sample timing and b
     const changed = `${"Changed paragraph context ".repeat(19)}Changed paragraph.`;
     writeFileSync(script, `${first}\n\n${second}`);
     const listeners = process.listenerCount("SIGINT");
-    await narrate(args);
-    assert.equal(calls, 1);
+    assert.equal(await narrate(args), 130);
+    assert.equal(calls, 2);
     assert.equal(process.listenerCount("SIGINT"), listeners);
     assert.throws(() => readFileSync(join(out, "run.lock")), /ENOENT/);
     const interrupted = JSON.parse(
@@ -319,11 +326,22 @@ test("runner resumes, reuses unchanged paragraphs, preserves sample timing and b
     );
     assert.equal(interrupted.complete, false);
     assert.equal(interrupted.segments.length, 1);
-    assert(
-      !readdirSync(join(out, ".cache")).some((name) =>
+    const pending = () =>
+      readdirSync(join(out, ".cache")).filter((name) =>
         name.endsWith(".pending.json"),
-      ),
+      );
+    const interruptedPending = pending();
+    assert.equal(interruptedPending.length, 1);
+    assert.throws(
+      () => readFileSync(join(out, "narration.wav")),
+      /ENOENT/,
     );
+    interruptRecovery = true;
+    assert.equal(await narrate(args), 143);
+    interruptRecovery = false;
+    assert.equal(calls, 2);
+    assert.deepEqual(pending(), interruptedPending);
+    assert.throws(() => readFileSync(join(out, "run.lock")), /ENOENT/);
     // A crash after writing a verified receipt must not block cache reuse.
     writeFileSync(
       join(out, ".cache", `${interrupted.segments[0].key}.pending.json`),
@@ -335,12 +353,8 @@ test("runner resumes, reuses unchanged paragraphs, preserves sample timing and b
       readFileSync(join(out, "narration-grouped.txt"), "utf8"),
       `${first}\n\n${second}\n`,
     );
-    assert.equal(calls, 1);
-    assert(
-      !readdirSync(join(out, ".cache")).some((name) =>
-        name.endsWith(".pending.json"),
-      ),
-    );
+    assert.equal(calls, 2);
+    assert.deepEqual(pending(), interruptedPending);
     // Legacy interrupted requests can be retried after a proven backend restart.
     const secondKey = createHash("sha256")
       .update(
@@ -351,11 +365,12 @@ test("runner resumes, reuses unchanged paragraphs, preserves sample timing and b
       )
       .digest("hex");
     const abandoned = join(out, ".cache", secondKey);
+    assert.deepEqual(interruptedPending, [`${secondKey}.pending.json`]);
     const marker = JSON.stringify({ startedAt: "2000-01-01T00:00:00Z" });
     writeFileSync(`${abandoned}.pending.json`, marker);
     writeFileSync(`${abandoned}.wav.tmp`, "partial audio");
     await narrate(args);
-    assert.equal(calls, 2);
+    assert.equal(calls, 3);
     const archived = readdirSync(join(out, ".cache"));
     assert(
       archived.some((name) =>
@@ -375,7 +390,7 @@ test("runner resumes, reuses unchanged paragraphs, preserves sample timing and b
       marker,
     );
     await narrate(args);
-    assert.equal(calls, 2);
+    assert.equal(calls, 3);
     const draft = JSON.parse(
       readFileSync(join(out, "cues.draft.json"), "utf8"),
     );
@@ -389,7 +404,7 @@ test("runner resumes, reuses unchanged paragraphs, preserves sample timing and b
     );
     writeFileSync(script, `${first}\n\n${changed}`);
     await narrate(args);
-    assert.equal(calls, 3);
+    assert.equal(calls, 4);
     const manifest = JSON.parse(
       readFileSync(join(out, "manifest.json"), "utf8"),
     );
@@ -413,7 +428,7 @@ test("runner resumes, reuses unchanged paragraphs, preserves sample timing and b
     }
     writeFileSync(script, `${changed}\n\n${first}`);
     await narrate(args);
-    assert.equal(calls, 3);
+    assert.equal(calls, 4);
     const reordered = JSON.parse(
       readFileSync(join(out, "manifest.json"), "utf8"),
     );
@@ -425,7 +440,7 @@ test("runner resumes, reuses unchanged paragraphs, preserves sample timing and b
     );
     writeFileSync(join(out, manifest.segments[0].cacheFile), "corrupt");
     await assert.rejects(narrate(args), /integrity/);
-    assert.equal(calls, 3);
+    assert.equal(calls, 4);
     writeFileSync(script, "Failure paragraph.");
     drop = true;
     await assert.rejects(narrate(args), /omitted speech/);
@@ -434,13 +449,13 @@ test("runner resumes, reuses unchanged paragraphs, preserves sample timing and b
     for (startup of [{}, { elapsed_s: -1 }])
       await assert.rejects(narrate(args), /Unresolved generation/);
     assert.equal(calls, afterFailure);
-    assert.equal(healthChecks, 3);
+    assert.equal(healthChecks, 4);
     // Resume on the same backend, even when uptime is unavailable.
     engineReady = true;
     drop = false;
     await narrate(args);
     assert.equal(calls, afterFailure + 1);
-    assert.equal(healthChecks, 4);
+    assert.equal(healthChecks, 5);
     await narrate(args);
     assert.equal(calls, afterFailure + 1);
     assert.equal(process.listenerCount("SIGINT"), listeners);

@@ -298,11 +298,13 @@ function launchVoiceStudio() {
 export async function ensureVoiceStudio(
   url: URL,
   start = launchVoiceStudio,
-  pause: () => Promise<unknown> = () => delay(1000),
+  pause: (signal: AbortSignal) => Promise<unknown> = (signal) =>
+    delay(1000, undefined, { signal }),
+  signal = new AbortController().signal,
 ) {
   const health = async () => {
     const response = await fetch(new URL("/health", url), {
-      signal: AbortSignal.timeout(1000),
+      signal: AbortSignal.any([signal, AbortSignal.timeout(1000)]),
       redirect: "error",
     });
     if (!response.ok)
@@ -324,12 +326,13 @@ export async function ensureVoiceStudio(
   );
   start();
   for (let attempt = 0; attempt < 30; attempt++) {
-    await pause();
+    await pause(signal);
     try {
       await health();
       console.log("VoiceStudio service is ready.");
       return;
     } catch {
+      signal.throwIfAborted();
       // Startup can briefly refuse connections or return an unhealthy status.
     }
   }
@@ -338,7 +341,12 @@ export async function ensureVoiceStudio(
   );
 }
 
-async function recoverInterruptedTake(pending: string, wav: string, url: URL) {
+async function recoverInterruptedTake(
+  pending: string,
+  wav: string,
+  url: URL,
+  signal: AbortSignal,
+) {
   const saved = JSON.parse(readFileSync(pending, "utf8")) as {
     startedAt: string;
   };
@@ -346,7 +354,7 @@ async function recoverInterruptedTake(pending: string, wav: string, url: URL) {
   const checkedAt = Date.now();
   // A newer backend cannot still be running the abandoned request.
   const response = await voiceRequest(new URL("/startup/progress", url), {
-    signal: AbortSignal.timeout(20000),
+    signal: AbortSignal.any([signal, AbortSignal.timeout(20000)]),
     redirect: "error",
   });
   const status = response.ok ? await response.json() : null;
@@ -365,7 +373,7 @@ async function recoverInterruptedTake(pending: string, wav: string, url: URL) {
       // VoxCPM2's sidecar health ping takes the same lock as synthesis.
       // Unlike /jobs or /model/status, it waits for active synthesis to finish.
       const health = await voiceRequest(new URL("/engines/voxcpm2/health", url), {
-        signal: AbortSignal.timeout(30 * 60 * 1000),
+        signal: AbortSignal.any([signal, AbortSignal.timeout(30 * 60 * 1000)]),
         redirect: "error",
       });
       const engine = health.ok ? await health.json() : null;
@@ -380,6 +388,7 @@ async function recoverInterruptedTake(pending: string, wav: string, url: URL) {
       stopProgress();
     }
   }
+  signal.throwIfAborted();
   const suffix = `.interrupted-${Date.now()}`;
   for (const path of [
     wav,
@@ -450,15 +459,12 @@ export async function narrate(args: string[]) {
     rmSync(lock);
     writeFileSync(lock, `${process.pid}\n`, { flag: "wx" });
   }
-  let stopRequested = false;
-  const stop = () => {
-    stopRequested = true;
-    console.log(
-      "\nStopping after the current take is saved. Rerun the same command to resume.",
-    );
-  };
-  process.on("SIGINT", stop);
-  process.on("SIGTERM", stop);
+  const controller = new AbortController();
+  const { signal } = controller;
+  const interrupt = () => controller.abort(130);
+  const terminate = () => controller.abort(143);
+  process.on("SIGINT", interrupt);
+  process.on("SIGTERM", terminate);
   try {
     const groupedScript = join(out, "narration-grouped.txt");
     writeFileSync(`${groupedScript}.tmp`, `${parts.join("\n\n")}\n`);
@@ -507,14 +513,14 @@ export async function narrate(args: string[]) {
     let discovered = false;
     const get = async (path: string) => {
       const response = await voiceRequest(new URL(path, url), {
-        signal: AbortSignal.timeout(20000),
+        signal: AbortSignal.any([signal, AbortSignal.timeout(20000)]),
         redirect: "error",
       });
       if (!response.ok) throw new Error(`${path}: HTTP ${response.status}`);
       return response.json();
     };
     for (const [index, text] of selected.entries()) {
-      if (stopRequested) return;
+      signal.throwIfAborted();
       const key = hash(JSON.stringify({ settings, text }));
       const file = `audio-${index + 1}.wav`;
       const directory = cacheDirectory(key);
@@ -539,7 +545,8 @@ export async function narrate(args: string[]) {
             `Untracked audio exists: ${wav}; inspect it before retrying`,
           );
         if (!discovered) {
-          if (url.port === "3900") await ensureVoiceStudio(url);
+          if (url.port === "3900")
+            await ensureVoiceStudio(url, undefined, undefined, signal);
           await get("/health");
           const schema = await get("/openapi.json");
           if (!schema.paths?.["/v1/audio/speech"]?.post)
@@ -571,10 +578,10 @@ export async function narrate(args: string[]) {
           );
           discovered = true;
         }
-        if (stopRequested) return;
+        signal.throwIfAborted();
         if (existsSync(pending))
-          await recoverInterruptedTake(pending, wav, url);
-        if (stopRequested) return;
+          await recoverInterruptedTake(pending, wav, url, signal);
+        signal.throwIfAborted();
         console.log(
           `[${index + 1}/${selected.length}] Generating ${text.length} characters; waiting for VoiceStudio`,
         );
@@ -610,7 +617,10 @@ export async function narrate(args: string[]) {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ ...settings, input: text }),
-              signal: AbortSignal.timeout(30 * 60 * 1000),
+              signal: AbortSignal.any([
+                signal,
+                AbortSignal.timeout(30 * 60 * 1000),
+              ]),
               redirect: "error",
             },
           );
@@ -680,7 +690,7 @@ export async function narrate(args: string[]) {
         listeningReviewed: false,
         segments,
       });
-      if (stopRequested) return;
+      signal.throwIfAborted();
     }
     console.log(
       narrationProgress(
@@ -748,9 +758,15 @@ export async function narrate(args: string[]) {
     console.log(
       `Saved ${master}: ${(data.length / 2 / rate).toFixed(3)} seconds. Listening and phrase alignment remain unreviewed.`,
     );
+  } catch (error) {
+    if (!signal.aborted) throw error;
+    console.log(
+      "Narration stopped. Rerun the same command to resume. VoiceStudio may still be finishing the active take.",
+    );
+    return signal.reason as number;
   } finally {
-    process.off("SIGINT", stop);
-    process.off("SIGTERM", stop);
+    process.off("SIGINT", interrupt);
+    process.off("SIGTERM", terminate);
     rmSync(lock);
   }
 }
@@ -759,8 +775,12 @@ if (
   process.argv[1] &&
   import.meta.url === pathToFileURL(resolve(process.argv[1])).href
 ) {
-  narrate(process.argv.slice(2)).catch((error: unknown) => {
-    console.error(error instanceof Error ? error.message : error);
-    process.exitCode = 1;
-  });
+  narrate(process.argv.slice(2))
+    .then((code) => {
+      if (code !== undefined) process.exitCode = code;
+    })
+    .catch((error: unknown) => {
+      console.error(error instanceof Error ? error.message : error);
+      process.exitCode = 1;
+    });
 }

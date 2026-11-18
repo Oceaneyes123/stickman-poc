@@ -73,3 +73,54 @@ export const calculateBudget = (data: BudgetExample) => {
     alex: remaining(income, data.expenses + data.alexAdded),
   };
 };
+export type FreeShippingExample = {
+  cart: number;
+  shipping: number;
+  threshold: number;
+  addOn: number;
+};
+export const freeShippingExample: FreeShippingExample = {
+  cart: 42,
+  shipping: 6,
+  threshold: 50,
+  addOn: 12,
+};
+export const calculateFreeShippingOrder = (
+  data: FreeShippingExample = freeShippingExample,
+) => {
+  const amounts = [data.cart, data.shipping, data.threshold, data.addOn];
+  if (
+    !amounts.every((n) => Number.isFinite(n)) ||
+    data.cart <= 0 ||
+    data.shipping < 0 ||
+    data.threshold <= 0 ||
+    data.addOn <= 0
+  )
+    throw new Error(
+      "Free-shipping order inputs must be finite and positive (shipping nonnegative)",
+    );
+  const beforeSubtotal = data.cart;
+  const beforeQualifies = beforeSubtotal >= data.threshold;
+  const beforeShipping = beforeQualifies ? 0 : data.shipping;
+  const before = sum([beforeSubtotal, beforeShipping]);
+  const gap = Math.max(0, remaining(data.threshold, beforeSubtotal));
+  const subtotal = sum([data.cart, data.addOn]);
+  const qualifies = subtotal >= data.threshold;
+  const afterShipping = qualifies ? 0 : data.shipping;
+  const after = sum([subtotal, afterShipping]);
+  const overshoot = Math.max(0, remaining(subtotal, data.threshold));
+  const increase = remaining(after, before);
+  return {
+    beforeSubtotal,
+    beforeQualifies,
+    beforeShipping,
+    before,
+    gap,
+    subtotal,
+    qualifies,
+    afterShipping,
+    after,
+    overshoot,
+    increase,
+  };
+};

@@ -3,10 +3,13 @@ import { readFileSync } from "node:fs";
 import { test } from "node:test";
 import {
   calculateBudget,
+  calculateFreeShippingOrder,
   debtTotal,
   example,
+  freeShippingExample,
   remaining,
   sum,
+  usd,
 } from "../src/finance/math.ts";
 import { compileTimeline, msToFrames } from "../src/timeline/compiler.ts";
 import type { CueFile, Storyboard } from "../src/timeline/types.ts";
@@ -44,6 +47,42 @@ test("illustrative monthly-compounding debt, validation and zero periods", () =>
   assert.equal(debtTotal(1000, 0, 12), 1000);
   assert.equal(debtTotal(1000, 0.12, 0), 1000);
   assert.throws(() => debtTotal(-1, 0.12, 12), /nonnegative/);
+});
+test("episode 004 free-shipping order derives subtotals, delivered totals and threshold state", () => {
+  const order = calculateFreeShippingOrder();
+  assert.deepEqual(order, {
+    beforeSubtotal: 42,
+    beforeQualifies: false,
+    beforeShipping: 6,
+    before: 48,
+    gap: 8,
+    subtotal: 54,
+    qualifies: true,
+    afterShipping: 0,
+    after: 54,
+    overshoot: 4,
+    increase: 6,
+  });
+  assert.equal(usd(order.before), "$48");
+  assert.equal(usd(order.after), "$54");
+  const stillShort = calculateFreeShippingOrder({
+    ...freeShippingExample,
+    addOn: 5,
+  });
+  assert.equal(stillShort.subtotal, 47);
+  assert.equal(stillShort.qualifies, false);
+  assert.equal(stillShort.afterShipping, 6);
+  assert.equal(stillShort.after, 53);
+  assert.equal(stillShort.overshoot, 0);
+  assert.equal(stillShort.increase, 5);
+  for (const invalid of [
+    { ...freeShippingExample, cart: 0 },
+    { ...freeShippingExample, shipping: -1 },
+    { ...freeShippingExample, threshold: 0 },
+    { ...freeShippingExample, addOn: 0 },
+    { ...freeShippingExample, cart: Number.NaN },
+  ])
+    assert.throws(() => calculateFreeShippingOrder(invalid), /Free-shipping/);
 });
 test("compiler deterministic and final duration preserved with consistent rounding", () => {
   const a = compileTimeline(cues, board),

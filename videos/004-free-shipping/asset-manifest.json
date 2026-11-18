@@ -1,0 +1,576 @@
+{
+  "version": 1,
+  "episode": "004-free-shipping",
+  "planning_only": true,
+  "note": "Manual documentation, not a renderer-consumed schema or rights gate. No artwork or third-party media was acquired by this task.",
+  "assets": [
+    {
+      "id": "DG01",
+      "kind": "original-svg",
+      "title": "Charger, organizer and cable product set",
+      "creator": null,
+      "source_url": null,
+      "source_path": null,
+      "local_path": null,
+      "sha256": null,
+      "license": null,
+      "license_url": null,
+      "rights_basis": null,
+      "permitted_uses": [],
+      "restrictions": [
+        "Planning placeholder only; not acquired or built; no rights clearance claimed.",
+        "Must not enter a delivery render until provenance and intended-use review are complete."
+      ],
+      "intended_use": "Establish the ordinary purchase, then isolate the new cost.; Demonstrate offer, browse, add, and fee waiver in causal order.; Separate the two changes instead of presenting the waiver as the whole result.; State the episode's causal question while preserving the counterpoint.; Return from the experimental clue to the actual decision mechanism.; Expose the task change in an object-based sequence.; Show why an otherwise optional product becomes relevant without shaming the shopper.; Demonstrate the persistent information rather than depicting mind control.; Separate the rule the store checks from the judgment the shopper needs to make.; Return the evidence to its proper consumer meaning.; Demonstrate overshooting as a property of the example, without a calculation tutorial.; Provide a brief concrete comparison after the mechanism is understood.; Keep the example fair instead of presenting the difference as a pure loss.; Distinguish purchase timing from the amount ultimately needed.; Return to the add-on without condemning the shopper or the product.; Resolve the opening with an apples-to-apples view of the two orders.; Connect the complete-order comparison to the item's value without teaching subtraction.; Pay off the original charger image with changed understanding and a calm ending.",
+      "beat_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B07",
+        "B08"
+      ],
+      "shot_ids": [
+        "V4-S01",
+        "V4-S02",
+        "V4-S03",
+        "V4-S04",
+        "V4-S08",
+        "V4-S09",
+        "V4-S10",
+        "V4-S12",
+        "V4-S13",
+        "V4-S16",
+        "V4-S17",
+        "V4-S18",
+        "V4-S19",
+        "V4-S28",
+        "V4-S31",
+        "V4-S32",
+        "V4-S33",
+        "V4-S35"
+      ],
+      "claim_ids": [
+        "A01",
+        "A02",
+        "F01",
+        "F05",
+        "F06",
+        "F10",
+        "F11"
+      ],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": [],
+      "authenticity": "Proposed original illustration, not yet authored",
+      "disclosure": "Generic scenarios omit on-screen fictional/illustrative labels under decision 14; retain source credits and scope qualifiers for cited research. Platform review pending before publication.",
+      "fallback_asset_id": null
+    },
+    {
+      "id": "DG02",
+      "kind": "original-svg",
+      "title": "Neutral checkout and unsubmitted order-preview states",
+      "creator": null,
+      "source_url": null,
+      "source_path": null,
+      "local_path": null,
+      "sha256": null,
+      "license": null,
+      "license_url": null,
+      "rights_basis": null,
+      "permitted_uses": [],
+      "restrictions": [
+        "Planning placeholder only; not acquired or built; no rights clearance claimed.",
+        "Must not enter a delivery render until provenance and intended-use review are complete."
+      ],
+      "intended_use": "Establish the ordinary purchase, then isolate the new cost.; Demonstrate offer, browse, add, and fee waiver in causal order.; Separate the two changes instead of presenting the waiver as the whole result.; Introduce the research question with a short visual reset.; Prevent the preceding illustration from becoming stronger evidence than the source supports.; Return from the experimental clue to the actual decision mechanism.; Expose the task change in an object-based sequence.; Show why an otherwise optional product becomes relevant without shaming the shopper.; Demonstrate the persistent information rather than depicting mind control.; Return the evidence to its proper consumer meaning.; Provide a brief concrete comparison after the mechanism is understood.; Keep the example fair instead of presenting the difference as a pure loss.; Explain the retailer incentive using first-party guidance with correct attribution.; Separate the checkout line from the service that must still be supplied.; Give the legitimate-use objection an understandable physical example.; Resolve the opening with an apples-to-apples view of the two orders.; Connect the complete-order comparison to the item's value without teaching subtraction.; Offer a fair decision rather than a compulsory cheapest-choice verdict.; Pay off the original charger image with changed understanding and a calm ending.",
+      "beat_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B07",
+        "B08"
+      ],
+      "shot_ids": [
+        "V4-S01",
+        "V4-S02",
+        "V4-S03",
+        "V4-S05",
+        "V4-S07",
+        "V4-S08",
+        "V4-S09",
+        "V4-S10",
+        "V4-S12",
+        "V4-S16",
+        "V4-S18",
+        "V4-S19",
+        "V4-S20",
+        "V4-S21",
+        "V4-S27",
+        "V4-S32",
+        "V4-S33",
+        "V4-S34",
+        "V4-S35"
+      ],
+      "claim_ids": [
+        "A01",
+        "A02",
+        "F01",
+        "F02",
+        "F05",
+        "F06",
+        "F07",
+        "F10",
+        "F11"
+      ],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": [],
+      "authenticity": "Proposed original illustration, not yet authored",
+      "disclosure": "Generic scenarios omit on-screen fictional/illustrative labels under decision 14; retain source credits and scope qualifiers for cited research. Platform review pending before publication.",
+      "fallback_asset_id": null
+    },
+    {
+      "id": "DG03",
+      "kind": "original-svg",
+      "title": "Qualitative chocolate-experiment schematic",
+      "creator": null,
+      "source_url": null,
+      "source_path": null,
+      "local_path": null,
+      "sha256": null,
+      "license": null,
+      "license_url": null,
+      "rights_basis": null,
+      "permitted_uses": [],
+      "restrictions": [
+        "Planning placeholder only; not acquired or built; no rights clearance claimed.",
+        "Must not enter a delivery render until provenance and intended-use review are complete."
+      ],
+      "intended_use": "Make the experimental comparison followable without introducing a price calculation or invented response percentages.; Prevent the preceding illustration from becoming stronger evidence than the source supports.",
+      "beat_ids": [
+        "B02"
+      ],
+      "shot_ids": [
+        "V4-S06",
+        "V4-S07"
+      ],
+      "claim_ids": [
+        "F02"
+      ],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": [],
+      "authenticity": "Proposed original illustration, not yet authored",
+      "disclosure": "Generic scenarios omit on-screen fictional/illustrative labels under decision 14; retain source credits and scope qualifiers for cited research. Platform review pending before publication.",
+      "fallback_asset_id": null
+    },
+    {
+      "id": "DG04",
+      "kind": "original-svg",
+      "title": "Original bibliography and scoped research-result cards",
+      "creator": null,
+      "source_url": null,
+      "source_path": null,
+      "local_path": null,
+      "sha256": null,
+      "license": null,
+      "license_url": null,
+      "rights_basis": null,
+      "permitted_uses": [],
+      "restrictions": [
+        "Planning placeholder only; not acquired or built; no rights clearance claimed.",
+        "Must not enter a delivery render until provenance and intended-use review are complete."
+      ],
+      "intended_use": "Introduce the research question with a short visual reset.; Make the experimental comparison followable without introducing a price calculation or invented response percentages.; Prevent the preceding illustration from becoming stronger evidence than the source supports.; Present the research qualification without inventing experimental arms or effect sizes.; Ground the threshold explanation without fabricating a data visualization.; Make the attribution audible and visible without treating the model as a randomized result.; Explain the retailer incentive using first-party guidance with correct attribution.; Support the caution with a specific reported finding, not a universal retailer loss claim.; Make the counterexample and its population restriction unmistakable.; Keep the synthesis honest and clarify why the counterexample does not erase the earlier mechanism.",
+      "beat_ids": [
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06"
+      ],
+      "shot_ids": [
+        "V4-S05",
+        "V4-S06",
+        "V4-S07",
+        "V4-S11",
+        "V4-S14",
+        "V4-S15",
+        "V4-S20",
+        "V4-S23",
+        "V4-S25",
+        "V4-S26"
+      ],
+      "claim_ids": [
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F08",
+        "F09",
+        "F11"
+      ],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": [],
+      "authenticity": "Proposed original illustration, not yet authored",
+      "disclosure": "Generic scenarios omit on-screen fictional/illustrative labels under decision 14; retain source credits and scope qualifiers for cited research. Platform review pending before publication.",
+      "fallback_asset_id": null
+    },
+    {
+      "id": "DG05",
+      "kind": "original-svg",
+      "title": "Merchandise eligibility and task-change schematic",
+      "creator": null,
+      "source_url": null,
+      "source_path": null,
+      "local_path": null,
+      "sha256": null,
+      "license": null,
+      "license_url": null,
+      "rights_basis": null,
+      "permitted_uses": [],
+      "restrictions": [
+        "Planning placeholder only; not acquired or built; no rights clearance claimed.",
+        "Must not enter a delivery render until provenance and intended-use review are complete."
+      ],
+      "intended_use": "Demonstrate offer, browse, add, and fee waiver in causal order.; State the episode's causal question while preserving the counterpoint.; Return from the experimental clue to the actual decision mechanism.; Expose the task change in an object-based sequence.; Show why an otherwise optional product becomes relevant without shaming the shopper.; Present the research qualification without inventing experimental arms or effect sizes.; Demonstrate the persistent information rather than depicting mind control.; Separate the rule the store checks from the judgment the shopper needs to make.; Make the attribution audible and visible without treating the model as a randomized result.; Demonstrate overshooting as a property of the example, without a calculation tutorial.; Explain the retailer incentive using first-party guidance with correct attribution.; Introduce the counterpoint as an open response, not a guaranteed reverse effect.; Pay off the original charger image with changed understanding and a calm ending.",
+      "beat_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B08"
+      ],
+      "shot_ids": [
+        "V4-S02",
+        "V4-S04",
+        "V4-S08",
+        "V4-S09",
+        "V4-S10",
+        "V4-S11",
+        "V4-S12",
+        "V4-S13",
+        "V4-S15",
+        "V4-S17",
+        "V4-S20",
+        "V4-S24",
+        "V4-S35"
+      ],
+      "claim_ids": [
+        "A01",
+        "A02",
+        "F01",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F09",
+        "F11"
+      ],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": [],
+      "authenticity": "Proposed original illustration, not yet authored",
+      "disclosure": "Generic scenarios omit on-screen fictional/illustrative labels under decision 14; retain source credits and scope qualifiers for cited research. Platform review pending before publication.",
+      "fallback_asset_id": null
+    },
+    {
+      "id": "DG06",
+      "kind": "original-svg",
+      "title": "Merchant revenue, fulfillment and delivery-cost relationship",
+      "creator": null,
+      "source_url": null,
+      "source_path": null,
+      "local_path": null,
+      "sha256": null,
+      "license": null,
+      "license_url": null,
+      "rights_basis": null,
+      "permitted_uses": [],
+      "restrictions": [
+        "Planning placeholder only; not acquired or built; no rights clearance claimed.",
+        "Must not enter a delivery render until provenance and intended-use review are complete."
+      ],
+      "intended_use": "Explain the retailer incentive using first-party guidance with correct attribution.; Separate the checkout line from the service that must still be supplied.; Expose the cost relationship without invented margins or a financial worksheet.; Support the caution with a specific reported finding, not a universal retailer loss claim.; Make the alternative's burden visible without an easy-escape moral.",
+      "beat_ids": [
+        "B05",
+        "B07"
+      ],
+      "shot_ids": [
+        "V4-S20",
+        "V4-S21",
+        "V4-S22",
+        "V4-S23",
+        "V4-S30"
+      ],
+      "claim_ids": [
+        "A02",
+        "F06",
+        "F07",
+        "F08"
+      ],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": [],
+      "authenticity": "Proposed original illustration, not yet authored",
+      "disclosure": "Generic scenarios omit on-screen fictional/illustrative labels under decision 14; retain source credits and scope qualifiers for cited research. Platform review pending before publication.",
+      "fallback_asset_id": null
+    },
+    {
+      "id": "DG07",
+      "kind": "original-svg",
+      "title": "Generic grocery context and distinct-policy comparison",
+      "creator": null,
+      "source_url": null,
+      "source_path": null,
+      "local_path": null,
+      "sha256": null,
+      "license": null,
+      "license_url": null,
+      "rights_basis": null,
+      "permitted_uses": [],
+      "restrictions": [
+        "Planning placeholder only; not acquired or built; no rights clearance claimed.",
+        "Must not enter a delivery render until provenance and intended-use review are complete."
+      ],
+      "intended_use": "Introduce the counterpoint as an open response, not a guaranteed reverse effect.; Make the counterexample and its population restriction unmistakable.; Keep the synthesis honest and clarify why the counterexample does not erase the earlier mechanism.",
+      "beat_ids": [
+        "B06"
+      ],
+      "shot_ids": [
+        "V4-S24",
+        "V4-S25",
+        "V4-S26"
+      ],
+      "claim_ids": [
+        "F05",
+        "F09",
+        "F11"
+      ],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": [],
+      "authenticity": "Proposed original illustration, not yet authored",
+      "disclosure": "Generic scenarios omit on-screen fictional/illustrative labels under decision 14; retain source credits and scope qualifiers for cited research. Platform review pending before publication.",
+      "fallback_asset_id": null
+    },
+    {
+      "id": "DG08",
+      "kind": "original-svg",
+      "title": "Planned toothpaste purchase, timing, storage and access illustrations",
+      "creator": null,
+      "source_url": null,
+      "source_path": null,
+      "local_path": null,
+      "sha256": null,
+      "license": null,
+      "license_url": null,
+      "rights_basis": null,
+      "permitted_uses": [],
+      "restrictions": [
+        "Planning placeholder only; not acquired or built; no rights clearance claimed.",
+        "Must not enter a delivery render until provenance and intended-use review are complete."
+      ],
+      "intended_use": "Give the legitimate-use objection an understandable physical example.; Distinguish purchase timing from the amount ultimately needed.; Respect ordinary limitations instead of recommending stockpiling to everyone.; Make the alternative's burden visible without an easy-escape moral.",
+      "beat_ids": [
+        "B07"
+      ],
+      "shot_ids": [
+        "V4-S27",
+        "V4-S28",
+        "V4-S29",
+        "V4-S30"
+      ],
+      "claim_ids": [
+        "A02",
+        "F10"
+      ],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": [],
+      "authenticity": "Proposed original illustration, not yet authored",
+      "disclosure": "Generic scenarios omit on-screen fictional/illustrative labels under decision 14; retain source credits and scope qualifiers for cited research. Platform review pending before publication.",
+      "fallback_asset_id": null
+    },
+    {
+      "id": "DG09",
+      "kind": "original-svg",
+      "title": "Complete-order comparison and optional-choice compositions",
+      "creator": null,
+      "source_url": null,
+      "source_path": null,
+      "local_path": null,
+      "sha256": null,
+      "license": null,
+      "license_url": null,
+      "rights_basis": null,
+      "permitted_uses": [],
+      "restrictions": [
+        "Planning placeholder only; not acquired or built; no rights clearance claimed.",
+        "Must not enter a delivery render until provenance and intended-use review are complete."
+      ],
+      "intended_use": "Separate the two changes instead of presenting the waiver as the whole result.; Separate the rule the store checks from the judgment the shopper needs to make.; Return the evidence to its proper consumer meaning.; Provide a brief concrete comparison after the mechanism is understood.; Keep the example fair instead of presenting the difference as a pure loss.; Resolve the opening with an apples-to-apples view of the two orders.; Connect the complete-order comparison to the item's value without teaching subtraction.; Offer a fair decision rather than a compulsory cheapest-choice verdict.; Pay off the original charger image with changed understanding and a calm ending.",
+      "beat_ids": [
+        "B01",
+        "B03",
+        "B04",
+        "B08"
+      ],
+      "shot_ids": [
+        "V4-S03",
+        "V4-S13",
+        "V4-S16",
+        "V4-S18",
+        "V4-S19",
+        "V4-S32",
+        "V4-S33",
+        "V4-S34",
+        "V4-S35"
+      ],
+      "claim_ids": [
+        "A01",
+        "A02",
+        "F01",
+        "F05",
+        "F10",
+        "F11"
+      ],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": [],
+      "authenticity": "Proposed original illustration, not yet authored",
+      "disclosure": "Generic scenarios omit on-screen fictional/illustrative labels under decision 14; retain source credits and scope qualifiers for cited research. Platform review pending before publication.",
+      "fallback_asset_id": null
+    },
+    {
+      "id": "FO01",
+      "kind": "footage",
+      "title": "Optional neutral charger-handling context; original-art fallback DG01",
+      "creator": null,
+      "source_url": null,
+      "source_path": null,
+      "local_path": null,
+      "sha256": null,
+      "license": null,
+      "license_url": null,
+      "rights_basis": null,
+      "permitted_uses": [],
+      "restrictions": [
+        "Planning placeholder only; not acquired or built; no rights clearance claimed.",
+        "Must not enter a delivery render until provenance and intended-use review are complete."
+      ],
+      "intended_use": "Establish the ordinary purchase, then isolate the new cost.",
+      "beat_ids": [
+        "B01"
+      ],
+      "shot_ids": [
+        "V4-S01"
+      ],
+      "claim_ids": [
+        "A01"
+      ],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": [],
+      "authenticity": "Context only, not the fictional shopper; source not selected",
+      "disclosure": "Generic scenarios omit on-screen fictional/illustrative labels under decision 14; retain source credits and scope qualifiers for cited research. Platform review pending before publication.",
+      "fallback_asset_id": "DG01"
+    },
+    {
+      "id": "EP01",
+      "kind": "document",
+      "title": "Optional authentic 2018 paper excerpt; source-card fallback DG04",
+      "creator": "Chaoqun Chen and Donald Ngwe",
+      "source_url": "https://www.hbs.edu/ris/Publication%20Files/19-034_b2382177-a462-447e-86f8-690d1ea7af18.pdf",
+      "source_path": null,
+      "local_path": null,
+      "sha256": null,
+      "license": null,
+      "license_url": null,
+      "rights_basis": null,
+      "permitted_uses": [],
+      "restrictions": [
+        "Planning placeholder only; not acquired or built; no rights clearance claimed.",
+        "Must not enter a delivery render until provenance and intended-use review are complete."
+      ],
+      "intended_use": "Ground the threshold explanation without fabricating a data visualization.",
+      "beat_ids": [
+        "B04"
+      ],
+      "shot_ids": [
+        "V4-S14"
+      ],
+      "claim_ids": [
+        "F04"
+      ],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": [],
+      "authenticity": "Authentic source candidate; no excerpt acquired or reuse basis verified",
+      "disclosure": "Generic scenarios omit on-screen fictional/illustrative labels under decision 14; retain source credits and scope qualifiers for cited research. Platform review pending before publication.",
+      "fallback_asset_id": "DG04"
+    }
+  ]
+}

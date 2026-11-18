@@ -90,14 +90,12 @@ use one global Audio node. Replacing speech invalidates the previous alignment.
 
 ## Interrupted runs
 
-Press Ctrl+C to stop after the current take finishes. The runner saves and checks
-that take, records progress, releases `run.lock`, and exits without submitting the
-next take. Rerun the same command and output directory to reuse completed takes.
-SIGTERM requests the same graceful stop. Stopping can take as long as the active
-VoiceStudio request; closing the terminal or forcibly killing Node can prevent
-this cleanup.
+Press Ctrl+C to cancel the runner's wait for VoiceStudio and release
+`run.lock`. Rerun the same command and output directory to reuse completed
+takes. SIGTERM also cancels the wait. VoiceStudio may keep generating the
+active take after the runner exits.
 
-A `.pending.json` marker from a force kill, crash or failed request is recovered
+A `.pending.json` marker from an interrupted or failed request is recovered
 on the next run. If `/startup/progress` proves the backend restarted after the
 request, recovery proceeds immediately. Otherwise, the runner waits up to 30 minutes
 for `/engines/voxcpm2/health`: the installed VoxCPM2 sidecar's health ping uses the
