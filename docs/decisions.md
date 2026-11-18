@@ -41,6 +41,17 @@ actual terms or conduct; verify and preserve the provenance of real evidence.
 This supersedes the earlier general recommendation to label generic fictional
 scenarios on screen.
 
+## 15. Minimal on-screen text — 2026-11-18
+
+Use purposeful on-screen text — concise, high-impact labels, headlines, state
+changes and required source credits that hold viewer attention and clarify each
+visual action — while avoiding multi-sentence text walls or verbatim subtitles.
+Pair every visual beat with purposeful motion (spring entrances, cursor
+interactions, path-drawing connectors, object transfers and camera focus). When
+using a large-head stickman presenter (`ReferenceCharacterRig`) talking along
+with the narration beside harmonious graphics in the free space, target a 10–15%
+A-roll and 85–90% infographic B-roll balance.
+
 ## Cleanup — 2026-11-10
 
 Removed the superseded intermediate packets for episode 001 (opening stills v1–v5,

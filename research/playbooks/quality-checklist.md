@@ -16,8 +16,9 @@
 **Visual purpose and authenticity**
 
 - [ ] Every beat has the visual guide's nine fields, an appropriate medium and one dominant learning purpose. No character, exact object count or scene-family rotation is mandatory.
+- [ ] Frame 0 establishes the opening decision context, the opening beat ends on a visual open question rather than duplicating a later mechanism diagram, and research beats pair source credits with qualitative schematics (or cleared authentic excerpts) instead of consecutive text-only bibliography cards.
 - [ ] Original graphics, licensed footage, photos, collages, mock interfaces and permitted authentic excerpts are selected for explanation/context/evidence rather than decoration.
-- [ ] Authentic evidence retains source/date/context; recreations and illustrative interfaces are labeled where confusion could arise. No fabricated screenshot, quote, headline or customer record is presented as real.
+- [ ] Authentic evidence retains source/date/context; generic invented scenarios omit on-screen "fictional," "illustrative," "hypothetical" or "demo" labels under [decision #14](../../docs/decisions.md#14-presenting-fictional-scenarios--2026-11-16), and no fabricated screenshot, quote, headline or customer record is presented as real.
 - [ ] No unrelated stock footage implies a person's financial distress, endorsement or participation in a fictional case.
 - [ ] Sources and media permissions are recorded separately. Every third-party asset intended for delivery has evidence supporting its specific use, required credits and restrictions. Pending assets remain planning placeholders.
 - [ ] The asset manifest records actual files/versions, original and derived provenance, verification dates and applicable disclosure decisions. It is a manual record, not an automated clearance gate.
@@ -26,6 +27,7 @@
 
 - [ ] Text is selective, well wrapped and readable at 0.5 scale and phone size; essential graphics respect side margins and do not cover faces or important actions.
 - [ ] Graphics preserve dates, units, state continuity and honest scale. Visible/spoken amounts agree where they refer to the same value; neither must automatically repeat the other.
+- [ ] Multi-paragraph shot groups define per-paragraph sub-staging, modeled quantities use derived proportional visuals (such as threshold overhang or side-by-side `ComparisonReveal`) rather than words-only magnitude claims, the payoff visually strips promotional chrome for the decision test, and the final bookend `callback-cut` lands on the closing paragraph.
 - [ ] Motion explains a change, and settled states have enough reading time. Static holds, clean cuts and repeated framing are allowed when purposeful.
 - [ ] Narration is measured local audio with no stretched speech or forced rate; actual generated audio has been listened to, or approval remains pending.
 - [ ] Phrase timing is reviewed against audio; hashes and compiled cue/event frames match the current master. Structural validation alone is not alignment/listening approval.

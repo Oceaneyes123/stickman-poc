@@ -1,0 +1,93 @@
+{
+  "mode": "timing-demo",
+  "listeningReviewed": false,
+  "timingReviewed": false,
+  "scriptHash": "05f1786d95552a0e64d22288bd47a3c8d4e0cc3f8a04404e5253b72cad5a66bc",
+  "sourceAudioSha256": "18d627853ad701cd12e64d0bc4018e3fdeae58b0c8fcd72af37e15e4a8ac3769",
+  "cues": [
+    {
+      "id": "p001-s001",
+      "text": "Imagine you're ordering a replacement phone charger.",
+      "startMs": 0.0,
+      "endMs": 2500.0
+    },
+    {
+      "id": "p001-s002",
+      "text": "You've found the one you need, checked the price, and you're ready to pay.",
+      "startMs": 2980.0,
+      "endMs": 6580.0
+    },
+    {
+      "id": "p001-s003",
+      "text": "Then a delivery charge appears.",
+      "startMs": 7140.0,
+      "endMs": 8619.999999999998
+    },
+    {
+      "id": "p001-s004",
+      "text": "Above it, a message says you could get free shipping if you spent a little more.",
+      "startMs": 9160.0,
+      "endMs": 13120.0
+    },
+    {
+      "id": "p001-s005",
+      "text": "So you go back to browsing and find a cable organizer, add it to the cart, and the delivery charge disappears.",
+      "startMs": 13440.0,
+      "endMs": 19140.0
+    },
+    {
+      "id": "p001-s006",
+      "text": "The whole order now costs more than it did with paid shipping.",
+      "startMs": 19140.0,
+      "endMs": 22820.0
+    },
+    {
+      "id": "p002-s001",
+      "text": "but you also get another product which can make the extra spending feel easier to justify.",
+      "startMs": 23122.208333333332,
+      "endMs": 28142.208333333332
+    },
+    {
+      "id": "p002-s002",
+      "text": "That's how free shipping can change a purchase.",
+      "startMs": 28802.208333333332,
+      "endMs": 30902.208333333332
+    },
+    {
+      "id": "p002-s003",
+      "text": "A condition attached to the offer gives you a reason to buy more after you've already found what you needed.",
+      "startMs": 31402.208333333332,
+      "endMs": 36282.208333333336
+    },
+    {
+      "id": "p002-s004",
+      "text": "It won't affect every order and qualifying can be a good deal.",
+      "startMs": 36702.208333333336,
+      "endMs": 39862.208333333336
+    },
+    {
+      "id": "p002-s005",
+      "text": "The important question is what you buy to get there.",
+      "startMs": 40402.208333333336,
+      "endMs": 42702.208333333336
+    },
+    {
+      "id": "p002-s006",
+      "text": "There's an obvious appeal to getting something free.",
+      "startMs": 43062.208333333336,
+      "endMs": 45322.208333333336
+    },
+    {
+      "id": "p003-s001",
+      "text": "But researchers have found that zero can behave differently from an ordinary low price.",
+      "startMs": 45558.625,
+      "endMs": 50198.625
+    },
+    {
+      "id": "p003-s002",
+      "text": "In a study published in 2007, researchers offered people a choice between a cheaper chocolate and a more expensive one.",
+      "startMs": 50758.625,
+      "endMs": 57878.625
+    }
+  ]
+}

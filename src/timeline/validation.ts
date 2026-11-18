@@ -75,7 +75,7 @@ export function validateTimelineInput(
     );
   for (const scene of board.scenes) {
     assert(
-      ["story", "comparison", "diagram"].includes(scene.template),
+      ["story", "comparison", "diagram", "documentary"].includes(scene.template),
       `invalid template ${scene.id}`,
     );
     for (const anchor of [scene.start, scene.end]) {

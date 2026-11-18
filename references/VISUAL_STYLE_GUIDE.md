@@ -26,9 +26,16 @@ Reveal the relevant state, show what changes, and hold the result long enough to
 | Object-based metaphor | Make an abstract constraint intuitive | Define the mapping through context: dated cards can stand for obligations occupying future weeks. Do not let symbolism imply literal banking mechanics, debt, fees or losses that were not modeled. |
 | Selective kinetic typography | Name a concept, emphasize a meaningful phrase or mark a section | Use short text with a clear hierarchy. Give it time to read and let it leave when its purpose ends. No routine word-by-word transcription, caption wall or new text on every sentence. |
 
-Numbers must be correct even when arithmetic stays off screen. Derive illustrative calculations through [finance math](../src/finance/math.ts); keep factual figures traceable to episode sources. Label hypothetical assumptions and retain units/time periods. “Remaining” is not automatically savings or a complete budget. A sourced chart is not required to use the fictional budget model.
+Numbers must be correct even when arithmetic stays off screen. Derive illustrative calculations through [finance math](../src/finance/math.ts); keep factual figures traceable to episode sources. Retain units/time periods and keep invented scenario assumptions in production records: under [decision #14](../docs/decisions.md#14-presenting-fictional-scenarios--2026-11-16), present generic invented scenarios and interfaces naturally without on-screen "fictional," "illustrative," "hypothetical" or "demo" badges, while retaining visible source credits and scope qualifiers for cited research and authentic excerpts. "Remaining" is not automatically savings or a complete budget. A sourced chart is not required to use the fictional budget model.
 
-Reuse the existing [typography](../src/typography/README.md), [object motion](../src/objects/README.md), [transitions](../src/transitions/README.md) and timeline tooling where appropriate. Camera joins and object transformations may already supply the needed motion. Gallery availability is not a requirement to use an effect. If a future task needs a new component, implement and review it under the project rules then; these treatment descriptions are not claims of reusable components already built.
+Reuse the existing [typography](../src/typography/README.md), [object motion](../src/objects/README.md), [transitions](../src/transitions/README.md) and timeline tooling where they clarify a change, before defaulting to static states and `hard-cut` joins. Specifically:
+- Use `ComparisonReveal` for side-by-side delivered totals or before/after amounts.
+- Use `ObjectAttachedLabel` when a label tracks a product, bracket or moving cutoff marker.
+- Use `GrowBuild` or `SplitAssemble` for threshold fills, indivisible add-on overshoot or stacked obligations, with proportional geometry derived from `src/finance/math.ts` so the viewer sees the physical overhang or difference rather than a words-only "Higher order total" label.
+- Use `ConveyorFlow` or `ChainReaction` for fulfillment, cost handoffs or multi-step system sequences.
+- Use `SectionHeading` paired with a board-tone shift or structural transition (`wipe`, `push-in`, `pull-back`, `split-open`, `match-position`) when perspective changes materially (for example, moving from the shopper's cart to a merchant's back-office ledger).
+
+Camera joins and object transformations may already supply the needed motion. Gallery availability is not a requirement to use an effect. If a future task needs a new component, implement and review it under the project rules then; these treatment descriptions are not claims of reusable components already built.
 
 ## 2. Mixed-media documentary visuals
 
@@ -65,6 +72,7 @@ Use negative space to isolate a subject, support reading or reserve room for the
 
 - Use locally bundled Inter. Establish a primary subject or headline, secondary explanatory labels and a quieter source/context line. Do not give every element headline weight.
 - Keep labels close to what they describe, with a stable relationship during movement. Prevent collisions, awkward wrapping, cropped hands/objects and labels crossing faces.
+- Under [decision #15](../docs/decisions.md#15-minimal-on-screen-text--2026-11-18), keep on-screen text minimal: show only essential state changes, comparison/threshold markers or required source credits. Do not caption recognizable objects, repeat spoken sentences in boxes or stack multiple text banners in the same frame.
 - Use short phrasing rather than shrinking text to fit. If a document excerpt needs extensive reading, isolate the relevant passage or split the shot.
 - Keep essential graphic content at least 96 px from the side edges at 1920×1080. Background imagery may reach the frame edge. Check top/bottom clearance against the actual composition and player overlays.
 - Use readable foreground/background contrast; place text on a solid light or dark board when the image underneath changes. An outline or glow is not a substitute for a legible background.
@@ -112,6 +120,16 @@ Synchronize purposeful reveals to the phrase that makes them understandable, all
 
 Use the shared [timeline compiler](../src/timeline/compiler.ts) and compiled event frames, cue IDs and documented offsets. Planning times remain provisional until measured narration and phrase review exist. Do not put guessed narration timestamps in graphics, stretch speech to fit a visual, or treat ASR/structural validation as listening approval. If an action does not fit, simplify/split the visual or revise the narration through a separately approved production pass.
 
+### Visual progression and attention continuity
+
+A storyboard that is factually accurate can still lose viewer attention if consecutive scenes stay static, repeat diagrams or display text-heavy citation slides. Apply these five checks without inventing numeric cut-rate quotas or fabricated drama:
+
+1. **Confirm the premise in the opening frame and end the hook on a visual open question:** Frame 0 should establish the recognizable decision context promised by the title and thumbnail (for example, the product already staged inside its unsubmitted checkout preview) rather than holding on an isolated prop before showing the context. Close the opening beat by isolating the unresolved visual question (such as what fills an eligibility gap), not with a generic process diagram that duplicates a later mechanism beat.
+2. **Sub-stage multi-paragraph shot groups:** When a single shot group spans two or more narration paragraphs (often 25–40 seconds), define distinct paragraph-anchored visual state changes (`Subshot A` for paragraph 1's action, `Subshot B` for paragraph 2's reframing or heterogeneity) rather than holding one static composition with a minor reframe.
+3. **Never build a mid-video "bibliography card wall":** Refusing to invent quantitative charts must not result in consecutive flat text cards displaying only `Author, Year` and paraphrased bullet lines. Pair every research credit with a qualitative visual schematic (e.g., baskets clustering just past a cutoff line; a two-row policy matrix contrasting *Always-free vs. Cutoff* against *Lower cutoff vs. Higher cutoff*; a waived fee token dropping out of a revenue column while customer baskets respond differently) or a cleared authentic paper/figure excerpt.
+4. **Reset visual texture after abstract stretches:** After several minutes of research and system diagrams, re-ground counterpoint or human-constraint beats using physical environment staging, a concrete `Now vs. Later` substitution timeline (showing a needed item shifting earlier versus an unplanned item adding consumption), or optional neutral context footage/photography with an original-art fallback.
+5. **Isolate the takeaway test and hold the final bookend until the last paragraph:** When narration poses the viewer's decision test (such as evaluating an add-on as if the promotional banner were absent), visually dim or strip away the promotional interface chrome to isolate the object beside its incremental outlay bracket. In a multi-paragraph finale, keep the causal summary visually active during the penultimate paragraph and execute the quiet `callback-cut` to the opening composition only on the final paragraph so the screen does not signal an early exit.
+
 ## 5. Visual anti-patterns and practical replacements
 
 | Before — avoid | After — purposeful treatment |
@@ -128,6 +146,11 @@ Use the shared [timeline compiler](../src/timeline/compiler.ts) and compiled eve
 | Decorative arrows pointing at everything | Connect only a defined cause, transfer or sequence; remove an arrow that adds no meaning. |
 | Fake documentary evidence: an invented headline or quote styled as an authentic clipping | Use a verified, permitted excerpt with attribution, or replace it with a clearly labeled scenario explanation. |
 | Fabricated screenshots presented as authentic provider behavior | Label the original mockup as illustrative and verify the mechanism. Use a real screenshot only with authenticity, context and permission checks. |
+| Opening on an isolated prop with no decision context, then ending the hook with a diagram repeated in a later beat | Stage the product inside its checkout/decision context from frame 0, and end the hook by isolating the unresolved visual slot or question. |
+| Holding one static illustration across a two-paragraph (25–40 s) shot group | Sub-stage each paragraph with its own state change (for example, candidate filter in paragraph 1, standalone-vs-checkout evaluation split in paragraph 2). |
+| Consecutive text-only bibliography cards (`Author, Year` + paraphrased text) in research sections | Pair the scoped source credit with a qualitative mechanism schematic, policy-comparison matrix or cleared authentic figure excerpt. |
+| Defaulting most of an episode to `"Static/restrained state changes"` and `"hard-cut"` or using text (`"Higher order total"`) instead of derived proportional scale | Use honestly scaled blocks derived from `src/finance/math.ts` (showing threshold overhang or order differences visually) and select existing primitives (`ComparisonReveal`, `ObjectAttachedLabel`, `GrowBuild`, `ConveyorFlow`, `split-open`, `match-position`, `wipe`) where they clarify the change. |
+| Settling into the final bookend hold on the penultimate paragraph | Keep the causal synthesis active during the summary paragraph and fire the `callback-cut` to the quiet opening image on the final bookend paragraph. |
 
 These are editorial checks, not claims about algorithmic performance. A more expensive or busier image is not automatically more informative.
 
@@ -195,7 +218,7 @@ These examples are future creative proposals. They neither revise episode 002 no
 
 ## 7. Review and phase boundary
 
-Before approving a future storyboard, confirm that every beat has the required fields, one clear learning purpose and an appropriate medium. Check that the key mechanism survives removal of unnecessary text and numbers, that source/permission statuses are explicit, and that no recreation is presented as authentic evidence.
+Before approving a future storyboard, confirm that every beat has the required fields, one clear learning purpose and an appropriate medium. Check that the key mechanism survives removal of unnecessary text and numbers, that source/permission statuses are explicit, and that no recreation is presented as authentic evidence. Also verify visual progression before approval: frame 0 confirms the opening decision context, early beat diagrams are not duplicated later, multi-paragraph shot groups specify per-paragraph sub-staging, research beats pair source credits with qualitative schematics (or cleared authentic excerpts) instead of text-only bibliography cards, and the closing `callback-cut` bookend lands on the final paragraph.
 
 During future production, inspect every beat and boundary, text wrapping, phone-size readability, state continuity and narration-linked reveals. Run the project's required checks, gallery review, metadata verification and full decode before delivery. Record technical results, human creative approval and audio listening approval separately in the existing validation workflow. A rendered frame alone cannot prove motion or synchronization quality.
 

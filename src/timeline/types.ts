@@ -13,7 +13,7 @@ export type Anchor = {
 };
 export type SceneSpec = {
   id: string;
-  template: "story" | "comparison" | "diagram";
+  template: "story" | "comparison" | "diagram" | "documentary";
   start: Anchor;
   end: Anchor;
   title: string;

@@ -51,11 +51,10 @@ Derive production values through `freeShippingExample`, `calculateFreeShippingOr
 
 The [typography](../../src/typography/README.md), [object motion](../../src/objects/README.md) and [transition](../../src/transitions/README.md) inventories and relevant implementations were inspected. References below identify existing mechanisms, not built episode-004 scenes.
 
-- `KineticHeadline` in `src/typography/index.tsx` supports short masked/word reveals. Let the full phrase settle and hold. No default karaoke/subtitle treatment.
-- `TextMorph` in that module supports before/after text states. Labels remain attached to their correct cart state.
+- `KineticHeadline`, `TextMorph`, `ComparisonReveal`, `ObjectAttachedLabel`, `AnimatedList` and `SectionHeading` in `src/typography/index.tsx` supply masked word/phrase reveals, before/after text states, side-by-side total comparisons, tracked brackets/markers, sequential task lists and perspective resets. Let full phrases settle and hold; no default karaoke/subtitle treatment.
 - `FlipCard` in `src/objects/motion.tsx` accepts `frontContent` and `backContent`, useful for a genuine delivery-state tile swap.
-- Inspected `DrawOn` and `PopIn` render their own demo circle/square shapes. They are **not arbitrary connector or product wrappers**. Custom paths, product entrances and progress strips need a future implementation and gallery review; naming these exports does not implement them.
-- `hard-cut`, `cut-on-action`, `match-position`, `state-swap` and `callback-cut` are existing transition IDs. `state-swap` is a crossfade. Matching and callbacks require meaningful source/destination compositions.
+- Inspected `DrawOn`, `PopIn`, `GrowBuild`, `SplitAssemble`, `ChainReaction` and `ConveyorFlow` in `src/objects/motion.tsx` render their own demo circle/square shapes. They are **not arbitrary connector or product wrappers**; where shots below reference `GrowBuild`, `SplitAssemble`, `ChainReaction` or `ConveyorFlow`, they name the motion pattern to adapt in custom episode components, which still require implementation and gallery review.
+- `hard-cut`, `cut-on-action`, `match-position`, `split-open`, `push-in`, `pull-back`, `wipe`, `slide-push`, `state-swap` and `callback-cut` are existing transition IDs in `src/transitions/index.tsx`. `state-swap` is a crossfade. Matching, splits and callbacks require meaningful source/destination compositions.
 - Original props, illustrative checkout, eligibility fill, cost diagram and comparison compositions are proposed. New art/motion needs the required gallery review. Motion must stay deterministic and frame-driven.
 
 Future action timing comes from measured narration and reviewed cue anchors, compiled with `src/timeline/compiler.ts`. All phrase anchors below are planned triggers, not aligned timestamps. Do not stretch speech or embed guessed narration time in graphics.
@@ -118,7 +117,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Primary subject:** Unbranded white charger at left; a large order-preview panel at right, not a full browser screenshot.
 
-**Animation or camera action:** Start on the charger and a phone with no invented battery emergency. Cut to the same charger in the cart. Reveal the delivery row only at the final sentence, then hold. Keep the purchase unsubmitted.
+**Animation or camera action:** Open on frame 0 with the white charger already staged inside the unsubmitted order-preview panel (`Ready to pay` checkout context visible immediately, with no isolated prop hold or invented battery emergency). Hold the charger preview, then snap the coral `Delivery fee` row into the summary on the final sentence and hold. Keep the purchase unsubmitted.
 
 **Required assets:** DG01, DG02, FO01. All episode-specific assets are pending; see the manifest.
 
@@ -130,7 +129,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** Charger; Delivery fee. No prices yet.
 
-**Motion references:** `TextMorph`
+**Motion references:** `ObjectAttachedLabel`, `TextMorph`
 
 **Transition:** `hard-cut`. Duration and offsets remain unassigned pending measured narration.
 
@@ -152,7 +151,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Primary subject:** The cart's eligibility strip and the same charcoal cable organizer used throughout the episode.
 
-**Animation or camera action:** Reveal the offer above the delivery row. On the browse sentence, cut to the organizer detail, then return it to the cart. Only after it is added does the delivery state change from Paid to Free. Do not animate payment or order confirmation.
+**Animation or camera action:** Reveal the offer and a horizontal merchandise eligibility bar above the delivery row stopping visibly short of the cutoff (`42 / 50` derived proportion from `src/finance/math.ts`, no numbers shown). On the browse sentence, cut to the organizer detail, then return it to the cart so its block fills past the cutoff marker (`GrowBuild` pattern) and triggers `FlipCard` to flip the delivery state from Paid to Free. Do not animate payment or order confirmation.
 
 **Required assets:** DG01, DG02, DG05. All episode-specific assets are pending; see the manifest.
 
@@ -164,7 +163,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** Free shipping when eligible; Add organizer; Paid changes to Free. Amounts remain suppressed.
 
-**Motion references:** `FlipCard`
+**Motion references:** `GrowBuild`, `FlipCard`
 
 **Transition:** `cut-on-action`. Duration and offsets remain unassigned pending measured narration.
 
@@ -186,7 +185,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Primary subject:** Charger-only preview beside charger-plus-organizer preview.
 
-**Animation or camera action:** Hold the paid-delivery preview, then reveal the enlarged preview. Highlight the removed fee and added organizer in sequence, never simultaneously flashing both. Use the words Higher order total, not an invented unscaled money bar.
+**Animation or camera action:** Split open from the paid-delivery preview to the enlarged preview side by side. Show the removed coral delivery slice beside the added organizer block at honest derived `src/finance/math.ts` proportions (`48` vs `54`, where the organizer block is twice as tall as the removed delivery slice, with numeric figures suppressed) so the viewer sees why the new order costs more while the organizer remains visible.
 
 **Required assets:** DG01, DG02, DG09. All episode-specific assets are pending; see the manifest.
 
@@ -198,9 +197,9 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** Paid delivery; Free delivery; Higher order total. No numeric reveal.
 
-**Motion references:** Static/restrained state changes; no special library motion required.
+**Motion references:** `GrowBuild`, `ObjectAttachedLabel`
 
-**Transition:** `state-swap`. Duration and offsets remain unassigned pending measured narration.
+**Transition:** `split-open`. Duration and offsets remain unassigned pending measured narration.
 
 **Continuity:** Both previews refer to the same retailer, charger and delivery service. Keep the additional product visible so extra outlay is not misrepresented as money lost for nothing.
 
@@ -214,13 +213,13 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **What the viewer needs to understand:** The new buying reason comes from the condition, but qualifying is not inherently a mistake.
 
-**Visual purpose:** State the episode's causal question while preserving the counterpoint.
+**Visual purpose:** Plant the episode's central visual open question while preserving the counterpoint.
 
-**Recommended medium:** Object-led process graphic rather than another checkout close-up.
+**Recommended medium:** Original cart gap-slot sequence rather than duplicating the later two-task process diagram.
 
-**Primary subject:** A completed Find charger task, then a separate Qualify for delivery task attached to the organizer.
+**Primary subject:** The unmet eligibility gap slot in the checkout, cycling contrasting candidate silhouettes beside the settled charger.
 
-**Animation or camera action:** Keep the charger task complete. Introduce the second task at the spoken condition, then hold both with the organizer between them. On the final sentence, remove the task decorations and leave the organizer for evaluation. Do not draw a compulsory arrow that suggests all shoppers follow it.
+**Animation or camera action:** Keep the charger settled on the left and isolate the empty eligibility gap slot on the right. On the final sentence, cycle and hold three contrasting candidate silhouettes inside that slot (the cable organizer, an everyday household item outline, and an open question outline) under `What fills the gap?`. Save the two-task process strip for `V4-S09` and draw no warning stamp or compulsory arrow.
 
 **Required assets:** DG01, DG05. All episode-specific assets are pending; see the manifest.
 
@@ -230,13 +229,13 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Phrase anchor:** A condition attached to the offer
 
-**On-screen text:** Find charger; Qualify for delivery. No warning stamp, scam label or verdict.
+**On-screen text:** What fills the gap?; No warning stamp, scam label or verdict.
 
-**Motion references:** `KineticHeadline`
+**Motion references:** `KineticHeadline`, `ObjectAttachedLabel`
 
-**Transition:** `hard-cut`. Duration and offsets remain unassigned pending measured narration.
+**Transition:** `push-in`. Duration and offsets remain unassigned pending measured narration.
 
-**Continuity:** This is an explanatory schematic, not measured customer intentions. Use yellow for the offer and neutral styling for the organizer, not coral to condemn the object.
+**Continuity:** This visual open loop leaves the add-on's value unresolved until later beats; use yellow for the offer and neutral styling for the candidate silhouettes, not coral to condemn the object.
 
 ### V4-S05 - What makes zero worth examining
 
@@ -290,7 +289,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Primary subject:** A small chocolate and a premium chocolate, each fixed in its own position with a price-state tag.
 
-**Animation or camera action:** Establish Low price and Higher price tags. Change both price states together under one Same reduction label; the cheaper option becomes Free. Keep both chocolates present. Emphasize the free option only when the narrator reports the aggregate choice shift. Hold the outcome without depicting every participant choosing it.
+**Animation or camera action:** Subshot A (`P06`): Establish Low price and Higher price tags on the two chocolates, reduce both price states together under one Same reduction label until the cheaper option morphs to Free, and emphasize the free option only when the aggregate choice shift is reported. Subshot B (`P07`): Lock a constant-distance price-gap bracket between both chocolates as Zero-price effect settles, holding both options without depicting individual participants choosing.
 
 **Required assets:** DG03, DG04. All episode-specific assets are pending; see the manifest.
 
@@ -302,7 +301,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** Same reduction; Free; Zero-price effect. Source credit persists. No prices, participant counts or percentage charts.
 
-**Motion references:** `TextMorph`
+**Motion references:** `TextMorph`, `ObjectAttachedLabel`
 
 **Transition:** `hard-cut`. Duration and offsets remain unassigned pending measured narration.
 
@@ -392,7 +391,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Primary subject:** The charger selection and an unfinished eligibility condition.
 
-**Animation or camera action:** Start with the charger already selected. Close the product-search area but retain the cart. At another task, open only the eligibility strip. Keep the original selection visible; do not reset the shopper to needing a charger again.
+**Animation or camera action:** Start with the charger already checked in a clean two-item task list (`Item selected`), close the product-search panel while retaining the cart, then at `another task` slide in the second row (`Offer not yet met`) via `AnimatedList` and `TextMorph`. Keep the original selection visible without resetting the shopper to needing a charger again.
 
 **Required assets:** DG01, DG02, DG05. All episode-specific assets are pending; see the manifest.
 
@@ -404,9 +403,9 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** Item selected; Offer not yet met. No generic chapter card.
 
-**Motion references:** `TextMorph`
+**Motion references:** `AnimatedList`, `TextMorph`
 
-**Transition:** `hard-cut`. Duration and offsets remain unassigned pending measured narration.
+**Transition:** `slide-push`. Duration and offsets remain unassigned pending measured narration.
 
 **Continuity:** The delivery service and actual product need remain unchanged. Task language is editorial interpretation, not an observed psychological mediator.
 
@@ -428,7 +427,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Primary subject:** The charcoal organizer at large scale, then its position beside the fee condition.
 
-**Animation or camera action:** Begin with a quiet organizer close-up that makes its ordinary function understandable. Reframe once to include the cart condition. Draw no magical discount onto the product itself; the fee changes in the delivery row only after adding it. End with item and condition both readable.
+**Animation or camera action:** Subshot A (`P11`): Show a three-item candidate browse strip against the remaining gap gauge—one small accessory falling short of the cutoff, one oversized item well above it, and the charcoal organizer landing cleanly in the target zone (`Helps qualify`). Subshot B (`P12`): Reframe (`match-position`) into a split evaluation around the organizer (`SplitAssemble` pattern), contrasting its standalone price check on the left against its checkout pairing beside the removable delivery row on the right without drawing a magical discount onto the product itself.
 
 **Required assets:** DG01, DG02, DG05. All episode-specific assets are pending; see the manifest.
 
@@ -440,7 +439,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** Cable organizer; Helps qualify. No retail price or claim that it is unnecessary for every person.
 
-**Motion references:** Static/restrained state changes; no special library motion required.
+**Motion references:** `ObjectAttachedLabel`, `SplitAssemble`
 
 **Transition:** `match-position`. Duration and offsets remain unassigned pending measured narration.
 
@@ -462,7 +461,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Primary subject:** A neutral Gap marker and Offer wording tile beside the open question Keep browsing?.
 
-**Animation or camera action:** Establish the gap and wording as separate inputs. Bring the question into view without answering it with an arrow up or down. Preserve the qualification through the end of the passage. Keep any generic offer copy distinct from the study source credit so it is never presented as reproduced experimental material.
+**Animation or camera action:** Animate both inputs sequentially on the eligibility strip: first slide the basket-to-target `Gap` marker closer and farther along the bar, then morph the `Offer wording` badge between two generic non-quoted promotion framings before holding the unresolved `Keep browsing?` node without an arrow up or down. Keep any generic offer copy distinct from the study source credit so it is never presented as reproduced experimental material.
 
 **Required assets:** DG04, DG05. All episode-specific assets are pending; see the manifest.
 
@@ -474,7 +473,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** Gap; Offer wording; Keep browsing?; Kulkarni and Yuan, 2025. No invented study percentages.
 
-**Motion references:** Static/restrained state changes; no special library motion required.
+**Motion references:** `TextMorph`, `ObjectAttachedLabel`
 
 **Transition:** `hard-cut`. Duration and offsets remain unassigned pending measured narration.
 
@@ -560,11 +559,11 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Visual purpose:** Ground the threshold explanation without fabricating a data visualization.
 
-**Recommended medium:** Original bibliographic evidence card by default. An authentic paper/figure excerpt is an optional pending replacement only after contextual and rights review.
+**Recommended medium:** Original qualitative threshold schematic with bibliographic credit by default. An authentic paper/figure excerpt is an optional pending replacement only after contextual and rights review.
 
-**Primary subject:** Chen and Ngwe's 2018 working paper, one Philippine online fashion retailer.
+**Primary subject:** Chen and Ngwe's 2018 working paper credit paired with a schematic threshold barrier and clustered fashion-order baskets.
 
-**Animation or camera action:** Cut away from the fictional cart to a legible source card. Reveal the paraphrase Orders clustered above cutoff beneath its scope. Do not draw simulated order dots, bins or a histogram. If EP01 is cleared later, show the authentic figure and context without inventing intermediate data.
+**Animation or camera action:** Wipe away the fictional cart to a navy-grounded schematic below the `Chen and Ngwe, 2018 working paper` credit. Draw a vertical cutoff barrier (`Minimum spend`) and grow schematic fashion-order baskets clustering just past the right side of the line (`Observed pattern`). Do not draw simulated order dots, axis ticks or a quantitative histogram; if `EP01` is cleared later, show the authentic figure and context without inventing intermediate data.
 
 **Required assets:** DG04, EP01. All episode-specific assets are pending; see the manifest.
 
@@ -576,9 +575,9 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** Chen and Ngwe, 2018 working paper; Philippine online fashion retailer; Orders clustered above cutoff. No quotation marks around the paraphrase.
 
-**Motion references:** Static/restrained state changes; no special library motion required.
+**Motion references:** `GrowBuild`, `ObjectAttachedLabel`
 
-**Transition:** `hard-cut`. Duration and offsets remain unassigned pending measured narration.
+**Transition:** `wipe`. Duration and offsets remain unassigned pending measured narration.
 
 **Continuity:** EP01 remains pending and must not enter a render. DG04 is the complete fallback. Do not mix fictional USD labels into the Philippine data.
 
@@ -594,11 +593,11 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Visual purpose:** Make the attribution audible and visible without treating the model as a randomized result.
 
-**Recommended medium:** Original two-stage source annotation.
+**Recommended medium:** Original two-lane policy schematic under the retained source credit.
 
-**Primary subject:** Observed pattern annotation followed by Modeled comparison annotation, under the same paper credit.
+**Primary subject:** `Observed pattern` cluster morphing into a `Modeled comparison` contrasting Lane 1 (`No minimum`, single-item basket) against Lane 2 (`Minimum order`, topped-up basket).
 
-**Animation or camera action:** Retain the source identity. First isolate the observed pattern. On the model phrase, replace the annotation with a qualitative comparison of No minimum and Minimum order. Use product silhouettes schematically, with no measured scale, counts or effect size. Hold the Model result label.
+**Animation or camera action:** Retain the source identity. Morph the header from `Observed pattern` to `Modeled comparison`, then assemble two qualitative policy lanes (`No minimum` on top with a single item; `Minimum order` below with an added item crossing the cutoff) using unscaled product silhouettes without measured counts or effect sizes. Hold the `Modeled comparison` label clearly distinct from the observed data.
 
 **Required assets:** DG04, DG05. All episode-specific assets are pending; see the manifest.
 
@@ -610,9 +609,9 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** Observed pattern; then Modeled comparison; No minimum; Minimum order. Show these sequentially.
 
-**Motion references:** `TextMorph`
+**Motion references:** `TextMorph`, `SplitAssemble`
 
-**Transition:** `hard-cut`. Duration and offsets remain unassigned pending measured narration.
+**Transition:** `state-swap`. Duration and offsets remain unassigned pending measured narration.
 
 **Continuity:** Do not label the modeled comparison Observed sales or depict a real customer's private reason for adding something.
 
@@ -634,7 +633,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Primary subject:** The same charger with unconditional delivery versus a conditional delivery offer; the organizer remains visible as a potentially useful object.
 
-**Animation or camera action:** Start with a charger-only order whose shipping has no spending condition. Then show the conditional version as a separate policy comparison. Finish on the organizer beside a cable, without assigning it a usefulness verdict. Never infer waste from order size alone.
+**Animation or camera action:** Subshot A (`P18`): Hold the paired policy comparison (`No spending condition` discount vs. `Spending condition` altered product mix) via `state-swap`. Subshot B (`P19`): Reframe onto the physical organizer tidying a cable with an attached neutral label (`Not automatically waste`), keeping order size visually separate from any usefulness verdict.
 
 **Required assets:** DG01, DG02, DG09. All episode-specific assets are pending; see the manifest.
 
@@ -646,7 +645,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** No spending condition; Spending condition.
 
-**Motion references:** Static/restrained state changes; no special library motion required.
+**Motion references:** `ObjectAttachedLabel`
 
 **Transition:** `state-swap`. Duration and offsets remain unassigned pending measured narration.
 
@@ -668,7 +667,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Primary subject:** The organizer moves into the merchandise-subtotal strip and passes its eligibility marker.
 
-**Animation or camera action:** Establish the unmet merchandise threshold. Add the entire organizer tile, not a sliced fraction sized to the gap. Let the fill end beyond the marker and hold that result. No new amount needs to appear. Derive the positions from A01's merchandise subtotals, not the paid-delivery total.
+**Animation or camera action:** Push in on the unmet merchandise threshold strip (`42 / 50` derived proportion). Drop the indivisible organizer tile (`12` proportion) onto the end of the `42` bar (`GrowBuild` pattern) so it grows past the `50` cutoff marker to `54`, and highlight the overhang segment past the marker with `ObjectAttachedLabel` (`Minimum`). Hold that overhang state; no new dollar amount needs to appear, and derive positions strictly from A01's merchandise subtotals rather than the paid-delivery total.
 
 **Required assets:** DG01, DG05. All episode-specific assets are pending; see the manifest.
 
@@ -680,9 +679,9 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** Merchandise eligibility; Minimum. No narrated arithmetic or new numerical label.
 
-**Motion references:** Static/restrained state changes; no special library motion required.
+**Motion references:** `GrowBuild`, `ObjectAttachedLabel`
 
-**Transition:** `hard-cut`. Duration and offsets remain unassigned pending measured narration.
+**Transition:** `push-in`. Duration and offsets remain unassigned pending measured narration.
 
 **Continuity:** Before subtotal is 42, threshold is 50, after subtotal is 54 in the model. These are animator inputs only. Do not use 48 as the initial merchandise subtotal.
 
@@ -702,7 +701,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Primary subject:** Charger with paid delivery, then charger plus organizer with free delivery.
 
-**Animation or camera action:** At the first total reveal the left order and $48. At the second total reveal the right order and $54. Keep both complete orders visible with their delivery labels and shared assumptions. Reveal totals as settled states, not rolling counters or a subtraction animation.
+**Animation or camera action:** Split open the two complete orders side by side using `ComparisonReveal`. At the first total reveal the left order and `$48` (`$48 delivered`); at the second reveal the right order and `$54` (`$54 delivered; Includes organizer`) with `ObjectAttachedLabel` keeping delivery labels and `USD, tax and other fees omitted` anchored cleanly. Reveal totals as settled states, not rolling counters or a subtraction animation.
 
 **Required assets:** DG01, DG02, DG09. All episode-specific assets are pending; see the manifest.
 
@@ -714,9 +713,9 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** $48 delivered; $54 delivered; Includes organizer; USD, tax and other fees omitted.
 
-**Motion references:** Static/restrained state changes; no special library motion required.
+**Motion references:** `ComparisonReveal`, `ObjectAttachedLabel`
 
-**Transition:** `hard-cut`. Duration and offsets remain unassigned pending measured narration.
+**Transition:** `split-open`. Duration and offsets remain unassigned pending measured narration.
 
 **Continuity:** Same charger, retailer, delivery service and eligible products on both sides. Derive both totals through calculateFreeShippingOrder in src/finance/math.ts; do not imply taxes were actually waived.
 
@@ -770,7 +769,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Primary subject:** A Minimum order setting connected to the customer-visible eligibility message.
 
-**Animation or camera action:** Change perspective from the cart front to a neutral control diagram. Show a setting and the resulting customer message in sequence. Keep the interface unbranded and identify Shopify only in the source credit. No actual admin workflow is asserted.
+**Animation or camera action:** Use a `wipe` transition and `SectionHeading` to flip from the customer's light checkout surface to a deep navy `#14243A` merchant back-office control schematic. Connect the `Minimum order` threshold setting via `ObjectAttachedLabel` to the resulting customer-visible `Cart message` bar. Keep the interface unbranded and identify Shopify only in the source credit; no actual admin workflow is asserted.
 
 **Required assets:** DG02, DG04, DG05, DG06. All episode-specific assets are pending; see the manifest.
 
@@ -782,9 +781,9 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** Minimum order; Cart message; Shopify merchant guidance, accessed 2026-11-17.
 
-**Motion references:** Static/restrained state changes; no special library motion required.
+**Motion references:** `SectionHeading`, `ObjectAttachedLabel`
 
-**Transition:** `hard-cut`. Duration and offsets remain unassigned pending measured narration.
+**Transition:** `wipe`. Duration and offsets remain unassigned pending measured narration.
 
 **Continuity:** Merchant advice is not independent proof of effectiveness. Do not reuse recognizable dashboard branding or claim this is a real seller's configuration.
 
@@ -804,7 +803,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Primary subject:** The customer's Free delivery row above a parcel, packing step and carrier handoff.
 
-**Animation or camera action:** Hold the customer row at Free. Below it, reveal a simple packing-to-carrier sequence and the label Delivery cost remains. Keep the physical service visible. Do not animate a secret surcharge entering the product price; absorption and pricing are possibilities, not universal pass-through rules.
+**Animation or camera action:** Match-position the customer `Free delivery` row to the top of the frame while `ConveyorFlow` pattern animates the physical packing-to-carrier fulfillment line directly underneath it with `ObjectAttachedLabel` pinned to `Delivery cost remains`. Keep the physical service visible, and do not animate a secret surcharge entering the product price; absorption and pricing remain possibilities rather than universal pass-through rules.
 
 **Required assets:** DG02, DG06. All episode-specific assets are pending; see the manifest.
 
@@ -816,9 +815,9 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** Free delivery; Delivery cost remains. No invented rate, carrier logo or invoice.
 
-**Motion references:** Static/restrained state changes; no special library motion required.
+**Motion references:** `ConveyorFlow`, `ObjectAttachedLabel`
 
-**Transition:** `hard-cut`. Duration and offsets remain unassigned pending measured narration.
+**Transition:** `match-position`. Duration and offsets remain unassigned pending measured narration.
 
 **Continuity:** The parcel is a process illustration, not proof this imaginary order has been fulfilled. Diagram connectors show sequence only, never proportional cost.
 
@@ -838,7 +837,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Primary subject:** Merchandise revenue entering a store ledger alongside separate product and delivery cost labels.
 
-**Animation or camera action:** Bring the extra-item line into the revenue side. Reveal cost labels only after revenue is established, then hold the unresolved Net result tile. Use equal-sized labels rather than proportional bars because no cost data is modeled. Never produce a profit total.
+**Animation or camera action:** Slide-push into a store-side balance schematic where `SplitAssemble` pattern brings the extra-item `Merchandise revenue` block onto the revenue side, then assembles equal-sized `Product cost` and `Delivery cost` tiles against it into the unresolved `Net result depends on costs` tile via `ObjectAttachedLabel`. Use equal-sized tiles rather than proportional bars because no cost data is modeled, and never produce a profit total.
 
 **Required assets:** DG06. All episode-specific assets are pending; see the manifest.
 
@@ -850,9 +849,9 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** Merchandise revenue; Product cost; Delivery cost; Net result depends on costs. No equation.
 
-**Motion references:** Static/restrained state changes; no special library motion required.
+**Motion references:** `SplitAssemble`, `ObjectAttachedLabel`
 
-**Transition:** `hard-cut`. Duration and offsets remain unassigned pending measured narration.
+**Transition:** `slide-push`. Duration and offsets remain unassigned pending measured narration.
 
 **Continuity:** This is a simplified relationship, not the complete retailer accounts or a margin estimate. No money is shown leaving an actual customer's bank account.
 
@@ -874,7 +873,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Primary subject:** Lewis, Singh and Fay, 2006, with separate Sales and Profit outcome labels.
 
-**Animation or camera action:** Introduce the source credit and one-retailer scope. Reveal Additional sales first, then Profit not assured. Return the delivery-cost token beside the missing shipping-fee revenue line. Do not graph a loss magnitude, simulate consumer segments or show an income statement.
+**Animation or camera action:** Subshot A (`P26`): Introduce the `Lewis, Singh and Fay, 2006` credit and `One retailer` scope, revealing `Additional sales` in yellow first and then `Profit not assured` via `KineticHeadline`. Subshot B (`P27`): Drop the waived shipping-fee token out of the store's revenue column (`ChainReaction` pattern) alongside three distinct qualitative customer basket responses (one tops up, one pays delivery without adding, one leaves without buying), without graphing a loss magnitude, simulating population shares or showing an income statement.
 
 **Required assets:** DG04, DG06. All episode-specific assets are pending; see the manifest.
 
@@ -886,7 +885,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** Lewis, Singh and Fay, 2006; One retailer; Additional sales; Profit not assured. These are paraphrases, not quotes.
 
-**Motion references:** `KineticHeadline`
+**Motion references:** `KineticHeadline`, `ChainReaction`
 
 **Transition:** `hard-cut`. Duration and offsets remain unassigned pending measured narration.
 
@@ -908,7 +907,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Primary subject:** A stable example cart and an eligibility marker moving farther away.
 
-**Animation or camera action:** Show the marker move while the cart remains stationary. Stop before the cart follows it. Hold the unfilled space and the question Continue?. This is an unscaled schematic, not a rendering of the grocery study's exact thresholds.
+**Animation or camera action:** Pull back on the eligibility strip as the `Higher minimum` marker slides farther right while the example cart stays stationary and stops short. Hold the unfilled gap and the question `Continue?` attached via `ObjectAttachedLabel`. This is an unscaled schematic, not a rendering of the grocery study's exact thresholds.
 
 **Required assets:** DG05, DG07. All episode-specific assets are pending; see the manifest.
 
@@ -920,9 +919,9 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** Higher minimum; Continue? No countdown, lockout or invented transaction outcome.
 
-**Motion references:** Static/restrained state changes; no special library motion required.
+**Motion references:** `ObjectAttachedLabel`
 
-**Transition:** `hard-cut`. Duration and offsets remain unassigned pending measured narration.
+**Transition:** `pull-back`. Duration and offsets remain unassigned pending measured narration.
 
 **Continuity:** This is a different policy scenario, not a surprise change to A01's fixed checkout terms. Clear the charger's totals before this scene.
 
@@ -944,7 +943,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Primary subject:** A plain grocery bag beside the 2026 working-paper credit and its restricted result.
 
-**Animation or camera action:** Introduce North American grocery platform. Reveal Continuing purchasers before the spending finding. At fell, use a single qualitative downward direction cue beside Spending, without a numerical chart or a change in depicted item count. Keep Working paper and One platform visible through the qualification.
+**Animation or camera action:** Carry the shifted threshold marker across the cut (`match-position`). Subshot A (`P29`): Introduce `Zhou and coauthors, 2026 working paper` and `One North American platform`, reveal the `Continuing purchasers` filter, then morph the basket state downward at `fell` using a single qualitative downward direction cue beside `Spending` without a numerical chart or item-count claim. Subshot B (`P30`): Keep `Working paper` and `One North American platform` visible as the customer lane branches into alternative purchase adjustments rather than chasing the raised target.
 
 **Required assets:** DG04, DG07. All episode-specific assets are pending; see the manifest.
 
@@ -956,9 +955,9 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** Zhou and coauthors, 2026 working paper; One North American platform; Continuing purchasers; Spending fell. No percentage or named grocer.
 
-**Motion references:** Static/restrained state changes; no special library motion required.
+**Motion references:** `TextMorph`, `ObjectAttachedLabel`
 
-**Transition:** `hard-cut`. Duration and offsets remain unassigned pending measured narration.
+**Transition:** `match-position`. Duration and offsets remain unassigned pending measured narration.
 
 **Continuity:** Do not translate lower spending into an exact number of missing products or treat this as a result for all visitors. The source was reviewed through summaries, not full methods.
 
@@ -974,11 +973,11 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Visual purpose:** Keep the synthesis honest and clarify why the counterexample does not erase the earlier mechanism.
 
-**Recommended medium:** Original side-by-side research comparison with one active side at a time.
+**Recommended medium:** Original two-row visual policy matrix with one active row at a time.
 
-**Primary subject:** Fashion retailer: fee structures. Grocery platform: a raised threshold.
+**Primary subject:** Row 1: 2018 fashion model (`Fee structures`: Always Free vs Cutoff); Row 2: 2026 grocery study (`Threshold increase`: Lower Cutoff -> Higher Cutoff).
 
-**Animation or camera action:** First show the fashion paper's policy comparison, then reveal the grocery paper's different question. Finish with both settings visible under Different comparisons. No common numerical axis, combined effect estimate or causal arrow between papers.
+**Animation or camera action:** Split open the two-row policy matrix (`SplitAssemble` pattern): activate Row 1 showing the 2018 fashion paper's `Always Free` vs `Cutoff` policy comparison, then activate Row 2 showing the 2026 grocery paper's `Lower Cutoff -> Higher Cutoff` threshold shift, finishing with both rows visible under `Different comparisons`. Use no common numerical axis, combined effect estimate or causal arrow between papers.
 
 **Required assets:** DG04, DG07. All episode-specific assets are pending; see the manifest.
 
@@ -990,9 +989,9 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** Fee structures; Threshold increase; Different comparisons. Retain paper years and working-paper status.
 
-**Motion references:** Static/restrained state changes; no special library motion required.
+**Motion references:** `SplitAssemble`, `ObjectAttachedLabel`
 
-**Transition:** `hard-cut`. Duration and offsets remain unassigned pending measured narration.
+**Transition:** `split-open`. Duration and offsets remain unassigned pending measured narration.
 
 **Continuity:** Keep 2018 and 2026 source identities separate. Do not describe two presentations of the 2026 paper as independent replications.
 
@@ -1014,7 +1013,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Primary subject:** Toothpaste on a Later purchase list, then moved to the current hypothetical order.
 
-**Animation or camera action:** Open the household-purchase scenario. Establish toothpaste already on a later shopping list before moving it into the current order. Show the later list entry being removed, not duplicated. Keep qualification conditional; assign no toothpaste price or total.
+**Animation or camera action:** Wipe back to everyday household context. Subshot A (`P32`): Reopen the add-on slot beside the charger to ask what changes when an extra item is genuinely needed. Subshot B (`P33`): Display toothpaste on `Next week's list` via `AnimatedList`, then move that exact item into the current cart (`Already needed; If eligible`) while crossing/removing the later list entry so it is replaced rather than duplicated. Keep qualification conditional; assign no toothpaste price or total.
 
 **Required assets:** DG02, DG08. All episode-specific assets are pending; see the manifest.
 
@@ -1026,9 +1025,9 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** Next week's list; Already needed; If eligible. No calendar date, product brand, price or guaranteed saving.
 
-**Motion references:** Static/restrained state changes; no special library motion required.
+**Motion references:** `AnimatedList`, `ObjectAttachedLabel`
 
-**Transition:** `hard-cut`. Duration and offsets remain unassigned pending measured narration.
+**Transition:** `wipe`. Duration and offsets remain unassigned pending measured narration.
 
 **Continuity:** Do not retain the organizer order's $54 total or its merchandise fill. Toothpaste eligibility and value are assumptions in a separate qualitative example, not a newly priced version of A01.
 
@@ -1044,11 +1043,11 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Visual purpose:** Distinguish purchase timing from the amount ultimately needed.
 
-**Recommended medium:** Original two-position planning strip, not a spending time-series chart.
+**Recommended medium:** Original two-row `Now` vs `Later` substitution timeline, not a spending time-series chart.
 
-**Primary subject:** One toothpaste object moving from Later to Now, then contrasted with an optional organizer lacking a planned use.
+**Primary subject:** Row 1: one toothpaste object sliding from `Later` to `Now`; Row 2: optional organizer placed in `Now` with `No planned use`.
 
-**Animation or camera action:** Move the single planned item to Now and leave its former position empty. Do not duplicate it or reveal a monthly savings total. Then briefly show the organizer in a separate branch marked No planned use, keeping the contrast specific to this scenario rather than a judgment about all organizers.
+**Animation or camera action:** Slide-push into the two-row `Now` vs `Later` substitution timeline (`SplitAssemble` pattern). Row 1 slides the single planned toothpaste from `Later` to `Now`, leaving `Later` empty (`One planned purchase`). Row 2 drops the unplanned organizer into `Now` while `Later` stays unchanged (`No planned use`), keeping the contrast specific to this scenario without duplicating items or showing a monthly savings total.
 
 **Required assets:** DG01, DG08. All episode-specific assets are pending; see the manifest.
 
@@ -1060,9 +1059,9 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** Later; Now; One planned purchase; No planned use.
 
-**Motion references:** Static/restrained state changes; no special library motion required.
+**Motion references:** `SplitAssemble`, `ObjectAttachedLabel`
 
-**Transition:** `hard-cut`. Duration and offsets remain unassigned pending measured narration.
+**Transition:** `slide-push`. Duration and offsets remain unassigned pending measured narration.
 
 **Continuity:** This is not evidence of unchanged measured lifetime expenditure. The point is what one order's size cannot establish on its own.
 
@@ -1184,7 +1183,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Primary subject:** Left: charger with paid delivery. Right: charger plus organizer with free delivery.
 
-**Animation or camera action:** Return to the exact layout of V4-S18. Show each product set first, then retain the corresponding settled total. The original offer badge stays secondary. Hold both long enough for the complete choices to be compared without a new calculation.
+**Animation or camera action:** Callback-cut directly into the exact two-column `ComparisonReveal` layout of V4-S18. Show each product set first, then retain `$48 delivered` and `$54 delivered; Includes organizer` with `ObjectAttachedLabel` keeping shared assumptions (`USD, tax and other fees omitted`) anchored cleanly and the original offer badge secondary. Hold both complete choices long enough to compare without a new calculation.
 
 **Required assets:** DG01, DG02, DG09. All episode-specific assets are pending; see the manifest.
 
@@ -1196,7 +1195,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** $48 delivered; $54 delivered; Includes organizer; USD, tax and other fees omitted. No new amounts.
 
-**Motion references:** Static/restrained state changes; no special library motion required.
+**Motion references:** `ComparisonReveal`, `ObjectAttachedLabel`
 
 **Transition:** `callback-cut`. Duration and offsets remain unassigned pending measured narration.
 
@@ -1218,7 +1217,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Primary subject:** The organizer and an Extra outlay bracket attached to the two existing order totals.
 
-**Animation or camera action:** Keep both totals settled. Add a simple static bracket labeled Extra outlay, then put visual priority on the organizer. Remove only the promotional Free badge so the same full choices can be considered without the promotional emphasis. Keep delivery service labels available.
+**Animation or camera action:** Push in on both settled totals, attach a static `Extra outlay` bracket spanning `$48` and `$54` via `ObjectAttachedLabel`, and on *"if the free-shipping message weren't there"* visually dim and peel back the promotional checkout chrome and `Free` banner (`TextMorph` into `Worth it to me?`) so the physical organizer sits isolated directly beside the `Extra outlay` bracket. Keep delivery service labels quietly legible without teaching subtraction.
 
 **Required assets:** DG01, DG02, DG09. All episode-specific assets are pending; see the manifest.
 
@@ -1230,9 +1229,9 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** Extra outlay; Worth it to me? No subtraction sign, equals sign, new dollar amount or retail-price relabeling.
 
-**Motion references:** Static/restrained state changes; no special library motion required.
+**Motion references:** `ObjectAttachedLabel`, `TextMorph`
 
-**Transition:** `hard-cut`. Duration and offsets remain unassigned pending measured narration.
+**Transition:** `push-in`. Duration and offsets remain unassigned pending measured narration.
 
 **Continuity:** The incremental order difference is not the organizer's shelf price. Do not imply the delivery discount was false, reverse the underlying math or erase the product's possible value.
 
@@ -1288,7 +1287,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **Primary subject:** The original charger at the opening position; organizer optional beside it, not fused into the purchase.
 
-**Animation or camera action:** Briefly reconnect the eligibility strip to the optional organizer as the mechanism is summarized. Then remove the promotional strip. On the final paragraph return to the opening charger composition, place the organizer beside it without a selection check, and hold. End without a new lesson card, forced subscribe request or a completed-order screen.
+**Animation or camera action:** Subshot A (`P41`): Keep the causal synthesis visually active across a three-step chain (`Charger complete` -> `Condition reopens search` -> `Zero delivery competes with item value`) via `ObjectAttachedLabel` rather than settling early. Subshot B (`P42`): On `You started with a charger`, strip away the promotional strip and execute a quiet `callback-cut` back to the opening charger composition with the optional organizer resting beside it without a selection check, then hold. End without a new lesson card, forced subscribe request or a completed-order screen.
 
 **Required assets:** DG01, DG02, DG05, DG09. All episode-specific assets are pending; see the manifest.
 
@@ -1300,7 +1299,7 @@ Future action timing comes from measured narration and reviewed cue anchors, com
 
 **On-screen text:** No new headline. If any product labels remain, keep them factual and never substitute a generic financial slogan.
 
-**Motion references:** Static/restrained state changes; no special library motion required.
+**Motion references:** `ObjectAttachedLabel`
 
 **Transition:** `callback-cut`. Duration and offsets remain unassigned pending measured narration.
 

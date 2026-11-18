@@ -1,0 +1,706 @@
+{
+  "mode": "timing-demo",
+  "listeningReviewed": false,
+  "timingReviewed": false,
+  "scriptHash": "05f1786d95552a0e64d22288bd47a3c8d4e0cc3f8a04404e5253b72cad5a66bc",
+  "sourceAudioSha256": "18d627853ad701cd12e64d0bc4018e3fdeae58b0c8fcd72af37e15e4a8ac3769",
+  "audioDurationMs": 504821.7916666667,
+  "cues": [
+    {
+      "id": "p001-s001",
+      "text": "Imagine you're ordering a replacement phone charger.",
+      "startMs": 0.0,
+      "endMs": 2500.0
+    },
+    {
+      "id": "p001-s002",
+      "text": "You've found the one you need, checked the price, and you're ready to pay.",
+      "startMs": 2980.0,
+      "endMs": 6580.0
+    },
+    {
+      "id": "p001-s003",
+      "text": "Then a delivery charge appears.",
+      "startMs": 7140.0,
+      "endMs": 8619.999999999998
+    },
+    {
+      "id": "p001-s004",
+      "text": "Above it, a message says you could get free shipping if you spent a little more.",
+      "startMs": 9160.0,
+      "endMs": 13120.0
+    },
+    {
+      "id": "p001-s005",
+      "text": "So you go back to browsing and find a cable organizer, add it to the cart, and the delivery charge disappears.",
+      "startMs": 13440.0,
+      "endMs": 19140.0
+    },
+    {
+      "id": "p001-s006",
+      "text": "The whole order now costs more than it did with paid shipping.",
+      "startMs": 19140.0,
+      "endMs": 22820.0
+    },
+    {
+      "id": "p002-s001",
+      "text": "but you also get another product which can make the extra spending feel easier to justify.",
+      "startMs": 23122.208333333332,
+      "endMs": 28142.208333333332
+    },
+    {
+      "id": "p002-s002",
+      "text": "That's how free shipping can change a purchase.",
+      "startMs": 28802.208333333332,
+      "endMs": 30902.208333333332
+    },
+    {
+      "id": "p002-s003",
+      "text": "A condition attached to the offer gives you a reason to buy more after you've already found what you needed.",
+      "startMs": 31402.208333333332,
+      "endMs": 36282.208333333336
+    },
+    {
+      "id": "p002-s004",
+      "text": "It won't affect every order and qualifying can be a good deal.",
+      "startMs": 36702.208333333336,
+      "endMs": 39862.208333333336
+    },
+    {
+      "id": "p002-s005",
+      "text": "The important question is what you buy to get there.",
+      "startMs": 40402.208333333336,
+      "endMs": 42702.208333333336
+    },
+    {
+      "id": "p002-s006",
+      "text": "There's an obvious appeal to getting something free.",
+      "startMs": 43062.208333333336,
+      "endMs": 45322.208333333336
+    },
+    {
+      "id": "p003-s001",
+      "text": "But researchers have found that zero can behave differently from an ordinary low price.",
+      "startMs": 45558.625,
+      "endMs": 50198.625
+    },
+    {
+      "id": "p003-s002",
+      "text": "In a study published in 2007, researchers offered people a choice between a cheaper chocolate and a more expensive one.",
+      "startMs": 50758.625,
+      "endMs": 57878.625
+    },
+    {
+      "id": "p003-s003",
+      "text": "When both prices fell by the same small amount, making the cheaper option free, choices shifted toward it.",
+      "startMs": 58378.625,
+      "endMs": 64678.625
+    },
+    {
+      "id": "p003-s004",
+      "text": "The gap between the two prices hadn't changed, yet reaching zero changed how people chose.",
+      "startMs": 65198.625,
+      "endMs": 70418.625
+    },
+    {
+      "id": "p004-s001",
+      "text": "The researchers called this the zero price effect.",
+      "startMs": 70714.70833333333,
+      "endMs": 73414.70833333333
+    },
+    {
+      "id": "p004-s002",
+      "text": "Those were chocolate experiments, not online shipping experiments.",
+      "startMs": 73974.70833333333,
+      "endMs": 77514.70833333333
+    },
+    {
+      "id": "p004-s003",
+      "text": "They don't prove that a delivery offer makes everyone overspend.",
+      "startMs": 77994.70833333333,
+      "endMs": 81514.70833333333
+    },
+    {
+      "id": "p004-s004",
+      "text": "They offer a useful clue about why eliminating a charge can attract attention beyond the size of the discount.",
+      "startMs": 81894.70833333333,
+      "endMs": 87794.70833333333
+    },
+    {
+      "id": "p004-s005",
+      "text": "At checkout, that attention has somewhere specific to go.",
+      "startMs": 88454.70833333333,
+      "endMs": 91654.70833333333
+    },
+    {
+      "id": "p004-s006",
+      "text": "The shipping line is a separate cost you can apparently remove.",
+      "startMs": 92074.70833333333,
+      "endMs": 95074.70833333333
+    },
+    {
+      "id": "p005-s001",
+      "text": "and the website has given you a way to remove it by buying something else.",
+      "startMs": 95449.45833333333,
+      "endMs": 99169.45833333333
+    },
+    {
+      "id": "p005-s002",
+      "text": "Now the condition matters.",
+      "startMs": 99949.45833333333,
+      "endMs": 101129.45833333333
+    },
+    {
+      "id": "p005-s003",
+      "text": "You originally came to buy a charger.",
+      "startMs": 101569.45833333333,
+      "endMs": 103249.45833333333
+    },
+    {
+      "id": "p005-s004",
+      "text": "Once you'd found it, the shopping was finished.",
+      "startMs": 103829.45833333333,
+      "endMs": 105889.45833333333
+    },
+    {
+      "id": "p005-s005",
+      "text": "A minimum spend offer gives you another task, getting the card over the cut -off.",
+      "startMs": 106449.45833333333,
+      "endMs": 110569.45833333333
+    },
+    {
+      "id": "p005-s006",
+      "text": "In our imaginary order, you start looking for something small enough to justify adding, but large enough to qualify.",
+      "startMs": 111129.45833333333,
+      "endMs": 117209.45833333333
+    },
+    {
+      "id": "p006-s001",
+      "text": "The organizer becomes interesting, partly because it helps with that task, it might be a perfectly good organizer.",
+      "startMs": 117540.77083333333,
+      "endMs": 123640.77083333333
+    },
+    {
+      "id": "p006-s002",
+      "text": "Still, you're evaluating it in a different context.",
+      "startMs": 124160.77083333333,
+      "endMs": 126820.77083333333
+    },
+    {
+      "id": "p006-s003",
+      "text": "Instead of simply asking whether you want it at its price, you're also considering the delivery charge it would remove.",
+      "startMs": 127140.77083333333,
+      "endMs": 133060.77083333334
+    },
+    {
+      "id": "p006-s004",
+      "text": "Research on conditional promotions juts that the gap between a basket and its target can affect whether people keep searching, how the offer is worded matters too.",
+      "startMs": 133600.77083333334,
+      "endMs": 142080.77083333334
+    },
+    {
+      "id": "p007-s001",
+      "text": "Being close doesn't produce the same response under every kind of promotion.",
+      "startMs": 142335.5625,
+      "endMs": 146435.5625
+    },
+    {
+      "id": "p007-s002",
+      "text": "A message showing the remaining gap makes the condition easy to follow.",
+      "startMs": 146975.5625,
+      "endMs": 150715.5625
+    },
+    {
+      "id": "p007-s003",
+      "text": "It also keeps qualifying in view while you decide whether to buy anything else.",
+      "startMs": 151355.5625,
+      "endMs": 155275.5625
+    },
+    {
+      "id": "p007-s004",
+      "text": "Notice that the condition doesn't tell you which extra item will be worthwhile.",
+      "startMs": 155995.5625,
+      "endMs": 159915.5625
+    },
+    {
+      "id": "p007-s005",
+      "text": "It only tells you how much merchandise must be in the order.",
+      "startMs": 159915.5625,
+      "endMs": 163455.5625
+    },
+    {
+      "id": "p008-s001",
+      "text": "You might cross the line with something you needed or with something you wouldn't otherwise choose.",
+      "startMs": 163709.95833333334,
+      "endMs": 168009.95833333334
+    },
+    {
+      "id": "p008-s002",
+      "text": "From the point of view of the offer, both baskets qualify.",
+      "startMs": 168549.95833333334,
+      "endMs": 171509.95833333334
+    },
+    {
+      "id": "p008-s003",
+      "text": "From your point of view, they can be very different purchases.",
+      "startMs": 172209.95833333334,
+      "endMs": 175249.95833333334
+    },
+    {
+      "id": "p008-s004",
+      "text": "Actual shopping orders show why this is worth examining.",
+      "startMs": 175989.95833333334,
+      "endMs": 178649.95833333334
+    },
+    {
+      "id": "p008-s005",
+      "text": "In a 2018 working paper, researchers studied an online fashion retailer in the Philippines.",
+      "startMs": 179349.95833333334,
+      "endMs": 184969.95833333334
+    },
+    {
+      "id": "p008-s006",
+      "text": "orders clustered just above its free shipping threshold.",
+      "startMs": 184969.95833333334,
+      "endMs": 188049.95833333334
+    },
+    {
+      "id": "p009-s001",
+      "text": "The pattern was consistent with customers adding items to qualify.",
+      "startMs": 188437.75,
+      "endMs": 191777.75
+    },
+    {
+      "id": "p009-s002",
+      "text": "The researchers model also found that a minimum spend policy could produce bigger baskets than making shipping free on every order.",
+      "startMs": 192417.75,
+      "endMs": 199157.75
+    },
+    {
+      "id": "p009-s003",
+      "text": "That distinction matters.",
+      "startMs": 199817.75,
+      "endMs": 200937.75
+    },
+    {
+      "id": "p009-s004",
+      "text": "Removing the charge without a spending condition gives the shopper a discount.",
+      "startMs": 201597.75,
+      "endMs": 205297.75
+    },
+    {
+      "id": "p009-s005",
+      "text": "Attaching a cut -off can also change which products end up in the cart.",
+      "startMs": 205877.75,
+      "endMs": 209477.75
+    },
+    {
+      "id": "p009-s006",
+      "text": "The data doesn't tell us that those extra products were useless.",
+      "startMs": 210137.75,
+      "endMs": 213157.75
+    },
+    {
+      "id": "p010-s001",
+      "text": "A bigger order isn't automatically a bad purchase, but the offer can influence the size of the order as well as the cost of getting it delivered.",
+      "startMs": 213534.41666666666,
+      "endMs": 221294.41666666666
+    },
+    {
+      "id": "p010-s002",
+      "text": "And products don't come in amounts designed to match that remaining gap.",
+      "startMs": 221914.41666666666,
+      "endMs": 225494.41666666666
+    },
+    {
+      "id": "p010-s003",
+      "text": "In our example, the organizer takes the cart past the minimum.",
+      "startMs": 226294.41666666666,
+      "endMs": 229594.41666666666
+    },
+    {
+      "id": "p010-s004",
+      "text": "You're choosing an available product with its own price.",
+      "startMs": 230254.41666666666,
+      "endMs": 233334.41666666666
+    },
+    {
+      "id": "p011-s001",
+      "text": "The additional purchase can be larger than the amount the message says you're short, even if reaching the cut -off was your only reason to add it.",
+      "startMs": 233664.85416666666,
+      "endMs": 241024.85416666666
+    },
+    {
+      "id": "p011-s002",
+      "text": "Return to our imaginary checkout.",
+      "startMs": 241624.85416666666,
+      "endMs": 243264.85416666666
+    },
+    {
+      "id": "p011-s003",
+      "text": "Suppose the charger order with paid delivery totals $48, with the organizer added and shipping waived, the total becomes $54.",
+      "startMs": 243804.85416666666,
+      "endMs": 251524.85416666666
+    },
+    {
+      "id": "p011-s004",
+      "text": "These are invented prices just to make the choice visible.",
+      "startMs": 252284.85416666666,
+      "endMs": 255244.85416666666
+    },
+    {
+      "id": "p011-s005",
+      "text": "The delivery discount is real within this example.",
+      "startMs": 255844.85416666666,
+      "endMs": 258284.85416666666
+    },
+    {
+      "id": "p012-s001",
+      "text": "So is the extra outlay.",
+      "startMs": 258575.875,
+      "endMs": 260055.875
+    },
+    {
+      "id": "p012-s002",
+      "text": "You have a charger either way.",
+      "startMs": 260375.875,
+      "endMs": 261975.875
+    },
+    {
+      "id": "p012-s003",
+      "text": "The decision is whether the organizer is worth spending more overall.",
+      "startMs": 262675.875,
+      "endMs": 266175.875
+    },
+    {
+      "id": "p012-s004",
+      "text": "For the retailer the extra merchandise is part of the appeal.",
+      "startMs": 266755.875,
+      "endMs": 269835.875
+    },
+    {
+      "id": "p012-s005",
+      "text": "Shopify's guidance to merchants discusses using minimum order requirements to increase card value while accounting for shipping costs.",
+      "startMs": 270335.875,
+      "endMs": 277315.875
+    },
+    {
+      "id": "p012-s006",
+      "text": "It also recommends telling shoppers how far they are from qualifying.",
+      "startMs": 277955.875,
+      "endMs": 281115.875
+    },
+    {
+      "id": "p012-s007",
+      "text": "Delivery still has a cost when the checkout line says free.",
+      "startMs": 281675.875,
+      "endMs": 284715.875
+    },
+    {
+      "id": "p013-s001",
+      "text": "A merchant might absorb that cost or account for it in product pricing.",
+      "startMs": 284947.4583333333,
+      "endMs": 288567.4583333333
+    },
+    {
+      "id": "p013-s002",
+      "text": "There's no rule that every free shipping order hides an inflated price.",
+      "startMs": 289147.4583333333,
+      "endMs": 293047.4583333333
+    },
+    {
+      "id": "p013-s003",
+      "text": "With a threshold, the store can try to bring in enough merchandise revenue to help cover delivery.",
+      "startMs": 293547.4583333333,
+      "endMs": 298887.4583333333
+    },
+    {
+      "id": "p013-s004",
+      "text": "Whether that works depends on what customers buy and how much the retailer makes after its costs.",
+      "startMs": 299367.4583333333,
+      "endMs": 304387.4583333333
+    },
+    {
+      "id": "p013-s005",
+      "text": "More sales alone don't settle that question.",
+      "startMs": 304967.4583333333,
+      "endMs": 307287.4583333333
+    },
+    {
+      "id": "p014-s001",
+      "text": "A study published in 2006 examined an online retailer's shipping fee policies.",
+      "startMs": 307620.4583333333,
+      "endMs": 312600.4583333333
+    },
+    {
+      "id": "p014-s002",
+      "text": "The researchers found that free shipping promotions could generate additional sales without being profitable in that setting.",
+      "startMs": 313180.4583333333,
+      "endMs": 319240.4583333333
+    },
+    {
+      "id": "p014-s003",
+      "text": "The store gives up shipping revenue and customers don't all respond in the same way.",
+      "startMs": 319860.4583333333,
+      "endMs": 323920.4583333333
+    },
+    {
+      "id": "p014-s004",
+      "text": "A larger basket can help, but it doesn't guarantee that the promotion pays for itself.",
+      "startMs": 324560.4583333333,
+      "endMs": 329040.4583333333
+    },
+    {
+      "id": "p014-s005",
+      "text": "nor can a retailer assume that raising the threshold will keep making orders bigger.",
+      "startMs": 329040.4583333333,
+      "endMs": 333760.4583333333
+    },
+    {
+      "id": "p015-s001",
+      "text": "At some point, customers may decide the offer isn't worth reaching.",
+      "startMs": 334017.8541666667,
+      "endMs": 337397.8541666667
+    },
+    {
+      "id": "p015-s002",
+      "text": "A working paper released in 2026 examined an online grocery platform in North America.",
+      "startMs": 337757.8541666667,
+      "endMs": 343217.8541666667
+    },
+    {
+      "id": "p015-s003",
+      "text": "It reported that spending among continuing purchases fell after the platform raised its free shipping threshold.",
+      "startMs": 343757.8541666667,
+      "endMs": 349737.8541666667
+    },
+    {
+      "id": "p015-s004",
+      "text": "That's one working paper about one platform, not a verdict on every offer.",
+      "startMs": 350217.8541666667,
+      "endMs": 354497.8541666667
+    },
+    {
+      "id": "p015-s005",
+      "text": "It shows that spending doesn't rise automatically with the target.",
+      "startMs": 355117.8541666667,
+      "endMs": 358177.8541666667
+    },
+    {
+      "id": "p015-s006",
+      "text": "it.",
+      "startMs": 358177.8541666667,
+      "endMs": 358277.8541666667
+    },
+    {
+      "id": "p015-s007",
+      "text": "Customers may change their purchases instead of adding more to qualify.",
+      "startMs": 358697.8541666667,
+      "endMs": 362317.8541666667
+    },
+    {
+      "id": "p016-s001",
+      "text": "The fashion retailer model and the grocery study aren't testing identical policies.",
+      "startMs": 362680.5625,
+      "endMs": 367000.5625
+    },
+    {
+      "id": "p016-s002",
+      "text": "One compares fee structures, the other examines a changed threshold.",
+      "startMs": 367500.5625,
+      "endMs": 371140.5625
+    },
+    {
+      "id": "p016-s003",
+      "text": "They address different decisions and neither supports assuming that shoppers will keep adding products whenever a store raises the target.",
+      "startMs": 371820.5625,
+      "endMs": 378340.5625
+    },
+    {
+      "id": "p016-s004",
+      "text": "There's also a fair objection to our charger example.",
+      "startMs": 378900.5625,
+      "endMs": 381560.5625
+    },
+    {
+      "id": "p016-s005",
+      "text": "What if the extra item is something you genuinely need?",
+      "startMs": 382200.5625,
+      "endMs": 384900.5625
+    },
+    {
+      "id": "p017-s001",
+      "text": "Suppose you were going to buy toothpaste next week and this store sells the same one at a fair price, adding it could replace a later purchase while removing today's delivery charge.",
+      "startMs": 385128.5,
+      "endMs": 394728.5
+    },
+    {
+      "id": "p017-s002",
+      "text": "You'd spend more on this order, but that alone wouldn't prove you'd increased your spending over time.",
+      "startMs": 395388.5,
+      "endMs": 400108.5
+    },
+    {
+      "id": "p017-s003",
+      "text": "Some of the purchase would simply happen earlier.",
+      "startMs": 400668.5,
+      "endMs": 402688.5
+    },
+    {
+      "id": "p017-s004",
+      "text": "That's different from buying an organizer you won't use because it gets the cart across the line.",
+      "startMs": 403148.5,
+      "endMs": 407828.5
+    },
+    {
+      "id": "p018-s001",
+      "text": "Even buying early has conditions.",
+      "startMs": 408035.9375,
+      "endMs": 409755.9375
+    },
+    {
+      "id": "p018-s002",
+      "text": "You need the money available now and somewhere to keep what you've bought.",
+      "startMs": 410335.9375,
+      "endMs": 414135.9375
+    },
+    {
+      "id": "p018-s003",
+      "text": "A useful household product doesn't make a larger order affordable for everyone and paying for delivery may itself be reasonable.",
+      "startMs": 414815.9375,
+      "endMs": 422195.9375
+    },
+    {
+      "id": "p018-s004",
+      "text": "Imagine someone working shifts or living with limited mobility.",
+      "startMs": 423015.9375,
+      "endMs": 426555.9375
+    },
+    {
+      "id": "p018-s005",
+      "text": "Going to a physical shop might take time, transport or help.",
+      "startMs": 427155.9375,
+      "endMs": 430975.9375
+    },
+    {
+      "id": "p018-s006",
+      "text": "They don't have readily available.",
+      "startMs": 431375.9375,
+      "endMs": 432835.9375
+    },
+    {
+      "id": "p018-s007",
+      "text": "The comparison has to reflect the shopper's actual options.",
+      "startMs": 433455.9375,
+      "endMs": 436495.9375
+    },
+    {
+      "id": "p019-s001",
+      "text": "Avoiding every fee isn't always practical.",
+      "startMs": 436914.375,
+      "endMs": 439474.375
+    },
+    {
+      "id": "p019-s002",
+      "text": "Neither is treating every extra item as waste.",
+      "startMs": 439974.375,
+      "endMs": 442514.375
+    },
+    {
+      "id": "p019-s003",
+      "text": "An organizer can be enjoyable as well as useful.",
+      "startMs": 442974.375,
+      "endMs": 445394.375
+    },
+    {
+      "id": "p019-s004",
+      "text": "And that's a legitimate reason to want one.",
+      "startMs": 445834.375,
+      "endMs": 447814.375
+    },
+    {
+      "id": "p019-s005",
+      "text": "So go back to the two complete orders.",
+      "startMs": 448194.375,
+      "endMs": 450094.375
+    },
+    {
+      "id": "p019-s006",
+      "text": "One gets the charger delivered.",
+      "startMs": 450594.375,
+      "endMs": 451934.375
+    },
+    {
+      "id": "p019-s007",
+      "text": "The other gets the charger and the organizer delivered.",
+      "startMs": 452374.375,
+      "endMs": 454914.375
+    },
+    {
+      "id": "p019-s008",
+      "text": "Look at what you'd pay and what you'd receive in each case.",
+      "startMs": 455374.375,
+      "endMs": 458094.375
+    },
+    {
+      "id": "p020-s001",
+      "text": "The difference between those totals is what the extra item would cost you compared with the purchase you were already prepared to make.",
+      "startMs": 458387.3125,
+      "endMs": 464587.3125
+    },
+    {
+      "id": "p020-s002",
+      "text": "Would you willingly pay that difference for it if the free shipping message weren't there?",
+      "startMs": 465087.3125,
+      "endMs": 468887.3125
+    },
+    {
+      "id": "p020-s003",
+      "text": "If you would, qualifying may be worthwhile.",
+      "startMs": 469507.3125,
+      "endMs": 471507.3125
+    },
+    {
+      "id": "p020-s004",
+      "text": "If you're only adding it to remove a charge, the lower total may still be the order with paid shipping.",
+      "startMs": 472187.3125,
+      "endMs": 477247.3125
+    },
+    {
+      "id": "p021-s001",
+      "text": "And if neither order feels worth its full price, you can reconsider the purchase itself.",
+      "startMs": 477500.2708333333,
+      "endMs": 482020.2708333333
+    },
+    {
+      "id": "p021-s002",
+      "text": "Free shipping can make you spend more, because a spending condition gives you a new reason to keep shopping.",
+      "startMs": 482580.2708333333,
+      "endMs": 487920.2708333333
+    },
+    {
+      "id": "p021-s003",
+      "text": "Reaching zero on the delivery line can become more important than deciding what you want from the order.",
+      "startMs": 488500.2708333333,
+      "endMs": 493340.2708333333
+    },
+    {
+      "id": "p022-s001",
+      "text": "You started with a charger.",
+      "startMs": 493534.1666666667,
+      "endMs": 494734.1666666667
+    },
+    {
+      "id": "p022-s002",
+      "text": "You can still finish with a charger.",
+      "startMs": 495354.1666666667,
+      "endMs": 497014.1666666667
+    },
+    {
+      "id": "p022-s003",
+      "text": "Whether the organizer comes with it should depend on what it's worth to you, not simply on whether it makes the delivery line safe free.",
+      "startMs": 497714.1666666667,
+      "endMs": 504614.1666666667
+    }
+  ]
+}

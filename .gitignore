@@ -48,7 +48,16 @@ run.lock
 /videos/*/contact_sheet.jpg
 /videos/*/storyboard.jpg
 /videos/*/storyboard.json
+!/videos/demo-bnpl-feels-cheaper/storyboard.json
 /videos/*/player.html
+
+# Local Remotion audio copies and generated demo media
+/public/free-shipping-opening/narration.wav
+/public/free-shipping-full/narration.wav
+/public/subscription-*/narration.wav
+/public/subscription-full/narration-with-cta.wav
+/public/subscription-full/ambient.wav
+/public/documentary/shopping-context.mp4
 
 # Operating system files
 .DS_Store

@@ -25,12 +25,24 @@ Keep one dominant idea; supporting objects may coexist. Preserve object identity
 
 A calendar showing several fictional purchase schedules explains shared future commitments more clearly than a generic worried character. Establish one schedule, add another and hold the overlapping weeks. Keep the full obligation understandable without a mandatory total or formula. Record assumptions and factual support separately from asset rights. Optional repair footage can supply context later; it is not evidence about an actual BNPL customer.
 
+## Retention and visual progression rules
+
+To sustain comprehension and viewer attention across a documentary without inventing drama, numeric cut-rate quotas or unverified data:
+
+1. **Opening premise and visual open loop:** Frame 0 should confirm the decision context promised by the title and thumbnail (such as a product already staged in its checkout preview) rather than holding on an isolated prop. End the opening beat by isolating the unresolved visual question (for example, what fills the eligibility slot), not with a generic process diagram that duplicates a later mechanism beat.
+2. **Per-paragraph sub-staging:** Any shot group spanning two or more narration paragraphs must specify a distinct paragraph-anchored visual state change (`Subshot A`, `Subshot B`, etc.) so 25–40 second holds do not freeze on one layout.
+3. **Qualitative schematics over bibliography card walls:** Middle-act research citations must pair their scoped source credit with a qualitative mechanism schematic, policy-comparison matrix or cleared authentic paper/figure excerpt—never a consecutive run of text-only citation cards.
+4. **Purposeful library motion and derived proportional scale:** Use existing audited primitives (`ComparisonReveal`, `ObjectAttachedLabel`, `GrowBuild`, `SplitAssemble`, `ConveyorFlow`, `SectionHeading`, and transitions like `split-open`, `match-position`, `wipe`, `push-in`, `pull-back`, `state-swap`, `callback-cut`) and proportional geometry derived from `src/finance/math.ts` (such as visible threshold overhang) instead of defaulting most of the board to static holds, `hard-cut`s and text-only magnitude labels.
+5. **Counterpoint texture and finale timing:** Re-ground visual texture after sustained abstract diagrams using physical environment staging, a concrete `Now vs. Later` substitution timeline or optional neutral context media with an original-art fallback. Visually dim or strip away promotional UI chrome during the final decision heuristic, and fire the closing `callback-cut` bookend on the final paragraph rather than settling early on the penultimate paragraph.
+
 ## Review gate for a future packet
 
 - [ ] Every beat has the nine fields and a specific learning purpose; the viewer takeaway follows from the image and narration.
+- [ ] Frame 0 confirms the opening decision context, the opening beat closes on a visual open loop without duplicating a later diagram, and multi-paragraph shot groups specify per-paragraph visual sub-staging.
+- [ ] Research beats pair source/scope credits with qualitative schematics (or cleared authentic excerpts) rather than consecutive text-only citation cards; counterpoint beats reset visual texture and the payoff visually strips promotional chrome before firing the final-paragraph `callback-cut`.
 - [ ] Medium choice is justified. Footage, photos, collages and evidence are allowed when source/rights checks pass; unverified media remains a labeled planning placeholder.
-- [ ] Authentic material and illustrative/recreated material are distinguishable at the point of possible confusion.
-- [ ] Figures are sourced or explicitly hypothetical; modeled totals are derived correctly. No numerical reveal is required.
+- [ ] Authentic evidence retains source/date/context, while generic invented scenarios omit on-screen "fictional," "illustrative," "hypothetical" or "demo" labels under [decision #14](../../docs/decisions.md#14-presenting-fictional-scenarios--2026-11-16) and never impersonate real records.
+- [ ] Figures are sourced or explicitly assumed in production records; modeled totals and proportional scale visuals derive from `src/finance/math.ts`. No numerical reveal is required.
 - [ ] Text is selective, readable on mobile and clear of important subjects; dates, chronology and state transitions agree.
 - [ ] Pacing follows comprehension and measured narration. Estimates are not aligned cues; human creative/listening approval is separate.
 

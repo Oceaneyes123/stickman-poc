@@ -12,10 +12,107 @@ import { SubscriptionOpening, SubscriptionTextureGallery, SubscriptionCardGaller
 import { SubscriptionFiveMinutes, SubscriptionContinuationGallery } from "./scenes/SubscriptionFiveMinutes";
 import { SubscriptionFullFilm, SubscriptionEndingVisuals } from "./scenes/SubscriptionFullFilm";
 import { FILM_DURATION_FRAMES, ENDING_START_FRAME } from "./scenes/subscriptionEndingTimeline";
+import {
+  DocumentaryGallery,
+  DOCUMENTARY_GALLERY_DURATION,
+} from "./documentary/Gallery";
+import {
+  BNPL_DEMO_DURATION,
+  BnplFeelsCheaperDemo,
+  DocumentaryMixedMediaShowcase,
+} from "./documentary/demo/BnplFeelsCheaperDemo";
+import {
+  CUTAWAY_GALLERY_DURATION,
+  FreeShippingCutawayGallery,
+} from "./scenes/FreeShippingCutaways";
+import {
+  FreeShippingCheckoutGallery,
+  FreeShippingChocolateGallery,
+  FreeShippingOpening,
+} from "./scenes/FreeShippingOpening";
+import {
+  FreeShippingFullFilm,
+  FreeShippingRemainingGallery,
+  REMAINING_GALLERY_DURATION,
+} from "./scenes/FreeShippingRemaining";
+import { FULL_FILM_DURATION_FRAMES } from "./scenes/freeShippingFullTimeline";
+import { freeShippingOpeningTimeline } from "./scenes/freeShippingOpeningTimeline";
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Composition
+        id="BnplFeelsCheaperDemo"
+        component={BnplFeelsCheaperDemo}
+        durationInFrames={BNPL_DEMO_DURATION}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+      <Composition
+        id="DocumentaryGallery"
+        component={DocumentaryGallery}
+        durationInFrames={DOCUMENTARY_GALLERY_DURATION}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+      <Composition
+        id="DocumentaryMixedMediaShowcase"
+        component={DocumentaryMixedMediaShowcase}
+        durationInFrames={180}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+      <Composition
+        id="FreeShippingOpening"
+        component={FreeShippingOpening}
+        durationInFrames={freeShippingOpeningTimeline.durationInFrames}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+      <Composition
+        id="FreeShippingFullFilm"
+        component={FreeShippingFullFilm}
+        durationInFrames={FULL_FILM_DURATION_FRAMES}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+      <Composition
+        id="FreeShippingCutawayGallery"
+        component={FreeShippingCutawayGallery}
+        durationInFrames={CUTAWAY_GALLERY_DURATION}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+      <Composition
+        id="FreeShippingRemainingGallery"
+        component={FreeShippingRemainingGallery}
+        durationInFrames={REMAINING_GALLERY_DURATION}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+      <Composition
+        id="FreeShippingCheckoutGallery"
+        component={FreeShippingCheckoutGallery}
+        durationInFrames={360}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+      <Composition
+        id="FreeShippingChocolateGallery"
+        component={FreeShippingChocolateGallery}
+        durationInFrames={240}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
       <Composition id="SubscriptionOpening" component={SubscriptionOpening} durationInFrames={1800} fps={30} width={1920} height={1080} />
       <Composition id="SubscriptionFiveMinutes" component={SubscriptionFiveMinutes} durationInFrames={9000} fps={30} width={1920} height={1080} />
       <Composition id="SubscriptionFullFilm" component={SubscriptionFullFilm} durationInFrames={FILM_DURATION_FRAMES} fps={30} width={1920} height={1080} />

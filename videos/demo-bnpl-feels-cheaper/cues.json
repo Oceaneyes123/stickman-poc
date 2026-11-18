@@ -1,0 +1,42 @@
+{
+  "mode": "timing-demo",
+  "scriptHash": "b7c87327cdc1bc4a9990007c1eef7554b232446b306f9023f835a6425cd58b66",
+  "cues": [
+    {
+      "id": "c01",
+      "startMs": 0,
+      "endMs": 8000,
+      "text": "A two-hundred-forty-dollar jacket sitting on a store rack looks like a clear decision: either you spend two hundred forty dollars today, or you walk away."
+    },
+    {
+      "id": "c02",
+      "startMs": 8000,
+      "endMs": 16500,
+      "text": "At checkout, a second button changes what your attention lands on. Instead of the full tag, the screen highlights sixty dollars today."
+    },
+    {
+      "id": "c03",
+      "startMs": 16500,
+      "endMs": 25000,
+      "text": "Nothing about the jacket's price changed. What changed is that checkout turned one upfront decision into four separate sixty-dollar commitments spaced across the next six weeks."
+    },
+    {
+      "id": "c04",
+      "startMs": 25000,
+      "endMs": 34000,
+      "text": "Those remaining drafts quietly land on future dates on your calendar, often alongside other split purchases that felt just as small on the day you clicked."
+    },
+    {
+      "id": "c05",
+      "startMs": 34000,
+      "endMs": 43000,
+      "text": "When ordinary obligations arrive in the same month—rent, utilities, or an unexpected car service—those scheduled drafts already hold a claim on your paycheck."
+    },
+    {
+      "id": "c06",
+      "startMs": 43000,
+      "endMs": 50000,
+      "text": "A smaller first payment can make a purchase feel cheaper at checkout, even when the full commitment leaves less room later."
+    }
+  ]
+}
