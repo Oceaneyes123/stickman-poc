@@ -5,7 +5,10 @@ import { clamp01 } from "../typography/timing";
 import { useStyle, type StyleProps } from "../typography/motion";
 
 export type ShapeKind = "circle" | "square";
-export type ObjectProps = StyleProps & { shape?: ShapeKind };
+export type ObjectProps = StyleProps & {
+  shape?: ShapeKind;
+  children?: ReactNode;
+};
 
 const Body = ({
   kind = "circle",
@@ -55,18 +58,22 @@ export function PopIn(props: ObjectProps) {
       transform={`translate(${props.x},${props.y}) scale(${0.2 + 0.8 * s})`}
       opacity={p.opacity * clamp01(s * 3)}
     >
-      <Body kind={props.shape} r={radius(props)} fill={props.color ?? C.yellow} />
+      {props.children ?? (
+        <Body kind={props.shape} r={radius(props)} fill={props.color ?? C.yellow} />
+      )}
     </g>
   );
 }
 
-export function DropBounce(props: ObjectProps) {
+export function DropBounce(
+  props: ObjectProps & { dropDistance?: number; groundShadow?: boolean },
+) {
   const p = useStyle(props);
   if (!p.visible) return null;
   const r = radius(props);
   const t = p.local / p.fps;
   const g = 3600;
-  const dist = 520;
+  const dist = props.dropDistance ?? 520;
   let drop = 0.5 * g * t * t;
   let squash = 1;
   if (drop > dist) {
@@ -77,31 +84,59 @@ export function DropBounce(props: ObjectProps) {
   const sy = 1 / squash;
   return (
     <g opacity={p.opacity}>
-      <ellipse
-        cx={props.x}
-        cy={props.y}
-        rx={r * (1.1 - 0.5 * (1 - drop / dist))}
-        ry={r * 0.16}
-        fill={C.navy}
-        opacity={0.14}
-      />
-      <g transform={`translate(${props.x},${props.y - r * sy - (dist - drop)}) scale(${squash},${sy})`}>
-        <Body kind={props.shape} r={r} fill={props.color ?? C.yellow} />
+      {props.groundShadow !== false && (
+        <ellipse
+          cx={props.x}
+          cy={props.y}
+          rx={r * (1.1 - 0.5 * (1 - drop / dist))}
+          ry={r * 0.16}
+          fill={C.navy}
+          opacity={0.14}
+        />
+      )}
+      <g
+        transform={`translate(${props.x},${props.y - r * sy - (dist - drop)}) scale(${squash},${sy})`}
+      >
+        {props.children ?? (
+          <Body kind={props.shape} r={r} fill={props.color ?? C.yellow} />
+        )}
       </g>
     </g>
   );
 }
 
-export function DrawOn(props: ObjectProps) {
+export function DrawOn(props: ObjectProps & { pathD?: string }) {
   const p = useStyle(props);
+  const id = useId().replaceAll(":", "");
   if (!p.visible) return null;
   const r = radius(props);
   const d =
-    props.shape === "square"
+    props.pathD ??
+    (props.shape === "square"
       ? `M${-r} ${-r} H${r} V${r} H${-r} Z`
-      : `M${r} 0 A${r} ${r} 0 1 1 ${-r} 0 A${r} ${r} 0 1 1 ${r} 0 Z`;
+      : `M${r} 0 A${r} ${r} 0 1 1 ${-r} 0 A${r} ${r} 0 1 1 ${r} 0 Z`);
   const draw = clamp01(p.local / 34);
   const fill = clamp01((p.local - 30) / 16);
+  if (props.children && !props.pathD) {
+    const boxR = r * 1.45;
+    return (
+      <g transform={`translate(${props.x},${props.y})`} opacity={p.opacity}>
+        <defs>
+          <clipPath id={`draw-${id}`}>
+            <rect
+              x={-boxR}
+              y={-boxR}
+              width={boxR * 2 * draw}
+              height={boxR * 2}
+            />
+          </clipPath>
+        </defs>
+        <g clipPath={`url(#draw-${id})`} opacity={0.25 + 0.75 * draw}>
+          {props.children}
+        </g>
+      </g>
+    );
+  }
   return (
     <g transform={`translate(${props.x},${props.y})`} opacity={p.opacity}>
       <path
@@ -109,22 +144,25 @@ export function DrawOn(props: ObjectProps) {
         pathLength={1}
         strokeDasharray={1}
         strokeDashoffset={1 - draw}
-        fill={props.color ?? C.yellow}
-        fillOpacity={fill}
+        fill={props.children ? "none" : (props.color ?? C.yellow)}
+        fillOpacity={props.children ? 0 : fill}
         stroke={C.navy}
         strokeWidth={5}
         strokeLinejoin="round"
+        strokeLinecap="round"
       />
+      {props.children && <g opacity={fill}>{props.children}</g>}
     </g>
   );
 }
 
-export function SlideInBlur(props: ObjectProps) {
+export function SlideInBlur(props: ObjectProps & { offsetX?: number }) {
   const p = useStyle(props);
   const id = useId().replaceAll(":", "");
   if (!p.visible) return null;
   const e = 1 - (1 - clamp01(p.local / 26)) ** 3;
   const blur = 24 * (1 - e);
+  const offsetX = props.offsetX ?? -700;
   return (
     <g opacity={p.opacity}>
       <defs>
@@ -134,9 +172,11 @@ export function SlideInBlur(props: ObjectProps) {
       </defs>
       <g
         filter={blur > 0.6 ? `url(#${id})` : undefined}
-        transform={`translate(${props.x - 700 * (1 - e)},${props.y})`}
+        transform={`translate(${props.x + offsetX * (1 - e)},${props.y})`}
       >
-        <Body kind={props.shape} r={radius(props)} fill={props.color ?? C.teal} />
+        {props.children ?? (
+          <Body kind={props.shape} r={radius(props)} fill={props.color ?? C.teal} />
+        )}
       </g>
     </g>
   );
@@ -150,7 +190,9 @@ export function PoofExit(props: ObjectProps) {
   return (
     <g transform={`translate(${props.x},${props.y})`} opacity={p.opacity}>
       <g transform={`scale(${1 - 0.85 * t})`} opacity={1 - t}>
-        <Body kind={props.shape} r={r} fill={props.color ?? C.yellow} />
+        {props.children ?? (
+          <Body kind={props.shape} r={r} fill={props.color ?? C.yellow} />
+        )}
       </g>
       {Array.from({ length: 10 }, (_, i) => {
         const a = (i / 10) * Math.PI * 2 + 0.4;
@@ -188,16 +230,20 @@ export function SquashStretch(props: ObjectProps) {
       <g
         transform={`translate(${props.x + 320 * Math.sin(p.local * 0.09)},${props.y}) scale(${1 + k},${1 - k})`}
       >
-        <Body kind={props.shape} r={radius(props)} fill={props.color ?? C.teal} />
+        {props.children ?? (
+          <Body kind={props.shape} r={radius(props)} fill={props.color ?? C.teal} />
+        )}
       </g>
     </g>
   );
 }
 
-export function AnticipationFollow(props: ObjectProps) {
+export function AnticipationFollow(
+  props: ObjectProps & { distance?: number; windUp?: number },
+) {
   const p = useStyle(props);
   if (!p.visible) return null;
-  const wind = -70 * Math.min(1, Math.max(0, p.local) / 12);
+  const wind = (props.windUp ?? -70) * Math.min(1, Math.max(0, p.local) / 12);
   const go =
     p.local <= 12
       ? 0
@@ -207,38 +253,47 @@ export function AnticipationFollow(props: ObjectProps) {
           config: { damping: 13, stiffness: 130 },
         });
   const stretch = 1 + 0.3 * go * (1 - clamp01(go));
+  const dist = props.distance ?? 320;
   return (
     <g
-      transform={`translate(${props.x + wind + 320 * go},${props.y}) scale(${stretch},${1 / stretch})`}
+      transform={`translate(${props.x + wind + dist * go},${props.y}) scale(${stretch},${1 / stretch})`}
       opacity={p.opacity}
     >
-      <Body kind={props.shape} r={radius(props)} fill={props.color ?? C.yellow} />
+      {props.children ?? (
+        <Body kind={props.shape} r={radius(props)} fill={props.color ?? C.yellow} />
+      )}
     </g>
   );
 }
 
-export function Pendulum(props: ObjectProps) {
+export function Pendulum(
+  props: ObjectProps & { ropeLength?: number; hideString?: boolean },
+) {
   const p = useStyle(props);
   if (!p.visible) return null;
   const r = radius(props);
-  const pivotY = props.y - 300;
+  const pivotY = props.y - (props.ropeLength ?? 300);
   const angle = Math.sin(p.local * 0.24) * 30 * Math.exp(-p.local * 0.045);
   return (
     <g opacity={p.opacity}>
       <g transform={`rotate(${angle},${props.x},${pivotY})`}>
-        <line
-          x1={props.x}
-          y1={pivotY}
-          x2={props.x}
-          y2={props.y - r}
-          stroke={C.line}
-          strokeWidth={3}
-        />
+        {!props.hideString && (
+          <line
+            x1={props.x}
+            y1={pivotY}
+            x2={props.x}
+            y2={props.y - r}
+            stroke={C.line}
+            strokeWidth={3}
+          />
+        )}
         <g transform={`translate(${props.x},${props.y})`}>
-          <Body kind={props.shape} r={r} fill={props.color ?? C.yellow} />
+          {props.children ?? (
+            <Body kind={props.shape} r={r} fill={props.color ?? C.yellow} />
+          )}
         </g>
       </g>
-      <circle cx={props.x} cy={pivotY} r={7} fill={C.navy} />
+      {!props.hideString && <circle cx={props.x} cy={pivotY} r={7} fill={C.navy} />}
     </g>
   );
 }
@@ -253,7 +308,9 @@ export function SpringWobble(props: ObjectProps) {
       transform={`translate(${props.x},${props.y}) rotate(${4 * w}) scale(${1 + 0.24 * w},${1 - 0.24 * w})`}
       opacity={p.opacity}
     >
-      <Body kind={props.shape} r={radius(props)} fill={props.color ?? C.teal} />
+      {props.children ?? (
+        <Body kind={props.shape} r={radius(props)} fill={props.color ?? C.teal} />
+      )}
     </g>
   );
 }
@@ -275,17 +332,33 @@ export function OrbitFloat(props: ObjectProps) {
         opacity={0.12}
       />
       <g transform={`translate(${props.x + drift},${props.y + bob})`}>
-        <Body kind={props.shape} r={r} fill={props.color ?? C.yellow} />
+        {props.children ?? (
+          <Body kind={props.shape} r={r} fill={props.color ?? C.yellow} />
+        )}
       </g>
     </g>
   );
 }
 
-export function MorphObject(props: ObjectProps) {
+export function MorphObject(
+  props: ObjectProps & { afterContent?: ReactNode },
+) {
   const p = useStyle(props);
   if (!p.visible) return null;
   const r = radius(props);
   const t = clamp01((p.local - 10) / 28);
+  if (props.children || props.afterContent) {
+    const squeeze = 1 - 0.18 * Math.sin(t * Math.PI);
+    return (
+      <g
+        transform={`translate(${props.x},${props.y}) scale(${squeeze},${1 / squeeze})`}
+        opacity={p.opacity}
+      >
+        <g opacity={1 - t}>{props.children}</g>
+        {props.afterContent && <g opacity={t}>{props.afterContent}</g>}
+      </g>
+    );
+  }
   return (
     <g transform={`translate(${props.x},${props.y})`} opacity={p.opacity}>
       <rect
@@ -308,19 +381,26 @@ export function SplitAssemble(props: ObjectProps) {
   if (!p.visible) return null;
   const r = radius(props);
   const pieces = 4;
+  const clipSpan = props.children ? r * 1.45 : r;
   return (
     <g transform={`translate(${props.x},${props.y})`} opacity={p.opacity}>
       <defs>
-        {Array.from({ length: pieces }, (_, i) => (
-          <clipPath key={i} id={`${id}-${i}`}>
-            <rect
-              x={-r + (i * 2 * r) / pieces}
-              y={-r}
-              width={(2 * r) / pieces}
-              height={2 * r}
-            />
-          </clipPath>
-        ))}
+        {Array.from({ length: pieces }, (_, i) => {
+          const sliceW = (2 * clipSpan) / pieces;
+          const x =
+            i === 0 && props.children
+              ? -clipSpan * 1.6
+              : -clipSpan + i * sliceW;
+          const width =
+            props.children && (i === 0 || i === pieces - 1)
+              ? sliceW + clipSpan * 0.6
+              : sliceW;
+          return (
+            <clipPath key={i} id={`${id}-${i}`}>
+              <rect x={x} y={-clipSpan} width={width} height={2 * clipSpan} />
+            </clipPath>
+          );
+        })}
       </defs>
       {Array.from({ length: pieces }, (_, i) => {
         const s = clamp01(
@@ -332,8 +412,14 @@ export function SplitAssemble(props: ObjectProps) {
         );
         const away = (1 - s) * (i % 2 === 0 ? -320 : 320);
         return (
-          <g key={i} clipPath={`url(#${id}-${i})`} transform={`translate(${away},${(1 - s) * (i % 2 === 0 ? 160 : -160)})`}>
-            <Body kind={props.shape} r={r} fill={props.color ?? C.yellow} />
+          <g
+            key={i}
+            clipPath={`url(#${id}-${i})`}
+            transform={`translate(${away},${(1 - s) * (i % 2 === 0 ? 160 : -160)})`}
+          >
+            {props.children ?? (
+              <Body kind={props.shape} r={r} fill={props.color ?? C.yellow} />
+            )}
           </g>
         );
       })}
@@ -341,34 +427,40 @@ export function SplitAssemble(props: ObjectProps) {
   );
 }
 
-export function GrowBuild(props: ObjectProps) {
+export function GrowBuild(
+  props: ObjectProps & { items?: readonly ReactNode[]; stepSize?: number },
+) {
   const p = useStyle(props);
   if (!p.visible) return null;
   const r = radius(props);
-  const step = r * 1.9;
+  const step = props.stepSize ?? r * 1.9;
+  const count = props.items ? props.items.length : 5;
   return (
     <g transform={`translate(${props.x},${props.y})`} opacity={p.opacity}>
-      {Array.from({ length: 5 }, (_, i) => {
-        const s = p.local <= 10 + i * 8
-          ? 0
-          : clamp01(
-              spring({
-                frame: p.local - 10 - i * 8,
-                fps: p.fps,
-                config: { damping: 11, stiffness: 180 },
-              }),
-            );
+      {Array.from({ length: count }, (_, i) => {
+        const s =
+          p.local <= 10 + i * 8
+            ? 0
+            : clamp01(
+                spring({
+                  frame: p.local - 10 - i * 8,
+                  fps: p.fps,
+                  config: { damping: 11, stiffness: 180 },
+                }),
+              );
         return (
           <g
             key={i}
             transform={`translate(0,${-i * step - r - (1 - s) * 260})`}
             opacity={clamp01(s * 3)}
           >
-            <Body
-              kind={props.shape}
-              r={r}
-              fill={[C.yellow, C.teal, C.yellow, C.red, C.teal][i]}
-            />
+            {props.items?.[i] ?? (
+              <Body
+                kind={props.shape}
+                r={r}
+                fill={[C.yellow, C.teal, C.yellow, C.red, C.teal][i % 5]}
+              />
+            )}
           </g>
         );
       })}
@@ -376,7 +468,9 @@ export function GrowBuild(props: ObjectProps) {
   );
 }
 
-export function FlipCard(props: ObjectProps & { frontContent?: ReactNode; backContent?: ReactNode }) {
+export function FlipCard(
+  props: ObjectProps & { frontContent?: ReactNode; backContent?: ReactNode },
+) {
   const p = useStyle(props);
   if (!p.visible) return null;
   const r = radius(props);
@@ -394,7 +488,7 @@ export function FlipCard(props: ObjectProps & { frontContent?: ReactNode; backCo
       transform={`translate(${props.x},${props.y}) scale(${Math.max(0.04, Math.abs(flat))},1)`}
       opacity={p.opacity}
     >
-      {(front ? props.frontContent : props.backContent) ?? (
+      {(front ? (props.frontContent ?? props.children) : props.backContent) ?? (
         <Body
           kind={front ? props.shape : props.shape === "circle" ? "square" : "circle"}
           r={r}
@@ -414,7 +508,9 @@ export function InflateDeflate(props: ObjectProps) {
       transform={`translate(${props.x},${props.y}) scale(${1 + 0.5 * swell},${1 + 0.42 * swell})`}
       opacity={p.opacity}
     >
-      <Body kind={props.shape} r={radius(props)} fill={props.color ?? C.teal} />
+      {props.children ?? (
+        <Body kind={props.shape} r={radius(props)} fill={props.color ?? C.teal} />
+      )}
     </g>
   );
 }
@@ -431,7 +527,12 @@ export function CharacterInteraction(props: ObjectProps) {
   const lean = 8 * push;
   return (
     <g opacity={p.opacity} strokeLinecap="round">
-      <g stroke={C.navy} strokeWidth={6} fill="none" transform={`rotate(${lean},${props.x},${props.y})`}>
+      <g
+        stroke={C.navy}
+        strokeWidth={6}
+        fill="none"
+        transform={`rotate(${lean},${props.x},${props.y})`}
+      >
         <circle cx={props.x} cy={props.y - 250} r={30} fill={C.white} />
         <line x1={props.x} y1={props.y - 220} x2={props.x} y2={props.y - 90} />
         <line x1={props.x} y1={props.y - 90} x2={props.x - 40} y2={props.y} />
@@ -439,19 +540,25 @@ export function CharacterInteraction(props: ObjectProps) {
         <line x1={props.x} y1={props.y - 190} x2={handX - r} y2={handY} />
       </g>
       <g transform={`translate(${handX},${handY})`}>
-        <Body kind={props.shape} r={r} fill={props.color ?? C.yellow} />
+        {props.children ?? (
+          <Body kind={props.shape} r={r} fill={props.color ?? C.yellow} />
+        )}
       </g>
     </g>
   );
 }
 
-export function ChainReaction(props: ObjectProps) {
+export function ChainReaction(
+  props: ObjectProps & { items?: readonly ReactNode[]; spacing?: number },
+) {
   const p = useStyle(props);
   if (!p.visible) return null;
   const r = radius(props);
+  const count = props.items ? props.items.length : 4;
+  const spacing = props.spacing ?? r * 2.3;
   return (
     <g opacity={p.opacity}>
-      {Array.from({ length: 4 }, (_, i) => {
+      {Array.from({ length: count }, (_, i) => {
         const tilt =
           clamp01(
             spring({
@@ -460,11 +567,13 @@ export function ChainReaction(props: ObjectProps) {
               config: { damping: 13, stiffness: 95 },
             }),
           ) * 78;
-        const cx = props.x + i * r * 2.3;
+        const cx = props.x + i * spacing;
         return (
           <g key={i} transform={`rotate(${tilt},${cx - r},${props.y + r})`}>
             <g transform={`translate(${cx},${props.y})`}>
-              <Body kind={props.shape} r={r} fill={i === 0 ? C.red : C.yellow} />
+              {props.items?.[i] ?? (
+                <Body kind={props.shape} r={r} fill={i === 0 ? C.red : C.yellow} />
+              )}
             </g>
           </g>
         );
@@ -473,24 +582,44 @@ export function ChainReaction(props: ObjectProps) {
   );
 }
 
-export function ConveyorFlow(props: ObjectProps) {
+export function ConveyorFlow(
+  props: ObjectProps & {
+    items?: readonly ReactNode[];
+    span?: number;
+    showBelt?: boolean;
+  },
+) {
   const p = useStyle(props);
   if (!p.visible) return null;
   const r = radius(props) * 0.8;
   const beltY = props.y + r + 10;
-  const span = 900;
+  const span = props.span ?? 900;
+  const count = props.items ? props.items.length : 4;
+  const gap = span / Math.max(1, count);
   return (
     <g opacity={p.opacity}>
-      <rect x={props.x - 40} y={beltY} width={span} height={12} rx={6} fill={C.line} opacity={0.5} />
-      {Array.from({ length: 4 }, (_, i) => {
-        const x = props.x + ((p.local * 4 + i * 240) % span);
+      {props.showBelt !== false && (
+        <rect
+          x={props.x - 40}
+          y={beltY}
+          width={span}
+          height={12}
+          rx={6}
+          fill={C.line}
+          opacity={0.5}
+        />
+      )}
+      {Array.from({ length: count }, (_, i) => {
+        const x = props.x + ((p.local * 4 + i * (props.items ? gap : 240)) % span);
         return (
           <g key={i} transform={`translate(${x},${props.y})`}>
-            <Body
-              kind={props.shape}
-              r={r}
-              fill={[C.yellow, C.teal, C.yellow, C.red][i]}
-            />
+            {props.items?.[i] ?? (
+              <Body
+                kind={props.shape}
+                r={r}
+                fill={[C.yellow, C.teal, C.yellow, C.red][i % 4]}
+              />
+            )}
           </g>
         );
       })}
@@ -498,25 +627,39 @@ export function ConveyorFlow(props: ObjectProps) {
   );
 }
 
-export function MagnetPull(props: ObjectProps) {
+export function MagnetPull(
+  props: ObjectProps & {
+    items?: readonly ReactNode[];
+    targetOffset?: { x: number; y: number };
+    targetSlot?: ReactNode;
+  },
+) {
   const p = useStyle(props);
   if (!p.visible) return null;
   const r = radius(props) * 0.4;
-  const target = { x: props.x + 420, y: props.y };
+  const target = {
+    x: props.x + (props.targetOffset?.x ?? 420),
+    y: props.y + (props.targetOffset?.y ?? 0),
+  };
+  const count = props.items ? props.items.length : 5;
   return (
     <g opacity={p.opacity}>
-      <rect
-        x={target.x - 90}
-        y={target.y - 70}
-        width={180}
-        height={140}
-        rx={16}
-        fill="none"
-        stroke={C.navy}
-        strokeWidth={5}
-        strokeDasharray="10 8"
-      />
-      {Array.from({ length: 5 }, (_, i) => {
+      {props.targetSlot ? (
+        <g transform={`translate(${target.x},${target.y})`}>{props.targetSlot}</g>
+      ) : (
+        <rect
+          x={target.x - 90}
+          y={target.y - 70}
+          width={180}
+          height={140}
+          rx={16}
+          fill="none"
+          stroke={C.navy}
+          strokeWidth={5}
+          strokeDasharray="10 8"
+        />
+      )}
+      {Array.from({ length: count }, (_, i) => {
         const s = clamp01(
           spring({
             frame: Math.max(0, p.local - 8 - i * 3),
@@ -533,7 +676,9 @@ export function MagnetPull(props: ObjectProps) {
             key={i}
             transform={`translate(${fromX + (toX - fromX) * s},${fromY + (toY - fromY) * s})`}
           >
-            <Body kind={props.shape} r={r} fill={C.yellow} strokeWidth={3} />
+            {props.items?.[i] ?? (
+              <Body kind={props.shape} r={r} fill={C.yellow} strokeWidth={3} />
+            )}
           </g>
         );
       })}
@@ -541,7 +686,9 @@ export function MagnetPull(props: ObjectProps) {
   );
 }
 
-export function ParallaxLayers(props: ObjectProps) {
+export function ParallaxLayers(
+  props: ObjectProps & { layerContent?: readonly [ReactNode, ReactNode, ReactNode] },
+) {
   const p = useStyle(props);
   if (!p.visible) return null;
   const r = radius(props);
@@ -555,22 +702,34 @@ export function ParallaxLayers(props: ObjectProps) {
     <g opacity={p.opacity}>
       {layers.map((layer, li) => (
         <g key={li}>
-          {Array.from({ length: 4 }, (_, i) => {
-            const x = props.x - 200 + ((i * 420 + pan * layer.speed) % 1680);
-            return (
-              <g
-                key={i}
-                transform={`translate(${x},${layer.y}) scale(${layer.size})`}
-              >
-                <Body
-                  kind={li === 1 ? (props.shape === "circle" ? "square" : "circle") : props.shape}
-                  r={r}
-                  fill={layer.color}
-                  strokeWidth={3}
-                />
-              </g>
-            );
-          })}
+          {props.layerContent?.[li] ? (
+            <g transform={`translate(${props.x + pan * layer.speed},${layer.y})`}>
+              {props.layerContent[li]}
+            </g>
+          ) : (
+            Array.from({ length: 4 }, (_, i) => {
+              const x = props.x - 200 + ((i * 420 + pan * layer.speed) % 1680);
+              return (
+                <g
+                  key={i}
+                  transform={`translate(${x},${layer.y}) scale(${layer.size})`}
+                >
+                  <Body
+                    kind={
+                      li === 1
+                        ? props.shape === "circle"
+                          ? "square"
+                          : "circle"
+                        : props.shape
+                    }
+                    r={r}
+                    fill={layer.color}
+                    strokeWidth={3}
+                  />
+                </g>
+              );
+            })
+          )}
         </g>
       ))}
     </g>

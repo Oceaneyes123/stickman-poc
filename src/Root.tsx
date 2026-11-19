@@ -17,6 +17,16 @@ import {
   DOCUMENTARY_GALLERY_DURATION,
 } from "./documentary/Gallery";
 import {
+  DYNAMIC_MOTION_GALLERY_DURATION,
+  DYNAMIC_SHOWCASE_PILOT_DURATION,
+  DynamicMotionGallery,
+  DynamicShowcasePilot,
+} from "./documentary/DynamicMotionGallery";
+import {
+  CUTAWAY_GALLERY_DURATION as GENERIC_CUTAWAY_GALLERY_DURATION,
+  CutawayGallery,
+} from "./cutaways";
+import {
   BNPL_DEMO_DURATION,
   BnplFeelsCheaperDemo,
   DocumentaryMixedMediaShowcase,
@@ -53,6 +63,30 @@ export const RemotionRoot: React.FC = () => {
         id="DocumentaryGallery"
         component={DocumentaryGallery}
         durationInFrames={DOCUMENTARY_GALLERY_DURATION}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+      <Composition
+        id="CutawayGallery"
+        component={CutawayGallery}
+        durationInFrames={GENERIC_CUTAWAY_GALLERY_DURATION}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+      <Composition
+        id="DynamicMotionGallery"
+        component={DynamicMotionGallery}
+        durationInFrames={DYNAMIC_MOTION_GALLERY_DURATION}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+      <Composition
+        id="DynamicShowcasePilot"
+        component={DynamicShowcasePilot}
+        durationInFrames={DYNAMIC_SHOWCASE_PILOT_DURATION}
         fps={30}
         width={1920}
         height={1080}

@@ -223,6 +223,8 @@ export const SFX_CUES = {
 } as const satisfies Record<string, SfxCueMeta>;
 
 export type SfxName = keyof typeof SFX_CUES;
+/** [frame in the current sequence, cue name, volume override] */
+export type PlacedSfx = [frame: number, name: SfxName, volume?: number];
 
 export const SFX_NAMES = Object.keys(SFX_CUES) as SfxName[];
 

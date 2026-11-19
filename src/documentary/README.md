@@ -6,18 +6,22 @@ Reusable local Remotion + React + strict TypeScript modules for **Premium Editor
 
 | Subdirectory | Purpose | Key Exports |
 |---|---|---|
-| `core/` | Pure frame-driven math, safe margins, focus zoom, continuity, Inter glyph metrics | `LAYOUTS`, `region`, `SAFE_RECT`, `withinSideSafe`, `sample`, `move`, `chain`, `ramp`, `measureTextWidth`, `wrapText`, `checkTextFit`, `sampleFocusCamera`, `validateContinuity` |
+| `core/` | Pure frame-driven math, safe margins, focus zoom, continuity, looks, motion profiles, depth camera, sub-stages, bridges, Inter metrics | `LAYOUTS`, `LOOKS`, `MOTION_PROFILES`, `region`, `getRegionEntryDirection`, `sampleSpring`, `sampleMotionProfile`, `sampleCameraRig`, `cameraLayerTransform`, `resolveActiveStage`, `findMatchingBridges`, `sampleBridgeRect`, `SAFE_RECT`, `withinSideSafe`, `sample`, `move`, `chain`, `ramp`, `measureTextWidth`, `wrapText`, `checkTextFit`, `sampleFocusCamera`, `validateContinuity` |
 | `assets/` | Local asset manifest schema, offline registry & SHA-256 verification | `createAssetRegistry`, `validateManifestStructure`, `validateManifestFiles`, `ASSET_VALIDATION_DISCLAIMER` |
-| `timeline.ts` | Documentary storyboard compilation over `src/timeline/compiler.ts` | `compileDocumentaryTimeline` |
-| `composer/` | Layered mixed-media scene composition & scene-to-scene joins | `DocumentaryScene`, `LayerComposer`, `MediaLayer`, `SceneLayout`, `SceneBackdrop`, `SceneTimeline`, `SceneJoin` |
+| `timeline.ts` | Documentary storyboard compilation over `src/timeline/compiler.ts` (including `wordId` anchoring & look/profile metadata) | `compileDocumentaryTimeline` |
+| `sfxCompiler.ts` | Motion-coupled SFX compiler for transitions, beats, cursor waypoints, and cutaways | `compileDocumentarySfx` |
+| `composer/` | Layered mixed-media scene composition, depth parallax, live overlaps, match-move bridges & `MotionBox` | `DocumentaryScene`, `LayerComposer`, `MediaLayer`, `SceneLayout`, `SceneBackdrop`, `SceneTimeline`, `SceneJoin`, `MotionBox`, `MotionGroup`, `StaggerGroup` |
+| `actors/` | Reusable interactive motion actors, proportional bars, presenter framing & end card | `CursorActor`, `SvgCursorActor`, `DrawConnector`, `ThresholdMeter`, `ProportionalBarComparison`, `PresenterStage`, `DocumentaryEndCard` |
+| `stages/` | 7 composable anti-template stage builders with `extraLayers` escape hatches | `createComparisonStage`, `createEvidenceHighlightStage`, `createPolicyMatrixStage`, `createMechanismFlowStage`, `createInteractiveUiStage`, `createPresenterSplitStage`, `createCutawayStage` |
+| `../cutaways/` | 15 parameterized kinetic cutaway treatments & gallery (`CutawayGallery`, 990f) | `KineticCutaway`, `CutawayGallery`, `CUTAWAY_VARIANTS`, `CUTAWAY_GALLERY_DURATION` |
 | `ui/` | 10 fictional-branded financial UI components | `BankingAppScreen`, `AccountOverview`, `TransactionHistory`, `PaymentStatusModal`, `CheckoutInterface`, `BnplOfferCard`, `SubscriptionDashboard`, `CreditCardStatement`, `LoanPaymentBreakdown`, `MobileNotificationStack` |
 | `evidence/` | Document, receipt, statement & comparison viewers with citations and redactions | `DocumentViewer`, `ReceiptViewer`, `StatementViewer`, `EvidenceHighlight`, `DocumentComparison`, `SourceCitation` |
 | `diagrams/` | Financial mechanism and cause-effect diagrams | `MoneyFlow`, `ProcessDiagram`, `DebtCycle`, `FinancialRelationship`, `CauseEffectSequence` |
 | `objects/` | Choreography wrappers over `src/objects/motion.tsx`, `src/finance/components.tsx`, and `BuyNowArt.tsx` | `ProductCardObject`, `ProductIllustration`, `InstallmentCardStack`, `DocumentaryCalendar`, `BillAndReceiptObject`, `CurrencyTokenGroup`, `BankCardObject`, `PhoneDeviceObject` |
 | `typography/` | Selective editorial headings, numeric cards, callouts, annotations | `DocumentarySectionHeading`, `FinancialLabelCard`, `ExplanatoryCallout`, `ContextualAnnotation`, `SelectiveEmphasisText`, `DocumentaryComparisonNumbers` |
-| `presets/` | Reusable multi-layer scene factories | `createProductFramingScene`, `createCheckoutSplitScene`, `createCalendarConvergenceScene`, `createCommitmentComparisonScene` |
-| `qa.ts` | Layout safe-margin, text overflow, asset, continuity, and heuristic visual-variety QA | `runDocumentaryQa`, `auditVisualVariety` |
-| `Gallery.tsx` | 16-panel component gallery (`DocumentaryGallery`, 1440 frames) | `DocumentaryGallery`, `DOCUMENTARY_GALLERY_DURATION` |
+| `presets/` | Legacy multi-layer scene factories (kept for backwards compatibility) | `createProductFramingScene`, `createCheckoutSplitScene`, `createCalendarConvergenceScene`, `createCommitmentComparisonScene` |
+| `qa.ts` | Layout safe-margin, text overflow, asset, continuity, and multi-axis visual-variety QA | `runDocumentaryQa`, `auditVisualVariety` |
+| `Gallery.tsx` & `DynamicMotionGallery.tsx` | Component galleries & 6-scene pilot (`DocumentaryGallery` 1440f, `DynamicMotionGallery` 1080f, `DynamicShowcasePilot` 540f) | `DocumentaryGallery`, `DynamicMotionGallery`, `DynamicShowcasePilot` |
 | `demo/` | Working BNPL demonstration (`BnplFeelsCheaperDemo`, 1560f / 52s) & mixed-media acceptance scene (`DocumentaryMixedMediaShowcase`, 180f) | `BnplFeelsCheaperDemo`, `DocumentaryMixedMediaShowcase` |
 
 ## How to Combine Components in a New Episode

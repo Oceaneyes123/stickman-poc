@@ -121,6 +121,80 @@ export const LAYOUTS = {
     stage: { x: S.x, y: S.y, width: S.width, height: 700 },
     lower: { x: S.x, y: 800, width: 1100, height: 180 },
   },
+  "asymmetric-65-35": {
+    full: { x: 0, y: 0, ...FRAME },
+    primary: {
+      x: S.x,
+      y: S.y,
+      width: Math.round(S.width * 0.65 - GUTTER / 2),
+      height: S.height,
+    },
+    rail: {
+      x: S.x + Math.round(S.width * 0.65 + GUTTER / 2),
+      y: S.y,
+      width: S.width - Math.round(S.width * 0.65 + GUTTER / 2),
+      height: S.height,
+    },
+  },
+  "asymmetric-35-65": {
+    full: { x: 0, y: 0, ...FRAME },
+    rail: {
+      x: S.x,
+      y: S.y,
+      width: Math.round(S.width * 0.35 - GUTTER / 2),
+      height: S.height,
+    },
+    primary: {
+      x: S.x + Math.round(S.width * 0.35 + GUTTER / 2),
+      y: S.y,
+      width: S.width - Math.round(S.width * 0.35 + GUTTER / 2),
+      height: S.height,
+    },
+  },
+  "editorial-top-stage": {
+    full: { x: 0, y: 0, ...FRAME },
+    header: { x: S.x, y: S.y, width: S.width, height: 190 },
+    stage: { x: S.x, y: S.y + 222, width: S.width, height: S.height - 222 },
+  },
+  "diagonal-flow": {
+    full: { x: 0, y: 0, ...FRAME },
+    origin: { x: S.x, y: S.y + 30, width: 520, height: 380 },
+    bridge: { x: S.x + 604, y: S.y + 270, width: 520, height: 380 },
+    outcome: {
+      x: S.x + S.width - 520,
+      y: S.y + S.height - 410,
+      width: 520,
+      height: 380,
+    },
+  },
+  "rail-timeline": {
+    full: { x: 0, y: 0, ...FRAME },
+    headline: { x: S.x, y: S.y, width: 520, height: S.height },
+    track: { x: S.x + 568, y: S.y, width: S.width - 568, height: 420 },
+    detail: {
+      x: S.x + 568,
+      y: S.y + 460,
+      width: S.width - 568,
+      height: S.height - 460,
+    },
+  },
+  "presenter-split": {
+    full: { x: 0, y: 0, ...FRAME },
+    presenter: { x: S.x, y: S.y, width: 720, height: S.height },
+    graphic: {
+      x: 896,
+      y: S.y,
+      width: S.x + S.width - 896,
+      height: S.height,
+    },
+  },
+  "hero-annotations": {
+    full: { x: 0, y: 0, ...FRAME },
+    hero: { x: 520, y: 170, width: 880, height: 560 },
+    leftNote: { x: S.x, y: 240, width: 380, height: 420 },
+    rightNote: { x: 1444, y: 240, width: 380, height: 420 },
+    bottomNote: { x: 360, y: 790, width: 1200, height: 210 },
+  },
 } as const satisfies Record<string, Record<string, Rect>>;
 
 export type LayoutName = keyof typeof LAYOUTS;
@@ -131,4 +205,22 @@ export function region(layout: LayoutName, name: string): Rect {
   const found = regions[name];
   if (!found) throw new Error(`Layout ${layout} has no region "${name}"`);
   return found;
+}
+
+export function getRegionEntryDirection(
+  rect: Rect,
+  frame: { width: number; height: number } = FRAME,
+): "left" | "right" | "up" | "down" | "scale" {
+  const cx = (rect.x + rect.width / 2) / frame.width;
+  const cy = (rect.y + rect.height / 2) / frame.height;
+  if (rect.width >= frame.width * 0.7 && rect.height >= frame.height * 0.7) {
+    return "scale";
+  }
+  if (cx < 0.38 && rect.width < frame.width * 0.55) return "left";
+  if (cx > 0.62 && rect.width < frame.width * 0.55) return "right";
+  if (cy < 0.34) return "down";
+  if (cy > 0.68) return "up";
+  return rect.width >= frame.width * 0.45 && rect.height >= frame.height * 0.45
+    ? "scale"
+    : "up";
 }

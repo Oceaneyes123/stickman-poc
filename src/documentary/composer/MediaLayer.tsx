@@ -10,9 +10,11 @@ import {
   type Rect,
 } from "../core/geometry";
 import { clamp01, ramp, sample } from "../core/keyframes";
+import { getLook, type LookTokens } from "../core/looks";
+import type { MotionProfileId } from "../core/motionProfiles";
 import type { CompiledDocumentaryBeat } from "../timeline";
 import { SceneBackdrop } from "./SceneLayout";
-import type { LayerSpec, MaskShape } from "./types";
+import type { LayerRenderContext, LayerSpec, MaskShape } from "./types";
 
 const resolveBox = (
   regionRef: string | Rect | undefined,
@@ -104,6 +106,12 @@ export function MediaLayer({
   zIndex,
   beats = [],
   sharedState = {},
+  look,
+  motionProfile = "editorial-crisp",
+  stageIndex = -1,
+  activeStageId = null,
+  stageFrame,
+  stageState = {},
   assetRegistry,
   allowPendingAssets = false,
 }: {
@@ -115,6 +123,12 @@ export function MediaLayer({
   zIndex: number;
   beats?: readonly CompiledDocumentaryBeat[];
   sharedState?: Record<string, unknown>;
+  look?: LookTokens;
+  motionProfile?: MotionProfileId;
+  stageIndex?: number;
+  activeStageId?: string | null;
+  stageFrame?: number;
+  stageState?: Record<string, unknown>;
   assetRegistry?: AssetRegistry;
   allowPendingAssets?: boolean;
 }) {
@@ -146,7 +160,7 @@ export function MediaLayer({
   const maskClip = maskToClipPath(t?.mask);
   const clipPath = maskClip ?? cropClip;
 
-  const ctx = {
+  const ctx: LayerRenderContext = {
     sceneId,
     sceneFrame,
     layerFrame: sceneFrame - from,
@@ -155,6 +169,12 @@ export function MediaLayer({
     box,
     beats,
     sharedState,
+    look: look ?? getLook("midnight-blueprint"),
+    motionProfile,
+    stageIndex,
+    activeStageId,
+    stageFrame: stageFrame ?? sceneFrame,
+    stageState,
   };
 
   let content = null;

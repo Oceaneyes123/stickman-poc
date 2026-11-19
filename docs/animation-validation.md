@@ -1,5 +1,23 @@
 # Current animation validation
 
+## Composable Anti-Template Documentary Engine (Phases 1–4) — 2026-11-19
+
+Implemented the four-phase composable documentary motion engine without modifying existing episodes (`001`–`004`), existing galleries, or uncommitted episode-004 changes:
+
+- **Phase 1 (Foundation primitives & actors):** Upgraded `src/objects/motion.tsx` primitives to wrap real SVG `children`, `items`, `layerContent`, and `pathD` while retaining `<Body>` defaults; added pure closed-form `sampleSpring` / 5 `MOTION_PROFILES` (`src/documentary/core/motionProfiles.ts`) and HTML/SVG `MotionBox`, `MotionGroup`, `StaggerGroup` (`src/documentary/core/MotionWrapper.tsx`); extracted reusable actors (`src/documentary/actors/`: `CursorActor`/`SvgCursorActor`, `DrawConnector`, `ThresholdMeter`, `ProportionalBarComparison`, `PresenterStage`, `DocumentaryEndCard`); generalized the 15 kinetic cutaways into data-driven `src/cutaways/`.
+- **Phase 2 (Act Looks, spatial grammar, depth camera & bridges):** Added 7 semantic-preserving surface Looks (`src/documentary/core/looks.ts`), 7 asymmetric/borderless `LAYOUTS` + `getRegionEntryDirection` (`src/documentary/core/geometry.ts`), depth-parallax `sampleCameraRig`/`cameraLayerTransform` (`src/documentary/core/camera.ts`), cumulative `resolveActiveStage` (`src/documentary/core/stages.ts`), and `findMatchingBridges`/`sampleBridgeRect` (`src/documentary/core/bridge.ts`), wired into `src/documentary/composer/`.
+- **Phase 3 (Word anchoring, auto-SFX & composable stage archetypes):** Added `wordId`/`wordEdge` anchoring and look/profile/sfx metadata to `src/documentary/timeline.ts`; added `compileDocumentarySfx` (`src/documentary/sfxCompiler.ts`); added 7 composable stage builders (`src/documentary/stages/`: `ComparisonStage`, `EvidenceHighlightStage`, `PolicyMatrixStage`, `MechanismFlowStage`, `InteractiveUiStage`, `PresenterSplitStage`, `CutawayStage`).
+- **Phase 4 (Multi-axis QA, galleries & pilot):** Expanded `auditVisualVariety` in `src/documentary/qa.ts` (`repeated-polarity`, `repeated-container`, `hard-cut-run`, `static-long-scene`, `hardCutRatio`); added `CutawayGallery` (`990f`), `DynamicMotionGallery` (`1080f`), and 6-scene `DynamicShowcasePilot` (`540f`) in `src/Root.tsx`, plus regression tests in `tests/dynamic-template.test.ts`.
+
+**Rendered preview stills & visual review (2026-11-19):**
+- Rendered 12 0.5-scale stills (`out/dynamic-template-review/gallery-f045/225/315/510/865/945.png` and `pilot-f048/098/225/310/410/500.png`), visually inspected them, and fixed `evidence-desk` cell ink contrast (`surfaceInk`), `match-position` bridge ghosting/fade, scale balance beam tilt direction, and light-surface eyebrow/pill contrast.
+
+**Verification & approval boundaries:**
+- `npm run lint` (`eslint src scripts && tsc`): 0 errors, 0 warnings.
+- Node test suites (`tests/dynamic-template.test.ts`, `tests/documentary.test.ts`, `tests/production.test.ts`, `tests/motion.test.ts`, `tests/typography.test.ts`, `tests/sfx.test.ts`, `tests/free-shipping-opening.test.ts`, `tests/free-shipping-full-film.test.ts`, `tests/free-shipping-audio.test.ts`), `npm run test:timing`, `npm run documentary:qa`, and `npx remotion compositions src/index.ts` passed.
+- Pre-existing unrelated baseline failure untouched: `tests/subscription-audio.test.ts` fails locally due to missing `public/subscription-full/ambient.wav`.
+- Human creative approval, full-motion video playback review, and audio listening approval remain separate and pending.
+
 ## P0 Documentary Production Components & BNPL Demonstration — 2026-11-18
 
 Implemented the reusable **Premium Editorial Finance Documentary** component library under `src/documentary/` (`core`, `assets`, `timeline.ts`, `composer`, `ui`, `evidence`, `diagrams`, `objects`, `typography`, `presets`, `qa.ts`, `Gallery.tsx`, `demo/BnplFeelsCheaperDemo.tsx`) alongside additive extensions in `src/finance/math.ts` and `src/timeline/types.ts` / `validation.ts`, plus CLI QA/render scripts in `scripts/documentary/`.

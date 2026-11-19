@@ -54,6 +54,7 @@ run.lock
 # Local Remotion audio copies and generated demo media
 /public/free-shipping-opening/narration.wav
 /public/free-shipping-full/narration.wav
+/public/free-shipping-full/ambient.wav
 /public/subscription-*/narration.wav
 /public/subscription-full/narration-with-cta.wav
 /public/subscription-full/ambient.wav

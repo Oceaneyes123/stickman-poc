@@ -44,6 +44,7 @@ import {
   freeShippingOpeningTimeline,
   freeShippingOrder,
 } from "./freeShippingOpeningTimeline";
+import { FreeShippingOpeningSound } from "./freeShippingSound";
 
 export {
   A_ROLL_FIRST_SEGMENT_FRAMES,
@@ -2557,6 +2558,7 @@ export const FreeShippingOpeningVisuals: React.FC = () => (
 export const FreeShippingOpening: React.FC = () => (
   <AbsoluteFill>
     <Audio src={staticFile("free-shipping-opening/narration.wav")} />
+    <FreeShippingOpeningSound />
     <FreeShippingOpeningVisuals />
   </AbsoluteFill>
 );

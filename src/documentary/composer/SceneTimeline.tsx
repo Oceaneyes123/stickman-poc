@@ -1,8 +1,16 @@
 import type { ReactNode } from "react";
 import { AbsoluteFill, useCurrentFrame } from "remotion";
-import { C } from "../../design/tokens";
+import { C, font } from "../../design/tokens";
 import type { TransitionId } from "../../transitions";
-import { clamp01 } from "../core/keyframes";
+import { findMatchingBridges, sampleBridgeRect } from "../core/bridge";
+import type { Rect } from "../core/geometry";
+import { clamp01, EASINGS } from "../core/keyframes";
+
+export type TimelineBridgeElement = {
+  id: string;
+  rect: Rect;
+  render: (rect: Rect, progress: number) => ReactNode;
+};
 
 export type TimelineEntry = {
   id: string;
@@ -10,7 +18,9 @@ export type TimelineEntry = {
   durationInFrames: number;
   join?: TransitionId;
   joinFrames?: number;
-  render: (sceneFrame: number) => ReactNode;
+  liveOverlap?: boolean;
+  bridges?: readonly TimelineBridgeElement[];
+  render: (sceneFrame: number, opts?: { isBridgeJoin: boolean }) => ReactNode;
 };
 
 /**
@@ -217,15 +227,85 @@ export function SceneTimeline({
   if (hasJoin) {
     const prevScene = scenes[activeIndex - 1];
     const progress = clamp01((localFrame + 0.5) / Math.max(1, joinFrames));
+    const prevFrame = currentScene.liveOverlap
+      ? Math.min(
+          prevScene.durationInFrames - 1,
+          Math.max(0, prevScene.durationInFrames - joinFrames + localFrame),
+        )
+      : prevScene.durationInFrames - 1;
+
+    const isMatchJoin =
+      currentScene.join === "match-position" ||
+      currentScene.join === "match-shape" ||
+      currentScene.join === "match-number";
+    const matchedBridges = isMatchJoin
+      ? findMatchingBridges(prevScene.bridges, currentScene.bridges)
+      : [];
+
+    if (matchedBridges.length > 0) {
+      const nextBridgeById = new Map(
+        (currentScene.bridges ?? []).map((b) => [b.id, b]),
+      );
+      const easedP = EASINGS.inOut(progress);
+      const wipeLeftToRight =
+        matchedBridges[0].toRect.x >= matchedBridges[0].fromRect.x;
+      return (
+        <AbsoluteFill>
+          <AbsoluteFill>
+            {prevScene.render(prevFrame, { isBridgeJoin: true })}
+          </AbsoluteFill>
+          <AbsoluteFill
+            style={{
+              clipPath: wipeLeftToRight
+                ? `inset(0 ${Math.round((1 - easedP) * 1000) / 10}% 0 0)`
+                : `inset(0 0 0 ${Math.round((1 - easedP) * 1000) / 10}%)`,
+            }}
+          >
+            {currentScene.render(localFrame, { isBridgeJoin: true })}
+          </AbsoluteFill>
+          <AbsoluteFill style={{ pointerEvents: "none", fontFamily: font.sans }}>
+            {matchedBridges.map((match) => {
+              const bridge = nextBridgeById.get(match.id);
+              if (!bridge) return null;
+              const rect = sampleBridgeRect(
+                match.fromRect,
+                match.toRect,
+                progress,
+                "inOut",
+              );
+              return (
+                <div
+                  key={match.id}
+                  style={{
+                    position: "absolute",
+                    left: rect.x,
+                    top: rect.y,
+                    width: rect.width,
+                    height: rect.height,
+                  }}
+                >
+                  {bridge.render(rect, progress)}
+                </div>
+              );
+            })}
+          </AbsoluteFill>
+        </AbsoluteFill>
+      );
+    }
+
     return (
       <SceneJoin
         id={currentScene.join}
         progress={progress}
-        before={prevScene.render(prevScene.durationInFrames - 1)}
-        after={currentScene.render(localFrame)}
+        before={prevScene.render(prevFrame, { isBridgeJoin: false })}
+        after={currentScene.render(localFrame, { isBridgeJoin: false })}
       />
     );
   }
 
-  return <AbsoluteFill>{currentScene.render(localFrame)}</AbsoluteFill>;
+  return (
+    <AbsoluteFill>
+      {currentScene.render(localFrame, { isBridgeJoin: false })}
+    </AbsoluteFill>
+  );
 }

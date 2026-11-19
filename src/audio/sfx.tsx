@@ -10,15 +10,12 @@
  */
 import { Audio } from "@remotion/media";
 import { staticFile } from "remotion";
-import { SFX_CUES, type SfxName } from "./cues";
+import { SFX_CUES, type PlacedSfx, type SfxName } from "./cues";
 
 export { SFX_CUES, SFX_GROUPS, SFX_NAMES, sfxCuesIn } from "./cues";
-export type { SfxCategory, SfxCueMeta, SfxName } from "./cues";
+export type { PlacedSfx, SfxCategory, SfxCueMeta, SfxName } from "./cues";
 
 export const sfxSrc = (name: SfxName) => staticFile(`sfx/${name}.wav`);
-
-/** [frame in the current sequence, cue name, volume override] */
-export type PlacedSfx = [frame: number, name: SfxName, volume?: number];
 
 export const Sfx = ({
   name,

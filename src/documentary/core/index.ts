@@ -4,3 +4,8 @@ export * from "./interMetrics.ts";
 export * from "./textMetrics.ts";
 export * from "./focus.ts";
 export * from "./continuity.ts";
+export * from "./motionProfiles.ts";
+export * from "./looks.ts";
+export * from "./camera.ts";
+export * from "./stages.ts";
+export * from "./bridge.ts";

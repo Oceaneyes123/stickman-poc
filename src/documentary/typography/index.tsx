@@ -45,11 +45,15 @@ export function DocumentarySectionHeading({
       {eyebrow && (
         <div
           style={{
-            fontSize: 18,
+            display: "inline-block",
+            fontSize: 16,
             fontWeight: 800,
             letterSpacing: 1.4,
             textTransform: "uppercase",
-            color: C.yellow,
+            color: onDark ? C.yellow : C.navy,
+            background: onDark ? "transparent" : C.yellow,
+            padding: onDark ? 0 : "3px 10px",
+            borderRadius: onDark ? 0 : 6,
             marginBottom: 8,
           }}
         >

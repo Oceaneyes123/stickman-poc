@@ -16,6 +16,7 @@ export function DocumentaryScene({
   return (
     <SceneLayout
       layout={scene.layout}
+      look={scene.look}
       backdrop={scene.backdrop}
       debugSafeMargins={scene.debugSafeMargins}
     >
@@ -26,6 +27,10 @@ export function DocumentaryScene({
         sceneFrame={sceneFrame}
         sceneDuration={scene.durationInFrames}
         focusTargets={scene.focusTargets}
+        camera={scene.camera}
+        stages={scene.stages}
+        look={scene.look ?? scene.backdrop?.look}
+        motionProfile={scene.motionProfile}
         beats={scene.beats}
         sharedState={scene.sharedState}
         assetRegistry={scene.assetRegistry}

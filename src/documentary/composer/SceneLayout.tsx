@@ -1,11 +1,12 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { AbsoluteFill } from "remotion";
 import { C, font } from "../../design/tokens";
 import { FRAME, LAYOUTS, SAFE_RECT, type LayoutName } from "../core/geometry";
-import type { SceneBackdropSpec } from "./types";
+import { getLook, lookCssVars, type LookId } from "../core/looks";
+import type { SceneBackdropPreset, SceneBackdropSpec } from "./types";
 
 const BACKDROP_THEMES: Record<
-  SceneBackdropSpec["preset"],
+  SceneBackdropPreset,
   { bg: string; secondary: string; grid: string }
 > = {
   "editorial-navy": {
@@ -35,9 +36,188 @@ const BACKDROP_THEMES: Record<
   },
 };
 
+function LookSurfacePattern({
+  lookId,
+  hairline,
+}: {
+  lookId: LookId;
+  hairline: string;
+}) {
+  const look = getLook(lookId);
+  if (look.pattern === "none") return null;
+
+  if (look.pattern === "split-pane") {
+    return (
+      <svg
+        width={FRAME.width}
+        height={FRAME.height}
+        viewBox={`0 0 ${FRAME.width} ${FRAME.height}`}
+        style={{ position: "absolute", inset: 0, pointerEvents: "none" }}
+      >
+        <line
+          x1={864}
+          y1={0}
+          x2={864}
+          y2={FRAME.height}
+          stroke={hairline}
+          strokeWidth={2}
+        />
+      </svg>
+    );
+  }
+
+  if (look.pattern === "paper-grain") {
+    return (
+      <svg
+        width={FRAME.width}
+        height={FRAME.height}
+        viewBox={`0 0 ${FRAME.width} ${FRAME.height}`}
+        style={{ position: "absolute", inset: 0, pointerEvents: "none" }}
+      >
+        {Array.from({ length: 14 }, (_, i) => (
+          <line
+            key={`rule-${i}`}
+            x1={0}
+            y1={72 * (i + 1)}
+            x2={FRAME.width}
+            y2={72 * (i + 1)}
+            stroke={hairline}
+            strokeWidth={1}
+          />
+        ))}
+      </svg>
+    );
+  }
+
+  if (look.pattern === "dot-matrix") {
+    return (
+      <svg
+        width={FRAME.width}
+        height={FRAME.height}
+        viewBox={`0 0 ${FRAME.width} ${FRAME.height}`}
+        style={{ position: "absolute", inset: 0, pointerEvents: "none" }}
+      >
+        <defs>
+          <pattern
+            id={`dot-mat-${lookId}`}
+            width="64"
+            height="64"
+            patternUnits="userSpaceOnUse"
+          >
+            <circle cx="16" cy="16" r="1.6" fill={hairline} />
+          </pattern>
+        </defs>
+        <rect width={FRAME.width} height={FRAME.height} fill={`url(#dot-mat-${lookId})`} />
+      </svg>
+    );
+  }
+
+  if (look.pattern === "diagonal-rules") {
+    return (
+      <svg
+        width={FRAME.width}
+        height={FRAME.height}
+        viewBox={`0 0 ${FRAME.width} ${FRAME.height}`}
+        style={{ position: "absolute", inset: 0, pointerEvents: "none" }}
+      >
+        <defs>
+          <pattern
+            id={`diag-${lookId}`}
+            width="96"
+            height="96"
+            patternUnits="userSpaceOnUse"
+            patternTransform="rotate(24)"
+          >
+            <line x1="0" y1="0" x2="0" y2="96" stroke={hairline} strokeWidth="1" />
+          </pattern>
+        </defs>
+        <rect width={FRAME.width} height={FRAME.height} fill={`url(#diag-${lookId})`} />
+      </svg>
+    );
+  }
+
+  return (
+    <svg
+      width={FRAME.width}
+      height={FRAME.height}
+      viewBox={`0 0 ${FRAME.width} ${FRAME.height}`}
+      style={{ position: "absolute", inset: 0, pointerEvents: "none" }}
+    >
+      {Array.from({ length: 16 }, (_, i) => (
+        <line
+          key={`v-${i}`}
+          x1={120 * (i + 1)}
+          y1={0}
+          x2={120 * (i + 1)}
+          y2={FRAME.height}
+          stroke={hairline}
+          strokeWidth={1}
+        />
+      ))}
+      {Array.from({ length: 9 }, (_, i) => (
+        <line
+          key={`h-${i}`}
+          x1={0}
+          y1={120 * (i + 1)}
+          x2={FRAME.width}
+          y2={120 * (i + 1)}
+          stroke={hairline}
+          strokeWidth={1}
+        />
+      ))}
+    </svg>
+  );
+}
+
 export function SceneBackdrop({ spec }: { spec: SceneBackdropSpec }) {
-  const theme = BACKDROP_THEMES[spec.preset];
-  const isSplit = spec.preset === "split-board";
+  if (spec.look) {
+    const look = getLook(spec.look);
+    const isSplit = look.id === "split-contrast";
+    const showPattern = spec.gridLines !== false;
+    const showVignette = spec.vignette ?? look.id === "evidence-desk";
+
+    return (
+      <AbsoluteFill
+        style={{
+          background: isSplit
+            ? `linear-gradient(90deg, ${look.bg} 0%, ${look.bg} 45%, ${look.bgSecondary} 45%, ${look.bgSecondary} 100%)`
+            : `radial-gradient(circle at 26% 20%, ${look.bgSecondary} 0%, ${look.bg} 74%)`,
+          fontFamily: font,
+        }}
+      >
+        {showPattern && (
+          <LookSurfacePattern lookId={look.id} hairline={look.hairline} />
+        )}
+        {spec.accentColor && (
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              height: 6,
+              background: spec.accentColor,
+            }}
+          />
+        )}
+        {showVignette && (
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background:
+                "radial-gradient(circle at 50% 50%, transparent 56%, rgba(8, 16, 28, 0.36) 100%)",
+              pointerEvents: "none",
+            }}
+          />
+        )}
+      </AbsoluteFill>
+    );
+  }
+
+  const preset = spec.preset ?? "editorial-navy";
+  const theme = BACKDROP_THEMES[preset];
+  const isSplit = preset === "split-board";
 
   return (
     <AbsoluteFill
@@ -108,16 +288,24 @@ export function SceneBackdrop({ spec }: { spec: SceneBackdropSpec }) {
 
 export function SceneLayout({
   layout,
+  look,
   backdrop,
   debugSafeMargins = false,
   children,
 }: {
   layout: LayoutName;
+  look?: LookId;
   backdrop?: SceneBackdropSpec;
   debugSafeMargins?: boolean;
   children: ReactNode;
 }) {
   const regions = LAYOUTS[layout];
+  const resolvedLookId = look ?? backdrop?.look;
+  const cssVars = resolvedLookId
+    ? (lookCssVars(getLook(resolvedLookId)) as CSSProperties)
+    : undefined;
+  const resolvedBackdrop =
+    backdrop ?? (resolvedLookId ? { look: resolvedLookId } : undefined);
 
   return (
     <AbsoluteFill
@@ -126,9 +314,18 @@ export function SceneLayout({
         height: FRAME.height,
         overflow: "hidden",
         fontFamily: font,
+        ...cssVars,
       }}
     >
-      {backdrop && <SceneBackdrop spec={backdrop} />}
+      {resolvedBackdrop && (
+        <SceneBackdrop
+          spec={
+            resolvedLookId && !resolvedBackdrop.look
+              ? { ...resolvedBackdrop, look: resolvedLookId }
+              : resolvedBackdrop
+          }
+        />
+      )}
       {children}
       {debugSafeMargins && (
         <svg

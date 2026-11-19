@@ -1,3 +1,4 @@
+import type { SfxName } from "../audio/cues.ts";
 import { compileTimeline, msToFrames } from "../timeline/compiler.ts";
 import type {
   Anchor,
@@ -10,6 +11,8 @@ import type {
 import type { TransitionId } from "../transitions/index.tsx";
 import type { ContinuityToken } from "./core/continuity.ts";
 import type { LayoutName, Rect } from "./core/geometry.ts";
+import type { ContainerStyle, LookId } from "./core/looks.ts";
+import type { MotionProfileId } from "./core/motionProfiles.ts";
 import type { TextFitCheckInput } from "./core/textMetrics.ts";
 
 export type TimingStatus =
@@ -17,10 +20,25 @@ export type TimingStatus =
   | "measured-draft-asr"
   | "listening-approved";
 
+export type WordTiming = {
+  id: string;
+  startMs: number;
+  endMs: number;
+  text: string;
+};
+
+export type SfxCueAttachment = {
+  name: SfxName;
+  volume?: number;
+  offsetFrames?: number;
+};
+
 export type DocumentaryBeatSpec = {
   id: string;
   sceneId: string;
   cueId: string;
+  wordId?: string;
+  wordEdge?: "start" | "end";
   offsetMs?: number;
   durationMs: number;
   reason?: string;
@@ -28,6 +46,7 @@ export type DocumentaryBeatSpec = {
   track?: string;
   allowOverlap?: boolean;
   layerId?: string;
+  sfx?: SfxCueAttachment;
   payload?: Record<string, string | number | undefined>;
 };
 
@@ -43,6 +62,12 @@ export type DocumentarySceneSpec = {
   start: Anchor;
   end: Anchor;
   layout: LayoutName;
+  look?: LookId;
+  container?: ContainerStyle;
+  shotScale?: "wide" | "medium" | "closeup" | "cutaway" | "a-roll";
+  motionProfile?: MotionProfileId;
+  stageCount?: number;
+  sfx?: SfxCueAttachment;
   transition?: TransitionId;
   transitionFrames?: number;
   dominantObject?: string;
@@ -98,6 +123,7 @@ export function compileDocumentaryTimeline(
   cueFile: CueFile,
   board: DocumentaryStoryboard,
   audioDurationMs?: number,
+  words?: readonly WordTiming[],
 ): CompiledDocumentaryTimeline {
   if (
     board.timingStatus === "listening-approved" &&
@@ -107,6 +133,9 @@ export function compileDocumentaryTimeline(
       "Documentary timeline: provisional timing-demo cues cannot be marked listening-approved",
     );
   }
+
+  const cueMap = new Map(cueFile.cues.map((c) => [c.id, c]));
+  const wordMap = words ? new Map(words.map((w) => [w.id, w])) : null;
 
   const baseBoard: Storyboard = {
     fps: board.fps,
@@ -119,20 +148,53 @@ export function compileDocumentaryTimeline(
       end: scene.end,
       title: scene.title,
     })),
-    events: board.beats.map((beat) => ({
-      id: beat.id,
-      sceneId: beat.sceneId,
-      cueId: beat.cueId,
-      offsetMs: beat.offsetMs ?? 0,
-      durationMs: beat.durationMs,
-      reason: beat.reason,
-      kind: beat.kind ?? "show-expense",
-      track: beat.track ?? "visual",
-      allowOverlap: beat.allowOverlap ?? true,
-      payload: Object.fromEntries(
-        Object.entries(beat.payload ?? {}).filter(([, v]) => v !== undefined),
-      ) as Record<string, string | number>,
-    })),
+    events: board.beats.map((beat) => {
+      let resolvedOffsetMs = beat.offsetMs ?? 0;
+      let resolvedReason = beat.reason;
+
+      if (beat.wordId) {
+        const cue = cueMap.get(beat.cueId);
+        if (!cue) {
+          throw new Error(`Missing cue "${beat.cueId}" in beat ${beat.id}`);
+        }
+        if (!wordMap) {
+          throw new Error(
+            `Word timings are required to resolve wordId "${beat.wordId}" in beat ${beat.id}`,
+          );
+        }
+        const word = wordMap.get(beat.wordId);
+        if (!word) {
+          throw new Error(
+            `Missing wordId "${beat.wordId}" in beat ${beat.id}`,
+          );
+        }
+        if (word.startMs < cue.startMs || word.endMs > cue.endMs) {
+          throw new Error(
+            `Word "${beat.wordId}" (${word.startMs}..${word.endMs}ms) falls outside cue "${cue.id}" (${cue.startMs}..${cue.endMs}ms) in beat ${beat.id}`,
+          );
+        }
+        const edgeMs = beat.wordEdge === "end" ? word.endMs : word.startMs;
+        resolvedOffsetMs = edgeMs - cue.startMs + (beat.offsetMs ?? 0);
+        if (!resolvedReason?.trim()) {
+          resolvedReason = `Word anchor ${beat.wordId} (${beat.wordEdge ?? "start"})`;
+        }
+      }
+
+      return {
+        id: beat.id,
+        sceneId: beat.sceneId,
+        cueId: beat.cueId,
+        offsetMs: resolvedOffsetMs,
+        durationMs: beat.durationMs,
+        reason: resolvedReason,
+        kind: beat.kind ?? "show-expense",
+        track: beat.track ?? "visual",
+        allowOverlap: beat.allowOverlap ?? true,
+        payload: Object.fromEntries(
+          Object.entries(beat.payload ?? {}).filter(([, v]) => v !== undefined),
+        ) as Record<string, string | number>,
+      };
+    }),
   };
 
   const compiled = compileTimeline(cueFile, baseBoard, audioDurationMs);

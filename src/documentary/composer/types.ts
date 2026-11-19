@@ -1,9 +1,13 @@
 import type { ReactNode } from "react";
 import type { AssetRegistry } from "../assets/registry";
+import type { CameraRigSpec } from "../core/camera";
 import type { ContinuityToken } from "../core/continuity";
 import type { FocusTarget } from "../core/focus";
 import type { LayoutName, Rect } from "../core/geometry";
 import type { Track } from "../core/keyframes";
+import type { LookId, LookTokens } from "../core/looks";
+import type { MotionProfileId } from "../core/motionProfiles";
+import type { SceneStageSpec } from "../core/stages";
 import type { TextFitCheckInput } from "../core/textMetrics";
 import type { CompiledDocumentaryBeat } from "../timeline";
 import type { TransitionId } from "../../transitions";
@@ -44,7 +48,8 @@ export type SceneBackdropPreset =
   | "dark-evidence";
 
 export type SceneBackdropSpec = {
-  preset: SceneBackdropPreset;
+  preset?: SceneBackdropPreset;
+  look?: LookId;
   accentColor?: string;
   gridLines?: boolean;
   vignette?: boolean;
@@ -66,6 +71,18 @@ export type LayerRenderContext = {
   beats: readonly CompiledDocumentaryBeat[];
   /** Shared continuity state carried across scenes. */
   sharedState: Record<string, unknown>;
+  /** Active documentary Look tokens for surface-aware rendering. */
+  look: LookTokens;
+  /** Scene default motion profile. */
+  motionProfile: MotionProfileId;
+  /** Active sub-stage index (-1 when no stages are declared). */
+  stageIndex: number;
+  /** Active sub-stage ID, if any. */
+  activeStageId: string | null;
+  /** Frames elapsed since the active sub-stage started. */
+  stageFrame: number;
+  /** Cumulative state merged across sub-stages up to the active frame. */
+  stageState: Record<string, unknown>;
 };
 
 type LayerBase = {
@@ -140,9 +157,13 @@ export type DocumentarySceneDefinition = {
   title: string;
   durationInFrames: number;
   layout: LayoutName;
+  look?: LookId;
+  motionProfile?: MotionProfileId;
   backdrop?: SceneBackdropSpec;
   layers: LayerSpec[];
   focusTargets?: FocusTarget[];
+  camera?: CameraRigSpec;
+  stages?: readonly SceneStageSpec[];
   beats?: CompiledDocumentaryBeat[];
   join?: TransitionId;
   joinFrames?: number;

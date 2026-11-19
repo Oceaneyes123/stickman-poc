@@ -33,6 +33,7 @@ import {
   freeShippingOrder,
   type CutawayVariant,
 } from "./freeShippingFullTimeline";
+import { FreeShippingSound } from "./freeShippingSound";
 
 export const REMAINING_SCENES = freeShippingFullTimeline.scenes.slice(9);
 
@@ -1767,6 +1768,7 @@ export const FreeShippingFullFilm: React.FC = () => {
   return (
     <AbsoluteFill>
       <Audio src={staticFile("free-shipping-full/narration.wav")} />
+      <FreeShippingSound />
       {freeShippingFullTimeline.scenes.slice(0, 9).map((scene, index) => (
         <Sequence
           key={scene.id}
