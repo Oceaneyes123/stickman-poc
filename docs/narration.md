@@ -38,6 +38,11 @@ lines into takes targeting 15�30 seconds. It saves the complete prepared scrip
 `narration-grouped.txt` in the output directory, including for previews; the input
 script stays unchanged. Synthesis uses these exact groups.
 
+`--script` also accepts an annotated `script.md`. Put each `<!-- NARRATION -->`
+and `<!-- /NARRATION -->` marker on its own line. Only text inside these blocks
+is synthesized. Pass the same Markdown file to `narrate:timing` later, since the
+manifest records the hash of the complete source file.
+
 The default estimate is 150 words per minute (38�75 words per take). Use
 `--wpm 130`, for example, after measuring a representative take: words spoken
 multiplied by 60, divided by its measured duration in seconds. WPM changes grouping,

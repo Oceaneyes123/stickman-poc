@@ -8,7 +8,7 @@ import {
   rmSync,
   writeFileSync,
 } from "node:fs";
-import { resolve, join, relative } from "node:path";
+import { extname, resolve, join, relative } from "node:path";
 import { pathToFileURL } from "node:url";
 import { parseArgs } from "node:util";
 import { setTimeout as delay } from "node:timers/promises";
@@ -85,6 +85,28 @@ function chunks(
     tail.unshift(previous.pop()!);
   }
   return result.map((part) => part.join(" "));
+}
+
+function markdownNarration(source: string): string {
+  const sections = source
+    .replace(/^\uFEFF/, "")
+    .split(/^[ \t]*<!-- (\/?NARRATION) -->[ \t]*$/m);
+  const markers = sections.filter((_, index) => index % 2 === 1);
+  if (
+    markers.length === 0 ||
+    markers.length % 2 !== 0 ||
+    markers.some(
+      (marker, index) => marker !== (index % 2 ? "/NARRATION" : "NARRATION"),
+    )
+  ) {
+    throw new Error("Markdown requires paired NARRATION markers on separate lines");
+  }
+  const blocks = sections
+    .filter((_, index) => index % 4 === 2)
+    .map((block) => block.trim());
+  if (blocks.some((block) => !block))
+    throw new Error("Markdown contains an empty NARRATION block");
+  return blocks.join("\n\n");
 }
 
 export function paragraphs(text: string, wpm = 150): string[] {
@@ -418,7 +440,7 @@ export async function narrate(args: string[]) {
   });
   if (values.help) {
     console.log(
-      "npm run narrate -- --script <narration.txt> --out <directory> [--voice <profile-id>] [--wpm <words-per-minute>] [--preview]",
+      "npm run narrate -- --script <narration.txt|script.md> --out <directory> [--voice <profile-id>] [--wpm <words-per-minute>] [--preview]",
     );
     return;
   }
@@ -437,8 +459,12 @@ export async function narrate(args: string[]) {
     throw new Error("--url must be a local loopback HTTP origin");
   }
   const source = readFileSync(resolve(values.script), "utf8");
+  const spoken =
+    extname(values.script).toLowerCase() === ".md"
+      ? markdownNarration(source)
+      : source;
   const wpm = Number(values.wpm);
-  const parts = paragraphs(source, wpm);
+  const parts = paragraphs(spoken, wpm);
   const out = resolve(values.out);
   const settings = {
     model: "voxcpm2",

@@ -1,0 +1,440 @@
+{
+  "scriptHash": "6078105774b0ba007e31e6bce422a768e3b6ac6ffd4b4f181aa1bc24f78d7a60",
+  "audioHash": "724d86fd1eab76aed54b02e8070762c00ab4ef004974e297d1d7142ab215405a",
+  "durationMs": 300000,
+  "cues": [
+    {
+      "id": "p003-s002",
+      "text": "The year before the full -scale invasion, Russia supplied about 3 % of US crude oil imports.",
+      "startMs": 44729.979166666664,
+      "endMs": 50389.979166666664
+    },
+    {
+      "id": "p003-s003",
+      "text": "But Russia was one of the world's big oil exporters.",
+      "startMs": 50889.979166666664,
+      "endMs": 53569.979166666664
+    },
+    {
+      "id": "p003-s005",
+      "text": "Picture a refinery that ordinarily buys Russian crude.",
+      "startMs": 58009.979166666664,
+      "endMs": 60969.979166666664
+    },
+    {
+      "id": "p003-s006",
+      "text": "After the invasion, some buyers backed away from Russian oil.",
+      "startMs": 60969.979166666664,
+      "endMs": 64809.979166666664
+    },
+    {
+      "id": "p004-s002",
+      "text": "If that refinery still needs to keep running, it has to find another seller.",
+      "startMs": 69174.41666666667,
+      "endMs": 72994.41666666667
+    },
+    {
+      "id": "p004-s003",
+      "text": "Now picture a second refinery that already buys from that seller, it suddenly has more competition for the next cargo.",
+      "startMs": 73774.41666666667,
+      "endMs": 80034.41666666667
+    },
+    {
+      "id": "p004-s004",
+      "text": "The second refinery can pay more even though it never bought a Russian barrel.",
+      "startMs": 80634.41666666667,
+      "endMs": 84514.41666666667
+    },
+    {
+      "id": "p004-s005",
+      "text": "And that bidding can start before a shipment actually goes missing.",
+      "startMs": 85114.41666666667,
+      "endMs": 88374.41666666667
+    },
+    {
+      "id": "p005-s001",
+      "text": "If you're responsible for keeping a refinery running next month, waiting to see what happens is a risk of its own.",
+      "startMs": 88652.20833333333,
+      "endMs": 94392.20833333333
+    },
+    {
+      "id": "p005-s003",
+      "text": "Oil prices jumped before the agency had recorded a loss of supply.",
+      "startMs": 99352.20833333333,
+      "endMs": 102972.20833333333
+    },
+    {
+      "id": "p005-s004",
+      "text": "Crude oil is the biggest single cost in a gallon of gasoline.",
+      "startMs": 103632.20833333333,
+      "endMs": 106932.20833333333
+    },
+    {
+      "id": "p005-s005",
+      "text": "When crude gets more expensive, a station can end up paying more for its next delivery.",
+      "startMs": 107732.20833333333,
+      "endMs": 112232.20833333333
+    },
+    {
+      "id": "p006-s001",
+      "text": "gasoline demand had already picked up earlier in the year.",
+      "startMs": 112516.20833333333,
+      "endMs": 115396.20833333333
+    },
+    {
+      "id": "p006-s004",
+      "text": "That left less fuel on hand to meet demand, which also helped push up pump prices.",
+      "startMs": 122556.20833333333,
+      "endMs": 127176.20833333333
+    },
+    {
+      "id": "p006-s005",
+      "text": "The fuel bill reaches further than the driver's seat.",
+      "startMs": 127776.20833333333,
+      "endMs": 130076.20833333333
+    },
+    {
+      "id": "p006-s006",
+      "text": "A truck hauling flour to a bakery runs on fuel too.",
+      "startMs": 130436.20833333333,
+      "endMs": 133396.20833333334
+    },
+    {
+      "id": "p006-s007",
+      "text": "When diesel costs more, a carrier may charge more to make that same trip.",
+      "startMs": 133976.20833333334,
+      "endMs": 137636.20833333334
+    },
+    {
+      "id": "p007-s001",
+      "text": "By the time you see a loaf on a shelf, somebody has already paid to move the ingredients and to deliver the finished bread.",
+      "startMs": 137870.6875,
+      "endMs": 144070.6875
+    },
+    {
+      "id": "p007-s002",
+      "text": "In Ukraine, an even bigger problem was getting grain out in the first place.",
+      "startMs": 144670.6875,
+      "endMs": 148810.6875
+    },
+    {
+      "id": "p007-s003",
+      "text": "Before the invasion, Russia and Ukraine together accounted for roughly 30 % of the wheat sold abroad.",
+      "startMs": 149330.6875,
+      "endMs": 155370.6875
+    },
+    {
+      "id": "p008-s001",
+      "text": "When Russia blocked Ukraine's Black Sea ports, grain could still be sitting in storage while a buyer overseas scrambled to fill an order.",
+      "startMs": 155653.27083333334,
+      "endMs": 163433.27083333334
+    },
+    {
+      "id": "p008-s002",
+      "text": "Some exports moved by rail and through ports on the Danube River.",
+      "startMs": 163993.27083333334,
+      "endMs": 167473.27083333334
+    },
+    {
+      "id": "p008-s004",
+      "text": "A mill that has to keep making flour can look for wheat somewhere else.",
+      "startMs": 173553.27083333334,
+      "endMs": 176893.27083333334
+    },
+    {
+      "id": "p009-s001",
+      "text": "So can all the other mills facing the same problem?",
+      "startMs": 177167.41666666666,
+      "endMs": 179727.41666666666
+    },
+    {
+      "id": "p009-s002",
+      "text": "They can end up bidding against one another for wheat that was already going to be sold.",
+      "startMs": 180247.41666666666,
+      "endMs": 184407.41666666666
+    },
+    {
+      "id": "p009-s003",
+      "text": "That's how a port closure can affect the price of grain grown in a completely different country.",
+      "startMs": 185047.41666666666,
+      "endMs": 189927.41666666666
+    },
+    {
+      "id": "p009-s004",
+      "text": "In March, international wheat prices jumped nearly 20 % in a month.",
+      "startMs": 190627.41666666666,
+      "endMs": 194967.41666666666
+    },
+    {
+      "id": "p009-s005",
+      "text": "Concerns about the American crop were adding pressure at the same time.",
+      "startMs": 195527.41666666666,
+      "endMs": 199467.41666666666
+    },
+    {
+      "id": "p010-s001",
+      "text": "On August 1st, a ship called the Razoni left the Ukrainian port of Odesa carrying corn.",
+      "startMs": 199717.8125,
+      "endMs": 205017.8125
+    },
+    {
+      "id": "p010-s002",
+      "text": "It was the first commercial grain shipment under a deal signed in July to let food sail out of three Ukrainian ports again.",
+      "startMs": 205517.8125,
+      "endMs": 212237.8125
+    },
+    {
+      "id": "p010-s003",
+      "text": "The price of wheat on world markets had already fallen in July.",
+      "startMs": 212937.8125,
+      "endMs": 216197.8125
+    },
+    {
+      "id": "p010-s004",
+      "text": "The United Nations Food Agency pointed to the deal and to new harvests becoming available in the Northern Hemisphere.",
+      "startMs": 216917.8125,
+      "endMs": 222997.8125
+    },
+    {
+      "id": "p011-s001",
+      "text": "Buyers could see more grain coming onto the market before that first ship had even left.",
+      "startMs": 223326.29166666666,
+      "endMs": 228046.29166666666
+    },
+    {
+      "id": "p011-s002",
+      "text": "That same July, the US Bureau of Labor Statistics recorded an increase in bread prices.",
+      "startMs": 228506.29166666666,
+      "endMs": 233946.29166666666
+    },
+    {
+      "id": "p011-s003",
+      "text": "Say a bakery ordered the flour for today's bread weeks ago.",
+      "startMs": 234646.29166666666,
+      "endMs": 237946.29166666666
+    },
+    {
+      "id": "p011-s004",
+      "text": "If the price of wheat falls this morning, the bakery still owes what it agreed to pay for the flower.",
+      "startMs": 238546.29166666666,
+      "endMs": 243926.29166666666
+    },
+    {
+      "id": "p011-s005",
+      "text": "It has to keep the ovens running either way.",
+      "startMs": 244426.29166666666,
+      "endMs": 246626.29166666666
+    },
+    {
+      "id": "p012-s001",
+      "text": "On the bakery's next order, flour might be cheaper, but if it's paying more to get the bread to the store, part of that saving could disappear on the truck.",
+      "startMs": 246854.5,
+      "endMs": 255294.5
+    },
+    {
+      "id": "p012-s002",
+      "text": "The retailer has bills of its own.",
+      "startMs": 255914.5,
+      "endMs": 257854.5
+    },
+    {
+      "id": "p012-s003",
+      "text": "By the time you pick up the loaf, the price on the shelf reflects decisions made at each step, sometimes weeks apart.",
+      "startMs": 258354.5,
+      "endMs": 264714.5
+    },
+    {
+      "id": "p013-s001",
+      "text": "If your shift starts before the first bus, there's only so much you can do about how often you fill up.",
+      "startMs": 265000.5416666667,
+      "endMs": 270380.5416666667
+    },
+    {
+      "id": "p013-s002",
+      "text": "You can put less gas in the tank today.",
+      "startMs": 270800.5416666667,
+      "endMs": 272620.5416666667
+    },
+    {
+      "id": "p013-s003",
+      "text": "That just means you'll be back at the station sooner.",
+      "startMs": 273100.5416666667,
+      "endMs": 275340.5416666667
+    },
+    {
+      "id": "p013-s004",
+      "text": "When a few dollars more for gas comes out of a paycheck that's already spoken for, it can mean putting off something else you need.",
+      "startMs": 275940.5416666667,
+      "endMs": 281980.5416666667
+    },
+    {
+      "id": "p014-s001",
+      "text": "Maybe the shoes you were going to replace have to last another month.",
+      "startMs": 282200.6041666667,
+      "endMs": 285440.6041666667
+    },
+    {
+      "id": "p014-s002",
+      "text": "In Somalia that year, drought had damaged local harvests.",
+      "startMs": 286000.6041666667,
+      "endMs": 289380.6041666667
+    },
+    {
+      "id": "p014-s003",
+      "text": "It also meant neighboring countries had less food to sell.",
+      "startMs": 289900.6041666667,
+      "endMs": 292820.6041666667
+    },
+    {
+      "id": "p014-s004",
+      "text": "Somalia relied heavily on imported grain, including wheat from Russia and Ukraine.",
+      "startMs": 293260.6041666667,
+      "endMs": 297860.6041666667
+    },
+    {
+      "id": "p014-s005",
+      "text": "The World Food Program and the United Nations Food and Agriculture Agency reported that rising global food and fuel prices piled onto those local problems.",
+      "startMs": 298340.6041666667,
+      "endMs": 300000
+    }
+  ],
+  "shots": [
+    {
+      "id": "oil-market",
+      "title": "The U.S. import share and global buyers",
+      "cueId": "p003-s002",
+      "marks": [
+        "p003-s003"
+      ]
+    },
+    {
+      "id": "oil-bidding",
+      "title": "The replacement cargo",
+      "cueId": "p003-s005",
+      "marks": [
+        "p003-s006",
+        "p004-s002",
+        "p004-s003",
+        "p004-s004"
+      ]
+    },
+    {
+      "id": "expectations",
+      "title": "A bid before a missing shipment",
+      "cueId": "p004-s005",
+      "marks": [
+        "p005-s001"
+      ]
+    },
+    {
+      "id": "early-prices",
+      "title": "Prices move before recorded supply losses",
+      "cueId": "p005-s003",
+      "marks": []
+    },
+    {
+      "id": "refining",
+      "title": "Crude reaches the station",
+      "cueId": "p005-s004",
+      "marks": [
+        "p005-s005",
+        "p006-s001",
+        "p006-s004"
+      ]
+    },
+    {
+      "id": "freight",
+      "title": "Diesel to bakery to shelf",
+      "cueId": "p006-s005",
+      "marks": [
+        "p006-s006",
+        "p006-s007",
+        "p007-s001"
+      ]
+    },
+    {
+      "id": "ports",
+      "title": "Grain in storage and routes out",
+      "cueId": "p007-s002",
+      "marks": [
+        "p007-s003",
+        "p008-s001",
+        "p008-s002"
+      ]
+    },
+    {
+      "id": "wheat-bidding",
+      "title": "Mills bid for replacement wheat",
+      "cueId": "p008-s004",
+      "marks": [
+        "p009-s001",
+        "p009-s002",
+        "p009-s003"
+      ]
+    },
+    {
+      "id": "march-wheat",
+      "title": "Wheat prices rise in March",
+      "cueId": "p009-s004",
+      "marks": [
+        "p009-s005"
+      ]
+    },
+    {
+      "id": "razoni",
+      "title": "The first shipment and the July price move",
+      "cueId": "p010-s001",
+      "marks": [
+        "p010-s002",
+        "p010-s003",
+        "p010-s004",
+        "p011-s001"
+      ]
+    },
+    {
+      "id": "july-comparison",
+      "title": "July wheat and bread prices diverge",
+      "cueId": "p011-s002",
+      "marks": []
+    },
+    {
+      "id": "old-flour-order",
+      "title": "The flour ordered weeks ago",
+      "cueId": "p011-s003",
+      "marks": [
+        "p011-s004",
+        "p011-s005"
+      ]
+    },
+    {
+      "id": "next-flour-order",
+      "title": "Cheaper flour and higher freight",
+      "cueId": "p012-s001",
+      "marks": [
+        "p012-s002",
+        "p012-s003"
+      ]
+    },
+    {
+      "id": "shift",
+      "title": "The trip that still has to happen",
+      "cueId": "p013-s001",
+      "marks": [
+        "p013-s002",
+        "p013-s003",
+        "p013-s004",
+        "p014-s001"
+      ]
+    },
+    {
+      "id": "somalia",
+      "title": "Drought and imported grain",
+      "cueId": "p014-s002",
+      "marks": [
+        "p014-s003",
+        "p014-s004",
+        "p014-s005"
+      ]
+    }
+  ]
+}

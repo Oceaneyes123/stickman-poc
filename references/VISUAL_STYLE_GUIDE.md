@@ -68,6 +68,16 @@ Separate foreground, subject and background through placement, scale, occlusion,
 
 Use negative space to isolate a subject, support reading or reserve room for the next meaningful reveal. A quiet composition does not require an icon or texture to fill it. Each episode chooses settings, materials and supporting colors suited to its subject while keeping the channel's graphic language recognizable.
 
+Design the whole 16:9 frame around what is happening and where it happens. Give the foreground, subject and background roles in the same event. At a gas station, the forecourt locates the fill-up, the hose connects the pump to the parked car, and the meter shows the spending threshold. At a port, the coastline separates stored grain from the waiting ship, and the blocked route shows what keeps them apart.
+
+Use the setting at the scale the shot needs. A receipt close-up can use the receipt itself as the scene, with the relevant line in focus and nearby details identifying the transaction. A map can use geography as its setting. When a standalone chart is clearest, connect it to the story with a relevant object or visual relationship from the surrounding shots. Plan each image as a readable still before adding motion.
+
+### Line weight and object color
+
+Use line weight to guide the eye. Give the main object's silhouette or the edge involved in the action a stronger stroke where it helps legibility. Use finer lines for details such as seams, folds and marks on paper. Let distant surfaces read through color and value when outlines add little. Check that the important shapes and actions still read at phone size.
+
+Choose supporting colors for the objects, their materials and the light in the scene. A pump can have a gray metal housing, a deep glass display and a soft reflection from the forecourt. A car beside it can carry its own body color and a darker shadow under the wheel arch. Keep the strongest contrast on the action. Use the brand accents for their established meanings, such as yellow on the spending meter and coral on the amount above the usual spend.
+
 ### Typography, labels and readability
 
 - Use locally bundled Inter. Establish a primary subject or headline, secondary explanatory labels and a quieter source/context line. Do not give every element headline weight.
@@ -140,7 +150,7 @@ A storyboard that is factually accurate can still lose viewer attention if conse
 | Text appearing on every sentence | Keep the object/process visible; add only the label needed to understand the new idea. |
 | Endless floating icons | Give each object a defined role and stable location; animate the relationship that changes. |
 | Generic AI-generated business imagery implying an actual event | Use relevant verified footage or an explicitly illustrative original graphic. Never manufacture documentary proof. |
-| Repeated identical scene templates with only the headline changed | Choose context footage, an interface insert, a calendar or an object comparison according to what each beat teaches. Reuse assets when continuity helps. |
+| Centered cards or icons on the same board across unrelated beats | Compose around the relationship each beat teaches. Stage a delivery at a loading dock, cut close to the freight charge on the docket, then use the shelf edge to locate the final price. Repeat framing when it makes a change easier to compare or recalls an earlier scene. |
 | Pointless chart animation or a number counter for an ordinary decision | Show the decision and its consequence. Use a chart only when the data relationship matters. |
 | Bankruptcy imagery, flashing red warnings or a collapsing house for a tighter month | Show the ordinary consequence supported by the scenario: a postponed repair or less flexibility. |
 | Decorative arrows pointing at everything | Connect only a defined cause, transfer or sequence; remove an arrow that adds no meaning. |
@@ -164,7 +174,7 @@ For every storyboard beat, answer the following before designing motion. One bea
 | What the viewer needs to understand | The single most important change in understanding. |
 | Visual purpose | Explain, demonstrate, establish context or reinforce a meaningful moment; state what the image contributes. |
 | Recommended medium | Choose the most informative medium and explain why it fits. |
-| Primary subject | The dominant object, action, artifact, person or relationship. |
+| Primary subject, setting and framing | For each shot, describe where the action takes place, how the subject is framed, and what the visible setting tells the viewer about the action. |
 | Animation or camera action | Initial state, meaningful change, final readable state; “static hold” is valid. |
 | Required assets | Identify existing reusable art, proposed new art and third-party media separately. |
 | Source/license requirements | Factual claim/assumption IDs plus asset provenance, permission status and attribution needs; mark pending items. |
@@ -220,6 +230,6 @@ These examples are future creative proposals. They neither revise episode 002 no
 
 Before approving a future storyboard, confirm that every beat has the required fields, one clear learning purpose and an appropriate medium. Check that the key mechanism survives removal of unnecessary text and numbers, that source/permission statuses are explicit, and that no recreation is presented as authentic evidence. Also verify visual progression before approval: frame 0 confirms the opening decision context, early beat diagrams are not duplicated later, multi-paragraph shot groups specify per-paragraph sub-staging, research beats pair source credits with qualitative schematics (or cleared authentic excerpts) instead of text-only bibliography cards, and the closing `callback-cut` bookend lands on the final paragraph.
 
-During future production, inspect every beat and boundary, text wrapping, phone-size readability, state continuity and narration-linked reveals. Run the project's required checks, gallery review, metadata verification and full decode before delivery. Record technical results, human creative approval and audio listening approval separately in the existing validation workflow. A rendered frame alone cannot prove motion or synchronization quality.
+During future production, compare the actual framing and settled states against the storyboard at every beat and boundary. Check text wrapping, phone-size readability, state continuity and narration-linked reveals. Run the project's required checks, gallery review, metadata verification and full decode before delivery. Record technical results, human creative approval and audio listening approval separately in the existing validation workflow. A rendered frame alone cannot prove motion or synchronization quality.
 
 Phase 2 created this guide; links/status are synchronized through Phase 9. The documentary [script guide](SCRIPT_GUIDE.md), [teaching guide](TEACHING_STYLE_GUIDE.md), [media-sourcing standards](MEDIA_SOURCING.md), [research playbooks](../research/README.md) and [global instructions](../AGENTS.md) now follow the new direction. Character/room requirements are scoped to legacy work; proposed documentary components remain unimplemented. See the [migration audit](../docs/documentary-migration-audit.md) for the documentation checks and remaining production limits.

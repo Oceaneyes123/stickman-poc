@@ -9,7 +9,7 @@
  * override it for a louder or quieter cut.
  */
 import { Audio } from "@remotion/media";
-import { staticFile } from "remotion";
+import { staticFile, type VolumeProp } from "remotion";
 import { SFX_CUES, type PlacedSfx, type SfxName } from "./cues";
 
 export { SFX_CUES, SFX_GROUPS, SFX_NAMES, sfxCuesIn } from "./cues";
@@ -25,7 +25,7 @@ export const Sfx = ({
 }: {
   name: SfxName;
   from?: number;
-  volume?: number;
+  volume?: VolumeProp;
   /** cut the tail, in frames, when the next beat needs the space */
   durationInFrames?: number;
 }) => (

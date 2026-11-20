@@ -49,6 +49,15 @@ const REQUESTED: SfxName[] = [
   // ambience and ending
   "clock_tick",
   "sparkle_chime",
+  "pump_motor",
+  "mechanical_click",
+  "gate_latch",
+  "tire_roll",
+  "grain_rustle",
+  "water_wash",
+  "paper_contact",
+  "shelf_contact",
+  "sweep_down",
 ];
 
 type Wav = { rate: number; channels: number; bits: number; samples: Int16Array };

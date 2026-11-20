@@ -86,7 +86,14 @@ class NarrationTimingTest(unittest.TestCase):
             script.write_text("Changed.\n", encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "Script hash"):
                 load_inputs(script, root)
-            script.write_text("Hello.\n", encoding="utf-8")
+            script = root / "script.md"
+            script.write_bytes(
+                b"# Title\r\n<!-- NARRATION -->\r\nHello.\r\n<!-- /NARRATION -->\r\nVisual note.\r\n"
+            )
+            manifest["scriptHash"] = draft["scriptHash"] = sha256(script)
+            (root / "manifest.json").write_text(json.dumps(manifest), encoding="utf-8")
+            (root / "cues.draft.json").write_text(json.dumps(draft), encoding="utf-8")
+            self.assertEqual(load_inputs(script, root)[2], 48000)
             (root / "audio-1.wav").write_bytes(b"corrupt")
             with self.assertRaisesRegex(ValueError, "integrity"):
                 load_inputs(script, root)

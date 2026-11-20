@@ -1,6 +1,6 @@
 # Sound effects
 
-Thirty reusable cues, every one synthesised from scratch in `scripts/sfx/generate-sfx.ts`
+Thirty-nine reusable cues, every one synthesised from scratch in `scripts/sfx/generate-sfx.ts`
 (oscillators, seeded noise, filters, envelopes). No samples, no stock library, no
 licence to track, no network call: `npm run sfx` rebuilds `public/sfx/*.wav`
 byte-identically. Peak-normalised to -3 dBFS, mono 44.1 kHz 16-bit.
@@ -30,7 +30,7 @@ timeline first, then cue against event frames.
 ## Catalogue
 
 Length is the exact WAV length; level is the default mix level (`Sfx` applies it
-unless overridden). `SfxGallery` in the Studio auditions all thirty in order.
+unless overridden). `SfxGallery` in Studio auditions all catalogue entries.
 
 ### Money and finance
 
@@ -86,6 +86,20 @@ unless overridden). `SfxGallery` in the Studio auditions all thirty in order.
 | --- | --- | --- | --- |
 | `clock_tick` | 6.00s | 0.35 | Soft ticking clock: pressure, deadlines |
 | `sparkle_chime` | 1.50s | 0.80 | Bright resolve at the end of a win |
+
+### Documentary foley
+
+| Cue | Length | Level | Use |
+| --- | --- | --- | --- |
+| `pump_motor` | 4.00s | 0.09 | Low gas pump motor |
+| `water_wash` | 0.95s | 0.09 | Short wash under a ship or water route |
+| `mechanical_click` | 0.20s | 0.15 | Nozzle, relay or lock click |
+| `gate_latch` | 0.28s | 0.15 | Supply route closure |
+| `tire_roll` | 0.75s | 0.11 | Short vehicle roll |
+| `grain_rustle` | 0.40s | 0.10 | Grain or sack rustle |
+| `paper_contact` | 0.36s | 0.11 | Receipt or document set-down |
+| `shelf_contact` | 0.26s | 0.13 | Soft loaf or grocery bag contact |
+| `sweep_down` | 0.55s | 0.13 | Filtered price-drop sweep |
 
 ## Rules this keeps
 

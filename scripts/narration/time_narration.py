@@ -26,6 +26,17 @@ def save_json(path, data):
     temporary.replace(path)
 
 
+def markdown_narration(source):
+    sections = re.split(r"^[ \t]*<!-- (/?NARRATION) -->[ \t]*$", source, flags=re.M)
+    markers = sections[1::2]
+    if not markers or markers != ["NARRATION", "/NARRATION"] * (len(markers) // 2):
+        raise ValueError("Markdown requires paired NARRATION markers on separate lines")
+    blocks = [block.strip() for block in sections[2::4]]
+    if not all(blocks):
+        raise ValueError("Markdown contains an empty NARRATION block")
+    return "\n\n".join(blocks)
+
+
 def load_inputs(script, directory):
     manifest = json.loads((directory / "manifest.json").read_text(encoding="utf-8-sig"))
     draft = json.loads((directory / "cues.draft.json").read_text(encoding="utf-8-sig"))
@@ -47,6 +58,8 @@ def load_inputs(script, directory):
     if len(segments) != manifest["totalParagraphs"]:
         raise ValueError("Paragraph count does not match the manifest")
     script_text = script.read_text(encoding="utf-8-sig")
+    if script.suffix.lower() == ".md":
+        script_text = markdown_narration(script_text)
 
     def spoken(text):
         # `**` and `---` are script-file markers, not words. The runner keeps

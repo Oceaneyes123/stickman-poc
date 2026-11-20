@@ -16,6 +16,8 @@
 **Visual purpose and authenticity**
 
 - [ ] Every beat has the visual guide's nine fields, an appropriate medium and one dominant learning purpose. No character, exact object count or scene-family rotation is mandatory.
+- [ ] Every shot specifies where the action takes place and how the setting helps tell it. Rough layouts show how foreground, subject and background work together. Maps, diagrams and evidence inserts identify their context or connect it across the cut.
+- [ ] Representative stills for original 2D artwork show that line weight and contrast guide attention at phone size. Supporting colors distinguish materials and lighting while brand accents keep their financial meanings.
 - [ ] Frame 0 establishes the opening decision context, the opening beat ends on a visual open question rather than duplicating a later mechanism diagram, and research beats pair source credits with qualitative schematics (or cleared authentic excerpts) instead of consecutive text-only bibliography cards.
 - [ ] Original graphics, licensed footage, photos, collages, mock interfaces and permitted authentic excerpts are selected for explanation/context/evidence rather than decoration.
 - [ ] Authentic evidence retains source/date/context; generic invented scenarios omit on-screen "fictional," "illustrative," "hypothetical" or "demo" labels under [decision #14](../../docs/decisions.md#14-presenting-fictional-scenarios--2026-11-16), and no fabricated screenshot, quote, headline or customer record is presented as real.
@@ -36,7 +38,7 @@
 ## Gate 2 — future render and delivery
 
 - [ ] `npm run check` passes for the final production source; record the actual command/result and scope.
-- [ ] Inspect every beat and boundary, including actual motion, text wrapping, clipping, transitions, source labels and medium changes. A contact sheet alone does not prove motion quality.
+- [ ] Inspect every beat and boundary. Compare the rendered scene with the storyboard and check that the setting still establishes the place, condition or relationship it was designed to show. Review actual motion, text wrapping, clipping, transitions, source labels and medium changes in playback.
 - [ ] Verify the final MP4 metadata and full decode with the existing review tools: 1920×1080, 30 fps, H.264/yuv420p. Follow the actual episode's measured-audio/delivery requirements; do not infer them from a filename.
 - [ ] Listen to the final assembled narration/mix for intelligibility, pronunciation, missing words, timing and unwanted audio. A waveform/hash or successful decode is not listening.
 - [ ] Compare delivered media with its manifest, permissions evidence and credits. Confirm authenticity labels and required platform disclosures; no visual format guarantees monetization.

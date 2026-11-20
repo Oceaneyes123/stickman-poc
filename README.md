@@ -1,14 +1,12 @@
 # The Money Trap — documentary production toolkit
 
-Reusable local Remotion + React + strict TypeScript tools for **Premium Editorial Finance Documentary** production: narrator-led explanations, original editorial motion graphics and appropriate verified mixed media. Character compositions and episodes 001/002 remain preserved legacy work.
+Reusable local Remotion + React + strict TypeScript tools for **Premium Editorial Finance Documentary** production: narrator-led explanations, original editorial motion graphics and appropriate verified mixed media. Legacy episode scenes and storyboards are archived separately. Episode scripts and supporting research remain in `videos/`.
 
 Before creating a video, read [branding](references/CHANNEL-BRANDING.md), [scriptwriting](references/SCRIPT_GUIDE.md), [visual style](references/VISUAL_STYLE_GUIDE.md), [teaching](references/TEACHING_STYLE_GUIDE.md) and [media sourcing](references/MEDIA_SOURCING.md), then [production rules](AGENTS.md). The [research index](research/README.md) links current playbooks and installed-skill roles. See the [migration audit](docs/documentary-migration-audit.md) for preservation evidence and remaining production limits.
 
-This documentation migration does not implement a mixed-media compositor, general mock-interface library or automatic license checker. Existing episode-specific schemas and render commands remain unchanged. Future production must select suitable existing capabilities or scope any implementation separately.
-
 ## Run
 
-Run production commands only when the task authorizes that work. These existing commands include legacy review compositions; they do not automatically render a new documentary.
+Run production commands only when the task authorizes that work. Studio starts empty. Register the composition you want to review or render in `src/Root.tsx`.
 
 Use Node 24.6+ and npm from the repository root.
 
@@ -16,13 +14,11 @@ Use Node 24.6+ and npm from the repository root.
 npm ci
 npm run dev
 npm run check
-npm run render
-npm run stills
 ```
 
-`render` and `stills` target the 20-second `MovementReview`. Studio also provides
-`WalkingMechanics`, `BankExample`, `CharacterStudy` and `ComponentGallery`.
-Rendering uses local assets and local Chromium, with no paid services.
+The following legacy review commands are available after registering their matching
+composition. `render` and `stills` target `MovementReview`. Rendering uses local
+assets and local Chromium, with no paid services.
 
 | Command | Purpose |
 | --- | --- |
@@ -38,7 +34,6 @@ Rendering uses local assets and local Chromium, with no paid services.
 
 MP4 output is 1920x1080, 30 fps, H.264/yuv420p. Review stills use half scale;
 character inspection sheets use higher resolution. Generated output goes in `out/`.
-The latest walking and movement MP4s remain there; obsolete previews were removed.
 
 ## Reusable files
 
@@ -58,8 +53,7 @@ The latest walking and movement MP4s remain there; obsolete previews were remove
   the per-panel variety table in `docs/variety/`, transcript analysis steps in
   `docs/transcripts/`. See [decisions](docs/decisions.md) and [current validation](docs/animation-validation.md).
 - `references/`: character art, channel guidance and upstream research.
-- `videos/sam-atm/`: separate existing film, preserved independently.
-- `videos/004-free-shipping/`: researched script and [untimed documentary storyboard](videos/004-free-shipping/storyboard.md) for *Why Free Shipping Makes You Spend More*. Narration timing, artwork and production approval remain pending.
+- `videos/`: episode scripts, narration text, source notes and other records.
 
 The old MoneyTrapPOC film, its narration/story folder, generated timeline,
 POC-only scripts, build bundle and superseded previews were removed.

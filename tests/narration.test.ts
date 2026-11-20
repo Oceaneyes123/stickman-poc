@@ -438,6 +438,41 @@ test("runner resumes, reuses unchanged paragraphs, preserves sample timing and b
       readFileSync(join(out, "audio-1.wav")),
       readFileSync(join(out, reordered.segments[0].cacheFile)),
     );
+    // Annotated Markdown sends the same words for synthesis and retains its own provenance.
+    const markdown = join(dir, "script.md");
+    const markdownArgs = ["--script", markdown, ...args.slice(2)];
+    const annotated = [
+      "\uFEFF# Episode title",
+      "<!-- NARRATION -->",
+      changed,
+      "<!-- /NARRATION -->",
+      "**Visual.** Skip this note.",
+      "<!-- NARRATION -->",
+      "",
+      first,
+      "<!-- /NARRATION -->",
+    ].join("\r\n");
+    writeFileSync(markdown, annotated);
+    await narrate(markdownArgs);
+    assert.equal(calls, 4);
+    assert.equal(
+      readFileSync(join(out, "narration-grouped.txt"), "utf8"),
+      `${changed}\n\n${first}\n`,
+    );
+    const markdownManifest = JSON.parse(
+      readFileSync(join(out, "manifest.json"), "utf8"),
+    );
+    assert.equal(markdownManifest.scriptPath, markdown);
+    assert.equal(
+      markdownManifest.scriptHash,
+      createHash("sha256").update(annotated).digest("hex"),
+    );
+    for (const invalid of ["# No markers", "<!-- NARRATION -->\nUnclosed."]) {
+      writeFileSync(markdown, invalid);
+      await assert.rejects(narrate(markdownArgs), /paired NARRATION markers/);
+    }
+    writeFileSync(markdown, "<!-- NARRATION -->\r\n\r\n<!-- /NARRATION -->");
+    await assert.rejects(narrate(markdownArgs), /empty NARRATION block/);
     writeFileSync(join(out, manifest.segments[0].cacheFile), "corrupt");
     await assert.rejects(narrate(args), /integrity/);
     assert.equal(calls, 4);

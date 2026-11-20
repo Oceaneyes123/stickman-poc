@@ -1,5 +1,34 @@
 # Current animation validation
 
+## Workspace reset — 2026-11-20
+
+Past episode scenes, storyboards and one-off previews were moved to a recoverable archive. The episode scripts, reusable components and timeline tools remain available. The default Studio entry point has no composition registrations. `npm run check` passed ESLint, TypeScript, 84 Node tests and 5 Python timing tests. Entries below record earlier production checks.
+
+## Video 5 sound effects — 2026-11-20
+
+`WarAndWalletFullFilm` plays 91 sound clips against the single unchanged narration WAV. The cue schedule uses compiled picture anchors and 18 local effects, including nine new original synthesized WAVs. The opening pump returns in B07 and cuts at the nozzle click. The Ukraine homes and Somalia affordability holds have no sound effects.
+
+- Studio playback advanced with the narration and effects mounted. Ten focused sound and timeline checks passed. An independent in-memory sum of decoded narration and scheduled effects reached **−1.46 dBFS sample peak**. No video was rendered.
+- ESLint and TypeScript passed. The Node suite passed 129 of 130 tests. The existing Video 3 test requires the missing `public/subscription-full/ambient.wav`.
+- Continuous listening and creative mix approval remain pending.
+
+## Video 5 full Studio cut — 2026-11-20
+
+`WarAndWalletFullFilm` runs through the remaining Somalia narration, the Fed and borrowing sections, and the pump and grocery callback. It uses one narration node and runs for 13,267 frames at 30 fps, rounded from the 442,232.75 ms master. The first-five-minute cut remains available separately.
+
+- Timeline tests verified the retained cut starts, uninterrupted Somalia shot across 5:00, closing shot order and duration. Studio spot checks covered the continuation, Fed dates and levers, contracts, year-end comparison, deliveries and final receipt state.
+- ESLint, TypeScript and the five Python timing tests passed. The Node suite passed 127 of 128 tests. The existing subscription ambient test requires the missing `public/subscription-full/ambient.wav`.
+- Continuous playback and listening-based alignment remain pending. No video render was started.
+
+## Video 5 first five minutes — 2026-11-20
+
+`WarAndWalletFirstFive` is a 1920×1080, 30 fps Studio preview from frame 0 through frame 8,999. It uses one copy of the finished narration and stops during B05's Somalia narration. The approved B01 pictures and cut boundaries carry over from `WarAndWalletOpening`. `WarAndWalletMechanismGallery` contains the oil bids, freight handoff and wheat bids. Production assets and open rights are recorded in the [episode manifest](../videos/005-war-and-your-wallet/asset-manifest.json).
+
+- The focused timeline test verified the exact five-minute duration, B01 boundaries and in-shot events. Studio spot checks confirmed the opening, both bidding payoffs, freight accumulation, the Razoni timeline, the flour and freight comparison, and the final Somalia frame.
+- ESLint, TypeScript and all five Python timing tests passed. The Node suite passed 126 of 127 tests. The existing subscription ambient test requires the missing `public/subscription-full/ambient.wav`.
+- Picture cues retain provisional ASR timing. Continuous playback, listening alignment and final asset review are pending. No render was started.
+- The 0:45–4:00 graphics pass replaced the oil-price text card with two schematic tracks and reduced copy on the bids, fuel deliveries, freight handoff, port alternatives, Razoni timeline, and flour-order comparison. Studio checks sampled the oil and wheat bids, price and supply tracks, freight payoff, ship timeline and bread comparison. ESLint, TypeScript and the focused timeline test passed with the original cut boundaries.
+
 ## Composable Anti-Template Documentary Engine (Phases 1–4) — 2026-11-19
 
 Implemented the four-phase composable documentary motion engine without modifying existing episodes (`001`–`004`), existing galleries, or uncommitted episode-004 changes:

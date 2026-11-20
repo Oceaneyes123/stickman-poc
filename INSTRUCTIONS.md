@@ -6,7 +6,7 @@ Read [branding](references/CHANNEL-BRANDING.md), [scriptwriting](references/SCRI
 
 Keep brief, outline, script, spoken narration, claim sources and QA separate. Select media using the visual guide's nine-field framework and record asset provenance/permissions before delivery use. Never treat a recreation as authentic evidence or assume media is cleared. Use local tools and measured narration; retain separate technical, creative and listening approval.
 
-The commands below are the **existing episode 001 workflow**, retained as operational guidance. They can regenerate its narration or still packets: use them only when that episode work is explicitly authorized. They are not a general documentary pipeline. For a future episode, select its own files and an unused output directory only after checking the relevant script's supported options; do not overwrite existing episodes as migration cleanup. Technical convention changes require a separate implementation task. No commands below were run by this documentation migration.
+The narration and timing commands below use episode 001 paths as examples. For a new episode, use its script and a fresh output directory. Section 8 records the archived episode 001 storyboard workflow.
 
 ## 1. Open the project
 
@@ -66,7 +66,7 @@ for animation. Changing the audio requires new timing and review.
 If a run reports a pending request or lock, check VoiceStudio before retrying.
 See [detailed guidance](docs/narration.md) for troubleshooting and implementation details.
 
-## 8. Review or regenerate the complete storyboard
+## 8. Archived episode 001 storyboard workflow
 
 ```powershell
 Invoke-Item out/001-lifestyle-creep/storyboard-design-v6/review/index.html

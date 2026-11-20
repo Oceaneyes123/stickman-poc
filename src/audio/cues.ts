@@ -220,6 +220,60 @@ export const SFX_CUES = {
     volume: 0.8,
     use: "Bright resolve at the end of a win",
   },
+  pump_motor: {
+    category: "ambience",
+    seconds: 4,
+    volume: 0.09,
+    use: "Low pump motor with a soft startup and fade",
+  },
+  water_wash: {
+    category: "ambience",
+    seconds: 0.95,
+    volume: 0.09,
+    use: "Gentle wash under a ship or water route",
+  },
+  mechanical_click: {
+    category: "transitions",
+    seconds: 0.2,
+    volume: 0.15,
+    use: "Dry nozzle, relay or lock click",
+  },
+  gate_latch: {
+    category: "transitions",
+    seconds: 0.28,
+    volume: 0.15,
+    use: "Heavier latch when a supply route closes",
+  },
+  tire_roll: {
+    category: "transitions",
+    seconds: 0.75,
+    volume: 0.11,
+    use: "Short vehicle roll or arrival",
+  },
+  grain_rustle: {
+    category: "transitions",
+    seconds: 0.4,
+    volume: 0.10,
+    use: "Dry grain or canvas sack rustle",
+  },
+  paper_contact: {
+    category: "transitions",
+    seconds: 0.36,
+    volume: 0.11,
+    use: "Receipt or document sliding onto a surface",
+  },
+  shelf_contact: {
+    category: "transitions",
+    seconds: 0.26,
+    volume: 0.13,
+    use: "Soft set-down of a loaf, parcel or grocery bag",
+  },
+  sweep_down: {
+    category: "charts",
+    seconds: 0.55,
+    volume: 0.13,
+    use: "Filtered downward sweep for a falling price",
+  },
 } as const satisfies Record<string, SfxCueMeta>;
 
 export type SfxName = keyof typeof SFX_CUES;

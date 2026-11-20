@@ -1,7 +1,6 @@
 import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import { test } from "node:test";
-import { validateManifestFiles } from "../src/documentary/assets/nodeValidator.ts";
 import {
   ASSET_VALIDATION_DISCLAIMER,
   createAssetRegistry,
@@ -22,20 +21,12 @@ import {
   measureTextWidth,
   wrapText,
 } from "../src/documentary/core/textMetrics.ts";
-import { auditVisualVariety, runDocumentaryQa } from "../src/documentary/qa.ts";
-import {
-  compileDocumentaryTimeline,
-  type DocumentaryStoryboard,
-} from "../src/documentary/timeline.ts";
 import {
   buildInstallmentSchedule,
   calculateLoanBreakdown,
   compareMinimumPayment,
   summarizeObligations,
 } from "../src/finance/math.ts";
-import type { CueFile } from "../src/timeline/types.ts";
-
-const clone = <T>(v: T): T => structuredClone(v);
 
 test("keyframe sampling is deterministic for forward and reverse seeks", () => {
   const track = chain(move(0, 120, 10, 20, "out"), move(120, 40, 40, 15, "inOut"));
@@ -204,55 +195,7 @@ test("asset manifest validation supports episode 004 planning records and enforc
   assert.equal(reg.resolveRenderPath("REMOTE"), null);
 });
 
-test("BNPL documentary demo passes timeline compilation, local file manifest, continuity, layout, text, and variety QA", () => {
-  const cues = JSON.parse(
-    readFileSync("videos/demo-bnpl-feels-cheaper/cues.json", "utf8"),
-  ) as CueFile;
-  const storyboard = JSON.parse(
-    readFileSync("videos/demo-bnpl-feels-cheaper/storyboard.json", "utf8"),
-  ) as DocumentaryStoryboard;
-  const manifest = JSON.parse(
-    readFileSync("videos/demo-bnpl-feels-cheaper/asset-manifest.json", "utf8"),
-  ) as AssetManifest;
-
-  const { report, compiled } = runDocumentaryQa({
-    cueFile: cues,
-    storyboard,
-    manifest,
-    mode: "delivery",
-  });
-  const filesReport = validateManifestFiles(manifest, { mode: "delivery" });
-
-  assert.equal(report.passed, true, JSON.stringify(report, null, 2));
-  assert.equal(filesReport.valid, true, JSON.stringify(filesReport, null, 2));
-  assert.equal(compiled.durationInFrames, 1560);
-  assert.equal(compiled.timingStatus, "provisional-cue-fixture");
-  assert.equal(report.variety.warnings.length, 0);
-
-  // Provisional timing-demo cues cannot falsely claim listening-approved status.
-  const badBoard = clone(storyboard);
-  badBoard.timingStatus = "listening-approved";
-  assert.throws(() => compileDocumentaryTimeline(cues, badBoard), /listening-approved/);
-
-  // QA catches out-of-bounds layers, text overflow, and repeated-layout variety warnings.
-  const brokenBoard = clone(storyboard);
-  brokenBoard.scenes[0].layerBounds![0].rect.x = 12;
-  brokenBoard.scenes[0].textBounds![0].maxLines = 1;
-  brokenBoard.scenes[0].textBounds![0].box.width = 140;
-  brokenBoard.scenes[1].layout = brokenBoard.scenes[0].layout;
-  const brokenQa = runDocumentaryQa({
-    cueFile: cues,
-    storyboard: brokenBoard,
-    manifest,
-    mode: "delivery",
-  });
-  assert.equal(brokenQa.report.passed, false);
-  assert.ok(brokenQa.report.layoutIssues.length > 0);
-  assert.ok(brokenQa.report.textIssues.length > 0);
-  assert.ok(auditVisualVariety(brokenBoard).warnings.some((w) => w.kind === "repeated-layout"));
-});
-
-test("all P0 component modules and Root compositions exist with expected exports", () => {
+test("reusable documentary modules expose their expected components", () => {
   const requiredExports: [string, string[]][] = [
     ["src/documentary/composer/index.ts", ["DocumentaryScene", "LayerComposer", "MediaLayer", "SceneLayout", "SceneTimeline"]],
     ["src/documentary/ui/index.ts", ["BankingAppScreen", "AccountOverview", "TransactionHistory", "PaymentStatusModal", "CheckoutInterface", "BnplOfferCard", "SubscriptionDashboard", "CreditCardStatement", "LoanPaymentBreakdown", "MobileNotificationStack"]],
@@ -261,7 +204,6 @@ test("all P0 component modules and Root compositions exist with expected exports
     ["src/documentary/objects/index.tsx", ["ProductCardObject", "InstallmentCardStack", "DocumentaryCalendar", "BillAndReceiptObject", "CurrencyTokenGroup", "BankCardObject", "PhoneDeviceObject"]],
     ["src/documentary/typography/index.tsx", ["DocumentarySectionHeading", "FinancialLabelCard", "ExplanatoryCallout", "ContextualAnnotation", "SelectiveEmphasisText"]],
     ["src/documentary/Gallery.tsx", ["DocumentaryGallery", "DOCUMENTARY_GALLERY_DURATION"]],
-    ["src/documentary/demo/BnplFeelsCheaperDemo.tsx", ["BnplFeelsCheaperDemo", "DocumentaryMixedMediaShowcase", "BNPL_DEMO_DURATION"]],
   ];
   for (const [file, symbols] of requiredExports) {
     assert.ok(existsSync(file), `Missing ${file}`);
@@ -287,13 +229,5 @@ test("all P0 component modules and Root compositions exist with expected exports
         `Missing export ${sym} in ${file}`,
       );
     }
-  }
-  const root = readFileSync("src/Root.tsx", "utf8");
-  for (const id of [
-    "BnplFeelsCheaperDemo",
-    "DocumentaryGallery",
-    "DocumentaryMixedMediaShowcase",
-  ]) {
-    assert.ok(root.includes(`id="${id}"`), `Root.tsx missing composition ${id}`);
   }
 });

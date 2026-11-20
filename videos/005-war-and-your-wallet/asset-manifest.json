@@ -1,0 +1,1071 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "id": "V01",
+      "kind": "original SVG",
+      "title": "Pump, commute and grocery props",
+      "creator": null,
+      "source_url": null,
+      "source_path": "src/scenes/WarAndWalletFirstFive.tsx",
+      "local_path": null,
+      "sha256": null,
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original project SVG and data redraws in source. Final asset review pending.",
+      "permitted_uses": [],
+      "restrictions": [],
+      "intended_use": "Illustrate one driver’s changing fuel bill, postponed purchase and grocery checkout.",
+      "beat_ids": [
+        "B01",
+        "B05",
+        "B07"
+      ],
+      "claim_ids": [
+        "F01",
+        "F06",
+        "A01",
+        "A02"
+      ],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [
+        "src/scenes/WarAndWalletOpening.tsx",
+        "src/scenes/WarAndWalletEnding.tsx"
+      ],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": null,
+      "authenticity": "Original SVG in the Studio preview",
+      "disclosure": "Pending final context review."
+    },
+    {
+      "id": "V02",
+      "kind": "chart",
+      "title": "Episode evidence redraws",
+      "creator": null,
+      "source_url": null,
+      "source_path": "src/scenes/WarAndWalletFirstFive.tsx",
+      "local_path": null,
+      "sha256": null,
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original project SVG and data redraws in source. Final asset review pending.",
+      "permitted_uses": [],
+      "restrictions": [
+        "Use sourced facts and original graphics. Review scope and credit against each source.",
+        "No source screenshots, logos or chart artwork are included in this plan."
+      ],
+      "intended_use": "Draw original dated comparisons and source labels from the claim ledger.",
+      "beat_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B06",
+        "B07"
+      ],
+      "claim_ids": [
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F08",
+        "F09",
+        "A02"
+      ],
+      "attribution_text": "EIA, IEA, FAO, BLS and Federal Reserve, as specified by shot and reference period.",
+      "attribution_placement": "Within the relevant evidence shot.",
+      "evidence_paths": [
+        "src/scenes/WarAndWalletOpening.tsx",
+        "src/scenes/WarAndWalletEnding.tsx"
+      ],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": null,
+      "authenticity": "Original SVG in the Studio preview",
+      "disclosure": "Pending final context review."
+    },
+    {
+      "id": "V03",
+      "kind": "original SVG",
+      "title": "Ukraine, Black Sea and Somalia route schematics",
+      "creator": "The Money Trap project for the planned drawing. Natural Earth contributors for candidate basemap data.",
+      "source_url": "https://www.naturalearthdata.com/",
+      "source_path": "src/scenes/WarAndWalletFirstFive.tsx",
+      "local_path": null,
+      "sha256": null,
+      "license": "Public domain for candidate Natural Earth data",
+      "license_url": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "rights_basis": "Original project SVG and data redraws in source. Final asset review pending.",
+      "permitted_uses": [],
+      "restrictions": [
+        "Record exact layers and versions. Review the 2022 context and schematic route labels.",
+        "Route strokes convey availability only."
+      ],
+      "intended_use": "Locate the invasion and illustrate disruptions and alternative routes.",
+      "beat_ids": [
+        "B01",
+        "B03",
+        "B05",
+        "B06"
+      ],
+      "claim_ids": [
+        "F01",
+        "F02",
+        "F04",
+        "F07",
+        "F09",
+        "A02"
+      ],
+      "attribution_text": "Made with Natural Earth, if used. Credit USDA for Ukraine transport and FAO/WFP for Somalia context.",
+      "attribution_placement": "Map credit line, as applicable.",
+      "evidence_paths": [
+        "src/scenes/WarAndWalletOpening.tsx"
+      ],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": "Preview uses original schematic forms. Natural Earth remains a candidate for a geographically detailed version.",
+      "authenticity": "Original SVG in the Studio preview",
+      "disclosure": "Pending final context review."
+    },
+    {
+      "id": "V04",
+      "kind": "original SVG",
+      "title": "Shared oil and wheat bidding layout",
+      "creator": null,
+      "source_url": null,
+      "source_path": "src/scenes/WarAndWalletFirstFive.tsx",
+      "local_path": null,
+      "sha256": null,
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original project SVG and data redraws in source. Final asset review pending.",
+      "permitted_uses": [],
+      "restrictions": [],
+      "intended_use": "Reuse the same buyer, seller and bid motion for replacement crude and wheat.",
+      "beat_ids": [
+        "B02",
+        "B03"
+      ],
+      "claim_ids": [
+        "F02",
+        "F04",
+        "A01",
+        "A02"
+      ],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": null,
+      "authenticity": "Original SVG in the Studio preview",
+      "disclosure": "Pending final context review."
+    },
+    {
+      "id": "V05",
+      "kind": "original SVG",
+      "title": "Fuel, bakery and retail cost handoffs",
+      "creator": null,
+      "source_url": null,
+      "source_path": "src/scenes/WarAndWalletFirstFive.tsx",
+      "local_path": null,
+      "sha256": null,
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original project SVG and data redraws in source. Final asset review pending.",
+      "permitted_uses": [],
+      "restrictions": [
+        "Use relative cost markers without implied historical contract terms or market contribution shares."
+      ],
+      "intended_use": "Illustrate the shared crude input, fuel branches, freight, dated flour orders and shelf cost.",
+      "beat_ids": [
+        "B02",
+        "B03",
+        "B04",
+        "B07"
+      ],
+      "claim_ids": [
+        "F01",
+        "F03",
+        "F06",
+        "A01",
+        "A02"
+      ],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [
+        "src/scenes/WarAndWalletEnding.tsx"
+      ],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": null,
+      "authenticity": "Original SVG in the Studio preview",
+      "disclosure": "Pending final context review."
+    },
+    {
+      "id": "V06",
+      "kind": "recreation",
+      "title": "Razoni departure reconstruction and July timeline",
+      "creator": null,
+      "source_url": "https://ukraine.un.org/en/193210-inspection-first-commercial-vessel-under-black-sea-grain-initiative-completed",
+      "source_path": "src/scenes/WarAndWalletFirstFive.tsx",
+      "local_path": null,
+      "sha256": null,
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original project SVG and data redraws in source. Final asset review pending.",
+      "permitted_uses": [],
+      "restrictions": [
+        "Use the UN account for factual reference. Any use of its photo requires separate review.",
+        "The Odesa departure is a schematic reconstruction; do not use the Istanbul photo as departure imagery."
+      ],
+      "intended_use": "Draw a schematic Odesa departure and place it after the July monthly wheat reading.",
+      "beat_ids": [
+        "B04"
+      ],
+      "claim_ids": [
+        "F05",
+        "F06",
+        "A02"
+      ],
+      "attribution_text": "United Nations in Ukraine, 3 August 2022. FAO for the July world wheat change.",
+      "attribution_placement": "Within the ship timeline.",
+      "evidence_paths": [],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": null,
+      "authenticity": "Original schematic reconstruction of the departure",
+      "disclosure": "Label as a schematic reconstruction and identify the corn cargo."
+    },
+    {
+      "id": "V07",
+      "kind": "original SVG",
+      "title": "Harvest, import and household affordability graphic",
+      "creator": null,
+      "source_url": null,
+      "source_path": "src/scenes/WarAndWalletFirstFive.tsx",
+      "local_path": null,
+      "sha256": null,
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original project SVG and data redraws in source. Final asset review pending.",
+      "permitted_uses": [],
+      "restrictions": [],
+      "intended_use": "Show poor harvests, costly imported grain and pressure on staple affordability.",
+      "beat_ids": [
+        "B05"
+      ],
+      "claim_ids": [
+        "F07",
+        "A01",
+        "A02"
+      ],
+      "attribution_text": "FAO and WFP, Hunger Hotspots, Somalia section, September 2022.",
+      "attribution_placement": "Within the regional and affordability sequence.",
+      "evidence_paths": [
+        "src/scenes/WarAndWalletEnding.tsx"
+      ],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": "The full Studio cut extends the Somalia schematic into a qualitative harvest, import and household affordability comparison.",
+      "authenticity": "Original SVG in the Studio preview",
+      "disclosure": "Pending final context review."
+    },
+    {
+      "id": "V08",
+      "kind": "original SVG",
+      "title": "Borrowing bills, car demand and loan terms",
+      "creator": null,
+      "source_url": null,
+      "source_path": "src/scenes/WarAndWalletEnding.tsx",
+      "local_path": null,
+      "sha256": null,
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original project SVG and narrated example loan terms. Final asset review pending.",
+      "permitted_uses": [],
+      "restrictions": [
+        "Avoid real lenders, identifying data and invented quotations."
+      ],
+      "intended_use": "Illustrate an interest-only change on a card statement, a delayed car purchase and two loan terms.",
+      "beat_ids": [
+        "B06"
+      ],
+      "claim_ids": [
+        "F08",
+        "F09",
+        "A01",
+        "A02"
+      ],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": null,
+      "authenticity": "Original SVG in the Studio preview",
+      "disclosure": "Pending final context review."
+    },
+    {
+      "id": "R01",
+      "kind": "photo",
+      "title": "UN OCHA photo of Razoni at Istanbul, 3 August 2022",
+      "creator": "UN OCHA, credited by United Nations in Ukraine",
+      "source_url": "https://ukraine.un.org/en/193210-inspection-first-commercial-vessel-under-black-sea-grain-initiative-completed",
+      "source_path": null,
+      "local_path": null,
+      "sha256": null,
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Permission or applicable reuse terms pending for this specific image.",
+      "permitted_uses": [],
+      "restrictions": [
+        "Image depicts Istanbul on 3 August. It cannot serve as footage of the Odesa departure."
+      ],
+      "intended_use": "Optional, clearly dated context image showing the ship at Istanbul on 3 August, after the Odesa departure. Reproduction requires episode-specific clearance.",
+      "beat_ids": [
+        "B04"
+      ],
+      "claim_ids": [
+        "F05",
+        "A02"
+      ],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": null,
+      "authenticity": "Publisher-captioned photograph",
+      "disclosure": "If cleared, retain location, date and credit."
+    },
+    {
+      "id": "N01",
+      "kind": "audio",
+      "title": "Finished Video 5 narration master",
+      "creator": null,
+      "source_url": null,
+      "source_path": "out/005-war-and-your-wallet/narration/manifest.json",
+      "local_path": "out/005-war-and-your-wallet/narration/narration.wav",
+      "sha256": "724d86fd1eab76aed54b02e8070762c00ab4ef004974e297d1d7142ab215405a",
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Local VoiceStudio VoxCPM2 synthesis. Document voice profile provenance and authorization before release.",
+      "permitted_uses": [],
+      "restrictions": [],
+      "intended_use": "Use as the single narration master for cue alignment and eventual rendering.",
+      "beat_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07"
+      ],
+      "claim_ids": [],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": "Studio uses a byte-identical copy at public/war-and-your-wallet/narration.wav. The full cut uses the complete master.",
+      "authenticity": "Existing locally synthesized narration",
+      "disclosure": "Voice use and applicable release disclosure pending review."
+    },
+    {
+      "id": "SFX-pump_motor",
+      "kind": "audio",
+      "title": "Low pump motor with a soft startup and fade",
+      "creator": "The Money Trap project",
+      "source_url": null,
+      "source_path": "scripts/sfx/generate-sfx.ts",
+      "local_path": "public/sfx/pump_motor.wav",
+      "sha256": "84af96a26169b30b7a2cc7b2397d3e72d7eb6659b393bad98ac3efb625a73c83",
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original deterministic synthesis from locally authored oscillators, seeded noise, filters and envelopes.",
+      "permitted_uses": [
+        "Video 5 Studio composition"
+      ],
+      "restrictions": [],
+      "intended_use": "5 scheduled Video 5 placements",
+      "beat_ids": [
+        "B01",
+        "B03",
+        "B07"
+      ],
+      "claim_ids": [],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [
+        "src/audio/README.md",
+        "src/scenes/warAndWalletSoundCues.ts"
+      ],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": "In-composition level adjustments and selected tail trims.",
+      "authenticity": "Original synthesized effects. No third-party recordings.",
+      "disclosure": "Pending final episode review."
+    },
+    {
+      "id": "SFX-counter_roll",
+      "kind": "audio",
+      "title": "Rapid ticking as a number counts up",
+      "creator": "The Money Trap project",
+      "source_url": null,
+      "source_path": "scripts/sfx/generate-sfx.ts",
+      "local_path": "public/sfx/counter_roll.wav",
+      "sha256": "232439b6a9b1dea8bb7e1eace1152e1542c4bbe7f3f76084354e867575963c8d",
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original deterministic synthesis from locally authored oscillators, seeded noise, filters and envelopes.",
+      "permitted_uses": [
+        "Video 5 Studio composition"
+      ],
+      "restrictions": [],
+      "intended_use": "1 scheduled Video 5 placements",
+      "beat_ids": [
+        "B01"
+      ],
+      "claim_ids": [],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [
+        "src/audio/README.md",
+        "src/scenes/warAndWalletSoundCues.ts"
+      ],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": "In-composition level adjustments and selected tail trims.",
+      "authenticity": "Original synthesized effects. No third-party recordings.",
+      "disclosure": "Pending final episode review."
+    },
+    {
+      "id": "SFX-mechanical_click",
+      "kind": "audio",
+      "title": "Dry nozzle, relay or lock click",
+      "creator": "The Money Trap project",
+      "source_url": null,
+      "source_path": "scripts/sfx/generate-sfx.ts",
+      "local_path": "public/sfx/mechanical_click.wav",
+      "sha256": "7a5082bc4b0b16d309b958c7b25fc5069e780c1285ff3c264960e09b0a78425e",
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original deterministic synthesis from locally authored oscillators, seeded noise, filters and envelopes.",
+      "permitted_uses": [
+        "Video 5 Studio composition"
+      ],
+      "restrictions": [],
+      "intended_use": "17 scheduled Video 5 placements",
+      "beat_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07"
+      ],
+      "claim_ids": [],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [
+        "src/audio/README.md",
+        "src/scenes/warAndWalletSoundCues.ts"
+      ],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": "In-composition level adjustments and selected tail trims.",
+      "authenticity": "Original synthesized effects. No third-party recordings.",
+      "disclosure": "Pending final episode review."
+    },
+    {
+      "id": "SFX-bar_thump",
+      "kind": "audio",
+      "title": "Soft thud as a chart bar lands",
+      "creator": "The Money Trap project",
+      "source_url": null,
+      "source_path": "scripts/sfx/generate-sfx.ts",
+      "local_path": "public/sfx/bar_thump.wav",
+      "sha256": "cf8cf9051bb8e519126138dfff5fb62117bed9c87b45df1e0e06c383841ad9d0",
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original deterministic synthesis from locally authored oscillators, seeded noise, filters and envelopes.",
+      "permitted_uses": [
+        "Video 5 Studio composition"
+      ],
+      "restrictions": [],
+      "intended_use": "10 scheduled Video 5 placements",
+      "beat_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B06",
+        "B07"
+      ],
+      "claim_ids": [],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [
+        "src/audio/README.md",
+        "src/scenes/warAndWalletSoundCues.ts"
+      ],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": "In-composition level adjustments and selected tail trims.",
+      "authenticity": "Original synthesized effects. No third-party recordings.",
+      "disclosure": "Pending final episode review."
+    },
+    {
+      "id": "SFX-whoosh_rise",
+      "kind": "audio",
+      "title": "Upward sweep under a line going up",
+      "creator": "The Money Trap project",
+      "source_url": null,
+      "source_path": "scripts/sfx/generate-sfx.ts",
+      "local_path": "public/sfx/whoosh_rise.wav",
+      "sha256": "87b86fccecf197ebacbf3dd7d60fdef43c6a58a15966cf05df7391246808d162",
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original deterministic synthesis from locally authored oscillators, seeded noise, filters and envelopes.",
+      "permitted_uses": [
+        "Video 5 Studio composition"
+      ],
+      "restrictions": [],
+      "intended_use": "9 scheduled Video 5 placements",
+      "beat_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06"
+      ],
+      "claim_ids": [],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [
+        "src/audio/README.md",
+        "src/scenes/warAndWalletSoundCues.ts"
+      ],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": "In-composition level adjustments and selected tail trims.",
+      "authenticity": "Original synthesized effects. No third-party recordings.",
+      "disclosure": "Pending final episode review."
+    },
+    {
+      "id": "SFX-calculator_taps",
+      "kind": "audio",
+      "title": "Quick number crunching",
+      "creator": "The Money Trap project",
+      "source_url": null,
+      "source_path": "scripts/sfx/generate-sfx.ts",
+      "local_path": "public/sfx/calculator_taps.wav",
+      "sha256": "cfd0256a448ab53d80a463f4670fc9360f1862fa2e2f087dd250562a9ef5d15b",
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original deterministic synthesis from locally authored oscillators, seeded noise, filters and envelopes.",
+      "permitted_uses": [
+        "Video 5 Studio composition"
+      ],
+      "restrictions": [],
+      "intended_use": "2 scheduled Video 5 placements",
+      "beat_ids": [
+        "B01",
+        "B06"
+      ],
+      "claim_ids": [],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [
+        "src/audio/README.md",
+        "src/scenes/warAndWalletSoundCues.ts"
+      ],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": "In-composition level adjustments and selected tail trims.",
+      "authenticity": "Original synthesized effects. No third-party recordings.",
+      "disclosure": "Pending final episode review."
+    },
+    {
+      "id": "SFX-swish",
+      "kind": "audio",
+      "title": "Quick wipe or text slide",
+      "creator": "The Money Trap project",
+      "source_url": null,
+      "source_path": "scripts/sfx/generate-sfx.ts",
+      "local_path": "public/sfx/swish.wav",
+      "sha256": "e3711a17c2e6b62ea3cb03ac45b99e779eb6e0a4c3f84c0bc0678a977f3af04c",
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original deterministic synthesis from locally authored oscillators, seeded noise, filters and envelopes.",
+      "permitted_uses": [
+        "Video 5 Studio composition"
+      ],
+      "restrictions": [],
+      "intended_use": "7 scheduled Video 5 placements",
+      "beat_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07"
+      ],
+      "claim_ids": [],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [
+        "src/audio/README.md",
+        "src/scenes/warAndWalletSoundCues.ts"
+      ],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": "In-composition level adjustments and selected tail trims.",
+      "authenticity": "Original synthesized effects. No third-party recordings.",
+      "disclosure": "Pending final episode review."
+    },
+    {
+      "id": "SFX-whoosh_short",
+      "kind": "audio",
+      "title": "Standard scene cut or object slide",
+      "creator": "The Money Trap project",
+      "source_url": null,
+      "source_path": "scripts/sfx/generate-sfx.ts",
+      "local_path": "public/sfx/whoosh_short.wav",
+      "sha256": "c62b9932a70d1e40642827384b17cc9949f07eba08767b9413f7d18d73c2b126",
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original deterministic synthesis from locally authored oscillators, seeded noise, filters and envelopes.",
+      "permitted_uses": [
+        "Video 5 Studio composition"
+      ],
+      "restrictions": [],
+      "intended_use": "1 scheduled Video 5 placements",
+      "beat_ids": [
+        "B01"
+      ],
+      "claim_ids": [],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [
+        "src/audio/README.md",
+        "src/scenes/warAndWalletSoundCues.ts"
+      ],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": "In-composition level adjustments and selected tail trims.",
+      "authenticity": "Original synthesized effects. No third-party recordings.",
+      "disclosure": "Pending final episode review."
+    },
+    {
+      "id": "SFX-gate_latch",
+      "kind": "audio",
+      "title": "Heavier latch when a supply route closes",
+      "creator": "The Money Trap project",
+      "source_url": null,
+      "source_path": "scripts/sfx/generate-sfx.ts",
+      "local_path": "public/sfx/gate_latch.wav",
+      "sha256": "bc17b01933f3bbaae67c0a76b24dfdead3201e1abdf785ad9f2294284f5049db",
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original deterministic synthesis from locally authored oscillators, seeded noise, filters and envelopes.",
+      "permitted_uses": [
+        "Video 5 Studio composition"
+      ],
+      "restrictions": [],
+      "intended_use": "2 scheduled Video 5 placements",
+      "beat_ids": [
+        "B02",
+        "B03"
+      ],
+      "claim_ids": [],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [
+        "src/audio/README.md",
+        "src/scenes/warAndWalletSoundCues.ts"
+      ],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": "In-composition level adjustments and selected tail trims.",
+      "authenticity": "Original synthesized effects. No third-party recordings.",
+      "disclosure": "Pending final episode review."
+    },
+    {
+      "id": "SFX-coin_clink",
+      "kind": "audio",
+      "title": "Single coin landing or tapped: small gains",
+      "creator": "The Money Trap project",
+      "source_url": null,
+      "source_path": "scripts/sfx/generate-sfx.ts",
+      "local_path": "public/sfx/coin_clink.wav",
+      "sha256": "f05579fee7b19694b29c0d7d007f8d6e0f6272fde82d68a02bbad2f3ce37d36d",
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original deterministic synthesis from locally authored oscillators, seeded noise, filters and envelopes.",
+      "permitted_uses": [
+        "Video 5 Studio composition"
+      ],
+      "restrictions": [],
+      "intended_use": "8 scheduled Video 5 placements",
+      "beat_ids": [
+        "B02",
+        "B03",
+        "B06"
+      ],
+      "claim_ids": [],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [
+        "src/audio/README.md",
+        "src/scenes/warAndWalletSoundCues.ts"
+      ],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": "In-composition level adjustments and selected tail trims.",
+      "authenticity": "Original synthesized effects. No third-party recordings.",
+      "disclosure": "Pending final episode review."
+    },
+    {
+      "id": "SFX-paper_contact",
+      "kind": "audio",
+      "title": "Receipt or document sliding onto a surface",
+      "creator": "The Money Trap project",
+      "source_url": null,
+      "source_path": "scripts/sfx/generate-sfx.ts",
+      "local_path": "public/sfx/paper_contact.wav",
+      "sha256": "53db9cf3a341a8722a2d696dc3d1e5ec6702d926d2deb39df91a4237ffe39933",
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original deterministic synthesis from locally authored oscillators, seeded noise, filters and envelopes.",
+      "permitted_uses": [
+        "Video 5 Studio composition"
+      ],
+      "restrictions": [],
+      "intended_use": "9 scheduled Video 5 placements",
+      "beat_ids": [
+        "B02",
+        "B04",
+        "B05",
+        "B06",
+        "B07"
+      ],
+      "claim_ids": [],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [
+        "src/audio/README.md",
+        "src/scenes/warAndWalletSoundCues.ts"
+      ],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": "In-composition level adjustments and selected tail trims.",
+      "authenticity": "Original synthesized effects. No third-party recordings.",
+      "disclosure": "Pending final episode review."
+    },
+    {
+      "id": "SFX-stamp_thud",
+      "kind": "audio",
+      "title": "Approved, denied or debt stamped",
+      "creator": "The Money Trap project",
+      "source_url": null,
+      "source_path": "scripts/sfx/generate-sfx.ts",
+      "local_path": "public/sfx/stamp_thud.wav",
+      "sha256": "00a297fcfdcef0d01424faf179dd2f1748efa89b40d5bc009082e04b01021e9d",
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original deterministic synthesis from locally authored oscillators, seeded noise, filters and envelopes.",
+      "permitted_uses": [
+        "Video 5 Studio composition"
+      ],
+      "restrictions": [],
+      "intended_use": "1 scheduled Video 5 placements",
+      "beat_ids": [
+        "B02"
+      ],
+      "claim_ids": [],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [
+        "src/audio/README.md",
+        "src/scenes/warAndWalletSoundCues.ts"
+      ],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": "In-composition level adjustments and selected tail trims.",
+      "authenticity": "Original synthesized effects. No third-party recordings.",
+      "disclosure": "Pending final episode review."
+    },
+    {
+      "id": "SFX-tire_roll",
+      "kind": "audio",
+      "title": "Short vehicle roll or arrival",
+      "creator": "The Money Trap project",
+      "source_url": null,
+      "source_path": "scripts/sfx/generate-sfx.ts",
+      "local_path": "public/sfx/tire_roll.wav",
+      "sha256": "31763259cea69c393e7896f4bc30d35d3f2f896a0d8ed18a6169513d3f96b2be",
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original deterministic synthesis from locally authored oscillators, seeded noise, filters and envelopes.",
+      "permitted_uses": [
+        "Video 5 Studio composition"
+      ],
+      "restrictions": [],
+      "intended_use": "3 scheduled Video 5 placements",
+      "beat_ids": [
+        "B02",
+        "B03",
+        "B06"
+      ],
+      "claim_ids": [],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [
+        "src/audio/README.md",
+        "src/scenes/warAndWalletSoundCues.ts"
+      ],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": "In-composition level adjustments and selected tail trims.",
+      "authenticity": "Original synthesized effects. No third-party recordings.",
+      "disclosure": "Pending final episode review."
+    },
+    {
+      "id": "SFX-grain_rustle",
+      "kind": "audio",
+      "title": "Dry grain or canvas sack rustle",
+      "creator": "The Money Trap project",
+      "source_url": null,
+      "source_path": "scripts/sfx/generate-sfx.ts",
+      "local_path": "public/sfx/grain_rustle.wav",
+      "sha256": "67c4826d0d847b6eae91634e7087a9f9b6d04a835547c3a2018931b8f661f5fd",
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original deterministic synthesis from locally authored oscillators, seeded noise, filters and envelopes.",
+      "permitted_uses": [
+        "Video 5 Studio composition"
+      ],
+      "restrictions": [],
+      "intended_use": "5 scheduled Video 5 placements",
+      "beat_ids": [
+        "B03",
+        "B04",
+        "B05"
+      ],
+      "claim_ids": [],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [
+        "src/audio/README.md",
+        "src/scenes/warAndWalletSoundCues.ts"
+      ],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": "In-composition level adjustments and selected tail trims.",
+      "authenticity": "Original synthesized effects. No third-party recordings.",
+      "disclosure": "Pending final episode review."
+    },
+    {
+      "id": "SFX-shelf_contact",
+      "kind": "audio",
+      "title": "Soft set-down of a loaf, parcel or grocery bag",
+      "creator": "The Money Trap project",
+      "source_url": null,
+      "source_path": "scripts/sfx/generate-sfx.ts",
+      "local_path": "public/sfx/shelf_contact.wav",
+      "sha256": "54f068dd3ea46fff123851cacd65a9682c961342bc49367c22ce5cfb114be5d7",
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original deterministic synthesis from locally authored oscillators, seeded noise, filters and envelopes.",
+      "permitted_uses": [
+        "Video 5 Studio composition"
+      ],
+      "restrictions": [],
+      "intended_use": "4 scheduled Video 5 placements",
+      "beat_ids": [
+        "B03",
+        "B04",
+        "B07"
+      ],
+      "claim_ids": [],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [
+        "src/audio/README.md",
+        "src/scenes/warAndWalletSoundCues.ts"
+      ],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": "In-composition level adjustments and selected tail trims.",
+      "authenticity": "Original synthesized effects. No third-party recordings.",
+      "disclosure": "Pending final episode review."
+    },
+    {
+      "id": "SFX-water_wash",
+      "kind": "audio",
+      "title": "Gentle wash under a ship or water route",
+      "creator": "The Money Trap project",
+      "source_url": null,
+      "source_path": "scripts/sfx/generate-sfx.ts",
+      "local_path": "public/sfx/water_wash.wav",
+      "sha256": "a8c7303274532ed6d825c74a32d86c585fb1e1fd076f2e8543ccfc303c7d3a28",
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original deterministic synthesis from locally authored oscillators, seeded noise, filters and envelopes.",
+      "permitted_uses": [
+        "Video 5 Studio composition"
+      ],
+      "restrictions": [],
+      "intended_use": "2 scheduled Video 5 placements",
+      "beat_ids": [
+        "B04",
+        "B05"
+      ],
+      "claim_ids": [],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [
+        "src/audio/README.md",
+        "src/scenes/warAndWalletSoundCues.ts"
+      ],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": "In-composition level adjustments and selected tail trims.",
+      "authenticity": "Original synthesized effects. No third-party recordings.",
+      "disclosure": "Pending final episode review."
+    },
+    {
+      "id": "SFX-sweep_down",
+      "kind": "audio",
+      "title": "Filtered downward sweep for a falling price",
+      "creator": "The Money Trap project",
+      "source_url": null,
+      "source_path": "scripts/sfx/generate-sfx.ts",
+      "local_path": "public/sfx/sweep_down.wav",
+      "sha256": "706ea75d178a6cb8575e760a9c05ed6508d069f9dfe99dfe35eb57282f87d36e",
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original deterministic synthesis from locally authored oscillators, seeded noise, filters and envelopes.",
+      "permitted_uses": [
+        "Video 5 Studio composition"
+      ],
+      "restrictions": [],
+      "intended_use": "4 scheduled Video 5 placements",
+      "beat_ids": [
+        "B04",
+        "B07"
+      ],
+      "claim_ids": [],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [
+        "src/audio/README.md",
+        "src/scenes/warAndWalletSoundCues.ts"
+      ],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": "In-composition level adjustments and selected tail trims.",
+      "authenticity": "Original synthesized effects. No third-party recordings.",
+      "disclosure": "Pending final episode review."
+    },
+    {
+      "id": "SFX-clock_tick",
+      "kind": "audio",
+      "title": "Soft ticking clock: pressure, deadlines",
+      "creator": "The Money Trap project",
+      "source_url": null,
+      "source_path": "scripts/sfx/generate-sfx.ts",
+      "local_path": "public/sfx/clock_tick.wav",
+      "sha256": "6dbc1ae8ec6db8a555c06e0a7f9fac717738d572628b14d66b8f51af7e5d57a9",
+      "license": null,
+      "license_url": null,
+      "rights_basis": "Original deterministic synthesis from locally authored oscillators, seeded noise, filters and envelopes.",
+      "permitted_uses": [
+        "Video 5 Studio composition"
+      ],
+      "restrictions": [],
+      "intended_use": "1 scheduled Video 5 placements",
+      "beat_ids": [
+        "B05"
+      ],
+      "claim_ids": [],
+      "attribution_text": null,
+      "attribution_placement": null,
+      "evidence_paths": [
+        "src/audio/README.md",
+        "src/scenes/warAndWalletSoundCues.ts"
+      ],
+      "verified_on": null,
+      "verified_by": null,
+      "status": "pending",
+      "parent_asset_id": null,
+      "modifications": "In-composition level adjustments and selected tail trims.",
+      "authenticity": "Original synthesized effects. No third-party recordings.",
+      "disclosure": "Pending final episode review."
+    }
+  ]
+}

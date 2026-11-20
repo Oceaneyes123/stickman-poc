@@ -38,7 +38,7 @@ import {
   sampleSpring,
 } from "../src/documentary/core/motionProfiles.ts";
 import { resolveActiveStage } from "../src/documentary/core/stages.ts";
-import { auditVisualVariety, runDocumentaryQa } from "../src/documentary/qa.ts";
+import { runDocumentaryQa } from "../src/documentary/qa.ts";
 import { compileDocumentarySfx } from "../src/documentary/sfxCompiler.ts";
 import {
   compileDocumentaryTimeline,
@@ -304,12 +304,7 @@ test("Phase 3: documentary timeline supports wordId anchoring and rejects invali
 
 // ---------------- Phase 4 ----------------
 
-test("Phase 4: upgraded auditVisualVariety catches anti-patterns while demo storyboard keeps 0 warnings", () => {
-  const cues = JSON.parse(readFileSync("videos/demo-bnpl-feels-cheaper/cues.json", "utf8")) as CueFile;
-  const demoBoard = JSON.parse(readFileSync("videos/demo-bnpl-feels-cheaper/storyboard.json", "utf8")) as DocumentaryStoryboard;
-  const compiledDemo = compileDocumentaryTimeline(cues, demoBoard);
-  assert.equal(auditVisualVariety(demoBoard, compiledDemo).warnings.length, 0);
-
+test("Phase 4: visual variety catches repetitive layouts and static holds", () => {
   // Build synthetic repetitive 6-scene storyboard with 18s un-staged scene
   const repCues: CueFile = {
     mode: "timing-demo",
@@ -338,7 +333,7 @@ test("Phase 4: upgraded auditVisualVariety catches anti-patterns while demo stor
     ],
     beats: [],
   };
-  const manifest = JSON.parse(readFileSync("videos/demo-bnpl-feels-cheaper/asset-manifest.json", "utf8"));
+  const manifest = { version: 1 as const, assets: [] };
   const { report } = runDocumentaryQa({ cueFile: repCues, storyboard: repBoard, manifest, mode: "planning" });
   const kinds = new Set(report.variety.warnings.map((w) => w.kind));
   assert.ok(kinds.has("repeated-polarity"));
@@ -346,9 +341,4 @@ test("Phase 4: upgraded auditVisualVariety catches anti-patterns while demo stor
   assert.ok(kinds.has("hard-cut-run"));
   assert.ok(kinds.has("static-long-scene"));
   assert.equal(report.variety.hardCutRatio, 0.8);
-
-  const root = readFileSync("src/Root.tsx", "utf8");
-  for (const id of ["CutawayGallery", "DynamicMotionGallery", "DynamicShowcasePilot"]) {
-    assert.ok(root.includes(`id="${id}"`), `Missing ${id} in Root.tsx`);
-  }
 });

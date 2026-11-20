@@ -55,6 +55,7 @@ run.lock
 /public/free-shipping-opening/narration.wav
 /public/free-shipping-full/narration.wav
 /public/free-shipping-full/ambient.wav
+/public/war-and-your-wallet/narration.wav
 /public/subscription-*/narration.wav
 /public/subscription-full/narration-with-cta.wav
 /public/subscription-full/ambient.wav

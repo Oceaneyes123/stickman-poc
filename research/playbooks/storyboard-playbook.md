@@ -17,9 +17,19 @@ Sam and Alex may remain fictional narrative names without recurring animation. L
 
 ## Required beat record
 
-Use the [nine-field framework](../../references/VISUAL_STYLE_GUIDE.md#6-shot-selection-framework) for every beat: narration/story moment, learning need, visual purpose, recommended medium, primary subject, animation/camera action, required assets, source/license requirements and expected takeaway. Carry beat/cue IDs and any provisional duration separately. One beat may use several purposeful shots, or continue an existing shot.
+Use the [nine-field framework](../../references/VISUAL_STYLE_GUIDE.md#6-shot-selection-framework) for every beat. Carry beat/cue IDs and any provisional duration separately. One beat may use several purposeful shots, or continue an existing shot.
 
 Keep one dominant idea; supporting objects may coexist. Preserve object identity, dates and states across cuts. Keep labels attached to their meaning, with readable hierarchy and no text crossing faces. Negative space can support comprehension without an arriving icon. Select meaningful visual variety; no mandatory rotation of scene families, exact object count or first-minute comparison.
+
+## Compose shots before planning motion
+
+For each shot, name the setting and what happens there. Describe the scale and placement of the subject, which parts of the surrounding scene establish the place or explain the action, and what the shot holds after the change. Tie reveals and cuts to narration anchors. Carry the relevant objects or landmarks across cuts within the same setting.
+
+For example, stage a truck beside the bakery receiving door so the dock and truck show who is receiving the flour. Cut tight to the delivery charge on the docket. At the store, frame the loaf with the shelf edge and its price tag. Each setup uses its space to show a different step in the cost handoff.
+
+Review rough 16:9 layouts in sequence before polishing motion. Use the first readable state and the settled state when the framing or relationship changes. For each setup, ask what the viewer would lose if the surroundings disappeared. Look for a specific answer such as where an event happens, what blocks an action, or how two objects connect. Check explanation and evidence shots too. Use repeated framing when it helps viewers compare a change or recognize a return to the same place.
+
+For original 2D illustration, finish a representative still before animating. Choose a shot that tests the key action and how it sits in the setting. Use it to establish which outlines carry emphasis, how fine details recede, and how materials and lighting shape the object colors. Include a mechanism shot if its artwork uses a different treatment. Review the stills at phone size and use them as references for the related shots.
 
 ## Example: BNPL schedule beat
 

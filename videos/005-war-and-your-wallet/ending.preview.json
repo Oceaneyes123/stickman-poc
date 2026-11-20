@@ -1,0 +1,261 @@
+{
+  "scriptHash": "6078105774b0ba007e31e6bce422a768e3b6ac6ffd4b4f181aa1bc24f78d7a60",
+  "audioHash": "724d86fd1eab76aed54b02e8070762c00ab4ef004974e297d1d7142ab215405a",
+  "durationMs": 442232.75,
+  "cues": [
+    {
+      "id": "p014-s005",
+      "text": "The World Food Program and the United Nations Food and Agriculture Agency reported that rising global food and fuel prices piled onto those local problems.",
+      "startMs": 298340.6041666667,
+      "endMs": 307320.6041666667
+    },
+    {
+      "id": "p015-s001",
+      "text": "Some staple foods reached prices that many poor households couldn't afford.",
+      "startMs": 307570.75,
+      "endMs": 311630.75
+    },
+    {
+      "id": "p015-s002",
+      "text": "When the local harvest is poor, imported grain can help make up the difference.",
+      "startMs": 312330.75,
+      "endMs": 316510.75
+    },
+    {
+      "id": "p015-s003",
+      "text": "In Somalia that year, it was getting more expensive right when people needed it most.",
+      "startMs": 317250.75,
+      "endMs": 321790.75
+    },
+    {
+      "id": "p015-s004",
+      "text": "Then there was a bill that could get more expensive even if you bought nothing new.",
+      "startMs": 322550.75,
+      "endMs": 326370.75
+    },
+    {
+      "id": "p016-s001",
+      "text": "If you were carrying a credit card balance, you might open your statement one month and find a higher interest charge.",
+      "startMs": 326620.0833333333,
+      "endMs": 332460.0833333333
+    },
+    {
+      "id": "p016-s002",
+      "text": "It would be easy to put that increase in the same category as the gas bill.",
+      "startMs": 333020.0833333333,
+      "endMs": 336760.0833333333
+    },
+    {
+      "id": "p016-s003",
+      "text": "The dates tell a different story.",
+      "startMs": 337320.0833333333,
+      "endMs": 338920.0833333333
+    },
+    {
+      "id": "p016-s004",
+      "text": "In January, before the full -scale invasion, US consumer prices were already up 7 .5 % from a year earlier.",
+      "startMs": 339480.0833333333,
+      "endMs": 346480.0833333333
+    },
+    {
+      "id": "p017-s001",
+      "text": "The Federal Reserve had signaled that it expected to raise rates soon.",
+      "startMs": 346826.0,
+      "endMs": 350426.0
+    },
+    {
+      "id": "p017-s002",
+      "text": "When it did raise them in March, it pointed to price pressure stemming from the pandemic and described the invasion as likely to add to inflation in the near term.",
+      "startMs": 351086.0,
+      "endMs": 359426.0
+    },
+    {
+      "id": "p017-s003",
+      "text": "The war added pressure to a problem the Fed was already preparing to act on.",
+      "startMs": 359966.0,
+      "endMs": 363866.0
+    },
+    {
+      "id": "p017-s004",
+      "text": "What can higher rates do about prices?",
+      "startMs": 364406.0,
+      "endMs": 366326.0
+    },
+    {
+      "id": "p018-s001",
+      "text": "If financing the next car gets more expensive, some buyers delay replacing the one they have.",
+      "startMs": 366723.4166666667,
+      "endMs": 372183.4166666667
+    },
+    {
+      "id": "p018-s002",
+      "text": "If fewer people buy, sellers face less pressure from demand.",
+      "startMs": 372643.4166666667,
+      "endMs": 375863.4166666667
+    },
+    {
+      "id": "p018-s003",
+      "text": "That's where the Fed has leverage.",
+      "startMs": 376383.4166666667,
+      "endMs": 377863.4166666667
+    },
+    {
+      "id": "p018-s004",
+      "text": "Interest rates have much less to say about whether a ship can load grain at a Ukrainian port.",
+      "startMs": 378523.4166666667,
+      "endMs": 383363.4166666667
+    },
+    {
+      "id": "p018-s005",
+      "text": "And which borrowing bill changes depends on what you signed.",
+      "startMs": 384143.4166666667,
+      "endMs": 387003.4166666667
+    },
+    {
+      "id": "p018-s006",
+      "text": "A homeowner's principle and interest on an existing fixed -rate mortgage are set by the loan.",
+      "startMs": 387663.4166666667,
+      "endMs": 392423.4166666667
+    },
+    {
+      "id": "p019-s001",
+      "text": "A credit card rate tied to a benchmark can go up when that benchmark rises, so a balance carried over from last month can cost more this month.",
+      "startMs": 392602.25,
+      "endMs": 401102.25
+    },
+    {
+      "id": "p019-s002",
+      "text": "By the end of 2022, US regular gasoline averaged $3 .09 a gallon below where it had started the year.",
+      "startMs": 401602.25,
+      "endMs": 409362.25
+    },
+    {
+      "id": "p019-s003",
+      "text": "Refineries were making more gasoline in the second half of the year, and Americans were using less.",
+      "startMs": 409922.25,
+      "endMs": 414782.25
+    },
+    {
+      "id": "p020-s001",
+      "text": "At the grocery store, food prices were still higher than they had been a year earlier.",
+      "startMs": 415097.1875,
+      "endMs": 419357.1875
+    },
+    {
+      "id": "p020-s002",
+      "text": "The station could buy its next delivery for less, as gasoline became easier to come by.",
+      "startMs": 419977.1875,
+      "endMs": 425097.1875
+    },
+    {
+      "id": "p020-s003",
+      "text": "For the bakery, cheaper wheat helped only if it brought down the price of flour.",
+      "startMs": 425617.1875,
+      "endMs": 429477.1875
+    },
+    {
+      "id": "p021-s001",
+      "text": "The cost of getting the next batch of bread to the store could still be high.",
+      "startMs": 429751.25,
+      "endMs": 433431.25
+    },
+    {
+      "id": "p021-s002",
+      "text": "On that same drive home, you could spend less than you'd set aside for gas.",
+      "startMs": 433971.25,
+      "endMs": 437851.25
+    },
+    {
+      "id": "p021-s003",
+      "text": "A few minutes later, a week's groceries could eat up the difference.",
+      "startMs": 438411.25,
+      "endMs": 441851.25
+    }
+  ],
+  "somaliaMark": "p015-s001",
+  "shots": [
+    {
+      "id": "import-gap",
+      "title": "The gap imports help fill",
+      "cueId": "p015-s002",
+      "marks": [
+        "p015-s003"
+      ]
+    },
+    {
+      "id": "interest-statement",
+      "title": "The same balance, a higher interest charge",
+      "cueId": "p015-s004",
+      "marks": [
+        "p016-s001",
+        "p016-s002",
+        "p016-s003"
+      ]
+    },
+    {
+      "id": "fed-calendar",
+      "title": "Inflation, the invasion and the March hike",
+      "cueId": "p016-s004",
+      "marks": [
+        "p017-s001",
+        "p017-s002",
+        "p017-s003"
+      ]
+    },
+    {
+      "id": "car-demand",
+      "title": "The decision to wait for a car",
+      "cueId": "p017-s004",
+      "marks": [
+        "p018-s001",
+        "p018-s002",
+        "p018-s003"
+      ]
+    },
+    {
+      "id": "rates-and-port",
+      "title": "Rates change but the port stays blocked",
+      "cueId": "p018-s004",
+      "marks": []
+    },
+    {
+      "id": "loan-contracts",
+      "title": "Fixed mortgage and variable card APR",
+      "cueId": "p018-s005",
+      "marks": [
+        "p018-s006",
+        "p019-s001"
+      ]
+    },
+    {
+      "id": "year-end",
+      "title": "Gas falls while groceries stay higher",
+      "cueId": "p019-s002",
+      "marks": [
+        "p019-s003",
+        "p020-s001"
+      ]
+    },
+    {
+      "id": "different-deliveries",
+      "title": "Station fuel and bakery flour reset on different schedules",
+      "cueId": "p020-s002",
+      "marks": [
+        "p020-s003",
+        "p021-s001"
+      ]
+    },
+    {
+      "id": "pump-callback",
+      "title": "The pump stops below budget",
+      "cueId": "p021-s002",
+      "marks": []
+    },
+    {
+      "id": "grocery-callback",
+      "title": "Groceries use the fuel savings",
+      "cueId": "p021-s003",
+      "marks": []
+    }
+  ]
+}

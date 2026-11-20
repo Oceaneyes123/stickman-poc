@@ -1,5 +1,4 @@
 import { AbsoluteFill, useCurrentFrame } from "remotion";
-import { SfxTrack } from "../audio/sfx";
 import { KineticCutaway } from "../cutaways/KineticCutaway";
 import { C, font } from "../design/tokens";
 import { calculateFreeShippingOrder, freeShippingExample, usd } from "../finance/math";
@@ -17,7 +16,6 @@ import {
   CursorActor,
   DrawConnector,
   PresenterStage,
-  ProportionalBarComparison,
   ThresholdMeter,
   type CursorWaypoint,
 } from "./actors";
@@ -26,24 +24,8 @@ import { region } from "./core/geometry";
 import { getLook, type LookId } from "./core/looks";
 import { MOTION_PROFILE_IDS, MOTION_PROFILES } from "./core/motionProfiles";
 import { ProductIllustration } from "./objects";
-import {
-  DYNAMIC_SHOWCASE_PILOT_DURATION,
-  compiledPilotTimeline,
-  pilotCutaway,
-  pilotSfxCues,
-  pilotWaypoints,
-} from "./pilotTimeline";
-import {
-  createComparisonStage,
-  createCutawayStage,
-  createInteractiveUiStage,
-  createMechanismFlowStage,
-  createPolicyMatrixStage,
-  createPresenterSplitStage,
-} from "./stages";
+import { createPolicyMatrixStage } from "./stages";
 import { DocumentarySectionHeading } from "./typography";
-
-export { DYNAMIC_SHOWCASE_PILOT_DURATION, compiledPilotTimeline, pilotSfxCues };
 
 export const DYNAMIC_MOTION_GALLERY_PANELS = [
   "01 · Object Wrappers (Real Art)",
@@ -565,7 +547,7 @@ function BridgeCard({ title, amount, tone }: { title: string; amount: string; to
         flexDirection: "column",
         justifyContent: "space-between",
         boxSizing: "border-box",
-        fontFamily: font.sans,
+        fontFamily: font,
       }}
     >
       <div style={{ fontSize: 20, fontWeight: 750, color: "#475569" }}>{title}</div>
@@ -702,264 +684,6 @@ function regionMap(layoutName: Parameters<typeof region>[0]) {
               ? ["headline", "track", "detail"]
               : ["presenter", "graphic"];
   return Object.fromEntries(keys.map((k) => [k, region(layoutName, k)]));
-}
-
-// ---------- DynamicShowcasePilot (6-scene end-to-end pilot) ----------
-
-const pilotOrder = calculateFreeShippingOrder();
-
-export function DynamicShowcasePilot() {
-  const s = compiledPilotTimeline.scenes;
-
-  const scene1Def = createComparisonStage({
-    id: s[0].id,
-    title: s[0].title,
-    durationInFrames: s[0].durationInFrames,
-    look: "editorial-paper",
-    layout: "asymmetric-35-65",
-    motionProfile: "tactile-spring",
-    eyebrow: "OPENING DECISION",
-    heading: "The gap invites a second item",
-    annotation: "An item added for the cutoff often overshoots the exact gap.",
-    threshold: {
-      baseAmount: pilotOrder.beforeSubtotal,
-      threshold: freeShippingExample.threshold,
-      addedAmount: freeShippingExample.addOn,
-      baseLabel: "Charger",
-      addedLabel: "Organizer",
-      addAt: 28,
-    },
-  });
-
-  const scene2Def = createInteractiveUiStage({
-    id: s[1].id,
-    title: s[1].title,
-    durationInFrames: s[1].durationInFrames,
-    look: "warm-studio",
-    layout: "feature-right",
-    motionProfile: "tactile-spring",
-    eyebrow: "CHECKOUT FRAMING",
-    heading: "Removing a fee draws focus away from the total",
-    callout: {
-      title: `Total rises from ${usd(pilotOrder.before)} to ${usd(pilotOrder.after)}`,
-      detail: `${usd(pilotOrder.increase)} extra outlay to save a ${usd(pilotOrder.beforeShipping)} delivery charge.`,
-      at: 30,
-    },
-    ui: {
-      kind: "checkout",
-      props: {
-        productName: "USB-C Wall Charger",
-        productArt: <ProductIllustration kind="headphones" size={84} />,
-        fullPrice: pilotOrder.beforeSubtotal,
-        shipping: pilotOrder.beforeShipping,
-        selectBnplAt: 36,
-        revealObligationsAt: 52,
-      },
-    },
-    waypoints: pilotWaypoints,
-  });
-
-  const scene3Def = createMechanismFlowStage({
-    id: s[2].id,
-    title: s[2].title,
-    durationInFrames: s[2].durationInFrames,
-    look: "midnight-blueprint",
-    layout: "editorial-top-stage",
-    camera: {
-      keyframes: [
-        { at: 0, x: -16, zoom: 1 },
-        { at: 72, x: 18, zoom: 1.06, easing: "outCubic" },
-      ],
-    },
-    eyebrow: "TWO TASKS",
-    heading: "A threshold adds a second goal at checkout",
-    process: {
-      title: "How checkout shifts attention",
-      stages: [
-        {
-          id: "t1",
-          stepNumber: 1,
-          title: "Item needed",
-          subtitle: usd(pilotOrder.beforeSubtotal),
-          statusLabel: "Original goal",
-          tone: "alternative",
-          revealedAt: 4,
-        },
-        {
-          id: "t2",
-          stepNumber: 2,
-          title: "Fee appears",
-          subtitle: usd(pilotOrder.beforeShipping),
-          statusLabel: "Friction",
-          tone: "cost",
-          revealedAt: 18,
-        },
-        {
-          id: "t3",
-          stepNumber: 3,
-          title: "Qualify cutoff",
-          subtitle: usd(pilotOrder.subtotal),
-          statusLabel: "Second task",
-          tone: "money",
-          revealedAt: 34,
-        },
-      ],
-      activeStageId: "t3",
-    },
-  });
-
-  const scene4Def = createCutawayStage({
-    id: s[3].id,
-    title: s[3].title,
-    durationInFrames: s[3].durationInFrames,
-    spec: pilotCutaway,
-  });
-
-  const scene5Def = createPolicyMatrixStage({
-    id: s[4].id,
-    title: s[4].title,
-    durationInFrames: s[4].durationInFrames,
-    look: "evidence-desk",
-    container: "sheet",
-    stages: [
-      { id: "m1", from: 0 },
-      { id: "m2", from: 42 },
-    ],
-    eyebrow: "RESEARCH MATRIX",
-    heading: "Thresholds balance added sales against carrier cost",
-    rows: ["Merchant", "Shopper"],
-    columns: ["Lower Cutoff", "Higher Cutoff"],
-    cells: [
-      { id: "c1", row: 0, col: 0, headline: "More qualifying orders", detail: "Carrier expense absorbed on smaller carts.", tone: "neutral", activeInStageId: "m1" },
-      { id: "c2", row: 0, col: 1, headline: "Higher basket margin", detail: "Tests willingness to add items.", tone: "money", activeInStageId: "m2" },
-      { id: "c3", row: 1, col: 0, headline: "Small gap to close", detail: "Modest top-up qualifies.", tone: "alternative" },
-      { id: "c4", row: 1, col: 1, headline: "Larger total outlay", detail: "Extra items can outpace the saved fee.", tone: "cost", activeInStageId: "m2" },
-    ],
-    sourceCredit: "Retail Shipping Policy Research (2006–2026)",
-  });
-
-  const scene6Def = createPresenterSplitStage({
-    id: s[5].id,
-    title: s[5].title,
-    durationInFrames: s[5].durationInFrames,
-    look: "split-contrast",
-    identity: "Sam",
-    framing: "side-left",
-    pose: "explaining",
-    expression: "confident",
-    eyebrow: "THE TEST",
-    heading: "Compare complete delivered orders",
-    graphic: ({ layerFrame }) => (
-      <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-        <ProportionalBarComparison
-          items={[
-            {
-              id: "paid",
-              label: "Item + Delivery",
-              amount: pilotOrder.before,
-              tone: "alternative",
-            },
-            {
-              id: "free",
-              label: "Larger Free Cart",
-              amount: pilotOrder.after,
-              tone: "cost",
-            },
-          ]}
-          onDark={false}
-          width={880}
-          from={10}
-          frame={layerFrame}
-        />
-        <svg width={880} height={150} viewBox="0 0 880 150" aria-label="Scale balance summary">
-          <line x1={80} y1={72} x2={800} y2={98} stroke={C.navy} strokeWidth={8} strokeLinecap="round" />
-          <polygon points="415,138 465,138 440,86" fill={C.yellow} />
-          <rect x={100} y={4} width={220} height={58} rx={12} fill={C.teal} />
-          <text x={210} y={41} textAnchor="middle" fill={C.navy} fontSize={24} fontWeight={800}>
-            {usd(pilotOrder.before)} delivered
-          </text>
-          <rect x={560} y={26} width={240} height={58} rx={12} fill={C.red} />
-          <text x={680} y={63} textAnchor="middle" fill={C.navy} fontSize={24} fontWeight={800}>
-            {usd(pilotOrder.after)} free-ship cart
-          </text>
-        </svg>
-      </div>
-    ),
-  });
-
-  const entries: TimelineEntry[] = [
-    {
-      id: s[0].id,
-      from: s[0].from,
-      durationInFrames: s[0].durationInFrames,
-      bridges: [
-        {
-          id: "order-badge",
-          rect: { x: 108, y: 720, width: 320, height: 120 },
-          render: () => (
-            <BridgeCard title="Charger" amount={usd(pilotOrder.beforeSubtotal)} tone={C.yellow} />
-          ),
-        },
-      ],
-      render: (f) => <DocumentaryScene scene={scene1Def} frame={f} />,
-    },
-    {
-      id: s[1].id,
-      from: s[1].from,
-      durationInFrames: s[1].durationInFrames,
-      join: "match-position",
-      joinFrames: 16,
-      liveOverlap: true,
-      bridges: [
-        {
-          id: "order-badge",
-          rect: { x: 380, y: 760, width: 320, height: 120 },
-          render: () => (
-            <BridgeCard title="Charger" amount={usd(pilotOrder.beforeSubtotal)} tone={C.teal} />
-          ),
-        },
-      ],
-      render: (f) => <DocumentaryScene scene={scene2Def} frame={f} />,
-    },
-    {
-      id: s[2].id,
-      from: s[2].from,
-      durationInFrames: s[2].durationInFrames,
-      join: "wipe",
-      joinFrames: 12,
-      render: (f) => <DocumentaryScene scene={scene3Def} frame={f} />,
-    },
-    {
-      id: s[3].id,
-      from: s[3].from,
-      durationInFrames: s[3].durationInFrames,
-      join: "hard-cut",
-      render: (f) => <DocumentaryScene scene={scene4Def} frame={f} />,
-    },
-    {
-      id: s[4].id,
-      from: s[4].from,
-      durationInFrames: s[4].durationInFrames,
-      join: "slide-push",
-      joinFrames: 12,
-      render: (f) => <DocumentaryScene scene={scene5Def} frame={f} />,
-    },
-    {
-      id: s[5].id,
-      from: s[5].from,
-      durationInFrames: s[5].durationInFrames,
-      join: "split-open",
-      joinFrames: 14,
-      render: (f) => <DocumentaryScene scene={scene6Def} frame={f} />,
-    },
-  ];
-
-  return (
-    <AbsoluteFill>
-      <SfxTrack cues={pilotSfxCues} />
-      <SceneTimeline scenes={entries} />
-    </AbsoluteFill>
-  );
 }
 
 export const CUTAWAY_PREVIEW_SPEC = {

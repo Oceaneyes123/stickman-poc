@@ -28,20 +28,13 @@
     "typescript": "5.9.3"
   },
   "scripts": {
-    "storyboard:design": "node --experimental-strip-types scripts/render/render-cinematic-storyboard.ts",
-    "storyboard:all": "node --experimental-strip-types scripts/render/assemble-full-storyboard.ts",
-    "cinematic:render": "node --experimental-strip-types scripts/render/render-cinematic-references.ts",
-    "storyboard:stills": "node --experimental-strip-types scripts/render/render-storyboard.ts",
     "narrate": "node --experimental-strip-types scripts/narration/narrate.ts",
     "sfx": "node --experimental-strip-types scripts/sfx/generate-sfx.ts",
     "narrate:timing": "python scripts/narration/time_narration.py",
     "narrate:review": "node --experimental-strip-types scripts/render/render-timing-review.ts",
-    "opening:stills": "node --experimental-strip-types scripts/render/render-opening-stills.ts",
     "walking:stills": "node --experimental-strip-types scripts/render/render-bank.ts --walking --stills",
     "render:walking": "npm run check && node --experimental-strip-types scripts/render/render-bank.ts --walking",
-    "render:buy-now": "node --experimental-strip-types scripts/render/render-buy-now-film.ts",
     "documentary:qa": "node --experimental-strip-types scripts/documentary/run-qa.ts",
-    "documentary:render": "node --experimental-strip-types scripts/documentary/render-documentary-demo.ts",
     "dev": "remotion studio",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
@@ -56,8 +49,7 @@
     "bank:stills": "node --experimental-strip-types scripts/render/render-bank.ts --stills",
     "render:bank": "npm run check && node --experimental-strip-types scripts/render/render-bank.ts",
     "movement:stills": "node --experimental-strip-types scripts/render/render-bank.ts --movement --stills",
-    "render:movement": "npm run check && node --experimental-strip-types scripts/render/render-bank.ts --movement",
-    "opening:render": "node --experimental-strip-types scripts/render/render-opening-film.ts"
+    "render:movement": "npm run check && node --experimental-strip-types scripts/render/render-bank.ts --movement"
   },
   "allowScripts": {
     "esbuild": false

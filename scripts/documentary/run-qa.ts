@@ -15,7 +15,12 @@ const { values } = parseArgs({
   },
 });
 
-const dir = resolve(values.dir ?? "videos/demo-bnpl-feels-cheaper");
+if (!values.dir) {
+  console.error("Usage: npm run documentary:qa -- --dir <episode-directory> [--mode planning|delivery]");
+  process.exit(1);
+}
+
+const dir = resolve(values.dir);
 const mode = values.mode === "planning" ? "planning" : "delivery";
 
 const cueFile = JSON.parse(readFileSync(`${dir}/cues.json`, "utf8")) as CueFile;

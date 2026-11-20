@@ -21,14 +21,13 @@ Reusable local Remotion + React + strict TypeScript modules for **Premium Editor
 | `typography/` | Selective editorial headings, numeric cards, callouts, annotations | `DocumentarySectionHeading`, `FinancialLabelCard`, `ExplanatoryCallout`, `ContextualAnnotation`, `SelectiveEmphasisText`, `DocumentaryComparisonNumbers` |
 | `presets/` | Legacy multi-layer scene factories (kept for backwards compatibility) | `createProductFramingScene`, `createCheckoutSplitScene`, `createCalendarConvergenceScene`, `createCommitmentComparisonScene` |
 | `qa.ts` | Layout safe-margin, text overflow, asset, continuity, and multi-axis visual-variety QA | `runDocumentaryQa`, `auditVisualVariety` |
-| `Gallery.tsx` & `DynamicMotionGallery.tsx` | Component galleries & 6-scene pilot (`DocumentaryGallery` 1440f, `DynamicMotionGallery` 1080f, `DynamicShowcasePilot` 540f) | `DocumentaryGallery`, `DynamicMotionGallery`, `DynamicShowcasePilot` |
-| `demo/` | Working BNPL demonstration (`BnplFeelsCheaperDemo`, 1560f / 52s) & mixed-media acceptance scene (`DocumentaryMixedMediaShowcase`, 180f) | `BnplFeelsCheaperDemo`, `DocumentaryMixedMediaShowcase` |
+| `Gallery.tsx` & `DynamicMotionGallery.tsx` | Reusable component galleries | `DocumentaryGallery`, `DynamicMotionGallery` |
 
 ## How to Combine Components in a New Episode
 
 1. **Prepare narrative & cues**: Write `videos/<episode>/narration.txt`, generate measured WAV via VoiceStudio (`npm run narrate`), extract/review timing (`npm run narrate:timing`), and maintain `videos/<episode>/asset-manifest.json` per [MEDIA_SOURCING.md](../../references/MEDIA_SOURCING.md).
 2. **Author `storyboard.json`**: Define `DocumentaryStoryboard` scenes with cue `Anchor`s, `layout` names from `LAYOUTS`, `layerBounds`, `textBounds`, `continuityTokens`, and `assetIds`.
-3. **Compile & validate**: Call `compileDocumentaryTimeline(cueFile, storyboard, audioDurationMs)` or run `runDocumentaryQa` (`npm run documentary:qa`) before rendering. Never mark provisional `timing-demo` fixtures as `listening-approved`.
+3. **Compile & validate**: Call `compileDocumentaryTimeline(cueFile, storyboard, audioDurationMs)` or run `npm run documentary:qa -- --dir <episode-directory>` before rendering. Never mark provisional `timing-demo` fixtures as `listening-approved`.
 4. **Build scenes**: Pass `DocumentarySceneDefinition` objects (combining `video`, `image`, `svg`, `ui`, `diagram`, `document`, `object`, and `text` layers across `"background"`, `"midground"`, and `"foreground"` depths) into `<SceneTimeline />`.
 5. **Financial math**: Derive every schedule, balance, loan split, and comparison using `src/finance/math.ts` (`payInFour`, `buildInstallmentSchedule`, `summarizeObligations`, `calculateLoanBreakdown`, `compareMinimumPayment`).
 6. **Disclosure & provenance**: Keep `disclosureMode="hidden"` for generic fictional scenarios (Decision #14), use `disclosureMode="badge"` when a recreation could be mistaken for a real record, and attach `<SourceCitation />` to authentic excerpts or sourced data.
@@ -37,9 +36,6 @@ Reusable local Remotion + React + strict TypeScript modules for **Premium Editor
 ## Commands
 
 ```powershell
-# Validate demo storyboard, layout margins, text fit, continuity, assets, and variety
-npm run documentary:qa
-
-# Render stills, contact sheets, and MP4s (demo + gallery + mixed-media showcase) + QA decode
-npm run documentary:render
+# Validate an episode's storyboard, layout margins, text fit, continuity, assets, and variety
+npm run documentary:qa -- --dir videos/your-episode --mode planning
 ```

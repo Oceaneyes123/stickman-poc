@@ -617,6 +617,66 @@ function sparkleChime(): Sig {
   return add(out, gain(air, 0.12));
 }
 
+function pumpMotor(): Sig {
+  const d = 4;
+  const motor = tone(d, (t) => 72 + 2 * Math.sin(t * 4));
+  const harmonic = gain(tone(d, (t) => 144 + 4 * Math.sin(t * 4)), 0.22);
+  const flow = gain(biquad(noiseOf(d, seeded(251)), "bp", 420, 0.6), 0.28);
+  return mul(add(motor, harmonic, flow), envFade(d, 0.15, 0.24));
+}
+
+function mechanicalClick(): Sig {
+  const tick = mul(biquad(noiseOf(0.035, seeded(257)), "bp", 1800, 1.4), envExp(0.035, 0.001, 0.026, 6));
+  const body = mul(chirp(0.09, 430, 133), envExp(0.09, 0.0015, 0.064, 7));
+  return add(gain(tick, 0.82), gain(body, 0.62));
+}
+
+function gateLatch(): Sig {
+  const out = buffer(0.28);
+  place(out, mechanicalClick(), 0);
+  place(out, lowpass(barThump(), 620), 0.032, 0.85);
+  return out;
+}
+
+function tireRoll(): Sig {
+  const d = 0.75;
+  const friction = lpSweep(noiseOf(d, seeded(263)), (k) => 285 + 370 * Math.sin(k * Math.PI));
+  return mul(add(friction, gain(chirp(d, 88, 55), 0.13)), envBell(d, 0.45, 1.7));
+}
+
+function grainRustle(): Sig {
+  const d = 0.4;
+  const rustle = biquad(noiseOf(d, seeded(269)), "bp", 1940, 0.85);
+  const grain = mul(rustle, envBell(d, 0.38, 2));
+  return add(grain, gain(mul(lowpass(noiseOf(d, seeded(271)), 620), envBell(d, 0.67, 3)), 0.5));
+}
+
+function paperContact(): Sig {
+  const d = 0.36;
+  const slide = mul(biquad(noiseOf(d, seeded(277)), "bp", 2250, 1.25), envBell(d, 0.34, 2.6));
+  place(slide, gain(mechanicalClick(), 0.22), 0.11);
+  return slide;
+}
+
+function shelfContact(): Sig {
+  const d = 0.26;
+  const body = mul(chirp(d, 148, 61), envExp(d, 0.006, 0.19, 6));
+  const brush = mul(lowpass(noiseOf(d, seeded(281)), 920), envExp(d, 0.002, 0.15, 5));
+  return add(body, gain(brush, 0.42));
+}
+
+function waterWash(): Sig {
+  const d = 0.95;
+  const wash = lpSweep(noiseOf(d, seeded(283)), (k) => 470 + 400 * Math.sin(k * Math.PI));
+  return mul(biquad(wash, "hp", 135), envBell(d, 0.48, 1.6));
+}
+
+function sweepDown(): Sig {
+  const d = 0.55;
+  const air = lpSweep(noiseOf(d, seeded(293)), (k) => 1600 - 1200 * k);
+  return mul(add(air, gain(chirp(d, 450, 170), 0.21)), envBell(d, 0.33, 1.65));
+}
+
 const RECIPES: Record<SfxName, () => Sig> = {
   coin_clink: coinClink,
   coin_shower: coinShower,
@@ -648,6 +708,15 @@ const RECIPES: Record<SfxName, () => Sig> = {
   glitch_zap: glitchZap,
   clock_tick: clockTick,
   sparkle_chime: sparkleChime,
+  pump_motor: pumpMotor,
+  mechanical_click: mechanicalClick,
+  gate_latch: gateLatch,
+  tire_roll: tireRoll,
+  grain_rustle: grainRustle,
+  water_wash: waterWash,
+  paper_contact: paperContact,
+  shelf_contact: shelfContact,
+  sweep_down: sweepDown,
 };
 
 // ------------------------------------------------------------------- writing

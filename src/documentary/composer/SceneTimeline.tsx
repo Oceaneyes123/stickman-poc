@@ -263,7 +263,7 @@ export function SceneTimeline({
           >
             {currentScene.render(localFrame, { isBridgeJoin: true })}
           </AbsoluteFill>
-          <AbsoluteFill style={{ pointerEvents: "none", fontFamily: font.sans }}>
+          <AbsoluteFill style={{ pointerEvents: "none", fontFamily: font }}>
             {matchedBridges.map((match) => {
               const bridge = nextBridgeById.get(match.id);
               if (!bridge) return null;
