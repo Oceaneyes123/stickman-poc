@@ -36,6 +36,8 @@ The narrator carries the explanation. Visuals supply context, expose a relations
 
 Choose the method for the learning need, not to satisfy a variety quota. A simple object sequence can carry a whole explanation; footage may be better for lived context. Use the visual guide's nine-field storyboard framework to turn the selected method into shots.
 
+When an everyday object can carry the explanation, show its starting state, the action that changes it and the resulting consequence. Keep the object recognizable across those beats. Show the part of the interface that explains what the person chose or saw. Frame the resulting change so the viewer can follow it with only the necessary labels and amounts.
+
 When visualizing evidence or modeled comparisons without arithmetic recitals or fabricated charts:
 - **Translate research findings into qualitative structural schematics:** Pair a study's scope and source credit with a concrete structural visual—such as baskets clustering past a cutoff barrier, a two-row matrix contrasting which policy variable changed in each study, or a `Now vs. Later` substitution strip distinguishing an earlier planned purchase from additional consumption—rather than consecutive text-only citation cards.
 - **Show derived proportional scale visually:** When a modeled example in `src/finance/math.ts` explains why an outlay rises (for example, an indivisible add-on overshooting a spending gap), render the derived proportional blocks and overhang visually rather than relying on a text-only "Higher total" badge or a narrated subtraction walkthrough.

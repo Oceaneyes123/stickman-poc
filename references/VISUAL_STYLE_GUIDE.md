@@ -1,14 +1,23 @@
 # The Money Trap — Visual Style Guide
 
-**Version 1 · 2026-11-16 · Phase 2: documentation only.**
+**Version 2.1 · 2026-11-21**
 
-This is the primary creative authority for future visual production under the **Premium Editorial Finance Documentary** identity. Read it with [channel branding](CHANNEL-BRANDING.md). Narration tells the story; visuals help the viewer understand a situation, mechanism or consequence. The viewer should understand the concept even if they remember none of the numbers.
+This is the primary creative authority for future visual production under the **Premium Editorial Finance Documentary** identity. Use an editorial cartoon style for original illustrative scenes and props. Narration tells the story, and visuals help the viewer understand the situation, mechanism or consequence. The viewer should understand the concept even if they remember none of the numbers. Read this guide with [channel branding](CHANNEL-BRANDING.md).
 
 This guide supersedes older character-first creative recommendations for new documentary briefs. It does not change existing episodes, their approvals, assets or historical decisions. Sam and Alex may be fictional examples without animated counterparts; real people may appear in properly licensed media. Do not imply that an identifiable stock-footage subject is an actual customer or the subject of a fictional story.
 
 The updated [global production rules](../AGENTS.md) preserve the technical contract: local Remotion + React + strict TypeScript, matched package versions, deterministic frame-driven motion, bundled render-time assets, local tools and no paid APIs or cloud jobs. Delivery remains 1920×1080, 30 fps, H.264/yuv420p; development previews use 0.5 scale. No new component, media pipeline or episode render is implemented by this document.
 
 ## 1. Editorial motion graphics
+
+### Editorial cartoon art direction
+
+- **Draw for a recognizable silhouette.** Build the main prop from a few large shapes. Round corners where the object calls for it, and exaggerate the feature that carries the action, such as a receipt’s curl, a pump’s nozzle or a cart’s basket. Use a confident navy contour on the focal object, finer strokes for internal details and quieter edges in the background.
+- **Use flat fills and simple shadows.** Give the main prop a clean fill and a single hard-edged shadow plane when it needs depth. Stage it in a simplified setting with enough context to tell where the action happens. Each subject can have its own supporting colors. Keep yellow for money or value, coral for cost or loss and teal for an alternative.
+- **Give the action a little weight.** Let a paper receipt uncurl, a price tag swing and settle, or an add-on land in the cart with a small recoil. A brief anticipation, overshoot or squash can emphasize one important action. Keep amounts, dates, chart marks and other quantitative geometry stable and readable throughout. Hold on the resulting state.
+- **Let the story set the intensity.** Everyday spending can carry some visual wit through the props. For hardship or historical harm, use restrained poses, motion and color. Keep authentic documents, source-backed charts and footage legible and faithful to their source. A stylized device frame can surround a generic interface whose controls and state changes stay clear.
+
+In the free-shipping story, establish the charger, cart and delivery condition at checkout. For the reveal, give the cart and receipt the frame. Let the cable organizer drop into the basket and the delivery fee slip off the receipt, then hold on the higher delivered total. Keep the same cart and receipt identifiable across the two states and show the delivered totals with just enough context to compare them. The illustrated action follows the [episode's modeled example](../videos/004-free-shipping/sources.md#a01-one-illustrative-online-order).
 
 Start with the learning goal, then choose the graphic. Every shot must explain a concept, demonstrate a process, establish context or reinforce a meaningful story moment. State that purpose in the storyboard before choosing an effect.
 
@@ -63,6 +72,8 @@ Freeze approved assets locally before rendering. Do not load remote media at ren
 ### Dominant idea and depth
 
 Give each shot one dominant visual idea. Supporting details may coexist if they explain that idea; “one idea” does not mean exactly one physical object. Reveal competing claims in sequence.
+
+**Give the object that carries the action room to fill the shot.** Establish it in a recognizable setting, then frame it at the scale the action deserves. Keep it recognizable as its state changes, and place essential labels near the part that changes. A checkout panel earns space when the offer, control or status is part of the explanation. Crop to the relevant part of the interface or cut to the object and its consequence once the decision is clear. A centered composition works when it gives the action a clear focal point.
 
 Separate foreground, subject and background through placement, scale, occlusion, contrast and, where useful, restrained focus or lighting. A foreground element should orient or frame the subject rather than hide labels. Depth is optional; a flat diagram can be the clearest treatment. Documentary shots do not require a room, floor or character.
 
@@ -151,6 +162,7 @@ A storyboard that is factually accurate can still lose viewer attention if conse
 | Endless floating icons | Give each object a defined role and stable location; animate the relationship that changes. |
 | Generic AI-generated business imagery implying an actual event | Use relevant verified footage or an explicitly illustrative original graphic. Never manufacture documentary proof. |
 | Centered cards or icons on the same board across unrelated beats | Compose around the relationship each beat teaches. Stage a delivery at a loading dock, cut close to the freight charge on the docket, then use the shelf edge to locate the final price. Repeat framing when it makes a change easier to compare or recalls an earlier scene. |
+| A decisive action confined to one tile of a mock app | Keep the offer or control visible for the decision. Then reframe around the object that changes and hold on the consequence with the essentials in view. |
 | Pointless chart animation or a number counter for an ordinary decision | Show the decision and its consequence. Use a chart only when the data relationship matters. |
 | Bankruptcy imagery, flashing red warnings or a collapsing house for a tighter month | Show the ordinary consequence supported by the scenario: a postponed repair or less flexibility. |
 | Decorative arrows pointing at everything | Connect only a defined cause, transfer or sequence; remove an arrow that adds no meaning. |
@@ -228,7 +240,7 @@ These examples are future creative proposals. They neither revise episode 002 no
 
 ## 7. Review and phase boundary
 
-Before approving a future storyboard, confirm that every beat has the required fields, one clear learning purpose and an appropriate medium. Check that the key mechanism survives removal of unnecessary text and numbers, that source/permission statuses are explicit, and that no recreation is presented as authentic evidence. Also verify visual progression before approval: frame 0 confirms the opening decision context, early beat diagrams are not duplicated later, multi-paragraph shot groups specify per-paragraph sub-staging, research beats pair source credits with qualitative schematics (or cleared authentic excerpts) instead of text-only bibliography cards, and the closing `callback-cut` bookend lands on the final paragraph.
+Before approving a future storyboard, confirm that every beat has the required fields, one clear learning purpose and an appropriate medium. At phone size, check that the focal silhouette and its changed state are immediately recognizable. Check that any exaggerated pose or motion clarifies the action and keeps quantities accurate. Check that the key mechanism survives removal of unnecessary text and numbers, that source/permission statuses are explicit, and that no recreation is presented as authentic evidence. Also verify visual progression before approval: frame 0 confirms the opening decision context, early beat diagrams are not duplicated later, multi-paragraph shot groups specify per-paragraph sub-staging, research beats pair source credits with qualitative schematics (or cleared authentic excerpts) instead of text-only bibliography cards, and the closing `callback-cut` bookend lands on the final paragraph.
 
 During future production, compare the actual framing and settled states against the storyboard at every beat and boundary. Check text wrapping, phone-size readability, state continuity and narration-linked reveals. Run the project's required checks, gallery review, metadata verification and full decode before delivery. Record technical results, human creative approval and audio listening approval separately in the existing validation workflow. A rendered frame alone cannot prove motion or synchronization quality.
 

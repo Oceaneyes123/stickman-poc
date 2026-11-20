@@ -235,6 +235,8 @@ Use the project palette: yellow for money, coral for costs/loss and teal for an 
 
 Write what changes on screen: a bill returns next month, a balance declines, or a payment reaches a labeled intermediary. A character gesturing beside unchanged text is not a mechanism demonstration. Reveal one financial relationship at a time and let the viewer see the cause; a before/after state can carry the proof without a visible calculation. Text labels support the explanation; no default subtitles or paragraph-length cards. Do not prescribe a cut every N words: the transcript study did not measure visual timing.
 
+In visual notes for an object-led beat, name the object that carries through the setup and payoff, the visible change it undergoes and the detail that needs to stay readable. If the beat starts on a screen, identify the offer, control or status the viewer needs to see, then describe what happens to the object or obligation as a result.
+
 Apply these visual-writing checks at the script stage so storyboards keep viewer attention without violating documentary accuracy:
 
 - **Confirm the opening context immediately and avoid duplicate diagrams:** Visual notes for the opening beat should stage the recognizable purchase or decision context right away and finish by isolating an open visual question rather than previewing the exact two-step process diagram needed in a later mechanism beat.

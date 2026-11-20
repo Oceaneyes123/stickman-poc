@@ -120,7 +120,8 @@ This means:
 - Original editorial motion graphics explain obligations, processes, choices and consequences through objects, documents, interfaces and meaningful comparisons.
 - Selective licensed footage and photography establish real-life context. Real people may appear without animated counterparts. “Faceless” means no required on-camera host, not a ban on faces in sourced media.
 - Typography is selective and purposeful. Do not turn every narration sentence into text.
-- Visuals should feel modern, clear, relatable, credible and deliberately designed, with cinematic treatment when appropriate.
+- Original illustrative scenes use an editorial cartoon style with bold silhouettes, flat color and expressive prop motion. Documentary evidence and real-world context use the treatment that best preserves their meaning. See the [visual style guide](VISUAL_STYLE_GUIDE.md#editorial-cartoon-art-direction).
+- Everyday objects carry the action. Give a recurring cart, receipt, pump or bill room in the frame as it changes, and use interface detail where it explains a choice, term or status.
 - Each episode develops its own visual treatment around its subject. Consistent palette, hierarchy and graphic language connect episodes without making them identical.
 - Choose a medium because it explains, demonstrates, establishes context or reinforces a meaningful story moment. No mandatory medium ratio, camera move or transition quota.
 - Distinguish original graphics, mock interfaces and authentic evidence. Label recreations when viewers could mistake them for real screenshots or documents. Verify third-party sources and permissions before use.
@@ -131,7 +132,7 @@ Avoid the generic AI-documentary look: unrelated stock clips, constantly zooming
 
 | Subject | Possible treatment | What it explains |
 |---|---|---|
-| Buy Now, Pay Later | An original checkout mockup presents the first payment beside the full obligation; separate purchase schedules later occupy one calendar. | A smaller payment can change the decision while future commitments accumulate. |
+| Buy Now, Pay Later | Frame the jacket beside the first payment and full obligation at checkout. Later, dated payment slips from separate purchases land on the same calendar weeks. | A smaller payment can change the decision while future commitments accumulate. |
 | Lifestyle inflation | A recurring bill returns on successive payday views; selective home footage establishes the benefit of the upgrade. | The commitment keeps using future income. |
 | Failed payment | A labeled illustrative interface and a source-verified payment-flow diagram. | A failure message alone does not establish where the money is or what happens next. |
 | Scam | A clearly labeled recreated message with one meaningful warning sign isolated. | The deception becomes understandable without manufacturing documentary evidence. |
@@ -332,6 +333,7 @@ Use short emotional or curiosity-driven text like:
 
 ## Thumbnail design rules
 - big main subject
+- for illustrated thumbnails, use a strong silhouette and one exaggerated feature that makes the money problem visible
 - no clutter
 - no long sentence
 - one clear idea only
