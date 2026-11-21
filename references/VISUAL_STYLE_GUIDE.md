@@ -33,7 +33,7 @@ Reveal the relevant state, show what changes, and hold the result long enough to
 | Chart | Explain a sourced trend, distribution or relationship | Use a chart only when the relationship needs one. Identify source, period, units, scope and meaningful uncertainty. Preserve honest scales and comparable baselines. Do not animate invented intermediate data. |
 | Animated comparison | Isolate a meaningful difference | Keep starting assumptions, time period and scale comparable; label any material difference. Show the tradeoff of an alternative. Two states can explain a change without a narrated calculation. |
 | Object-based metaphor | Make an abstract constraint intuitive | Define the mapping through context: dated cards can stand for obligations occupying future weeks. Do not let symbolism imply literal banking mechanics, debt, fees or losses that were not modeled. |
-| Selective kinetic typography | Name a concept, emphasize a meaningful phrase or mark a section | Use short text with a clear hierarchy. Give it time to read and let it leave when its purpose ends. No routine word-by-word transcription, caption wall or new text on every sentence. |
+| Selective kinetic typography | Reveal an essential status, amount or comparison label | Place the label near the object or value it describes. Give it time to read and let it leave when its purpose ends. |
 
 Numbers must be correct even when arithmetic stays off screen. Derive illustrative calculations through [finance math](../src/finance/math.ts); keep factual figures traceable to episode sources. Retain units/time periods and keep invented scenario assumptions in production records: under [decision #14](../docs/decisions.md#14-presenting-fictional-scenarios--2026-11-16), present generic invented scenarios and interfaces naturally without on-screen "fictional," "illustrative," "hypothetical" or "demo" badges, while retaining visible source credits and scope qualifiers for cited research and authentic excerpts. "Remaining" is not automatically savings or a complete budget. A sourced chart is not required to use the fictional budget model.
 
@@ -42,7 +42,7 @@ Reuse the existing [typography](../src/typography/README.md), [object motion](..
 - Use `ObjectAttachedLabel` when a label tracks a product, bracket or moving cutoff marker.
 - Use `GrowBuild` or `SplitAssemble` for threshold fills, indivisible add-on overshoot or stacked obligations, with proportional geometry derived from `src/finance/math.ts` so the viewer sees the physical overhang or difference rather than a words-only "Higher order total" label.
 - Use `ConveyorFlow` or `ChainReaction` for fulfillment, cost handoffs or multi-step system sequences.
-- Use `SectionHeading` paired with a board-tone shift or structural transition (`wipe`, `push-in`, `pull-back`, `split-open`, `match-position`) when perspective changes materially (for example, moving from the shopper's cart to a merchant's back-office ledger).
+- When perspective changes materially, use a clean cut, a change in setting or a structural transition such as `match-position`. For example, cut from the shopper's receipt to a merchant's ledger with the corresponding charge in the same place.
 
 Camera joins and object transformations may already supply the needed motion. Gallery availability is not a requirement to use an effect. If a future task needs a new component, implement and review it under the project rules then; these treatment descriptions are not claims of reusable components already built.
 
@@ -91,14 +91,14 @@ Choose supporting colors for the objects, their materials and the light in the s
 
 ### Typography, labels and readability
 
-- Use locally bundled Inter. Establish a primary subject or headline, secondary explanatory labels and a quieter source/context line. Do not give every element headline weight.
+- Use locally bundled Inter for essential labels and credits. Give the visual subject priority and size the text for its reading task.
 - Keep labels close to what they describe, with a stable relationship during movement. Prevent collisions, awkward wrapping, cropped hands/objects and labels crossing faces.
-- Under [decision #15](../docs/decisions.md#15-minimal-on-screen-text--2026-11-18), keep on-screen text minimal: show only essential state changes, comparison/threshold markers or required source credits. Do not caption recognizable objects, repeat spoken sentences in boxes or stack multiple text banners in the same frame.
+- Omit added on-screen headings for openings, sections, comparisons and payoffs. Keep essential labels, amounts, units, dates, relevant evidence text and required source credits. Omit labels that merely name a recognizable object or repeat narration. [Decision #16](../docs/decisions.md#16-no-added-scene-headings--2026-11-21)
 - Use short phrasing rather than shrinking text to fit. If a document excerpt needs extensive reading, isolate the relevant passage or split the shot.
 - Keep essential graphic content at least 96 px from the side edges at 1920×1080. Background imagery may reach the frame edge. Check top/bottom clearance against the actual composition and player overlays.
 - Use readable foreground/background contrast; place text on a solid light or dark board when the image underneath changes. An outline or glow is not a substitute for a legible background.
 - Pair color with wording, shape or position so meaning does not depend on color alone. Do not assume white text is readable on yellow or teal.
-- Inspect at 0.5 scale and at a phone-sized view. The key action, labels and necessary source/context information must remain readable; tiny footnotes cannot repair a misleading headline.
+- Inspect at 0.5 scale and at a phone-sized view. Check that the action reads clearly and that essential labels, qualifications and credits stay legible.
 
 ### Color meaning
 
@@ -134,7 +134,7 @@ Do not prescribe a fixed shot length, cut interval or minimum movement count. Pl
 | Escalating problem | Tighter cuts or successive reveals as distinct commitments arrive | Does each new shot add a complication rather than repeat the same warning? |
 | Important mechanism | Slow down, reveal steps in order and hold the consequential state | Can the viewer explain the connection before the next idea begins? |
 | Emotional consequence | Allow a quiet, ordinary detail or still hold | Is the consequence credible without dramatic embellishment? |
-| Major idea change | Use a clean break, contextual shot or concise heading if needed | Is the new question or context clear without excessive signposting? |
+| Major idea change | Use a clean cut, a change in setting or a different focal object | Does the new shot make the change in context clear? |
 | Payoff/callback | Return to a recognizable earlier object or situation with a meaningful changed state | Does the image resolve the opening question? |
 
 Synchronize purposeful reveals to the phrase that makes them understandable, allowing setup and reading time where necessary. Do not expose the answer prematurely or delay a definition for artificial suspense. Not every sentence needs a new shot. Not every shot needs new text.

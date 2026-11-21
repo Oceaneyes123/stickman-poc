@@ -237,6 +237,8 @@ Write what changes on screen: a bill returns next month, a balance declines, or 
 
 In visual notes for an object-led beat, name the object that carries through the setup and payoff, the visible change it undergoes and the detail that needs to stay readable. If the beat starts on a screen, identify the offer, control or status the viewer needs to see, then describe what happens to the object or obligation as a result.
 
+Keep beat names and section headings in the script and storyboard. In the video, introduce the next idea through a cut, a change in setting or an object action. Write on-screen copy only when the shot needs a label, value, qualification, evidence excerpt or source credit. [Decision #16](../docs/decisions.md#16-no-added-scene-headings--2026-11-21)
+
 Apply these visual-writing checks at the script stage so storyboards keep viewer attention without violating documentary accuracy:
 
 - **Confirm the opening context immediately and avoid duplicate diagrams:** Visual notes for the opening beat should stage the recognizable purchase or decision context right away and finish by isolating an open visual question rather than previewing the exact two-step process diagram needed in a later mechanism beat.

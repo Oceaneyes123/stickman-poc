@@ -52,6 +52,18 @@ using a large-head stickman presenter (`ReferenceCharacterRig`) talking along
 with the narration beside harmonious graphics in the free space, target a 10–15%
 A-roll and 85–90% infographic B-roll balance.
 
+## 16. No added scene headings — 2026-11-21
+
+Omit added on-screen headings in future video scenes, including openings,
+section transitions, comparisons and payoffs. This supersedes the headline
+guidance in decision #15. Let composition, object action, edits and narration
+signal the change in idea.
+
+Keep only text the viewer needs to interpret the scene or verify a claim,
+such as a short status or comparison label, an amount with its units or date,
+a relevant evidence excerpt, or a required source credit. Place that text near
+what it describes. Episode titles and thumbnails are packaging.
+
 ## Cleanup — 2026-11-10
 
 Removed the superseded intermediate packets for episode 001 (opening stills v1–v5,

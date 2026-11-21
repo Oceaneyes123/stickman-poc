@@ -119,7 +119,7 @@ This means:
 - Narration is the primary storyteller; visuals support what the viewer needs to understand.
 - Original editorial motion graphics explain obligations, processes, choices and consequences through objects, documents, interfaces and meaningful comparisons.
 - Selective licensed footage and photography establish real-life context. Real people may appear without animated counterparts. “Faceless” means no required on-camera host, not a ban on faces in sourced media.
-- Typography is selective and purposeful. Do not turn every narration sentence into text.
+- Let the illustration and its action lead each scene. Reserve on-screen text for facts and labels the viewer needs, and omit added scene headings. Episode titles and thumbnail copy belong to packaging.
 - Original illustrative scenes use an editorial cartoon style with bold silhouettes, flat color and expressive prop motion. Documentary evidence and real-world context use the treatment that best preserves their meaning. See the [visual style guide](VISUAL_STYLE_GUIDE.md#editorial-cartoon-art-direction).
 - Everyday objects carry the action. Give a recurring cart, receipt, pump or bill room in the frame as it changes, and use interface detail where it explains a choice, term or status.
 - Each episode develops its own visual treatment around its subject. Consistent palette, hierarchy and graphic language connect episodes without making them identical.
